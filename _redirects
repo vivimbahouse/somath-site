@@ -1,0 +1,39 @@
+# Cloudflare Pages auto-strips .html, so all redirect targets below
+# point to extensionless URLs to avoid 301 → 307 loops.
+
+# Wix booking
+/book-online                         /evaluation 301
+/booking-calendar/free-evaluation-1  /evaluation 301
+/booking-calendar/*                  /evaluation 301
+
+# Wix legal pages (Wix slugs differ from ours, so these are real redirects)
+/refund-policy           /refund 301
+/terms-and-conditions    /terms 301
+/privacy-policy          /privacy 301
+/accessibility-statement /accessibility 301
+
+# Wix contact (Wix used /contact-us, we use /contact)
+/contact-us /contact 301
+
+# NOTE: /about is NOT redirected — Wix used /about and we also use /about,
+# so the file at /about.html serves it natively. Adding a redirect here
+# would cause a loop with Cloudflare's auto-strip behavior.
+
+# Wix service pages → programs page anchors
+/service-page/little-newtons-a-7-9-y-o      /programs#little-newtons 301
+/service-page/little-newtons-b-8-10-yo      /programs#little-newtons 301
+/service-page/kid-einsteins-a-10-12-y-o     /programs#kid-einsteins 301
+/service-page/kid-einsteins-a-10-12-y-o-1   /programs#kid-einsteins 301
+/service-page/kid-einsteins-b-11-13-y-o     /programs#kid-einsteins 301
+/service-page/kid-einsteins-b-11-13-y-o-1   /programs#kid-einsteins 301
+/service-page/young-fermats-algebra-i-a-13-y-o /programs#young-fermats 301
+/service-page/young-fermats-algebra-i-b-13-y-o /programs#young-fermats 301
+/service-page/young-fermats-algebra-i-b-13-yo  /programs#young-fermats 301
+/service-page/young-fermats-geometry-13-yo  /programs#young-fermats 301
+/service-page/ap-pre-calculus-13-yo         /programs#ap-courses 301
+/service-page/ap-calculus-14-y-o            /programs#ap-courses 301
+/service-page/ap-statistics-13-yo           /programs#ap-courses 301
+/service-page/*                             /programs 301
+
+# Wix blog posts → new blog post URLs (same slug, different path)
+/post/* /posts/:splat 301

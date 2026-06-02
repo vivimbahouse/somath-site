@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Equation of a Circle from Center and a Point (Stewart Calculus 9e Q2) | AP Calc Tutoring NYC | SOMATH</title>
+    <meta name="description" content="Stewart Calculus 9th Edition diagnostic test, analytic geometry Problem 2 — find the equation of the circle with center (-1, 4) that passes through (3, -2). Standard form, distance-formula shortcut, and the final answer (x+1)^2 + (y-4)^2 = 52. Worked from SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/circle-equation-from-center-and-point-stewart-calculus" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Equation of a Circle from Center and a Point (Stewart Calculus 9e Q2)" />
+    <meta property="og:description" content="Find the equation of the circle with center (-1, 4) passing through (3, -2). Answer: (x+1)^2 + (y-4)^2 = 52, radius sqrt(52). Walkthrough from SOMATH UWS." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/circle-equation-from-center-and-point-stewart-calculus" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/circle-equation-from-center-and-point-stewart-calculus/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-28" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stewart Calculus 9e Diagnostic Q2: Equation of a Circle from Center and a Point" />
+    <meta name="twitter:description" content="Center (-1, 4), passes through (3, -2). Answer (x+1)^2 + (y-4)^2 = 52. SOMATH UWS walkthrough." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/circle-equation-from-center-and-point-stewart-calculus/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathx .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.18em; line-height: 1.1; }
+      .mathx .frac > .num { display: block; border-bottom: 1.3px solid currentColor; padding: 0 0.35em 1px; }
+      .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Equation of a Circle from Center and a Point (Stewart Calculus 9e Q2)",
+  "description": "Stewart Calculus 9th Edition diagnostic test, analytic geometry Problem 2 — find the equation of the circle with center (-1, 4) passing through (3, -2). Standard form (x+1)^2 + (y-4)^2 = 52, radius sqrt(52). Worked step by step.",
+  "image": "https://www.schoolofmath.us/assets/blog/circle-equation-from-center-and-point-stewart-calculus/cover.jpg",
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/circle-equation-from-center-and-point-stewart-calculus"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the equation of the circle with center (-1, 4) that passes through (3, -2)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use standard form (x - h)^2 + (y - k)^2 = r^2 with (h, k) = (-1, 4). The distance from the center to the point on the circle is the radius. By the distance formula, r^2 = (3 - (-1))^2 + (-2 - 4)^2 = 16 + 36 = 52. So r = sqrt(52) and the equation is (x + 1)^2 + (y - 4)^2 = 52." } },
+    { "@type": "Question", "name": "Do I need to take the square root to write the equation of a circle?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Standard form has r^2 on the right-hand side, not r. As soon as you have r^2 from the distance formula you can write the equation directly. You only need the actual radius sqrt(52) ≈ 7.21 if a problem asks for the radius numerically or to sketch the circle. Leaving r^2 = 52 in the equation is correct and is what graders expect." } },
+    { "@type": "Question", "name": "Why is the center (-1, 4) but the equation has (x + 1) inside the parenthesis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2, where (h, k) is the center. With h = -1, the parenthesis becomes (x - (-1))^2 = (x + 1)^2. The plus sign appears because we are subtracting a negative. Read every plus sign inside a squared binomial as 'minus negative' and the center coordinates fall out correctly." } },
+    { "@type": "Question", "name": "Is sqrt(52) the simplest form of the radius?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, sqrt(52) = 2*sqrt(13) after factoring out the perfect square. The decimal value is approximately 7.21. On the AP Calculus exam and on Stewart's diagnostic, either sqrt(52) or 2*sqrt(13) is accepted. Decimal approximations are not — leave the radical exact unless the problem asks for a decimal." } },
+    { "@type": "Question", "name": "How is this Stewart Q2 different from the next problem (Q3)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Q2 hands you the center and a point on the circle, so you build the equation directly using the distance formula to get r^2. Q3 hands you a circle in general form (x^2 + y^2 + Dx + Ey + F = 0) and asks you to recover the center and radius by completing the square. Q2 builds the equation; Q3 disassembles one. Both rely on the same standard form (x - h)^2 + (y - k)^2 = r^2." } }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Calculus &amp; Pre-Calc · Stewart 9e Diagnostic</p>
+      <h1 class="post__title">Equation of a Circle from Center and a Point (Stewart Calculus 9e Q2)</h1>
+      <p class="post__dek">Stewart's Calculus 9th Edition diagnostic Question 2 hands you a center and one point that the circle has to pass through, and asks for the equation. The whole problem is two ideas glued together — the standard form of a circle, and the distance formula. Done in the right order, it's a sixty-second problem. Done in the wrong order, students take an unnecessary square root and then square it again, lose a sign somewhere, and walk away with a radius they don't trust. Here is the SOMATH way.</p>
+      <p class="post__meta"><time datetime="2026-05-28">2026-05-28</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/circle-equation-from-center-and-point-stewart-calculus/cover.jpg" alt="Stewart Calculus 9e Q2 — equation of the circle with center (-1, 4) passing through (3, -2), worked at SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/DBZURlNPiYs?rel=0" title="Equation of a Circle from Center and a Point | Stewart Calculus 9e Q2 | SOMATH NYC" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=DBZURlNPiYs" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> The circle in standard form is <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span>, where <span class="mathx">(<i>h</i>, <i>k</i>)</span> is the center. With center <span class="mathx">(−1, 4)</span> we have <span class="mathx"><i>h</i> = −1</span> and <span class="mathx"><i>k</i> = 4</span>. To get <span class="mathx"><i>r</i><sup>2</sup></span>, use the squared distance from the center to the point on the circle: <span class="mathx"><i>r</i><sup>2</sup> = (3 − (−1))<sup>2</sup> + (−2 − 4)<sup>2</sup> = 16 + 36 = 52</span>. So the equation is <span class="answer-box">(x + 1)<sup>2</sup> + (y − 4)<sup>2</sup> = 52</span>, with radius <span class="mathx"><i>r</i> = √52 = 2√13 ≈ 7.21</span>.</p>
+
+          <h2>Why Stewart wants this problem on the diagnostic</h2>
+          <p>Stewart's Q2 is the constructive twin of Q3. Q3 hands you a circle in general form and asks you to recover its center and radius — a deconstruction problem. Q2 hands you the pieces and asks you to assemble the equation — a construction problem. Both lean on the same template, <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span>, but they pull on different reflexes. Q3 tests whether you can complete the square. Q2 tests whether you can read coordinates and apply the distance formula without overthinking it.</p>
+          <p>The reason Stewart drops this problem at the beginning of the diagnostic is that the distance formula is everywhere in calculus. It shows up in arc length, in the limit definition of magnitude for vectors, in the geometry of optimization problems where you minimize distance to a curve, and as the kernel of the dot product. If a student is fuzzy on whether the distance squared is <span class="mathx">(Δ<i>x</i>)<sup>2</sup> + (Δ<i>y</i>)<sup>2</sup></span> or needs a square root, calculus problems start to feel arbitrary. Stewart is making sure the foundation is firm before the calculus chapters arrive.</p>
+
+          <h2>Step 1: write down the standard form</h2>
+          <p>Don't reach for a formula sheet. The standard form of a circle should be reflexive by the time you sit for AP Calculus:</p>
+          <p class="mathd mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></p>
+          <p>The pair <span class="mathx">(<i>h</i>, <i>k</i>)</span> is the center. The right-hand side is <span class="mathx"><i>r</i><sup>2</sup></span> — the radius squared, not the radius. That distinction matters because we are about to compute <span class="mathx"><i>r</i><sup>2</sup></span> directly from the distance formula and we do not need to take a square root to write the equation.</p>
+
+          <h2>Step 2: plug in the center</h2>
+          <p>Stewart gives us center <span class="mathx">(−1, 4)</span>. Substitute <span class="mathx"><i>h</i> = −1</span> and <span class="mathx"><i>k</i> = 4</span> into the template:</p>
+          <p class="mathd mathx">(<i>x</i> − (−1))<sup>2</sup> + (<i>y</i> − 4)<sup>2</sup> = <i>r</i><sup>2</sup></p>
+          <p>Clean up the double-negative in the first parenthesis. Subtracting <span class="mathx">−1</span> is the same as adding <span class="mathx">1</span>:</p>
+          <p class="mathd mathx">(<i>x</i> + 1)<sup>2</sup> + (<i>y</i> − 4)<sup>2</sup> = <i>r</i><sup>2</sup></p>
+          <p>The equation now describes every circle centered at <span class="mathx">(−1, 4)</span>, of any radius. We still need the size, which is where the point <span class="mathx">(3, −2)</span> comes in.</p>
+
+          <h2>Step 3: use the distance formula to get r²</h2>
+          <p>The radius is the distance from the center to any point on the circle. Stewart gives us one such point — <span class="mathx">(3, −2)</span>. The distance formula in two dimensions is:</p>
+          <p class="mathd mathx"><i>d</i> = √[(<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>)<sup>2</sup> + (<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>)<sup>2</sup>]</p>
+          <p>But we don't actually want <span class="mathx"><i>d</i></span> — we want <span class="mathx"><i>d</i><sup>2</sup></span>, because that is what plugs straight into the equation. Square both sides of the distance formula and the square root disappears:</p>
+          <p class="mathd mathx"><i>d</i><sup>2</sup> = (<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>)<sup>2</sup> + (<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>)<sup>2</sup></p>
+          <p>That is the move worth memorizing. The unsquared distance formula has a square root in it; the squared distance has no square root. When the problem hands you a circle, you want the squared form because the equation of a circle is built on <span class="mathx"><i>r</i><sup>2</sup></span>. Skipping the square-root-and-then-square-again roundtrip saves time and prevents arithmetic errors.</p>
+          <p>Substitute the center <span class="mathx">(−1, 4)</span> as <span class="mathx">(<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>)</span> and the point on the circle <span class="mathx">(3, −2)</span> as <span class="mathx">(<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>)</span>:</p>
+          <p class="mathd mathx"><i>r</i><sup>2</sup> = (3 − (−1))<sup>2</sup> + (−2 − 4)<sup>2</sup></p>
+          <p>Simplify each parenthesis carefully. <span class="mathx">3 − (−1) = 3 + 1 = 4</span>, and <span class="mathx">−2 − 4 = −6</span>:</p>
+          <p class="mathd mathx"><i>r</i><sup>2</sup> = 4<sup>2</sup> + (−6)<sup>2</sup> = 16 + 36 = 52</p>
+          <p>So <span class="mathx"><i>r</i><sup>2</sup> = 52</span>. Note that we never took a square root. We don't need to; the equation of the circle calls for <span class="mathx"><i>r</i><sup>2</sup></span> directly.</p>
+
+          <h2>Step 4: write the final equation</h2>
+          <p>Substitute <span class="mathx"><i>r</i><sup>2</sup> = 52</span> back into the equation we set up in Step 2:</p>
+          <p class="mathd"><span class="answer-box">(x + 1)<sup>2</sup> + (y − 4)<sup>2</sup> = 52</span></p>
+          <p>That is the answer Stewart is looking for. It tells you everything: center at <span class="mathx">(−1, 4)</span>, and the circle reaches out far enough to touch <span class="mathx">(3, −2)</span>. If a problem asks for the radius numerically, take the square root once at the end: <span class="mathx"><i>r</i> = √52 = √(4 · 13) = 2√13 ≈ 7.21</span>. The factored radical form <span class="mathx">2√13</span> is what graders prefer because it's exact.</p>
+
+          <h2>The three mistakes worth memorizing</h2>
+          <ul>
+            <li><strong>Sign-flipping the center inside the parenthesis.</strong> Standard form is <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup></span>. With <span class="mathx"><i>h</i> = −1</span>, the parenthesis becomes <span class="mathx">(<i>x</i> − (−1))<sup>2</sup> = (<i>x</i> + 1)<sup>2</sup></span>. Students who write <span class="mathx">(<i>x</i> − 1)<sup>2</sup></span> have moved the center to <span class="mathx">(+1, 4)</span> and the rest of the answer comes out wrong. Always read the plus sign inside a squared binomial as "minus negative."</li>
+            <li><strong>Taking an unnecessary square root.</strong> The equation of a circle uses <span class="mathx"><i>r</i><sup>2</sup></span>, not <span class="mathx"><i>r</i></span>. Compute <span class="mathx"><i>r</i><sup>2</sup></span> straight from the squared distance formula and plug it in. If you take the square root to find <span class="mathx"><i>r</i> = √52</span> and then square it again, you'll do the work twice and probably make an arithmetic slip. Skip that step.</li>
+            <li><strong>Confusing the two points.</strong> The distance formula gives the distance between two specific points: the center and the point on the circle. It does not matter which one you label <span class="mathx">(<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>)</span> because the differences are squared — but it does matter that you keep both coordinates of each point together. Mixing the x of one point with the y of another flips the geometry. Stack the two points vertically on scratch paper before you subtract.</li>
+          </ul>
+
+          <h2>How SOMATH teaches this problem</h2>
+          <p>At SOMATH we treat Q2 and Q3 together. Q2 builds the equation forward — center plus a point gives you <span class="mathx"><i>r</i><sup>2</sup></span> and you fill in the template. Q3 disassembles a general-form equation backward by completing the square. We drill them in pairs because students who can do both fluently never get confused about which version of the equation they are looking at. The standard form is the bridge: every circle problem on the AP Calc exam, the SHSAT, the SAT, and the in-class assessments at the New York City independent schools we serve maps to one of these two operations.</p>
+          <p>Our classroom on 226 W 79th St (Upper West Side, between Broadway and Amsterdam) runs small groups of three to five students with whiteboards on every wall. We don't hand out worksheet stacks. Each technique gets introduced with the why, then practiced on three increasingly hostile problems, then tied back to the calculus context where the student will meet it next. Stewart's Q2 takes ninety seconds in class; the lesson around it — the distance formula, the squared shortcut, the sign convention inside the parentheses, and the connection to vector magnitudes — takes about thirty minutes and pays off for the next two years.</p>
+
+          <h2>FAQ</h2>
+          <h3>What is the standard form of a circle?</h3>
+          <p>Standard form is <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span>, where <span class="mathx">(<i>h</i>, <i>k</i>)</span> is the center and <span class="mathx"><i>r</i></span> is the radius. The right-hand side is <span class="mathx"><i>r</i><sup>2</sup></span>, not <span class="mathx"><i>r</i></span> — a distinction that matters for both Q2 (where you compute <span class="mathx"><i>r</i><sup>2</sup></span> directly from a point) and Q3 (where you complete the square to recover it).</p>
+          <h3>Do I always need the distance formula on this kind of problem?</h3>
+          <p>Yes, in some form. If you are given the center and a point on the circle, the squared distance between them is <span class="mathx"><i>r</i><sup>2</sup></span>. You can write that out as the distance formula, or you can simply subtract the coordinates and square — same arithmetic, just less notation. Either way, the geometric idea is identical: the radius is the distance from the center to any point on the circle.</p>
+          <h3>How do you simplify sqrt(52)?</h3>
+          <p>Factor under the radical to look for perfect squares: <span class="mathx">52 = 4 · 13</span>, and <span class="mathx">4</span> is a perfect square. So <span class="mathx">√52 = √(4 · 13) = √4 · √13 = 2√13</span>. Numerically, <span class="mathx">2√13 ≈ 2 · 3.606 ≈ 7.21</span>. On exams that grade for exact answers, write <span class="mathx">2√13</span>. On problems that ask for a decimal, write <span class="mathx">7.21</span>.</p>
+          <h3>Will I see this exact problem type in AP Calculus?</h3>
+          <p>The exact form rarely appears in AP Calc multiple choice, but the underlying skill — applying the distance formula in squared form, manipulating <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup></span>-style templates, and recognizing conics from general or standard form — is embedded throughout free-response geometry-of-curves problems, parametric and polar conversions, and optimization. The Stewart diagnostic is intentionally upstream of all of that.</p>
+          <h3>What about Q1?</h3>
+          <p>Q1 of Stewart's analytic-geometry diagnostic asks for the equation of a line given a slope and a point — same idea (template plus given data), different geometric object. We have a full walkthrough of that one too, linked at the bottom of this post.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. AP Calculus, college calculus, pre-calc, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/analytic-geometry-circle-stewart-calculus">Analytic Geometry Diagnostic Q3 (Stewart Calculus 9e): Center and Radius of a Circle</a></li>
+            <li><a href="/posts/analytic-geometry-diagnostic-stewart-calculus">Analytic Geometry Diagnostic Q1 (Stewart Calculus 9e): Equation of a Line</a></li>
+            <li><a href="/posts/precalc-diagnostic-state-true-or-false-stewart-problem-10">Pre-Calc Diagnostic: State True or False (Stewart Problem 10)</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

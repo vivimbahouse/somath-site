@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Find the Domain: Rational, Cube Root &amp; Square Root Functions (Stewart Ch.1 Q3) | SOMATH NYC</title>
+    <meta name="description" content="Stewart Calculus Chapter 1, Question 3 — find the domain of three functions. (a) Rational f(x) = (2x+1)/(x²+x−2): exclude x = −2 and x = 1, domain (−∞, −2) ∪ (−2, 1) ∪ (1, ∞). (b) Cube root g(x) = ∛x/(x²+1): all real numbers. (c) Sum of square roots h(x) = √(4−x) + √(x²−1): (−∞, −1] ∪ [1, 4]. Full walkthrough from SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/domain-rational-cube-root-square-root-stewart-ch1-q3" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Find the Domain: Rational, Cube Root and Square Root Functions (Stewart Ch.1 Q3)" />
+    <meta property="og:description" content="Three domains, three rules. Exclude zeros of the denominator. Cube roots accept everything. Square root radicands must be ≥ 0 — and when there are two, intersect their domains. SOMATH UWS walkthrough." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/domain-rational-cube-root-square-root-stewart-ch1-q3" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/domain-rational-cube-root-square-root-stewart-ch1-q3/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-29" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Find the Domain (Stewart Ch.1 Q3)" />
+    <meta name="twitter:description" content="Three domain problems, three rules. (a) (−∞, −2) ∪ (−2, 1) ∪ (1, ∞). (b) All real numbers. (c) (−∞, −1] ∪ [1, 4]. SOMATH UWS." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/domain-rational-cube-root-square-root-stewart-ch1-q3/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Find the Domain: Rational, Cube Root, and Square Root Functions (Stewart Calculus Ch.1 Q3)",
+  "description": "Stewart Calculus Chapter 1 Question 3 — three domain problems covering the three rules every Precalc and AP Calc student needs: denominators can't be zero, cube roots accept all reals, and even-root radicands must be nonnegative. Final answers: (a) (−∞, −2) ∪ (−2, 1) ∪ (1, ∞); (b) all real numbers; (c) (−∞, −1] ∪ [1, 4].",
+  "image": "https://www.schoolofmath.us/assets/blog/domain-rational-cube-root-square-root-stewart-ch1-q3/cover.jpg",
+  "datePublished": "2026-05-29",
+  "dateModified": "2026-05-29",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/domain-rational-cube-root-square-root-stewart-ch1-q3"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do you find the domain of a rational function?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Set the denominator equal to zero, solve for x, and exclude those values. For Stewart Ch.1 Q3 part (a), the denominator x² + x − 2 factors as (x+2)(x−1), so x = −2 and x = 1 are excluded. The domain is everything else: (−∞, −2) ∪ (−2, 1) ∪ (1, ∞)." } },
+    { "@type": "Question", "name": "What is the domain of a cube root function?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The cube root is defined for every real number — positive, negative, and zero — because every real number has a unique real cube root. So a cube-root expression alone places no restrictions on x. For Stewart Ch.1 Q3 part (b), g(x) = ∛x divided by (x²+1) has no restrictions because the cube root accepts everything and x²+1 is always positive. Domain: all real numbers, written (−∞, ∞)." } },
+    { "@type": "Question", "name": "Why must square-root radicands be nonnegative?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because in the real number system, the square root of a negative number is not a real value. To keep the function real-valued, the expression under any even-index radical (square root, fourth root, etc.) must be ≥ 0. So when you see √(4 − x), you require 4 − x ≥ 0, which gives x ≤ 4." } },
+    { "@type": "Question", "name": "How do you find the domain when a function has TWO square roots?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Find the domain of each radical separately, then intersect the two conditions because both must hold simultaneously. For Stewart Ch.1 Q3 part (c), √(4 − x) requires x ≤ 4, and √(x² − 1) requires x² ≥ 1, which means x ≤ −1 or x ≥ 1. Intersecting gives (−∞, −1] ∪ [1, 4]." } },
+    { "@type": "Question", "name": "When do you use brackets versus parentheses in interval notation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use a square bracket when the endpoint is included (the function is defined at that point) and a parenthesis when it is excluded. Excluded points typically come from a denominator that would be zero or from a strict inequality. Infinity always uses a parenthesis because it is not a number that can be attained. For Stewart Ch.1 Q3 part (c), the domain (−∞, −1] ∪ [1, 4] uses brackets at −1, 1, and 4 because the function is defined at those points, but parentheses at −∞ and ∞." } }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Calculus &amp; Pre-Calc · Stewart Ch.1</p>
+      <h1 class="post__title">Find the Domain: Rational, Cube Root &amp; Square Root Functions (Stewart Ch.1 Q3)</h1>
+      <p class="post__dek">Stewart Ch.1 Q3 hands you three functions and asks for the domain of each. They are not chosen at random — each one drills a different rule. A rational function tests where the denominator vanishes. A cube root tests whether the student knows the difference between odd and even radicals. A sum of two square roots tests whether the student can intersect two conditions. Master these three reflexes and the entire chapter on functions becomes mechanical.</p>
+      <p class="post__meta"><time datetime="2026-05-29">2026-05-29</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/domain-rational-cube-root-square-root-stewart-ch1-q3/cover.jpg" alt="Stewart Calculus Chapter 1 Question 3 — find the domain of a rational function, a cube root over polynomial, and a sum of two square roots, fully worked at SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/bk4W1saPjgI?rel=0" title="Find the Domain (Rational, Cube Root, Square Root) | Stewart Calculus Ch.1 Q3 | SOMATH NYC" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=bk4W1saPjgI" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> (a) Domain of <span class="mathx"><i>f</i>(<i>x</i>) = (2<i>x</i> + 1) / (<i>x</i><sup>2</sup> + <i>x</i> − 2)</span> is <span class="answer-box">(−∞, −2) ∪ (−2, 1) ∪ (1, ∞)</span>. (b) Domain of <span class="mathx"><i>g</i>(<i>x</i>) = <sup>3</sup>√<i>x</i> / (<i>x</i><sup>2</sup> + 1)</span> is <span class="answer-box">(−∞, ∞)</span>. (c) Domain of <span class="mathx"><i>h</i>(<i>x</i>) = √(4 − <i>x</i>) + √(<i>x</i><sup>2</sup> − 1)</span> is <span class="answer-box">(−∞, −1] ∪ [1, 4]</span>.</p>
+
+          <h2>The three rules every domain problem reduces to</h2>
+          <p>Almost every "find the domain" question in Stewart Chapter 1 is built from exactly three building blocks. Memorize the three rules and the rest is bookkeeping.</p>
+          <ol>
+            <li><strong>Denominators cannot be zero.</strong> Any fraction, no matter how simple or how disguised, requires you to find the zeros of the denominator and exclude them from the domain.</li>
+            <li><strong>Even-index radicals require a nonnegative radicand.</strong> Square roots, fourth roots, sixth roots — any radical with an even index — needs the expression underneath to be greater than or equal to zero, because even roots of negatives are not real.</li>
+            <li><strong>Odd-index radicals are unrestricted.</strong> Cube roots, fifth roots, and any radical with an odd index accept every real number. They never restrict the domain on their own.</li>
+          </ol>
+          <p>When a function combines several of these, you find the domain of each piece and intersect — the function is defined exactly where every condition holds.</p>
+
+          <h2>(a) f(x) = (2x + 1) / (x² + x − 2)</h2>
+          <p>This is a rational function: a polynomial over a polynomial. Polynomials are defined for every real number, so the numerator never restricts the domain. The only restriction comes from the denominator, which is not allowed to be zero.</p>
+          <p>Set the denominator equal to zero:</p>
+          <p class="mathd"><span class="mathx"><i>x</i><sup>2</sup> + <i>x</i> − 2 = 0</span></p>
+          <p>Factor:</p>
+          <p class="mathd"><span class="mathx">(<i>x</i> + 2)(<i>x</i> − 1) = 0</span></p>
+          <p>So <span class="mathx"><i>x</i> = −2</span> or <span class="mathx"><i>x</i> = 1</span>. These two values are <em>excluded</em> from the domain. Every other real number is allowed.</p>
+          <p class="mathd"><span class="answer-box">Domain: (−∞, −2) ∪ (−2, 1) ∪ (1, ∞)</span></p>
+          <p>Each excluded value chops the real line into a new piece. Two exclusions means three pieces, joined with the union symbol. The parentheses (never brackets) at <span class="mathx">−2</span> and <span class="mathx">1</span> are non-negotiable: the function blows up at those points.</p>
+
+          <h2>(b) g(x) = ∛x / (x² + 1)</h2>
+          <p>Two pieces to check: the cube root in the numerator, and the polynomial in the denominator.</p>
+          <p><strong>Cube root in the numerator.</strong> Unlike the square root, the cube root accepts every real number. <span class="mathx"><sup>3</sup>√−8 = −2</span>, <span class="mathx"><sup>3</sup>√0 = 0</span>, <span class="mathx"><sup>3</sup>√8 = 2</span>. So this piece introduces no restriction.</p>
+          <p><strong>Polynomial in the denominator.</strong> We need <span class="mathx"><i>x</i><sup>2</sup> + 1 ≠ 0</span>. But <span class="mathx"><i>x</i><sup>2</sup> ≥ 0</span> for every real <span class="mathx"><i>x</i></span>, so <span class="mathx"><i>x</i><sup>2</sup> + 1 ≥ 1 &gt; 0</span> always. The denominator is never zero. No restriction from this piece either.</p>
+          <p class="mathd"><span class="answer-box">Domain: (−∞, ∞)</span></p>
+          <p>Stewart includes this part as a trap. Students who see a radical and a fraction default to writing complicated domain restrictions, when in fact this function is defined everywhere. The discipline is to check each rule honestly rather than pattern-match on the shape of the formula.</p>
+
+          <h2>(c) h(x) = √(4 − x) + √(x² − 1)</h2>
+          <p>This is the part that separates students who learned the rules from students who memorized examples. Two square roots are added together. Both have to be real for the sum to be real, so <em>both</em> radicands must be nonnegative simultaneously.</p>
+          <p><strong>First square root.</strong> Require <span class="mathx">4 − <i>x</i> ≥ 0</span>, which gives <span class="mathx"><i>x</i> ≤ 4</span>.</p>
+          <p><strong>Second square root.</strong> Require <span class="mathx"><i>x</i><sup>2</sup> − 1 ≥ 0</span>, which gives <span class="mathx"><i>x</i><sup>2</sup> ≥ 1</span>. Taking square roots (and tracking the absolute value) gives <span class="mathx">|<i>x</i>| ≥ 1</span>, which splits into two cases: <span class="mathx"><i>x</i> ≤ −1</span> or <span class="mathx"><i>x</i> ≥ 1</span>.</p>
+          <p><strong>Intersect.</strong> Combine <span class="mathx"><i>x</i> ≤ 4</span> with (<span class="mathx"><i>x</i> ≤ −1</span> or <span class="mathx"><i>x</i> ≥ 1</span>):</p>
+          <ul>
+            <li><span class="mathx"><i>x</i> ≤ 4</span> AND <span class="mathx"><i>x</i> ≤ −1</span> simplifies to <span class="mathx"><i>x</i> ≤ −1</span> (the stricter condition wins).</li>
+            <li><span class="mathx"><i>x</i> ≤ 4</span> AND <span class="mathx"><i>x</i> ≥ 1</span> simplifies to <span class="mathx">1 ≤ <i>x</i> ≤ 4</span>.</li>
+          </ul>
+          <p>Union the two cases:</p>
+          <p class="mathd"><span class="answer-box">Domain: (−∞, −1] ∪ [1, 4]</span></p>
+          <p>Brackets at <span class="mathx">−1</span>, <span class="mathx">1</span>, and <span class="mathx">4</span> because the function is <em>defined</em> at all three (the radicands are zero there, and <span class="mathx">√0 = 0</span> is a real number). Parenthesis at <span class="mathx">−∞</span> because infinity is never an attainable value.</p>
+
+          <h2>The three mistakes worth memorizing</h2>
+          <ul>
+            <li><strong>Forgetting that cube roots accept negatives.</strong> Students who learned the square-root rule first reflexively write <span class="mathx"><i>x</i> ≥ 0</span> for any radical. Cube root, fifth root, and every odd-index root are defined for all reals — no restriction. The rule lives in the index, not in the radical symbol.</li>
+            <li><strong>Unioning two conditions instead of intersecting.</strong> When a function adds two radicals, the domain is the intersection of where each is real, not the union. Writing the domain of part (c) as <span class="mathx">(−∞, 4] ∪ (−∞, −1] ∪ [1, ∞)</span> "covers all cases" but admits values like <span class="mathx"><i>x</i> = 5</span>, where <span class="mathx">√(4 − 5) = √−1</span> is not real.</li>
+            <li><strong>Bracket-vs-parenthesis at zero radicands.</strong> When a square root's radicand equals zero, the radical equals zero, which is a real number. The endpoint is <em>included</em>, so the bracket is square. Students who write <span class="mathx">(−∞, 4)</span> instead of <span class="mathx">(−∞, 4]</span> for <span class="mathx">√(4 − <i>x</i>)</span> are excluding a perfectly legal input.</li>
+          </ul>
+
+          <h2>How SOMATH teaches this problem</h2>
+          <p>We teach Stewart Ch.1 Q3 as a three-station drill: rational, cube root, double square root. Same picture every time — a function with one or more pieces, and a flowchart that says "denominator? exclude zeros. even radical? require ≥ 0. odd radical? skip." Students cycle through five functions per station, with progressively trickier denominators and radicands, until each rule is automatic. By the end of the lesson a student can find the domain of any Chapter 1 function in under a minute.</p>
+          <p>Our small-group classroom at 226 W 79th St (Upper West Side, between Broadway and Amsterdam) keeps groups of three to five students at whiteboards on every wall. Each rule gets the why, the how, and three increasingly hostile examples — including ones designed to trick students into pattern-matching. This problem is the gate every pre-calc and AP Calc student walks through at SOMATH before they touch limits.</p>
+
+          <h2>FAQ</h2>
+          <h3>What is the domain of a function?</h3>
+          <p>The domain is the set of all input values (typically <span class="mathx"><i>x</i></span>) for which the function produces a real output. For algebraic functions in Chapter 1 of Stewart, finding the domain is equivalent to spotting every operation that has a restriction (division by zero, even roots of negatives, log of nonpositives later in the textbook) and excluding the inputs that would violate those restrictions.</p>
+          <h3>Why does the cube root not restrict the domain when the square root does?</h3>
+          <p>Because the cube root has an <em>odd</em> index, and odd roots of negative numbers are well-defined real numbers. <span class="mathx"><sup>3</sup>√−8 = −2</span> because <span class="mathx">(−2)<sup>3</sup> = −8</span>. The square root has an <em>even</em> index, and there is no real number whose square is negative, so the square root of a negative input is not real. The same logic applies to every even root versus every odd root.</p>
+          <h3>How do I know when to write a bracket versus a parenthesis?</h3>
+          <p>Square bracket if the endpoint is in the domain — that is, the function is defined at exactly that input. Parenthesis if the endpoint is excluded, or if the endpoint is <span class="mathx">∞</span> or <span class="mathx">−∞</span> (which are not real numbers and cannot be attained). For Stewart Ch.1 Q3 part (c), the radicands are zero at <span class="mathx"><i>x</i> = −1</span>, <span class="mathx"><i>x</i> = 1</span>, and <span class="mathx"><i>x</i> = 4</span>, and <span class="mathx">√0 = 0</span> is real, so those endpoints get brackets.</p>
+          <h3>Will domain questions show up on the AP Calculus exam?</h3>
+          <p>Yes, directly and indirectly. AP Calc multiple-choice often asks for the domain of a function explicitly, but more often the domain appears as a setup step in a longer problem — defining the interval where a derivative is taken, where the Mean Value Theorem applies, or where a definite integral is being evaluated. A wrong domain at the start propagates into a wrong answer five steps later. Fluent domain work is one of the highest-leverage skills in the entire course.</p>
+          <h3>What is the next Stewart problem after this one?</h3>
+          <p>Stewart Ch.1 Q4 asks you to find the domain and sketch the graph for a piecewise-defined function. Same three rules, applied to each piece separately, and then the pieces are joined. We have walkthroughs of the surrounding problems linked below.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. AP Calculus, college calculus, pre-calc, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/difference-quotient-x-cubed-stewart-ch1-q2">Stewart Ch.1 Q2: Difference Quotient of f(x) = x³ at x = 2</a></li>
+            <li><a href="/posts/reading-function-graph-domain-range-stewart-ch1-q1">Stewart Ch.1 Q1: Reading a Function from Its Graph (f(−1), f(2), Zeros, Domain &amp; Range)</a></li>
+            <li><a href="/posts/coordinate-geometry-points-line-circle-stewart-q4">Stewart Q4: Two Points — Line, Midpoint, and Circle with AB as Diameter</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

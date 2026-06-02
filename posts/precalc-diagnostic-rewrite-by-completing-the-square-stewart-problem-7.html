@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7) | Pre-Calculus Tutoring NYC | SOMATH</title>
+    <meta name="description" content="Stewart Pre-Calculus Diagnostic Test, Problem 7 — two complete-the-square problems worked step by step. Rewrite x² + x + 1 into vertex form with a fractional half-coefficient, and 2x² − 12x + 11 with a leading coefficient that has to be factored out first. Taught the way we teach it at SOMATH, pre-calculus tutoring on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7)" />
+    <meta property="og:description" content="Stewart Pre-Calculus Diagnostic Test, Problem 7 — complete the square on x² + x + 1 and 2x² − 12x + 11, two cases that catch students: a fractional half-coefficient and a non-1 leading coefficient. SOMATH — pre-calculus tutoring UWS NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-22" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7)" />
+    <meta name="twitter:description" content="Two complete-the-square problems from Stewart's Pre-Calculus Diagnostic — handle a fractional half-coefficient, then factor out a non-1 leading coefficient. Vertex form, cleanly." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathx .sqrt { display: inline-block; position: relative; padding: 0 0.18em; }
+      .mathx .sqrt::before { content: '√'; font-size: 1.05em; }
+      .mathx .sqrt .rad { display: inline-block; border-top: 1.3px solid currentColor; padding: 0 0.15em; margin-left: -0.05em; }
+      .mathx .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.18em; line-height: 1.1; }
+      .mathx .frac > .num { display: block; border-bottom: 1.3px solid currentColor; padding: 0 0.35em 1px; }
+      .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
+      .mathx .op { padding: 0 0.18em; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .boxed { display: inline-block; border: 1.5px solid #0a3a5f; border-radius: 4px; padding: 2px 10px; margin: 0 2px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7)",
+  "description": "Stewart Pre-Calculus Diagnostic Test Problem 7 worked step by step. Two complete-the-square problems: x² + x + 1 (with a fractional half-coefficient) and 2x² − 12x + 11 (with a leading coefficient that has to be factored out before completing).",
+  "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7/cover.jpg",
+  "datePublished": "2026-05-22",
+  "dateModified": "2026-05-22",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What does it mean to complete the square?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Completing the square means rewriting a quadratic ax² + bx + c into the form a(x − h)² + k, called vertex form. Geometrically, you're literally completing a square: you take the linear term bx, split it in half so each half sits on one side of an x·x square, and add the missing corner piece (b/2)² to make it whole. To keep the expression equal you also subtract (b/2)² so nothing changes in value, only in form." } },
+    { "@type": "Question", "name": "Why do we take HALF the linear coefficient and square it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because (x + b/2)² expands to x² + bx + (b/2)². The middle term bx is what you started with, and (b/2)² is the corner piece that finishes the square. Half-it-and-square-it isn't a magic recipe — it's literally the constant that completes the geometric square whose two sides are x and x + b/2." } },
+    { "@type": "Question", "name": "Why do you factor out the leading coefficient first in part (b)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because completing the square only works directly on x² + bx — a leading coefficient of 1. When the quadratic starts with 2x² (or any a ≠ 1), you factor that a out of just the first two terms, leaving 2(x² − 6x) + 11. Now the inside is in standard complete-the-square form and you can apply the half-it-and-square-it move on the −6. Don't factor out of the constant — that creates fractions you don't need." } },
+    { "@type": "Question", "name": "When does completing the square actually get used?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It's the proof technique behind the quadratic formula — you can derive the formula by completing the square on ax² + bx + c = 0. It's how you find the vertex of any parabola (the h and k in y = a(x − h)² + k are the vertex coordinates). It's how you put conic sections — circles, ellipses, hyperbolas — into standard form. And in calculus it's a standard integration trick: 1/(x² + bx + c) becomes a clean arctangent or log integral only after you complete the square in the denominator." } },
+    { "@type": "Question", "name": "Is it OK that part (a) has a fraction inside the squared term?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — that's the correct answer. Whenever the linear coefficient b is odd, half of it is a fraction, and that fraction lives inside the parentheses. The result (x + 1/2)² + 3/4 is fully simplified vertex form. Don't try to clear the fraction by multiplying through — that changes the expression's value. Students sometimes panic at a fraction and assume they made a mistake. They didn't." } }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Pre-Calculus · Quadratics &amp; Vertex Form</p>
+      <h1 class="post__title">Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7)</h1>
+      <p class="post__dek">Two complete-the-square problems from Stewart's Pre-Calculus Diagnostic Test — rewrite x² + x + 1 into vertex form when the linear coefficient is odd (so half of it is a fraction), and rewrite 2x² − 12x + 11 when the leading coefficient isn't 1 (so it has to be factored out first). Same geometric idea both times, two different traps. Taught the way we teach it at SOMATH on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-05-22">2026-05-22</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7/cover.jpg" alt="Stewart Pre-Calculus Problem 7 problem card — Rewrite by completing the square: (a) x² + x + 1 and (b) 2x² − 12x + 11 — solved by SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/jx4NGaboLxA?rel=0" title="Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart #7)" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=jx4NGaboLxA" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> To complete the square on <span class="mathx"><i>x</i><sup>2</sup> + <i>x</i> + 1</span>, take half of the linear coefficient — half of 1 is <span class="mathx"><span class="frac"><span class="num">1</span><span class="den">2</span></span></span> — square it to get <span class="mathx"><span class="frac"><span class="num">1</span><span class="den">4</span></span></span>, then add and subtract it: <span class="mathx"><i>x</i><sup>2</sup> + <i>x</i> + <span class="frac"><span class="num">1</span><span class="den">4</span></span> + 1 − <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <span class="op">(</span><i>x</i> + <span class="frac"><span class="num">1</span><span class="den">2</span></span><span class="op">)</span><sup>2</sup> + <span class="frac"><span class="num">3</span><span class="den">4</span></span></span>. For <span class="mathx">2<i>x</i><sup>2</sup> − 12<i>x</i> + 11</span>, factor the leading 2 out of the first two terms first: <span class="mathx">2(<i>x</i><sup>2</sup> − 6<i>x</i>) + 11</span>, complete the square inside the parentheses with <span class="mathx">(−3)<sup>2</sup> = 9</span>, distribute the 2 carefully, and land on <span class="mathx">2(<i>x</i> − 3)<sup>2</sup> − 7</span>. Both are now in vertex form <span class="mathx"><i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i></span> and ready to be graphed, optimized, or integrated.</p>
+
+          <h2>The one move behind both parts: half-it, square-it</h2>
+          <p>Completing the square is a single geometric idea wearing different costumes. You start with <span class="mathx"><i>x</i><sup>2</sup> + <i>bx</i></span> — an <span class="mathx"><i>x</i></span>-by-<span class="mathx"><i>x</i></span> square with a <span class="mathx"><i>b</i></span>-by-<span class="mathx"><i>x</i></span> rectangle stuck to its side. You slice that rectangle down the middle so a <span class="mathx"><span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span></span>-by-<span class="mathx"><i>x</i></span> strip sits on each open edge of the square. There's one corner missing: a <span class="mathx"><span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span></span>-by-<span class="mathx"><span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span></span> tile. You add it to complete a full <span class="mathx">(<i>x</i> + <span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)</span>-by-<span class="mathx">(<i>x</i> + <span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)</span> square. Algebraically you added <span class="mathx">(<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span>, so you also subtract it to keep the expression equal. That's the whole technique. Once you see the picture, you never memorize the recipe again.</p>
+
+          <h2>(a) Complete the square: <span class="mathx"><i>x</i><sup>2</sup> + <i>x</i> + 1</span></h2>
+          <p>The linear coefficient is <span class="mathx"><i>b</i> = 1</span>. Half of 1 is <span class="mathx"><span class="frac"><span class="num">1</span><span class="den">2</span></span></span>, and <span class="mathx">(<span class="frac"><span class="num">1</span><span class="den">2</span></span>)<sup>2</sup> = <span class="frac"><span class="num">1</span><span class="den">4</span></span></span>. So you add <span class="mathx"><span class="frac"><span class="num">1</span><span class="den">4</span></span></span> to make a perfect square and subtract <span class="mathx"><span class="frac"><span class="num">1</span><span class="den">4</span></span></span> to keep the expression equal:</p>
+          <p class="mathd mathx"><i>x</i><sup>2</sup> + <i>x</i> + 1 = <i>x</i><sup>2</sup> + <i>x</i> + <span class="frac"><span class="num">1</span><span class="den">4</span></span> + 1 − <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <span class="op">(</span><i>x</i> + <span class="frac"><span class="num">1</span><span class="den">2</span></span><span class="op">)</span><sup>2</sup> + <span class="frac"><span class="num">3</span><span class="den">4</span></span></p>
+          <p>The first three terms collapse into the perfect square <span class="mathx">(<i>x</i> + <span class="frac"><span class="num">1</span><span class="den">2</span></span>)<sup>2</sup></span>, and the leftover constant is <span class="mathx">1 − <span class="frac"><span class="num">1</span><span class="den">4</span></span> = <span class="frac"><span class="num">3</span><span class="den">4</span></span></span>. Final answer: <span class="mathx boxed">(<i>x</i> + <span class="frac"><span class="num">1</span><span class="den">2</span></span>)<sup>2</sup> + <span class="frac"><span class="num">3</span><span class="den">4</span></span></span>.</p>
+          <p>The trap here is the fraction. When <span class="mathx"><i>b</i></span> is odd, half of it is a fraction, and that fraction has to live inside the parentheses. A student who tries to clear it by multiplying both sides by 4 is treating an expression like an equation — and changing its value. Vertex form with a fraction inside is fine. In fact, the vertex of <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup> + <i>x</i> + 1</span> is <span class="mathx">(−<span class="frac"><span class="num">1</span><span class="den">2</span></span>, <span class="frac"><span class="num">3</span><span class="den">4</span></span>)</span> — read straight off the boxed answer, no extra work.</p>
+
+          <h2>(b) Complete the square: <span class="mathx">2<i>x</i><sup>2</sup> − 12<i>x</i> + 11</span></h2>
+          <p>The leading coefficient isn't 1, so you can't complete the square directly. Factor 2 out of the first two terms only — leave the constant 11 alone:</p>
+          <p class="mathd mathx">2<i>x</i><sup>2</sup> − 12<i>x</i> + 11 = 2(<i>x</i><sup>2</sup> − 6<i>x</i>) + 11</p>
+          <p>Inside the parentheses, <span class="mathx"><i>b</i> = −6</span>. Half of −6 is −3, and <span class="mathx">(−3)<sup>2</sup> = 9</span>. Add 9 inside and immediately subtract 9 inside so nothing changes in value:</p>
+          <p class="mathd mathx">2(<i>x</i><sup>2</sup> − 6<i>x</i> + 9 − 9) + 11 = 2<span class="op">[</span>(<i>x</i> − 3)<sup>2</sup> − 9<span class="op">]</span> + 11</p>
+          <p>Now distribute the 2 carefully — this is where students slip up. The 2 multiplies both pieces inside the bracket: <span class="mathx">2 · (<i>x</i> − 3)<sup>2</sup></span> stays as <span class="mathx">2(<i>x</i> − 3)<sup>2</sup></span>, and <span class="mathx">2 · (−9) = −18</span>. Combine with the outside constant:</p>
+          <p class="mathd mathx">2(<i>x</i> − 3)<sup>2</sup> − 18 + 11 = <span class="boxed">2(<i>x</i> − 3)<sup>2</sup> − 7</span></p>
+          <p>The parabola <span class="mathx"><i>y</i> = 2<i>x</i><sup>2</sup> − 12<i>x</i> + 11</span> opens upward with vertex at <span class="mathx">(3, −7)</span>. The 2 out front tells you it's narrower than <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup></span> by a factor of 2 vertically.</p>
+
+          <h2>The two traps students fall into</h2>
+          <p><strong>Trap 1: forgetting to subtract what you added.</strong> When you complete the square you add <span class="mathx">(<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span> to make the perfect square. If you don't also subtract it, you've changed the value of the expression. The whole point is to rewrite it equivalently — same number, different form. Students who skip the subtraction step end up with a wrong vertex and a wrong parabola.</p>
+          <p><strong>Trap 2: forgetting to multiply through when you factored out a leading coefficient.</strong> In part (b), when you added 9 inside the parentheses, you didn't actually add 9 to the whole expression — you added <span class="mathx">2 · 9 = 18</span>, because the 2 outside multiplies everything inside. That's why you subtract 9 inside the parentheses too, not 9 outside. The cleanest way to avoid this is to keep the −9 inside the brackets as we did, then distribute the 2 at the very end.</p>
+
+          <h2>Why this technique matters past pre-calc</h2>
+          <p>Completing the square shows up everywhere downstream. It's the proof of the quadratic formula — apply the technique to <span class="mathx"><i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i> = 0</span> in general and the formula falls out. It's how you graph any parabola: vertex form <span class="mathx"><i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i></span> hands you the vertex <span class="mathx">(<i>h</i>, <i>k</i></span>) directly. It's how you put circles, ellipses, and hyperbolas into standard form so you can read off centers and radii. And in AP Calculus it's the trick that turns <span class="mathx">∫<span class="frac"><span class="num">1</span><span class="den"><i>x</i><sup>2</sup> + <i>bx</i> + <i>c</i></span></span> <i>dx</i></span> into a clean arctangent integral — but only after you complete the square in the denominator first. If a pre-calc student can do Problem 7 cold, they have one less thing to learn in Calc AB.</p>
+
+          <h2>How SOMATH teaches completing the square on the Upper West Side</h2>
+          <p>We teach the picture first, then the algebra. Every SOMATH pre-calc student spends one 60-minute session drawing the geometric square — the <span class="mathx"><i>x</i></span>-by-<span class="mathx"><i>x</i></span> tile, the two <span class="mathx"><span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span></span>-by-<span class="mathx"><i>x</i></span> strips, the missing <span class="mathx">(<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span> corner — before we ever write <span class="mathx">(<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span> as a recipe. After that, the algebra is just bookkeeping. From our classroom on 226 W 79th St we run small groups of 3–5 students, every lesson on whiteboards, every step shown out loud. We don't hand out worksheet stacks — we hand out one well-chosen problem at a time and watch how the student thinks about it. Every new student gets a free 60-minute evaluation and a written diagnostic within 48 hours, even if they don't enroll.</p>
+
+          <h2>FAQ</h2>
+          <h3>What does it mean to complete the square?</h3>
+          <p>Rewrite a quadratic <span class="mathx"><i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i></span> into vertex form <span class="mathx"><i>a</i>(<i>x</i> − <i>h</i>)<sup>2</sup> + <i>k</i></span>. Geometrically you're literally finishing a square: an <span class="mathx"><i>x</i></span>-by-<span class="mathx"><i>x</i></span> square with two strips on its sides, plus the missing corner <span class="mathx">(<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span>. Add it, subtract it to stay equivalent, and you're done.</p>
+          <h3>Why HALF the linear coefficient and squared?</h3>
+          <p>Because <span class="mathx">(<i>x</i> + <span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup> = <i>x</i><sup>2</sup> + <i>bx</i> + (<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span>. The middle term is what you have. The square term is what you want. The constant <span class="mathx">(<span class="frac"><span class="num"><i>b</i></span><span class="den">2</span></span>)<sup>2</sup></span> is the bridge between them.</p>
+          <h3>Why factor out the leading coefficient first?</h3>
+          <p>Completing the square only works directly on <span class="mathx"><i>x</i><sup>2</sup> + <i>bx</i></span> with a leading 1. Factor <span class="mathx"><i>a</i></span> out of the first two terms only, then apply the technique inside, then distribute <span class="mathx"><i>a</i></span> back at the end.</p>
+          <h3>When is completing the square actually used?</h3>
+          <p>Proving the quadratic formula, finding the vertex of a parabola, putting conic sections into standard form, and as the substitution step in many Calc II integrals like <span class="mathx">∫<span class="frac"><span class="num">1</span><span class="den"><i>x</i><sup>2</sup> + <i>bx</i> + <i>c</i></span></span> <i>dx</i></span>.</p>
+          <h3>Is a fraction inside the squared term a mistake?</h3>
+          <p>No — if <span class="mathx"><i>b</i></span> is odd, half of it is a fraction and that fraction belongs inside the parentheses. <span class="mathx">(<i>x</i> + <span class="frac"><span class="num">1</span><span class="den">2</span></span>)<sup>2</sup> + <span class="frac"><span class="num">3</span><span class="den">4</span></span></span> is the correct simplified vertex form.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. Pre-calculus, AP Calculus, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/precalc-diagnostic-rationalize-the-expression-stewart-problem-6">Pre-Calc Diagnostic: Rationalize the Expression (Stewart Problem 6)</a></li>
+            <li><a href="/posts/precalc-diagnostic-simplify-rational-expressions-stewart-problem-5">Pre-Calc Diagnostic: Simplify Rational Expressions (Stewart Problem 5)</a></li>
+            <li><a href="/posts/precalc-diagnostic-factor-each-expression-stewart-problem-4">Pre-Calc Diagnostic: Factor Each Expression (Stewart Problem 4)</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

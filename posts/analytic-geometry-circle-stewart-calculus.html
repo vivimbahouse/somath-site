@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Analytic Geometry Diagnostic Q3 (Stewart Calculus 9e): Center and Radius of a Circle | AP Calc Tutoring NYC | SOMATH</title>
+    <meta name="description" content="Stewart Calculus 9th Edition diagnostic test, analytic geometry Problem 3 — find the center and radius of the circle x^2 + y^2 - 6x + 10y + 9 = 0. Complete the square step by step, rewrite in standard form, and read off center (3, -5) and radius 5. Worked from SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/analytic-geometry-circle-stewart-calculus" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Analytic Geometry Diagnostic Q3 (Stewart Calculus 9e): Center and Radius of a Circle" />
+    <meta property="og:description" content="Find the center and radius of x^2 + y^2 - 6x + 10y + 9 = 0 by completing the square. Center (3, -5), radius 5 — every step explained the way SOMATH teaches it on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/analytic-geometry-circle-stewart-calculus" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/analytic-geometry-circle-stewart-calculus/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-28" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stewart Calculus 9e Diagnostic Q3: Center and Radius of a Circle" />
+    <meta name="twitter:description" content="Complete the square on x^2 + y^2 - 6x + 10y + 9 = 0 to get center (3, -5), radius 5. Walkthrough from SOMATH UWS." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/analytic-geometry-circle-stewart-calculus/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathx .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.18em; line-height: 1.1; }
+      .mathx .frac > .num { display: block; border-bottom: 1.3px solid currentColor; padding: 0 0.35em 1px; }
+      .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Analytic Geometry Diagnostic Q3 (Stewart Calculus 9e): Center and Radius of a Circle",
+  "description": "Stewart Calculus 9th Edition diagnostic test, analytic geometry Problem 3 — find the center and radius of the circle x^2 + y^2 - 6x + 10y + 9 = 0 by completing the square. Worked step by step.",
+  "image": "https://www.schoolofmath.us/assets/blog/analytic-geometry-circle-stewart-calculus/cover.jpg",
+  "datePublished": "2026-05-28",
+  "dateModified": "2026-05-28",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/analytic-geometry-circle-stewart-calculus"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What are the center and radius of x^2 + y^2 - 6x + 10y + 9 = 0?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Complete the square in x and y. Move the 9 to the right and group: (x^2 - 6x) + (y^2 + 10y) = -9. Add (6/2)^2 = 9 and (10/2)^2 = 25 to both sides: (x^2 - 6x + 9) + (y^2 + 10y + 25) = -9 + 9 + 25 = 25. Factor: (x - 3)^2 + (y + 5)^2 = 25. Compare with (x - h)^2 + (y - k)^2 = r^2 to read off center (3, -5) and radius r = 5." } },
+    { "@type": "Question", "name": "How do you complete the square on a circle equation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Group the x-terms and y-terms separately, move the constant to the right side, then take half of each linear coefficient, square it, and add that number to both sides. For x^2 - 6x, half of -6 is -3, squared is 9 — add 9 to both sides and the left becomes (x - 3)^2. Repeat for the y-terms. The constant you add on the right is what gives you r^2." } },
+    { "@type": "Question", "name": "Why is the radius 5 and not 25?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2, so the right-hand side equals r squared, not r. After completing the square we get 25 on the right, which means r^2 = 25 and therefore r = sqrt(25) = 5. Forgetting to take the square root of r^2 is the single most common error on this problem and it costs a full point on the diagnostic." } },
+    { "@type": "Question", "name": "Why is the center (3, -5) and not (-3, 5)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2. The center is (h, k) — the numbers being subtracted inside the parentheses, with their signs. Our equation factored to (x - 3)^2 + (y + 5)^2 = 25. The first parenthesis is x - 3, so h = 3. The second parenthesis is y + 5, which is the same as y - (-5), so k = -5. The center is therefore (3, -5)." } },
+    { "@type": "Question", "name": "Can a circle equation have no real solutions?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After completing the square, if the right-hand side is negative, there is no real circle — a real radius cannot square to a negative number. If the right-hand side is zero, the 'circle' collapses to a single point at (h, k). Only a positive right-hand side gives a true circle with a positive radius. Our problem lands at 25, which is positive, so we have an honest circle of radius 5." } }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Calculus &amp; Pre-Calc · Stewart 9e Diagnostic</p>
+      <h1 class="post__title">Analytic Geometry Diagnostic Q3 (Stewart Calculus 9e): Center and Radius of a Circle</h1>
+      <p class="post__dek">Stewart's Calculus 9th Edition diagnostic doesn't just check whether you remember the equation of a circle — Question 3 hands you the general form and asks you to recover its center and radius. The whole problem hinges on one technique that calculus students will reuse a hundred times: completing the square. We walk through it the way we teach it at SOMATH on the Upper West Side, with the sign traps, the half-square trick, and the final check that catches the most common mistake.</p>
+      <p class="post__meta"><time datetime="2026-05-28">2026-05-28</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/analytic-geometry-circle-stewart-calculus/cover.jpg" alt="Stewart Calculus 9e analytic geometry Problem 3 — center and radius of the circle x^2 + y^2 - 6x + 10y + 9 = 0, solved by completing the square at SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/RqxNW83RDao?rel=0" title="Stewart Calculus 9e Q3: Find the Center & Radius of a Circle | SOMATH NYC" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=RqxNW83RDao" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> The equation <span class="mathx"><i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> − 6<i>x</i> + 10<i>y</i> + 9 = 0</span> is the general form of a circle. Complete the square in both variables: add <span class="mathx">(6/2)<sup>2</sup> = 9</span> for the x-group and <span class="mathx">(10/2)<sup>2</sup> = 25</span> for the y-group, balancing both sides. The equation becomes <span class="mathx">(<i>x</i> − 3)<sup>2</sup> + (<i>y</i> + 5)<sup>2</sup> = 25</span>. Compare with standard form <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span> and read off the answers: <span class="answer-box">center (3, −5)</span> and <span class="answer-box">radius 5</span>. The whole problem is a single algebra move applied twice, with one final square root at the end.</p>
+
+          <h2>Why Stewart wants this problem on the diagnostic</h2>
+          <p>Completing the square is one of the few algebra techniques that shows up unchanged in calculus. It is how you derive the quadratic formula, how you integrate rational functions whose denominators are quadratics with no real roots, and how you finish off most conic-section problems before they ever reach the calculus chapter. If a student cannot complete the square fluently — meaning, can run the procedure without thinking through the why — limits of rational functions and arc-length integrals are going to feel artificially hard.</p>
+          <p>Stewart's Question 3 picks the cleanest possible test case. The coefficients on <span class="mathx"><i>x</i><sup>2</sup></span> and <span class="mathx"><i>y</i><sup>2</sup></span> are both 1, the linear coefficients are even integers, and the final answer comes out to a perfect-square radius. There is nothing exotic to navigate; the problem is purely a check on whether the procedure is reliable. At SOMATH we use this exact problem in placement sessions for the same reason — it's surgical.</p>
+
+          <h2>Step 1: rearrange and group</h2>
+          <p>Start with the equation given by Stewart:</p>
+          <p class="mathd mathx"><i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> − 6<i>x</i> + 10<i>y</i> + 9 = 0</p>
+          <p>Move the constant to the right-hand side, then group the x-terms and y-terms together:</p>
+          <p class="mathd mathx"><i>x</i><sup>2</sup> − 6<i>x</i> + <i>y</i><sup>2</sup> + 10<i>y</i> = −9</p>
+          <p>That rearrangement does the structural work. Each variable now sits in its own quadratic that we will complete separately. Notice that the leading coefficient on each squared term is already 1 — that is what makes this version of the problem clean. If those coefficients were anything else, the first move would be to divide through. They aren't, so we don't.</p>
+
+          <h2>Step 2: complete the square in x</h2>
+          <p>Look at <span class="mathx"><i>x</i><sup>2</sup> − 6<i>x</i></span>. To make this a perfect square, take half of the linear coefficient and square it:</p>
+          <p class="mathd mathx"><span class="frac"><span class="num">−6</span><span class="den">2</span></span> = −3, and (−3)<sup>2</sup> = 9</p>
+          <p>Adding 9 turns the x-group into a perfect square:</p>
+          <p class="mathd mathx"><i>x</i><sup>2</sup> − 6<i>x</i> + 9 = (<i>x</i> − 3)<sup>2</sup></p>
+          <p>The −3 inside the parenthesis is exactly the same as the half of the linear coefficient we just calculated. That is the whole trick — half of −6 is −3, and that −3 becomes the constant inside the squared binomial. To keep the equation balanced, whatever we add on the left also has to appear on the right.</p>
+
+          <h2>Step 3: complete the square in y</h2>
+          <p>Same routine on the y-group <span class="mathx"><i>y</i><sup>2</sup> + 10<i>y</i></span>:</p>
+          <p class="mathd mathx"><span class="frac"><span class="num">10</span><span class="den">2</span></span> = 5, and 5<sup>2</sup> = 25</p>
+          <p>Adding 25 completes the square in y:</p>
+          <p class="mathd mathx"><i>y</i><sup>2</sup> + 10<i>y</i> + 25 = (<i>y</i> + 5)<sup>2</sup></p>
+          <p>Half of <span class="mathx">+10</span> is <span class="mathx">+5</span>, and that <span class="mathx">+5</span> is the constant inside <span class="mathx">(<i>y</i> + 5)<sup>2</sup></span>. Again — to keep the equation balanced, the 25 we added on the left has to appear on the right as well.</p>
+
+          <h2>Step 4: balance both sides and combine</h2>
+          <p>We added 9 and 25 to the left. We have to add the same numbers to the right:</p>
+          <p class="mathd mathx">(<i>x</i><sup>2</sup> − 6<i>x</i> + 9) + (<i>y</i><sup>2</sup> + 10<i>y</i> + 25) = −9 + 9 + 25</p>
+          <p>The right-hand side collapses to a single number:</p>
+          <p class="mathd mathx">−9 + 9 + 25 = 25</p>
+          <p>And the two groups on the left fold into the binomials we built:</p>
+          <p class="mathd mathx">(<i>x</i> − 3)<sup>2</sup> + (<i>y</i> + 5)<sup>2</sup> = 25</p>
+          <p>That is the standard form of the circle.</p>
+
+          <h2>Step 5: read off the center and radius</h2>
+          <p>Compare with the canonical standard form:</p>
+          <p class="mathd mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></p>
+          <p>Line them up term by term. The first parenthesis is <span class="mathx">(<i>x</i> − 3)</span>, which matches <span class="mathx">(<i>x</i> − <i>h</i>)</span> when <span class="mathx"><i>h</i> = 3</span>. The second is <span class="mathx">(<i>y</i> + 5)</span>, which we have to rewrite as <span class="mathx">(<i>y</i> − (−5))</span> to match <span class="mathx">(<i>y</i> − <i>k</i>)</span> — that gives <span class="mathx"><i>k</i> = −5</span>. The right-hand side is <span class="mathx">25 = <i>r</i><sup>2</sup></span>, so <span class="mathx"><i>r</i> = 5</span>.</p>
+          <p class="mathd"><span class="answer-box">Center (3, −5) &nbsp; · &nbsp; Radius 5</span></p>
+          <p>The center sits in the fourth quadrant. The circle has radius 5, so it reaches from <span class="mathx"><i>x</i> = −2</span> to <span class="mathx"><i>x</i> = 8</span> horizontally and from <span class="mathx"><i>y</i> = −10</span> to <span class="mathx"><i>y</i> = 0</span> vertically. The y-axis itself (where <span class="mathx"><i>x</i> = 0</span>) cuts through the circle; the x-axis grazes it tangent at the very top. Both observations make a quick sanity check: if you sketched this circle and it didn't touch the x-axis, something went wrong in the algebra.</p>
+
+          <h2>The three mistakes worth memorizing</h2>
+          <ul>
+            <li><strong>Forgetting to take the square root of r<sup>2</sup>.</strong> Standard form gives you <span class="mathx"><i>r</i><sup>2</sup> = 25</span>, not <span class="mathx"><i>r</i> = 25</span>. Students who skip the square root write "radius 25" and lose the point. Pause and read the equation: it says <span class="mathx"><i>r</i><sup>2</sup></span>.</li>
+            <li><strong>Sign-flipping the center.</strong> Standard form is <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup></span>. The numbers in the center are the values being <em>subtracted</em> inside the parentheses. <span class="mathx">(<i>y</i> + 5)<sup>2</sup></span> means <span class="mathx"><i>k</i> = −5</span>, not <span class="mathx"><i>k</i> = 5</span>. Read every plus inside a squared binomial as "minus negative."</li>
+            <li><strong>Adding to one side only.</strong> Completing the square only works if both sides stay equal. If you add 9 and 25 to the left without adjusting the right, you've changed the equation. Every term added on the left has to land on the right too — that is where <span class="mathx"><i>r</i><sup>2</sup></span> comes from in the first place.</li>
+          </ul>
+
+          <h2>How SOMATH teaches completing the square</h2>
+          <p>At SOMATH we drill completing the square as a single procedure — half, square, add to both sides — and we run it on three settings before the student is allowed to use it on a circle: (1) factoring a quadratic that doesn't factor cleanly, (2) finding the vertex of a parabola from <span class="mathx"><i>y</i> = <i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i></span>, and (3) deriving the quadratic formula from scratch. By the time a student gets to Stewart's Q3, the procedure is reflexive. That matters because in calculus you will see it again — every time a partial-fractions denominator has no real roots, every time an integrand needs to be rewritten as a shifted quadratic to match an arctangent or arcsine pattern, and every time you set up the equation of a conic from its general form.</p>
+          <p>Our classroom on 226 W 79th St (Upper West Side, between Broadway and Amsterdam) runs small groups of three to five students with whiteboards on every wall. We don't do worksheet stacks. Each new technique gets introduced with the why, then practiced on three increasingly hostile problems, then connected to the calculus context where the student will meet it next. Stewart's Q3 takes one minute in class; the lesson around it takes thirty.</p>
+
+          <h2>FAQ</h2>
+          <h3>What is the standard form of a circle?</h3>
+          <p>The standard form is <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span>, where <span class="mathx">(<i>h</i>, <i>k</i>)</span> is the center and <span class="mathx"><i>r</i></span> is the radius. General form, by contrast, is <span class="mathx"><i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> + <i>Dx</i> + <i>Ey</i> + <i>F</i> = 0</span>. Completing the square is the bridge from general form to standard form.</p>
+          <h3>Why do you take half of the linear coefficient and square it?</h3>
+          <p>Because that is the constant that makes a quadratic into a perfect square. The expansion of <span class="mathx">(<i>x</i> + <i>a</i>)<sup>2</sup></span> is <span class="mathx"><i>x</i><sup>2</sup> + 2<i>ax</i> + <i>a</i><sup>2</sup></span>. The linear coefficient is <span class="mathx">2<i>a</i></span>, so to recover <span class="mathx"><i>a</i></span> from a quadratic you've been handed, take half of the linear coefficient. The constant you add to complete the square is <span class="mathx"><i>a</i><sup>2</sup></span> — that is, the half, then squared.</p>
+          <h3>How do you know if a general-form equation is actually a circle?</h3>
+          <p>Complete the square. If the right-hand side comes out positive, it is a circle of radius <span class="mathx">sqrt</span> of that number. If it comes out zero, the equation describes a single point (a "degenerate" circle). If it comes out negative, there is no real graph at all. Our Q3 lands at 25, which is positive, so we have a real circle of radius 5.</p>
+          <h3>Does the order of x and y matter?</h3>
+          <p>No. Addition is commutative, so it doesn't matter which group you complete first or which variable you write first inside standard form. We write x first by convention because that matches how <span class="mathx">(<i>h</i>, <i>k</i>)</span> is read — h is the x-coordinate of the center, k is the y-coordinate.</p>
+          <h3>Will this exact technique appear in AP Calculus?</h3>
+          <p>Yes. Completing the square is the standard preprocessing step before partial fractions when a denominator has no real roots, before <span class="mathx">arctan</span>-pattern integrals, and before sketching conics during transformations. The Stewart diagnostic is intentionally choosing it because the algebra in calculus assumes fluency here.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. AP Calculus, college calculus, pre-calc, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/analytic-geometry-diagnostic-stewart-calculus">Analytic Geometry Diagnostic Q1 (Stewart Calculus 9e): Equation of a Line</a></li>
+            <li><a href="/posts/precalc-diagnostic-state-true-or-false-stewart-problem-10">Pre-Calc Diagnostic: State True or False (Stewart Problem 10)</a></li>
+            <li><a href="/posts/precalc-diagnostic-solve-each-inequality-stewart-problem-9">Pre-Calc Diagnostic: Solve Each Inequality in Interval Notation (Stewart Problem 9)</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

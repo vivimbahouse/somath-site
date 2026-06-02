@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Calc Diagnostic: Solve Each Inequality in Interval Notation (Stewart Problem 9) | Pre-Calculus Tutoring NYC | SOMATH</title>
+    <meta name="description" content="Stewart Pre-Calculus Diagnostic Test, Problem 9 — five inequalities, five different techniques, every answer in clean interval notation. Linear with a sign flip, quadratic by factoring and sign chart, higher-degree product, absolute value, and a rational inequality with a critical-point and domain check. The one big-picture lesson every pre-calc student needs before AP Calc." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/precalc-diagnostic-solve-each-inequality-stewart-problem-9" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Calc Diagnostic: Solve Each Inequality in Interval Notation (Stewart Problem 9)" />
+    <meta property="og:description" content="Stewart Pre-Calculus Diagnostic Problem 9 — five inequalities, every answer in interval notation. Linear with a sign flip, quadratic by sign chart, higher-degree product, absolute value, and rational with critical-point analysis. SOMATH on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/precalc-diagnostic-solve-each-inequality-stewart-problem-9" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-each-inequality-stewart-problem-9/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Calc Diagnostic: Solve Each Inequality (Stewart Problem 9)" />
+    <meta name="twitter:description" content="Five inequalities, five techniques, every answer in interval notation. The diagnostic that predicts AP Calc readiness." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-each-inequality-stewart-problem-9/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathx .sqrt { display: inline-block; position: relative; padding: 0 0.18em; }
+      .mathx .sqrt::before { content: '√'; font-size: 1.05em; }
+      .mathx .sqrt .rad { display: inline-block; border-top: 1.3px solid currentColor; padding: 0 0.15em; margin-left: -0.05em; }
+      .mathx .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.18em; line-height: 1.1; }
+      .mathx .frac > .num { display: block; border-bottom: 1.3px solid currentColor; padding: 0 0.35em 1px; }
+      .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
+      .mathx .op { padding: 0 0.18em; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .boxed { display: inline-block; border: 1.5px solid #0a3a5f; border-radius: 4px; padding: 2px 10px; margin: 0 2px; }
+      .signchart { font-family: 'Cambria Math', Cambria, serif; display: block; margin: 14px auto 20px; padding: 10px 16px; background: #f5f1e8; border-left: 4px solid #d4a548; border-radius: 4px; max-width: 560px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Calc Diagnostic: Solve Each Inequality in Interval Notation (Stewart Problem 9)",
+  "description": "Stewart Pre-Calculus Diagnostic Test Problem 9 worked step by step. Five inequalities, five different techniques: linear compound with a sign flip, quadratic by factoring and sign chart, higher-degree product, absolute value, and rational with critical-point analysis. Every answer written in clean interval notation.",
+  "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-each-inequality-stewart-problem-9/cover.jpg",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-solve-each-inequality-stewart-problem-9"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Why do I flip the inequality when I divide by a negative?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because multiplying or dividing by a negative number reverses the order of every pair of real numbers. If a < b, then −a > −b. The same fact applies to an inequality: dividing both sides by a negative reverses the inequality sign. It is not a memorization trick — it is a consequence of how the real number line is ordered. In Problem 9(a), dividing the middle inequality −9 < −3x ≤ 12 by −3 reverses both inequalities to 3 > x ≥ −4, which we then rewrite in standard left-to-right order as −4 ≤ x < 3. Forgetting this flip is the single most common error on the entire diagnostic." } },
+    { "@type": "Question", "name": "How do I write an inequality answer in interval notation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use a square bracket [ or ] when the endpoint is included (≤ or ≥), and a round parenthesis ( or ) when the endpoint is excluded (< or >). Infinity always gets a parenthesis because you cannot include infinity. For a set that is the union of two disjoint intervals — for example, all x less than −2 or greater than 4 — write each interval separately and join them with the union symbol ∪: (−∞, −2) ∪ (4, ∞). Always write the smaller number on the left and the larger on the right." } },
+    { "@type": "Question", "name": "When do I need a sign chart instead of just factoring?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Anytime you have a polynomial inequality with more than one root or any rational inequality, you should draw a sign chart. The sign of a product is determined by how many of its factors are negative — once you mark each root on a number line and test the sign of every factor in each interval, the answer falls out. For x(x − 1)(x + 2) > 0 in Problem 9(c), the roots are −2, 0, 1, which carve the number line into four intervals, and the product alternates sign across them. The answer is the union of the intervals where the product is positive." } },
+    { "@type": "Question", "name": "How is a rational inequality different from a rational equation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You cannot multiply both sides of a rational inequality by the denominator the way you can with a rational equation, because the denominator may be negative — and if it is, the inequality flips, and if it changes sign across the relevant interval, the inequality flips partway through. The safe move is to bring everything to one side, combine over a common denominator, and analyze the sign of the resulting single rational expression using its zeros and undefined points as critical points. In Problem 9(e), we rewrite (2x − 3)/(x + 1) ≤ 1 as (x − 4)/(x + 1) ≤ 0, then test signs around x = −1 (undefined) and x = 4 (zero) to get (−1, 4]." } },
+    { "@type": "Question", "name": "Why does the absolute value inequality |x − 4| < 3 unpack into a compound inequality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "|x − 4| represents the distance from x to 4 on the number line, and saying that distance is less than 3 is exactly the statement that x lies within 3 units of 4 — in other words, between 1 and 7. Formally, |A| < B (with B positive) is equivalent to −B < A < B. We unpack |x − 4| < 3 as −3 < x − 4 < 3, then add 4 to all three parts to get 1 < x < 7, which in interval notation is (1, 7). The rule reverses for greater-than absolute value inequalities like |A| > B, which split into A < −B or A > B and give a union of two rays." } }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Pre-Calculus · Inequality-Solving Toolkit</p>
+      <h1 class="post__title">Pre-Calc Diagnostic: Solve Each Inequality in Interval Notation (Stewart Problem 9)</h1>
+      <p class="post__dek">Five inequalities, five different techniques, every answer written in clean interval notation. The companion diagnostic to Problem 8 — and arguably the more important one, because inequality reasoning is what AP Calculus uses to define increasing/decreasing intervals, concavity, and where a function is positive or negative. Linear with a sign flip, quadratic by factoring and sign chart, higher-degree product, absolute value as distance, and rational with a critical-point and domain check. Taught the way we teach it at SOMATH on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-05-26">2026-05-26</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/precalc-diagnostic-solve-each-inequality-stewart-problem-9/cover.jpg" alt="Stewart Pre-Calculus Problem 9 problem card — Solve each inequality, parts (a) through (e), with answers in interval notation — solved by SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/JsX1rSDticM?rel=0" title="Pre-Calc Diagnostic: Solve Each Inequality (Stewart #9)" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=JsX1rSDticM" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> Stewart's Problem 9 is the inequality companion to Problem 8 — five inequalities, five shapes, five first moves, and every answer written in interval notation: <span class="mathx">(a) −4 &lt; 5 − 3<i>x</i> ≤ 17</span> is a linear compound inequality with a sign flip when dividing by <span class="mathx">−3</span> (<span class="mathx boxed">[−4, 3)</span>); <span class="mathx">(b) <i>x</i><sup>2</sup> &lt; 2<i>x</i> + 8</span> is a quadratic, rewrite as <span class="mathx"><i>x</i><sup>2</sup> − 2<i>x</i> − 8 &lt; 0</span>, factor, and test (<span class="mathx boxed">(−2, 4)</span>); <span class="mathx">(c) <i>x</i>(<i>x</i> − 1)(<i>x</i> + 2) &gt; 0</span> is a higher-degree product, draw a sign chart (<span class="mathx boxed">(−2, 0) ∪ (1, ∞)</span>); <span class="mathx">(d) |<i>x</i> − 4| &lt; 3</span> is an absolute value, unpack as a compound inequality (<span class="mathx boxed">(1, 7)</span>); and <span class="mathx">(e) <span class="frac"><span class="num">2<i>x</i> − 3</span><span class="den"><i>x</i> + 1</span></span> ≤ 1</span> is a rational inequality, bring to one side and find critical points (<span class="mathx boxed">(−1, 4]</span>). Every answer is written with brackets/parentheses chosen by whether each endpoint is included.</p>
+
+          <h2>The interval notation cheat sheet — the part every student should have automatic</h2>
+          <p>Before any algebra, every pre-calc student needs four conventions memorized:</p>
+          <ul>
+            <li><strong>Square bracket</strong> <span class="mathx">[</span> or <span class="mathx">]</span> means the endpoint is <em>included</em> — corresponds to <span class="mathx">≤</span> or <span class="mathx">≥</span>.</li>
+            <li><strong>Round parenthesis</strong> <span class="mathx">(</span> or <span class="mathx">)</span> means the endpoint is <em>excluded</em> — corresponds to <span class="mathx">&lt;</span> or <span class="mathx">&gt;</span>.</li>
+            <li><strong>Infinity</strong> <span class="mathx">∞</span> always gets a parenthesis. You cannot include infinity.</li>
+            <li><strong>Disjoint intervals</strong> are joined with the union symbol <span class="mathx">∪</span>. The smaller number always goes on the left.</li>
+          </ul>
+          <p>Mixing up <span class="mathx">(</span> and <span class="mathx">[</span> at an endpoint is the most common error on this entire problem — and it almost always loses the full point on AP Calc free-response when the question asks for an interval of increase or a domain. Get the brackets right.</p>
+
+          <h2>(a) Linear compound inequality with a sign flip: <span class="mathx">−4 &lt; 5 − 3<i>x</i> ≤ 17</span></h2>
+          <p>A compound inequality is two inequalities chained together. The strategy is to isolate <span class="mathx"><i>x</i></span> in the middle by applying the same operation to all three parts. Start by subtracting <span class="mathx">5</span> everywhere:</p>
+          <p class="mathd mathx">−4 − 5 &lt; −3<i>x</i> ≤ 17 − 5</p>
+          <p class="mathd mathx">−9 &lt; −3<i>x</i> ≤ 12</p>
+          <p>Now divide all three parts by <span class="mathx">−3</span>. <strong>Because we divided by a negative, both inequality signs flip</strong>:</p>
+          <p class="mathd mathx">3 &gt; <i>x</i> ≥ −4</p>
+          <p>Rewrite in the usual left-to-right small-to-large order:</p>
+          <p class="mathd mathx">−4 ≤ <i>x</i> &lt; 3</p>
+          <p class="mathd mathx"><span class="boxed">[−4, 3)</span></p>
+          <p>Square bracket on <span class="mathx">−4</span> because the original was <span class="mathx">≤</span> after flipping (an <span class="mathx">=</span> case is allowed). Parenthesis on <span class="mathx">3</span> because the original was strict <span class="mathx">&lt;</span> after flipping (<span class="mathx">5 − 3<i>x</i></span> can never quite equal <span class="mathx">−4</span> under a strict inequality, which corresponds to <span class="mathx"><i>x</i></span> never quite equaling <span class="mathx">3</span>). The sign-flip rule is the single most-cited reason for lost points on the inequality section. Drill it.</p>
+
+          <h2>(b) Quadratic by factoring and sign analysis: <span class="mathx"><i>x</i><sup>2</sup> &lt; 2<i>x</i> + 8</span></h2>
+          <p>Never solve a quadratic inequality by "doing the same thing to both sides." Always move everything to one side so you have an expression compared to zero:</p>
+          <p class="mathd mathx"><i>x</i><sup>2</sup> − 2<i>x</i> − 8 &lt; 0</p>
+          <p>Factor. Two integers that multiply to <span class="mathx">−8</span> and add to <span class="mathx">−2</span>: <span class="mathx">−4</span> and <span class="mathx">+2</span>.</p>
+          <p class="mathd mathx">(<i>x</i> − 4)(<i>x</i> + 2) &lt; 0</p>
+          <p>The product of two factors is negative exactly when the two factors have <em>opposite</em> signs. The roots <span class="mathx">−2</span> and <span class="mathx">4</span> split the number line into three regions; the product is positive on the outside intervals and negative on the middle one.</p>
+          <p class="signchart mathx">(<i>x</i> − 4): &nbsp; − − − − − &nbsp; 0 &nbsp; + + + + +<br />(<i>x</i> + 2): &nbsp; − − − &nbsp; 0 &nbsp; + + + + + + + + +<br />product: &nbsp; &nbsp; + + + &nbsp; 0 &nbsp; − − − &nbsp; 0 &nbsp; + + + + +<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; −2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4</p>
+          <p>We want the product less than zero — the middle interval. The endpoints are <em>not</em> included because the inequality is strict.</p>
+          <p class="mathd mathx"><span class="boxed">(−2, 4)</span></p>
+          <p>Pictorially: the parabola <span class="mathx"><i>y</i> = (<i>x</i> − 4)(<i>x</i> + 2)</span> opens upward and dips below the <span class="mathx"><i>x</i></span>-axis between its two roots. That dip <em>is</em> the answer.</p>
+
+          <h2>(c) Higher-degree product with a sign chart: <span class="mathx"><i>x</i>(<i>x</i> − 1)(<i>x</i> + 2) &gt; 0</span></h2>
+          <p>Three factors, three roots: <span class="mathx"><i>x</i> = −2, 0, 1</span>. The number line splits into four intervals. The sign of each factor flips at its own root, so the product's sign alternates across the intervals.</p>
+          <p class="signchart mathx">(<i>x</i> + 2): &nbsp; − − &nbsp; 0 &nbsp; + + + + + + + + + + + + + + +<br />&nbsp; &nbsp; <i>x</i>: &nbsp; − − − − − − − − &nbsp; 0 &nbsp; + + + + + + + +<br />(<i>x</i> − 1): &nbsp; − − − − − − − − − − − − − &nbsp; 0 &nbsp; + + +<br />product: &nbsp; − − &nbsp; 0 &nbsp; + + + + + &nbsp; 0 &nbsp; − − − − &nbsp; 0 &nbsp; + + +<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; −2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0 &nbsp; &nbsp; &nbsp; &nbsp; 1</p>
+          <p>We want the product strictly greater than zero, so we take the two intervals where the product is positive. Endpoints are excluded because of strict <span class="mathx">&gt;</span>.</p>
+          <p class="mathd mathx"><span class="boxed">(−2, 0) ∪ (1, ∞)</span></p>
+          <p>The shortcut once you've drawn enough of these: count the negatives in each interval. An even number of negative factors gives a positive product; odd gives negative. From left to right starting at <span class="mathx">−∞</span>, all three factors are negative (three negatives → negative); cross <span class="mathx">−2</span>, now two negatives → positive; cross <span class="mathx">0</span>, one negative → negative; cross <span class="mathx">1</span>, zero negatives → positive. Same answer, faster.</p>
+
+          <h2>(d) Absolute value as distance: <span class="mathx">|<i>x</i> − 4| &lt; 3</span></h2>
+          <p>Read the inequality as a distance statement: <span class="mathx">|<i>x</i> − 4|</span> is the distance from <span class="mathx"><i>x</i></span> to <span class="mathx">4</span> on the number line, and we want that distance to be less than <span class="mathx">3</span>. So <span class="mathx"><i>x</i></span> lies within <span class="mathx">3</span> units of <span class="mathx">4</span> — between <span class="mathx">1</span> and <span class="mathx">7</span>. Formally, <span class="mathx">|<i>A</i>| &lt; <i>B</i></span> (with <span class="mathx"><i>B</i> &gt; 0</span>) unpacks as the compound inequality <span class="mathx">−<i>B</i> &lt; <i>A</i> &lt; <i>B</i></span>:</p>
+          <p class="mathd mathx">−3 &lt; <i>x</i> − 4 &lt; 3</p>
+          <p>Add <span class="mathx">4</span> to all three parts:</p>
+          <p class="mathd mathx">1 &lt; <i>x</i> &lt; 7</p>
+          <p class="mathd mathx"><span class="boxed">(1, 7)</span></p>
+          <p>Both endpoints excluded because of strict <span class="mathx">&lt;</span>. The mirror rule is worth memorizing alongside this one: <span class="mathx">|<i>A</i>| &gt; <i>B</i></span> splits into <span class="mathx"><i>A</i> &lt; −<i>B</i></span> or <span class="mathx"><i>A</i> &gt; <i>B</i></span>, which gives a union of two rays heading outward to infinity — not a single bounded interval. Less-than absolute value gives a bounded interval; greater-than gives the complement.</p>
+
+          <h2>(e) Rational inequality with a critical-point and domain check: <span class="mathx"><span class="frac"><span class="num">2<i>x</i> − 3</span><span class="den"><i>x</i> + 1</span></span> ≤ 1</span></h2>
+          <p>The single most-trapped move on this entire problem: students multiply both sides by <span class="mathx"><i>x</i> + 1</span> to clear the denominator. <strong>Do not do this.</strong> The sign of <span class="mathx"><i>x</i> + 1</span> depends on <span class="mathx"><i>x</i></span> — sometimes positive, sometimes negative — so the inequality may or may not flip, and you cannot tell which without already knowing where <span class="mathx"><i>x</i></span> lives. Instead, bring everything to one side and combine over a common denominator:</p>
+          <p class="mathd mathx"><span class="frac"><span class="num">2<i>x</i> − 3</span><span class="den"><i>x</i> + 1</span></span> − 1 ≤ 0</p>
+          <p class="mathd mathx"><span class="frac"><span class="num">2<i>x</i> − 3 − (<i>x</i> + 1)</span><span class="den"><i>x</i> + 1</span></span> ≤ 0 &nbsp; ⟹ &nbsp; <span class="frac"><span class="num"><i>x</i> − 4</span><span class="den"><i>x</i> + 1</span></span> ≤ 0</p>
+          <p>Now we have a single rational expression compared to zero. Identify the critical points: the zero of the numerator gives <span class="mathx"><i>x</i> = 4</span>, and the zero of the denominator gives <span class="mathx"><i>x</i> = −1</span> (and at that point the expression is <em>undefined</em>, so it can never be included in the answer). These two critical points split the number line into three intervals.</p>
+          <p class="signchart mathx">(<i>x</i> − 4): &nbsp; − − − − − − − − − − − − − &nbsp; 0 &nbsp; + + +<br />(<i>x</i> + 1): &nbsp; − − &nbsp; 0 &nbsp; + + + + + + + + + + + + + + +<br />ratio: &nbsp; &nbsp; &nbsp; + + &nbsp;und &nbsp; − − − − − − − &nbsp; 0 &nbsp; + + + +<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; −1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 4</p>
+          <p>We want the ratio less than or equal to zero. The middle interval gives the ratio negative, and at <span class="mathx"><i>x</i> = 4</span> the ratio equals zero — which <em>is</em> allowed because of <span class="mathx">≤</span>. At <span class="mathx"><i>x</i> = −1</span> the ratio is undefined, so that endpoint is excluded no matter what:</p>
+          <p class="mathd mathx"><span class="boxed">(−1, 4]</span></p>
+          <p>Parenthesis on <span class="mathx">−1</span> because the expression is undefined there. Square bracket on <span class="mathx">4</span> because the numerator is zero (so the whole fraction equals zero) and the inequality allows equality. This bracket-choice logic is exactly what AP Calc graders look for when they ask for "the interval where <span class="mathx"><i>f</i>'(<i>x</i>) ≤ 0</span>" — open vs. closed endpoints are graded individually.</p>
+
+          <h2>The one big-picture lesson: every inequality answer is a sign analysis</h2>
+          <p>Every problem on Stewart's diagnostic Problem 9 reduces to the same underlying question: where is some expression positive, negative, or zero? Once a pre-calc student internalizes that and gets fluent at building a quick sign chart, every inequality on the test — linear, polynomial, rational, absolute value — becomes routine. The five shapes worth memorizing:</p>
+          <ul>
+            <li><strong>Linear inequality (or compound):</strong> isolate <span class="mathx"><i>x</i></span> like an equation, but flip every sign when you multiply or divide by a negative.</li>
+            <li><strong>Polynomial inequality:</strong> move everything to one side, factor, find the roots, build a sign chart, take the intervals matching the inequality direction.</li>
+            <li><strong>Higher-degree product:</strong> same as above — count negative factors in each region as a sign-chart shortcut.</li>
+            <li><strong>Absolute value:</strong> <span class="mathx">|<i>A</i>| &lt; <i>B</i></span> → compound inequality (<em>bounded</em>). <span class="mathx">|<i>A</i>| &gt; <i>B</i></span> → union of two rays (<em>unbounded</em>).</li>
+            <li><strong>Rational inequality:</strong> NEVER multiply both sides by the denominator. Bring to one side, combine over a common denominator, identify zeros and undefined points as critical points, build a sign chart, choose intervals.</li>
+          </ul>
+          <p>These five patterns cover everything AP Calc AB and BC test on inequality reasoning — domains, intervals of increase and decrease, concavity intervals, where a function is positive or negative. A pre-calc student who has them automatic walks into Calc with a real advantage.</p>
+
+          <h2>How SOMATH teaches the inequality toolkit on the Upper West Side</h2>
+          <p>We start every new pre-calc student with a diagnostic identical in structure to Stewart's. Five inequalities of different shapes, no calculator, no help. Then we sit with the student and ask — <em>before they pick up a pencil</em> — what shape each one is, what the first move is, and how the answer should be written. The bracket discipline is graded as strictly as the algebra. From our classroom on 226 W 79th St we run small groups of 3–5 students, every lesson on whiteboards, every sign chart drawn out loud. Every new student gets a free 60-minute evaluation and a written diagnostic within 48 hours, even if they don't enroll.</p>
+
+          <h2>FAQ</h2>
+          <h3>Why flip the sign when dividing by a negative?</h3>
+          <p>Because multiplying or dividing by a negative reverses the order of every pair of real numbers. <span class="mathx"><i>a</i> &lt; <i>b</i></span> implies <span class="mathx">−<i>a</i> &gt; −<i>b</i></span>.</p>
+          <h3>How do I write an answer in interval notation?</h3>
+          <p>Square bracket if the endpoint is included (<span class="mathx">≤</span> or <span class="mathx">≥</span>), parenthesis if excluded (<span class="mathx">&lt;</span>, <span class="mathx">&gt;</span>, or infinity). Disjoint intervals joined with <span class="mathx">∪</span>.</p>
+          <h3>When do I need a sign chart?</h3>
+          <p>Anytime you have a polynomial inequality with more than one root, or any rational inequality. The sign chart determines which intervals satisfy the inequality.</p>
+          <h3>How is a rational inequality different from a rational equation?</h3>
+          <p>You cannot multiply by the denominator on a rational inequality, because the denominator's sign may change. Bring to one side, combine over a common denominator, then sign-chart.</p>
+          <h3>Why does <span class="mathx">|<i>x</i> − 4| &lt; 3</span> unpack into a compound inequality?</h3>
+          <p>Because <span class="mathx">|<i>x</i> − 4|</span> is the distance from <span class="mathx"><i>x</i></span> to <span class="mathx">4</span>, and "distance less than 3" means <span class="mathx"><i>x</i></span> is between <span class="mathx">1</span> and <span class="mathx">7</span>.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. Pre-calculus, AP Calculus, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/precalc-diagnostic-solve-the-equation-stewart-problem-8">Pre-Calc Diagnostic: Solve the Equation — 7 Techniques (Stewart Problem 8)</a></li>
+            <li><a href="/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7">Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7)</a></li>
+            <li><a href="/posts/precalc-diagnostic-rationalize-the-expression-stewart-problem-6">Pre-Calc Diagnostic: Rationalize the Expression (Stewart Problem 6)</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

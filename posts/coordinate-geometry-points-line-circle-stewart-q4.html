@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Coordinate Geometry with Two Points: Line, Midpoint &amp; Circle (Stewart 9e Q4) | SOMATH NYC</title>
+    <meta name="description" content="Stewart Calculus 9th Edition diagnostic Q4 — given A(-7, 4) and B(5, -12), find the slope, line equation, intercepts, midpoint, distance, perpendicular bisector, and the equation of the circle with AB as a diameter. Answer (x+1)^2 + (y+4)^2 = 100. Worked from SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/coordinate-geometry-points-line-circle-stewart-q4" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Coordinate Geometry with Two Points (Stewart Calculus 9e Q4)" />
+    <meta property="og:description" content="A(-7, 4) and B(5, -12) — slope, line, intercepts, midpoint, distance, perpendicular bisector, and circle with AB as diameter. Full walkthrough from SOMATH UWS." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/coordinate-geometry-points-line-circle-stewart-q4" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/coordinate-geometry-points-line-circle-stewart-q4/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-29" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stewart Calculus 9e Diagnostic Q4: Two Points, One Line, One Circle" />
+    <meta name="twitter:description" content="A(-7, 4) and B(5, -12). Slope -4/3. Midpoint (-1, -4). AB = 20. Circle (x+1)^2 + (y+4)^2 = 100. SOMATH UWS walkthrough." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/coordinate-geometry-points-line-circle-stewart-q4/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathx .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.18em; line-height: 1.1; }
+      .mathx .frac > .num { display: block; border-bottom: 1.3px solid currentColor; padding: 0 0.35em 1px; }
+      .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Coordinate Geometry with Two Points: Line, Midpoint and Circle (Stewart Calculus 9e Q4)",
+  "description": "Stewart Calculus 9th Edition diagnostic Q4 — given A(-7, 4) and B(5, -12), find slope, line, intercepts, midpoint, distance, perpendicular bisector, and the circle with AB as diameter. Final circle (x+1)^2 + (y+4)^2 = 100.",
+  "image": "https://www.schoolofmath.us/assets/blog/coordinate-geometry-points-line-circle-stewart-q4/cover.jpg",
+  "datePublished": "2026-05-29",
+  "dateModified": "2026-05-29",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/coordinate-geometry-points-line-circle-stewart-q4"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the slope of the line through A(-7, 4) and B(5, -12)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Slope m = (y2 - y1) / (x2 - x1) = (-12 - 4) / (5 - (-7)) = -16 / 12 = -4/3. The line falls 4 units for every 3 units it moves right." } },
+    { "@type": "Question", "name": "What is the midpoint of segment AB with A(-7, 4) and B(5, -12)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Midpoint M = ((x1 + x2)/2, (y1 + y2)/2) = ((-7 + 5)/2, (4 + (-12))/2) = (-1, -4). Average the x-coordinates, then average the y-coordinates." } },
+    { "@type": "Question", "name": "What is the length of segment AB from A(-7, 4) to B(5, -12)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "By the distance formula, AB = sqrt((5 - (-7))^2 + (-12 - 4)^2) = sqrt(144 + 256) = sqrt(400) = 20. The segment is exactly 20 units long." } },
+    { "@type": "Question", "name": "How do you find the equation of the perpendicular bisector of AB?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The perpendicular bisector passes through the midpoint M(-1, -4) and has slope equal to the negative reciprocal of the slope of AB. Slope of AB is -4/3, so the perpendicular slope is 3/4. In point-slope form: y + 4 = (3/4)(x + 1), which simplifies to y = (3/4)x - 13/4." } },
+    { "@type": "Question", "name": "What is the equation of the circle with AB as a diameter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "When AB is the diameter, the center of the circle is the midpoint M(-1, -4), and the radius is half the length of AB. AB = 20, so r = 10 and r^2 = 100. The equation is (x + 1)^2 + (y + 4)^2 = 100." } }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Calculus &amp; Pre-Calc · Stewart 9e Diagnostic</p>
+      <h1 class="post__title">Coordinate Geometry with Two Points: Line, Midpoint &amp; Circle (Stewart 9e Q4)</h1>
+      <p class="post__dek">Stewart's Calculus 9th Edition diagnostic Q4 gives you two points — <span class="mathx"><i>A</i>(−7, 4)</span> and <span class="mathx"><i>B</i>(5, −12)</span> — and walks you through every coordinate-geometry skill a student needs before AP Calculus: slope, line equation, intercepts, midpoint, distance, perpendicular bisector, and the circle that has the segment as a diameter. Six little problems, one set of points. Done correctly, the whole thing chains together in one pass without any guessing. Here is the SOMATH way.</p>
+      <p class="post__meta"><time datetime="2026-05-29">2026-05-29</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/coordinate-geometry-points-line-circle-stewart-q4/cover.jpg" alt="Stewart Calculus 9e Q4 — fully worked solution for A(-7, 4) and B(5, -12) covering slope, line, midpoint, distance, perpendicular bisector, and circle with AB as diameter, from SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/RsD9V4GRujg?rel=0" title="Coordinate Geometry with Two Points (Stewart Calculus 9e Q4) | SOMATH NYC" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=RsD9V4GRujg" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> With <span class="mathx"><i>A</i>(−7, 4)</span> and <span class="mathx"><i>B</i>(5, −12)</span>: slope <span class="mathx"><i>m</i> = −4/3</span>; line <span class="mathx"><i>y</i> = −(4/3)<i>x</i> − 16/3</span> with intercepts <span class="mathx">(−4, 0)</span> and <span class="mathx">(0, −16/3)</span>; midpoint <span class="mathx"><i>M</i>(−1, −4)</span>; length <span class="mathx"><i>AB</i> = 20</span>; perpendicular bisector <span class="mathx"><i>y</i> = (3/4)<i>x</i> − 13/4</span>; and the circle with <span class="mathx"><i>AB</i></span> as diameter is <span class="answer-box">(x + 1)<sup>2</sup> + (y + 4)<sup>2</sup> = 100</span>.</p>
+
+          <h2>Why this problem matters</h2>
+          <p>Stewart bundles six sub-problems into Q4 because they form the spine of coordinate geometry. A student who can fluently chain slope → line → midpoint → distance → perpendicular bisector → circle has the toolkit for almost every two-dimensional geometry question in pre-calculus, AP Calc, SAT, SHSAT, and the New York State Regents. The reason it lives in the diagnostic — and the reason we cover it early at SOMATH — is that a student who is shaky on any one link in this chain will burn time recomputing it every time it shows up in a multi-step calculus problem later.</p>
+          <p>The other reason: every formula in this problem is symmetric in the two points. Once you write down two points cleanly on scratch paper, you can hand off the same labels <span class="mathx">(<i>x</i><sub>1</sub>, <i>y</i><sub>1</sub>)</span> and <span class="mathx">(<i>x</i><sub>2</sub>, <i>y</i><sub>2</sub>)</span> to slope, midpoint, and distance without re-labeling. Six answers, one labeling job.</p>
+
+          <h2>(a) Slope of the line through A and B</h2>
+          <p>The slope formula is the difference of <span class="mathx"><i>y</i></span> over the difference of <span class="mathx"><i>x</i></span>, in the same order:</p>
+          <p class="mathd mathx"><i>m</i> = (<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>) / (<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>) = (−12 − 4) / (5 − (−7)) = −16 / 12 = <span class="answer-box">−4/3</span></p>
+          <p>The slope is negative, which matches the picture — point <span class="mathx"><i>A</i></span> is up and to the left, <span class="mathx"><i>B</i></span> is down and to the right, so the line falls as it moves right. The magnitude <span class="mathx">4/3</span> says it drops 4 units for every 3 units of horizontal travel.</p>
+
+          <h2>(b) Equation of the line and its intercepts</h2>
+          <p>Use point-slope form anchored at <span class="mathx"><i>A</i>(−7, 4)</span>:</p>
+          <p class="mathd mathx"><i>y</i> − 4 = −(4/3)(<i>x</i> + 7)</p>
+          <p>Distribute and isolate <span class="mathx"><i>y</i></span>:</p>
+          <p class="mathd mathx"><i>y</i> = −(4/3)<i>x</i> − 28/3 + 4 = −(4/3)<i>x</i> − 28/3 + 12/3 = <span class="answer-box">y = −(4/3)x − 16/3</span></p>
+          <p>To find the <span class="mathx"><i>x</i></span>-intercept, set <span class="mathx"><i>y</i> = 0</span>: <span class="mathx">0 = −(4/3)<i>x</i> − 16/3</span>, so <span class="mathx"><i>x</i> = −4</span>. The <span class="mathx"><i>y</i></span>-intercept is just the constant term, <span class="mathx">−16/3</span>. Intercepts: <span class="mathx">(−4, 0)</span> and <span class="mathx">(0, −16/3)</span>. Sanity check: plug <span class="mathx"><i>B</i>(5, −12)</span> into the equation. <span class="mathx">−(4/3)(5) − 16/3 = −20/3 − 16/3 = −36/3 = −12</span>. The line really does pass through <span class="mathx"><i>B</i></span>.</p>
+
+          <h2>(c) Midpoint of segment AB</h2>
+          <p>The midpoint formula averages the coordinates:</p>
+          <p class="mathd mathx"><i>M</i> = ((<i>x</i><sub>1</sub> + <i>x</i><sub>2</sub>)/2, (<i>y</i><sub>1</sub> + <i>y</i><sub>2</sub>)/2) = ((−7 + 5)/2, (4 + (−12))/2) = <span class="answer-box">(−1, −4)</span></p>
+          <p>The midpoint is the geometric center of the two points and — critical for the circle problem at the end — it is the center of the circle whose diameter is <span class="mathx"><i>AB</i></span>. Keep <span class="mathx"><i>M</i>(−1, −4)</span> visible on your scratch paper; you will need it twice more.</p>
+
+          <h2>(d) Length of segment AB</h2>
+          <p>Use the distance formula. Skip the unnecessary square-root-then-square-again by computing the squared distance first:</p>
+          <p class="mathd mathx"><i>AB</i><sup>2</sup> = (<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>)<sup>2</sup> + (<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>)<sup>2</sup> = (5 − (−7))<sup>2</sup> + (−12 − 4)<sup>2</sup> = 12<sup>2</sup> + (−16)<sup>2</sup> = 144 + 256 = 400</p>
+          <p>Then <span class="mathx"><i>AB</i> = √400 = <span class="answer-box">20</span></span>. Notice how clean: the differences are 12 and 16, the classic 3-4-5 triangle scaled by 4, with hypotenuse <span class="mathx">5 · 4 = 20</span>. Stewart picked these points so the arithmetic would be exact — that's a clue that a perfect square is hiding inside the distance.</p>
+
+          <h2>(e) Perpendicular bisector of AB</h2>
+          <p>The perpendicular bisector has two requirements: it passes through the midpoint, and it is perpendicular to the original line. We already have both pieces.</p>
+          <p>Midpoint <span class="mathx"><i>M</i>(−1, −4)</span>. Slope of <span class="mathx"><i>AB</i></span> is <span class="mathx">−4/3</span>, so the perpendicular slope is the negative reciprocal, <span class="mathx">3/4</span>. Plug into point-slope:</p>
+          <p class="mathd mathx"><i>y</i> − (−4) = (3/4)(<i>x</i> − (−1)) ⇒ <i>y</i> + 4 = (3/4)(<i>x</i> + 1)</p>
+          <p>Distribute and isolate <span class="mathx"><i>y</i></span>:</p>
+          <p class="mathd mathx"><i>y</i> = (3/4)<i>x</i> + 3/4 − 4 = (3/4)<i>x</i> + 3/4 − 16/4 = <span class="answer-box">y = (3/4)x − 13/4</span></p>
+          <p>Quick sanity check: does the midpoint satisfy this? Plug <span class="mathx"><i>x</i> = −1</span>: <span class="mathx">(3/4)(−1) − 13/4 = −3/4 − 13/4 = −16/4 = −4</span>. Yes — the line passes through <span class="mathx">(−1, −4)</span>, which is exactly what a bisector should do.</p>
+
+          <h2>(f) Circle with AB as a diameter</h2>
+          <p>This is the prize at the end of the chain. When the segment <span class="mathx"><i>AB</i></span> is the diameter of a circle, two facts fall out for free:</p>
+          <ul>
+            <li>The center of the circle is the midpoint of <span class="mathx"><i>AB</i></span>.</li>
+            <li>The radius is half the length of <span class="mathx"><i>AB</i></span>.</li>
+          </ul>
+          <p>We already computed both. Center <span class="mathx"><i>M</i>(−1, −4)</span>, and <span class="mathx"><i>r</i> = <i>AB</i>/2 = 20/2 = 10</span>, so <span class="mathx"><i>r</i><sup>2</sup> = 100</span>. Plug into standard form <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span> with <span class="mathx"><i>h</i> = −1</span> and <span class="mathx"><i>k</i> = −4</span>:</p>
+          <p class="mathd"><span class="answer-box">(x + 1)<sup>2</sup> + (y + 4)<sup>2</sup> = 100</span></p>
+          <p>The two plus signs inside the parentheses come from subtracting negative coordinates: <span class="mathx">(<i>x</i> − (−1)) = (<i>x</i> + 1)</span> and <span class="mathx">(<i>y</i> − (−4)) = (<i>y</i> + 4)</span>. This is the same sign trap that ruins Q2 and Q3 — read every plus sign inside a squared binomial as "minus negative" and the center coordinates come out right.</p>
+
+          <h2>The three mistakes worth memorizing</h2>
+          <ul>
+            <li><strong>Mixing up the order in the slope formula.</strong> The slope is <span class="mathx">(<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>) / (<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>)</span>, with the same point labeled "2" in both numerator and denominator. Students who swap one but not the other end up with the slope's sign flipped — which then flips the perpendicular slope, which then flips the bisector, which then flips the circle's geometry. Stack the two points vertically on scratch paper before subtracting and the order takes care of itself.</li>
+            <li><strong>Taking an unnecessary square root in the distance formula.</strong> Just like Q2, we want <span class="mathx"><i>r</i><sup>2</sup></span>, not <span class="mathx"><i>r</i></span>, for the circle equation. Compute the squared distance directly, plug it in, and only take a single square root at the very end if the problem asks for the actual length. Here <span class="mathx"><i>AB</i><sup>2</sup> = 400</span> and we need <span class="mathx">(<i>AB</i>/2)<sup>2</sup> = 400/4 = 100</span> — a single division, no roots involved for the equation.</li>
+            <li><strong>Confusing the negative reciprocal with the negative.</strong> Perpendicular slopes multiply to <span class="mathx">−1</span>. The perpendicular of slope <span class="mathx">−4/3</span> is <span class="mathx">+3/4</span>, not <span class="mathx">+4/3</span> and not <span class="mathx">−3/4</span>. Flip the fraction and flip the sign — both moves, in that order.</li>
+          </ul>
+
+          <h2>How SOMATH teaches this problem</h2>
+          <p>At SOMATH we teach Stewart Q4 as one continuous chain, not six separate problems. Students label the two points once at the top of scratch paper. From there, slope feeds the line equation; the midpoint and slope feed the perpendicular bisector; the midpoint and distance feed the circle. Every formula reuses something we already wrote down. By the time students leave that lesson they have a worksheet that documents how a single labeled pair of points unlocks the whole of plane geometry — and they keep that habit for AP Calculus, where multi-step problems live or die on whether you reuse earlier work cleanly.</p>
+          <p>Our classroom at 226 W 79th St — Upper West Side, between Broadway and Amsterdam — runs small groups of three to five students with whiteboards on every wall. We don't hand out worksheet stacks. We introduce each technique with the why, drill it on three increasingly hostile problems, and tie it back to the calculus context where the student will meet it next. Q4 is the cornerstone problem we use to teach NYC independent-school students how to chain coordinate-geometry skills before they hit Stewart's calculus chapters.</p>
+
+          <h2>FAQ</h2>
+          <h3>How do you find the slope between two points?</h3>
+          <p>Use <span class="mathx"><i>m</i> = (<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>) / (<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>)</span>. Subtract the <span class="mathx"><i>y</i></span>-coordinates in the numerator and the <span class="mathx"><i>x</i></span>-coordinates in the denominator, in the same order. With <span class="mathx"><i>A</i>(−7, 4)</span> and <span class="mathx"><i>B</i>(5, −12)</span>, slope is <span class="mathx">(−12 − 4)/(5 − (−7)) = −16/12 = −4/3</span>.</p>
+          <h3>What is the perpendicular bisector and how do you find its equation?</h3>
+          <p>The perpendicular bisector of a segment passes through the segment's midpoint and is perpendicular to the segment. You need two ingredients: the midpoint (use the midpoint formula) and the perpendicular slope (negative reciprocal of the segment's slope). Plug both into point-slope form and simplify.</p>
+          <h3>How is finding a circle from a diameter different from finding one from center and a point?</h3>
+          <p>If you're given the diameter <span class="mathx"><i>AB</i></span>, the center is the midpoint of <span class="mathx"><i>AB</i></span> and the radius is <span class="mathx"><i>AB</i>/2</span>. If you're given the center and a point on the circle (Stewart Q2), the center is handed to you and the radius is the distance from the center to that point. Same final form <span class="mathx">(<i>x</i> − <i>h</i>)<sup>2</sup> + (<i>y</i> − <i>k</i>)<sup>2</sup> = <i>r</i><sup>2</sup></span> — different routes to <span class="mathx">(<i>h</i>, <i>k</i>)</span> and <span class="mathx"><i>r</i></span>.</p>
+          <h3>Why is the distance AB exactly 20?</h3>
+          <p>The horizontal change is <span class="mathx">12</span> and the vertical change is <span class="mathx">16</span>. That's a 3-4-5 right triangle scaled by 4, giving a hypotenuse of <span class="mathx">5 · 4 = 20</span>. Stewart deliberately picks numbers that produce perfect squares; if your distance comes out as an ugly radical, double-check your subtraction.</p>
+          <h3>Will I see this exact problem type on the AP Calculus exam?</h3>
+          <p>Not in this packaged form — AP Calc rarely asks pure coordinate-geometry questions. But the skills inside Q4 power optimization, parametric and polar problems, and any free-response question that involves distances between points on a curve. The diagnostic exists precisely so students don't have to relearn these tools mid-calculus.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. AP Calculus, college calculus, pre-calc, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/circle-equation-from-center-and-point-stewart-calculus">Stewart Q2: Equation of a Circle from Center and a Point</a></li>
+            <li><a href="/posts/analytic-geometry-circle-stewart-calculus">Stewart Q3: Center and Radius of a Circle in General Form</a></li>
+            <li><a href="/posts/analytic-geometry-diagnostic-stewart-calculus">Stewart Q1: Equation of a Line from Slope and a Point</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

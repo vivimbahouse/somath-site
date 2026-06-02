@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Difference Quotient of f(x) = x³ at x = 2 (Stewart Ch.1 Q2) | SOMATH NYC</title>
+    <meta name="description" content="Stewart Calculus Chapter 1, Question 2 — evaluate the difference quotient [f(2+h) − f(2)] / h for f(x) = x³ and simplify. Answer: h² + 6h + 12. Step-by-step walkthrough with the binomial expansion of (2+h)³, the algebra of cancelling h, and the link to f′(2) = 12. From SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/difference-quotient-x-cubed-stewart-ch1-q2" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Difference Quotient of f(x) = x³ at x = 2 (Stewart Calculus Ch.1 Q2)" />
+    <meta property="og:description" content="Expand (2+h)³, subtract f(2) = 8, cancel the h in the denominator, and simplify to h² + 6h + 12. The algebra behind the limit definition of the derivative. SOMATH UWS walkthrough." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/difference-quotient-x-cubed-stewart-ch1-q2" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/difference-quotient-x-cubed-stewart-ch1-q2/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-29" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Difference Quotient of f(x) = x³ at x = 2 (Stewart Ch.1 Q2)" />
+    <meta name="twitter:description" content="Final answer h² + 6h + 12. Full step-by-step from SOMATH UWS: expand (2+h)³, subtract 8, cancel h, and see why this becomes f′(2) = 12." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/difference-quotient-x-cubed-stewart-ch1-q2/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Difference Quotient of f(x) = x³ at x = 2 (Stewart Calculus Ch.1 Q2)",
+  "description": "Stewart Calculus Chapter 1, Question 2 — evaluate [f(2+h) − f(2)] / h for f(x) = x³ and simplify. Step-by-step expansion of (2+h)³, cancellation of the constant term, division by h, and final simplification to h² + 6h + 12. Connection to the limit definition of the derivative and to f′(2) = 12.",
+  "image": "https://www.schoolofmath.us/assets/blog/difference-quotient-x-cubed-stewart-ch1-q2/cover.jpg",
+  "datePublished": "2026-05-29",
+  "dateModified": "2026-05-29",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/difference-quotient-x-cubed-stewart-ch1-q2"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the difference quotient?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The difference quotient is the expression [f(a+h) − f(a)] / h. It measures the average rate of change of f over the interval from x = a to x = a + h, and is the algebraic object whose limit as h → 0 defines the derivative f′(a)." } },
+    { "@type": "Question", "name": "How do you expand (2+h)³?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the binomial expansion (a+b)³ = a³ + 3a²b + 3ab² + b³ with a = 2 and b = h. That gives (2+h)³ = 8 + 12h + 6h² + h³. You can also multiply (2+h)(2+h)(2+h) by hand, but the binomial expansion is faster and less error-prone." } },
+    { "@type": "Question", "name": "Why does the 8 cancel in the numerator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because f(2) = 2³ = 8 is subtracted from f(2+h) = 8 + 12h + 6h² + h³. The constant 8 in the expansion is exactly the value of f at x = 2, so subtracting f(2) zeros it out. Every difference quotient does this: the f(a) term is built to cancel the constant piece of f(a+h)." } },
+    { "@type": "Question", "name": "What is the simplified difference quotient for f(x) = x³ at x = 2?",
+      "acceptedAnswer": { "@type": "Answer", "text": "h² + 6h + 12. After expanding (2+h)³ = 8 + 12h + 6h² + h³, subtracting f(2) = 8, and dividing every remaining term by h, the result is h² + 6h + 12." } },
+    { "@type": "Question", "name": "Why do we need the difference quotient before learning derivatives?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the derivative f′(a) is defined as the limit of the difference quotient [f(a+h) − f(a)] / h as h approaches 0. Until a student can fluently expand, subtract, cancel, and divide a difference quotient, the limit definition of the derivative is just a symbol. Stewart Ch.1 Q2 is the algebra drill that makes the limit work." } }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Calculus &amp; Pre-Calc · Stewart Ch.1</p>
+      <h1 class="post__title">Difference Quotient of <span class="mathx"><i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup></span> at <span class="mathx"><i>x</i> = 2</span> (Stewart Ch.1 Q2)</h1>
+      <p class="post__dek">If <span class="mathx"><i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup></span>, evaluate the difference quotient <span class="mathx">[<i>f</i>(2 + <i>h</i>) − <i>f</i>(2)] / <i>h</i></span> and simplify your answer. This is Stewart's first real algebra-meets-calculus problem. The answer is <span class="mathx"><i>h</i><sup>2</sup> + 6<i>h</i> + 12</span>, and the four steps that get you there are the foundation of every derivative computation that follows.</p>
+      <p class="post__meta"><time datetime="2026-05-29">2026-05-29</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/difference-quotient-x-cubed-stewart-ch1-q2/cover.jpg" alt="Stewart Calculus Chapter 1 Question 2 — difference quotient of f(x) = x cubed at x = 2, four step walkthrough showing the expansion of (2+h)^3 and the simplified answer h squared plus 6h plus 12, worked at SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/pkwi-9nc33s?rel=0" title="Difference Quotient of f(x)=x^3 at x=2 | Stewart Calculus Ch.1 Q2 | SOMATH NYC" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=pkwi-9nc33s" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> For <span class="mathx"><i>f</i>(<i>x</i>) = <i>x</i><sup>3</sup></span>, the difference quotient at <span class="mathx"><i>x</i> = 2</span> simplifies to <span class="answer-box">h² + 6h + 12</span>. Reached in four steps: expand <span class="mathx">(2 + <i>h</i>)<sup>3</sup> = 8 + 12<i>h</i> + 6<i>h</i><sup>2</sup> + <i>h</i><sup>3</sup></span>; subtract <span class="mathx"><i>f</i>(2) = 8</span>; cancel the 8s in the numerator; divide every remaining term by <span class="mathx"><i>h</i></span>.</p>
+
+          <h2>Why Stewart asks this question second</h2>
+          <p>The first problem in the textbook tests whether you can <em>read</em> a function — input, output, zeros, domain, range. The second problem tests whether you can <em>manipulate</em> a function — substitute, expand, subtract, divide. These are the two languages of calculus: the geometric one (graphs) and the algebraic one (symbols). Every later topic depends on switching fluently between them.</p>
+          <p>The difference quotient is also the single most important algebraic object in Chapter 2. The derivative <span class="mathx"><i>f</i>′(<i>a</i>) = lim<sub><i>h</i>→0</sub> [<i>f</i>(<i>a</i> + <i>h</i>) − <i>f</i>(<i>a</i>)] / <i>h</i></span> is exactly the limit of what you compute here. By making you simplify the difference quotient first, Stewart sets up the limit so it actually has somewhere to go — divide by <span class="mathx"><i>h</i></span> first, then take the limit, and the answer falls out.</p>
+
+          <h2>Step 1 — Compute f(2 + h)</h2>
+          <p>Substitute <span class="mathx">2 + <i>h</i></span> into <span class="mathx"><i>f</i></span>:</p>
+          <p class="mathd"><span class="mathx"><i>f</i>(2 + <i>h</i>) = (2 + <i>h</i>)<sup>3</sup></span></p>
+          <p>Now expand using the binomial expansion <span class="mathx">(<i>a</i> + <i>b</i>)<sup>3</sup> = <i>a</i><sup>3</sup> + 3<i>a</i><sup>2</sup><i>b</i> + 3<i>a</i><i>b</i><sup>2</sup> + <i>b</i><sup>3</sup></span> with <span class="mathx"><i>a</i> = 2</span> and <span class="mathx"><i>b</i> = <i>h</i></span>:</p>
+          <p class="mathd"><span class="mathx">(2 + <i>h</i>)<sup>3</sup> = 2<sup>3</sup> + 3(2)<sup>2</sup><i>h</i> + 3(2)<i>h</i><sup>2</sup> + <i>h</i><sup>3</sup> = 8 + 12<i>h</i> + 6<i>h</i><sup>2</sup> + <i>h</i><sup>3</sup></span></p>
+          <p>You can also multiply <span class="mathx">(2 + <i>h</i>)(2 + <i>h</i>)(2 + <i>h</i>)</span> by hand. We teach the binomial expansion first because it scales — the same pattern works for <span class="mathx">(<i>x</i> + <i>h</i>)<sup>3</sup></span>, <span class="mathx">(<i>x</i> + <i>h</i>)<sup>4</sup></span>, and beyond, which is exactly what you need for the next dozen Stewart problems.</p>
+
+          <h2>Step 2 — Compute f(2)</h2>
+          <p>The other half of the numerator. Substitute <span class="mathx"><i>x</i> = 2</span> directly:</p>
+          <p class="mathd"><span class="mathx"><i>f</i>(2) = 2<sup>3</sup> = 8</span></p>
+          <p>Notice the 8 here matches the <span class="mathx">2<sup>3</sup> = 8</span> constant term in the expansion above. That is not a coincidence — it is the entire reason the difference quotient simplifies.</p>
+
+          <h2>Step 3 — Substitute into the difference quotient</h2>
+          <p>Plug both pieces back into <span class="mathx">[<i>f</i>(2 + <i>h</i>) − <i>f</i>(2)] / <i>h</i></span>:</p>
+          <p class="mathd"><span class="mathx">(8 + 12<i>h</i> + 6<i>h</i><sup>2</sup> + <i>h</i><sup>3</sup>) − 8</span> &nbsp;all over&nbsp; <span class="mathx"><i>h</i></span></p>
+          <p>The 8 in the expansion cancels with the <span class="mathx">−8</span> from <span class="mathx"><i>f</i>(2)</span>:</p>
+          <p class="mathd"><span class="mathx">= (12<i>h</i> + 6<i>h</i><sup>2</sup> + <i>h</i><sup>3</sup>) / <i>h</i></span></p>
+          <p>This is the move that makes the problem work. Every remaining term in the numerator has a factor of <span class="mathx"><i>h</i></span>, so the <span class="mathx"><i>h</i></span> in the denominator can actually cancel. If the constants had not lined up, the difference quotient would blow up when you eventually let <span class="mathx"><i>h</i> → 0</span> — instead, the cancellation leaves a clean polynomial in <span class="mathx"><i>h</i></span>.</p>
+
+          <h2>Step 4 — Divide each term by h</h2>
+          <p>Split the fraction term by term:</p>
+          <p class="mathd"><span class="mathx">12<i>h</i> / <i>h</i> + 6<i>h</i><sup>2</sup> / <i>h</i> + <i>h</i><sup>3</sup> / <i>h</i> = 12 + 6<i>h</i> + <i>h</i><sup>2</sup></span></p>
+          <p>Reorder by descending powers of <span class="mathx"><i>h</i></span>:</p>
+          <p class="mathd"><span class="answer-box">h² + 6h + 12</span></p>
+          <p>That's the simplified difference quotient. Stewart accepts either ordering; the descending-power ordering matches what you'll see when you turn this into a derivative in Chapter 2.</p>
+
+          <h2>What this answer is hiding</h2>
+          <p>The expression <span class="mathx"><i>h</i><sup>2</sup> + 6<i>h</i> + 12</span> is not just an algebraic answer. It is the average rate of change of <span class="mathx"><i>x</i><sup>3</sup></span> over the interval from <span class="mathx"><i>x</i> = 2</span> to <span class="mathx"><i>x</i> = 2 + <i>h</i></span>. Plug in different values of <span class="mathx"><i>h</i></span> and watch what happens:</p>
+          <ul>
+            <li><span class="mathx"><i>h</i> = 1</span>: rate <span class="mathx">= 1 + 6 + 12 = 19</span> (slope of secant from <span class="mathx">(2, 8)</span> to <span class="mathx">(3, 27)</span>).</li>
+            <li><span class="mathx"><i>h</i> = 0.1</span>: rate <span class="mathx">= 0.01 + 0.6 + 12 = 12.61</span>.</li>
+            <li><span class="mathx"><i>h</i> = 0.01</span>: rate <span class="mathx">= 0.0001 + 0.06 + 12 = 12.0601</span>.</li>
+            <li><span class="mathx"><i>h</i> → 0</span>: <span class="mathx"><i>h</i><sup>2</sup> + 6<i>h</i> + 12 → 12</span>.</li>
+          </ul>
+          <p>That limit is the derivative. <span class="mathx"><i>f</i>′(2) = 12</span>, which is consistent with the power rule <span class="mathx"><i>f</i>′(<i>x</i>) = 3<i>x</i><sup>2</sup></span> applied at <span class="mathx"><i>x</i> = 2</span>: <span class="mathx">3(2)<sup>2</sup> = 12</span>. Same answer, two roads — and Stewart wants you to walk both before he lets you skip ahead to the rule.</p>
+
+          <h2>The three mistakes worth memorizing</h2>
+          <ul>
+            <li><strong>Writing <span class="mathx">(2 + <i>h</i>)<sup>3</sup> = 8 + <i>h</i><sup>3</sup></span>.</strong> This is the most common error in all of Chapter 2. Cubing is not distributive over addition. Always expand fully using the binomial expansion or hand-multiplication.</li>
+            <li><strong>Forgetting to subtract <span class="mathx"><i>f</i>(2)</span>.</strong> Students sometimes write the numerator as just <span class="mathx"><i>f</i>(2 + <i>h</i>)</span> and divide by <span class="mathx"><i>h</i></span>. That gives <span class="mathx">(8 + 12<i>h</i> + 6<i>h</i><sup>2</sup> + <i>h</i><sup>3</sup>) / <i>h</i></span>, which has an <span class="mathx">8/<i>h</i></span> term and does not simplify. The subtraction of <span class="mathx"><i>f</i>(<i>a</i>)</span> is what makes the difference quotient finite.</li>
+            <li><strong>Cancelling <span class="mathx"><i>h</i></span> before splitting the fraction.</strong> You cannot cancel <span class="mathx"><i>h</i></span> from a single term of the numerator and leave the rest alone. You must either factor <span class="mathx"><i>h</i></span> out of the entire numerator first — <span class="mathx"><i>h</i>(12 + 6<i>h</i> + <i>h</i><sup>2</sup>) / <i>h</i></span> — or split the fraction term-by-term and divide each piece by <span class="mathx"><i>h</i></span> separately.</li>
+          </ul>
+
+          <h2>How SOMATH teaches this problem</h2>
+          <p>Every AP Calc and pre-calc student at SOMATH does the difference quotient on three functions in their first week — <span class="mathx"><i>x</i><sup>2</sup></span>, <span class="mathx"><i>x</i><sup>3</sup></span>, and <span class="mathx">1/<i>x</i></span> — at three points each. Same four steps every time: expand <span class="mathx"><i>f</i>(<i>a</i> + <i>h</i>)</span>, compute <span class="mathx"><i>f</i>(<i>a</i>)</span>, subtract, divide by <span class="mathx"><i>h</i></span>. The point is not to memorize the answers but to make the procedure automatic, so when the limit shows up next chapter the student is not also wrestling with algebra.</p>
+          <p>We teach this in small groups of three to five at 226 W 79th St (Upper West Side, between Broadway and Amsterdam), with whiteboards on every wall and no worksheet stacks. Each technique gets the binomial expansion, the cancellation diagnosis, and the link to the derivative. By the time the AP Calc class meets limits, the difference quotient is muscle memory.</p>
+
+          <h2>FAQ</h2>
+          <h3>What is the difference quotient and why does it matter?</h3>
+          <p>The difference quotient is <span class="mathx">[<i>f</i>(<i>a</i> + <i>h</i>) − <i>f</i>(<i>a</i>)] / <i>h</i></span>. Geometrically it is the slope of the secant line through the two points <span class="mathx">(<i>a</i>, <i>f</i>(<i>a</i>))</span> and <span class="mathx">(<i>a</i> + <i>h</i>, <i>f</i>(<i>a</i> + <i>h</i>))</span> on the graph of <span class="mathx"><i>f</i></span>. As <span class="mathx"><i>h</i> → 0</span>, that secant line tilts toward the tangent line, and its slope becomes the derivative.</p>
+          <h3>Is there a faster way using the power rule?</h3>
+          <p>Yes — <span class="mathx"><i>f</i>′(<i>x</i>) = 3<i>x</i><sup>2</sup></span>, so <span class="mathx"><i>f</i>′(2) = 12</span>. But Stewart Ch.1 Q2 asks for the <em>difference quotient</em>, not the derivative. The whole point is to do the algebra by hand so that when the limit definition is introduced, you understand where the answer comes from. The power rule comes later in the textbook precisely because it skips this step.</p>
+          <h3>Why do we divide by h instead of just subtracting?</h3>
+          <p>Because dividing by <span class="mathx"><i>h</i></span> converts a difference (<span class="mathx"><i>f</i>(2 + <i>h</i>) − <i>f</i>(2)</span>) into a rate (change per unit of <span class="mathx"><i>h</i></span>). Without the division, you'd be measuring how much <span class="mathx"><i>f</i></span> changed, not how fast. Calculus is the study of rates, so every derivative starts with a division by the change in input.</p>
+          <h3>What if h is negative?</h3>
+          <p>The algebra is identical and the simplified answer <span class="mathx"><i>h</i><sup>2</sup> + 6<i>h</i> + 12</span> still holds. The secant just goes the other direction — from <span class="mathx">(2 + <i>h</i>, <i>f</i>(2 + <i>h</i>))</span> to <span class="mathx">(2, <i>f</i>(2))</span> with <span class="mathx"><i>h</i> &lt; 0</span>. As <span class="mathx"><i>h</i> → 0</span> from either side, the difference quotient converges to the same limit (12), which is exactly what makes the derivative well-defined here.</p>
+          <h3>What is the next Stewart problem after this one?</h3>
+          <p>Stewart Ch.1 Q3 asks you to compute the difference quotient for a general <span class="mathx"><i>x</i></span> (instead of a specific point), using a function like <span class="mathx">1/<i>x</i></span>. Same four steps, but the algebra trades polynomial expansion for getting a common denominator. We have walkthroughs of the surrounding problems linked at the bottom.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. AP Calculus, college calculus, pre-calc, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/reading-function-graph-domain-range-stewart-ch1-q1">Stewart Ch.1 Q1: Reading a Function from Its Graph (f(−1), f(2), Zeros, Domain &amp; Range)</a></li>
+            <li><a href="/posts/coordinate-geometry-points-line-circle-stewart-q4">Stewart Q4: Two Points — Line, Midpoint, and Circle with AB as Diameter</a></li>
+            <li><a href="/posts/circle-equation-from-center-and-point-stewart-calculus">Stewart Q2: Equation of a Circle from Center and a Point</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

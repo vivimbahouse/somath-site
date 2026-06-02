@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>SAT Math: Rounding Error & Finding E &minus; S (30-Decimal Problem) | SOMATH</title>
+    <meta name="description" content="A walkthrough of the SAT 'rounding error' problem with 30 positive non-integer decimals — set up the algebra, bound each contribution to E minus S, and decide which of −16, 6, and 10 are actually possible." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/sat-rounding-error-list-of-30-decimals" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="SAT Math: Rounding Error & Finding E − S (30-Decimal Problem)" />
+    <meta property="og:description" content="A walkthrough of the SAT 'rounding error' problem with 30 positive non-integer decimals — set up the algebra, bound each contribution to E minus S, and decide which of −16, 6, and 10 are actually possible." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/sat-rounding-error-list-of-30-decimals" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-12" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAT Math: Rounding Error & Finding E − S (30-Decimal Problem)" />
+    <meta name="twitter:description" content="A walkthrough of the SAT 'rounding error' problem with 30 positive non-integer decimals — set up the algebra, bound each contribution to E minus S, and decide which of −16, 6, and 10 are actually possible." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "SAT Math: Rounding Error & Finding E − S (30-Decimal Problem)",
+      "description": "A walkthrough of the SAT 'rounding error' problem with 30 positive non-integer decimals — set up the algebra, bound each contribution to E minus S, and decide which of −16, 6, and 10 are actually possible.",
+      "image": "https://www.schoolofmath.us/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg",
+      "datePublished": "2026-05-12",
+      "dateModified": "2026-05-12",
+      "author": {
+        "@type": "Person",
+        "name": "School of Math",
+        "jobTitle": "Head of Education, Co-Founder",
+        "url": "https://www.schoolofmath.us/about"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SOMATH",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.schoolofmath.us/assets/logo-full.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.schoolofmath.us/posts/sat-rounding-error-list-of-30-decimals"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What kind of SAT problem is this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a classic 'rounding error' or 'bounded sum' problem. You are given a rule that transforms each item in a list and asked which net outcomes are achievable. The right move is almost never to construct an example by trial and error — it is to bound each item's contribution algebraically and then add the bounds together."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is 10 not a possible value of E − S?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each even-tenths decimal contributes at most just under 1 to E − S, and each odd-tenths decimal contributes a negative amount. With 10 even-tenths decimals and 20 odd-tenths decimals, the maximum possible value of E − S is strictly less than 10, so E − S = 10 is not reachable. The upper bound is 10 × (something less than 1) + 20 × (something negative) < 10."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are −16 and 6 both possible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the per-item contributions span a wide interval — roughly (0, 1) for the rounded-up group and (−1, 0) for the rounded-down group — the achievable values of E − S form a continuous range. That range easily covers both 6 (mostly even-tenths drove rounding up) and −16 (the odd-tenths group dominated)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this an SAT or SHSAT problem?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The structure — long word problem, multiple Roman-numeral choices, algebraic bounding — is the SAT subject test / advanced SAT style. Variants of this exact problem show up on SHSAT, AMC 8 and AMC 10, and on AP Statistics in disguise. The bounding technique transfers cleanly across all of them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fastest way to teach this to a student who is stuck?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stop trying to construct one example. Switch to bounding. Write each decimal as x = I + d with 0 < d < 1, compute the contribution of one item to E − S in each case (even tenths and odd tenths), and bound that single contribution. Once the per-item bound is clean, sum it across the 10 even and 20 odd decimals, and the question of which Roman-numeral values fit answers itself."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">SAT Math</p>
+      <h1 class="post__title">SAT Math: Rounding Error & Finding E &minus; S (30-Decimal Problem)</h1>
+      <p class="post__dek">A list of 30 positive non-integer decimals gets rounded by a peculiar rule — even tenths go up, odd tenths go down. Which of &minus;16, 6, and 10 are actually possible for E &minus; S? Spoiler: the slowest path is to look for an example. The fast path is to bound each contribution.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>May 12, 2026</span>
+        <span>8 min read</span>
+      </div>
+
+      <div class="post__body">
+
+<figure class="post__cover"><img src="/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg" alt="SAT-style rounding error problem with full solution and SOMATH branding" /></figure>
+
+<figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+  <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+    <iframe src="https://www.youtube.com/embed/h_91bNn_NsM?rel=0" title="SAT Math: Rounding Error & Finding E − S (30-Decimal Problem)" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Full walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=h_91bNn_NsM" rel="noopener">Watch on YouTube</a></figcaption>
+</figure>
+
+<p><strong>The short answer:</strong> the correct answer is <strong>B — I and II only</strong>. Both &minus;16 and 6 are achievable values of E &minus; S; 10 is not. The reason it feels hard is that the problem invites you to construct an example, and constructing examples for 30 decimals at once is miserable. The right move is to <em>bound</em> the contribution of a single decimal to E &minus; S and then add the bounds across all 30. That bounded-sum technique turns a five-minute brute-force scramble into a sixty-second algebra problem.</p>
+
+<h2>The problem, restated cleanly</h2>
+
+<p>List T contains 30 positive decimals, none of which is an integer, and the sum of the 30 decimals is S. The estimated sum E is built as follows: each decimal whose tenths digit is <em>even</em> is rounded <em>up</em> to the nearest integer, and each decimal whose tenths digit is <em>odd</em> is rounded <em>down</em> to the nearest integer. Exactly one-third of the decimals — so 10 of them — have an even tenths digit, which leaves 20 with an odd tenths digit. Which of the following is a possible value of E &minus; S?</p>
+
+<p>I. &minus;16 &nbsp;&nbsp; II. 6 &nbsp;&nbsp; III. 10</p>
+
+<p>If you try to pick 30 specific decimals and add them up, you will spend the whole testing block on it. The trick is to ignore the list entirely and reason about one decimal at a time.</p>
+
+<h2>Set up the algebra: every decimal is I + d</h2>
+
+<p>Write any positive non-integer decimal as <strong>x = I + d</strong>, where I is its integer part (the floor) and d is its fractional part. Because x is not an integer, we have 0 &lt; d &lt; 1. The tenths digit of x is the tenths digit of d.</p>
+
+<p>Now consider what happens to that single decimal under the rounding rule.</p>
+
+<h3>Case 1: the tenths digit is even (round up)</h3>
+
+<p>Rounding x up to the nearest integer gives I + 1. The contribution of this single decimal to E &minus; S is therefore</p>
+
+<p style="text-align:center;font-size:1.05rem;"><strong>(I + 1) &minus; (I + d) = 1 &minus; d</strong>.</p>
+
+<p>The fractional part d is in (0, 1), so 1 &minus; d is in (0, 1) as well. But because the tenths digit is even — that is, the tenths digit is 0, 2, 4, 6, or 8 — we have d in the interval [0.0, 0.1) ∪ [0.2, 0.3) ∪ ... ∪ [0.8, 0.9). The largest d can be (excluding 0, since the decimal is non-integer) is just under 0.9, and the smallest is just above 0. So 1 &minus; d lands in roughly <strong>(0.1, 1)</strong>. Each even-tenths decimal contributes <em>strictly less than 1</em> to E &minus; S, and the contribution is strictly positive.</p>
+
+<h3>Case 2: the tenths digit is odd (round down)</h3>
+
+<p>Rounding x down to the nearest integer gives I. The contribution of this single decimal to E &minus; S is</p>
+
+<p style="text-align:center;font-size:1.05rem;"><strong>I &minus; (I + d) = &minus;d</strong>.</p>
+
+<p>Because the tenths digit is odd (1, 3, 5, 7, or 9), we have d in [0.1, 0.2) ∪ [0.3, 0.4) ∪ ... ∪ [0.9, 1.0). So d is bounded between roughly 0.1 and (just under) 1.0, and the contribution &minus;d sits in <strong>(&minus;1, &minus;0.1]</strong>. Each odd-tenths decimal subtracts somewhere between (just over) 0 and (just under) 1 from E &minus; S.</p>
+
+<h2>Bound the whole sum</h2>
+
+<p>Now sum the per-decimal bounds across the full list. There are 10 even-tenths decimals and 20 odd-tenths decimals. Let U denote the total contribution from the 10 even-tenths terms and let D denote the total contribution from the 20 odd-tenths terms. Then E &minus; S = U + D, and</p>
+
+<ul>
+  <li>U is the sum of 10 numbers each in (0.1, 1), so U is in <strong>(1, 10)</strong>.</li>
+  <li>D is the sum of 20 numbers each in (&minus;1, &minus;0.1], so D is in <strong>(&minus;20, &minus;2]</strong>.</li>
+</ul>
+
+<p>Add the bounds: <strong>E &minus; S = U + D ∈ (&minus;19, &minus;1 + 8) = (&minus;19, 8)</strong>. (The upper bound is generous because U can approach 10 only while D approaches 0, but the two are constrained together; the actual upper bound is even tighter, and we'll show it cannot reach 10.)</p>
+
+<h2>Now answer the three Roman numerals</h2>
+
+<p>With the achievable range pinned to roughly (&minus;19, &lt;10), we can check each candidate directly.</p>
+
+<h3>I. Is E &minus; S = &minus;16 possible?</h3>
+
+<p>Yes. Push the 10 even-tenths decimals to contribute very little (each just above 0.1, total just above 1) and push the 20 odd-tenths decimals to contribute as much negative as possible (each near &minus;1, total near &minus;20). The sum lands near 1 + (&minus;20) = &minus;19, and you can dial back from there to hit exactly &minus;16. Concretely, pick 10 decimals with tenths digit 0 and fractional part just above 0.9 of an interval (so the contribution is small but positive) and 20 decimals with tenths digit 9 and fractional part just under 1.0. The sum E &minus; S sweeps continuously through (&minus;19, &minus;1 + ε), and &minus;16 is firmly inside that interval. <strong>&minus;16 is achievable.</strong></p>
+
+<h3>II. Is E &minus; S = 6 possible?</h3>
+
+<p>Yes. Now push the even-tenths group hard the other way: pick d just above 0 (tenths digit 0, fractional just slightly above 0), so each contribution 1 &minus; d is close to 1. The 10 even-tenths decimals contribute close to 10. Then pick the 20 odd-tenths decimals with tenths digit 1 and a small d (just above 0.1), so each contribution &minus;d is close to &minus;0.1. The 20 odd-tenths decimals contribute close to &minus;2. Together that's close to 10 &minus; 2 = 8, well above 6. Dial the parameters back to hit exactly 6. <strong>6 is achievable.</strong></p>
+
+<h3>III. Is E &minus; S = 10 possible?</h3>
+
+<p>No — and this is the whole point of the bounding argument. The maximum possible value of U is <em>strictly less than 10</em>, because each of the 10 contributions 1 &minus; d is strictly less than 1 (we have d &gt; 0). The maximum possible value of D is at most &minus;0.1 per term times 20 terms = &minus;2 (actually even more negative because d &gt; 0.1 strictly is not required, but the equality is at d = 0.1 and contributions are at most &minus;0.1). So</p>
+
+<p style="text-align:center;font-size:1.05rem;"><strong>max(E &minus; S) &lt; 10 + (&minus;2) = 8</strong>.</p>
+
+<p>Since the achievable maximum is strictly less than 8 — let alone 10 — the value 10 is impossible. <strong>10 is not achievable.</strong></p>
+
+<h2>The answer</h2>
+
+<p>Only I and II are possible values of E &minus; S. The correct choice is <strong>B. I and II only</strong>.</p>
+
+<h2>Why this technique matters past this one problem</h2>
+
+<p>SAT, SHSAT, and AMC test writers love this exact pattern because it punishes brute force and rewards algebraic thinking. The recipe is:</p>
+
+<ol>
+  <li>Write each item in the list in a clean parametric form (here, x = I + d).</li>
+  <li>Compute the contribution of <em>one</em> item to the quantity of interest (here, E &minus; S) in each case.</li>
+  <li>Bound that single contribution above and below using whatever constraint the problem gives you.</li>
+  <li>Sum the bounds across all items to get an interval for the whole quantity.</li>
+  <li>Compare each multiple-choice value against that interval.</li>
+</ol>
+
+<p>It's the same move that solves SAT problems about averages of bounded numbers, SHSAT problems about minimum and maximum values of expressions, and AP Statistics problems about ranges of sample means. Once a student internalizes it, problems that used to take five minutes of trial and error take sixty seconds of clean algebra.</p>
+
+<h2>How we teach this at SOMATH</h2>
+
+<p>In our small-group SAT and SHSAT classes on West 79th Street, this is the kind of problem we walk through twice — once to show the technique, once to have a student narrate it back. The goal is not to memorize the move for this particular problem; it is to recognize the <em>shape</em> of a bounded-sum problem the next time it appears. That recognition is what separates a 700-tier SAT math score from a 780-tier one.</p>
+
+<p>If your child is preparing for SAT, SHSAT, or AMC and gets stuck on problems like this — wanting to construct examples when they should be bounding — that is a teachable pattern. Our <a href="/evaluation">free 60-minute evaluation</a> diagnoses exactly where the gap is and gives you a written summary within 48 hours, whether or not you enroll.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Want a real read on where your child stands?</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We'll diagnose
+            exactly where your child is, send a written summary within 48
+            hours, and tell you honestly what to work on next — even if
+            you don't enroll.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+    </article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/master-the-nyc-specialized-exams-proven-success-strategies">
+          <span class="blog-card__category">Test Prep</span>
+          <h2 class="blog-card__title">Master the NYC Specialized Exams: Proven Success Strategies</h2>
+          <p class="blog-card__dek">Strategies, timelines, and question-type breakdowns for the SHSAT and other NYC specialized high school exams.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 5 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/ap-pre-calculus-question-1">
+          <span class="blog-card__category">Curriculum</span>
+          <h2 class="blog-card__title">AP Pre-Calculus Question 1: Worked Example</h2>
+          <p class="blog-card__dek">A worked walkthrough of a classic AP Pre-Calculus problem, with the algebra fully laid out.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 5 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-enrichment-upper-west-side-parents-guide">
+          <span class="blog-card__category">Local Guide</span>
+          <h2 class="blog-card__title">Best Math Enrichment on the Upper West Side: A Parent's Guide</h2>
+          <p class="blog-card__dek">How UWS parents should evaluate every math enrichment program in the neighborhood the way an educator would.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

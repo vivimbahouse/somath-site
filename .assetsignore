@@ -1,0 +1,9 @@
+_worker.js
+wrangler.toml
+.assetsignore
+.git
+.github
+node_modules
+*.log
+.DS_Store
+.somath_secrets

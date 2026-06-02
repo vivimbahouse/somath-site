@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Calc Diagnostic: Solve the Equation — 7 Techniques (Stewart Problem 8) | Pre-Calculus Tutoring NYC | SOMATH</title>
+    <meta name="description" content="Stewart Pre-Calculus Diagnostic Test, Problem 8 — seven equations, seven different solving techniques worked side by side. Linear, rational with a domain check, factorable quadratic, quadratic formula, quartic-via-substitution, absolute value split, and a negative fractional exponent. The one big-picture lesson every pre-calc student needs before AP Calc." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/precalc-diagnostic-solve-the-equation-stewart-problem-8" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Calc Diagnostic: Solve the Equation — 7 Techniques (Stewart Problem 8)" />
+    <meta property="og:description" content="Stewart Pre-Calculus Diagnostic Problem 8 — seven equations, seven techniques, side by side. Linear, rational with a domain check, factorable quadratic, quadratic formula, quartic via substitution, absolute value, and a negative fractional exponent. SOMATH on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/precalc-diagnostic-solve-the-equation-stewart-problem-8" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-the-equation-stewart-problem-8/cover.jpg" />
+    <meta property="article:published_time" content="2026-05-26" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Calc Diagnostic: Solve the Equation — 7 Techniques (Stewart Problem 8)" />
+    <meta name="twitter:description" content="Seven different equations, seven different techniques. The single most important diagnostic in any pre-calculus course." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-the-equation-stewart-problem-8/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .mathx { font-family: 'Cambria Math', 'Latin Modern Math', 'STIX Two Math', Cambria, 'Times New Roman', serif; font-size: 1.08em; line-height: 1.6; }
+      .mathx sup, .mathx sub { font-size: 0.72em; line-height: 0; position: relative; vertical-align: baseline; }
+      .mathx sup { top: -0.55em; }
+      .mathx sub { bottom: -0.25em; }
+      .mathx .sqrt { display: inline-block; position: relative; padding: 0 0.18em; }
+      .mathx .sqrt::before { content: '√'; font-size: 1.05em; }
+      .mathx .sqrt .rad { display: inline-block; border-top: 1.3px solid currentColor; padding: 0 0.15em; margin-left: -0.05em; }
+      .mathx .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 0.18em; line-height: 1.1; }
+      .mathx .frac > .num { display: block; border-bottom: 1.3px solid currentColor; padding: 0 0.35em 1px; }
+      .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
+      .mathx .op { padding: 0 0.18em; }
+      .mathd { display: block; text-align: center; margin: 18px 0 22px; }
+      .boxed { display: inline-block; border: 1.5px solid #0a3a5f; border-radius: 4px; padding: 2px 10px; margin: 0 2px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Calc Diagnostic: Solve the Equation — 7 Techniques (Stewart Problem 8)",
+  "description": "Stewart Pre-Calculus Diagnostic Test Problem 8 worked step by step. Seven equations, seven different techniques: linear, rational with domain check, factorable quadratic, quadratic formula, quartic via substitution, absolute value split, and a negative fractional exponent.",
+  "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-the-equation-stewart-problem-8/cover.jpg",
+  "datePublished": "2026-05-26",
+  "dateModified": "2026-05-26",
+  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-solve-the-equation-stewart-problem-8"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I know which solving technique to pick?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Read the equation's shape. Linear with one x? Isolate x. Rational with x in the denominator? Cross-multiply, then check the domain. Quadratic? Try to factor first — if it doesn't factor cleanly, use the quadratic formula. Quartic with only even powers (x⁴, x², constant)? Substitute y = x² and treat it as a quadratic in y. Absolute value? Split into two cases. A weird mix of √(4−x) and (4−x)^(−1/2)? That's a substitution problem — let t = √(4−x). Pattern recognition is the entire skill." } },
+    { "@type": "Question", "name": "Why do I need to check the domain on rational equations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because cross-multiplying can create solutions that weren't valid in the original equation. If the original has x in the denominator and you find x = 0 after cross-multiplying, that's an extraneous solution — it makes the original undefined. Always list the excluded values before you start so you can throw out any extraneous answers at the end. In Problem 8(b), the excluded values are x ≠ 0 and x ≠ −1, so the answer x = 1 is valid." } },
+    { "@type": "Question", "name": "When should I factor versus use the quadratic formula?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Try to factor first — if the quadratic factors into integers, factoring is faster, cleaner, and less error-prone. Look for two numbers that multiply to ac and add to b. If you can't spot them in 30 seconds, switch to the quadratic formula. Don't waste five minutes hunting for a factorization that doesn't exist. Problem 8(c) factors easily; Problem 8(d) does not, so the formula is the right move." } },
+    { "@type": "Question", "name": "What's the substitution trick on quartic equations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If an equation has only even powers of x — like x⁴ − 3x² + 2 = 0 — let y = x². The equation becomes y² − 3y + 2 = 0, a normal quadratic in y. Solve for y, then back-substitute to get x² = (each y value) and take square roots. You get twice as many x solutions as y solutions because each positive y gives two x values (±√y). This trick generalizes: anytime you see the same expression appearing squared and to the first power, substitute." } },
+    { "@type": "Question", "name": "Why is part (g) the hardest equation on the diagnostic?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because it mixes a negative fractional exponent — (4−x)^(−1/2), which means 1/√(4−x) — with a regular square root √(4−x). Students who don't recognize that both expressions are functions of the same thing (4 − x) try to attack it head-on and get stuck. The substitution t = √(4 − x) is the key: now (4−x)^(−1/2) becomes 1/t, the equation collapses into 2(4 − t²)·(1/t) − 3t = 0, and you can solve a clean quadratic in t. The hardest problems in pre-calc are almost always 'see the substitution' problems." } }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Pre-Calculus · Equation-Solving Toolkit</p>
+      <h1 class="post__title">Pre-Calc Diagnostic: Solve the Equation — 7 Techniques (Stewart Problem 8)</h1>
+      <p class="post__dek">Seven equations, seven different solving techniques worked side by side. The single most important diagnostic in any pre-calculus course — because the rest of pre-calc, AP Calc AB, and AP Calc BC all assume you can pattern-match a new equation to the right move in under thirty seconds. Linear, rational with a domain check, factorable quadratic, quadratic formula, quartic via substitution, absolute value split, and a negative fractional exponent. Taught the way we teach it at SOMATH on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-05-26">2026-05-26</time> · By the School of Math team · 226 W 79th St, UWS</p>
+
+      <div class="post__body">
+
+          <figure class="post__cover"><img src="/assets/blog/precalc-diagnostic-solve-the-equation-stewart-problem-8/cover.jpg" alt="Stewart Pre-Calculus Problem 8 problem card — Solve the equation, parts (a) through (g) — solved by SOMATH on the Upper West Side." /></figure>
+
+          <figure class="post__video" style="margin:0 0 32px;border-radius:var(--radius);overflow:hidden;background:#000;">
+            <div style="position:relative;width:100%;padding-top:56.25%;background:#000;">
+              <iframe src="https://www.youtube.com/embed/MAnQpbksCq8?rel=0" title="Pre-Calc Diagnostic: Solve the Equation, 7 ways (Stewart #8)" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <figcaption style="text-align:center;font-size:0.85rem;color:#666;padding:8px 12px 0;">Walkthrough from the SOMATH classroom · <a href="https://www.youtube.com/watch?v=MAnQpbksCq8" rel="noopener">Watch on YouTube</a></figcaption>
+          </figure>
+
+          <p><strong>Direct answer.</strong> Stewart's Problem 8 is a diagnostic on <em>technique selection</em>, not just algebra. Seven equations, seven different shapes, seven different first moves: <span class="mathx">(a) <i>x</i> + 5 = 14 − <span class="frac"><span class="num">1</span><span class="den">2</span></span><i>x</i></span> is linear (<span class="mathx boxed"><i>x</i> = 6</span>); <span class="mathx">(b) <span class="frac"><span class="num">2<i>x</i></span><span class="den"><i>x</i>+1</span></span> = <span class="frac"><span class="num">2<i>x</i>−1</span><span class="den"><i>x</i></span></span></span> is rational, cross-multiply and check the domain (<span class="mathx boxed"><i>x</i> = 1</span>); <span class="mathx">(c) <i>x</i><sup>2</sup> − <i>x</i> − 12 = 0</span> factors (<span class="mathx boxed"><i>x</i> = 4, −3</span>); <span class="mathx">(d) 2<i>x</i><sup>2</sup> + 4<i>x</i> + 1 = 0</span> needs the quadratic formula (<span class="mathx boxed"><i>x</i> = −1 ± <span class="frac"><span class="num"><span class="sqrt"><span class="rad">2</span></span></span><span class="den">2</span></span></span>); <span class="mathx">(e) <i>x</i><sup>4</sup> − 3<i>x</i><sup>2</sup> + 2 = 0</span> becomes a quadratic after the substitution <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup></span> (<span class="mathx boxed"><i>x</i> = ±1, ±<span class="sqrt"><span class="rad">2</span></span></span>); <span class="mathx">(f) 3|<i>x</i> − 4| = 10</span> splits into two cases (<span class="mathx boxed"><i>x</i> = <span class="frac"><span class="num">22</span><span class="den">3</span></span>, <span class="frac"><span class="num">2</span><span class="den">3</span></span></span>); and <span class="mathx">(g) 2<i>x</i>(4 − <i>x</i>)<sup>−1/2</sup> − 3<span class="sqrt"><span class="rad">4 − <i>x</i></span></span> = 0</span> takes the substitution <span class="mathx"><i>t</i> = <span class="sqrt"><span class="rad">4 − <i>x</i></span></span></span> (<span class="mathx boxed"><i>x</i> = <span class="frac"><span class="num">12</span><span class="den">5</span></span></span>). The lesson isn't any one technique — it's reading the equation's shape and choosing the right tool in under thirty seconds.</p>
+
+          <h2>(a) Linear: <span class="mathx"><i>x</i> + 5 = 14 − <span class="frac"><span class="num">1</span><span class="den">2</span></span><i>x</i></span></h2>
+          <p>Move the <span class="mathx"><i>x</i></span>-terms to one side, constants to the other:</p>
+          <p class="mathd mathx"><i>x</i> + <span class="frac"><span class="num">1</span><span class="den">2</span></span><i>x</i> = 14 − 5</p>
+          <p class="mathd mathx"><span class="frac"><span class="num">3</span><span class="den">2</span></span><i>x</i> = 9 ⟹ <i>x</i> = 9 · <span class="frac"><span class="num">2</span><span class="den">3</span></span> = <span class="boxed">6</span></p>
+          <p>Linear equations are diagnostic <em>floor</em>. A pre-calc student who hesitates on part (a) is missing fluency that should have been automatic since algebra 1. We treat fluency on (a)-style problems as a prerequisite — if it isn't there, we step back and build it before moving on.</p>
+
+          <h2>(b) Rational with a domain check: <span class="mathx"><span class="frac"><span class="num">2<i>x</i></span><span class="den"><i>x</i>+1</span></span> = <span class="frac"><span class="num">2<i>x</i> − 1</span><span class="den"><i>x</i></span></span></span></h2>
+          <p>Before doing any algebra, list the excluded values. The denominators are <span class="mathx"><i>x</i> + 1</span> and <span class="mathx"><i>x</i></span>, so <span class="mathx"><i>x</i> ≠ −1</span> and <span class="mathx"><i>x</i> ≠ 0</span>. Now cross-multiply:</p>
+          <p class="mathd mathx">2<i>x</i> · <i>x</i> = (2<i>x</i> − 1)(<i>x</i> + 1)</p>
+          <p class="mathd mathx">2<i>x</i><sup>2</sup> = 2<i>x</i><sup>2</sup> + <i>x</i> − 1</p>
+          <p>The <span class="mathx">2<i>x</i><sup>2</sup></span> cancels off both sides — which is a clue this was set up to test discipline, not algebra:</p>
+          <p class="mathd mathx">0 = <i>x</i> − 1 ⟹ <span class="boxed"><i>x</i> = 1</span></p>
+          <p>Check against the excluded values: <span class="mathx"><i>x</i> = 1</span> is not 0 and not −1, so it's valid. If the cross-multiply had produced <span class="mathx"><i>x</i> = 0</span> or <span class="mathx"><i>x</i> = −1</span>, those would be <em>extraneous</em> — algebraically valid but invalid in the original equation. The domain check is mandatory, not optional.</p>
+
+          <h2>(c) Factorable quadratic: <span class="mathx"><i>x</i><sup>2</sup> − <i>x</i> − 12 = 0</span></h2>
+          <p>Always try factoring first. Two integers that multiply to <span class="mathx">−12</span> and add to <span class="mathx">−1</span>: <span class="mathx">−4</span> and <span class="mathx">+3</span>.</p>
+          <p class="mathd mathx">(<i>x</i> − 4)(<i>x</i> + 3) = 0 ⟹ <span class="boxed"><i>x</i> = 4, −3</span></p>
+          <p>The whole skill is the 30-second factoring scan. If you can't spot the pair quickly, move on to the quadratic formula. Don't waste time hunting.</p>
+
+          <h2>(d) Quadratic formula: <span class="mathx">2<i>x</i><sup>2</sup> + 4<i>x</i> + 1 = 0</span></h2>
+          <p>Try factoring: pairs of <span class="mathx">2 · 1 = 2</span> that add to <span class="mathx">4</span>? There aren't any clean integer pairs. Switch to the formula. <span class="mathx"><i>a</i> = 2, <i>b</i> = 4, <i>c</i> = 1</span>:</p>
+          <p class="mathd mathx"><i>x</i> = <span class="frac"><span class="num">−4 ± <span class="sqrt"><span class="rad">16 − 8</span></span></span><span class="den">4</span></span> = <span class="frac"><span class="num">−4 ± <span class="sqrt"><span class="rad">8</span></span></span><span class="den">4</span></span> = <span class="frac"><span class="num">−4 ± 2<span class="sqrt"><span class="rad">2</span></span></span><span class="den">4</span></span></p>
+          <p>Simplify by dividing every term by 2:</p>
+          <p class="mathd mathx"><span class="boxed"><i>x</i> = −1 ± <span class="frac"><span class="num"><span class="sqrt"><span class="rad">2</span></span></span><span class="den">2</span></span></span></p>
+          <p>Discriminant was <span class="mathx">16 − 8 = 8 > 0</span>, so two real roots. <span class="mathx"><span class="sqrt"><span class="rad">8</span></span> = 2<span class="sqrt"><span class="rad">2</span></span></span> — students who leave it as <span class="mathx"><span class="sqrt"><span class="rad">8</span></span></span> aren't wrong, but they aren't simplified.</p>
+
+          <h2>(e) Quartic by substitution: <span class="mathx"><i>x</i><sup>4</sup> − 3<i>x</i><sup>2</sup> + 2 = 0</span></h2>
+          <p>Only even powers of <span class="mathx"><i>x</i></span>, so let <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup></span>. The equation becomes a clean quadratic:</p>
+          <p class="mathd mathx"><i>y</i><sup>2</sup> − 3<i>y</i> + 2 = 0 ⟹ (<i>y</i> − 1)(<i>y</i> − 2) = 0</p>
+          <p>So <span class="mathx"><i>y</i> = 1</span> or <span class="mathx"><i>y</i> = 2</span>. Back-substitute <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup></span>:</p>
+          <p class="mathd mathx"><i>x</i><sup>2</sup> = 1 ⟹ <i>x</i> = ±1     and     <i>x</i><sup>2</sup> = 2 ⟹ <i>x</i> = ±<span class="sqrt"><span class="rad">2</span></span></p>
+          <p class="mathd mathx"><span class="boxed"><i>x</i> = ±1, ±<span class="sqrt"><span class="rad">2</span></span></span></p>
+          <p>Four real solutions, exactly as expected from a quartic. The substitution turns a "scary" 4th-degree equation into something a student already knows how to solve. This technique recurs in calculus integration: anytime you see the same expression squared and to the first power, substitute.</p>
+
+          <h2>(f) Absolute value: <span class="mathx">3|<i>x</i> − 4| = 10</span></h2>
+          <p>Isolate the absolute value first:</p>
+          <p class="mathd mathx">|<i>x</i> − 4| = <span class="frac"><span class="num">10</span><span class="den">3</span></span></p>
+          <p>Now split into two cases — the expression inside is either positive or negative its target:</p>
+          <p class="mathd mathx"><i>x</i> − 4 = <span class="frac"><span class="num">10</span><span class="den">3</span></span>     or     <i>x</i> − 4 = −<span class="frac"><span class="num">10</span><span class="den">3</span></span></p>
+          <p class="mathd mathx"><i>x</i> = <span class="frac"><span class="num">10</span><span class="den">3</span></span> + 4 = <span class="frac"><span class="num">22</span><span class="den">3</span></span>     or     <i>x</i> = −<span class="frac"><span class="num">10</span><span class="den">3</span></span> + 4 = <span class="frac"><span class="num">2</span><span class="den">3</span></span></p>
+          <p class="mathd mathx"><span class="boxed"><i>x</i> = <span class="frac"><span class="num">22</span><span class="den">3</span></span>, <span class="frac"><span class="num">2</span><span class="den">3</span></span></span></p>
+          <p>The student error to watch for: forgetting to isolate the absolute value first. Splitting <span class="mathx">3|<i>x</i> − 4| = 10</span> into <span class="mathx">3(<i>x</i> − 4) = ±10</span> works algebraically, but isolating the absolute value first keeps the logic crisper. Always isolate before splitting.</p>
+
+          <h2>(g) Negative fractional exponent — the hardest one: <span class="mathx">2<i>x</i>(4 − <i>x</i>)<sup>−1/2</sup> − 3<span class="sqrt"><span class="rad">4 − <i>x</i></span></span> = 0</span></h2>
+          <p>This is where students freeze. The expressions <span class="mathx">(4 − <i>x</i>)<sup>−1/2</sup></span> and <span class="mathx"><span class="sqrt"><span class="rad">4 − <i>x</i></span></span></span> are both functions of the same thing, so substitute. Let <span class="mathx"><i>t</i> = <span class="sqrt"><span class="rad">4 − <i>x</i></span></span></span> (so <span class="mathx"><i>t</i> > 0</span>). Then:</p>
+          <p class="mathd mathx"><i>x</i> = 4 − <i>t</i><sup>2</sup>     and     (4 − <i>x</i>)<sup>−1/2</sup> = <span class="frac"><span class="num">1</span><span class="den"><i>t</i></span></span></p>
+          <p>Plug into the original:</p>
+          <p class="mathd mathx">2(4 − <i>t</i><sup>2</sup>) · <span class="frac"><span class="num">1</span><span class="den"><i>t</i></span></span> − 3<i>t</i> = 0</p>
+          <p class="mathd mathx"><span class="frac"><span class="num">8 − 2<i>t</i><sup>2</sup></span><span class="den"><i>t</i></span></span> − 3<i>t</i> = 0 ⟹ <span class="frac"><span class="num">8</span><span class="den"><i>t</i></span></span> − 2<i>t</i> − 3<i>t</i> = 0 ⟹ <span class="frac"><span class="num">8</span><span class="den"><i>t</i></span></span> − 5<i>t</i> = 0</p>
+          <p>Multiply through by <span class="mathx"><i>t</i></span> (we know <span class="mathx"><i>t</i> > 0</span>):</p>
+          <p class="mathd mathx">8 − 5<i>t</i><sup>2</sup> = 0 ⟹ <i>t</i><sup>2</sup> = <span class="frac"><span class="num">8</span><span class="den">5</span></span></p>
+          <p>Now back-substitute. <span class="mathx"><i>t</i><sup>2</sup> = 4 − <i>x</i></span>, so:</p>
+          <p class="mathd mathx">4 − <i>x</i> = <span class="frac"><span class="num">8</span><span class="den">5</span></span> ⟹ <i>x</i> = 4 − <span class="frac"><span class="num">8</span><span class="den">5</span></span> = <span class="frac"><span class="num">20 − 8</span><span class="den">5</span></span> = <span class="boxed"><span class="frac"><span class="num">12</span><span class="den">5</span></span></span></p>
+          <p>Domain check: at <span class="mathx"><i>x</i> = <span class="frac"><span class="num">12</span><span class="den">5</span></span> = 2.4</span>, <span class="mathx">4 − <i>x</i> = 1.6 > 0</span>, so the square root is defined. Valid. The whole equation collapses to a single solution because of how the substitution clears the negative exponent.</p>
+
+          <h2>The one big-picture lesson: pattern recognition is the entire skill</h2>
+          <p>Every problem on Stewart's diagnostic Problem 8 has a different first move, and that's the point. AP Calc AB students who got their pre-calc grades by memorizing one or two techniques and brute-forcing every problem hit a wall the first time they see an integral that requires substitution. AP Calc BC students with the same gap hit a wall on improper integrals. Pre-calc is the course where students should be cataloging <em>shapes</em> of equations and the techniques that match each shape — so that by Calc I the matching is automatic.</p>
+          <p>The shapes worth memorizing from Problem 8:</p>
+          <ul>
+            <li><strong>Linear (one <span class="mathx"><i>x</i></span> at most once on each side):</strong> isolate.</li>
+            <li><strong>Rational (variable in a denominator):</strong> list excluded values, cross-multiply, check at the end.</li>
+            <li><strong>Quadratic, factorable:</strong> 30-second scan for the factor pair, then factor.</li>
+            <li><strong>Quadratic, not factorable:</strong> quadratic formula.</li>
+            <li><strong>Only even powers of <span class="mathx"><i>x</i></span>:</strong> substitute <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup></span>.</li>
+            <li><strong>Absolute value:</strong> isolate, then split into two cases.</li>
+            <li><strong>Same expression appearing in multiple forms (square root and negative half-power, or squared and linear):</strong> substitute a single letter for that expression.</li>
+          </ul>
+          <p>These seven patterns cover most of what's tested in AP Calc AB and BC equation-solving. A pre-calc student who has them automatic walks into Calc with a real advantage.</p>
+
+          <h2>How SOMATH teaches the equation-solving toolkit on the Upper West Side</h2>
+          <p>We start every new pre-calc student with a diagnostic identical in structure to Stewart's. Five to seven equations of different shapes, no calculator, no help. Then we sit with the student and ask — <em>before they pick up a pencil</em> — what shape each one is and what the first move would be. The algebra is downstream of the recognition; the recognition is the whole game. From our classroom on 226 W 79th St we run small groups of 3–5 students, every lesson on whiteboards, every step shown out loud. Every new student gets a free 60-minute evaluation and a written diagnostic within 48 hours, even if they don't enroll.</p>
+
+          <h2>FAQ</h2>
+          <h3>How do I know which solving technique to pick?</h3>
+          <p>Read the equation's shape first. Linear, rational, factorable quadratic, quadratic formula, even-power substitution, absolute value, or matched-expression substitution. The shape tells you the first move.</p>
+          <h3>Why check the domain on rational equations?</h3>
+          <p>Cross-multiplying can produce solutions that make the original equation undefined. Listing excluded values up front lets you discard them at the end.</p>
+          <h3>Factor or quadratic formula?</h3>
+          <p>Try factoring for 30 seconds. If no clean factor pair appears, switch to the formula. Don't lose 5 minutes hunting for a factorization that doesn't exist.</p>
+          <h3>What's the quartic substitution trick?</h3>
+          <p>If only even powers of <span class="mathx"><i>x</i></span> appear, let <span class="mathx"><i>y</i> = <i>x</i><sup>2</sup></span>, solve the resulting quadratic in <span class="mathx"><i>y</i></span>, then back-substitute and take square roots. Twice as many <span class="mathx"><i>x</i></span> answers as <span class="mathx"><i>y</i></span> answers.</p>
+          <h3>Why is part (g) the hardest equation?</h3>
+          <p>It mixes a negative half-power and a square root of the same expression. The substitution <span class="mathx"><i>t</i> = <span class="sqrt"><span class="rad">4 − <i>x</i></span></span></span> collapses both into the same letter and turns the whole thing into a clean equation in <span class="mathx"><i>t</i></span>.</p>
+
+          <div style="background:#f5f1e8;border-left:4px solid #d4a548;padding:24px 28px;margin:36px 0;border-radius:6px;">
+            <p style="font-weight:600;margin:0 0 8px;color:#0a3a5f;">Free 60-minute evaluation</p>
+            <p style="margin:0 0 14px;">Every new SOMATH student starts with a free 60-minute evaluation and a written diagnostic delivered within 48 hours — even if you don't enroll. Pre-calculus, AP Calculus, SHSAT, SAT, and everything in between. 226 W 79th St, Upper West Side.</p>
+            <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#0a3a5f;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;">Book your evaluation →</a></p>
+          </div>
+
+          <h2>Related posts</h2>
+          <ul>
+            <li><a href="/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7">Pre-Calc Diagnostic: Rewrite by Completing the Square (Stewart Problem 7)</a></li>
+            <li><a href="/posts/precalc-diagnostic-rationalize-the-expression-stewart-problem-6">Pre-Calc Diagnostic: Rationalize the Expression (Stewart Problem 6)</a></li>
+            <li><a href="/posts/precalc-diagnostic-simplify-rational-expressions-stewart-problem-5">Pre-Calc Diagnostic: Simplify Rational Expressions (Stewart Problem 5)</a></li>
+          </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>
