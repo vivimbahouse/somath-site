@@ -147,29 +147,15 @@
     </script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a href="/" class="site-header__logo"><img src="/assets/somath-logo.png" alt="School of Math" /></a>
-        <nav class="site-nav">
-          <a href="/about">About</a>
-          <a href="/programs">Programs</a>
-          <a href="/blog">Blog</a>
-          <a href="/contact">Contact</a>
-          <a href="/evaluation" class="site-nav__cta">Free Evaluation</a>
-        </nav>
-      </div>
-    </header>
+    <div id="header-mount"></div>
 
-    <main class="post">
-      <article class="post__article">
-        <header class="post__header">
-          <p class="post__breadcrumb"><a href="/blog">Blog</a> &middot; K&ndash;1 Math Practice</p>
-          <h1 class="post__title">K&ndash;1 Math Practice: 20 Questions on Numbers, Place Value &amp; Addition</h1>
-          <p class="post__dek">A free practice set for Kindergarten and 1st grade students &mdash; 10 easy and 10 medium questions on number names, the decimal system, place value to thousands, comparing numbers, word problems, and addition with carrying. Tap the button under each question to reveal the answer and explanation. Built directly from our <a href="/posts/inside-our-classroom-k-1-numbers-place-value-puzzles">K&ndash;1 Session 1 class</a> on the Upper West Side.</p>
-          <p class="post__meta"><strong>SOMATH &middot; Little Newtons A &middot; Session 1 Companion</strong> &middot; June 10, 2026 &middot; 15 min</p>
-        </header>
+    <article class="post">
+      <p class="post__eyebrow">K&ndash;1 Math Practice &middot; Place Value &middot; Addition with Carrying &middot; Upper West Side</p>
+      <h1 class="post__title">K&ndash;1 Math Practice: 20 Questions on Numbers, Place Value &amp; Addition</h1>
+      <p class="post__dek">A free practice set for Kindergarten and 1st grade students &mdash; 10 easy and 10 medium questions on number names, the decimal system, place value to thousands, comparing numbers, word problems, and addition with carrying. Tap the button under each question to reveal the answer and explanation. Built directly from our <a href="/posts/inside-our-classroom-k-1-numbers-place-value-puzzles">K&ndash;1 Session 1 class</a> on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-06-10">2026-06-10</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
 
-        <div class="post__body">
+      <div class="post__body">
 
           <div class="callout">
             <p><strong>How to use this practice set.</strong> Sit with your child. Read each question out loud. Let them write the answer in a notebook or say it out loud before tapping <strong>Show answer</strong>. The explanation is written for parents to read with the child &mdash; not just a number, but the reason behind it.</p>
@@ -486,17 +472,11 @@
             </ul>
           </div>
 
-        </div>
-      </article>
-    </main>
-
-    <footer class="site-footer">
-      <div class="site-footer__inner">
-        <p><strong>School of Math</strong> &middot; 226 W 79th St, 1st Floor, NY 10024 &middot; <a href="tel:+16466686151">(646) 668-6151</a></p>
-        <p>&copy; 2026 School of Math. All rights reserved.</p>
       </div>
-    </footer>
+    </article>
 
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
     <script>
       // Answer reveal toggles
       document.querySelectorAll('.q-card .reveal-btn').forEach(function(btn){
