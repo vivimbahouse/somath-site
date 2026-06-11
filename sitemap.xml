@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.schoolofmath.us/summer-schedule</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.schoolofmath.us/august-schedule</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://www.schoolofmath.us/posts/nyc-solves-curriculum-expansion-2026-what-parents-need-to-know</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>

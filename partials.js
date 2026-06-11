@@ -24,6 +24,7 @@
             <button type="button" class="nav__link nav__dropdown-toggle ${page === "schedule" ? "is-active" : ""}" aria-expanded="false" aria-haspopup="true">Schedule<span class="nav__dropdown-caret" aria-hidden="true">▾</span></button>
             <div class="nav__dropdown-menu" role="menu">
               <a class="nav__dropdown-item" href="/summer-schedule" role="menuitem">July 2026</a>
+              <a class="nav__dropdown-item" href="/august-schedule" role="menuitem">August 2026</a>
             </div>
           </div>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
@@ -37,7 +38,8 @@
       </div>
       <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
         <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
-        <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule</a>
+        <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule &mdash; July 2026</a>
+        <a class="nav__mobile-link ${page === "schedule-august" ? "is-active" : ""}" href="/august-schedule">Schedule &mdash; August 2026</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
         <a class="nav__mobile-link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
