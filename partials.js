@@ -20,7 +20,7 @@
         </div>
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
-          <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Classes</a>
+          <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule</a>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
           <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
@@ -32,7 +32,7 @@
       </div>
       <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
         <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
-        <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Classes</a>
+        <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
         <a class="nav__mobile-link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
