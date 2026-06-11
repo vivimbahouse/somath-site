@@ -20,7 +20,12 @@
         </div>
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
-          <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule</a>
+          <div class="nav__dropdown ${page === "schedule" ? "is-active" : ""}">
+            <button type="button" class="nav__link nav__dropdown-toggle ${page === "schedule" ? "is-active" : ""}" aria-expanded="false" aria-haspopup="true">Schedule<span class="nav__dropdown-caret" aria-hidden="true">▾</span></button>
+            <div class="nav__dropdown-menu" role="menu">
+              <a class="nav__dropdown-item" href="/summer-schedule" role="menuitem">July 2026</a>
+            </div>
+          </div>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
           <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
@@ -108,6 +113,24 @@
   if (navMount) navMount.innerHTML = navHTML;
   if (footerMount) footerMount.innerHTML = footerHTML;
   if (stickyMount) stickyMount.innerHTML = stickyHTML;
+
+  // Desktop dropdown: hover-open, click-toggle (touch), close on outside click + Escape
+  document.querySelectorAll(".nav__dropdown").forEach(dd => {
+    const toggle = dd.querySelector(".nav__dropdown-toggle");
+    if (!toggle) return;
+    const setOpen = (open) => {
+      dd.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    };
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      setOpen(!dd.classList.contains("is-open"));
+    });
+    dd.addEventListener("mouseenter", () => setOpen(true));
+    dd.addEventListener("mouseleave", () => setOpen(false));
+    document.addEventListener("click", (e) => { if (!dd.contains(e.target)) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  });
 
   // Mobile hamburger menu toggle
   const burger = document.querySelector(".nav__burger");

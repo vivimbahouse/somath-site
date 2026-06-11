@@ -151,6 +151,74 @@ a.nav__address:hover { color: var(--gold); }
   flex-shrink: 0;
 }
 
+/* Nav dropdown */
+.nav__dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav__dropdown-toggle {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav__dropdown-caret {
+  font-size: 0.7em;
+  line-height: 1;
+  margin-top: 1px;
+  transition: transform 0.18s ease;
+}
+.nav__dropdown.is-open .nav__dropdown-caret { transform: rotate(180deg); }
+.nav__dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(26, 40, 32, 0.12);
+  padding: 6px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 100;
+}
+.nav__dropdown.is-open .nav__dropdown-menu,
+.nav__dropdown:hover .nav__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav__dropdown-item {
+  display: block;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.nav__dropdown-item:hover {
+  background: var(--cream);
+  color: var(--green);
+}
+/* Invisible hover-bridge so dropdown stays open while moving cursor down */
+.nav__dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  height: 12px;
+}
+
 /* ===========================================================
    BUTTONS
    =========================================================== */
