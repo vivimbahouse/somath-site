@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Free 6th Grade Math Diagnostic · School of Math NYC</title>
+    <meta name="description" content="Free 20-question NYC 6th grade math diagnostic aligned to the Common Core curriculum. Get an instant report with strengths, weaknesses, and a recommended SOMATH course track." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="canonical" href="https://www.schoolofmath.us/student-evaluation" />
+    <meta property="og:url" content="https://www.schoolofmath.us/student-evaluation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Free 6th Grade Math Diagnostic · School of Math NYC" />
+    <meta property="og:description" content="20 NYC Common Core questions, instant strengths/weaknesses report, and a recommended SOMATH track." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .quiz-wrap { max-width: 760px; margin: 0 auto; }
+      .quiz-card { background:#fff; border:1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; box-shadow: 0 2px 12px rgba(31,61,46,0.05); }
+      .quiz-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom: 22px; font-size: 14px; color: var(--ink-mute); }
+      .quiz-bar { width:100%; height:6px; background:#eee; border-radius:999px; overflow:hidden; margin-bottom: 22px; }
+      .quiz-bar-fill { height:100%; background: var(--accent, #c89a3a); transition: width .25s ease; }
+      .quiz-strand { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent, #c89a3a); font-weight: 600; margin-bottom: 8px; }
+      .quiz-q { font-size: 20px; font-weight: 600; color: var(--ink, #1f3d2e); margin: 0 0 22px; line-height: 1.4; }
+      .quiz-q .math { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: #f5f0e6; padding: 1px 6px; border-radius: 4px; }
+      .quiz-options { display:flex; flex-direction:column; gap: 10px; margin-bottom: 22px; }
+      .quiz-opt { display:flex; align-items:center; gap: 12px; padding: 14px 16px; border:1px solid var(--line); border-radius: 10px; background:#fff; cursor:pointer; font-size: 16px; color: var(--ink, #1f3d2e); text-align:left; transition: all .15s ease; font-family: inherit; }
+      .quiz-opt:hover { border-color: var(--accent, #c89a3a); background: #fffaf0; }
+      .quiz-opt.is-selected { border-color: var(--ink, #1f3d2e); background: #f5f0e6; }
+      .quiz-opt-letter { display:inline-flex; align-items:center; justify-content:center; width: 28px; height: 28px; border-radius: 50%; border:1px solid currentColor; font-weight: 600; font-size: 13px; flex-shrink: 0; }
+      .quiz-actions { display:flex; justify-content:space-between; align-items:center; gap: 12px; }
+      .quiz-btn-back { background:none; border:none; color: var(--ink-mute); cursor:pointer; font-size: 14px; font-family: inherit; padding: 8px 4px; }
+      .quiz-btn-back:hover { color: var(--ink, #1f3d2e); }
+      .quiz-btn-back:disabled { opacity: .4; cursor: not-allowed; }
+
+      .intro h1 { margin-top: 0; }
+      .intro ul { padding-left: 20px; }
+      .intro li { margin: 6px 0; }
+      .intro-form { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+      .intro-form label { display:flex; flex-direction:column; font-size: 13px; color: var(--ink-mute); gap: 6px; }
+      .intro-form input { padding: 12px 14px; border:1px solid var(--line); border-radius: 8px; font-size: 16px; font-family: inherit; color: var(--ink, #1f3d2e); }
+      .intro-form input:focus { outline: 2px solid var(--accent, #c89a3a); outline-offset: 1px; }
+      .intro-form .full { grid-column: 1 / -1; }
+      @media (max-width: 540px) { .intro-form { grid-template-columns: 1fr; } }
+
+      .report-score { display:flex; align-items:baseline; gap: 8px; margin: 6px 0 24px; }
+      .report-score-num { font-size: 48px; font-weight: 700; color: var(--ink, #1f3d2e); line-height: 1; }
+      .report-score-of { font-size: 18px; color: var(--ink-mute); }
+      .report-section { margin: 24px 0; }
+      .report-section h3 { margin: 0 0 10px; font-size: 16px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent, #c89a3a); }
+      .strand-row { display:flex; align-items:center; gap: 12px; margin: 6px 0; }
+      .strand-name { width: 220px; font-size: 14px; color: var(--ink, #1f3d2e); }
+      .strand-meter { flex: 1; height: 8px; background:#eee; border-radius: 999px; overflow:hidden; }
+      .strand-meter-fill { height:100%; }
+      .strand-fill-strong { background:#3a8e54; }
+      .strand-fill-ok { background:#c89a3a; }
+      .strand-fill-weak { background:#c94c4c; }
+      .strand-pct { width: 56px; text-align: right; font-size: 14px; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+      @media (max-width: 540px) {
+        .strand-row { flex-wrap: wrap; }
+        .strand-name { width: 100%; }
+      }
+
+      .recommend-card { background:#f5f0e6; border-left: 4px solid var(--accent, #c89a3a); padding: 18px 22px; border-radius: 8px; margin: 16px 0; }
+      .recommend-card h4 { margin: 0 0 6px; color: var(--ink, #1f3d2e); }
+      .recommend-card p { margin: 0 0 8px; }
+      .recommend-card .recommend-meta { font-size: 14px; color: var(--ink-mute); }
+
+      .send-status { padding: 12px 16px; border-radius: 8px; margin-top: 12px; font-size: 14px; }
+      .send-status.ok { background: #eaf5ee; color: #1f6c3a; }
+      .send-status.err { background: #fbeaea; color: #a23a3a; }
+      .quiz-footnote { font-size: 12px; color: var(--ink-mute); margin-top: 14px; }
+      .visually-hidden { position: absolute; clip: rect(0 0 0 0); width: 1px; height: 1px; overflow: hidden; }
+    </style>
+  </head>
+  <body data-page="student-evaluation">
+    <div id="header-mount"></div>
+
+    <main>
+      <section class="section section--hero" style="padding-top:60px; padding-bottom:30px;">
+        <div class="section__inner" style="text-align:center;">
+          <p class="eyebrow">Free Diagnostic · 6th Grade · NYC Common Core</p>
+          <h1 style="max-width: 720px; margin: 8px auto 16px;">Where does your 6th grader actually stand?</h1>
+          <p style="max-width: 640px; margin: 0 auto; color: var(--ink-mute);">
+            Twenty multiple-choice questions covering ratios, fractions, expressions, geometry, and statistics — the full New York State 6th grade math curriculum. One question at a time. Instant report. No account needed.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 20px;">
+        <div class="section__inner">
+          <div class="quiz-wrap">
+            <div class="quiz-card" id="quiz-root"></div>
+            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grade 6. Your report will be emailed to SOMATH at 226 W 79th St so we can tailor a recommendation for your child.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+
+    <script>
+    (function(){
+      // 20 questions across 5 NYC 6th grade Common Core strands (4 each)
+      // Strands: Ratios & Proportional Reasoning, The Number System,
+      // Expressions & Equations, Geometry, Statistics & Probability
+      const QUESTIONS = [
+        // ===== Ratios & Proportional Reasoning (4) =====
+        {
+          strand: "Ratios & Proportional Reasoning",
+          q: "A recipe uses 3 cups of flour for every 2 cups of sugar. If you use 12 cups of flour, how many cups of sugar do you need?",
+          options: ["6 cups", "8 cups", "9 cups", "18 cups"],
+          answer: 1
+        },
+        {
+          strand: "Ratios & Proportional Reasoning",
+          q: "A car travels 180 miles in 3 hours at a constant speed. What is the unit rate in miles per hour?",
+          options: ["45 mph", "60 mph", "90 mph", "540 mph"],
+          answer: 1
+        },
+        {
+          strand: "Ratios & Proportional Reasoning",
+          q: "What is 35% of 80?",
+          options: ["24", "28", "32", "45"],
+          answer: 1
+        },
+        {
+          strand: "Ratios & Proportional Reasoning",
+          q: "A shirt that normally costs $40 is on sale for 25% off. What is the sale price?",
+          options: ["$10", "$15", "$30", "$35"],
+          answer: 2
+        },
+
+        // ===== The Number System (4) =====
+        {
+          strand: "The Number System",
+          q: "Divide: 3/4 ÷ 2/3",
+          options: ["1/2", "6/12", "9/8", "1 1/8"],
+          answer: 2
+        },
+        {
+          strand: "The Number System",
+          q: "What is the greatest common factor (GCF) of 24 and 36?",
+          options: ["6", "8", "12", "72"],
+          answer: 2
+        },
+        {
+          strand: "The Number System",
+          q: "Which number is greater: -7 or -3?",
+          options: ["-7", "-3", "They are equal", "Cannot be compared"],
+          answer: 1
+        },
+        {
+          strand: "The Number System",
+          q: "A submarine is at -250 feet (below sea level). It rises 175 feet. What is its new depth?",
+          options: ["-425 feet", "-75 feet", "75 feet", "425 feet"],
+          answer: 1
+        },
+
+        // ===== Expressions & Equations (4) =====
+        {
+          strand: "Expressions & Equations",
+          q: "Evaluate the expression 3x + 5 when x = 4.",
+          options: ["12", "17", "19", "27"],
+          answer: 1
+        },
+        {
+          strand: "Expressions & Equations",
+          q: "Solve for x:  x + 8 = 15",
+          options: ["x = 5", "x = 7", "x = 8", "x = 23"],
+          answer: 1
+        },
+        {
+          strand: "Expressions & Equations",
+          q: "Which expression is equivalent to 6(x + 2)?",
+          options: ["6x + 2", "6x + 8", "6x + 12", "x + 12"],
+          answer: 2
+        },
+        {
+          strand: "Expressions & Equations",
+          q: "Solve for y:  4y = 36",
+          options: ["y = 4", "y = 8", "y = 9", "y = 32"],
+          answer: 2
+        },
+
+        // ===== Geometry (4) =====
+        {
+          strand: "Geometry",
+          q: "What is the area of a triangle with base 10 cm and height 6 cm?",
+          options: ["16 cm²", "30 cm²", "60 cm²", "120 cm²"],
+          answer: 1
+        },
+        {
+          strand: "Geometry",
+          q: "A rectangular prism has length 4 in, width 3 in, and height 5 in. What is its volume?",
+          options: ["12 in³", "47 in³", "60 in³", "94 in³"],
+          answer: 2
+        },
+        {
+          strand: "Geometry",
+          q: "A square has a side length of 9 ft. What is its perimeter?",
+          options: ["18 ft", "27 ft", "36 ft", "81 ft"],
+          answer: 2
+        },
+        {
+          strand: "Geometry",
+          q: "On a coordinate plane, point A is at (-3, 4) and point B is at (5, 4). What is the distance between them?",
+          options: ["2 units", "4 units", "8 units", "9 units"],
+          answer: 2
+        },
+
+        // ===== Statistics & Probability (4) =====
+        {
+          strand: "Statistics & Probability",
+          q: "Find the mean (average) of: 4, 6, 8, 10, 12.",
+          options: ["6", "8", "10", "40"],
+          answer: 1
+        },
+        {
+          strand: "Statistics & Probability",
+          q: "Find the median of: 3, 7, 2, 9, 5.",
+          options: ["3", "5", "6", "7"],
+          answer: 1
+        },
+        {
+          strand: "Statistics & Probability",
+          q: "What is the mode of the data set: 2, 4, 4, 6, 7, 4, 9?",
+          options: ["2", "4", "5", "6"],
+          answer: 1
+        },
+        {
+          strand: "Statistics & Probability",
+          q: "Find the range of: 12, 25, 7, 19, 30, 14.",
+          options: ["7", "18", "23", "30"],
+          answer: 2
+        }
+      ];
+
+      const STRAND_DESC = {
+        "Ratios & Proportional Reasoning": "ratios, unit rates, and percent — the cornerstone of 6th grade Common Core.",
+        "The Number System": "fraction division, GCF/LCM, and integers (including negative numbers on the number line).",
+        "Expressions & Equations": "evaluating expressions, distributive property, and solving one-step equations.",
+        "Geometry": "area of polygons, volume of rectangular prisms, perimeter, and coordinate plane distance.",
+        "Statistics & Probability": "mean, median, mode, and range — and how to read data."
+      };
+
+      const STRAND_REMEDIATION = {
+        "Ratios & Proportional Reasoning": "Practice setting up ratio tables and percent bars. The 'flour-to-sugar' style problems and percent-of-a-number problems should become automatic.",
+        "The Number System": "Drill fraction division using the 'keep-change-flip' method and revisit number-line work with negatives so directional reasoning becomes intuitive.",
+        "Expressions & Equations": "Reinforce the order of operations, the distributive property, and isolating a variable using inverse operations.",
+        "Geometry": "Memorize the core formulas (½·b·h, l·w·h, P = 4s) and practice plotting and measuring on the coordinate plane.",
+        "Statistics & Probability": "Sharpen the difference between mean, median, mode, and range — and when each one is the right summary statistic."
+      };
+
+      const state = {
+        stage: "intro", // intro | quiz | submitting | report
+        studentName: "",
+        parentEmail: "",
+        idx: 0,
+        answers: new Array(QUESTIONS.length).fill(null)
+      };
+
+      const root = document.getElementById("quiz-root");
+
+      function render() {
+        if (state.stage === "intro") return renderIntro();
+        if (state.stage === "quiz") return renderQuestion();
+        if (state.stage === "submitting") return renderSubmitting();
+        if (state.stage === "report") return renderReport();
+      }
+
+      function renderIntro() {
+        root.innerHTML = `
+          <div class="intro">
+            <h2 style="margin-top:0;">Free 6th Grade Math Diagnostic</h2>
+            <p>This 20-question diagnostic covers every major strand on the New York State 6th grade math curriculum. Your child will get:</p>
+            <ul>
+              <li>An instant score with a per-strand breakdown</li>
+              <li>A written summary of <strong>strengths</strong> and <strong>weaknesses</strong></li>
+              <li>A recommended SOMATH course track to enroll in</li>
+            </ul>
+            <p style="color: var(--ink-mute); font-size: 14px;">Takes about 10–15 minutes. Questions appear one at a time.</p>
+            <div class="intro-form">
+              <label class="full">
+                Student's first name
+                <input type="text" id="f-name" placeholder="e.g. Maya" maxlength="60" autocomplete="given-name" />
+              </label>
+              <label class="full">
+                Parent email (for the report)
+                <input type="email" id="f-email" placeholder="parent@example.com" maxlength="120" autocomplete="email" />
+              </label>
+            </div>
+            <div style="margin-top: 22px; display:flex; justify-content:flex-end;">
+              <button type="button" class="btn btn--primary" id="start-btn">Start the diagnostic →</button>
+            </div>
+            <p class="quiz-footnote" id="intro-err" style="color:#a23a3a; display:none;"></p>
+          </div>
+        `;
+        document.getElementById("start-btn").addEventListener("click", function(){
+          const name = document.getElementById("f-name").value.trim();
+          const email = document.getElementById("f-email").value.trim();
+          const err = document.getElementById("intro-err");
+          if (!name) { err.style.display="block"; err.textContent = "Please enter the student's first name."; return; }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.style.display="block"; err.textContent = "Please enter a valid parent email."; return; }
+          state.studentName = name;
+          state.parentEmail = email;
+          state.stage = "quiz";
+          state.idx = 0;
+          render();
+        });
+      }
+
+      function renderQuestion() {
+        const i = state.idx;
+        const q = QUESTIONS[i];
+        const pct = Math.round((i / QUESTIONS.length) * 100);
+        const letters = ["A","B","C","D"];
+        root.innerHTML = `
+          <div class="quiz-progress">
+            <span>Question ${i+1} of ${QUESTIONS.length}</span>
+            <span>${pct}% complete</span>
+          </div>
+          <div class="quiz-bar"><div class="quiz-bar-fill" style="width:${pct}%;"></div></div>
+          <div class="quiz-strand">${q.strand}</div>
+          <p class="quiz-q">${escapeHTML(q.q)}</p>
+          <div class="quiz-options" role="radiogroup" aria-label="Answer choices">
+            ${q.options.map((opt, k) => `
+              <button type="button" class="quiz-opt ${state.answers[i] === k ? "is-selected" : ""}" data-k="${k}" role="radio" aria-checked="${state.answers[i] === k ? "true" : "false"}">
+                <span class="quiz-opt-letter">${letters[k]}</span>
+                <span>${escapeHTML(opt)}</span>
+              </button>
+            `).join("")}
+          </div>
+          <div class="quiz-actions">
+            <button type="button" class="quiz-btn-back" id="back-btn" ${i === 0 ? "disabled" : ""}>← Back</button>
+            <span style="font-size:13px; color: var(--ink-mute);">Pick an answer to continue</span>
+          </div>
+        `;
+        document.querySelectorAll(".quiz-opt").forEach(btn => {
+          btn.addEventListener("click", function(){
+            const k = parseInt(btn.dataset.k, 10);
+            state.answers[i] = k;
+            // visually mark, then advance
+            document.querySelectorAll(".quiz-opt").forEach(b => b.classList.remove("is-selected"));
+            btn.classList.add("is-selected");
+            setTimeout(function(){
+              if (state.idx < QUESTIONS.length - 1) {
+                state.idx += 1;
+                render();
+              } else {
+                state.stage = "submitting";
+                render();
+                submitReport();
+              }
+            }, 220);
+          });
+        });
+        document.getElementById("back-btn").addEventListener("click", function(){
+          if (state.idx > 0) { state.idx -= 1; render(); }
+        });
+      }
+
+      function renderSubmitting() {
+        root.innerHTML = `
+          <div style="text-align:center; padding: 40px 20px;">
+            <div class="quiz-strand">Scoring your diagnostic…</div>
+            <p style="margin-top:10px; color: var(--ink-mute);">Building the strengths-and-weaknesses report.</p>
+          </div>
+        `;
+      }
+
+      function computeReport() {
+        const strandStats = {};
+        QUESTIONS.forEach((q, i) => {
+          if (!strandStats[q.strand]) strandStats[q.strand] = { total: 0, correct: 0, missed: [] };
+          strandStats[q.strand].total += 1;
+          const ans = state.answers[i];
+          if (ans === q.answer) strandStats[q.strand].correct += 1;
+          else strandStats[q.strand].missed.push({ q: q.q, picked: ans !== null ? q.options[ans] : "(no answer)", correct: q.options[q.answer] });
+        });
+        let total = 0;
+        Object.values(strandStats).forEach(s => total += s.correct);
+        const pct = Math.round((total / QUESTIONS.length) * 100);
+
+        const ranked = Object.entries(strandStats).map(([name, s]) => ({
+          name, pct: Math.round((s.correct / s.total) * 100), correct: s.correct, total: s.total, missed: s.missed
+        })).sort((a,b) => b.pct - a.pct);
+
+        const strengths = ranked.filter(r => r.pct >= 75);
+        const weaknesses = ranked.filter(r => r.pct < 50);
+        const developing = ranked.filter(r => r.pct >= 50 && r.pct < 75);
+
+        // Course recommendation
+        let recommended;
+        if (pct >= 85) {
+          recommended = {
+            name: "Young Fermats — Pre-Algebra",
+            url: "/programs#young-fermats",
+            why: `${state.studentName} is performing above grade level on this diagnostic. Pre-Algebra will accelerate them into 7th–8th grade material and lay the foundation for an early algebra/geometry track.`
+          };
+        } else if (pct >= 65) {
+          recommended = {
+            name: "Kid Einsteins B (6th–8th grade)",
+            url: "/programs#kid-einsteins",
+            why: `${state.studentName} is on grade level overall, with a few specific gaps. Kid Einsteins B is built precisely for 6th graders strengthening Common Core skills while previewing pre-algebra concepts.`
+          };
+        } else if (pct >= 40) {
+          recommended = {
+            name: "Kid Einsteins B + a one-on-one diagnostic session",
+            url: "/programs#kid-einsteins",
+            why: `${state.studentName} has multiple grade-level gaps. We recommend Kid Einsteins B paired with a free 60-minute one-on-one evaluation so we can pinpoint exactly which strands to remediate first.`
+          };
+        } else {
+          recommended = {
+            name: "One-on-one tutoring (start with a free evaluation)",
+            url: "/evaluation",
+            why: `${state.studentName} would benefit most from individualized instruction before joining a group class. Our 60-minute free evaluation will diagnose the foundational gaps and design a personalized plan.`
+          };
+        }
+
+        return { total, pct, ranked, strengths, weaknesses, developing, recommended };
+      }
+
+      function renderReport() {
+        const r = state._report;
+        const fillClass = function(p){ return p >= 75 ? "strand-fill-strong" : p >= 50 ? "strand-fill-ok" : "strand-fill-weak"; };
+        root.innerHTML = `
+          <div>
+            <p class="eyebrow" style="margin:0;">Diagnostic Report · ${escapeHTML(state.studentName)}</p>
+            <h2 style="margin: 6px 0 0;">Overall score</h2>
+            <div class="report-score">
+              <div class="report-score-num">${r.total}</div>
+              <div class="report-score-of">/ ${QUESTIONS.length} correct &middot; ${r.pct}%</div>
+            </div>
+
+            <div class="report-section">
+              <h3>By strand</h3>
+              ${r.ranked.map(s => `
+                <div class="strand-row">
+                  <div class="strand-name">${escapeHTML(s.name)}</div>
+                  <div class="strand-meter"><div class="strand-meter-fill ${fillClass(s.pct)}" style="width:${s.pct}%;"></div></div>
+                  <div class="strand-pct">${s.correct}/${s.total}</div>
+                </div>
+              `).join("")}
+            </div>
+
+            ${r.strengths.length ? `
+              <div class="report-section">
+                <h3>Strengths</h3>
+                <p>${escapeHTML(state.studentName)} is solid on:</p>
+                <ul>${r.strengths.map(s => `<li><strong>${escapeHTML(s.name)}</strong> — ${escapeHTML(STRAND_DESC[s.name] || "")}</li>`).join("")}</ul>
+              </div>` : ""}
+
+            ${r.developing.length ? `
+              <div class="report-section">
+                <h3>Developing</h3>
+                <p>Skills that are partially in place but need reinforcement:</p>
+                <ul>${r.developing.map(s => `<li><strong>${escapeHTML(s.name)}</strong> — ${escapeHTML(STRAND_REMEDIATION[s.name] || "")}</li>`).join("")}</ul>
+              </div>` : ""}
+
+            ${r.weaknesses.length ? `
+              <div class="report-section">
+                <h3>Weaknesses (priority for tutoring)</h3>
+                <ul>${r.weaknesses.map(s => `<li><strong>${escapeHTML(s.name)}</strong> — ${escapeHTML(STRAND_REMEDIATION[s.name] || "")}</li>`).join("")}</ul>
+              </div>` : ""}
+
+            <div class="report-section">
+              <h3>Recommended next step</h3>
+              <div class="recommend-card">
+                <h4>${escapeHTML(r.recommended.name)}</h4>
+                <p>${escapeHTML(r.recommended.why)}</p>
+                <p class="recommend-meta">All SOMATH classes meet at 226 W 79th St on the Upper West Side. Free 60-minute evaluation included — written diagnostic within 48 hours, even if you don't enroll.</p>
+                <div style="margin-top: 10px;">
+                  <a href="${r.recommended.url}" class="btn btn--primary">See ${escapeHTML(r.recommended.name.split(" —")[0].split(" (")[0])}</a>
+                  <a href="/evaluation" class="btn" style="margin-left:8px;">Book Free Evaluation</a>
+                </div>
+              </div>
+            </div>
+
+            <div id="send-status"></div>
+          </div>
+        `;
+      }
+
+      async function submitReport() {
+        const r = computeReport();
+        state._report = r;
+        // Build payload
+        const payload = {
+          studentName: state.studentName,
+          parentEmail: state.parentEmail,
+          totalCorrect: r.total,
+          totalQuestions: QUESTIONS.length,
+          overallPercent: r.pct,
+          recommended: r.recommended.name,
+          recommendedUrl: r.recommended.url,
+          recommendedReason: r.recommended.why,
+          strands: r.ranked.map(s => ({ name: s.name, correct: s.correct, total: s.total, percent: s.pct })),
+          strengths: r.strengths.map(s => s.name),
+          developing: r.developing.map(s => s.name),
+          weaknesses: r.weaknesses.map(s => s.name),
+          answers: QUESTIONS.map((q, i) => ({
+            strand: q.strand,
+            question: q.q,
+            chosenIndex: state.answers[i],
+            chosen: state.answers[i] !== null ? q.options[state.answers[i]] : null,
+            correctIndex: q.answer,
+            correct: q.options[q.answer],
+            isCorrect: state.answers[i] === q.answer
+          })),
+          submittedAt: new Date().toISOString(),
+          source: "student-evaluation-6th-grade"
+        };
+
+        state.stage = "report";
+        render();
+
+        try {
+          const resp = await fetch("/api/student-evaluation", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const data = await resp.json().catch(() => ({}));
+          const status = document.getElementById("send-status");
+          if (status) {
+            if (resp.ok && data.ok) {
+              status.innerHTML = `<div class="send-status ok">Report sent to SOMATH at hello@schoolofmath.us. We'll reach out to ${escapeHTML(state.parentEmail)} within one business day.</div>`;
+            } else {
+              status.innerHTML = `<div class="send-status err">We couldn't email the report automatically. Please call (646) 668-6151 or email hello@schoolofmath.us with the score above and we'll follow up.</div>`;
+            }
+          }
+        } catch (e) {
+          const status = document.getElementById("send-status");
+          if (status) {
+            status.innerHTML = `<div class="send-status err">Network error sending the report. Please call (646) 668-6151 or email hello@schoolofmath.us and we'll follow up.</div>`;
+          }
+        }
+      }
+
+      function escapeHTML(s) {
+        return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+      }
+
+      render();
+    })();
+    </script>
+  </body>
+</html>

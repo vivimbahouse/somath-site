@@ -235,12 +235,76 @@ async function handleDownloadPdf(request, env) {
   return new Response(assetResp.body, { status: 200, headers });
 }
 __name(handleDownloadPdf, "handleDownloadPdf");
+async function handleStudentEvaluation(request, env) {
+  if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405);
+  let body;
+  try { body = await request.json(); } catch (e) { return jsonResponse({ error: "invalid_body" }, 400); }
+  const studentName = String(body.studentName || "").trim().slice(0, 80);
+  const parentEmail = String(body.parentEmail || "").trim().toLowerCase();
+  const totalCorrect = Number(body.totalCorrect);
+  const totalQuestions = Number(body.totalQuestions);
+  const overallPercent = Number(body.overallPercent);
+  const recommended = String(body.recommended || "").slice(0, 200);
+  const recommendedUrl = String(body.recommendedUrl || "").slice(0, 200);
+  const recommendedReason = String(body.recommendedReason || "").slice(0, 1000);
+  const strands = Array.isArray(body.strands) ? body.strands.slice(0, 12) : [];
+  const strengths = Array.isArray(body.strengths) ? body.strengths.slice(0, 12) : [];
+  const developing = Array.isArray(body.developing) ? body.developing.slice(0, 12) : [];
+  const weaknesses = Array.isArray(body.weaknesses) ? body.weaknesses.slice(0, 12) : [];
+  const answers = Array.isArray(body.answers) ? body.answers.slice(0, 40) : [];
+  if (!studentName) return jsonResponse({ error: "missing_name" }, 400);
+  if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_email" }, 400);
+  if (!Number.isFinite(totalCorrect) || !Number.isFinite(totalQuestions)) return jsonResponse({ error: "invalid_score" }, 400);
+
+  const strandRows = strands.map(function(s) {
+    return `<tr><td style="padding:6px 10px;border-bottom:1px solid #eee;">${escapeHtml(s.name)}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">${escapeHtml(String(s.correct))}/${escapeHtml(String(s.total))}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">${escapeHtml(String(s.percent))}%</td></tr>`;
+  }).join("");
+
+  const answerRows = answers.map(function(a, i) {
+    const icon = a.isCorrect ? "\u2705" : "\u274C";
+    return `<tr><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top;">${i+1}. <strong>${escapeHtml(a.strand || "")}</strong><br/><span style="color:#555;">${escapeHtml(a.question || "")}</span></td><td style="padding:6px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top;">${icon} Chose: <em>${escapeHtml(a.chosen || "(no answer)")}</em><br/>Correct: <strong>${escapeHtml(a.correct || "")}</strong></td></tr>`;
+  }).join("");
+
+  const listHtml = function(arr) { return arr.length ? `<ul>${arr.map(function(x){return `<li>${escapeHtml(x)}</li>`;}).join("")}</ul>` : "<p style=\"color:#888;\">(none)</p>"; };
+
+  const html = `<div style="font-family:system-ui,-apple-system,sans-serif;color:#1f3d2e;max-width:680px;">
+<h2 style="color:#1f3d2e;border-bottom:2px solid #c89a3a;padding-bottom:8px;">6th Grade Math Diagnostic \u2014 ${escapeHtml(studentName)}</h2>
+<p><strong>Parent email:</strong> <a href="mailto:${escapeHtml(parentEmail)}">${escapeHtml(parentEmail)}</a><br/>
+<strong>Submitted:</strong> ${new Date().toISOString()}<br/>
+<strong>Source:</strong> /student-evaluation</p>
+<h3 style="color:#c89a3a;">Overall</h3>
+<p style="font-size:18px;"><strong>${totalCorrect} / ${totalQuestions}</strong> correct &middot; <strong>${overallPercent}%</strong></p>
+<h3 style="color:#c89a3a;">By strand</h3>
+<table style="border-collapse:collapse;width:100%;font-size:14px;"><thead><tr><th style="text-align:left;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Strand</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Score</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">%</th></tr></thead><tbody>${strandRows}</tbody></table>
+<h3 style="color:#c89a3a;">Strengths</h3>${listHtml(strengths)}
+<h3 style="color:#c89a3a;">Developing</h3>${listHtml(developing)}
+<h3 style="color:#c89a3a;">Weaknesses (priority for tutoring)</h3>${listHtml(weaknesses)}
+<h3 style="color:#c89a3a;">Recommended next step</h3>
+<div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:6px;"><p style="margin:0 0 6px;font-weight:600;">${escapeHtml(recommended)}</p><p style="margin:0 0 6px;">${escapeHtml(recommendedReason)}</p><p style="margin:0;"><a href="https://www.schoolofmath.us${escapeHtml(recommendedUrl)}">${escapeHtml(recommendedUrl)}</a></p></div>
+<h3 style="color:#c89a3a;">Full answer detail</h3>
+<table style="border-collapse:collapse;width:100%;font-size:13px;"><tbody>${answerRows}</tbody></table>
+<p style="color:#888;font-size:12px;margin-top:24px;">Sent automatically by schoolofmath.us</p>
+</div>`;
+
+  const notifyTo = env.NOTIFY_EMAIL || "hello@schoolofmath.us";
+  const subject = `Student diagnostic: ${studentName} \u2014 ${overallPercent}% (${totalCorrect}/${totalQuestions})`;
+  if (env.RESEND_API_KEY) {
+    const result = await sendResendEmail(env, { to: notifyTo, subject, html, replyTo: parentEmail }).catch(function(e){ return { ok: false, error: "exception", detail: String(e) }; });
+    console.log("Student evaluation email:", JSON.stringify(result));
+    if (!result.ok) return jsonResponse({ ok: false, error: result.error || "email_failed" }, 502);
+    return jsonResponse({ ok: true });
+  }
+  console.log(JSON.stringify({ event: "student_evaluation", studentName, parentEmail, overallPercent, totalCorrect, totalQuestions }));
+  return jsonResponse({ ok: true, note: "logged_only" });
+}
+__name(handleStudentEvaluation, "handleStudentEvaluation");
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === "/api/request-pdf") return handleRequestPdf(request, env);
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
+    if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
     if (url.pathname.startsWith("/_secure/")) {
       return new Response("Not found", { status: 404 });
     }

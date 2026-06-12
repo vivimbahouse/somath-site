@@ -79,6 +79,7 @@
             <li><a href="/blog">Journal</a></li>
             <li><a href="/contact">Visit Us</a></li>
             <li><a href="/evaluation">Free Evaluation</a></li>
+            <li><a href="/student-evaluation">Student Evaluation</a></li>
             <li><a href="https://www.instagram.com/schoolofmath.us/" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
