@@ -326,7 +326,7 @@
       // Shared FAQs that apply across summer / fall
       const SUMMER_FAQ = [
         ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 60-minute evaluation first so we can confirm the right level and set expectations with the family. After that, you book the term."],
-        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. A 5-week summer intensive (5 × 2-hour sessions = 10 hours) totals $600 per term."],
+        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. The total is session length × sessions per week × 5 weeks × $60. For example, a 2-hour class meeting 2× a week for 5 weeks = 20 hours = $1,200. A 2-hour class meeting once a week for 5 weeks = 10 hours = $600. Each course detail card shows your exact total."],
         ["What if my child misses a session?", "Email us as soon as you know. For summer cohorts we provide a written catch-up note, problem set, and (when scheduling allows) a 30-minute office-hour to keep them on track."],
         ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
         ["Is there a fall continuation?", "Yes. Every summer course has a structured fall continuation in our 16-week semester. We can map the path for your child during the evaluation."]
@@ -523,41 +523,41 @@
         "july": {
           label: "July 2026",
           dateRange: "June 29 – August 1, 2026",
-          cadence: "5 weeks · 1 class/week · 120 min each",
-          tuition: "$600 per course · $60/hr standard rate",
+          cadence: "5 weeks · see each course for weekly cadence",
+          tuition: "$60/hr standard rate",
           summary: "Five-week summer intensives. Same instructor every week, small cohorts, paced for students who want to get ahead or catch up before the fall.",
           link: "/summer-schedule",
           faq: SUMMER_FAQ,
           courses: {
-            "little-newtons":              { days: "Mon & Wed", time: "3:00 – 4:30 PM" },
-            "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM" },
-            "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM" },
-            "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM" },
-            "young-fermats-algebra-ignite":{ days: "Mon & Wed", time: "6:30 – 8:30 PM" },
-            "young-fermats-geometry":      { days: "Tue & Thu", time: "7:00 – 9:00 PM" },
-            "shsat-prep":                  { days: "Friday",    time: "3:00 – 5:00 PM" },
-            "sat-math":                    { days: "Friday",    time: "5:00 – 7:00 PM" },
-            "pre-calculus":                { days: "Friday",    time: "7:00 – 9:00 PM" }
+            "little-newtons":              { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
+            "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM", perWeek: 2 },
+            "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM", perWeek: 2 },
+            "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM", perWeek: 2 },
+            "young-fermats-algebra-ignite":{ days: "Mon & Wed", time: "6:30 – 8:30 PM", perWeek: 2 },
+            "young-fermats-geometry":      { days: "Tue & Thu", time: "7:00 – 9:00 PM", perWeek: 2 },
+            "shsat-prep":                  { days: "Friday",    time: "3:00 – 5:00 PM", perWeek: 1 },
+            "sat-math":                    { days: "Friday",    time: "5:00 – 7:00 PM", perWeek: 1 },
+            "pre-calculus":                { days: "Friday",    time: "7:00 – 9:00 PM", perWeek: 1 }
           }
         },
         "august": {
           label: "August 2026",
           dateRange: "August 3 – September 4, 2026",
-          cadence: "5 weeks · 1 class/week · 120 min each",
-          tuition: "$600 per course · $60/hr standard rate",
+          cadence: "5 weeks · see each course for weekly cadence",
+          tuition: "$60/hr standard rate",
           summary: "Second summer term, identical structure to July. Useful for families traveling in July or students who want a final reset before the school year starts.",
           link: "/august-schedule",
           faq: SUMMER_FAQ,
           courses: {
-            "little-newtons":              { days: "Mon & Wed", time: "3:00 – 4:30 PM" },
-            "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM" },
-            "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM" },
-            "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM" },
-            "young-fermats-algebra-ignite":{ days: "Mon & Wed", time: "6:30 – 8:30 PM" },
-            "young-fermats-geometry":      { days: "Tue & Thu", time: "7:00 – 9:00 PM" },
-            "shsat-prep":                  { days: "Friday",    time: "3:00 – 5:00 PM" },
-            "sat-math":                    { days: "Friday",    time: "5:00 – 7:00 PM" },
-            "pre-calculus":                { days: "Friday",    time: "7:00 – 9:00 PM" }
+            "little-newtons":              { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
+            "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM", perWeek: 2 },
+            "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM", perWeek: 2 },
+            "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM", perWeek: 2 },
+            "young-fermats-algebra-ignite":{ days: "Mon & Wed", time: "6:30 – 8:30 PM", perWeek: 2 },
+            "young-fermats-geometry":      { days: "Tue & Thu", time: "7:00 – 9:00 PM", perWeek: 2 },
+            "shsat-prep":                  { days: "Friday",    time: "3:00 – 5:00 PM", perWeek: 1 },
+            "sat-math":                    { days: "Friday",    time: "5:00 – 7:00 PM", perWeek: 1 },
+            "pre-calculus":                { days: "Friday",    time: "7:00 – 9:00 PM", perWeek: 1 }
           }
         },
         "fall": {
@@ -569,15 +569,15 @@
           link: "/fall-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons":              { days: "Mon or Wed", time: "3:30 – 5:00 PM" },
-            "kid-einsteins-a":             { days: "Tue or Wed", time: "4:00 – 6:00 PM" },
-            "kid-einsteins-b":             { days: "Mon or Wed", time: "5:00 – 7:00 PM" },
-            "young-fermats-prealgebra":    { days: "Tue or Thu", time: "6:00 – 8:00 PM" },
-            "young-fermats-algebra-ignite":{ days: "Mon or Wed", time: "7:00 – 9:00 PM" },
-            "young-fermats-geometry":      { days: "Tue or Thu", time: "8:00 – 10:00 PM" },
-            "shsat-prep":                  { days: "Friday",     time: "4:00 – 6:00 PM" },
-            "sat-math":                    { days: "Friday",     time: "6:00 – 8:00 PM" },
-            "pre-calculus":                { days: "Friday",     time: "8:00 – 10:00 PM" }
+            "little-newtons":              { days: "Mon or Wed", time: "3:30 – 5:00 PM", perWeek: 1 },
+            "kid-einsteins-a":             { days: "Tue or Wed", time: "4:00 – 6:00 PM", perWeek: 1 },
+            "kid-einsteins-b":             { days: "Mon or Wed", time: "5:00 – 7:00 PM", perWeek: 1 },
+            "young-fermats-prealgebra":    { days: "Tue or Thu", time: "6:00 – 8:00 PM", perWeek: 1 },
+            "young-fermats-algebra-ignite":{ days: "Mon or Wed", time: "7:00 – 9:00 PM", perWeek: 1 },
+            "young-fermats-geometry":      { days: "Tue or Thu", time: "8:00 – 10:00 PM", perWeek: 1 },
+            "shsat-prep":                  { days: "Friday",     time: "4:00 – 6:00 PM", perWeek: 1 },
+            "sat-math":                    { days: "Friday",     time: "6:00 – 8:00 PM", perWeek: 1 },
+            "pre-calculus":                { days: "Friday",     time: "8:00 – 10:00 PM", perWeek: 1 }
           }
         }
       };
@@ -666,8 +666,22 @@
 
         // Pick fall override syllabus if available for fall term
         const syllabus = (activeTerm === "fall" && c.fallSyllabusOverride) ? c.fallSyllabusOverride : c.syllabus;
-        const sessionCount = (activeTerm === "fall") ? "16 sessions · 120 min each" : "5 sessions · 120 min each";
-        const tuition = (activeTerm === "fall") ? "$1,920" : "$600";
+        const perWeek = sched.perWeek || 1;
+        // Parse session length in minutes from the time string (e.g. "3:00 – 4:30 PM" → 90 min)
+        const sessionMin = (() => {
+          const m = sched.time.match(/(\d{1,2}):(\d{2})\s*–\s*(\d{1,2}):(\d{2})/);
+          if (!m) return 120;
+          let [_, h1, m1, h2, m2] = m;
+          const start = parseInt(h1,10)*60 + parseInt(m1,10);
+          let end = parseInt(h2,10)*60 + parseInt(m2,10);
+          if (end < start) end += 12*60;
+          return end - start;
+        })();
+        const weeks = (activeTerm === "fall") ? 16 : 5;
+        const totalSessions = perWeek * weeks;
+        const totalHours = (totalSessions * sessionMin) / 60;
+        const sessionCount = `${totalSessions} sessions · ${sessionMin} min each · ${perWeek}×/week`;
+        const tuition = `$${(totalHours * 60).toLocaleString("en-US")} (${totalHours} h × $60/hr)`;
 
         detailEl.innerHTML = `
           <div class="crec-detail-head">
