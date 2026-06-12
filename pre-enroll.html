@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pre-Enroll | School of Math (SOMATH)</title>
+    <meta name="description" content="Secure your spot in a SOMATH course. $300 deposit (plus 4.5% processing fee) — deducted from your total tuition. Balance due 2 days before the course begins." />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <style>
+      .preenroll-wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+        color: #1f3d2e;
+      }
+      .preenroll-wrap h1 {
+        font-size: clamp(28px, 4vw, 38px);
+        line-height: 1.15;
+        margin: 0 0 10px;
+        color: #1f3d2e;
+      }
+      .preenroll-wrap .lead {
+        font-size: 16px;
+        color: #4a5a52;
+        margin: 0 0 28px;
+        line-height: 1.55;
+      }
+      .pe-card {
+        background: #fff;
+        border: 1px solid #e6dfd0;
+        border-radius: 14px;
+        padding: 22px 22px 18px;
+        margin: 0 0 22px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .pe-card h2 {
+        font-size: 18px;
+        margin: 0 0 14px;
+        color: #1f3d2e;
+        letter-spacing: .2px;
+      }
+      .pe-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      @media (max-width: 560px) {
+        .pe-grid { grid-template-columns: 1fr; }
+      }
+      .pe-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .pe-field label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #1f3d2e;
+      }
+      .pe-field input,
+      .pe-field select,
+      .pe-field textarea {
+        font: inherit;
+        padding: 11px 12px;
+        border: 1px solid #d6cdb6;
+        border-radius: 9px;
+        background: #fff;
+        color: #1f3d2e;
+        transition: border-color .15s, box-shadow .15s;
+      }
+      .pe-field input:focus,
+      .pe-field select:focus,
+      .pe-field textarea:focus {
+        outline: none;
+        border-color: #c89a3a;
+        box-shadow: 0 0 0 3px rgba(200,154,58,.18);
+      }
+      .pe-field .hint {
+        font-size: 12px;
+        color: #6b7a72;
+      }
+      .pe-breakdown {
+        background: #f5f0e6;
+        border: 1px solid #e6dfd0;
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 4px 0 0;
+      }
+      .pe-breakdown .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        font-size: 14px;
+        color: #2b3a32;
+      }
+      .pe-breakdown .row.total {
+        border-top: 1px dashed #c89a3a;
+        margin-top: 6px;
+        padding-top: 12px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #1f3d2e;
+      }
+      .pe-terms {
+        background: #fbf9f4;
+        border-left: 3px solid #c89a3a;
+        padding: 14px 16px;
+        border-radius: 0 9px 9px 0;
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: #3a4a42;
+        margin: 0;
+      }
+      .pe-terms strong { color: #1f3d2e; }
+      .pe-checkbox {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: #2b3a32;
+        line-height: 1.5;
+      }
+      .pe-checkbox input { margin-top: 3px; }
+      .pe-submit-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .pe-btn {
+        appearance: none;
+        background: #c89a3a;
+        color: #fff;
+        border: none;
+        padding: 14px 22px;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background .15s, transform .05s;
+      }
+      .pe-btn:hover { background: #b6892e; }
+      .pe-btn:active { transform: translateY(1px); }
+      .pe-btn:disabled {
+        background: #b9b09a;
+        cursor: not-allowed;
+      }
+      .pe-secure {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        color: #6b7a72;
+        justify-content: center;
+      }
+      .pe-secure svg {
+        width: 14px; height: 14px;
+      }
+      .pe-error {
+        background: #fdecec;
+        border: 1px solid #f5b5b5;
+        color: #8a1f1f;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        margin: 0 0 14px;
+        display: none;
+      }
+      .pe-error.show { display: block; }
+      .pe-selected {
+        font-size: 14px;
+        color: #4a5a52;
+        margin: 0 0 8px;
+      }
+      .pe-selected b { color: #1f3d2e; }
+    </style>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <main class="preenroll-wrap">
+      <h1>Pre-Enroll — secure your spot</h1>
+      <p class="lead">Reserve a seat in your chosen SOMATH course with a $300 deposit. The deposit is fully applied to your total tuition. The remaining balance is due no later than two days before the course begins.</p>
+
+      <div class="pe-error" id="pe-error"></div>
+
+      <form id="pe-form" novalidate>
+        <!-- COURSE SELECTION -->
+        <section class="pe-card">
+          <h2>Course</h2>
+          <div class="pe-grid">
+            <div class="pe-field">
+              <label for="pe-term">Term</label>
+              <select id="pe-term" name="term" required>
+                <option value="">Select a term…</option>
+                <option value="july">July 2026 (June 29 – August 1)</option>
+                <option value="august">August 2026 (August 3 – September 4)</option>
+                <option value="fall">Fall 2026 (August 31 – December 20)</option>
+              </select>
+            </div>
+            <div class="pe-field">
+              <label for="pe-course">Course</label>
+              <select id="pe-course" name="course" required disabled>
+                <option value="">Select a term first…</option>
+              </select>
+            </div>
+          </div>
+          <p class="pe-selected" id="pe-selected" style="display:none;margin-top:14px;"></p>
+        </section>
+
+        <!-- STUDENT INFO -->
+        <section class="pe-card">
+          <h2>Student</h2>
+          <div class="pe-grid">
+            <div class="pe-field">
+              <label for="pe-student-name">Student full name</label>
+              <input type="text" id="pe-student-name" name="student_name" required autocomplete="off" />
+            </div>
+            <div class="pe-field">
+              <label for="pe-student-grade">Current grade (Fall 2026)</label>
+              <select id="pe-student-grade" name="student_grade" required>
+                <option value="">Select…</option>
+                <option>K</option><option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6</option><option>7</option>
+                <option>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- PARENT INFO -->
+        <section class="pe-card">
+          <h2>Parent / guardian</h2>
+          <div class="pe-grid">
+            <div class="pe-field">
+              <label for="pe-parent-name">Your full name</label>
+              <input type="text" id="pe-parent-name" name="parent_name" required autocomplete="name" />
+            </div>
+            <div class="pe-field">
+              <label for="pe-parent-phone">Phone</label>
+              <input type="tel" id="pe-parent-phone" name="parent_phone" required autocomplete="tel" placeholder="(646) 555-1234" />
+            </div>
+            <div class="pe-field" style="grid-column:1/-1;">
+              <label for="pe-parent-email">Email (receipt + confirmation will be sent here)</label>
+              <input type="email" id="pe-parent-email" name="parent_email" required autocomplete="email" />
+            </div>
+          </div>
+        </section>
+
+        <!-- DEPOSIT & TERMS -->
+        <section class="pe-card">
+          <h2>Deposit & terms</h2>
+          <div class="pe-breakdown">
+            <div class="row"><span>Spot-reservation deposit</span><span>$300.00</span></div>
+            <div class="row"><span>Processing fee (4.5%)</span><span>$13.50</span></div>
+            <div class="row total"><span>Charged today</span><span>$313.50</span></div>
+          </div>
+
+          <p class="pe-terms" style="margin-top:14px;">
+            <strong>How this works.</strong> The $300 deposit is fully credited toward your total course tuition. The 4.5% processing fee covers card-processing costs and is non-refundable. The remaining balance must be paid no later than <strong>2 days before the course begins</strong>, or the spot will be released and the deposit forfeited. Card information is handled directly by Stripe — SOMATH never stores card data.
+          </p>
+
+          <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;">
+            <label class="pe-checkbox">
+              <input type="checkbox" id="pe-agree-terms" required />
+              <span>I have read and agree to SOMATH's <a href="/terms" target="_blank">Terms of Service</a> and <a href="/refund" target="_blank">Refund Policy</a>.</span>
+            </label>
+            <label class="pe-checkbox">
+              <input type="checkbox" id="pe-agree-balance" required />
+              <span>I understand the balance is due no later than two days before the course begins, or my spot is released.</span>
+            </label>
+          </div>
+        </section>
+
+        <div class="pe-submit-row">
+          <button type="submit" class="pe-btn" id="pe-submit">Continue to secure payment</button>
+          <div class="pe-secure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Secure payment processed by Stripe. SSL encrypted.</span>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+
+    <script>
+      // ---- Course catalog (mirror of course-recommendation.html) ----
+      const COURSES = {
+        "little-newtons":              { title: "Little Newtons",                grade: "Grades K–2",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+        "kid-einsteins-a":             { title: "Kid Einsteins A",               grade: "Grades 3–4",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "kid-einsteins-b":             { title: "Kid Einsteins B",               grade: "Grade 5",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grade 6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "young-fermats-algebra-ignite":{ title: "Young Fermats — Algebra Ignite",grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "young-fermats-geometry":      { title: "Young Fermats — Geometry",      grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "shsat-prep":                  { title: "SHSAT Prep",                    grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+        "sat-math":                    { title: "SAT Math",                      grade: "Grades 9–11",  summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+        "pre-calculus":                { title: "Pre-Calculus",                  grade: "Grades 10–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 }
+      };
+
+      const TERMS = {
+        july:   { label: "July 2026",   dateRange: "June 29 – August 1, 2026",     weeks: 5 },
+        august: { label: "August 2026", dateRange: "August 3 – September 4, 2026", weeks: 5 },
+        fall:   { label: "Fall 2026",   dateRange: "August 31 – December 20, 2026", weeks: 16 }
+      };
+
+      const COURSE_TIMES = {
+        july: {
+          "little-newtons":              "Mon & Wed 3:00–4:30 PM",
+          "kid-einsteins-a":             "Tue & Wed 3:00–5:00 PM",
+          "kid-einsteins-b":             "Mon & Wed 4:30–6:30 PM",
+          "young-fermats-prealgebra":    "Tue & Thu 5:00–7:00 PM",
+          "young-fermats-algebra-ignite":"Mon & Wed 6:30–8:30 PM",
+          "young-fermats-geometry":      "Tue & Thu 7:00–9:00 PM",
+          "shsat-prep":                  "Fri 3:00–5:00 PM",
+          "sat-math":                    "Fri 5:00–7:00 PM",
+          "pre-calculus":                "Fri 7:00–9:00 PM"
+        },
+        august: {
+          "little-newtons":              "Mon & Wed 3:00–4:30 PM",
+          "kid-einsteins-a":             "Tue & Wed 3:00–5:00 PM",
+          "kid-einsteins-b":             "Mon & Wed 4:30–6:30 PM",
+          "young-fermats-prealgebra":    "Tue & Thu 5:00–7:00 PM",
+          "young-fermats-algebra-ignite":"Mon & Wed 6:30–8:30 PM",
+          "young-fermats-geometry":      "Tue & Thu 7:00–9:00 PM",
+          "shsat-prep":                  "Fri 3:00–5:00 PM",
+          "sat-math":                    "Fri 5:00–7:00 PM",
+          "pre-calculus":                "Fri 7:00–9:00 PM"
+        },
+        fall: {
+          "little-newtons":              "Mon or Wed 3:30–5:00 PM",
+          "kid-einsteins-a":             "Tue or Wed 4:00–6:00 PM",
+          "kid-einsteins-b":             "Mon or Wed 5:00–7:00 PM",
+          "young-fermats-prealgebra":    "Tue or Thu 6:00–8:00 PM",
+          "young-fermats-algebra-ignite":"Mon or Wed 7:00–9:00 PM",
+          "young-fermats-geometry":      "Tue or Thu 8:00–10:00 PM",
+          "shsat-prep":                  "Fri 4:00–6:00 PM",
+          "sat-math":                    "Fri 6:00–8:00 PM",
+          "pre-calculus":                "Fri 8:00–10:00 PM"
+        }
+      };
+
+      // Tuition calc: $60/hr standard. Mins per session × perWeek × weeks / 60 × $60
+      function tuitionFor(courseId, termId) {
+        const c = COURSES[courseId];
+        const t = TERMS[termId];
+        const mins = termId === "fall" ? c.fallMins : c.summerMins;
+        const perWeek = termId === "fall" ? c.fallPerWeek : c.summerPerWeek;
+        const hours = (mins * perWeek * t.weeks) / 60;
+        return Math.round(hours * 60);
+      }
+
+      // ---- DOM wiring ----
+      const termSel = document.getElementById("pe-term");
+      const courseSel = document.getElementById("pe-course");
+      const selectedSummary = document.getElementById("pe-selected");
+      const errBox = document.getElementById("pe-error");
+
+      function populateCourses(termId) {
+        courseSel.innerHTML = "";
+        if (!termId) {
+          courseSel.innerHTML = '<option value="">Select a term first…</option>';
+          courseSel.disabled = true;
+          return;
+        }
+        const opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.textContent = "Select a course…";
+        courseSel.appendChild(opt0);
+        Object.keys(COURSES).forEach(cid => {
+          const c = COURSES[cid];
+          const time = COURSE_TIMES[termId][cid];
+          const opt = document.createElement("option");
+          opt.value = cid;
+          opt.textContent = `${c.title} — ${c.grade} · ${time}`;
+          courseSel.appendChild(opt);
+        });
+        courseSel.disabled = false;
+      }
+
+      function updateSummary() {
+        const tid = termSel.value;
+        const cid = courseSel.value;
+        if (!tid || !cid) {
+          selectedSummary.style.display = "none";
+          selectedSummary.innerHTML = "";
+          return;
+        }
+        const c = COURSES[cid];
+        const t = TERMS[tid];
+        const time = COURSE_TIMES[tid][cid];
+        const tuition = tuitionFor(cid, tid);
+        const balance = tuition - 300;
+        selectedSummary.style.display = "block";
+        selectedSummary.innerHTML =
+          `<b>${c.title}</b> · ${t.label} · ${t.dateRange}<br>` +
+          `Schedule: ${time}<br>` +
+          `Total tuition: <b>$${tuition.toLocaleString()}</b> · ` +
+          `Balance after deposit: <b>$${balance.toLocaleString()}</b> (due 2 days before start).`;
+      }
+
+      termSel.addEventListener("change", () => {
+        populateCourses(termSel.value);
+        updateSummary();
+        applyPrefillSelection();
+      });
+      courseSel.addEventListener("change", updateSummary);
+
+      // Pre-select from URL ?course=…&term=…
+      function applyPrefillSelection() {
+        const params = new URLSearchParams(window.location.search);
+        const t = params.get("term");
+        const c = params.get("course");
+        if (t && TERMS[t] && termSel.value !== t) {
+          termSel.value = t;
+          populateCourses(t);
+        }
+        if (c && COURSES[c] && courseSel.querySelector(`option[value="${c}"]`)) {
+          courseSel.value = c;
+        }
+        updateSummary();
+      }
+      applyPrefillSelection();
+
+      // ---- Form submit ----
+      const form = document.getElementById("pe-form");
+      const submitBtn = document.getElementById("pe-submit");
+
+      function showError(msg) {
+        errBox.textContent = msg;
+        errBox.classList.add("show");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function clearError() {
+        errBox.classList.remove("show");
+        errBox.textContent = "";
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        clearError();
+
+        const payload = {
+          term: termSel.value,
+          course: courseSel.value,
+          student_name: document.getElementById("pe-student-name").value.trim(),
+          student_grade: document.getElementById("pe-student-grade").value,
+          parent_name: document.getElementById("pe-parent-name").value.trim(),
+          parent_phone: document.getElementById("pe-parent-phone").value.trim(),
+          parent_email: document.getElementById("pe-parent-email").value.trim(),
+          agree_terms: document.getElementById("pe-agree-terms").checked,
+          agree_balance: document.getElementById("pe-agree-balance").checked
+        };
+
+        // Light client-side validation
+        if (!payload.term || !payload.course) return showError("Please select a term and course.");
+        if (!payload.student_name) return showError("Student name is required.");
+        if (!payload.student_grade) return showError("Student grade is required.");
+        if (!payload.parent_name) return showError("Parent name is required.");
+        if (!payload.parent_phone) return showError("Parent phone is required.");
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.parent_email)) return showError("Please enter a valid email.");
+        if (!payload.agree_terms || !payload.agree_balance) return showError("Please confirm both checkboxes to proceed.");
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Securing your spot…";
+
+        try {
+          const resp = await fetch("/api/pre-enroll", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+          const data = await resp.json();
+          if (!resp.ok || !data.checkout_url) {
+            throw new Error(data.error || "We couldn't start payment. Please try again or call (646) 668-6151.");
+          }
+          // GA4 event
+          if (window.gtag) {
+            gtag("event", "begin_checkout", {
+              currency: "USD",
+              value: 313.50,
+              items: [{ item_id: payload.course, item_name: COURSES[payload.course].title, item_category: payload.term }]
+            });
+          }
+          window.location.href = data.checkout_url;
+        } catch (err) {
+          showError(err.message);
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Continue to secure payment";
+        }
+      });
+    </script>
+  </body>
+</html>

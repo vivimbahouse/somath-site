@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pre-Enrollment Confirmed | School of Math (SOMATH)</title>
+    <meta name="description" content="Your SOMATH course spot is reserved. Thank you for pre-enrolling — we'll be in touch within 24 hours with next steps." />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      gtag('config', 'G-9BN5F63KZN');
+      // Track successful pre-enroll conversion (deposit)
+      gtag('event', 'purchase', {
+        currency: 'USD',
+        value: 313.50,
+        transaction_id: new URLSearchParams(window.location.search).get('session_id') || 'unknown'
+      });
+    </script>
+
+    <style>
+      .pes-wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 60px 24px 80px;
+        color: #1f3d2e;
+      }
+      .pes-check {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: #1f3d2e;
+        color: #f5f0e6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 22px;
+      }
+      .pes-check svg { width: 38px; height: 38px; }
+      h1 {
+        font-size: clamp(28px, 4vw, 36px);
+        text-align: center;
+        margin: 0 0 12px;
+        color: #1f3d2e;
+      }
+      .pes-lead {
+        text-align: center;
+        font-size: 16px;
+        color: #4a5a52;
+        margin: 0 0 32px;
+        line-height: 1.6;
+      }
+      .pes-card {
+        background: #fff;
+        border: 1px solid #e6dfd0;
+        border-radius: 14px;
+        padding: 22px 24px;
+        margin: 0 0 18px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.03);
+      }
+      .pes-card h2 {
+        font-size: 17px;
+        margin: 0 0 12px;
+        color: #1f3d2e;
+      }
+      .pes-steps {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: pes;
+      }
+      .pes-steps li {
+        position: relative;
+        padding: 10px 0 10px 42px;
+        counter-increment: pes;
+        font-size: 14.5px;
+        line-height: 1.6;
+        color: #2b3a32;
+        border-top: 1px dashed #e6dfd0;
+      }
+      .pes-steps li:first-child { border-top: none; }
+      .pes-steps li::before {
+        content: counter(pes);
+        position: absolute;
+        left: 0; top: 12px;
+        width: 28px; height: 28px;
+        border-radius: 50%;
+        background: #c89a3a;
+        color: #fff;
+        font-weight: 700;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pes-cta-row {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+      .pes-btn {
+        display: inline-block;
+        padding: 12px 22px;
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 15px;
+      }
+      .pes-btn--primary {
+        background: #1f3d2e;
+        color: #f5f0e6;
+      }
+      .pes-btn--secondary {
+        background: #f5f0e6;
+        color: #1f3d2e;
+        border: 1px solid #e6dfd0;
+      }
+      .pes-contact {
+        text-align: center;
+        font-size: 14px;
+        color: #4a5a52;
+        margin-top: 28px;
+      }
+      .pes-contact a { color: #c89a3a; }
+    </style>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <main class="pes-wrap">
+      <div class="pes-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5"></path>
+        </svg>
+      </div>
+
+      <h1>Your spot is reserved.</h1>
+      <p class="pes-lead">Thank you for pre-enrolling at SOMATH. Your $300 deposit has been received and a receipt is on its way to your inbox from Stripe.</p>
+
+      <div class="pes-card">
+        <h2>What happens next</h2>
+        <ol class="pes-steps">
+          <li>You'll get a confirmation email from <b>hello@schoolofmath.us</b> within 24 hours with your course schedule and instructor.</li>
+          <li>About one week before the course begins, we'll send the final balance invoice. <b>The balance is due no later than two days before the first session.</b></li>
+          <li>If you need to switch courses or terms, just reply to your confirmation email or call us at <a href="tel:+16466686151">(646) 668-6151</a> — we'll make it work.</li>
+        </ol>
+      </div>
+
+      <div class="pes-card">
+        <h2>Deposit summary</h2>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#2b3a32;">
+          <b>$300.00</b> spot-reservation deposit (applied to total tuition)<br>
+          <b>$13.50</b> processing fee (4.5%, non-refundable)<br>
+          <b>$313.50</b> charged today<br>
+          The balance will be calculated based on your selected course and emailed to you with the final invoice.
+        </p>
+      </div>
+
+      <div class="pes-cta-row">
+        <a class="pes-btn pes-btn--primary" href="/">Back to home</a>
+        <a class="pes-btn pes-btn--secondary" href="/course-recommendation">View all courses</a>
+      </div>
+
+      <p class="pes-contact">
+        Questions? Email <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a> or call <a href="tel:+16466686151">(646) 668-6151</a>.<br>
+        SOMATH · 226 W 79th St, 1st Floor · New York, NY 10024
+      </p>
+    </main>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+  </body>
+</html>

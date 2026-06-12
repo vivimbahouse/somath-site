@@ -359,6 +359,153 @@ ${missedRows ? `<h3 style="color:#c89a3a;">Questions to revisit</h3><ul style="p
   return jsonResponse({ ok: true, note: "logged_only" });
 }
 __name(handleStudentEvaluation, "handleStudentEvaluation");
+
+// ---- Pre-enroll (Stripe Checkout) ----
+var PRE_ENROLL_COURSES = {
+  "little-newtons":               { title: "Little Newtons",                grade: "Grades K\u20132",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+  "kid-einsteins-a":              { title: "Kid Einsteins A",               grade: "Grades 3\u20134",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "kid-einsteins-b":              { title: "Kid Einsteins B",               grade: "Grade 5",            summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grade 6",        summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "young-fermats-algebra-ignite": { title: "Young Fermats \u2014 Algebra Ignite",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "shsat-prep":                   { title: "SHSAT Prep",                    grade: "Grades 7\u20138",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+  "sat-math":                     { title: "SAT Math",                      grade: "Grades 9\u201311",  summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+  "pre-calculus":                 { title: "Pre-Calculus",                  grade: "Grades 10\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 }
+};
+var PRE_ENROLL_TERMS = {
+  july:   { label: "July 2026",   dateRange: "June 29 \u2013 August 1, 2026",     weeks: 5 },
+  august: { label: "August 2026", dateRange: "August 3 \u2013 September 4, 2026", weeks: 5 },
+  fall:   { label: "Fall 2026",   dateRange: "August 31 \u2013 December 20, 2026", weeks: 16 }
+};
+function computeTuitionCents(courseId, termId) {
+  const c = PRE_ENROLL_COURSES[courseId];
+  const t = PRE_ENROLL_TERMS[termId];
+  if (!c || !t) return null;
+  const mins = termId === "fall" ? c.fallMins : c.summerMins;
+  const perWeek = termId === "fall" ? c.fallPerWeek : c.summerPerWeek;
+  const hours = (mins * perWeek * t.weeks) / 60;
+  return Math.round(hours * 60) * 100; // $60/hr, in cents
+}
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+}
+async function handlePreEnroll(request, env) {
+  if (request.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
+  let body;
+  try { body = await request.json(); } catch (e) { return jsonResponse({ ok: false, error: "invalid_json" }, 400); }
+  const { term, course, student_name, student_grade, parent_name, parent_phone, parent_email, agree_terms, agree_balance } = body || {};
+
+  if (!PRE_ENROLL_TERMS[term]) return jsonResponse({ ok: false, error: "invalid_term" }, 400);
+  if (!PRE_ENROLL_COURSES[course]) return jsonResponse({ ok: false, error: "invalid_course" }, 400);
+  if (!student_name || !student_grade) return jsonResponse({ ok: false, error: "missing_student" }, 400);
+  if (!parent_name || !parent_phone) return jsonResponse({ ok: false, error: "missing_parent" }, 400);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(parent_email || "")) return jsonResponse({ ok: false, error: "invalid_email" }, 400);
+  if (!agree_terms || !agree_balance) return jsonResponse({ ok: false, error: "terms_not_accepted" }, 400);
+
+  if (!env.STRIPE_SECRET_KEY) {
+    console.error("STRIPE_SECRET_KEY not set");
+    return jsonResponse({ ok: false, error: "stripe_not_configured" }, 500);
+  }
+
+  const c = PRE_ENROLL_COURSES[course];
+  const t = PRE_ENROLL_TERMS[term];
+  const tuitionCents = computeTuitionCents(course, term);
+  const depositCents = 30000; // $300
+  const feeCents = 1350;      // 4.5% of $300
+  const totalCents = depositCents + feeCents; // $313.50
+
+  const origin = new URL(request.url).origin;
+  const successUrl = origin + "/pre-enroll-success?session_id={CHECKOUT_SESSION_ID}";
+  const cancelUrl = origin + "/pre-enroll?course=" + encodeURIComponent(course) + "&term=" + encodeURIComponent(term);
+
+  const productName = "Pre-Enroll Deposit \u2014 " + c.title + " (" + t.label + ")";
+  const productDesc = "Spot-reservation deposit. $300 credited toward total tuition ($" + (tuitionCents/100).toLocaleString() + "). Balance due 2 days before course begins.";
+
+  // Build x-www-form-urlencoded body for Stripe API (Workers can't use JSON for Stripe)
+  const params = new URLSearchParams();
+  params.append("mode", "payment");
+  params.append("success_url", successUrl);
+  params.append("cancel_url", cancelUrl);
+  params.append("customer_email", parent_email);
+  params.append("payment_method_types[]", "card");
+  params.append("line_items[0][quantity]", "1");
+  params.append("line_items[0][price_data][currency]", "usd");
+  params.append("line_items[0][price_data][unit_amount]", String(depositCents));
+  params.append("line_items[0][price_data][product_data][name]", productName);
+  params.append("line_items[0][price_data][product_data][description]", productDesc);
+  params.append("line_items[1][quantity]", "1");
+  params.append("line_items[1][price_data][currency]", "usd");
+  params.append("line_items[1][price_data][unit_amount]", String(feeCents));
+  params.append("line_items[1][price_data][product_data][name]", "Processing fee (4.5%)");
+  params.append("line_items[1][price_data][product_data][description]", "Non-refundable card-processing fee.");
+  // Metadata so the success email + webhook can read it
+  params.append("metadata[course_id]", course);
+  params.append("metadata[course_title]", c.title);
+  params.append("metadata[term_id]", term);
+  params.append("metadata[term_label]", t.label);
+  params.append("metadata[term_dates]", t.dateRange);
+  params.append("metadata[student_name]", student_name);
+  params.append("metadata[student_grade]", String(student_grade));
+  params.append("metadata[parent_name]", parent_name);
+  params.append("metadata[parent_phone]", parent_phone);
+  params.append("metadata[parent_email]", parent_email);
+  params.append("metadata[tuition_total_cents]", String(tuitionCents));
+  params.append("metadata[balance_due_cents]", String(tuitionCents - depositCents));
+  // Stripe automatic receipt
+  params.append("payment_intent_data[receipt_email]", parent_email);
+  params.append("payment_intent_data[description]", productName);
+
+  let session;
+  try {
+    const resp = await fetch("https://api.stripe.com/v1/checkout/sessions", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + env.STRIPE_SECRET_KEY,
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: params.toString()
+    });
+    const data = await resp.json();
+    if (!resp.ok) {
+      console.error("Stripe checkout session creation failed", resp.status, JSON.stringify(data));
+      return jsonResponse({ ok: false, error: "stripe_error", detail: data.error && data.error.message }, 502);
+    }
+    session = data;
+  } catch (e) {
+    console.error("Stripe call exception", String(e));
+    return jsonResponse({ ok: false, error: "stripe_exception" }, 502);
+  }
+
+  // Fire-and-forget staff notification (do not block redirect)
+  const notifyTo = env.NOTIFY_EMAIL || "hello@schoolofmath.us";
+  if (env.RESEND_API_KEY) {
+    const balance = (tuitionCents - depositCents) / 100;
+    const html =
+      "<div style=\"font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:#1f3d2e;max-width:560px\">" +
+      "<h2 style=\"color:#1f3d2e;margin:0 0 8px\">New pre-enroll started</h2>" +
+      "<p style=\"color:#6b7a72;margin:0 0 16px;font-size:13px\">Stripe Checkout Session: " + esc(session.id) + " \u2014 awaiting payment confirmation.</p>" +
+      "<table style=\"border-collapse:collapse;font-size:14px\">" +
+      "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Course</td><td><b>" + esc(c.title) + "</b> (" + esc(c.grade) + ")</td></tr>" +
+      "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Term</td><td>" + esc(t.label) + " \u2014 " + esc(t.dateRange) + "</td></tr>" +
+      "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Student</td><td>" + esc(student_name) + " (Grade " + esc(student_grade) + ")</td></tr>" +
+      "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Parent</td><td>" + esc(parent_name) + " \u2014 " + esc(parent_phone) + " \u2014 " + esc(parent_email) + "</td></tr>" +
+      "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Total tuition</td><td>$" + (tuitionCents/100).toLocaleString() + "</td></tr>" +
+      "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Balance after deposit</td><td>$" + balance.toLocaleString() + " (due 2 days before start)</td></tr>" +
+      "</table>" +
+      "<p style=\"font-size:12px;color:#6b7a72;margin-top:18px\">Stripe will email a confirmation once payment completes. Watch the Stripe dashboard for the live charge.</p>" +
+      "</div>";
+    sendResendEmail(env, {
+      to: notifyTo,
+      subject: "Pre-enroll started \u2014 " + c.title + " \u2014 " + student_name,
+      html: html,
+      replyTo: parent_email
+    }).catch((e) => console.error("Staff notify failed", String(e)));
+  }
+
+  return jsonResponse({ ok: true, checkout_url: session.url, session_id: session.id });
+}
+__name(handlePreEnroll, "handlePreEnroll");
+
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -366,6 +513,7 @@ var worker_default = {
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
     if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
+    if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname.startsWith("/_secure/")) {
       return new Response("Not found", { status: 404 });
     }
