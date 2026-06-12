@@ -36,6 +36,7 @@
 
     <style>
       /* Course recommendation page */
+      body[data-page="course-recommendation"] main.container { max-width: 920px; }
       .crec-hero { padding: 64px 0 24px; }
       .crec-hero h1 { font-size: clamp(2rem, 3.5vw, 2.75rem); margin: 0 0 .5rem; }
       .crec-hero p { color: #555; max-width: 720px; margin: 0; }
@@ -67,9 +68,12 @@
 
       .crec-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 14px;
         margin: 18px 0 8px;
+      }
+      @media (min-width: 720px) {
+        .crec-grid { grid-template-columns: repeat(2, 1fr); }
       }
       .crec-card {
         position: relative;
@@ -154,9 +158,12 @@
 
       .crec-detail-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 14px;
         margin: 18px 0 22px;
+      }
+      @media (min-width: 640px) {
+        .crec-detail-grid { grid-template-columns: repeat(4, 1fr); }
       }
       .crec-fact {
         background: #fff; border: 1px solid #e8e2d3; border-radius: 8px;
