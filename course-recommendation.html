@@ -76,43 +76,42 @@
       .crec-term-head .crec-term-link { margin-left: auto; font-size: .95rem; }
 
       .crec-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         margin: 18px 0 8px;
-      }
-      @media (min-width: 720px) {
-        .crec-grid { grid-template-columns: repeat(2, 1fr); }
       }
       .crec-card {
         position: relative;
         background: #fff; border: 1px solid #e8e2d3; border-radius: 10px;
-        padding: 18px 18px 16px; cursor: pointer;
+        padding: 16px 20px; cursor: pointer;
         transition: transform .15s, box-shadow .15s, border-color .15s;
+        display: flex; align-items: center; flex-wrap: wrap;
+        gap: 6px 18px;
       }
       .crec-card:hover {
         border-color: #c89a3a;
-        box-shadow: 0 8px 22px rgba(31, 61, 46, 0.08);
-        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(31, 61, 46, 0.08);
       }
-      .crec-card h3 { margin: 0 0 4px; font-size: 1.1rem; color: #1f3d2e; }
-      .crec-card .crec-grade { color: #6a6a6a; font-size: .9rem; }
-      .crec-card .crec-quick { color: #555; font-size: .92rem; margin: 8px 0 0; }
+      .crec-card h3 { margin: 0; font-size: 1.05rem; color: #1f3d2e; flex: 0 0 auto; }
+      .crec-card .crec-grade { color: #6a6a6a; font-size: .88rem; flex: 0 0 auto; }
       .crec-card .crec-meta {
-        margin-top: 12px;
-        display: flex; flex-wrap: wrap; gap: 6px 10px;
+        margin-left: auto;
+        display: flex; flex-wrap: wrap; gap: 6px 8px;
         font-size: .82rem; color: #6a6a6a;
       }
-      .crec-card .crec-meta span { background: #f5f0e6; padding: 3px 9px; border-radius: 999px; }
+      .crec-card .crec-meta span { background: #f5f0e6; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+      .crec-card .crec-quick { display: none; } /* hidden on list view, shown in popover instead */
       .crec-card.is-open { border-color: #1f3d2e; box-shadow: 0 10px 28px rgba(31, 61, 46, 0.12); }
 
-      /* Hover preview popover */
+      /* Hover preview popover — appears to the RIGHT of the row */
       .crec-popover {
         position: absolute;
-        left: 50%; transform: translateX(-50%) translateY(8px);
-        top: 100%;
+        left: calc(100% + 14px);
+        top: 50%;
+        transform: translateY(-50%) translateX(-6px);
         z-index: 30;
-        width: min(320px, 92vw);
+        width: 300px;
         background: #1f3d2e; color: #f5f0e6;
         padding: 14px 16px;
         border-radius: 8px;
@@ -122,16 +121,33 @@
         transition: opacity .15s, transform .15s;
       }
       .crec-popover::before {
-        content: ""; position: absolute; top: -6px; left: 50%;
+        content: ""; position: absolute; top: 50%; left: -6px;
         width: 12px; height: 12px; background: #1f3d2e;
-        transform: translateX(-50%) rotate(45deg);
+        transform: translateY(-50%) rotate(45deg);
       }
       .crec-card:hover .crec-popover,
       .crec-card:focus-within .crec-popover {
         opacity: 1; pointer-events: auto;
-        transform: translateX(-50%) translateY(4px);
+        transform: translateY(-50%) translateX(0);
       }
       .crec-popover strong { color: #c89a3a; }
+
+      /* On narrow screens, fall back to popover below the row */
+      @media (max-width: 860px) {
+        .crec-popover {
+          left: 50%; top: 100%;
+          transform: translate(-50%, 8px);
+          width: min(320px, 92vw);
+        }
+        .crec-popover::before {
+          top: -6px; left: 50%;
+          transform: translateX(-50%) rotate(45deg);
+        }
+        .crec-card:hover .crec-popover,
+        .crec-card:focus-within .crec-popover {
+          transform: translate(-50%, 4px);
+        }
+      }
       @media (hover: none) {
         .crec-popover { display: none; } /* touch devices: rely on click-to-open */
       }
