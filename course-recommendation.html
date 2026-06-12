@@ -834,16 +834,6 @@
             </table>
           </div>
 
-          <div class="crec-section crec-faq">
-            <h3>Frequently asked</h3>
-            ${term.faq.map(([q,a]) => `
-              <details>
-                <summary>${q}</summary>
-                <p>${a}</p>
-              </details>
-            `).join("")}
-          </div>
-
           <div class="crec-cta-row">
             <a class="btn btn--primary" href="/evaluation">Book free evaluation</a>
             <a class="btn btn--secondary" href="${c.link}">More about ${c.title}</a>
