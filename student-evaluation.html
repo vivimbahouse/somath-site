@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Free Math Diagnostic (3rd–8th Grade) · School of Math NYC</title>
-    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 3rd, 4th, 5th, 6th, 7th, and 8th grade students. Suggested time 30 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
+    <title>Free Math Diagnostic (2nd–8th Grade) · School of Math NYC</title>
+    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 2nd, 3rd, 4th, 5th, 6th, 7th, and 8th grade students. Suggested time 30 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:url" content="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Free Math Diagnostic (3rd–8th Grade) · School of Math NYC" />
+    <meta property="og:title" content="Free Math Diagnostic (2nd–8th Grade) · School of Math NYC" />
     <meta property="og:description" content="15 NYC Common Core questions, ~30 minutes, instant detailed report with strengths, weaknesses, and pacing analysis." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/styles.css" />
@@ -118,6 +118,9 @@
       <section class="section" style="padding-top: 20px;">
         <div class="section__inner">
           <div class="quiz-wrap">
+            <div class="quiz-card" id="quiz-root-2">
+              <span class="quiz-grade-label">2nd Grade</span>
+            </div>
             <div class="quiz-card" id="quiz-root-3">
               <span class="quiz-grade-label">3rd Grade</span>
             </div>
@@ -136,7 +139,7 @@
             <div class="quiz-card" id="quiz-root-8">
               <span class="quiz-grade-label">8th Grade</span>
             </div>
-            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 3 through 8. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
+            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 2 through 8. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
           </div>
         </div>
       </section>
@@ -150,6 +153,32 @@
       const QUIZ_LENGTH = 15;
       const SUGGESTED_MINUTES = 30;        // total
       const SUGGESTED_SECONDS = SUGGESTED_MINUTES * 60;
+
+      // ============================================================
+      // 2ND GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
+      // ============================================================
+      const QUESTIONS_2 = [
+        // Operations & Algebraic Thinking
+        { strand:"Operations & Algebraic Thinking", q:"Add:  8 + 7", options:["13","14","15","16"], answer:2 },
+        { strand:"Operations & Algebraic Thinking", q:"Subtract:  16 − 9", options:["5","6","7","8"], answer:2 },
+        { strand:"Operations & Algebraic Thinking", q:"There are 5 rows of 4 stars. How many stars are there in all?", options:["9","15","20","24"], answer:2 },
+        // Number & Operations in Base Ten
+        { strand:"Number & Operations in Base Ten", q:"What is the value of the 4 in 247?", options:["4","40","400","4,000"], answer:1 },
+        { strand:"Number & Operations in Base Ten", q:"Add:  35 + 28", options:["53","63","67","73"], answer:1 },
+        { strand:"Number & Operations in Base Ten", q:"Subtract:  72 − 38", options:["34","36","44","46"], answer:0 },
+        // Measurement & Data (length, time, money)
+        { strand:"Measurement & Data", q:"A pencil is 7 inches long. A crayon is 4 inches long. How much longer is the pencil than the crayon?", options:["2 inches","3 inches","4 inches","11 inches"], answer:1 },
+        { strand:"Measurement & Data", q:"What time does this clock show?  (hour hand on 3, minute hand on 6)", options:["3:00","3:15","3:30","6:00"], answer:2 },
+        { strand:"Measurement & Data", q:"Sam has 3 quarters and 2 dimes. How much money does he have?", options:["55¢","75¢","85¢","95¢"], answer:3 },
+        // Geometry
+        { strand:"Geometry", q:"How many sides does a pentagon have?", options:["4","5","6","8"], answer:1 },
+        { strand:"Geometry", q:"How many faces does a cube have?", options:["4","6","8","12"], answer:1 },
+        { strand:"Geometry", q:"A circle is divided into 4 equal parts. What is each part called?", options:["A half","A third","A fourth (quarter)","A sixth"], answer:2 },
+        // Number Sense (skip counting, even/odd, comparing)
+        { strand:"Number Sense", q:"Which number is even?", options:["17","23","34","45"], answer:2 },
+        { strand:"Number Sense", q:"Skip-count by 5s. What comes next?  5, 10, 15, 20, ___", options:["21","22","25","30"], answer:2 },
+        { strand:"Number Sense", q:"Compare:  187 ___ 178", options:["<",">","=","cannot tell"], answer:1 }
+      ];
 
       // ============================================================
       // 3RD GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
@@ -310,6 +339,20 @@
       // ============================================================
       // Strand descriptions + remediation by grade
       // ============================================================
+      const STRAND_DESC_2 = {
+        "Operations & Algebraic Thinking": "adding and subtracting within 20 fluently, and using arrays to lay the foundation for multiplication.",
+        "Number & Operations in Base Ten": "understanding place value to the hundreds and 2-digit addition and subtraction with regrouping.",
+        "Measurement & Data": "measuring length in inches, telling time to the nearest 5 minutes, and counting coin combinations.",
+        "Geometry": "identifying shapes by number of sides and faces and partitioning shapes into equal parts (halves, thirds, fourths).",
+        "Number Sense": "recognizing even/odd numbers, skip counting by 5s/10s/100s, and comparing 3-digit numbers."
+      };
+      const STRAND_REMED_2 = {
+        "Operations & Algebraic Thinking": "Drill addition and subtraction facts within 20 daily. Use ten-frames and number bonds for the 'making a ten' strategy (e.g. 8 + 7 → 8 + 2 + 5). Practice arrays (rows × columns) as a bridge to multiplication.",
+        "Number & Operations in Base Ten": "Reinforce place-value language (hundreds, tens, ones) using base-ten blocks, then drill 2-digit addition and subtraction with and without regrouping.",
+        "Measurement & Data": "Practice measuring real objects with a ruler in inches, telling time on an analog clock to the nearest 5 minutes, and counting money with mixed coins (pennies, nickels, dimes, quarters).",
+        "Geometry": "Practice identifying triangles, quadrilaterals, pentagons, hexagons, and cubes by counting sides and faces. Partition rectangles and circles into halves, thirds, and fourths.",
+        "Number Sense": "Drill even/odd recognition, skip counting (2s, 5s, 10s, 100s), and comparing 3-digit numbers using <, >, = symbols."
+      };
       const STRAND_DESC_3 = {
         "Operations & Algebraic Thinking": "multiplication and division within 100 and finding missing factors.",
         "Number & Operations in Base Ten": "rounding to the nearest 10 and 100, and 3-digit addition and subtraction with regrouping.",
@@ -398,7 +441,8 @@
       // Per-strand commentary based on score band
       function strandCommentary(strandName, pct, gradeKey) {
         let remedMap, descMap;
-        if (gradeKey === "3rd") { remedMap = STRAND_REMED_3; descMap = STRAND_DESC_3; }
+        if (gradeKey === "2nd") { remedMap = STRAND_REMED_2; descMap = STRAND_DESC_2; }
+        else if (gradeKey === "3rd") { remedMap = STRAND_REMED_3; descMap = STRAND_DESC_3; }
         else if (gradeKey === "4th") { remedMap = STRAND_REMED_4; descMap = STRAND_DESC_4; }
         else if (gradeKey === "5th") { remedMap = STRAND_REMED_5; descMap = STRAND_DESC_5; }
         else if (gradeKey === "6th") { remedMap = STRAND_REMED_6; descMap = STRAND_DESC_6; }
@@ -849,6 +893,14 @@
         return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
       }
 
+      createQuiz({
+        rootId: "quiz-root-2",
+        questions: QUESTIONS_2,
+        strandRemed: STRAND_REMED_2,
+        gradeLabel: "2nd Grade",
+        gradeKey: "2nd",
+        sourceTag: "student-evaluation-2nd-grade"
+      });
       createQuiz({
         rootId: "quiz-root-3",
         questions: QUESTIONS_3,
