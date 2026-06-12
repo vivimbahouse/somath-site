@@ -89,6 +89,16 @@
         display: flex; align-items: center; flex-wrap: wrap;
         gap: 6px 18px;
       }
+      /* Hover bridge extending from the right edge of the card to the popover */
+      .crec-card::after {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 100%;
+        width: 18px;
+        pointer-events: none;
+      }
+      .crec-card:hover::after { pointer-events: auto; }
       .crec-card:hover {
         border-color: #c89a3a;
         box-shadow: 0 6px 18px rgba(31, 61, 46, 0.08);
@@ -107,18 +117,28 @@
       /* Hover preview popover — appears to the RIGHT of the row */
       .crec-popover {
         position: absolute;
-        left: calc(100% + 14px);
+        left: 100%;
         top: 50%;
         transform: translateY(-50%) translateX(-6px);
         z-index: 30;
         width: 300px;
+        margin-left: 14px;
         background: #1f3d2e; color: #f5f0e6;
         padding: 14px 16px;
         border-radius: 8px;
         font-size: .88rem; line-height: 1.45;
         box-shadow: 0 14px 32px rgba(0,0,0,0.22);
         opacity: 0; pointer-events: none;
-        transition: opacity .15s, transform .15s;
+        transition: opacity .18s ease, transform .18s ease;
+        transition-delay: 0s, 0s;
+      }
+      /* Invisible hover-bridge so the cursor can cross the gap without losing :hover */
+      .crec-popover::after {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0;
+        left: -20px;   /* covers the 14px gap + a little buffer */
+        width: 22px;
       }
       .crec-popover::before {
         content: ""; position: absolute; top: 50%; left: -6px;
@@ -126,9 +146,19 @@
         transform: translateY(-50%) rotate(45deg);
       }
       .crec-card:hover .crec-popover,
-      .crec-card:focus-within .crec-popover {
+      .crec-card:focus-within .crec-popover,
+      .crec-popover:hover {
         opacity: 1; pointer-events: auto;
         transform: translateY(-50%) translateX(0);
+      }
+      /* Slight delay on hide so the cursor has time to cross from card to popover */
+      .crec-popover {
+        transition-delay: .12s;
+      }
+      .crec-card:hover .crec-popover,
+      .crec-card:focus-within .crec-popover,
+      .crec-popover:hover {
+        transition-delay: 0s;
       }
       .crec-popover strong { color: #c89a3a; }
 
@@ -137,14 +167,21 @@
         .crec-popover {
           left: 50%; top: 100%;
           transform: translate(-50%, 8px);
+          margin-left: 0;
           width: min(320px, 92vw);
+        }
+        .crec-popover::after {
+          top: -12px; bottom: auto;
+          left: 0; right: 0;
+          width: auto; height: 14px;
         }
         .crec-popover::before {
           top: -6px; left: 50%;
           transform: translateX(-50%) rotate(45deg);
         }
         .crec-card:hover .crec-popover,
-        .crec-card:focus-within .crec-popover {
+        .crec-card:focus-within .crec-popover,
+        .crec-popover:hover {
           transform: translate(-50%, 4px);
         }
       }
