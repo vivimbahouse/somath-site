@@ -495,7 +495,7 @@
             const status = document.getElementById("send-status-" + GRADE_KEY);
             if (status) {
               if (resp.ok && data.ok) {
-                status.innerHTML = `<div class="send-status ok">Report sent to SOMATH at hello@schoolofmath.us. We'll reach out to ${escapeHTML(state.parentEmail)} within one business day.</div>`;
+                status.innerHTML = `<div class="send-status ok">Report sent to SOMATH at hello@schoolofmath.us and a copy was emailed to ${escapeHTML(state.parentEmail)}. Check your inbox (and spam folder if you don't see it).</div>`;
               } else {
                 status.innerHTML = `<div class="send-status err">We couldn't email the report automatically. Please call (646) 668-6151 or email hello@schoolofmath.us with the score above and we'll follow up.</div>`;
               }

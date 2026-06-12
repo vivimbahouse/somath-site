@@ -289,12 +289,43 @@ async function handleStudentEvaluation(request, env) {
 </div>`;
 
   const notifyTo = env.NOTIFY_EMAIL || "hello@schoolofmath.us";
-  const subject = `Student diagnostic (${gradeLabel}): ${studentName} \u2014 ${overallPercent}% (${totalCorrect}/${totalQuestions})`;
+  const internalSubject = `Student diagnostic (${gradeLabel}): ${studentName} \u2014 ${overallPercent}% (${totalCorrect}/${totalQuestions})`;
+  const parentSubject = `${studentName}'s ${gradeLabel} Math Diagnostic Report \u2014 School of Math`;
+
+  // Parent-facing version: warm intro, no "full answer detail" table at the bottom
+  const parentIntro = `<p style="margin:0 0 14px;">Hi there,</p>
+<p style="margin:0 0 14px;">Thank you for using the free School of Math diagnostic for ${escapeHtml(studentName)}. Below is the full report \u2014 overall score, per-strand breakdown, and a written performance summary based on the New York State Common Core standards for ${escapeHtml(gradeLabel)}.</p>
+<p style="margin:0 0 14px;">If you'd like one of our teachers to walk through this report with you in person, you can book a free 60-minute evaluation at <a href="https://www.schoolofmath.us/evaluation">schoolofmath.us/evaluation</a> or reply to this email and we'll set it up.</p>
+<p style="margin:0 0 18px;">\u2014 The School of Math team<br/>226 W 79th St, Upper West Side, NYC<br/>(646) 668-6151</p>`;
+
+  const parentHtml = `<div style="font-family:system-ui,-apple-system,sans-serif;color:#1f3d2e;max-width:680px;">${parentIntro}<hr style="border:none;border-top:1px solid #e5e0d4;margin:14px 0 18px;"/>
+<h2 style="color:#1f3d2e;border-bottom:2px solid #c89a3a;padding-bottom:8px;">${escapeHtml(gradeLabel)} Math Diagnostic \u2014 ${escapeHtml(studentName)}</h2>
+<p><strong>Grade:</strong> ${escapeHtml(gradeLabel)}<br/>
+<strong>Submitted:</strong> ${new Date().toISOString().slice(0,10)}</p>
+<h3 style="color:#c89a3a;">Overall</h3>
+<p style="font-size:18px;"><strong>${totalCorrect} / ${totalQuestions}</strong> correct &middot; <strong>${overallPercent}%</strong></p>
+<h3 style="color:#c89a3a;">By strand</h3>
+<table style="border-collapse:collapse;width:100%;font-size:14px;"><thead><tr><th style="text-align:left;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Strand</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Score</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">%</th></tr></thead><tbody>${strandRows}</tbody></table>
+<h3 style="color:#c89a3a;">Strengths</h3>${listHtml(strengths)}
+<h3 style="color:#c89a3a;">Developing</h3>${listHtml(developing)}
+<h3 style="color:#c89a3a;">Areas to focus on</h3>${listHtml(weaknesses)}
+<h3 style="color:#c89a3a;">Performance summary</h3>
+<div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:6px;"><p style="margin:0 0 8px;font-weight:600;">${escapeHtml(performanceBand)}</p><p style="margin:0;">${escapeHtml(performanceSummary)}</p></div>
+<p style="margin-top:22px;"><a href="https://www.schoolofmath.us/evaluation" style="display:inline-block;background:#1f3d2e;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;">Book a Free 60-Minute Evaluation</a></p>
+<p style="color:#888;font-size:12px;margin-top:24px;">School of Math \u2014 226 W 79th St, New York, NY 10024 \u2014 hello@schoolofmath.us</p>
+</div>`;
+
   if (env.RESEND_API_KEY) {
-    const result = await sendResendEmail(env, { to: notifyTo, subject, html, replyTo: parentEmail }).catch(function(e){ return { ok: false, error: "exception", detail: String(e) }; });
-    console.log("Student evaluation email:", JSON.stringify(result));
-    if (!result.ok) return jsonResponse({ ok: false, error: result.error || "email_failed" }, 502);
-    return jsonResponse({ ok: true });
+    // Send TWO emails: one to the school (internal, with full answer detail), one to the parent (clean, no answer dump).
+    const schoolPromise = sendResendEmail(env, { to: notifyTo, subject: internalSubject, html, replyTo: parentEmail })
+      .catch(function(e){ return { ok: false, error: "exception", detail: String(e) }; });
+    const parentPromise = sendResendEmail(env, { to: parentEmail, subject: parentSubject, html: parentHtml, replyTo: notifyTo })
+      .catch(function(e){ return { ok: false, error: "exception", detail: String(e) }; });
+    const [schoolResult, parentResult] = await Promise.all([schoolPromise, parentPromise]);
+    console.log("Student evaluation emails:", JSON.stringify({ school: schoolResult, parent: parentResult }));
+    // If the school copy fails, report that as a hard error (their lead-capture matters more); parent failure is soft.
+    if (!schoolResult.ok) return jsonResponse({ ok: false, error: schoolResult.error || "email_failed" }, 502);
+    return jsonResponse({ ok: true, parentDelivered: !!parentResult.ok });
   }
   console.log(JSON.stringify({ event: "student_evaluation", grade, studentName, parentEmail, overallPercent, totalCorrect, totalQuestions }));
   return jsonResponse({ ok: true, note: "logged_only" });
