@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Free Math Diagnostic (6th, 7th &amp; 8th Grade) · School of Math NYC</title>
-    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 6th, 7th, and 8th grade students. Suggested time 30 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
+    <title>Free Math Diagnostic (5th, 6th, 7th &amp; 8th Grade) · School of Math NYC</title>
+    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 5th, 6th, 7th, and 8th grade students. Suggested time 30 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:url" content="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Free Math Diagnostic (6th, 7th & 8th Grade) · School of Math NYC" />
+    <meta property="og:title" content="Free Math Diagnostic (5th, 6th, 7th & 8th Grade) · School of Math NYC" />
     <meta property="og:description" content="15 NYC Common Core questions, ~30 minutes, instant detailed report with strengths, weaknesses, and pacing analysis." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/styles.css" />
@@ -118,6 +118,9 @@
       <section class="section" style="padding-top: 20px;">
         <div class="section__inner">
           <div class="quiz-wrap">
+            <div class="quiz-card" id="quiz-root-5">
+              <span class="quiz-grade-label">5th Grade</span>
+            </div>
             <div class="quiz-card" id="quiz-root-6">
               <span class="quiz-grade-label">6th Grade</span>
             </div>
@@ -127,7 +130,7 @@
             <div class="quiz-card" id="quiz-root-8">
               <span class="quiz-grade-label">8th Grade</span>
             </div>
-            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 6, 7, and 8. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
+            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 5, 6, 7, and 8. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
           </div>
         </div>
       </section>
@@ -141,6 +144,32 @@
       const QUIZ_LENGTH = 15;
       const SUGGESTED_MINUTES = 30;        // total
       const SUGGESTED_SECONDS = SUGGESTED_MINUTES * 60;
+
+      // ============================================================
+      // 5TH GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
+      // ============================================================
+      const QUESTIONS_5 = [
+        // Operations & Algebraic Thinking
+        { strand:"Operations & Algebraic Thinking", q:"Evaluate using order of operations:  3 + 4 × (8 − 6)", options:["7","11","14","22"], answer:1 },
+        { strand:"Operations & Algebraic Thinking", q:"Which expression matches: \"add 3 and 7, then multiply by 5\"?", options:["3 + 7 × 5","(3 + 7) × 5","3 × 5 + 7","5 × (7 − 3)"], answer:1 },
+        { strand:"Operations & Algebraic Thinking", q:"A pattern starts at 4 and adds 6 each step:  4, 10, 16, 22, …  What is the 7th term?", options:["34","40","42","46"], answer:1 },
+        // Number & Operations in Base Ten
+        { strand:"Number & Operations in Base Ten", q:"What is the value of the 7 in 36,704?", options:["7","70","700","7,000"], answer:2 },
+        { strand:"Number & Operations in Base Ten", q:"Multiply:  234 × 12", options:["2,608","2,808","2,812","3,108"], answer:1 },
+        { strand:"Number & Operations in Base Ten", q:"Divide:  6.4 ÷ 0.8", options:["0.8","0.08","8","80"], answer:2 },
+        // Number & Operations — Fractions
+        { strand:"Number & Operations — Fractions", q:"Add:  2/3 + 1/4", options:["3/7","3/12","11/12","1 1/12"], answer:2 },
+        { strand:"Number & Operations — Fractions", q:"Multiply:  2/5 × 3/4", options:["5/9","6/9","6/20","3/10"], answer:3 },
+        { strand:"Number & Operations — Fractions", q:"A recipe calls for 3/4 cup of sugar. If you make 1/2 the recipe, how much sugar do you need?", options:["1/4 cup","3/8 cup","1/2 cup","5/8 cup"], answer:1 },
+        // Measurement & Data
+        { strand:"Measurement & Data", q:"A rectangular box is 4 in long, 3 in wide, and 5 in tall. What is its volume?", options:["12 in³","35 in³","47 in³","60 in³"], answer:3 },
+        { strand:"Measurement & Data", q:"How many milliliters are in 2.5 liters?", options:["25 mL","250 mL","2,500 mL","25,000 mL"], answer:2 },
+        { strand:"Measurement & Data", q:"On a line plot, students recorded plant heights: 4 plants at 2 in, 3 plants at 3 in, and 1 plant at 5 in. What is the total height of all plants?", options:["10 in","17 in","22 in","25 in"], answer:2 },
+        // Geometry
+        { strand:"Geometry", q:"What are the coordinates of a point that is 3 units right and 5 units up from the origin?", options:["(3, 5)","(5, 3)","(−3, 5)","(3, −5)"], answer:0 },
+        { strand:"Geometry", q:"Which statement is true about every square?", options:["It has exactly 3 sides","It is a rectangle with 4 equal sides","It has no right angles","It is a triangle"], answer:1 },
+        { strand:"Geometry", q:"Which shape has exactly one pair of parallel sides?", options:["Parallelogram","Rectangle","Trapezoid","Rhombus"], answer:2 }
+      ];
 
       // ============================================================
       // 6TH GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
@@ -223,6 +252,20 @@
       // ============================================================
       // Strand descriptions + remediation by grade
       // ============================================================
+      const STRAND_DESC_5 = {
+        "Operations & Algebraic Thinking": "order of operations, writing simple expressions, and extending number patterns.",
+        "Number & Operations in Base Ten": "place value, multi-digit multiplication, and multiplying/dividing with decimals.",
+        "Number & Operations — Fractions": "adding/subtracting fractions with unlike denominators, multiplying fractions, and fraction-of-a-quantity.",
+        "Measurement & Data": "volume of rectangular prisms, metric conversions, and interpreting line plots.",
+        "Geometry": "plotting on the coordinate plane and classifying quadrilaterals by properties."
+      };
+      const STRAND_REMED_5 = {
+        "Operations & Algebraic Thinking": "Drill PEMDAS with parentheses, translate phrases into numerical expressions, and practice continuing additive/multiplicative number patterns.",
+        "Number & Operations in Base Ten": "Reinforce place value to the millions and to the thousandths, then drill multi-digit multiplication algorithms and decimal multiplication/division through grid models and standard algorithm.",
+        "Number & Operations — Fractions": "Drill finding common denominators for unlike fractions, then practice fraction-by-fraction multiplication. 'Half of three-fourths' should feel automatic.",
+        "Measurement & Data": "Memorize V = l·w·h, drill metric unit conversions (the place-value 10× ladder), and practice reading and computing totals from line plots.",
+        "Geometry": "Practice plotting ordered pairs in the first quadrant and classify quadrilaterals by side lengths, parallel sides, and angles — square vs. rectangle vs. rhombus vs. trapezoid."
+      };
       const STRAND_DESC_6 = {
         "Ratios & Proportional Reasoning": "ratios, unit rates, and percent — the cornerstone of 6th grade Common Core.",
         "The Number System": "fraction division, GCF/LCM, and integers (including negative numbers on the number line).",
@@ -268,8 +311,8 @@
 
       // Per-strand commentary based on score band
       function strandCommentary(strandName, pct, gradeKey) {
-        const remedMap = gradeKey === "6th" ? STRAND_REMED_6 : (gradeKey === "7th" ? STRAND_REMED_7 : STRAND_REMED_8);
-        const descMap = gradeKey === "6th" ? STRAND_DESC_6 : (gradeKey === "7th" ? STRAND_DESC_7 : STRAND_DESC_8);
+        const remedMap = gradeKey === "5th" ? STRAND_REMED_5 : (gradeKey === "6th" ? STRAND_REMED_6 : (gradeKey === "7th" ? STRAND_REMED_7 : STRAND_REMED_8));
+        const descMap = gradeKey === "5th" ? STRAND_DESC_5 : (gradeKey === "6th" ? STRAND_DESC_6 : (gradeKey === "7th" ? STRAND_DESC_7 : STRAND_DESC_8));
         if (pct === 100) {
           return `Perfect score on this strand. The work on ${descMap[strandName] || strandName} is fully internalized — at the next instructional step, push into harder multi-step problems and earlier exposure to next-grade material here.`;
         } else if (pct >= 75) {
@@ -715,6 +758,14 @@
         return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
       }
 
+      createQuiz({
+        rootId: "quiz-root-5",
+        questions: QUESTIONS_5,
+        strandRemed: STRAND_REMED_5,
+        gradeLabel: "5th Grade",
+        gradeKey: "5th",
+        sourceTag: "student-evaluation-5th-grade"
+      });
       createQuiz({
         rootId: "quiz-root-6",
         questions: QUESTIONS_6,
