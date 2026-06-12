@@ -239,6 +239,7 @@ async function handleStudentEvaluation(request, env) {
   if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405);
   let body;
   try { body = await request.json(); } catch (e) { return jsonResponse({ error: "invalid_body" }, 400); }
+  const grade = String(body.grade || "").trim().slice(0, 40);
   const studentName = String(body.studentName || "").trim().slice(0, 80);
   const parentEmail = String(body.parentEmail || "").trim().toLowerCase();
   const totalCorrect = Number(body.totalCorrect);
@@ -267,9 +268,11 @@ async function handleStudentEvaluation(request, env) {
 
   const listHtml = function(arr) { return arr.length ? `<ul>${arr.map(function(x){return `<li>${escapeHtml(x)}</li>`;}).join("")}</ul>` : "<p style=\"color:#888;\">(none)</p>"; };
 
+  const gradeLabel = grade || "Math";
   const html = `<div style="font-family:system-ui,-apple-system,sans-serif;color:#1f3d2e;max-width:680px;">
-<h2 style="color:#1f3d2e;border-bottom:2px solid #c89a3a;padding-bottom:8px;">6th Grade Math Diagnostic \u2014 ${escapeHtml(studentName)}</h2>
+<h2 style="color:#1f3d2e;border-bottom:2px solid #c89a3a;padding-bottom:8px;">${escapeHtml(gradeLabel)} Math Diagnostic \u2014 ${escapeHtml(studentName)}</h2>
 <p><strong>Parent email:</strong> <a href="mailto:${escapeHtml(parentEmail)}">${escapeHtml(parentEmail)}</a><br/>
+<strong>Grade:</strong> ${escapeHtml(gradeLabel)}<br/>
 <strong>Submitted:</strong> ${new Date().toISOString()}<br/>
 <strong>Source:</strong> /student-evaluation</p>
 <h3 style="color:#c89a3a;">Overall</h3>
@@ -287,14 +290,14 @@ async function handleStudentEvaluation(request, env) {
 </div>`;
 
   const notifyTo = env.NOTIFY_EMAIL || "hello@schoolofmath.us";
-  const subject = `Student diagnostic: ${studentName} \u2014 ${overallPercent}% (${totalCorrect}/${totalQuestions})`;
+  const subject = `Student diagnostic (${gradeLabel}): ${studentName} \u2014 ${overallPercent}% (${totalCorrect}/${totalQuestions})`;
   if (env.RESEND_API_KEY) {
     const result = await sendResendEmail(env, { to: notifyTo, subject, html, replyTo: parentEmail }).catch(function(e){ return { ok: false, error: "exception", detail: String(e) }; });
     console.log("Student evaluation email:", JSON.stringify(result));
     if (!result.ok) return jsonResponse({ ok: false, error: result.error || "email_failed" }, 502);
     return jsonResponse({ ok: true });
   }
-  console.log(JSON.stringify({ event: "student_evaluation", studentName, parentEmail, overallPercent, totalCorrect, totalQuestions }));
+  console.log(JSON.stringify({ event: "student_evaluation", grade, studentName, parentEmail, overallPercent, totalCorrect, totalQuestions }));
   return jsonResponse({ ok: true, note: "logged_only" });
 }
 __name(handleStudentEvaluation, "handleStudentEvaluation");
