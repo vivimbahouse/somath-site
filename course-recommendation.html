@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Course Recommendation · July, August &amp; Fall 2026 · School of Math NYC</title>
+    <meta name="description" content="Find the right SOMATH course for your child. Pick a term — July, August, or Fall 2026 — hover any course to preview, click to see description, dates, syllabus, and FAQs." />
+    <link rel="canonical" href="https://www.schoolofmath.us/course-recommendation" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta property="og:title" content="Course Recommendation · School of Math NYC" />
+    <meta property="og:description" content="Pick a term and explore SOMATH's courses — descriptions, dates, syllabus, and FAQs in one place." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.schoolofmath.us/course-recommendation" />
+
+    <style>
+      /* Course recommendation page */
+      .crec-hero { padding: 64px 0 24px; }
+      .crec-hero h1 { font-size: clamp(2rem, 3.5vw, 2.75rem); margin: 0 0 .5rem; }
+      .crec-hero p { color: #555; max-width: 720px; margin: 0; }
+
+      .crec-tabs {
+        display: flex; flex-wrap: wrap; gap: 10px;
+        border-bottom: 1px solid #e8e2d3;
+        margin: 28px 0 0;
+      }
+      .crec-tab {
+        appearance: none; background: transparent; border: 0;
+        font: inherit; font-weight: 600; color: #555;
+        padding: 14px 22px; cursor: pointer;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -1px;
+        transition: color .15s, border-color .15s, background .15s;
+      }
+      .crec-tab:hover { color: #1f3d2e; background: rgba(200, 154, 58, 0.06); }
+      .crec-tab.is-active { color: #1f3d2e; border-bottom-color: #c89a3a; }
+      .crec-tab .crec-tab-sub { display:block; font-weight: 400; font-size: .82rem; color: #888; margin-top: 2px; }
+
+      .crec-term-head {
+        margin: 28px 0 8px;
+        display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 18px;
+      }
+      .crec-term-head h2 { margin: 0; font-size: 1.5rem; color: #1f3d2e; }
+      .crec-term-head .crec-term-dates { color: #6a6a6a; font-size: .95rem; }
+      .crec-term-head .crec-term-link { margin-left: auto; font-size: .95rem; }
+
+      .crec-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 14px;
+        margin: 18px 0 8px;
+      }
+      .crec-card {
+        position: relative;
+        background: #fff; border: 1px solid #e8e2d3; border-radius: 10px;
+        padding: 18px 18px 16px; cursor: pointer;
+        transition: transform .15s, box-shadow .15s, border-color .15s;
+      }
+      .crec-card:hover {
+        border-color: #c89a3a;
+        box-shadow: 0 8px 22px rgba(31, 61, 46, 0.08);
+        transform: translateY(-2px);
+      }
+      .crec-card h3 { margin: 0 0 4px; font-size: 1.1rem; color: #1f3d2e; }
+      .crec-card .crec-grade { color: #6a6a6a; font-size: .9rem; }
+      .crec-card .crec-quick { color: #555; font-size: .92rem; margin: 8px 0 0; }
+      .crec-card .crec-meta {
+        margin-top: 12px;
+        display: flex; flex-wrap: wrap; gap: 6px 10px;
+        font-size: .82rem; color: #6a6a6a;
+      }
+      .crec-card .crec-meta span { background: #f5f0e6; padding: 3px 9px; border-radius: 999px; }
+      .crec-card.is-open { border-color: #1f3d2e; box-shadow: 0 10px 28px rgba(31, 61, 46, 0.12); }
+
+      /* Hover preview popover */
+      .crec-popover {
+        position: absolute;
+        left: 50%; transform: translateX(-50%) translateY(8px);
+        top: 100%;
+        z-index: 30;
+        width: min(320px, 92vw);
+        background: #1f3d2e; color: #f5f0e6;
+        padding: 14px 16px;
+        border-radius: 8px;
+        font-size: .88rem; line-height: 1.45;
+        box-shadow: 0 14px 32px rgba(0,0,0,0.22);
+        opacity: 0; pointer-events: none;
+        transition: opacity .15s, transform .15s;
+      }
+      .crec-popover::before {
+        content: ""; position: absolute; top: -6px; left: 50%;
+        width: 12px; height: 12px; background: #1f3d2e;
+        transform: translateX(-50%) rotate(45deg);
+      }
+      .crec-card:hover .crec-popover,
+      .crec-card:focus-within .crec-popover {
+        opacity: 1; pointer-events: auto;
+        transform: translateX(-50%) translateY(4px);
+      }
+      .crec-popover strong { color: #c89a3a; }
+      @media (hover: none) {
+        .crec-popover { display: none; } /* touch devices: rely on click-to-open */
+      }
+
+      /* Expanded detail panel */
+      .crec-detail {
+        background: #fbf8f0;
+        border: 1px solid #e8e2d3;
+        border-radius: 12px;
+        padding: 26px 26px 22px;
+        margin: 22px 0 32px;
+        display: none;
+      }
+      .crec-detail.is-open { display: block; }
+      .crec-detail-head {
+        display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 18px;
+        margin-bottom: 12px;
+      }
+      .crec-detail-head h2 { margin: 0; color: #1f3d2e; font-size: 1.55rem; }
+      .crec-detail-head .crec-grade-pill {
+        background: #1f3d2e; color: #f5f0e6;
+        padding: 4px 12px; border-radius: 999px;
+        font-size: .82rem; font-weight: 600;
+      }
+      .crec-detail-head .crec-close {
+        margin-left: auto;
+        background: transparent; border: 1px solid #1f3d2e;
+        color: #1f3d2e; padding: 6px 12px; border-radius: 6px;
+        cursor: pointer; font-weight: 600;
+      }
+      .crec-detail-head .crec-close:hover { background: #1f3d2e; color: #f5f0e6; }
+      .crec-detail-overview { color: #333; font-size: 1rem; line-height: 1.6; }
+
+      .crec-detail-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin: 18px 0 22px;
+      }
+      .crec-fact {
+        background: #fff; border: 1px solid #e8e2d3; border-radius: 8px;
+        padding: 12px 14px;
+      }
+      .crec-fact .crec-fact-label {
+        display: block; font-size: .78rem; text-transform: uppercase;
+        letter-spacing: .04em; color: #888; margin-bottom: 4px;
+      }
+      .crec-fact .crec-fact-value { color: #1f3d2e; font-weight: 600; font-size: 1rem; }
+
+      .crec-section { margin: 18px 0; }
+      .crec-section h3 {
+        font-size: 1.1rem; color: #1f3d2e;
+        margin: 0 0 10px; padding-bottom: 6px;
+        border-bottom: 2px solid #c89a3a; display: inline-block;
+      }
+      .crec-syllabus { width: 100%; border-collapse: collapse; font-size: .95rem; }
+      .crec-syllabus th, .crec-syllabus td {
+        text-align: left; padding: 8px 10px;
+        border-bottom: 1px solid #e8e2d3;
+        vertical-align: top;
+      }
+      .crec-syllabus th { background: #f5f0e6; color: #1f3d2e; font-weight: 600; }
+      .crec-syllabus td:first-child { width: 60px; font-weight: 600; color: #c89a3a; }
+
+      .crec-faq details {
+        background: #fff; border: 1px solid #e8e2d3; border-radius: 8px;
+        padding: 12px 14px; margin: 8px 0;
+      }
+      .crec-faq details + details { margin-top: 8px; }
+      .crec-faq summary {
+        font-weight: 600; color: #1f3d2e; cursor: pointer;
+        list-style: none;
+      }
+      .crec-faq summary::-webkit-details-marker { display: none; }
+      .crec-faq summary::after {
+        content: "+"; float: right; color: #c89a3a; font-weight: 700; font-size: 1.1rem;
+      }
+      .crec-faq details[open] summary::after { content: "−"; }
+      .crec-faq details p { margin: 10px 0 0; color: #333; line-height: 1.55; }
+
+      .crec-cta-row {
+        display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;
+      }
+      .crec-cta-row .btn { font-size: .95rem; }
+
+      .crec-empty {
+        text-align: center; padding: 40px 0; color: #6a6a6a;
+      }
+    </style>
+  </head>
+  <body data-page="course-recommendation">
+    <div id="nav-mount"></div>
+
+    <main class="container">
+      <section class="crec-hero">
+        <h1>Course Recommendation</h1>
+        <p>Pick a term — July, August, or Fall 2026. Hover any course to preview, then click for the full description, dates, syllabus, and FAQs. When you're ready, book a free 60-minute evaluation and we'll confirm the right fit.</p>
+      </section>
+
+      <div class="crec-tabs" role="tablist" aria-label="Choose a term">
+        <button class="crec-tab is-active" role="tab" aria-selected="true" data-term="july">
+          July 2026
+          <span class="crec-tab-sub">5-week summer intensives</span>
+        </button>
+        <button class="crec-tab" role="tab" aria-selected="false" data-term="august">
+          August 2026
+          <span class="crec-tab-sub">5-week summer intensives</span>
+        </button>
+        <button class="crec-tab" role="tab" aria-selected="false" data-term="fall">
+          Fall 2026
+          <span class="crec-tab-sub">16-week semester</span>
+        </button>
+      </div>
+
+      <div id="crec-term-head" class="crec-term-head"></div>
+      <div id="crec-grid" class="crec-grid"></div>
+      <div id="crec-detail" class="crec-detail" aria-live="polite"></div>
+
+      <div style="margin: 40px 0 60px; text-align: center;">
+        <a class="btn btn--primary" href="/evaluation">Book a free 60-minute evaluation</a>
+      </div>
+    </main>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js"></script>
+
+    <script>
+      // ============================================================
+      // COURSE DATA
+      // ============================================================
+
+      // Shared FAQs that apply across summer / fall
+      const SUMMER_FAQ = [
+        ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 60-minute evaluation first so we can confirm the right level and set expectations with the family. After that, you book the term."],
+        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. A 5-week summer intensive (5 × 2-hour sessions = 10 hours) totals $600 per term."],
+        ["What if my child misses a session?", "Email us as soon as you know. For summer cohorts we provide a written catch-up note, problem set, and (when scheduling allows) a 30-minute office-hour to keep them on track."],
+        ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
+        ["Is there a fall continuation?", "Yes. Every summer course has a structured fall continuation in our 16-week semester. We can map the path for your child during the evaluation."]
+      ];
+      const FALL_FAQ = [
+        ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 60-minute evaluation first so we can confirm the right level. After that, you book the term."],
+        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. The 16-week fall semester (16 × 2-hour sessions = 32 hours) totals $1,920 per term."],
+        ["What if my child misses a session?", "We provide a written catch-up note plus the worked solutions and, when scheduling allows, a 30-minute office-hour. Fall students may also use one excused make-up per term."],
+        ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
+        ["What happens when the Fall term ends?", "Students continue straight into the Winter/Spring semester (January start) without re-applying. The curriculum is built as a continuous arc."]
+      ];
+
+      // Course catalog. Each entry has the static "what is it" + term-specific dates/times/tuition.
+      const COURSES = {
+        "little-newtons": {
+          title: "Little Newtons",
+          grade: "Grades K–2 · Ages 5–8",
+          quick: "Number sense, addition/subtraction fluency, fractions first-look, word-problem language.",
+          description: "The first three years — Kindergarten, 1st, and 2nd grade — decide whether a child grows up confident with numbers or quietly convinced that math isn't for them. Little Newtons is built for the youngest learners who are ready to think, not just fill in worksheets. We focus on number sense up to 100, addition and subtraction fluency, an honest first look at fractions and measurement, and the language of word problems. The goal isn't to race ahead — it's to build the habits and confidence the next ten years of math will demand.",
+          level: "Grades K–2 (ages 5–8)",
+          syllabus: [
+            ["Week 1", "Number sense to 100. Counting, comparing, place value with hands-on manipulatives."],
+            ["Week 2", "Addition strategies. Make-ten, doubles, near-doubles, mental math up to 20."],
+            ["Week 3", "Subtraction & missing-addend thinking. The link between adding and taking away."],
+            ["Week 4", "First-look fractions & measurement. Halves, quarters, inches, cups."],
+            ["Week 5", "Word problems & review. Reading the question, drawing the picture, checking the answer."]
+          ],
+          link: "/programs#little-newtons"
+        },
+        "kid-einsteins": {
+          title: "Kid Einsteins",
+          grade: "Grades 3–5 · Ages 8–11",
+          quick: "Multiplication/division fluency, fractions & decimals, ratio/percent, intro geometry, word problems.",
+          description: "The upper-elementary years — 3rd through 5th grade — are where math either clicks or quietly slips away. Kid Einsteins is built for students ready to move past basic arithmetic into real problem-solving. We cover multiplication and division fluency, a deep first pass at fractions and decimals, ratio and percent reasoning, introductory geometry, and the kind of structured word-problem work that pays off later on the SHSAT, SAT, and every standardized test that follows.",
+          level: "Grades 3–5 (ages 8–11)",
+          syllabus: [
+            ["Week 1", "Multiplication fluency. Times tables, area models, distributive thinking."],
+            ["Week 2", "Division & remainders. Long division, interpreting remainders in word problems."],
+            ["Week 3", "Fractions & decimals. Equivalence, comparison, four operations with fractions."],
+            ["Week 4", "Ratio, percent, and intro geometry. Perimeter, area, angles."],
+            ["Week 5", "Multi-step word problems & review. Translating English to math under time."]
+          ],
+          link: "/programs#kid-einsteins"
+        },
+        "young-fermats": {
+          title: "Young Fermats",
+          grade: "Grades 6–8 · Ages 11–14",
+          quick: "Pre-Algebra, Algebra I, intro Geometry — structured 4-month arc with real rigor.",
+          description: "The middle-school years — 6th through 8th grade — are where a quiet \"I'm just not a math person\" can take root for life, or where a student quietly, decisively, becomes one of the strongest math students in the grade. Young Fermats is built for middle schoolers who want depth, not just survival. We cover Pre-Algebra, Algebra I, and an introductory pass at Geometry in a structured 4-month arc, taught with the same rigor we've used for two decades preparing adults for the GMAT and GRE.",
+          level: "Grades 6–8 (ages 11–14)",
+          syllabus: [
+            ["Week 1", "Integers, fractions, decimals — fluency under time. The pre-algebra toolkit."],
+            ["Week 2", "Linear equations & inequalities. One-variable, two-step, word-to-equation translation."],
+            ["Week 3", "Systems, exponents, and polynomials. Factoring quadratics."],
+            ["Week 4", "Intro Geometry. Angles, triangles, Pythagorean theorem, coordinate plane."],
+            ["Week 5", "Word problems & mixed review. The reasoning patterns that show up on the SHSAT."]
+          ],
+          link: "/programs#young-fermats"
+        },
+        "shsat-prep": {
+          title: "SHSAT Prep",
+          grade: "Grades 7–8 · Middle School",
+          quick: "Specialized HS Admissions math — question families, timing, scratch-paper strategy.",
+          description: "Focused SHSAT math prep for 7th and 8th graders aiming at Stuyvesant, Bronx Science, Brooklyn Tech and the other specialized high schools. We teach the four question families, timing discipline, and the scratch-paper strategy needed to score competitively — built on the same diagnostic reasoning we used for twenty years preparing GMAT and GRE candidates.",
+          level: "Students entering 7th or 8th grade planning to sit the SHSAT",
+          syllabus: [
+            ["Week 1", "Diagnostic + arithmetic & number sense: fractions, decimals, percent, ratios."],
+            ["Week 2", "Algebra: linear equations, inequalities, systems, word-to-equation translation."],
+            ["Week 3", "Geometry & coordinate geometry: angles, triangles, area, perimeter, Pythagorean."],
+            ["Week 4", "Probability, counting, data interpretation, and the trick patterns SHSAT loves."],
+            ["Week 5", "Timed full sections + review. Scratch-paper strategy and pacing rehearsal."]
+          ],
+          link: "/programs#shsat-prep",
+          fallSyllabusOverride: [
+            ["Week 1", "Diagnostic + arithmetic foundations. Fractions, decimals, percent fluency under SHSAT timing."],
+            ["Week 2", "Ratios, rates, proportion. Scaling, similar figures, unit-rate traps."],
+            ["Week 3–4", "Algebra I — linear equations, inequalities, word-to-equation translation."],
+            ["Week 5–6", "Systems of equations + intro to functions."],
+            ["Week 7–8", "Exponents, radicals, polynomials, factoring quadratics."],
+            ["Week 9–10", "Geometry: angles, triangles, Pythagorean, coordinate geometry."],
+            ["Week 11–12", "Counting, probability, data interpretation."],
+            ["Week 13–14", "Word problems & mixed review. SHSAT question families head-to-head."],
+            ["Week 15", "Full-length timed sections + error-pattern review."],
+            ["Week 16", "Final diagnostic + test-week game plan."]
+          ]
+        },
+        "sat-math": {
+          title: "SAT Math",
+          grade: "Grades 9–11 · High School",
+          quick: "Heart of Algebra · Problem Solving & Data · Passport to Advanced Math · Additional Topics.",
+          description: "SAT math prep for 9th–11th graders. We cover Heart of Algebra, Problem Solving and Data Analysis, Passport to Advanced Math, and Additional Topics — with the calculator and no-calculator strategy that actually moves the score. The goal is to raise SAT math from where the student is today to a defensible target score, using technique, not just content review.",
+          level: "9th–11th graders preparing for the digital SAT",
+          syllabus: [
+            ["Week 1", "Diagnostic + Heart of Algebra: linear equations, systems, inequalities, absolute value."],
+            ["Week 2", "Problem Solving & Data Analysis: ratios, percent, units, probability, two-way tables."],
+            ["Week 3", "Passport to Advanced Math: quadratics, polynomials, exponents, function notation."],
+            ["Week 4", "Additional Topics: geometry, trig basics, complex numbers, circles."],
+            ["Week 5", "Full timed section + error-pattern review. Calculator vs no-calc pacing strategy."]
+          ],
+          link: "/programs#sat-prep",
+          fallSyllabusOverride: [
+            ["Week 1", "Diagnostic + SAT math overview. Calculator vs no-calc structure, scoring, pacing baseline."],
+            ["Week 2", "Heart of Algebra — linear equations. One- and multi-variable, word-to-equation translation."],
+            ["Week 3–4", "Heart of Algebra — systems and inequalities."],
+            ["Week 5–6", "Problem Solving & Data Analysis — ratios, percent, units, two-way tables, probability."],
+            ["Week 7–8", "Passport to Advanced Math — quadratics, polynomials, exponents."],
+            ["Week 9–10", "Function notation, transformations, and composition."],
+            ["Week 11", "Additional Topics — geometry, circles, trig basics, complex numbers."],
+            ["Week 12–13", "Timed sections + error-pattern analysis."],
+            ["Week 14", "Calculator strategy + no-calc speed work."],
+            ["Week 15", "Full-length practice test + review."],
+            ["Week 16", "Final diagnostic + test-week game plan."]
+          ]
+        },
+        "pre-calculus": {
+          title: "Pre-Calculus",
+          grade: "Grades 10–12 · High School",
+          quick: "Functions, trig, sequences/series — the calculus foundations that actually matter.",
+          description: "Pre-Calculus for high schoolers heading into AP Calc, honors precalc, or a strong Algebra II finish. We cover functions and their graphs, trigonometry, sequences and series, and the foundations calculus actually depends on. The goal is to build the function fluency — algebraic, graphical, and trigonometric — that AP Calc and honors precalc demand on day one.",
+          level: "High schoolers heading into AP Calc, honors precalc, or finishing Algebra II",
+          syllabus: [
+            ["Week 1", "Functions & graphs: domain, range, transformations, composition, inverses."],
+            ["Week 2", "Polynomial & rational functions: end behavior, zeros, asymptotes."],
+            ["Week 3", "Exponentials & logarithms. Equations, inequalities, modeling."],
+            ["Week 4", "Trigonometry: unit circle, identities, equations, graphs."],
+            ["Week 5", "Sequences, series, intro limits — bridge to AP Calc."]
+          ],
+          link: "/programs#ap-courses",
+          fallSyllabusOverride: [
+            ["Week 1", "Diagnostic + functions review. Definition, function notation, piecewise functions."],
+            ["Week 2", "Function transformations. Shifts, stretches, reflections, composition, inverses."],
+            ["Week 3", "Polynomial functions — end behavior, zeros, multiplicity."],
+            ["Week 4", "Rational functions — asymptotes, holes, sign analysis."],
+            ["Week 5–6", "Exponentials & logarithms. Equations, inequalities, modeling."],
+            ["Week 7", "Right-triangle trig and the unit circle."],
+            ["Week 8–9", "Trig functions — graphs, period, amplitude, phase shift."],
+            ["Week 10", "Trig identities and equations."],
+            ["Week 11", "Law of sines, law of cosines, vectors."],
+            ["Week 12", "Sequences, series, summation notation."],
+            ["Week 13", "Conic sections and polar basics."],
+            ["Week 14", "Intro limits — bridge to AP Calc."],
+            ["Week 15–16", "Cumulative review + AP Calc readiness diagnostic."]
+          ]
+        }
+      };
+
+      // Term configuration: dates, what courses run, and the scheduling info per course
+      const TERMS = {
+        "july": {
+          label: "July 2026",
+          dateRange: "June 29 – August 1, 2026",
+          cadence: "5 weeks · 1 class/week · 120 min each",
+          tuition: "$600 per course · $60/hr standard rate",
+          summary: "Five-week summer intensives. Same instructor every week, small cohorts, paced for students who want to get ahead or catch up before the fall.",
+          link: "/summer-schedule",
+          faq: SUMMER_FAQ,
+          courses: {
+            "little-newtons":  { days: "Mon & Wed", time: "10:00 AM – 12:00 PM" },
+            "kid-einsteins":   { days: "Mon & Wed", time: "1:00 – 3:00 PM" },
+            "young-fermats":   { days: "Tue & Thu", time: "10:00 AM – 12:00 PM" },
+            "shsat-prep":      { days: "Friday",    time: "3:00 – 5:00 PM" },
+            "sat-math":        { days: "Friday",    time: "5:00 – 7:00 PM" },
+            "pre-calculus":    { days: "Friday",    time: "7:00 – 9:00 PM" }
+          }
+        },
+        "august": {
+          label: "August 2026",
+          dateRange: "August 3 – September 4, 2026",
+          cadence: "5 weeks · 1 class/week · 120 min each",
+          tuition: "$600 per course · $60/hr standard rate",
+          summary: "Second summer term, identical structure to July. Useful for families traveling in July or students who want a final reset before the school year starts.",
+          link: "/august-schedule",
+          faq: SUMMER_FAQ,
+          courses: {
+            "little-newtons":  { days: "Mon & Wed", time: "10:00 AM – 12:00 PM" },
+            "kid-einsteins":   { days: "Mon & Wed", time: "1:00 – 3:00 PM" },
+            "young-fermats":   { days: "Tue & Thu", time: "10:00 AM – 12:00 PM" },
+            "shsat-prep":      { days: "Friday",    time: "3:00 – 5:00 PM" },
+            "sat-math":        { days: "Friday",    time: "5:00 – 7:00 PM" },
+            "pre-calculus":    { days: "Friday",    time: "7:00 – 9:00 PM" }
+          }
+        },
+        "fall": {
+          label: "Fall 2026",
+          dateRange: "August 31 – December 20, 2026",
+          cadence: "16 weeks · 1 class/week · 120 min each",
+          tuition: "$1,920 per course · $60/hr standard rate",
+          summary: "Full 16-week semester paced to the NYC school calendar. Continuous arc — students roll directly into the Winter/Spring term in January without re-applying.",
+          link: "/fall-schedule",
+          faq: FALL_FAQ,
+          courses: {
+            "little-newtons":  { days: "Saturday", time: "10:00 AM – 12:00 PM" },
+            "kid-einsteins":   { days: "Saturday", time: "1:00 – 3:00 PM" },
+            "young-fermats":   { days: "Mon & Wed", time: "4:00 – 6:00 PM" },
+            "shsat-prep":      { days: "Friday",   time: "4:00 – 6:00 PM" },
+            "sat-math":        { days: "Friday",   time: "6:00 – 8:00 PM" },
+            "pre-calculus":    { days: "Friday",   time: "8:00 – 10:00 PM" }
+          }
+        }
+      };
+
+      // ============================================================
+      // RENDER
+      // ============================================================
+      const tabs = document.querySelectorAll(".crec-tab");
+      const headEl = document.getElementById("crec-term-head");
+      const gridEl = document.getElementById("crec-grid");
+      const detailEl = document.getElementById("crec-detail");
+      let activeTerm = "july";
+      let openCourse = null;
+
+      function renderTerm(termKey) {
+        activeTerm = termKey;
+        openCourse = null;
+        const term = TERMS[termKey];
+        tabs.forEach(t => {
+          const on = t.dataset.term === termKey;
+          t.classList.toggle("is-active", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+        });
+
+        headEl.innerHTML = `
+          <h2>${term.label}</h2>
+          <span class="crec-term-dates">${term.dateRange} · ${term.cadence} · ${term.tuition}</span>
+          <a class="crec-term-link" href="${term.link}">See full ${term.label} schedule →</a>
+        `;
+
+        const courseIds = Object.keys(term.courses);
+        gridEl.innerHTML = courseIds.map(id => {
+          const c = COURSES[id];
+          const sched = term.courses[id];
+          return `
+            <div class="crec-card" data-course="${id}" tabindex="0" role="button" aria-expanded="false">
+              <h3>${c.title}</h3>
+              <div class="crec-grade">${c.grade}</div>
+              <p class="crec-quick">${c.quick}</p>
+              <div class="crec-meta">
+                <span>${sched.days}</span>
+                <span>${sched.time}</span>
+              </div>
+              <div class="crec-popover" role="tooltip">
+                <strong>${c.title}</strong> — ${c.grade}<br/>
+                ${c.quick}<br/><br/>
+                <strong>When:</strong> ${sched.days}, ${sched.time}<br/>
+                <strong>Term:</strong> ${term.dateRange}<br/>
+                <em>Click to see syllabus, dates &amp; FAQ →</em>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        detailEl.classList.remove("is-open");
+        detailEl.innerHTML = "";
+
+        // Wire card clicks
+        gridEl.querySelectorAll(".crec-card").forEach(card => {
+          card.addEventListener("click", () => openDetail(card.dataset.course));
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openDetail(card.dataset.course);
+            }
+          });
+        });
+      }
+
+      function openDetail(courseId) {
+        const term = TERMS[activeTerm];
+        const c = COURSES[courseId];
+        const sched = term.courses[courseId];
+        if (!c || !sched) return;
+        openCourse = courseId;
+
+        // Pick fall override syllabus if available for fall term
+        const syllabus = (activeTerm === "fall" && c.fallSyllabusOverride) ? c.fallSyllabusOverride : c.syllabus;
+        const sessionCount = (activeTerm === "fall") ? "16 sessions · 120 min each" : "5 sessions · 120 min each";
+        const tuition = (activeTerm === "fall") ? "$1,920" : "$600";
+
+        detailEl.innerHTML = `
+          <div class="crec-detail-head">
+            <h2>${c.title}</h2>
+            <span class="crec-grade-pill">${c.grade}</span>
+            <button class="crec-close" aria-label="Close course details">Close ✕</button>
+          </div>
+          <p class="crec-detail-overview">${c.description}</p>
+
+          <div class="crec-detail-grid">
+            <div class="crec-fact"><span class="crec-fact-label">Term</span><span class="crec-fact-value">${term.label}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Dates</span><span class="crec-fact-value">${term.dateRange}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Days</span><span class="crec-fact-value">${sched.days}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Time</span><span class="crec-fact-value">${sched.time}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Sessions</span><span class="crec-fact-value">${sessionCount}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Tuition</span><span class="crec-fact-value">${tuition}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Level</span><span class="crec-fact-value">${c.level}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Cadence</span><span class="crec-fact-value">${term.cadence}</span></div>
+          </div>
+
+          <div class="crec-section">
+            <h3>Syllabus</h3>
+            <table class="crec-syllabus">
+              <thead><tr><th>Week</th><th>Main content</th></tr></thead>
+              <tbody>
+                ${syllabus.map(row => `<tr><td>${row[0]}</td><td>${row[1]}</td></tr>`).join("")}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="crec-section crec-faq">
+            <h3>Frequently asked</h3>
+            ${term.faq.map(([q,a]) => `
+              <details>
+                <summary>${q}</summary>
+                <p>${a}</p>
+              </details>
+            `).join("")}
+          </div>
+
+          <div class="crec-cta-row">
+            <a class="btn btn--primary" href="/evaluation">Book free evaluation</a>
+            <a class="btn btn--secondary" href="${c.link}">More about ${c.title}</a>
+            <a class="btn btn--secondary" href="${term.link}">${term.label} full schedule</a>
+          </div>
+        `;
+        detailEl.classList.add("is-open");
+
+        // Mark active card
+        gridEl.querySelectorAll(".crec-card").forEach(card => {
+          card.classList.toggle("is-open", card.dataset.course === courseId);
+          card.setAttribute("aria-expanded", card.dataset.course === courseId ? "true" : "false");
+        });
+
+        // Wire close button
+        detailEl.querySelector(".crec-close").addEventListener("click", () => {
+          detailEl.classList.remove("is-open");
+          gridEl.querySelectorAll(".crec-card").forEach(card => {
+            card.classList.remove("is-open");
+            card.setAttribute("aria-expanded", "false");
+          });
+          openCourse = null;
+        });
+
+        // Scroll into view
+        detailEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      tabs.forEach(t => t.addEventListener("click", () => renderTerm(t.dataset.term)));
+
+      // Initial render
+      renderTerm("july");
+    </script>
+  </body>
+</html>
