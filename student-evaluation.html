@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Free Math Diagnostic (6th &amp; 7th Grade) · School of Math NYC</title>
-    <meta name="description" content="Free 20-question NYC Common Core math diagnostics for 6th and 7th grade students. Get an instant report with strengths, weaknesses, and a recommended SOMATH course track." />
+    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 6th and 7th grade students. Suggested time 12 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Free Math Diagnostic (6th & 7th Grade) · School of Math NYC" />
-    <meta property="og:description" content="20 NYC Common Core questions, instant strengths/weaknesses report, and a recommended SOMATH track." />
+    <meta property="og:description" content="15 NYC Common Core questions, ~12 minutes, instant detailed report with strengths, weaknesses, and pacing analysis." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
@@ -20,7 +20,13 @@
       .quiz-card { background:#fff; border:1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; box-shadow: 0 2px 12px rgba(31,61,46,0.05); }
       .quiz-card + .quiz-card { margin-top: 32px; }
       .quiz-grade-label { display:inline-block; background: var(--ink, #1f3d2e); color: #fff; font-size: 12px; font-weight:600; letter-spacing:.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
-      .quiz-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom: 22px; font-size: 14px; color: var(--ink-mute); }
+      .quiz-progress { display:flex; align-items:center; justify-content:space-between; margin-bottom: 14px; font-size: 14px; color: var(--ink-mute); gap: 8px; flex-wrap: wrap; }
+      .quiz-progress .progress-left { display:flex; align-items:center; gap: 10px; }
+      .quiz-timer { display:inline-flex; align-items:center; gap:6px; background:#f5f0e6; color: var(--ink, #1f3d2e); font-variant-numeric: tabular-nums; font-weight: 600; font-size: 13px; padding: 4px 10px; border-radius: 999px; }
+      .quiz-timer.is-over { background:#fbeaea; color:#a23a3a; }
+      .quiz-timer-dot { width:6px; height:6px; border-radius:50%; background:#c89a3a; animation: timer-pulse 1.6s ease-in-out infinite; }
+      .quiz-timer.is-over .quiz-timer-dot { background:#a23a3a; }
+      @keyframes timer-pulse { 0%,100% { opacity: .3; } 50% { opacity: 1; } }
       .quiz-bar { width:100%; height:6px; background:#eee; border-radius:999px; overflow:hidden; margin-bottom: 22px; }
       .quiz-bar-fill { height:100%; background: var(--accent, #c89a3a); transition: width .25s ease; }
       .quiz-strand { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent, #c89a3a); font-weight: 600; margin-bottom: 8px; }
@@ -38,6 +44,8 @@
       .intro h2 { margin-top: 0; }
       .intro ul { padding-left: 20px; }
       .intro li { margin: 6px 0; }
+      .intro-meta { display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 18px; }
+      .intro-pill { background:#f5f0e6; color: var(--ink, #1f3d2e); font-size: 13px; padding: 6px 12px; border-radius: 999px; font-weight: 500; }
       .intro-form { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
       .intro-form label { display:flex; flex-direction:column; font-size: 13px; color: var(--ink-mute); gap: 6px; }
       .intro-form input { padding: 12px 14px; border:1px solid var(--line); border-radius: 8px; font-size: 16px; font-family: inherit; color: var(--ink, #1f3d2e); }
@@ -45,28 +53,47 @@
       .intro-form .full { grid-column: 1 / -1; }
       @media (max-width: 540px) { .intro-form { grid-template-columns: 1fr; } }
 
-      .report-score { display:flex; align-items:baseline; gap: 8px; margin: 6px 0 24px; }
+      .report-score { display:flex; align-items:baseline; gap: 8px; margin: 6px 0 6px; }
       .report-score-num { font-size: 48px; font-weight: 700; color: var(--ink, #1f3d2e); line-height: 1; }
       .report-score-of { font-size: 18px; color: var(--ink-mute); }
-      .report-section { margin: 24px 0; }
+      .report-time-line { font-size: 14px; color: var(--ink-mute); margin: 0 0 22px; }
+      .report-section { margin: 26px 0; }
       .report-section h3 { margin: 0 0 10px; font-size: 16px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent, #c89a3a); }
-      .strand-row { display:flex; align-items:center; gap: 12px; margin: 6px 0; }
-      .strand-name { width: 240px; font-size: 14px; color: var(--ink, #1f3d2e); }
+      .strand-row { display:flex; align-items:center; gap: 12px; margin: 8px 0; }
+      .strand-name { width: 240px; font-size: 14px; color: var(--ink, #1f3d2e); font-weight: 500; }
       .strand-meter { flex: 1; height: 8px; background:#eee; border-radius: 999px; overflow:hidden; }
       .strand-meter-fill { height:100%; }
       .strand-fill-strong { background:#3a8e54; }
       .strand-fill-ok { background:#c89a3a; }
       .strand-fill-weak { background:#c94c4c; }
       .strand-pct { width: 56px; text-align: right; font-size: 14px; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+      .strand-feedback { margin: 6px 0 14px 0; padding: 10px 14px; background: #fafaf7; border-left: 3px solid #e5e0d4; border-radius: 4px; font-size: 14px; color: var(--ink, #1f3d2e); }
+      .strand-feedback.is-strong { border-left-color: #3a8e54; }
+      .strand-feedback.is-ok { border-left-color: #c89a3a; }
+      .strand-feedback.is-weak { border-left-color: #c94c4c; }
       @media (max-width: 540px) {
         .strand-row { flex-wrap: wrap; }
         .strand-name { width: 100%; }
       }
 
+      .missed-list { margin: 8px 0 0 0; padding-left: 0; list-style: none; }
+      .missed-item { padding: 12px 14px; border:1px solid var(--line); border-radius: 8px; margin-bottom: 10px; font-size: 14px; background: #fff; }
+      .missed-item .missed-strand { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent, #c89a3a); font-weight: 600; margin-bottom: 4px; }
+      .missed-item .missed-q { font-weight: 500; color: var(--ink, #1f3d2e); margin-bottom: 6px; }
+      .missed-item .missed-row { display:flex; gap: 14px; flex-wrap: wrap; color: var(--ink-mute); }
+      .missed-item .missed-row strong { color: var(--ink, #1f3d2e); }
+      .missed-item .missed-row .picked { color: #a23a3a; }
+      .missed-item .missed-row .correct { color: #1f6c3a; }
+
       .recommend-card { background:#f5f0e6; border-left: 4px solid var(--accent, #c89a3a); padding: 18px 22px; border-radius: 8px; margin: 16px 0; }
       .recommend-card h4 { margin: 0 0 6px; color: var(--ink, #1f3d2e); }
-      .recommend-card p { margin: 0 0 8px; }
+      .recommend-card p { margin: 0 0 10px; }
       .recommend-card .recommend-meta { font-size: 14px; color: var(--ink-mute); }
+
+      .pacing-card { background: #fff; border:1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 12px 0; display:flex; gap: 14px; align-items:flex-start; }
+      .pacing-icon { font-size: 22px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+      .pacing-body { font-size: 14px; color: var(--ink, #1f3d2e); }
+      .pacing-body strong { display:block; margin-bottom: 4px; }
 
       .send-status { padding: 12px 16px; border-radius: 8px; margin-top: 12px; font-size: 14px; }
       .send-status.ok { background: #eaf5ee; color: #1f6c3a; }
@@ -83,7 +110,7 @@
           <p class="eyebrow">Free Diagnostic · NYC Common Core</p>
           <h1 style="max-width: 720px; margin: 8px auto 16px;">Where does your child actually stand?</h1>
           <p style="max-width: 640px; margin: 0 auto; color: var(--ink-mute);">
-            Pick your child's grade. Twenty multiple-choice questions covering the full New York State math curriculum for that level. One question at a time. Instant report. No account needed.
+            Pick your child's grade. Fifteen multiple-choice questions covering the full New York State math curriculum for that level. <strong>Suggested time: about 12 minutes.</strong> One question at a time. Instant detailed report. No account needed.
           </p>
         </div>
       </section>
@@ -97,7 +124,7 @@
             <div class="quiz-card" id="quiz-root-7">
               <span class="quiz-grade-label">7th Grade</span>
             </div>
-            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 6 and 7. Your report will be emailed to SOMATH at 226 W 79th St so we can tailor a recommendation for your child.</p>
+            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 6 and 7. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
           </div>
         </div>
       </section>
@@ -108,64 +135,58 @@
 
     <script>
     (function(){
+      const QUIZ_LENGTH = 15;
+      const SUGGESTED_MINUTES = 12;        // total
+      const SUGGESTED_SECONDS = SUGGESTED_MINUTES * 60;
+
       // ============================================================
-      // 6TH GRADE BANK — NYS Next Gen, 20 Qs (4 per strand)
+      // 6TH GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
       // ============================================================
       const QUESTIONS_6 = [
         // Ratios & Proportional Reasoning
         { strand:"Ratios & Proportional Reasoning", q:"A recipe uses 3 cups of flour for every 2 cups of sugar. If you use 12 cups of flour, how many cups of sugar do you need?", options:["6 cups","8 cups","9 cups","18 cups"], answer:1 },
         { strand:"Ratios & Proportional Reasoning", q:"A car travels 180 miles in 3 hours at a constant speed. What is the unit rate in miles per hour?", options:["45 mph","60 mph","90 mph","540 mph"], answer:1 },
-        { strand:"Ratios & Proportional Reasoning", q:"What is 35% of 80?", options:["24","28","32","45"], answer:1 },
         { strand:"Ratios & Proportional Reasoning", q:"A shirt that normally costs $40 is on sale for 25% off. What is the sale price?", options:["$10","$15","$30","$35"], answer:2 },
         // The Number System
         { strand:"The Number System", q:"Divide: 3/4 ÷ 2/3", options:["1/2","6/12","9/8","1 1/8"], answer:2 },
         { strand:"The Number System", q:"What is the greatest common factor (GCF) of 24 and 36?", options:["6","8","12","72"], answer:2 },
-        { strand:"The Number System", q:"Which number is greater: -7 or -3?", options:["-7","-3","They are equal","Cannot be compared"], answer:1 },
         { strand:"The Number System", q:"A submarine is at -250 feet (below sea level). It rises 175 feet. What is its new depth?", options:["-425 feet","-75 feet","75 feet","425 feet"], answer:1 },
         // Expressions & Equations
         { strand:"Expressions & Equations", q:"Evaluate the expression 3x + 5 when x = 4.", options:["12","17","19","27"], answer:1 },
-        { strand:"Expressions & Equations", q:"Solve for x:  x + 8 = 15", options:["x = 5","x = 7","x = 8","x = 23"], answer:1 },
         { strand:"Expressions & Equations", q:"Which expression is equivalent to 6(x + 2)?", options:["6x + 2","6x + 8","6x + 12","x + 12"], answer:2 },
         { strand:"Expressions & Equations", q:"Solve for y:  4y = 36", options:["y = 4","y = 8","y = 9","y = 32"], answer:2 },
         // Geometry
         { strand:"Geometry", q:"What is the area of a triangle with base 10 cm and height 6 cm?", options:["16 cm²","30 cm²","60 cm²","120 cm²"], answer:1 },
         { strand:"Geometry", q:"A rectangular prism has length 4 in, width 3 in, and height 5 in. What is its volume?", options:["12 in³","47 in³","60 in³","94 in³"], answer:2 },
-        { strand:"Geometry", q:"A square has a side length of 9 ft. What is its perimeter?", options:["18 ft","27 ft","36 ft","81 ft"], answer:2 },
         { strand:"Geometry", q:"On a coordinate plane, point A is at (-3, 4) and point B is at (5, 4). What is the distance between them?", options:["2 units","4 units","8 units","9 units"], answer:2 },
         // Statistics & Probability
         { strand:"Statistics & Probability", q:"Find the mean (average) of: 4, 6, 8, 10, 12.", options:["6","8","10","40"], answer:1 },
         { strand:"Statistics & Probability", q:"Find the median of: 3, 7, 2, 9, 5.", options:["3","5","6","7"], answer:1 },
-        { strand:"Statistics & Probability", q:"What is the mode of the data set: 2, 4, 4, 6, 7, 4, 9?", options:["2","4","5","6"], answer:1 },
         { strand:"Statistics & Probability", q:"Find the range of: 12, 25, 7, 19, 30, 14.", options:["7","18","23","30"], answer:2 }
       ];
 
       // ============================================================
-      // 7TH GRADE BANK — NYS Next Gen, 20 Qs (4 per strand)
+      // 7TH GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
       // ============================================================
       const QUESTIONS_7 = [
         // Ratios & Proportional Relationships
         { strand:"Ratios & Proportional Relationships", q:"If 5 notebooks cost $12, how much do 8 notebooks cost (at the same unit price)?", options:["$15.00","$18.40","$19.20","$20.00"], answer:2 },
         { strand:"Ratios & Proportional Relationships", q:"A map uses a scale of 1 inch = 25 miles. Two cities are 4.5 inches apart on the map. What is the actual distance?", options:["29.5 miles","100 miles","112.5 miles","125 miles"], answer:2 },
         { strand:"Ratios & Proportional Relationships", q:"A jacket originally costs $80. The store marks it up 15%. What is the new price?", options:["$92","$95","$96","$104"], answer:0 },
-        { strand:"Ratios & Proportional Relationships", q:"You deposit $500 in an account that earns 4% simple interest per year. How much interest do you earn in 3 years?", options:["$12","$20","$60","$120"], answer:2 },
         // The Number System (rational ops)
         { strand:"The Number System", q:"Evaluate: -8 + (-5)", options:["-13","-3","3","13"], answer:0 },
         { strand:"The Number System", q:"Evaluate: -6 × (-4)", options:["-24","-10","10","24"], answer:3 },
-        { strand:"The Number System", q:"Evaluate: -3/4 + 1/2", options:["-1/4","-1/2","1/4","5/4"], answer:0 },
         { strand:"The Number System", q:"Which decimal is equivalent to 5/8?", options:["0.58","0.625","0.85","1.6"], answer:1 },
         // Expressions & Equations
         { strand:"Expressions & Equations", q:"Solve for x:  2x + 7 = 19", options:["x = 4","x = 5","x = 6","x = 13"], answer:2 },
         { strand:"Expressions & Equations", q:"Simplify: 3(x − 4) + 2x", options:["5x − 12","5x − 4","6x − 12","3x − 8"], answer:0 },
-        { strand:"Expressions & Equations", q:"Solve for n:  (n / 3) − 5 = 1", options:["n = 12","n = 15","n = 18","n = 24"], answer:2 },
         { strand:"Expressions & Equations", q:"Which inequality represents: \"a number x increased by 4 is at most 11\"?", options:["x + 4 < 11","x + 4 ≤ 11","x + 4 > 11","x + 4 ≥ 11"], answer:1 },
         // Geometry
         { strand:"Geometry", q:"What is the circumference of a circle with radius 7 cm? (Use π ≈ 3.14)", options:["21.98 cm","43.96 cm","49 cm","153.86 cm"], answer:1 },
         { strand:"Geometry", q:"What is the area of a circle with diameter 10 in? (Use π ≈ 3.14)", options:["31.4 in²","62.8 in²","78.5 in²","314 in²"], answer:2 },
         { strand:"Geometry", q:"Two angles are supplementary. One angle measures 117°. What is the other angle?", options:["27°","53°","63°","73°"], answer:2 },
-        { strand:"Geometry", q:"A rectangular prism has length 6 m, width 4 m, and height 3 m. What is its surface area?", options:["72 m²","84 m²","108 m²","144 m²"], answer:2 },
         // Statistics & Probability
         { strand:"Statistics & Probability", q:"You roll a fair six-sided die once. What is the probability of rolling a number greater than 4?", options:["1/6","1/3","1/2","2/3"], answer:1 },
-        { strand:"Statistics & Probability", q:"A bag contains 3 red, 5 blue, and 2 green marbles. You draw one marble at random. What is the probability it is blue?", options:["1/5","1/3","1/2","2/3"], answer:2 },
         { strand:"Statistics & Probability", q:"A coin is flipped twice. What is the probability of getting heads both times?", options:["1/8","1/4","1/2","3/4"], answer:1 },
         { strand:"Statistics & Probability", q:"In a sample of 50 students, 30 chose pizza as their favorite lunch. Based on this, about how many of 400 students would you predict choose pizza?", options:["120","200","240","300"], answer:2 }
       ];
@@ -177,30 +198,54 @@
         "Ratios & Proportional Reasoning": "ratios, unit rates, and percent — the cornerstone of 6th grade Common Core.",
         "The Number System": "fraction division, GCF/LCM, and integers (including negative numbers on the number line).",
         "Expressions & Equations": "evaluating expressions, distributive property, and solving one-step equations.",
-        "Geometry": "area of polygons, volume of rectangular prisms, perimeter, and coordinate plane distance.",
-        "Statistics & Probability": "mean, median, mode, and range — and how to read data."
+        "Geometry": "area of polygons, volume of rectangular prisms, and coordinate plane distance.",
+        "Statistics & Probability": "mean, median, and range — and how to read data."
       };
       const STRAND_REMED_6 = {
         "Ratios & Proportional Reasoning": "Practice setting up ratio tables and percent bars. The 'flour-to-sugar' style problems and percent-of-a-number problems should become automatic.",
         "The Number System": "Drill fraction division using the 'keep-change-flip' method and revisit number-line work with negatives so directional reasoning becomes intuitive.",
         "Expressions & Equations": "Reinforce the order of operations, the distributive property, and isolating a variable using inverse operations.",
-        "Geometry": "Memorize the core formulas (½·b·h, l·w·h, P = 4s) and practice plotting and measuring on the coordinate plane.",
-        "Statistics & Probability": "Sharpen the difference between mean, median, mode, and range — and when each one is the right summary statistic."
+        "Geometry": "Memorize the core formulas (½·b·h, l·w·h) and practice plotting and measuring on the coordinate plane.",
+        "Statistics & Probability": "Sharpen the difference between mean, median, and range — and when each one is the right summary statistic."
       };
       const STRAND_DESC_7 = {
         "Ratios & Proportional Relationships": "proportions, scale, percent change, markups/discounts, and simple interest — core to 7th grade.",
         "The Number System": "operations on all rational numbers — integers, fractions, and decimals — including negative results.",
         "Expressions & Equations": "two-step equations, distributing and combining like terms, and writing inequalities.",
-        "Geometry": "circles (circumference + area), angle relationships (supplementary, complementary), and surface area of prisms.",
+        "Geometry": "circles (circumference + area) and angle relationships (supplementary, complementary).",
         "Statistics & Probability": "theoretical probability of simple and compound events, and using samples to make predictions."
       };
       const STRAND_REMED_7 = {
         "Ratios & Proportional Relationships": "Drill cross-multiplication, scale problems, and the percent-change formula. Markup, discount, and simple interest should be reflexive.",
         "The Number System": "Practice signed-number rules across all four operations and switching fluently between fractions and decimals.",
         "Expressions & Equations": "Reinforce two-step equation solving (undo addition/subtraction, then multiplication/division) and combining like terms with the distributive property.",
-        "Geometry": "Memorize C = 2πr, A = πr², and standard prism surface-area formulas. Practice supplementary/complementary angle reasoning.",
+        "Geometry": "Memorize C = 2πr, A = πr², and supplementary/complementary angle reasoning.",
         "Statistics & Probability": "Drill simple probability as favorable/total outcomes, then compound events as products, and proportional reasoning from samples to populations."
       };
+
+      // Per-strand commentary based on score band
+      function strandCommentary(strandName, pct, gradeKey) {
+        const remedMap = gradeKey === "6th" ? STRAND_REMED_6 : STRAND_REMED_7;
+        const descMap = gradeKey === "6th" ? STRAND_DESC_6 : STRAND_DESC_7;
+        if (pct === 100) {
+          return `Perfect score on this strand. The work on ${descMap[strandName] || strandName} is fully internalized — at the next instructional step, push into harder multi-step problems and earlier exposure to next-grade material here.`;
+        } else if (pct >= 75) {
+          return `Strong performance on ${descMap[strandName] || strandName}. The core procedures are in place; the missed item likely came from a careless slip or a less common variant rather than missing conceptual knowledge.`;
+        } else if (pct >= 50) {
+          return `Partial mastery. About half the items on ${descMap[strandName] || strandName} were correct, which usually means one of the sub-skills is still shaky. ${remedMap[strandName] || ""}`;
+        } else if (pct > 0) {
+          return `Weak performance. Most items on ${descMap[strandName] || strandName} were missed, pointing to a conceptual gap rather than careless errors. ${remedMap[strandName] || ""}`;
+        } else {
+          return `Zero correct on this strand. The work on ${descMap[strandName] || strandName} needs to be re-taught from the foundation. ${remedMap[strandName] || ""}`;
+        }
+      }
+
+      function formatTime(seconds) {
+        seconds = Math.max(0, Math.floor(seconds));
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return m + ":" + (s < 10 ? "0" + s : s);
+      }
 
       // ============================================================
       // Per-grade UI state + render engine
@@ -208,11 +253,10 @@
       function createQuiz(opts) {
         const root = document.getElementById(opts.rootId);
         const QUESTIONS = opts.questions;
-        const STRAND_DESC = opts.strandDesc;
         const STRAND_REMED = opts.strandRemed;
         const GRADE_LABEL = opts.gradeLabel;       // "6th Grade" / "7th Grade"
         const GRADE_KEY   = opts.gradeKey;         // "6th" / "7th"
-        const SOURCE_TAG  = opts.sourceTag;        // "student-evaluation-6th-grade"
+        const SOURCE_TAG  = opts.sourceTag;
 
         const state = {
           stage: "intro",
@@ -220,13 +264,39 @@
           parentEmail: "",
           idx: 0,
           answers: new Array(QUESTIONS.length).fill(null),
-          _report: null
+          startedAt: null,
+          endedAt: null,
+          _report: null,
+          _tickHandle: null
         };
 
         const headerHTML = `<span class="quiz-grade-label">${GRADE_LABEL}</span>`;
+        function setRoot(inner) { root.innerHTML = headerHTML + inner; }
 
-        function setRoot(inner) {
-          root.innerHTML = headerHTML + inner;
+        function startTicker() {
+          stopTicker();
+          state._tickHandle = setInterval(updateTimer, 1000);
+        }
+        function stopTicker() {
+          if (state._tickHandle) { clearInterval(state._tickHandle); state._tickHandle = null; }
+        }
+        function elapsedSec() {
+          if (!state.startedAt) return 0;
+          const end = state.endedAt || Date.now();
+          return Math.floor((end - state.startedAt) / 1000);
+        }
+        function updateTimer() {
+          const el = document.getElementById("timer-" + GRADE_KEY);
+          if (!el) return;
+          const sec = elapsedSec();
+          el.querySelector(".timer-value").textContent = formatTime(sec);
+          if (sec > SUGGESTED_SECONDS) {
+            el.classList.add("is-over");
+            el.querySelector(".timer-label").textContent = "over suggested";
+          } else {
+            el.classList.remove("is-over");
+            el.querySelector(".timer-label").textContent = "of ~" + SUGGESTED_MINUTES + " min";
+          }
         }
 
         function render() {
@@ -237,23 +307,31 @@
         }
 
         function renderIntro() {
+          stopTicker();
           setRoot(`
             <div class="intro">
               <h2 style="margin-top:6px;">Free ${GRADE_LABEL} Math Diagnostic</h2>
-              <p>This 20-question diagnostic covers every major strand on the New York State ${GRADE_LABEL.toLowerCase()} math curriculum. Your child will get:</p>
+              <p>This 15-question diagnostic covers every major strand on the New York State ${GRADE_LABEL.toLowerCase()} math curriculum. You'll get:</p>
               <ul>
                 <li>An instant score with a per-strand breakdown</li>
-                <li>A written summary of <strong>strengths</strong> and <strong>weaknesses</strong></li>
-                <li>A recommended SOMATH course track to enroll in</li>
+                <li>Per-strand written commentary tied to the actual answers</li>
+                <li>A pacing analysis (total time and time per question)</li>
+                <li>A list of every missed question with the correct answer</li>
+                <li>A detailed performance summary and next-steps guidance</li>
               </ul>
-              <p style="color: var(--ink-mute); font-size: 14px;">Takes about 10–15 minutes. Questions appear one at a time.</p>
+              <div class="intro-meta">
+                <span class="intro-pill">⏱ Suggested time: ~${SUGGESTED_MINUTES} minutes</span>
+                <span class="intro-pill">📝 15 questions, multiple choice</span>
+                <span class="intro-pill">🧮 Aligned to NYS Common Core</span>
+              </div>
+              <p style="color: var(--ink-mute); font-size: 14px;">Questions appear one at a time. You can go back to review before locking in.</p>
               <div class="intro-form">
                 <label class="full">
                   Student's first name
                   <input type="text" id="f-name-${GRADE_KEY}" placeholder="e.g. Maya" maxlength="60" autocomplete="given-name" />
                 </label>
                 <label class="full">
-                  Parent email (for the report)
+                  Parent email (the report will be emailed here)
                   <input type="email" id="f-email-${GRADE_KEY}" placeholder="parent@example.com" maxlength="120" autocomplete="email" />
                 </label>
               </div>
@@ -273,7 +351,10 @@
             state.parentEmail = email;
             state.stage = "quiz";
             state.idx = 0;
+            state.startedAt = Date.now();
+            state.endedAt = null;
             render();
+            startTicker();
             root.scrollIntoView({ behavior: "smooth", block: "start" });
           });
         }
@@ -285,8 +366,16 @@
           const letters = ["A","B","C","D"];
           setRoot(`
             <div class="quiz-progress">
-              <span>Question ${i+1} of ${QUESTIONS.length}</span>
-              <span>${pct}% complete</span>
+              <div class="progress-left">
+                <span>Question ${i+1} of ${QUESTIONS.length}</span>
+                <span>·</span>
+                <span>${pct}% complete</span>
+              </div>
+              <span class="quiz-timer" id="timer-${GRADE_KEY}" aria-label="Elapsed time">
+                <span class="quiz-timer-dot"></span>
+                <span class="timer-value">${formatTime(elapsedSec())}</span>
+                <span class="timer-label" style="font-weight:400; color: var(--ink-mute); font-size:12px; margin-left:2px;">of ~${SUGGESTED_MINUTES} min</span>
+              </span>
             </div>
             <div class="quiz-bar"><div class="quiz-bar-fill" style="width:${pct}%;"></div></div>
             <div class="quiz-strand">${escapeHTML(q.strand)}</div>
@@ -304,6 +393,7 @@
               <span style="font-size:13px; color: var(--ink-mute);">Pick an answer to continue</span>
             </div>
           `);
+          updateTimer();
           root.querySelectorAll(".quiz-opt").forEach(function(btn){
             btn.addEventListener("click", function(){
               const k = parseInt(btn.dataset.k, 10);
@@ -315,6 +405,8 @@
                   state.idx += 1;
                   render();
                 } else {
+                  state.endedAt = Date.now();
+                  stopTicker();
                   state.stage = "submitting";
                   render();
                   submitReport();
@@ -331,7 +423,7 @@
           setRoot(`
             <div style="text-align:center; padding: 40px 20px;">
               <div class="quiz-strand">Scoring your diagnostic…</div>
-              <p style="margin-top:10px; color: var(--ink-mute);">Building the strengths-and-weaknesses report.</p>
+              <p style="margin-top:10px; color: var(--ink-mute);">Building the detailed report.</p>
             </div>
           `);
         }
@@ -348,13 +440,48 @@
           const pct = Math.round((total / QUESTIONS.length) * 100);
           const ranked = Object.entries(strandStats).map(function(entry){
             const name = entry[0]; const s = entry[1];
-            return { name: name, pct: Math.round((s.correct / s.total) * 100), correct: s.correct, total: s.total };
+            const sPct = Math.round((s.correct / s.total) * 100);
+            return { name: name, pct: sPct, correct: s.correct, total: s.total, commentary: strandCommentary(name, sPct, GRADE_KEY) };
           }).sort(function(a,b){ return b.pct - a.pct; });
           const strengths = ranked.filter(function(r){ return r.pct >= 75; });
           const weaknesses = ranked.filter(function(r){ return r.pct < 50; });
           const developing = ranked.filter(function(r){ return r.pct >= 50 && r.pct < 75; });
 
-          // Performance narrative — no course recommendation, just an honest read.
+          // Missed questions detail
+          const missed = [];
+          QUESTIONS.forEach(function(q, i){
+            const chosenIdx = state.answers[i];
+            if (chosenIdx !== q.answer) {
+              missed.push({
+                strand: q.strand,
+                question: q.q,
+                chosen: chosenIdx !== null ? q.options[chosenIdx] : "(no answer)",
+                correct: q.options[q.answer]
+              });
+            }
+          });
+
+          // Timing
+          const totalSec = state.endedAt && state.startedAt ? Math.max(1, Math.round((state.endedAt - state.startedAt) / 1000)) : 0;
+          const avgSec = QUESTIONS.length > 0 ? Math.round(totalSec / QUESTIONS.length) : 0;
+          let pacingBand, pacingNote;
+          if (totalSec === 0) {
+            pacingBand = "—"; pacingNote = "Timing data unavailable.";
+          } else if (totalSec < 3 * 60) {
+            pacingBand = "Very fast";
+            pacingNote = `${state.studentName} finished in well under the suggested ${SUGGESTED_MINUTES} minutes. If accuracy was strong, that's a sign of fluency. If accuracy was weak, the pace suggests rushing — slowing down to re-read each problem will likely lift the score.`;
+          } else if (totalSec <= SUGGESTED_SECONDS) {
+            pacingBand = "On pace";
+            pacingNote = `${state.studentName} finished within the suggested ${SUGGESTED_MINUTES} minutes (about ${avgSec} seconds per question on average). That's a healthy pace for ${GRADE_LABEL.toLowerCase()} multiple-choice work.`;
+          } else if (totalSec <= SUGGESTED_SECONDS * 1.5) {
+            pacingBand = "Slightly slow";
+            pacingNote = `${state.studentName} took a bit longer than the suggested ${SUGGESTED_MINUTES} minutes (about ${avgSec} seconds per question). This is fine for a low-stakes diagnostic, but on a timed test (SHSAT, state exam) the same pace would leave several questions unanswered. Building procedural speed is a worthwhile goal.`;
+          } else {
+            pacingBand = "Significantly over time";
+            pacingNote = `${state.studentName} took well over the suggested ${SUGGESTED_MINUTES} minutes (about ${avgSec} seconds per question). On a timed math test, this pace would leave a meaningful portion of the section unfinished. Building fluency on the underlying skills will make the math faster automatically.`;
+          }
+
+          // Overall performance narrative
           let band, summary;
           const sName = state.studentName;
           const strongList = strengths.map(function(s){ return s.name; }).join(", ");
@@ -363,16 +490,16 @@
 
           if (pct >= 85) {
             band = "Above grade level";
-            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which places them above the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. The work shows fluency across the major strands — particularly ${strongList || "every strand assessed"} — with consistent accuracy on multi-step reasoning. At this level, the priority is not remediation but enrichment: more challenging problem types, less scaffolding, and exposure to the next year's concepts so growth doesn't stall.`;
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), placing them above the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. The diagnostic shows fluency across the major strands${strongList ? " — particularly " + strongList : ""} — with consistent accuracy on multi-step reasoning. The few errors (if any) look like careless slips rather than conceptual gaps. At this level, the priority shifts from remediation to enrichment: harder problem types, fewer scaffolds, earlier exposure to next-year content, and exam-style problem sets. Without that next layer of challenge, growth tends to plateau quickly at this band.`;
           } else if (pct >= 65) {
             band = "On grade level";
-            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which is on-track for ${GRADE_LABEL.toLowerCase()} expectations on the New York State Common Core standards. The strongest strand${strengths.length === 1 ? "" : "s"} ${strengths.length ? "on this diagnostic — " + strongList + " — show" + (strengths.length === 1 ? "s" : "") + " reliable procedural skill" : "are not yet locked in"}. ${weaknesses.length || developing.length ? "The gaps are concentrated in " + (weakList || developingList) + ", where errors look like missed concepts rather than careless mistakes." : "The remaining errors look careless rather than conceptual."} With targeted practice on those specific topics, ${sName} can move from on-grade to ahead-of-grade by the end of the semester.`;
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which is on-track for ${GRADE_LABEL.toLowerCase()} expectations on the New York State Common Core standards. ${strengths.length ? "The strongest strand" + (strengths.length === 1 ? "" : "s") + " — " + strongList + " — show" + (strengths.length === 1 ? "s" : "") + " reliable procedural skill and good conceptual reach." : ""} ${weaknesses.length ? "The gaps are concentrated in " + weakList + ", where the error pattern looks like missed concepts rather than careless mistakes." : (developing.length ? "The remaining gaps are in " + developingList + ", where the work is partially in place but inconsistent." : "The remaining errors look like minor slips.")} With targeted practice on those specific topics, ${sName} can move from on-grade to ahead-of-grade by the end of a single semester of focused work.`;
           } else if (pct >= 40) {
             band = "Below grade level — multiple gaps";
-            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which falls below the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. ${strengths.length ? "There is a foundation to build on in " + strongList + "." : "There is not yet a strand with consistent mastery."} ${weaknesses.length ? "The areas that need the most attention are " + weakList + " — these are core ${GRADE_LABEL.toLowerCase()} skills that other topics build on, so the gap will widen if it isn't addressed soon." : ""} The pattern of errors suggests concept-level confusion rather than careless mistakes, which is the kind of gap that responds quickly to structured re-teaching.`;
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), falling below the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. ${strengths.length ? "There is a foundation to build on in " + strongList + " — those strands didn't collapse, so we know the underlying mathematical reasoning is intact." : "There is not yet a single strand with consistent mastery, which usually points to a foundational issue from a prior grade rather than this year's content alone."} ${weaknesses.length ? "The areas that need the most attention are " + weakList + ". These are core " + GRADE_LABEL.toLowerCase() + " skills that the rest of the curriculum builds on, so closing these gaps quickly is the highest-leverage move." : ""} The pattern of errors suggests concept-level confusion rather than careless mistakes, which is actually good news: structured re-teaching tends to produce visible gains within four to six weeks.`;
           } else {
             band = "Significant foundational gaps";
-            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), well below the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. The errors are spread across most strands, which usually means the underlying issue is not a single missing topic but a foundational skill from a prior grade (often fractions, signed numbers, or the order of operations) that hasn't been internalized. Working forward on ${GRADE_LABEL.toLowerCase()} content before closing that foundational gap typically reinforces frustration rather than building skill.`;
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), well below the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. The errors are spread across nearly every strand, which almost always means the issue is not this year's content but a foundational skill from a prior grade — most often fractions, signed-number arithmetic, or the order of operations — that has not been internalized. Working forward on ${GRADE_LABEL.toLowerCase()} content before closing that foundational gap typically reinforces frustration rather than building real skill. A short diagnostic conversation with a teacher can usually pinpoint the missing prerequisite in 20 minutes.`;
           }
 
           const performance = {
@@ -383,12 +510,26 @@
             weakList: weakList
           };
 
-          return { total: total, pct: pct, ranked: ranked, strengths: strengths, weaknesses: weaknesses, developing: developing, performance: performance };
+          return {
+            total: total, pct: pct, ranked: ranked,
+            strengths: strengths, weaknesses: weaknesses, developing: developing,
+            missed: missed,
+            timing: { totalSec: totalSec, avgSec: avgSec, suggestedSec: SUGGESTED_SECONDS, band: pacingBand, note: pacingNote },
+            performance: performance
+          };
         }
 
         function renderReport() {
           const r = state._report;
           const fillClass = function(p){ return p >= 75 ? "strand-fill-strong" : p >= 50 ? "strand-fill-ok" : "strand-fill-weak"; };
+          const feedbackClass = function(p){ return p >= 75 ? "is-strong" : p >= 50 ? "is-ok" : "is-weak"; };
+
+          const pacingIcon = r.timing.band === "On pace" ? "✅"
+            : r.timing.band === "Very fast" ? "⚡"
+            : r.timing.band === "Slightly slow" ? "⏳"
+            : r.timing.band === "Significantly over time" ? "🐢"
+            : "⏱";
+
           setRoot(`
             <div>
               <p class="eyebrow" style="margin:0;">${GRADE_LABEL} Diagnostic Report · ${escapeHTML(state.studentName)}</p>
@@ -397,37 +538,51 @@
                 <div class="report-score-num">${r.total}</div>
                 <div class="report-score-of">/ ${QUESTIONS.length} correct &middot; ${r.pct}%</div>
               </div>
+              <p class="report-time-line">Total time: <strong>${formatTime(r.timing.totalSec)}</strong> &middot; Average per question: <strong>${r.timing.avgSec}s</strong> &middot; Suggested: ~${SUGGESTED_MINUTES} min</p>
 
               <div class="report-section">
-                <h3>By strand</h3>
+                <h3>Pacing</h3>
+                <div class="pacing-card">
+                  <div class="pacing-icon">${pacingIcon}</div>
+                  <div class="pacing-body">
+                    <strong>${escapeHTML(r.timing.band)}</strong>
+                    ${escapeHTML(r.timing.note)}
+                  </div>
+                </div>
+              </div>
+
+              <div class="report-section">
+                <h3>By strand — with feedback</h3>
                 ${r.ranked.map(function(s){ return `
                   <div class="strand-row">
                     <div class="strand-name">${escapeHTML(s.name)}</div>
                     <div class="strand-meter"><div class="strand-meter-fill ${fillClass(s.pct)}" style="width:${s.pct}%;"></div></div>
                     <div class="strand-pct">${s.correct}/${s.total}</div>
                   </div>
+                  <div class="strand-feedback ${feedbackClass(s.pct)}">${escapeHTML(s.commentary)}</div>
                 `; }).join("")}
               </div>
 
-              ${r.strengths.length ? `
+              ${r.missed.length ? `
                 <div class="report-section">
-                  <h3>Strengths</h3>
-                  <p>${escapeHTML(state.studentName)} is solid on:</p>
-                  <ul>${r.strengths.map(function(s){ return `<li><strong>${escapeHTML(s.name)}</strong> — ${escapeHTML(STRAND_DESC[s.name] || "")}</li>`; }).join("")}</ul>
-                </div>` : ""}
-
-              ${r.developing.length ? `
+                  <h3>Questions to revisit (${r.missed.length})</h3>
+                  <ul class="missed-list">
+                    ${r.missed.map(function(m){ return `
+                      <li class="missed-item">
+                        <div class="missed-strand">${escapeHTML(m.strand)}</div>
+                        <div class="missed-q">${escapeHTML(m.question)}</div>
+                        <div class="missed-row">
+                          <span class="picked"><strong>Chose:</strong> ${escapeHTML(m.chosen)}</span>
+                          <span class="correct"><strong>Correct:</strong> ${escapeHTML(m.correct)}</span>
+                        </div>
+                      </li>
+                    `; }).join("")}
+                  </ul>
+                </div>` : `
                 <div class="report-section">
-                  <h3>Developing</h3>
-                  <p>Skills that are partially in place but need reinforcement:</p>
-                  <ul>${r.developing.map(function(s){ return `<li><strong>${escapeHTML(s.name)}</strong> — ${escapeHTML(STRAND_REMED[s.name] || "")}</li>`; }).join("")}</ul>
-                </div>` : ""}
-
-              ${r.weaknesses.length ? `
-                <div class="report-section">
-                  <h3>Weaknesses (priority for tutoring)</h3>
-                  <ul>${r.weaknesses.map(function(s){ return `<li><strong>${escapeHTML(s.name)}</strong> — ${escapeHTML(STRAND_REMED[s.name] || "")}</li>`; }).join("")}</ul>
-                </div>` : ""}
+                  <h3>Questions to revisit</h3>
+                  <p>Every question on this diagnostic was answered correctly. Nice work.</p>
+                </div>`}
 
               <div class="report-section">
                 <h3>Performance summary</h3>
@@ -465,10 +620,12 @@
             overallPercent: r.pct,
             performanceBand: r.performance.band,
             performanceSummary: r.performance.summary,
-            strands: r.ranked.map(function(s){ return { name: s.name, correct: s.correct, total: s.total, percent: s.pct }; }),
+            timing: r.timing,
+            strands: r.ranked.map(function(s){ return { name: s.name, correct: s.correct, total: s.total, percent: s.pct, commentary: s.commentary }; }),
             strengths: r.strengths.map(function(s){ return s.name; }),
             developing: r.developing.map(function(s){ return s.name; }),
             weaknesses: r.weaknesses.map(function(s){ return s.name; }),
+            missed: r.missed,
             answers: QUESTIONS.map(function(q, i){ return {
               strand: q.strand,
               question: q.q,
@@ -518,7 +675,6 @@
       createQuiz({
         rootId: "quiz-root-6",
         questions: QUESTIONS_6,
-        strandDesc: STRAND_DESC_6,
         strandRemed: STRAND_REMED_6,
         gradeLabel: "6th Grade",
         gradeKey: "6th",
@@ -527,7 +683,6 @@
       createQuiz({
         rootId: "quiz-root-7",
         questions: QUESTIONS_7,
-        strandDesc: STRAND_DESC_7,
         strandRemed: STRAND_REMED_7,
         gradeLabel: "7th Grade",
         gradeKey: "7th",

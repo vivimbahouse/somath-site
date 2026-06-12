@@ -252,13 +252,38 @@ async function handleStudentEvaluation(request, env) {
   const developing = Array.isArray(body.developing) ? body.developing.slice(0, 12) : [];
   const weaknesses = Array.isArray(body.weaknesses) ? body.weaknesses.slice(0, 12) : [];
   const answers = Array.isArray(body.answers) ? body.answers.slice(0, 40) : [];
+  const missed = Array.isArray(body.missed) ? body.missed.slice(0, 30) : [];
+  const timing = body.timing && typeof body.timing === "object" ? body.timing : {};
+  const timingTotalSec = Number(timing.totalSec);
+  const timingAvgSec = Number(timing.avgSec);
+  const timingSuggestedSec = Number(timing.suggestedSec);
+  const timingBand = String(timing.band || "").slice(0, 80);
+  const timingNote = String(timing.note || "").slice(0, 400);
   if (!studentName) return jsonResponse({ error: "missing_name" }, 400);
   if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_email" }, 400);
   if (!Number.isFinite(totalCorrect) || !Number.isFinite(totalQuestions)) return jsonResponse({ error: "invalid_score" }, 400);
 
   const strandRows = strands.map(function(s) {
-    return `<tr><td style="padding:6px 10px;border-bottom:1px solid #eee;">${escapeHtml(s.name)}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">${escapeHtml(String(s.correct))}/${escapeHtml(String(s.total))}</td><td style="padding:6px 10px;border-bottom:1px solid #eee;text-align:right;">${escapeHtml(String(s.percent))}%</td></tr>`;
+    const commentary = s.commentary ? `<div style="color:#555;font-size:13px;margin-top:4px;">${escapeHtml(String(s.commentary))}</div>` : "";
+    return `<tr><td style="padding:8px 10px;border-bottom:1px solid #eee;vertical-align:top;"><strong>${escapeHtml(s.name)}</strong>${commentary}</td><td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:right;vertical-align:top;">${escapeHtml(String(s.correct))}/${escapeHtml(String(s.total))}</td><td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:right;vertical-align:top;">${escapeHtml(String(s.percent))}%</td></tr>`;
   }).join("");
+
+  const missedRows = missed.map(function(m) {
+    return `<li style="margin-bottom:8px;"><strong>${escapeHtml(m.strand || "")}</strong> &mdash; ${escapeHtml(m.question || "")}<br/><span style="color:#a23;">Chose:</span> <em>${escapeHtml(m.chosen || "(no answer)")}</em> &middot; <span style="color:#1f3d2e;">Correct:</span> <strong>${escapeHtml(m.correct || "")}</strong></li>`;
+  }).join("");
+
+  function fmtTime(sec) {
+    if (!Number.isFinite(sec) || sec < 0) return "&mdash;";
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return `${m}:${s < 10 ? "0" : ""}${s}`;
+  }
+  const pacingBlock = (timingBand || Number.isFinite(timingTotalSec)) ? `<h3 style="color:#c89a3a;">Pacing</h3>
+<div style="background:#fff;border:1px solid #e5e0d4;padding:14px 18px;border-radius:6px;">
+<p style="margin:0 0 6px;font-weight:600;">${escapeHtml(timingBand || "")}</p>
+${timingNote ? `<p style="margin:0 0 10px;">${escapeHtml(timingNote)}</p>` : ""}
+<p style="margin:0;color:#555;font-size:14px;">Total time: <strong>${fmtTime(timingTotalSec)}</strong>${Number.isFinite(timingAvgSec) ? ` &middot; Avg per question: <strong>${timingAvgSec}s</strong>` : ""}${Number.isFinite(timingSuggestedSec) ? ` &middot; Suggested: <strong>${fmtTime(timingSuggestedSec)}</strong>` : ""}</p>
+</div>` : "";
 
   const answerRows = answers.map(function(a, i) {
     const icon = a.isCorrect ? "\u2705" : "\u274C";
@@ -276,6 +301,7 @@ async function handleStudentEvaluation(request, env) {
 <strong>Source:</strong> /student-evaluation</p>
 <h3 style="color:#c89a3a;">Overall</h3>
 <p style="font-size:18px;"><strong>${totalCorrect} / ${totalQuestions}</strong> correct &middot; <strong>${overallPercent}%</strong></p>
+${pacingBlock}
 <h3 style="color:#c89a3a;">By strand</h3>
 <table style="border-collapse:collapse;width:100%;font-size:14px;"><thead><tr><th style="text-align:left;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Strand</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Score</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">%</th></tr></thead><tbody>${strandRows}</tbody></table>
 <h3 style="color:#c89a3a;">Strengths</h3>${listHtml(strengths)}
@@ -304,6 +330,7 @@ async function handleStudentEvaluation(request, env) {
 <strong>Submitted:</strong> ${new Date().toISOString().slice(0,10)}</p>
 <h3 style="color:#c89a3a;">Overall</h3>
 <p style="font-size:18px;"><strong>${totalCorrect} / ${totalQuestions}</strong> correct &middot; <strong>${overallPercent}%</strong></p>
+${pacingBlock}
 <h3 style="color:#c89a3a;">By strand</h3>
 <table style="border-collapse:collapse;width:100%;font-size:14px;"><thead><tr><th style="text-align:left;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Strand</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">Score</th><th style="text-align:right;padding:6px 10px;border-bottom:2px solid #1f3d2e;">%</th></tr></thead><tbody>${strandRows}</tbody></table>
 <h3 style="color:#c89a3a;">Strengths</h3>${listHtml(strengths)}
@@ -311,6 +338,7 @@ async function handleStudentEvaluation(request, env) {
 <h3 style="color:#c89a3a;">Areas to focus on</h3>${listHtml(weaknesses)}
 <h3 style="color:#c89a3a;">Performance summary</h3>
 <div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:6px;"><p style="margin:0 0 8px;font-weight:600;">${escapeHtml(performanceBand)}</p><p style="margin:0;">${escapeHtml(performanceSummary)}</p></div>
+${missedRows ? `<h3 style="color:#c89a3a;">Questions to revisit</h3><ul style="padding-left:20px;">${missedRows}</ul>` : ""}
 <p style="margin-top:22px;"><a href="https://www.schoolofmath.us/evaluation" style="display:inline-block;background:#1f3d2e;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;">Book a Free 60-Minute Evaluation</a></p>
 <p style="color:#888;font-size:12px;margin-top:24px;">School of Math \u2014 226 W 79th St, New York, NY 10024 \u2014 hello@schoolofmath.us</p>
 </div>`;
