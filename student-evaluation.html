@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Free Math Diagnostic (4th–8th Grade) · School of Math NYC</title>
-    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 4th, 5th, 6th, 7th, and 8th grade students. Suggested time 30 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
+    <title>Free Math Diagnostic (3rd–8th Grade) · School of Math NYC</title>
+    <meta name="description" content="Free 15-question NYC Common Core math diagnostics for 3rd, 4th, 5th, 6th, 7th, and 8th grade students. Suggested time 30 minutes. Detailed report with strengths, weaknesses, and pacing analysis." />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
     <link rel="canonical" href="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:url" content="https://www.schoolofmath.us/student-evaluation" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Free Math Diagnostic (4th–8th Grade) · School of Math NYC" />
+    <meta property="og:title" content="Free Math Diagnostic (3rd–8th Grade) · School of Math NYC" />
     <meta property="og:description" content="15 NYC Common Core questions, ~30 minutes, instant detailed report with strengths, weaknesses, and pacing analysis." />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/styles.css" />
@@ -118,6 +118,9 @@
       <section class="section" style="padding-top: 20px;">
         <div class="section__inner">
           <div class="quiz-wrap">
+            <div class="quiz-card" id="quiz-root-3">
+              <span class="quiz-grade-label">3rd Grade</span>
+            </div>
             <div class="quiz-card" id="quiz-root-4">
               <span class="quiz-grade-label">4th Grade</span>
             </div>
@@ -133,7 +136,7 @@
             <div class="quiz-card" id="quiz-root-8">
               <span class="quiz-grade-label">8th Grade</span>
             </div>
-            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 4 through 8. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
+            <p class="quiz-footnote">Aligned to the New York State Next Generation Mathematics Learning Standards for Grades 3 through 8. Your report will be emailed to the parent and to SOMATH at 226 W 79th St so we can tailor a follow-up for your child.</p>
           </div>
         </div>
       </section>
@@ -147,6 +150,32 @@
       const QUIZ_LENGTH = 15;
       const SUGGESTED_MINUTES = 30;        // total
       const SUGGESTED_SECONDS = SUGGESTED_MINUTES * 60;
+
+      // ============================================================
+      // 3RD GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
+      // ============================================================
+      const QUESTIONS_3 = [
+        // Operations & Algebraic Thinking
+        { strand:"Operations & Algebraic Thinking", q:"Multiply:  6 × 7", options:["36","42","48","49"], answer:1 },
+        { strand:"Operations & Algebraic Thinking", q:"There are 24 cookies shared equally among 4 children. How many cookies does each child get?", options:["4","5","6","8"], answer:2 },
+        { strand:"Operations & Algebraic Thinking", q:"What is the missing number?  9 × ___ = 54", options:["5","6","7","8"], answer:1 },
+        // Number & Operations in Base Ten
+        { strand:"Number & Operations in Base Ten", q:"Round 472 to the nearest hundred.", options:["400","470","480","500"], answer:3 },
+        { strand:"Number & Operations in Base Ten", q:"Add:  348 + 276", options:["514","604","624","714"], answer:2 },
+        { strand:"Number & Operations in Base Ten", q:"Subtract:  705 − 268", options:["437","447","533","547"], answer:0 },
+        // Number & Operations — Fractions
+        { strand:"Number & Operations — Fractions", q:"A pizza is cut into 8 equal slices. If 3 slices are eaten, what fraction of the pizza is left?", options:["3/8","5/8","3/5","5/3"], answer:1 },
+        { strand:"Number & Operations — Fractions", q:"Which fraction is equivalent to 1/2?", options:["1/3","2/3","3/4","4/8"], answer:3 },
+        { strand:"Number & Operations — Fractions", q:"Which fraction is greater?", options:["1/4","1/3","1/6","1/8"], answer:1 },
+        // Measurement & Data
+        { strand:"Measurement & Data", q:"A school day starts at 8:15 AM and lunch is at 11:45 AM. How long until lunch?", options:["3 hours","3 hours 15 minutes","3 hours 30 minutes","4 hours"], answer:2 },
+        { strand:"Measurement & Data", q:"A rectangle is 7 units long and 4 units wide. What is its area?", options:["11 sq units","22 sq units","24 sq units","28 sq units"], answer:3 },
+        { strand:"Measurement & Data", q:"A bar graph shows: Mon = 8 books, Tue = 6 books, Wed = 10 books, Thu = 4 books read. How many books were read in total?", options:["24","26","28","30"], answer:2 },
+        // Geometry
+        { strand:"Geometry", q:"Which shape has exactly 4 equal sides and 4 right angles?", options:["Triangle","Rectangle (not square)","Square","Pentagon"], answer:2 },
+        { strand:"Geometry", q:"How many sides does a hexagon have?", options:["5","6","7","8"], answer:1 },
+        { strand:"Geometry", q:"A rectangle is divided into 6 equal parts. What fraction of the rectangle is one part?", options:["1/2","1/3","1/4","1/6"], answer:3 }
+      ];
 
       // ============================================================
       // 4TH GRADE BANK — NYS Next Gen, 15 Qs (3 per strand)
@@ -281,6 +310,20 @@
       // ============================================================
       // Strand descriptions + remediation by grade
       // ============================================================
+      const STRAND_DESC_3 = {
+        "Operations & Algebraic Thinking": "multiplication and division within 100 and finding missing factors.",
+        "Number & Operations in Base Ten": "rounding to the nearest 10 and 100, and 3-digit addition and subtraction with regrouping.",
+        "Number & Operations — Fractions": "fractions as parts of a whole, equivalent fractions, and comparing unit fractions with the same numerator.",
+        "Measurement & Data": "telling time to the minute and computing elapsed time, area of rectangles, and reading bar graphs.",
+        "Geometry": "classifying shapes by attributes (sides and angles) and partitioning shapes into equal parts."
+      };
+      const STRAND_REMED_3 = {
+        "Operations & Algebraic Thinking": "Drill the multiplication and division facts through 10 × 10 until they're automatic. Mixed fact practice and 'missing factor' problems (e.g. 4 × __ = 28) should feel reflexive.",
+        "Number & Operations in Base Ten": "Practice rounding 3-digit numbers to the nearest 10 and 100, then drill 3-digit addition and subtraction with regrouping (borrowing across zeros is the trickiest case).",
+        "Number & Operations — Fractions": "Use fraction bars, pizzas, and number lines to build the 'fraction of a whole' picture, then drill equivalent fractions and the rule that with the same numerator, the smaller denominator means the bigger piece.",
+        "Measurement & Data": "Practice telling time to the minute and computing elapsed time on a number line, drill A = l × w with grid counting, and read totals and differences off bar graphs and picture graphs.",
+        "Geometry": "Re-teach the difference between square, rectangle, rhombus, and trapezoid by attributes (sides and angles), and practice partitioning rectangles and circles into equal parts (halves, thirds, quarters, sixths, eighths)."
+      };
       const STRAND_DESC_4 = {
         "Operations & Algebraic Thinking": "multiplicative comparison, factors and multiples, and extending number/shape patterns.",
         "Number & Operations in Base Ten": "place value to one million, multi-digit multiplication, and dividing 3-digit numbers by 1-digit divisors.",
@@ -354,8 +397,13 @@
 
       // Per-strand commentary based on score band
       function strandCommentary(strandName, pct, gradeKey) {
-        const remedMap = gradeKey === "4th" ? STRAND_REMED_4 : (gradeKey === "5th" ? STRAND_REMED_5 : (gradeKey === "6th" ? STRAND_REMED_6 : (gradeKey === "7th" ? STRAND_REMED_7 : STRAND_REMED_8)));
-        const descMap = gradeKey === "4th" ? STRAND_DESC_4 : (gradeKey === "5th" ? STRAND_DESC_5 : (gradeKey === "6th" ? STRAND_DESC_6 : (gradeKey === "7th" ? STRAND_DESC_7 : STRAND_DESC_8)));
+        let remedMap, descMap;
+        if (gradeKey === "3rd") { remedMap = STRAND_REMED_3; descMap = STRAND_DESC_3; }
+        else if (gradeKey === "4th") { remedMap = STRAND_REMED_4; descMap = STRAND_DESC_4; }
+        else if (gradeKey === "5th") { remedMap = STRAND_REMED_5; descMap = STRAND_DESC_5; }
+        else if (gradeKey === "6th") { remedMap = STRAND_REMED_6; descMap = STRAND_DESC_6; }
+        else if (gradeKey === "7th") { remedMap = STRAND_REMED_7; descMap = STRAND_DESC_7; }
+        else { remedMap = STRAND_REMED_8; descMap = STRAND_DESC_8; }
         if (pct === 100) {
           return `Perfect score on this strand. The work on ${descMap[strandName] || strandName} is fully internalized — at the next instructional step, push into harder multi-step problems and earlier exposure to next-grade material here.`;
         } else if (pct >= 75) {
@@ -801,6 +849,14 @@
         return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
       }
 
+      createQuiz({
+        rootId: "quiz-root-3",
+        questions: QUESTIONS_3,
+        strandRemed: STRAND_REMED_3,
+        gradeLabel: "3rd Grade",
+        gradeKey: "3rd",
+        sourceTag: "student-evaluation-3rd-grade"
+      });
       createQuiz({
         rootId: "quiz-root-4",
         questions: QUESTIONS_4,
