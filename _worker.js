@@ -245,9 +245,8 @@ async function handleStudentEvaluation(request, env) {
   const totalCorrect = Number(body.totalCorrect);
   const totalQuestions = Number(body.totalQuestions);
   const overallPercent = Number(body.overallPercent);
-  const recommended = String(body.recommended || "").slice(0, 200);
-  const recommendedUrl = String(body.recommendedUrl || "").slice(0, 200);
-  const recommendedReason = String(body.recommendedReason || "").slice(0, 1000);
+  const performanceBand = String(body.performanceBand || "").slice(0, 120);
+  const performanceSummary = String(body.performanceSummary || "").slice(0, 2000);
   const strands = Array.isArray(body.strands) ? body.strands.slice(0, 12) : [];
   const strengths = Array.isArray(body.strengths) ? body.strengths.slice(0, 12) : [];
   const developing = Array.isArray(body.developing) ? body.developing.slice(0, 12) : [];
@@ -282,8 +281,8 @@ async function handleStudentEvaluation(request, env) {
 <h3 style="color:#c89a3a;">Strengths</h3>${listHtml(strengths)}
 <h3 style="color:#c89a3a;">Developing</h3>${listHtml(developing)}
 <h3 style="color:#c89a3a;">Weaknesses (priority for tutoring)</h3>${listHtml(weaknesses)}
-<h3 style="color:#c89a3a;">Recommended next step</h3>
-<div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:6px;"><p style="margin:0 0 6px;font-weight:600;">${escapeHtml(recommended)}</p><p style="margin:0 0 6px;">${escapeHtml(recommendedReason)}</p><p style="margin:0;"><a href="https://www.schoolofmath.us${escapeHtml(recommendedUrl)}">${escapeHtml(recommendedUrl)}</a></p></div>
+<h3 style="color:#c89a3a;">Performance summary</h3>
+<div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:6px;"><p style="margin:0 0 8px;font-weight:600;">${escapeHtml(performanceBand)}</p><p style="margin:0;">${escapeHtml(performanceSummary)}</p></div>
 <h3 style="color:#c89a3a;">Full answer detail</h3>
 <table style="border-collapse:collapse;width:100%;font-size:13px;"><tbody>${answerRows}</tbody></table>
 <p style="color:#888;font-size:12px;margin-top:24px;">Sent automatically by schoolofmath.us</p>

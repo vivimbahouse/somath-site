@@ -354,39 +354,36 @@
           const weaknesses = ranked.filter(function(r){ return r.pct < 50; });
           const developing = ranked.filter(function(r){ return r.pct >= 50 && r.pct < 75; });
 
-          // Course recommendation — grade-aware
-          let recommended;
-          if (GRADE_KEY === "6th") {
-            if (pct >= 85) {
-              recommended = { name:"Young Fermats — Pre-Algebra", url:"/programs#young-fermats",
-                why:`${state.studentName} is performing above grade level on this diagnostic. Pre-Algebra will accelerate them into 7th–8th grade material and lay the foundation for an early algebra/geometry track.` };
-            } else if (pct >= 65) {
-              recommended = { name:"Kid Einsteins B (6th–8th grade)", url:"/programs#kid-einsteins",
-                why:`${state.studentName} is on grade level overall, with a few specific gaps. Kid Einsteins B is built precisely for 6th graders strengthening Common Core skills while previewing pre-algebra concepts.` };
-            } else if (pct >= 40) {
-              recommended = { name:"Kid Einsteins B + a one-on-one diagnostic session", url:"/programs#kid-einsteins",
-                why:`${state.studentName} has multiple grade-level gaps. We recommend Kid Einsteins B paired with a free 60-minute one-on-one evaluation so we can pinpoint exactly which strands to remediate first.` };
-            } else {
-              recommended = { name:"One-on-one tutoring (start with a free evaluation)", url:"/evaluation",
-                why:`${state.studentName} would benefit most from individualized instruction before joining a group class. Our 60-minute free evaluation will diagnose the foundational gaps and design a personalized plan.` };
-            }
-          } else { // 7th
-            if (pct >= 85) {
-              recommended = { name:"Young Fermats — Algebra Ignite", url:"/programs#young-fermats",
-                why:`${state.studentName} is performing above 7th grade level. Algebra Ignite is the natural next step — it accelerates into formal Algebra I content and sets up an honors track in high school.` };
-            } else if (pct >= 65) {
-              recommended = { name:"Young Fermats — Pre-Algebra (plus SHSAT Prep if applicable)", url:"/programs#young-fermats",
-                why:`${state.studentName} is on grade level for 7th grade. Pre-Algebra builds proportional reasoning and equation-solving fluency — and if SHSAT is a goal, our SHSAT Prep track pairs well alongside it.` };
-            } else if (pct >= 40) {
-              recommended = { name:"Kid Einsteins B + targeted SHSAT readiness work", url:"/programs#kid-einsteins",
-                why:`${state.studentName} has multiple 7th-grade gaps. Kid Einsteins B closes Common Core gaps in a small group, and a free 60-minute evaluation will pinpoint the most urgent strands.` };
-            } else {
-              recommended = { name:"One-on-one tutoring (start with a free evaluation)", url:"/evaluation",
-                why:`${state.studentName} would benefit most from individualized instruction before joining a group class. Our 60-minute free evaluation will diagnose the foundational gaps and design a personalized plan.` };
-            }
+          // Performance narrative — no course recommendation, just an honest read.
+          let band, summary;
+          const sName = state.studentName;
+          const strongList = strengths.map(function(s){ return s.name; }).join(", ");
+          const weakList = weaknesses.map(function(s){ return s.name; }).join(", ");
+          const developingList = developing.map(function(s){ return s.name; }).join(", ");
+
+          if (pct >= 85) {
+            band = "Above grade level";
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which places them above the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. The work shows fluency across the major strands — particularly ${strongList || "every strand assessed"} — with consistent accuracy on multi-step reasoning. At this level, the priority is not remediation but enrichment: more challenging problem types, less scaffolding, and exposure to the next year's concepts so growth doesn't stall.`;
+          } else if (pct >= 65) {
+            band = "On grade level";
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which is on-track for ${GRADE_LABEL.toLowerCase()} expectations on the New York State Common Core standards. The strongest strand${strengths.length === 1 ? "" : "s"} ${strengths.length ? "on this diagnostic — " + strongList + " — show" + (strengths.length === 1 ? "s" : "") + " reliable procedural skill" : "are not yet locked in"}. ${weaknesses.length || developing.length ? "The gaps are concentrated in " + (weakList || developingList) + ", where errors look like missed concepts rather than careless mistakes." : "The remaining errors look careless rather than conceptual."} With targeted practice on those specific topics, ${sName} can move from on-grade to ahead-of-grade by the end of the semester.`;
+          } else if (pct >= 40) {
+            band = "Below grade level — multiple gaps";
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), which falls below the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. ${strengths.length ? "There is a foundation to build on in " + strongList + "." : "There is not yet a strand with consistent mastery."} ${weaknesses.length ? "The areas that need the most attention are " + weakList + " — these are core ${GRADE_LABEL.toLowerCase()} skills that other topics build on, so the gap will widen if it isn't addressed soon." : ""} The pattern of errors suggests concept-level confusion rather than careless mistakes, which is the kind of gap that responds quickly to structured re-teaching.`;
+          } else {
+            band = "Significant foundational gaps";
+            summary = `${sName} answered ${total} of ${QUESTIONS.length} questions correctly (${pct}%), well below the ${GRADE_LABEL.toLowerCase()} band on the New York State Common Core standards. The errors are spread across most strands, which usually means the underlying issue is not a single missing topic but a foundational skill from a prior grade (often fractions, signed numbers, or the order of operations) that hasn't been internalized. Working forward on ${GRADE_LABEL.toLowerCase()} content before closing that foundational gap typically reinforces frustration rather than building skill.`;
           }
 
-          return { total: total, pct: pct, ranked: ranked, strengths: strengths, weaknesses: weaknesses, developing: developing, recommended: recommended };
+          const performance = {
+            band: band,
+            summary: summary,
+            strongList: strongList,
+            developingList: developingList,
+            weakList: weakList
+          };
+
+          return { total: total, pct: pct, ranked: ranked, strengths: strengths, weaknesses: weaknesses, developing: developing, performance: performance };
         }
 
         function renderReport() {
@@ -433,14 +430,20 @@
                 </div>` : ""}
 
               <div class="report-section">
-                <h3>Recommended next step</h3>
+                <h3>Performance summary</h3>
+                <p style="font-weight:600; color: var(--ink, #1f3d2e); margin: 0 0 8px;">${escapeHTML(r.performance.band)}</p>
+                <p>${escapeHTML(r.performance.summary)}</p>
+              </div>
+
+              <div class="report-section">
+                <h3>How SOMATH can help from here</h3>
                 <div class="recommend-card">
-                  <h4>${escapeHTML(r.recommended.name)}</h4>
-                  <p>${escapeHTML(r.recommended.why)}</p>
-                  <p class="recommend-meta">All SOMATH classes meet at 226 W 79th St on the Upper West Side. Free 60-minute evaluation included — written diagnostic within 48 hours, even if you don't enroll.</p>
+                  <p>A SOMATH instructor will review ${escapeHTML(state.studentName)}'s answer pattern question-by-question and build a personalized study plan focused on the specific strands that came up weakest on this diagnostic${r.weaknesses.length ? " (" + escapeHTML(r.performance.weakList) + ")" : ""}. ${r.strengths.length ? "We protect what's already strong — " + escapeHTML(r.performance.strongList) + " — by keeping that work at grade or above, so confidence doesn't slip while we close gaps elsewhere." : ""}</p>
+                  <p>Every SOMATH student gets small-group instruction (never lectures), regular written diagnostics so progress is measurable, and direct communication with the lead instructor — not a call center. We teach on whiteboards, in cohorts of four to six, on the Upper West Side at 226 W 79th St.</p>
+                  <p class="recommend-meta">Want a teacher to walk through this report with you in person? Book a free 60-minute evaluation and we'll send a written follow-up within 48 hours — even if you don't enroll.</p>
                   <div style="margin-top: 10px;">
-                    <a href="${r.recommended.url}" class="btn btn--primary">See ${escapeHTML(r.recommended.name.split(" —")[0].split(" (")[0])}</a>
-                    <a href="/evaluation" class="btn" style="margin-left:8px;">Book Free Evaluation</a>
+                    <a href="/evaluation" class="btn btn--primary">Book Free Evaluation</a>
+                    <a href="tel:+16466686151" class="btn" style="margin-left:8px;">Call (646) 668-6151</a>
                   </div>
                 </div>
               </div>
@@ -460,9 +463,8 @@
             totalCorrect: r.total,
             totalQuestions: QUESTIONS.length,
             overallPercent: r.pct,
-            recommended: r.recommended.name,
-            recommendedUrl: r.recommended.url,
-            recommendedReason: r.recommended.why,
+            performanceBand: r.performance.band,
+            performanceSummary: r.performance.summary,
             strands: r.ranked.map(function(s){ return { name: s.name, correct: s.correct, total: s.total, percent: s.pct }; }),
             strengths: r.strengths.map(function(s){ return s.name; }),
             developing: r.developing.map(function(s){ return s.name; }),
