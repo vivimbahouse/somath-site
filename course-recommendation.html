@@ -160,6 +160,15 @@
       .crec-popover:hover {
         transition-delay: 0s;
       }
+      /* Once the user has clicked into a course detail panel, suppress all popovers */
+      body.crec-detail-open .crec-popover,
+      body.crec-detail-open .crec-card:hover .crec-popover,
+      body.crec-detail-open .crec-popover:hover {
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+      /* Also hide the popover on the open card itself, in case the user re-hovers later */
+      .crec-card.is-open .crec-popover { display: none; }
       .crec-popover strong { color: #c89a3a; }
 
       /* On narrow screens, fall back to popover below the row */
@@ -538,6 +547,7 @@
       function renderTerm(termKey) {
         activeTerm = termKey;
         openCourse = null;
+        document.body.classList.remove("crec-detail-open");
         const term = TERMS[termKey];
         tabs.forEach(t => {
           const on = t.dataset.term === termKey;
@@ -578,7 +588,7 @@
         detailEl.classList.remove("is-open");
         detailEl.innerHTML = "";
 
-        // Wire card clicks
+        // Wire card clicks (popover lives inside the card, so it bubbles up too)
         gridEl.querySelectorAll(".crec-card").forEach(card => {
           card.addEventListener("click", () => openDetail(card.dataset.course));
           card.addEventListener("keydown", (e) => {
@@ -586,6 +596,14 @@
               e.preventDefault();
               openDetail(card.dataset.course);
             }
+          });
+        });
+        // Make the popover (which is positioned outside its card visually) also clickable to open detail
+        gridEl.querySelectorAll(".crec-popover").forEach(pop => {
+          pop.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const card = pop.closest(".crec-card");
+            if (card) openDetail(card.dataset.course);
           });
         });
       }
@@ -596,6 +614,7 @@
         const sched = term.courses[courseId];
         if (!c || !sched) return;
         openCourse = courseId;
+        document.body.classList.add("crec-detail-open");
 
         // Pick fall override syllabus if available for fall term
         const syllabus = (activeTerm === "fall" && c.fallSyllabusOverride) ? c.fallSyllabusOverride : c.syllabus;
@@ -663,6 +682,7 @@
             card.setAttribute("aria-expanded", "false");
           });
           openCourse = null;
+          document.body.classList.remove("crec-detail-open");
         });
 
         // Scroll into view
