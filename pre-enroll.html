@@ -214,18 +214,15 @@
           <h2>Course</h2>
           <div class="pe-grid">
             <div class="pe-field">
-              <label for="pe-term">Term</label>
-              <select id="pe-term" name="term" required>
-                <option value="">Select a term…</option>
-                <option value="july">July 2026 (June 29 – August 1)</option>
-                <option value="august">August 2026 (August 3 – September 4)</option>
-                <option value="fall">Fall 2026 (August 31 – December 20)</option>
+              <label for="pe-course">Course</label>
+              <select id="pe-course" name="course" required>
+                <option value="">Select a course…</option>
               </select>
             </div>
             <div class="pe-field">
-              <label for="pe-course">Course</label>
-              <select id="pe-course" name="course" required disabled>
-                <option value="">Select a term first…</option>
+              <label for="pe-term">Term</label>
+              <select id="pe-term" name="term" required disabled>
+                <option value="">Select a course first…</option>
               </select>
             </div>
           </div>
@@ -390,26 +387,44 @@
       const selectedSummary = document.getElementById("pe-selected");
       const errBox = document.getElementById("pe-error");
 
-      function populateCourses(termId) {
+      // Populate course list once on load (independent of term).
+      function populateCoursesOnce() {
         courseSel.innerHTML = "";
-        if (!termId) {
-          courseSel.innerHTML = '<option value="">Select a term first…</option>';
-          courseSel.disabled = true;
-          return;
-        }
         const opt0 = document.createElement("option");
         opt0.value = "";
         opt0.textContent = "Select a course…";
         courseSel.appendChild(opt0);
         Object.keys(COURSES).forEach(cid => {
           const c = COURSES[cid];
-          const time = COURSE_TIMES[termId][cid];
           const opt = document.createElement("option");
           opt.value = cid;
-          opt.textContent = `${c.title} — ${c.grade} · ${time}`;
+          opt.textContent = `${c.title} — ${c.grade}`;
           courseSel.appendChild(opt);
         });
-        courseSel.disabled = false;
+      }
+      populateCoursesOnce();
+
+      // Term dropdown: populate the three terms with the times for the chosen course.
+      function populateTermsForCourse(courseId) {
+        termSel.innerHTML = "";
+        if (!courseId) {
+          termSel.innerHTML = '<option value="">Select a course first…</option>';
+          termSel.disabled = true;
+          return;
+        }
+        const opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.textContent = "Select a term…";
+        termSel.appendChild(opt0);
+        ["july", "august", "fall"].forEach(tid => {
+          const t = TERMS[tid];
+          const time = COURSE_TIMES[tid][courseId];
+          const opt = document.createElement("option");
+          opt.value = tid;
+          opt.textContent = `${t.label} (${t.dateRange}) · ${time}`;
+          termSel.appendChild(opt);
+        });
+        termSel.disabled = false;
       }
 
       // ---- Day-of-week picker (Fall only, only when course has "X or Y" pattern) ----
@@ -483,28 +498,32 @@
           `Balance after deposit: <b>$${balance.toLocaleString()}</b> (due 2 days before start).`;
       }
 
-      termSel.addEventListener("change", () => {
-        populateCourses(termSel.value);
+      courseSel.addEventListener("change", () => {
+        const prevTerm = termSel.value;
+        populateTermsForCourse(courseSel.value);
+        // Preserve the term selection if the parent had already picked one.
+        if (prevTerm && termSel.querySelector(`option[value="${prevTerm}"]`)) {
+          termSel.value = prevTerm;
+        }
         refreshDayPicker();
         updateSummary();
-        applyPrefillSelection();
       });
-      courseSel.addEventListener("change", () => {
+      termSel.addEventListener("change", () => {
         refreshDayPicker();
         updateSummary();
       });
 
-      // Pre-select from URL ?course=…&term=…
+      // Pre-select from URL ?course=…&term=…&day=…
       function applyPrefillSelection() {
         const params = new URLSearchParams(window.location.search);
-        const t = params.get("term");
         const c = params.get("course");
-        if (t && TERMS[t] && termSel.value !== t) {
-          termSel.value = t;
-          populateCourses(t);
-        }
+        const t = params.get("term");
         if (c && COURSES[c] && courseSel.querySelector(`option[value="${c}"]`)) {
           courseSel.value = c;
+          populateTermsForCourse(c);
+        }
+        if (t && TERMS[t] && termSel.querySelector(`option[value="${t}"]`)) {
+          termSel.value = t;
         }
         refreshDayPicker();
         const d = params.get("day");
