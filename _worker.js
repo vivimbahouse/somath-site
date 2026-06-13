@@ -377,6 +377,16 @@ var PRE_ENROLL_TERMS = {
   august: { label: "August 2026", dateRange: "August 3 \u2013 September 4, 2026", weeks: 5 },
   fall:   { label: "Fall 2026",   dateRange: "August 31 \u2013 December 20, 2026", weeks: 16 }
 };
+// Fall day choices per course (key omitted = no choice / single day).
+var FALL_DAY_CHOICES = {
+  "little-newtons":               ["Mon", "Wed"],
+  "kid-einsteins-a":              ["Tue", "Wed"],
+  "kid-einsteins-b":              ["Mon", "Wed"],
+  "young-fermats-prealgebra":     ["Tue", "Thu"],
+  "young-fermats-algebra-ignite": ["Mon", "Wed"],
+  "young-fermats-geometry":       ["Tue", "Thu"]
+};
+var DAY_LABEL = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday" };
 function computeTuitionCents(courseId, termId) {
   const c = PRE_ENROLL_COURSES[courseId];
   const t = PRE_ENROLL_TERMS[termId];
@@ -393,10 +403,15 @@ async function handlePreEnroll(request, env) {
   if (request.method !== "POST") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
   let body;
   try { body = await request.json(); } catch (e) { return jsonResponse({ ok: false, error: "invalid_json" }, 400); }
-  const { term, course, student_name, student_grade, parent_name, parent_phone, parent_email, agree_terms, agree_balance } = body || {};
+  const { term, course, day, student_name, student_grade, parent_name, parent_phone, parent_email, agree_terms, agree_balance } = body || {};
 
   if (!PRE_ENROLL_TERMS[term]) return jsonResponse({ ok: false, error: "invalid_term" }, 400);
   if (!PRE_ENROLL_COURSES[course]) return jsonResponse({ ok: false, error: "invalid_course" }, 400);
+  // Fall-only day-of-week validation: if the course has two possible days, exactly one must be chosen.
+  const dayChoices = (term === "fall") ? (FALL_DAY_CHOICES[course] || null) : null;
+  if (dayChoices && (!day || !dayChoices.includes(day))) {
+    return jsonResponse({ ok: false, error: "invalid_day" }, 400);
+  }
   if (!student_name || !student_grade) return jsonResponse({ ok: false, error: "missing_student" }, 400);
   if (!parent_name || !parent_phone) return jsonResponse({ ok: false, error: "missing_parent" }, 400);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(parent_email || "")) return jsonResponse({ ok: false, error: "invalid_email" }, 400);
@@ -418,7 +433,8 @@ async function handlePreEnroll(request, env) {
   const successUrl = origin + "/pre-enroll-success?session_id={CHECKOUT_SESSION_ID}";
   const cancelUrl = origin + "/pre-enroll?course=" + encodeURIComponent(course) + "&term=" + encodeURIComponent(term);
 
-  const productName = "Pre-Enroll Deposit \u2014 " + c.title + " (" + t.label + ")";
+  const dayLabel = (dayChoices && day) ? DAY_LABEL[day] : "";
+  const productName = "Pre-Enroll Deposit \u2014 " + c.title + " (" + t.label + (dayLabel ? ", " + dayLabel + "s" : "") + ")";
   const productDesc = "Spot-reservation deposit. $300 credited toward total tuition ($" + (tuitionCents/100).toLocaleString() + "). Balance due 2 days before course begins.";
 
   // Build x-www-form-urlencoded body for Stripe API (Workers can't use JSON for Stripe)
@@ -449,6 +465,9 @@ async function handlePreEnroll(request, env) {
   params.append("metadata[parent_name]", parent_name);
   params.append("metadata[parent_phone]", parent_phone);
   params.append("metadata[parent_email]", parent_email);
+  if (dayLabel) {
+    params.append("metadata[weekly_day]", dayLabel);
+  }
   params.append("metadata[tuition_total_cents]", String(tuitionCents));
   params.append("metadata[balance_due_cents]", String(tuitionCents - depositCents));
   // Stripe automatic receipt
@@ -487,6 +506,7 @@ async function handlePreEnroll(request, env) {
       "<table style=\"border-collapse:collapse;font-size:14px\">" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Course</td><td><b>" + esc(c.title) + "</b> (" + esc(c.grade) + ")</td></tr>" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Term</td><td>" + esc(t.label) + " \u2014 " + esc(t.dateRange) + "</td></tr>" +
+      (dayLabel ? "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Weekly day</td><td><b>" + esc(dayLabel) + "s</b></td></tr>" : "") +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Student</td><td>" + esc(student_name) + " (Grade " + esc(student_grade) + ")</td></tr>" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Parent</td><td>" + esc(parent_name) + " \u2014 " + esc(parent_phone) + " \u2014 " + esc(parent_email) + "</td></tr>" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Total tuition</td><td>$" + (tuitionCents/100).toLocaleString() + "</td></tr>" +

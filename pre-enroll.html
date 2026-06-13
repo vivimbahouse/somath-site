@@ -229,6 +229,15 @@
               </select>
             </div>
           </div>
+
+          <div class="pe-field" id="pe-day-wrap" style="display:none;margin-top:14px;">
+            <label for="pe-day">Pick your weekly day</label>
+            <select id="pe-day" name="day">
+              <option value="">Select a day…</option>
+            </select>
+            <span class="hint">Fall courses run once a week. Choose which of the two available days you'd like to attend.</span>
+          </div>
+
           <p class="pe-selected" id="pe-selected" style="display:none;margin-top:14px;"></p>
         </section>
 
@@ -403,6 +412,52 @@
         courseSel.disabled = false;
       }
 
+      // ---- Day-of-week picker (Fall only, only when course has "X or Y" pattern) ----
+      const dayWrap = document.getElementById("pe-day-wrap");
+      const daySel = document.getElementById("pe-day");
+      const DAY_LABELS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday" };
+
+      function parseDayChoices(timeString) {
+        // Returns ["Mon", "Wed"] for "Mon or Wed 3:30–5:00 PM", or [] when only one day.
+        const m = timeString.match(/^(Mon|Tue|Wed|Thu|Fri)\s+or\s+(Mon|Tue|Wed|Thu|Fri)\b/);
+        return m ? [m[1], m[2]] : [];
+      }
+
+      function refreshDayPicker() {
+        const tid = termSel.value;
+        const cid = courseSel.value;
+        if (tid !== "fall" || !cid) {
+          dayWrap.style.display = "none";
+          daySel.required = false;
+          daySel.value = "";
+          return;
+        }
+        const choices = parseDayChoices(COURSE_TIMES.fall[cid] || "");
+        if (choices.length !== 2) {
+          // Single day (e.g., "Fri"), no choice needed.
+          dayWrap.style.display = "none";
+          daySel.required = false;
+          daySel.value = "";
+          return;
+        }
+        const prev = daySel.value;
+        daySel.innerHTML = "";
+        const opt0 = document.createElement("option");
+        opt0.value = "";
+        opt0.textContent = "Select a day…";
+        daySel.appendChild(opt0);
+        choices.forEach(d => {
+          const opt = document.createElement("option");
+          opt.value = d;
+          opt.textContent = DAY_LABELS[d];
+          daySel.appendChild(opt);
+        });
+        if (choices.includes(prev)) daySel.value = prev;
+        daySel.required = true;
+        dayWrap.style.display = "flex";
+      }
+      daySel.addEventListener("change", updateSummary);
+
       function updateSummary() {
         const tid = termSel.value;
         const cid = courseSel.value;
@@ -413,7 +468,11 @@
         }
         const c = COURSES[cid];
         const t = TERMS[tid];
-        const time = COURSE_TIMES[tid][cid];
+        let time = COURSE_TIMES[tid][cid];
+        // If Fall and a specific day is chosen, replace "X or Y" with the chosen day in the summary.
+        if (tid === "fall" && daySel.value) {
+          time = time.replace(/^(Mon|Tue|Wed|Thu|Fri)\s+or\s+(Mon|Tue|Wed|Thu|Fri)\b/, daySel.value);
+        }
         const tuition = tuitionFor(cid, tid);
         const balance = tuition - 300;
         selectedSummary.style.display = "block";
@@ -426,10 +485,14 @@
 
       termSel.addEventListener("change", () => {
         populateCourses(termSel.value);
+        refreshDayPicker();
         updateSummary();
         applyPrefillSelection();
       });
-      courseSel.addEventListener("change", updateSummary);
+      courseSel.addEventListener("change", () => {
+        refreshDayPicker();
+        updateSummary();
+      });
 
       // Pre-select from URL ?course=…&term=…
       function applyPrefillSelection() {
@@ -442,6 +505,11 @@
         }
         if (c && COURSES[c] && courseSel.querySelector(`option[value="${c}"]`)) {
           courseSel.value = c;
+        }
+        refreshDayPicker();
+        const d = params.get("day");
+        if (d && daySel.querySelector(`option[value="${d}"]`)) {
+          daySel.value = d;
         }
         updateSummary();
       }
@@ -468,6 +536,7 @@
         const payload = {
           term: termSel.value,
           course: courseSel.value,
+          day: daySel.value || "",
           student_name: document.getElementById("pe-student-name").value.trim(),
           student_grade: document.getElementById("pe-student-grade").value,
           parent_name: document.getElementById("pe-parent-name").value.trim(),
@@ -479,6 +548,7 @@
 
         // Light client-side validation
         if (!payload.term || !payload.course) return showError("Please select a term and course.");
+        if (daySel.required && !payload.day) return showError("Please pick which day of the week you'd like to attend.");
         if (!payload.student_name) return showError("Student name is required.");
         if (!payload.student_grade) return showError("Student grade is required.");
         if (!payload.parent_name) return showError("Parent name is required.");
