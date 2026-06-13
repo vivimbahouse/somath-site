@@ -371,7 +371,7 @@
           "pre-calculus":                "Fri 8:00–10:00 PM"
         },
         weekends: {
-          "little-newtons":              "Sun 10:00–11:30 AM",
+          "little-newtons":              "Sat or Sun 10:00–11:30 AM",
           "kid-einsteins-a":             "Sat 9:00–11:00 AM",
           "kid-einsteins-b":             "Sat 11:00 AM–1:00 PM",
           "young-fermats-prealgebra":    "Sat 3:00–5:00 PM",
@@ -457,24 +457,24 @@
       // ---- Day-of-week picker (Fall only, only when course has "X or Y" pattern) ----
       const dayWrap = document.getElementById("pe-day-wrap");
       const daySel = document.getElementById("pe-day");
-      const DAY_LABELS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday" };
+      const DAY_LABELS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday", Sat: "Saturday", Sun: "Sunday" };
 
       function parseDayChoices(timeString) {
-        // Returns { days: ["Mon", "Wed"], time: "3:30–5:00 PM" } or null.
-        const m = timeString.match(/^(Mon|Tue|Wed|Thu|Fri)\s+or\s+(Mon|Tue|Wed|Thu|Fri)\s+(.+)$/);
+        // Returns { days: ["Mon", "Wed"], time: "3:30–5:00 PM" } or null. Supports weekday and weekend choices.
+        const m = timeString.match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+or\s+(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(.+)$/);
         return m ? { days: [m[1], m[2]], time: m[3].trim() } : null;
       }
 
       function refreshDayPicker() {
         const tid = termSel.value;
         const cid = courseSel.value;
-        if (tid !== "fall" || !cid) {
+        if (!(tid === "fall" || tid === "weekends") || !cid) {
           dayWrap.style.display = "none";
           daySel.required = false;
           daySel.value = "";
           return;
         }
-        const parsed = parseDayChoices(COURSE_TIMES.fall[cid] || "");
+        const parsed = parseDayChoices((COURSE_TIMES[tid] && COURSE_TIMES[tid][cid]) || "");
         if (!parsed) {
           // Single day (e.g., "Fri"), no choice needed.
           dayWrap.style.display = "none";
@@ -511,9 +511,9 @@
         const c = COURSES[cid];
         const t = TERMS[tid];
         let time = COURSE_TIMES[tid][cid];
-        // If Fall and a specific day is chosen, replace "X or Y" with the chosen day in the summary.
-        if (tid === "fall" && daySel.value) {
-          time = time.replace(/^(Mon|Tue|Wed|Thu|Fri)\s+or\s+(Mon|Tue|Wed|Thu|Fri)\b/, daySel.value);
+        // If a specific day is chosen, replace "X or Y" with the chosen day in the summary.
+        if ((tid === "fall" || tid === "weekends") && daySel.value) {
+          time = time.replace(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+or\s+(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/, daySel.value);
         }
         const tuition = tuitionFor(cid, tid);
         const balance = tuition - 300;

@@ -380,11 +380,15 @@ var PRE_ENROLL_TERMS = {
 };
 // Weekends offers a subset of courses with course-specific minutes and a fixed weekday label.
 var WEEKENDS_OFFERINGS = {
-  "little-newtons":               { mins: 90,  dayLabel: "Sundays",   time: "10:00\u201311:30 AM" },
+  // dayLabel is the FIXED label for single-day courses; null when course offers a choice (see WEEKENDS_DAY_CHOICES).
+  "little-newtons":               { mins: 90,  dayLabel: null,        time: "10:00\u201311:30 AM" },
   "kid-einsteins-a":              { mins: 120, dayLabel: "Saturdays", time: "9:00\u201311:00 AM" },
   "kid-einsteins-b":              { mins: 120, dayLabel: "Saturdays", time: "11:00 AM\u20131:00 PM" },
   "young-fermats-prealgebra":     { mins: 120, dayLabel: "Saturdays", time: "3:00\u20135:00 PM" },
   "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Sundays",   time: "3:00\u20135:00 PM" }
+};
+var WEEKENDS_DAY_CHOICES = {
+  "little-newtons": ["Sat", "Sun"]
 };
 // Fall day choices per course (key omitted = no choice / single day).
 var FALL_DAY_CHOICES = {
@@ -395,7 +399,7 @@ var FALL_DAY_CHOICES = {
   "young-fermats-algebra-ignite": ["Mon", "Wed"],
   "young-fermats-geometry":       ["Tue", "Thu"]
 };
-var DAY_LABEL = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday" };
+var DAY_LABEL = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday", Sat: "Saturday", Sun: "Sunday" };
 function computeTuitionCents(courseId, termId) {
   const c = PRE_ENROLL_COURSES[courseId];
   const t = PRE_ENROLL_TERMS[termId];
@@ -431,8 +435,10 @@ async function handlePreEnroll(request, env) {
   if (term === "weekends" && !WEEKENDS_OFFERINGS[course]) {
     return jsonResponse({ ok: false, error: "course_not_offered_on_weekends" }, 400);
   }
-  // Fall-only day-of-week validation: if the course has two possible days, exactly one must be chosen.
-  const dayChoices = (term === "fall") ? (FALL_DAY_CHOICES[course] || null) : null;
+  // Day-of-week validation: Fall and Weekends courses may offer two day options.
+  let dayChoices = null;
+  if (term === "fall") dayChoices = FALL_DAY_CHOICES[course] || null;
+  else if (term === "weekends") dayChoices = WEEKENDS_DAY_CHOICES[course] || null;
   if (dayChoices && (!day || !dayChoices.includes(day))) {
     return jsonResponse({ ok: false, error: "invalid_day" }, 400);
   }
@@ -457,7 +463,7 @@ async function handlePreEnroll(request, env) {
   const successUrl = origin + "/pre-enroll-success?session_id={CHECKOUT_SESSION_ID}";
   const cancelUrl = origin + "/pre-enroll?course=" + encodeURIComponent(course) + "&term=" + encodeURIComponent(term);
 
-  // Day label for receipts: Fall picks Mon/Wed etc., Weekends is fixed (Sat/Sun) per course.
+  // Day label for receipts: if a day was chosen, use it. Otherwise fall back to the course's fixed dayLabel.
   let dayLabel = "";
   if (dayChoices && day) dayLabel = DAY_LABEL[day] + "s";
   else if (term === "weekends") dayLabel = (WEEKENDS_OFFERINGS[course] && WEEKENDS_OFFERINGS[course].dayLabel) || "";
