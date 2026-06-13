@@ -418,9 +418,9 @@
       const DAY_LABELS = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday" };
 
       function parseDayChoices(timeString) {
-        // Returns ["Mon", "Wed"] for "Mon or Wed 3:30–5:00 PM", or [] when only one day.
-        const m = timeString.match(/^(Mon|Tue|Wed|Thu|Fri)\s+or\s+(Mon|Tue|Wed|Thu|Fri)\b/);
-        return m ? [m[1], m[2]] : [];
+        // Returns { days: ["Mon", "Wed"], time: "3:30–5:00 PM" } or null.
+        const m = timeString.match(/^(Mon|Tue|Wed|Thu|Fri)\s+or\s+(Mon|Tue|Wed|Thu|Fri)\s+(.+)$/);
+        return m ? { days: [m[1], m[2]], time: m[3].trim() } : null;
       }
 
       function refreshDayPicker() {
@@ -432,8 +432,8 @@
           daySel.value = "";
           return;
         }
-        const choices = parseDayChoices(COURSE_TIMES.fall[cid] || "");
-        if (choices.length !== 2) {
+        const parsed = parseDayChoices(COURSE_TIMES.fall[cid] || "");
+        if (!parsed) {
           // Single day (e.g., "Fri"), no choice needed.
           dayWrap.style.display = "none";
           daySel.required = false;
@@ -446,13 +446,13 @@
         opt0.value = "";
         opt0.textContent = "Select a day…";
         daySel.appendChild(opt0);
-        choices.forEach(d => {
+        parsed.days.forEach(d => {
           const opt = document.createElement("option");
           opt.value = d;
-          opt.textContent = DAY_LABELS[d];
+          opt.textContent = `${DAY_LABELS[d]}s · ${parsed.time}`;
           daySel.appendChild(opt);
         });
-        if (choices.includes(prev)) daySel.value = prev;
+        if (parsed.days.includes(prev)) daySel.value = prev;
         daySel.required = true;
         dayWrap.style.display = "flex";
       }
