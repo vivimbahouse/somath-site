@@ -373,9 +373,18 @@ var PRE_ENROLL_COURSES = {
   "pre-calculus":                 { title: "Pre-Calculus",                  grade: "Grades 10\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 }
 };
 var PRE_ENROLL_TERMS = {
-  july:   { label: "July 2026",   dateRange: "June 29 \u2013 August 1, 2026",     weeks: 5 },
-  august: { label: "August 2026", dateRange: "August 3 \u2013 September 4, 2026", weeks: 5 },
-  fall:   { label: "Fall 2026",   dateRange: "August 31 \u2013 December 20, 2026", weeks: 16 }
+  july:     { label: "July 2026",     dateRange: "June 29 \u2013 August 1, 2026",      weeks: 5 },
+  august:   { label: "August 2026",   dateRange: "August 3 \u2013 September 4, 2026",  weeks: 5 },
+  fall:     { label: "Fall 2026",     dateRange: "August 31 \u2013 December 20, 2026", weeks: 16 },
+  weekends: { label: "Weekends 2026", dateRange: "June 20 \u2013 October 4, 2026",      weeks: 16 }
+};
+// Weekends offers a subset of courses with course-specific minutes and a fixed weekday label.
+var WEEKENDS_OFFERINGS = {
+  "little-newtons":               { mins: 90,  dayLabel: "Sundays",   time: "10:00\u201311:30 AM" },
+  "kid-einsteins-a":              { mins: 120, dayLabel: "Saturdays", time: "9:00\u201311:00 AM" },
+  "kid-einsteins-b":              { mins: 120, dayLabel: "Saturdays", time: "11:00 AM\u20131:00 PM" },
+  "young-fermats-prealgebra":     { mins: 120, dayLabel: "Saturdays", time: "3:00\u20135:00 PM" },
+  "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Sundays",   time: "3:00\u20135:00 PM" }
 };
 // Fall day choices per course (key omitted = no choice / single day).
 var FALL_DAY_CHOICES = {
@@ -391,8 +400,19 @@ function computeTuitionCents(courseId, termId) {
   const c = PRE_ENROLL_COURSES[courseId];
   const t = PRE_ENROLL_TERMS[termId];
   if (!c || !t) return null;
-  const mins = termId === "fall" ? c.fallMins : c.summerMins;
-  const perWeek = termId === "fall" ? c.fallPerWeek : c.summerPerWeek;
+  let mins, perWeek;
+  if (termId === "weekends") {
+    const w = WEEKENDS_OFFERINGS[courseId];
+    if (!w) return null;
+    mins = w.mins;
+    perWeek = 1;
+  } else if (termId === "fall") {
+    mins = c.fallMins;
+    perWeek = c.fallPerWeek;
+  } else {
+    mins = c.summerMins;
+    perWeek = c.summerPerWeek;
+  }
   const hours = (mins * perWeek * t.weeks) / 60;
   return Math.round(hours * 60) * 100; // $60/hr, in cents
 }
@@ -407,6 +427,10 @@ async function handlePreEnroll(request, env) {
 
   if (!PRE_ENROLL_TERMS[term]) return jsonResponse({ ok: false, error: "invalid_term" }, 400);
   if (!PRE_ENROLL_COURSES[course]) return jsonResponse({ ok: false, error: "invalid_course" }, 400);
+  // Weekends term: validate the course is actually offered on weekends.
+  if (term === "weekends" && !WEEKENDS_OFFERINGS[course]) {
+    return jsonResponse({ ok: false, error: "course_not_offered_on_weekends" }, 400);
+  }
   // Fall-only day-of-week validation: if the course has two possible days, exactly one must be chosen.
   const dayChoices = (term === "fall") ? (FALL_DAY_CHOICES[course] || null) : null;
   if (dayChoices && (!day || !dayChoices.includes(day))) {
@@ -433,8 +457,11 @@ async function handlePreEnroll(request, env) {
   const successUrl = origin + "/pre-enroll-success?session_id={CHECKOUT_SESSION_ID}";
   const cancelUrl = origin + "/pre-enroll?course=" + encodeURIComponent(course) + "&term=" + encodeURIComponent(term);
 
-  const dayLabel = (dayChoices && day) ? DAY_LABEL[day] : "";
-  const productName = "Pre-Enroll Deposit \u2014 " + c.title + " (" + t.label + (dayLabel ? ", " + dayLabel + "s" : "") + ")";
+  // Day label for receipts: Fall picks Mon/Wed etc., Weekends is fixed (Sat/Sun) per course.
+  let dayLabel = "";
+  if (dayChoices && day) dayLabel = DAY_LABEL[day] + "s";
+  else if (term === "weekends") dayLabel = (WEEKENDS_OFFERINGS[course] && WEEKENDS_OFFERINGS[course].dayLabel) || "";
+  const productName = "Pre-Enroll Deposit \u2014 " + c.title + " (" + t.label + (dayLabel ? ", " + dayLabel : "") + ")";
   const productDesc = "Spot-reservation deposit. $300 credited toward total tuition ($" + (tuitionCents/100).toLocaleString() + "). Balance due 2 days before course begins.";
 
   // Build x-www-form-urlencoded body for Stripe API (Workers can't use JSON for Stripe)
@@ -467,6 +494,9 @@ async function handlePreEnroll(request, env) {
   params.append("metadata[parent_email]", parent_email);
   if (dayLabel) {
     params.append("metadata[weekly_day]", dayLabel);
+  }
+  if (term === "weekends" && WEEKENDS_OFFERINGS[course]) {
+    params.append("metadata[weekend_time]", WEEKENDS_OFFERINGS[course].time);
   }
   params.append("metadata[tuition_total_cents]", String(tuitionCents));
   params.append("metadata[balance_due_cents]", String(tuitionCents - depositCents));
@@ -506,7 +536,7 @@ async function handlePreEnroll(request, env) {
       "<table style=\"border-collapse:collapse;font-size:14px\">" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Course</td><td><b>" + esc(c.title) + "</b> (" + esc(c.grade) + ")</td></tr>" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Term</td><td>" + esc(t.label) + " \u2014 " + esc(t.dateRange) + "</td></tr>" +
-      (dayLabel ? "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Weekly day</td><td><b>" + esc(dayLabel) + "s</b></td></tr>" : "") +
+      (dayLabel ? "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Weekly day</td><td><b>" + esc(dayLabel) + "</b></td></tr>" : "") +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Student</td><td>" + esc(student_name) + " (Grade " + esc(student_grade) + ")</td></tr>" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Parent</td><td>" + esc(parent_name) + " \u2014 " + esc(parent_phone) + " \u2014 " + esc(parent_email) + "</td></tr>" +
       "<tr><td style=\"padding:4px 12px 4px 0;color:#6b7a72\">Total tuition</td><td>$" + (tuitionCents/100).toLocaleString() + "</td></tr>" +

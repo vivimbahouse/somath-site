@@ -303,6 +303,10 @@
           Fall 2026
           <span class="crec-tab-sub">16-week semester</span>
         </button>
+        <button class="crec-tab" role="tab" aria-selected="false" data-term="weekends">
+          Weekends 2026
+          <span class="crec-tab-sub">Sat &amp; Sun, 16 weeks</span>
+        </button>
       </div>
 
       <div id="crec-term-head" class="crec-term-head"></div>
@@ -701,6 +705,22 @@
             "sat-math":                    { days: "Friday",     time: "6:00 – 8:00 PM", perWeek: 1 },
             "pre-calculus":                { days: "Friday",     time: "8:00 – 10:00 PM", perWeek: 1 }
           }
+        },
+        "weekends": {
+          label: "Weekends 2026",
+          dateRange: "June 20 – October 4, 2026",
+          cadence: "16 weeks · 1 class/week · Saturdays or Sundays",
+          tuition: "$60/hr standard rate",
+          summary: "Weekend track for families whose weekdays are too packed. Same 16-meeting rolling syllabus as Fall — a student can join at any meeting and continue into the next term.",
+          link: "/weekends-schedule",
+          faq: FALL_FAQ,
+          courses: {
+            "little-newtons":              { days: "Sundays",   time: "10:00 – 11:30 AM", perWeek: 1 },
+            "kid-einsteins-a":             { days: "Saturdays", time: "9:00 – 11:00 AM",  perWeek: 1 },
+            "kid-einsteins-b":             { days: "Saturdays", time: "11:00 AM – 1:00 PM", perWeek: 1 },
+            "young-fermats-prealgebra":    { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },
+            "young-fermats-algebra-ignite":{ days: "Sundays",   time: "3:00 – 5:00 PM",   perWeek: 1 }
+          }
         }
       };
 
@@ -787,7 +807,8 @@
         document.body.classList.add("crec-detail-open");
 
         // Pick fall override syllabus if available for fall term
-        const syllabus = (activeTerm === "fall" && c.fallSyllabusOverride) ? c.fallSyllabusOverride : c.syllabus;
+        const useRollingSyllabus = (activeTerm === "fall" || activeTerm === "weekends");
+        const syllabus = (useRollingSyllabus && c.fallSyllabusOverride) ? c.fallSyllabusOverride : c.syllabus;
         const perWeek = sched.perWeek || 1;
         // Parse session length in minutes from the time string (e.g. "3:00 – 4:30 PM" → 90 min)
         const sessionMin = (() => {
@@ -799,7 +820,7 @@
           if (end < start) end += 12*60;
           return end - start;
         })();
-        const weeks = (activeTerm === "fall") ? 16 : 5;
+        const weeks = (activeTerm === "fall" || activeTerm === "weekends") ? 16 : 5;
         const totalSessions = perWeek * weeks;
         const totalHours = (totalSessions * sessionMin) / 60;
         const sessionCount = `${totalSessions} sessions · ${sessionMin} min each · ${perWeek}×/week`;
