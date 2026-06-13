@@ -26,6 +26,7 @@
               <a class="nav__dropdown-item" href="/summer-schedule" role="menuitem">July 2026</a>
               <a class="nav__dropdown-item" href="/august-schedule" role="menuitem">August 2026</a>
               <a class="nav__dropdown-item" href="/fall-schedule" role="menuitem">Fall 2026</a>
+              <a class="nav__dropdown-item" href="/weekends-schedule" role="menuitem">Weekends 2026</a>
             </div>
           </div>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
@@ -42,6 +43,7 @@
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule &mdash; July 2026</a>
         <a class="nav__mobile-link ${page === "schedule-august" ? "is-active" : ""}" href="/august-schedule">Schedule &mdash; August 2026</a>
         <a class="nav__mobile-link ${page === "schedule-fall" ? "is-active" : ""}" href="/fall-schedule">Schedule &mdash; Fall 2026</a>
+        <a class="nav__mobile-link ${page === "schedule-weekends" ? "is-active" : ""}" href="/weekends-schedule">Schedule &mdash; Weekends 2026</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
         <a class="nav__mobile-link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
