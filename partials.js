@@ -4,8 +4,8 @@
 
   const navHTML = `
     <div class="announce">
-      Summer programs now enrolling — get ahead, catch up, or prep for SHSAT, SAT &amp; AP.
-      <a href="/evaluation">Book a free evaluation →</a>
+      New: SOMATH Membership — start any week, cancel anytime, from $369/mo.
+      <a href="/membership">See plans →</a>
     </div>
     <header class="nav">
       <div class="nav__inner">
@@ -19,6 +19,7 @@
           </div>
         </div>
         <nav class="nav__links" aria-label="Primary">
+          <a class="nav__link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
           <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
           <div class="nav__dropdown ${page === "schedule" ? "is-active" : ""}">
             <button type="button" class="nav__link nav__dropdown-toggle ${page === "schedule" ? "is-active" : ""}" aria-expanded="false" aria-haspopup="true">Schedule<span class="nav__dropdown-caret" aria-hidden="true">▾</span></button>
@@ -31,7 +32,7 @@
           </div>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
-          <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
+          <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit</a>
         </nav>
         <a href="/evaluation" class="nav__cta btn btn--primary">Book Free Evaluation</a>
         <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -39,6 +40,7 @@
         </button>
       </div>
       <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
+        <a class="nav__mobile-link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
         <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/summer-schedule">Schedule &mdash; July 2026</a>
         <a class="nav__mobile-link ${page === "schedule-august" ? "is-active" : ""}" href="/august-schedule">Schedule &mdash; August 2026</a>
@@ -64,11 +66,13 @@
           </p>
         </div>
         <div class="footer__col">
-          <h4>Programs</h4>
+          <h4>Enroll</h4>
           <ul>
-            <li><a href="/programs#little-newtons">Little Newtons (1–5)</a></li>
-            <li><a href="/programs#kid-einsteins">Kid Einsteins (6–8)</a></li>
-            <li><a href="/programs#young-fermats">Young Fermats (8+)</a></li>
+            <li><a href="/membership"><strong>Membership — monthly</strong></a></li>
+            <li><a href="/fall-schedule">Fall term — 16 weeks</a></li>
+            <li><a href="/programs#little-newtons">Little Newtons (K–2)</a></li>
+            <li><a href="/programs#kid-einsteins">Kid Einsteins (3–5)</a></li>
+            <li><a href="/programs#young-fermats">Young Fermats (5–8)</a></li>
             <li><a href="/programs#shsat-prep">SHSAT Prep (7–8)</a></li>
             <li><a href="/programs#ap-courses">AP Courses (9–12)</a></li>
             <li><a href="/programs#sat-prep">SAT Prep (10–12)</a></li>
