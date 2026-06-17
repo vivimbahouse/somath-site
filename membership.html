@@ -77,6 +77,8 @@
       .tier-card__badge { position: absolute; top: -12px; left: 24px; background: var(--gold); color: var(--green); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; padding: 5px 12px; border-radius: 4px; }
       .tier-card__grade { display: inline-block; background: var(--green); color: var(--gold-soft); font-size: 0.7rem; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700; padding: 5px 12px; border-radius: 4px; margin: 0 0 14px; align-self: flex-start; }
       .tier-card__name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.6rem; font-weight: 500; color: var(--green); margin: 0 0 4px; line-height: 1.15; }
+      .tier-card__name-line1 { display: block; }
+      .tier-card__name-line2 { display: block; }
       .tier-card__cadence { color: var(--ink-mute); font-size: 0.92rem; margin: 0 0 16px; }
       .tier-card__price { display: flex; align-items: baseline; gap: 6px; margin: 0 0 6px; }
       .tier-card__price-num { font-size: 2.4rem; color: var(--green); font-weight: 700; font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1; }
@@ -151,9 +153,9 @@
         { "@type": "Offer", "name": "Little Newtons Membership (Grades 1-2)", "price": "369", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "369", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
         { "@type": "Offer", "name": "Kid Einsteins A Membership (Grades 3-4)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
         { "@type": "Offer", "name": "Kid Einsteins B Membership (Grades 4-5)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Young Fermats Pre-Algebra Membership (Grades 5-6)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Young Fermats Algebra Ignite Membership (Grades 6-7)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Young Fermats Geometry Membership (Grades 7-8)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
+        { "@type": "Offer", "name": "Young Fermats — Pre-Algebra Membership (Grades 5-6)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
+        { "@type": "Offer", "name": "Young Fermats — Algebra I Membership (Grades 6-7)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
+        { "@type": "Offer", "name": "Young Fermats — Geometry & Trig Membership (Grades 7-8)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
         { "@type": "Offer", "name": "SHSAT Prep Membership (Grades 7-8)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
         { "@type": "Offer", "name": "AP & SAT Prep Membership (High School)", "price": "529", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "529", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } }
       ]
@@ -281,7 +283,7 @@
 
           <article class="tier-card">
             <span class="tier-card__grade">Grades 5&ndash;6</span>
-            <h3 class="tier-card__name">Young Fermats &mdash; Pre-Algebra</h3>
+            <h3 class="tier-card__name"><span class="tier-card__name-line1">Young Fermats</span><span class="tier-card__name-line2">Pre-Algebra</span></h3>
             <p class="tier-card__cadence">4 sessions/month &middot; 120 min each &middot; 1&times;/week</p>
             <div class="tier-card__price">
               <span class="tier-card__price-num">$489</span>
@@ -299,7 +301,7 @@
 
           <article class="tier-card">
             <span class="tier-card__grade">Grades 6&ndash;7</span>
-            <h3 class="tier-card__name">Young Fermats &mdash; Algebra Ignite</h3>
+            <h3 class="tier-card__name"><span class="tier-card__name-line1">Young Fermats</span><span class="tier-card__name-line2">Algebra I</span></h3>
             <p class="tier-card__cadence">4 sessions/month &middot; 120 min each &middot; 1&times;/week</p>
             <div class="tier-card__price">
               <span class="tier-card__price-num">$489</span>
@@ -317,7 +319,7 @@
 
           <article class="tier-card">
             <span class="tier-card__grade">Grades 7&ndash;8</span>
-            <h3 class="tier-card__name">Young Fermats &mdash; Geometry</h3>
+            <h3 class="tier-card__name"><span class="tier-card__name-line1">Young Fermats</span><span class="tier-card__name-line2">Geometry &amp; Trig</span></h3>
             <p class="tier-card__cadence">4 sessions/month &middot; 120 min each &middot; 1&times;/week</p>
             <div class="tier-card__price">
               <span class="tier-card__price-num">$489</span>
@@ -554,9 +556,9 @@
               <option value="little-newtons">Little Newtons (Grades 1–2) &mdash; $369/month</option>
               <option value="kid-einsteins-a">Kid Einsteins A (Grades 3–4) &mdash; $489/month</option>
               <option value="kid-einsteins-b">Kid Einsteins B (Grades 4–5) &mdash; $489/month</option>
-              <option value="young-fermats-prealgebra">Young Fermats Pre-Algebra (Grades 5–6) &mdash; $489/month</option>
-              <option value="young-fermats-algebra">Young Fermats Algebra Ignite (Grades 6–7) &mdash; $489/month</option>
-              <option value="young-fermats-geometry">Young Fermats Geometry (Grades 7–8) &mdash; $489/month</option>
+              <option value="young-fermats-prealgebra">Young Fermats — Pre-Algebra (Grades 5–6) &mdash; $489/month</option>
+              <option value="young-fermats-algebra">Young Fermats — Algebra I (Grades 6–7) &mdash; $489/month</option>
+              <option value="young-fermats-geometry">Young Fermats — Geometry & Trig (Grades 7–8) &mdash; $489/month</option>
               <option value="shsat">SHSAT Prep (Grades 7–8) &mdash; $489/month</option>
               <option value="ap-sat">AP &amp; SAT Prep (High School) &mdash; $529/month</option>
               <option value="unsure">Not sure yet — recommend a tier for me</option>
