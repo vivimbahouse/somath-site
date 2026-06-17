@@ -22,7 +22,6 @@
           <a class="nav__link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
           <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
           <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
-          <a class="nav__link ${page === "shsat-prep" ? "is-active" : ""}" href="/shsat-prep">SHSAT Prep</a>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
           <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit</a>
@@ -36,7 +35,6 @@
         <a class="nav__mobile-link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
         <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
-        <a class="nav__mobile-link ${page === "shsat-prep" ? "is-active" : ""}" href="/shsat-prep">SHSAT Prep</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
         <a class="nav__mobile-link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
