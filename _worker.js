@@ -663,6 +663,15 @@ var worker_default = {
     if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
+    const SCHEDULE_REDIRECTS = {
+      "/summer-schedule": "/schedule",
+      "/august-schedule": "/schedule",
+      "/fall-schedule": "/schedule",
+      "/weekends-schedule": "/schedule"
+    };
+    if (SCHEDULE_REDIRECTS[url.pathname]) {
+      return Response.redirect(`https://www.schoolofmath.us${SCHEDULE_REDIRECTS[url.pathname]}`, 301);
+    }
     if (url.pathname.startsWith("/_secure/")) {
       return new Response("Not found", { status: 404 });
     }

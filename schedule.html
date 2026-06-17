@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Class Schedule &mdash; SOMATH Math Tutoring NYC | Start Any Week</title>
+    <meta name="description" content="SOMATH year-round class schedule on the Upper West Side. Choose 1&times;/week or 2&times;/week weekday slots, plus weekend options. Membership-based &mdash; start any week, pause when you travel, cancel with 15 days&rsquo; notice. Grades K&ndash;12 at 226 W 79th St." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/schedule" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SOMATH Class Schedule &mdash; Monthly Math Tutoring NYC" />
+    <meta property="og:description" content="Year-round class schedule on the Upper West Side. 1&times;/week, 2&times;/week, weekend slots. Membership-based, start any week, $60/hr instructors." />
+    <meta property="og:url" content="https://www.schoolofmath.us/schedule" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <style>
+      .sched-hero { background: var(--green); color: var(--cream); padding: 80px 0 56px; }
+      .sched-hero__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+      .sched-hero__eyebrow { color: var(--gold-soft); letter-spacing: 2px; text-transform: uppercase; font-size: 0.78rem; font-weight: 700; margin: 0 0 14px; }
+      .sched-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin: 0 0 18px; line-height: 1.1; color: var(--cream); font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
+      .sched-hero h1 em { color: var(--gold-soft); font-style: italic; }
+      .sched-hero__lede { font-size: 1.15rem; line-height: 1.55; margin: 0 0 24px; color: var(--cream); max-width: 760px; opacity: 0.95; }
+      .sched-hero__chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 26px; }
+      .sched-hero__chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(245,240,230,0.18); border-radius: 999px; font-size: 0.88rem; color: var(--cream); }
+      .sched-hero__chip svg { width: 14px; height: 14px; color: var(--gold-soft); }
+      .sched-hero__cta { display: inline-block; padding: 14px 28px; background: var(--gold); color: var(--green); border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; letter-spacing: 0.3px; }
+      .sched-hero__cta:hover { background: var(--gold-soft); }
+      .sched-hero__cta-secondary { display: inline-block; padding: 14px 24px; color: var(--cream); border: 1.5px solid rgba(245,240,230,0.4); border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 1rem; margin-left: 10px; }
+      .sched-hero__cta-secondary:hover { background: rgba(255,255,255,0.08); }
+
+      .sched-quick { background: #f1ecdf; border-bottom: 1px solid var(--line); padding: 18px 0; position: sticky; top: 0; z-index: 10; }
+      .sched-quick__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+      .sched-quick__label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-right: 4px; }
+      .sched-quick a { padding: 6px 14px; background: var(--cream); border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--green); font-size: 0.92rem; font-weight: 500; }
+      .sched-quick a:hover { background: var(--green); color: var(--cream); border-color: var(--green); }
+
+      .sched-section { padding: 64px 0 48px; }
+      .sched-section__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+      .sched-section__eyebrow { color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.82rem; font-weight: 700; margin: 0 0 8px; }
+      .sched-section h2 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--green); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 500; margin: 0 0 12px; }
+      .sched-section__lede { font-size: 1.05rem; color: var(--ink); line-height: 1.6; margin: 0 0 32px; max-width: 760px; }
+      .sched-section--alt { background: var(--paper); }
+
+      /* Class grid */
+      .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+      .class-card { background: var(--cream); border: 1px solid var(--line); border-radius: 10px; padding: 24px 22px 22px; position: relative; transition: border-color 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; }
+      .class-card:hover { border-color: var(--green); box-shadow: 0 6px 24px -10px rgba(31,61,46,0.18); }
+      .class-card__grade { display: inline-block; padding: 4px 10px; background: var(--green); color: var(--cream); border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; align-self: flex-start; }
+      .class-card__name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.65rem; font-weight: 500; color: var(--green); margin: 0 0 4px; line-height: 1.15; }
+      .class-card__name em { font-style: italic; color: var(--gold); }
+      .class-card__sub { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+      .class-card__meta { display: grid; gap: 8px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+      .class-card__row { display: grid; grid-template-columns: 70px 1fr; gap: 10px; font-size: 0.9rem; }
+      .class-card__row dt { color: var(--ink-soft); font-weight: 500; }
+      .class-card__row dd { margin: 0; color: var(--ink); font-weight: 500; }
+      .class-card__row dd em { color: var(--ink-soft); font-style: italic; font-weight: 400; }
+      .class-card__cta { display: inline-flex; align-items: center; padding: 10px 18px; background: var(--green); color: var(--cream); border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 0.92rem; align-self: flex-start; margin-top: auto; }
+      .class-card__cta:hover { background: #16301f; }
+      .class-card__cta::after { content: "\2192"; margin-left: 6px; }
+
+      /* Cadence band */
+      .cadence-band { background: linear-gradient(160deg, #2c5640 0%, #1f3d2e 55%, #1a2820 100%); color: var(--cream); padding: 56px 0; }
+      .cadence-band__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+      .cadence-band h2 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--cream); font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 500; margin: 0 0 12px; }
+      .cadence-band h2 em { color: var(--gold-soft); font-style: italic; }
+      .cadence-band__lede { font-size: 1.05rem; line-height: 1.6; margin: 0 0 28px; max-width: 720px; color: rgba(245,240,230,0.92); }
+      .cadence-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+      .cadence-tile { background: rgba(255,255,255,0.05); border: 1px solid rgba(245,240,230,0.15); border-radius: 8px; padding: 22px 20px; }
+      .cadence-tile h3 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--gold-soft); font-size: 1.3rem; font-weight: 500; margin: 0 0 10px; }
+      .cadence-tile p { font-size: 0.95rem; line-height: 1.55; margin: 0; color: rgba(245,240,230,0.86); }
+
+      /* SHSAT pointer */
+      .shsat-pointer { background: var(--paper); padding: 48px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .shsat-pointer__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+      .shsat-pointer__text { max-width: 640px; }
+      .shsat-pointer h3 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--green); font-size: 1.6rem; font-weight: 500; margin: 0 0 8px; }
+      .shsat-pointer p { font-size: 1rem; color: var(--ink); line-height: 1.55; margin: 0; }
+      .shsat-pointer__cta { display: inline-block; padding: 12px 24px; background: var(--green); color: var(--cream); border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+      .shsat-pointer__cta:hover { background: #16301f; }
+
+      /* CTA strip */
+      .cta-strip { background: var(--green); color: var(--cream); padding: 56px 0; text-align: center; }
+      .cta-strip__inner { max-width: 760px; margin: 0 auto; padding: 0 var(--gutter); }
+      .cta-strip h2 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--cream); font-size: 2rem; font-weight: 500; margin: 0 0 12px; }
+      .cta-strip p { font-size: 1.05rem; line-height: 1.55; margin: 0 0 26px; color: rgba(245,240,230,0.92); }
+      .cta-strip__btn { display: inline-block; padding: 14px 28px; background: var(--gold); color: var(--green); border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; letter-spacing: 0.3px; }
+      .cta-strip__btn:hover { background: var(--gold-soft); }
+      .cta-strip__btn-secondary { display: inline-block; padding: 14px 24px; color: var(--cream); border: 1.5px solid rgba(245,240,230,0.4); border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 1rem; margin-left: 10px; }
+      .cta-strip__btn-secondary:hover { background: rgba(255,255,255,0.08); }
+
+      @media (max-width: 640px) {
+        .sched-hero { padding: 56px 0 40px; }
+        .sched-hero__cta-secondary { margin-left: 0; margin-top: 10px; }
+        .cta-strip__btn-secondary { margin-left: 0; margin-top: 10px; }
+        .shsat-pointer__inner { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+
+    <!-- JSON-LD Schedule schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "School of Math",
+      "alternateName": "SOMATH",
+      "url": "https://www.schoolofmath.us",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "226 W 79th St, 1st Floor",
+        "addressLocality": "New York",
+        "addressRegion": "NY",
+        "postalCode": "10024",
+        "addressCountry": "US"
+      },
+      "telephone": "+1-646-668-6151",
+      "areaServed": "Upper West Side, Manhattan, NYC",
+      "offers": {
+        "@type": "Offer",
+        "name": "SOMATH Monthly Membership",
+        "description": "Monthly math tutoring membership. Start any week, pause up to 4 weeks/year, cancel with 15 days' notice.",
+        "url": "https://www.schoolofmath.us/membership",
+        "priceCurrency": "USD",
+        "lowPrice": "369",
+        "highPrice": "989"
+      }
+    }
+    </script>
+  </head>
+  <body data-page="schedule">
+    <div id="header-mount"></div>
+
+    <!-- HERO -->
+    <section class="sched-hero">
+      <div class="sched-hero__inner">
+        <p class="sched-hero__eyebrow">Class Schedule &middot; Upper West Side</p>
+        <h1>Every class, every week. <em>Start any week.</em></h1>
+        <p class="sched-hero__lede">
+          SOMATH runs the same weekly schedule year-round. Pick a track, pick a time, and start
+          on the next available date &mdash; not a fixed September enrollment window. Memberships
+          let you attend 1&times;/week or 2&times;/week, weekdays or weekends, and pause or cancel
+          when life shifts. Small in-person groups at <strong>226 W 79th St</strong>.
+        </p>
+        <div class="sched-hero__chips">
+          <span class="sched-hero__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Start any week</span>
+          <span class="sched-hero__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Pause 4 wk/yr</span>
+          <span class="sched-hero__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cancel with 15 days&rsquo; notice</span>
+          <span class="sched-hero__chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Sibling discount</span>
+        </div>
+        <div>
+          <a href="/membership" class="sched-hero__cta">See Membership Plans &rarr;</a>
+          <a href="/evaluation" class="sched-hero__cta-secondary">Book Free Evaluation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK NAV -->
+    <nav class="sched-quick" aria-label="Jump to section">
+      <div class="sched-quick__inner">
+        <span class="sched-quick__label">Jump to:</span>
+        <a href="#cadence">How it works</a>
+        <a href="#weekday-1x">Weekday &middot; 1&times;/wk</a>
+        <a href="#weekday-2x">Weekday &middot; 2&times;/wk</a>
+        <a href="#weekends">Weekends</a>
+        <a href="#high-school">High School</a>
+        <a href="#shsat">SHSAT Prep</a>
+      </div>
+    </nav>
+
+    <!-- HOW IT WORKS -->
+    <section class="cadence-band" id="cadence">
+      <div class="cadence-band__inner">
+        <p class="sched-section__eyebrow" style="color:var(--gold-soft)">How the schedule works</p>
+        <h2>Pick a <em>track</em>, then a <em>cadence</em></h2>
+        <p class="cadence-band__lede">
+          Every track below runs the same week-in, week-out, all year. Choose how often your child
+          attends &mdash; once a week for steady reinforcement, twice a week for faster progress,
+          or weekend slots when weekdays are full. Membership tier is set by your cadence, not the
+          track.
+        </p>
+        <div class="cadence-grid">
+          <div class="cadence-tile">
+            <h3>1&times; / week</h3>
+            <p>One 90- or 120-min class on a weekday or weekend. The default cadence for K&ndash;12 enrichment, AP, and SAT prep.</p>
+          </div>
+          <div class="cadence-tile">
+            <h3>2&times; / week</h3>
+            <p>Two classes a week &mdash; same track, two different day options (e.g. Tue + Thu). For students closing a gap or going deep.</p>
+          </div>
+          <div class="cadence-tile">
+            <h3>Weekends</h3>
+            <p>Saturday or Sunday morning/afternoon slots for K&ndash;8, when weekdays are full of school, sports, or commute.</p>
+          </div>
+          <div class="cadence-tile">
+            <h3>SHSAT Prep</h3>
+            <p>Separate intensive track on its own deadline rhythm. <a href="/shsat-prep" style="color:var(--gold-soft);text-decoration:underline">See SHSAT Prep schedule &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEEKDAY 1x -->
+    <section class="sched-section" id="weekday-1x">
+      <div class="sched-section__inner">
+        <p class="sched-section__eyebrow">Weekday &middot; 1&times;/week</p>
+        <h2>Once-a-week weekday classes, K&ndash;8</h2>
+        <p class="sched-section__lede">
+          The most common cadence for SOMATH families. Each track meets weekly at a fixed time
+          and you pick one of two day options. If you want twice-a-week, just pick both days
+          (jump to <a href="#weekday-2x">2&times;/week</a>).
+        </p>
+        <div class="class-grid">
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades K&ndash;2</span>
+            <h3 class="class-card__name"><em>Little Newtons</em></h3>
+            <p class="class-card__sub">Foundational math: number sense, addition/subtraction with meaning, geometry, word-problem strategy.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Monday <em>or</em> Wednesday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>3:30 &ndash; 5:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>90 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="little-newtons" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 3&ndash;4</span>
+            <h3 class="class-card__name"><em>Kid Einsteins</em> A</h3>
+            <p class="class-card__sub">Multiplication/division fluency, first pass at fractions, word-problem structures, intro geometry.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Tuesday <em>or</em> Thursday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>4:00 &ndash; 6:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 4&ndash;5</span>
+            <h3 class="class-card__name"><em>Kid Einsteins</em> B</h3>
+            <p class="class-card__sub">Bridge to middle school: advanced fractions, decimals, proportionality, pre-algebra readiness.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Monday <em>or</em> Wednesday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>5:00 &ndash; 7:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 5&ndash;6</span>
+            <h3 class="class-card__name"><em>Young Fermats</em> Pre-Algebra</h3>
+            <p class="class-card__sub">Integers, expressions, simple equations, ratio, proportion and percent &mdash; the algebra on-ramp.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Tuesday <em>or</em> Thursday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>6:00 &ndash; 8:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 7&ndash;8</span>
+            <h3 class="class-card__name"><em>Young Fermats</em> Algebra Ignite</h3>
+            <p class="class-card__sub">Linear equations, inequalities, systems, exponents and intro functions.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Monday <em>or</em> Wednesday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>7:00 &ndash; 9:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 7&ndash;8</span>
+            <h3 class="class-card__name"><em>Young Fermats</em> Geometry</h3>
+            <p class="class-card__sub">Angles, area, transformations, 3D solids and applied geometry &mdash; the conceptual approach.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Tuesday <em>or</em> Thursday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>8:00 &ndash; 10:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WEEKDAY 2x -->
+    <section class="sched-section sched-section--alt" id="weekday-2x">
+      <div class="sched-section__inner">
+        <p class="sched-section__eyebrow">Weekday &middot; 2&times;/week</p>
+        <h2>Twice-a-week, same track</h2>
+        <p class="sched-section__lede">
+          Every weekday track offers two day options (e.g. Monday <em>or</em> Wednesday). On the
+          2&times;/week membership, your child attends <strong>both</strong> &mdash; same room,
+          same instructor, same curriculum, doubled cadence. Best for students closing a gap,
+          accelerating ahead, or preparing for a competitive placement.
+        </p>
+        <div class="class-grid">
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 3&ndash;4</span>
+            <h3 class="class-card__name"><em>Kid Einsteins</em> A &middot; 2&times;/wk</h3>
+            <p class="class-card__sub">Two weekly sessions for multiplication/division mastery and fluent word-problem work.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Tuesday <strong>+</strong> Thursday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>4:00 &ndash; 6:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &times; 2 / week</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-2x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 4&ndash;5</span>
+            <h3 class="class-card__name"><em>Kid Einsteins</em> B &middot; 2&times;/wk</h3>
+            <p class="class-card__sub">For students bridging into middle school who need consistent reinforcement.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Monday <strong>+</strong> Wednesday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>5:00 &ndash; 7:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &times; 2 / week</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-2x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 5&ndash;6</span>
+            <h3 class="class-card__name">YF Pre-Algebra &middot; 2&times;/wk</h3>
+            <p class="class-card__sub">Doubled cadence for students accelerating into 7th-grade algebra.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Tuesday <strong>+</strong> Thursday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>6:00 &ndash; 8:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &times; 2 / week</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-2x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 7&ndash;8</span>
+            <h3 class="class-card__name">YF Algebra Ignite &middot; 2&times;/wk</h3>
+            <p class="class-card__sub">For 7th/8th graders building rigor before high-school algebra placement.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Monday <strong>+</strong> Wednesday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>7:00 &ndash; 9:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &times; 2 / week</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-2x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 7&ndash;8</span>
+            <h3 class="class-card__name">YF Geometry &middot; 2&times;/wk</h3>
+            <p class="class-card__sub">Two sessions a week for students taking honors geometry or accelerating into Algebra II.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Tuesday <strong>+</strong> Thursday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>8:00 &ndash; 10:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &times; 2 / week</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-2x" class="class-card__cta">Start membership</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WEEKENDS -->
+    <section class="sched-section" id="weekends">
+      <div class="sched-section__inner">
+        <p class="sched-section__eyebrow">Weekends</p>
+        <h2>Saturday &amp; Sunday slots, K&ndash;8</h2>
+        <p class="sched-section__lede">
+          For families whose weekdays are already full of school, sports, or commute time across
+          town. A focused weekend subset of our most-requested tracks &mdash; same curriculum,
+          same instructors, just a different day. Memberships are billed monthly and the day you
+          pick stays yours.
+        </p>
+        <div class="class-grid">
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades K&ndash;2</span>
+            <h3 class="class-card__name"><em>Little Newtons</em> &middot; Weekend</h3>
+            <p class="class-card__sub">Foundational K&ndash;2 math, Saturday or Sunday morning slot.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Saturday <em>or</em> Sunday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>10:00 &ndash; 11:30 AM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>90 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="little-newtons" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 3&ndash;4</span>
+            <h3 class="class-card__name"><em>Kid Einsteins</em> A &middot; Saturday</h3>
+            <p class="class-card__sub">Saturday-morning Kid Einsteins A for grades 3&ndash;4.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Saturday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>9:00 &ndash; 11:00 AM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 4&ndash;5</span>
+            <h3 class="class-card__name"><em>Kid Einsteins</em> B &middot; Saturday</h3>
+            <p class="class-card__sub">Late-morning Saturday slot for grades 4&ndash;5 bridge.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Saturday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>11:00 AM &ndash; 1:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 5&ndash;6</span>
+            <h3 class="class-card__name">YF Pre-Algebra &middot; Saturday</h3>
+            <p class="class-card__sub">Saturday afternoon Pre-Algebra for grades 5&ndash;6.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Saturday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>3:00 &ndash; 5:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">Grades 7&ndash;8</span>
+            <h3 class="class-card__name">YF Algebra Ignite &middot; Sunday</h3>
+            <p class="class-card__sub">Sunday-afternoon Algebra Ignite for grades 7&ndash;8.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Sunday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>3:00 &ndash; 5:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="core-1x" class="class-card__cta">Start membership</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGH SCHOOL -->
+    <section class="sched-section sched-section--alt" id="high-school">
+      <div class="sched-section__inner">
+        <p class="sched-section__eyebrow">High School</p>
+        <h2>SAT Math, Pre-Calc &amp; AP tracks</h2>
+        <p class="sched-section__lede">
+          High-school tracks run Friday evenings &mdash; the slot most students can protect from
+          after-school activities. AP Calc AB/BC, AP Statistics, and one-on-one honors support are
+          scheduled by request once your evaluation is complete.
+        </p>
+        <div class="class-grid">
+
+          <article class="class-card">
+            <span class="class-card__grade">High School</span>
+            <h3 class="class-card__name">SAT Math</h3>
+            <p class="class-card__sub">Digital SAT math prep for 9th&ndash;11th graders: Heart of Algebra, Problem Solving, Passport to Advanced Math.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Friday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>6:00 &ndash; 8:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="ap-honors" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">High School</span>
+            <h3 class="class-card__name">Pre-Calculus</h3>
+            <p class="class-card__sub">Functions, polynomials, exponentials, logs, trigonometry, sequences &mdash; the AP-Calc on-ramp.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>Friday</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>8:00 &ndash; 10:00 PM</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="ap-honors" class="class-card__cta">Start membership</a>
+          </article>
+
+          <article class="class-card">
+            <span class="class-card__grade">High School</span>
+            <h3 class="class-card__name">AP Calc AB / BC &amp; Stats</h3>
+            <p class="class-card__sub">Scheduled by request after your free evaluation. Small-group and 1-on-1 options. Ask about exam-week intensives.</p>
+            <dl class="class-card__meta">
+              <div class="class-card__row"><dt>Days</dt><dd>By placement</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>By placement</dd></div>
+              <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
+            </dl>
+            <a href="/membership#reserve" data-tier="ap-honors" class="class-card__cta">Start membership</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SHSAT POINTER -->
+    <section class="shsat-pointer" id="shsat">
+      <div class="shsat-pointer__inner">
+        <div class="shsat-pointer__text">
+          <h3>SHSAT Prep runs on its own deadline</h3>
+          <p>
+            The Specialized High Schools test is in late October, so SHSAT Prep is scheduled around
+            it &mdash; not the year-round weekly format. See the full SHSAT calendar, structure,
+            and how membership applies to SHSAT students.
+          </p>
+        </div>
+        <a href="/shsat-prep" class="shsat-pointer__cta">See SHSAT Prep schedule &rarr;</a>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="cta-strip">
+      <div class="cta-strip__inner">
+        <h2>Not sure which track fits?</h2>
+        <p>Book a free 60-minute evaluation with a SOMATH teacher. You'll get a written diagnostic within 48 hours and an honest recommendation &mdash; whether you enroll or not.</p>
+        <div>
+          <a href="/evaluation" class="cta-strip__btn">Book Free Evaluation &rarr;</a>
+          <a href="/membership" class="cta-strip__btn-secondary">See Membership Plans</a>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+    <script>
+      // Pre-select tier on /membership when arriving from a class card
+      document.querySelectorAll('a[href^="/membership#reserve"][data-tier]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { sessionStorage.setItem('somath_preselect_tier', a.getAttribute('data-tier')); }
+          catch (e) { /* no-op */ }
+        });
+      });
+    </script>
+  </body>
+</html>
