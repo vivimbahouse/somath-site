@@ -45,9 +45,10 @@
       .mem-hero__chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
       .mem-hero__chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(245,240,230,0.18); border-radius: 999px; font-size: 0.88rem; color: var(--cream); }
       .mem-hero__chip svg { width: 14px; height: 14px; color: var(--gold-soft); }
-      .mem-hero__cta { display: inline-block; padding: 14px 28px; background: var(--gold); color: var(--green); border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; letter-spacing: 0.3px; }
+      .mem-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+      .mem-hero__cta { display: inline-block; padding: 14px 28px; background: var(--gold); color: var(--green); border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; letter-spacing: 0.3px; text-align: center; }
       .mem-hero__cta:hover { background: var(--gold-soft); }
-      .mem-hero__cta-secondary { display: inline-block; padding: 14px 24px; color: var(--cream); border: 1.5px solid rgba(245,240,230,0.4); border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 1rem; margin-left: 10px; }
+      .mem-hero__cta-secondary { display: inline-block; padding: 14px 24px; color: var(--cream); border: 1.5px solid rgba(245,240,230,0.4); border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 1rem; text-align: center; }
       .mem-hero__cta-secondary:hover { background: rgba(255,255,255,0.06); }
 
       .mem-why { background: var(--cream-2); padding: 56px 0; border-bottom: 1px solid var(--line); }
@@ -165,7 +166,6 @@
         { "@type": "Question", "name": "How does cancellation work?", "acceptedAnswer": { "@type": "Answer", "text": "Cancel anytime with 15 days' written notice. No early-termination fee, no contract lock-in, no hidden charges. You're billed for the remaining 15 days, then it stops." } },
         { "@type": "Question", "name": "Can we pause membership for vacations or summer travel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every membership includes up to 4 weeks of free pause per year. Use it for travel, illness, or a heavy school stretch. Just give us 7 days' notice." } },
         { "@type": "Question", "name": "What is the registration fee?", "acceptedAnswer": { "@type": "Answer", "text": "A one-time $99 registration covers your child's placement test, a written diagnostic, and a personalized learning plan from a SOMATH lead instructor. Plus a $49/year materials fee for workbooks and practice packets." } },
-        { "@type": "Question", "name": "How is this different from the 16-week term plan?", "acceptedAnswer": { "@type": "Answer", "text": "The term plan is for families who want to commit upfront and save 15% by prepaying the full Fall, Spring, or Summer term. Membership is for families who want flexibility — start any week, cancel anytime, pause when needed. Both use the same $60/hr SOMATH instructors and the same curriculum." } },
         { "@type": "Question", "name": "Is there a sibling discount?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. $30 off per month for each additional child on any membership tier." } }
       ]
     }
@@ -185,8 +185,10 @@
           <span class="mem-hero__chip">&#10003; Cancel with 15 days' notice</span>
           <span class="mem-hero__chip">&#10003; Same $60/hr SOMATH rate</span>
         </div>
-        <a href="#reserve" class="mem-hero__cta">Reserve My Spot &rarr;</a>
-        <a href="#tiers" class="mem-hero__cta-secondary">See Pricing</a>
+        <div class="mem-hero__ctas">
+          <a href="#reserve" class="mem-hero__cta">Reserve My Spot &rarr;</a>
+          <a href="#tiers" class="mem-hero__cta-secondary">See Pricing</a>
+        </div>
       </div>
     </section>
 
@@ -537,11 +539,6 @@
         <div class="mem-faq__item">
           <p class="mem-faq__q">Can we pause for vacations or summer travel?</p>
           <p class="mem-faq__a">Yes. Every membership includes up to <strong>4 weeks of free pause per year</strong>. Use it for travel, illness, or a heavy school stretch. Just give us 7 days' notice and we hold your seat.</p>
-        </div>
-
-        <div class="mem-faq__item">
-          <p class="mem-faq__q">What's the difference between membership and the 16-week term plan?</p>
-          <p class="mem-faq__a">Same instructors, same classrooms, same curriculum. The term plan is for families who want to commit upfront and save 15% by prepaying the full Fall, Spring, or Summer. Membership is for families who want flexibility &mdash; start any week, cancel anytime, pause when needed. Pick whichever fits how you actually plan your year.</p>
         </div>
 
         <div class="mem-faq__item">
