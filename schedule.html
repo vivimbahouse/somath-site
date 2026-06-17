@@ -65,6 +65,22 @@
       .sched-section--alt { background: var(--paper); }
 
       /* Class grid */
+      /* Week at a Glance */
+      .grid-overview { background: var(--cream); padding: 56px 0 60px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .grid-overview__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+      .grid-overview h2 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--green); font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 500; margin: 0 0 12px; }
+      .grid-overview__lede { color: var(--ink-soft); font-size: 1rem; line-height: 1.55; margin: 0 0 22px; max-width: 760px; }
+      .grid-overview__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; box-shadow: 0 4px 18px -8px rgba(31,61,46,0.18); }
+      .grid-table { width: 100%; min-width: 760px; border-collapse: collapse; background: var(--paper); }
+      .grid-table th, .grid-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.92rem; vertical-align: middle; }
+      .grid-table th { background: var(--green); color: var(--gold-soft); font-size: 0.74rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
+      .grid-table tr:last-child td { border-bottom: 0; }
+      .grid-table td.day { font-weight: 700; color: var(--green); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; letter-spacing: 0.5px; }
+      .grid-table td.slot { color: var(--green); font-weight: 600; line-height: 1.25; }
+      .grid-table td.slot .slot-time { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.78rem; color: var(--ink-mute); font-weight: 400; margin-top: 2px; letter-spacing: 0; }
+      .grid-overview__foot { color: var(--ink-mute); margin-top: 16px; font-size: 0.9rem; }
+      @media (max-width: 720px) { .grid-table th, .grid-table td { padding: 10px 10px; font-size: 0.85rem; } }
+
       .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
       .class-card { background: var(--cream); border: 1px solid var(--line); border-radius: 10px; padding: 24px 22px 22px; position: relative; transition: border-color 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; }
       .class-card:hover { border-color: var(--green); box-shadow: 0 6px 24px -10px rgba(31,61,46,0.18); }
@@ -181,6 +197,7 @@
       <div class="sched-quick__inner">
         <span class="sched-quick__label">Jump to:</span>
         <a href="#cadence">How it works</a>
+        <a href="#week-grid">Week at a Glance</a>
         <a href="#weekday-1x">Weekday &middot; 1&times;/wk</a>
         <a href="#weekday-2x">Weekday &middot; 2&times;/wk</a>
         <a href="#weekends">Weekends</a>
@@ -218,6 +235,99 @@
             <p>Separate intensive track on its own deadline rhythm. <a href="/shsat-prep" style="color:var(--gold-soft);text-decoration:underline">See SHSAT Prep schedule &rarr;</a></p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- WEEK AT A GLANCE -->
+    <section class="grid-overview" id="week-grid">
+      <div class="grid-overview__inner">
+        <p class="sched-section__eyebrow">Week at a Glance</p>
+        <h2>Every class, every day &mdash; one grid</h2>
+        <p class="grid-overview__lede">All weekday tracks run on two day options at the same time &mdash; pick the one that fits your week. Weekend slots are once-weekly Saturday or Sunday. Same room, same instructor every session.</p>
+        <div class="grid-overview__scroll">
+          <table class="grid-table">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>9 AM</th>
+                <th>10 AM</th>
+                <th>11 AM</th>
+                <th>3 PM</th>
+                <th>4 PM</th>
+                <th>5 PM</th>
+                <th>6 PM</th>
+                <th>7 PM</th>
+                <th>8 PM</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="day">Mon</td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                <td class="slot">Little Newtons<br><span class="slot-time">3:30&ndash;5:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">Kid Einsteins B<br><span class="slot-time">5:00&ndash;7:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Algebra Ignite<br><span class="slot-time">7:00&ndash;9:00</span></td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td class="day">Tue</td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                <td class="slot">Kid Einsteins A<br><span class="slot-time">4:00&ndash;6:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Pre-Algebra<br><span class="slot-time">6:00&ndash;8:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Geometry<br><span class="slot-time">8:00&ndash;10:00</span></td>
+              </tr>
+              <tr>
+                <td class="day">Wed</td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                <td class="slot">Little Newtons<br><span class="slot-time">3:30&ndash;5:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">Kid Einsteins B<br><span class="slot-time">5:00&ndash;7:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Algebra Ignite<br><span class="slot-time">7:00&ndash;9:00</span></td>
+                <td>&mdash;</td>
+              </tr>
+              <tr>
+                <td class="day">Thu</td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                <td class="slot">Kid Einsteins A<br><span class="slot-time">4:00&ndash;6:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Pre-Algebra<br><span class="slot-time">6:00&ndash;8:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Geometry<br><span class="slot-time">8:00&ndash;10:00</span></td>
+              </tr>
+              <tr>
+                <td class="day">Fri</td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                <td class="slot">SHSAT Prep<br><span class="slot-time">4:00&ndash;6:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">SAT Math<br><span class="slot-time">6:00&ndash;8:00</span></td>
+                <td>&mdash;</td>
+                <td class="slot">Pre-Calculus<br><span class="slot-time">8:00&ndash;10:00</span></td>
+              </tr>
+              <tr>
+                <td class="day">Sat</td>
+                <td class="slot">Kid Einsteins A<br><span class="slot-time">9:00&ndash;11:00</span></td>
+                <td class="slot">Little Newtons<br><span class="slot-time">10:00&ndash;11:30</span></td>
+                <td class="slot">Kid Einsteins B<br><span class="slot-time">11:00&ndash;1:00</span></td>
+                <td class="slot">YF Pre-Algebra<br><span class="slot-time">3:00&ndash;5:00</span></td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+              <tr>
+                <td class="day">Sun</td>
+                <td>&mdash;</td>
+                <td class="slot">Little Newtons<br><span class="slot-time">10:00&ndash;11:30</span></td>
+                <td>&mdash;</td>
+                <td class="slot">YF Algebra Ignite<br><span class="slot-time">3:00&ndash;5:00</span></td>
+                <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="grid-overview__foot">All classes at <strong>226 W 79th St, 1st Floor</strong>, Upper West Side, NYC. Make-up sessions can be arranged. Pickup service available at $25 per session.</p>
       </div>
     </section>
 
