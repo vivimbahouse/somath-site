@@ -362,7 +362,7 @@ __name(handleStudentEvaluation, "handleStudentEvaluation");
 
 // ---- Pre-enroll (Stripe Checkout) ----
 var PRE_ENROLL_COURSES = {
-  "little-newtons":               { title: "Little Newtons",                grade: "Grades K\u20132",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+  "little-newtons":               { title: "Little Newtons",                grade: "Grades 1\u20132",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
   "kid-einsteins-a":              { title: "Kid Einsteins A",               grade: "Grades 3\u20134",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "kid-einsteins-b":              { title: "Kid Einsteins B",               grade: "Grade 5",            summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grade 6",        summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
