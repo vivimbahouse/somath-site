@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+      gtag('event', 'conversion', {'send_to': 'AW-18149423892/membership_reservation'});
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Your SOMATH membership spot is reserved &middot; School of Math NYC</title>
+    <meta name="description" content="Thanks for reserving your SOMATH membership spot. We'll reach out within 24 hours to confirm details and schedule your first session." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <style>
+      /* Reservation confirmation — SOMATH forest-green palette */
+      .confirm-section {
+        padding: 64px 20px 80px;
+        background: var(--paper);
+      }
+      .confirm-wrap {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .confirm-card {
+        position: relative;
+        background: linear-gradient(160deg, #2c5640 0%, #1f3d2e 55%, #1a2820 100%);
+        color: #fff;
+        border-radius: var(--radius);
+        padding: 56px 40px 48px;
+        text-align: center;
+        box-shadow:
+          0 1px 0 rgba(255,255,255,0.06) inset,
+          0 18px 48px -18px rgba(26, 40, 32, 0.55),
+          0 6px 18px -8px rgba(26, 40, 32, 0.35);
+        overflow: hidden;
+      }
+      .confirm-card::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent 0%, var(--gold) 35%, var(--gold-soft) 50%, var(--gold) 65%, transparent 100%);
+        opacity: 0.85;
+      }
+      .confirm-check {
+        width: 78px;
+        height: 78px;
+        border-radius: 999px;
+        background: var(--gold);
+        color: #1a2820;
+        margin: 0 auto 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          0 0 0 8px rgba(200, 154, 58, 0.18),
+          0 8px 22px -6px rgba(200, 154, 58, 0.45);
+      }
+      .confirm-check svg { width: 38px; height: 38px; display: block; }
+      .confirm-title {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 1.15;
+        margin: 0 0 14px;
+        letter-spacing: -0.01em;
+      }
+      .confirm-title em { font-style: italic; color: var(--gold-soft); }
+      .confirm-sub {
+        font-size: 16.5px;
+        line-height: 1.55;
+        color: rgba(245, 240, 230, 0.86);
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .confirm-tier-pill {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 8px 16px;
+        background: rgba(200, 154, 58, 0.18);
+        border: 1px solid rgba(200, 154, 58, 0.45);
+        border-radius: 999px;
+        color: var(--gold-soft);
+        font-size: 13.5px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+
+      .confirm-next {
+        margin-top: 28px;
+        background: #fbf7ee;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 28px 28px 24px;
+      }
+      .confirm-next__eyebrow {
+        margin: 0 0 14px;
+        font-size: 12.5px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--green);
+        font-weight: 600;
+      }
+      .confirm-next__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 14px;
+      }
+      .confirm-next__list li {
+        display: grid;
+        grid-template-columns: 22px 1fr;
+        gap: 12px;
+        font-size: 15.5px;
+        line-height: 1.5;
+        color: var(--ink);
+      }
+      .confirm-next__list li svg {
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        color: var(--green);
+        flex-shrink: 0;
+      }
+      .confirm-next__list strong { color: var(--ink); font-weight: 600; }
+
+      .confirm-perks {
+        margin-top: 24px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px 28px;
+      }
+      .confirm-perks h3 {
+        margin: 0 0 12px;
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--ink);
+      }
+      .confirm-perks ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--ink);
+        line-height: 1.55;
+        font-size: 15px;
+      }
+      .confirm-perks li { margin-bottom: 6px; }
+      .confirm-perks li:last-child { margin-bottom: 0; }
+
+      .confirm-ctas {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+      .confirm-ctas .btn { min-width: 200px; }
+
+      .confirm-contact {
+        margin-top: 26px;
+        text-align: center;
+        font-size: 14.5px;
+        color: var(--ink-soft);
+      }
+      .confirm-contact a {
+        color: var(--green);
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .confirm-contact a:hover { text-decoration: underline; }
+
+      @media (max-width: 640px) {
+        .confirm-section { padding: 40px 16px 64px; }
+        .confirm-card { padding: 44px 22px 36px; }
+        .confirm-title { font-size: 30px; }
+        .confirm-sub { font-size: 15.5px; }
+        .confirm-next, .confirm-perks { padding: 22px 20px 18px; }
+        .confirm-ctas .btn { width: 100%; min-width: 0; justify-content: center; }
+      }
+    </style>
+  </head>
+  <body data-page="membership-thanks">
+    <div id="nav-mount"></div>
+
+    <section class="confirm-section">
+      <div class="confirm-wrap">
+
+        <div class="confirm-card" role="status" aria-live="polite">
+          <div class="confirm-check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 12 10 18 20 6"></polyline>
+            </svg>
+          </div>
+          <h1 class="confirm-title">Your spot is <em>reserved.</em></h1>
+          <p class="confirm-sub">
+            Thanks for reserving with SOMATH. We've received your request and will reach out
+            within <strong>24 hours</strong> to confirm your start date, schedule your free
+            60-minute evaluation, and set up monthly billing.
+          </p>
+          <div id="tier-pill-wrap"></div>
+        </div>
+
+        <div class="confirm-next">
+          <p class="confirm-next__eyebrow">What happens next</p>
+          <ul class="confirm-next__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="18" rx="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span><strong>We'll email you within 24 hours</strong> from <em>vivianne@alumni.harvard.edu</em> to confirm tier fit, schedule a free 60-minute evaluation, and outline next steps. Check spam if you don't see it.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span><strong>Free evaluation first.</strong> Before any payment, we'll run a 60-minute evaluation (in-person at 226 W 79th St or on Zoom) and send you a written diagnostic within 48 hours.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+              <span><strong>Billing starts when you say go.</strong> If you decide to enroll, we'll send a secure link to set up monthly auto-pay and the one-time $99 registration. No charge until you confirm.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span><strong>Where we meet.</strong> 226 West 79th Street, 1st Floor (between Broadway &amp; Amsterdam) on the Upper West Side, or on Zoom &mdash; your choice.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="confirm-perks">
+          <h3>What your membership includes</h3>
+          <ul>
+            <li>Same SOMATH instructors, small-group format</li>
+            <li>Pause up to 4 weeks per year, no charge</li>
+            <li>Cancel anytime with 15 days' notice &mdash; no long-term contract</li>
+            <li>1 make-up session per month if life gets in the way</li>
+            <li>Monthly progress note from your child's instructor</li>
+            <li>$30/month sibling discount per additional child</li>
+          </ul>
+        </div>
+
+        <div class="confirm-ctas">
+          <a href="/about" class="btn btn--primary">Meet the teachers</a>
+          <a href="/" class="btn btn--ghost">Back to home</a>
+        </div>
+
+        <p class="confirm-contact">
+          Questions in the meantime? Call
+          <a href="tel:+16466686151">(646) 668-6151</a>
+          or email
+          <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a>.
+        </p>
+
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js"></script>
+    <script>
+      // Personalize the confirmation with the tier the parent selected.
+      (function () {
+        var TIERS = {
+          'little-newtons': 'Little Newtons (K\u20132) \u00b7 $369/month',
+          'core-1x':        'Core 1\u00d7/week (Grades 3\u20138) \u00b7 $489/month',
+          'core-2x':        'Core 2\u00d7/week (Grades 3\u20138) \u00b7 $929/month',
+          'shsat':          'SHSAT Intensive (Grades 7\u20138) \u00b7 $989/month',
+          'ap-honors':      'AP / Honors (Grades 9\u201312) \u00b7 $529/month'
+        };
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var tier = params.get('tier');
+          if (tier && TIERS[tier]) {
+            var wrap = document.getElementById('tier-pill-wrap');
+            if (wrap) {
+              var pill = document.createElement('span');
+              pill.className = 'confirm-tier-pill';
+              pill.textContent = 'Reserved: ' + TIERS[tier];
+              wrap.appendChild(pill);
+            }
+          }
+        } catch (e) { /* no-op */ }
+      })();
+    </script>
+  </body>
+</html>

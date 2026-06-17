@@ -562,6 +562,98 @@ async function handlePreEnroll(request, env) {
 }
 __name(handlePreEnroll, "handlePreEnroll");
 
+async function handleMembershipReservation(request, env) {
+  if (request.method !== "POST") {
+    return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
+  }
+  let body;
+  try {
+    body = await request.json();
+  } catch (e) {
+    return jsonResponse({ ok: false, error: "invalid_json" }, 400);
+  }
+  const parentName = String(body.parentName || "").trim().slice(0, 120);
+  const parentEmail = String(body.parentEmail || "").trim().slice(0, 200);
+  const parentPhone = String(body.parentPhone || "").trim().slice(0, 40);
+  const studentName = String(body.studentName || "").trim().slice(0, 120);
+  const grade = String(body.grade || "").trim().slice(0, 40);
+  const tier = String(body.tier || "").trim().slice(0, 60);
+  const startWhen = String(body.startWhen || "").trim().slice(0, 60);
+  const message = String(body.message || "").trim().slice(0, 2000);
+  const referrer = String(body.referrer || "").trim().slice(0, 300);
+
+  if (!parentName || !isValidEmail(parentEmail) || !tier) {
+    return jsonResponse({ ok: false, error: "missing_required" }, 400);
+  }
+
+  const tierLabels = {
+    "little-newtons": "Little Newtons (K–2) · $369/mo",
+    "core-1x": "Core 1×/week · $489/mo",
+    "core-2x": "Core 2×/week · $929/mo",
+    "shsat": "SHSAT Intensive · $989/mo",
+    "ap-honors": "AP / Honors · $529/mo",
+    "unsure": "Not sure yet — recommend a tier"
+  };
+  const tierLabel = tierLabels[tier] || tier;
+
+  const internalSubject = `New membership reservation — ${parentName} — ${tierLabel}`;
+  const internalHtml = `
+    <div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#1a2820">
+      <h2 style="color:#1f3d2e;font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;margin:0 0 18px">New membership reservation</h2>
+      <p style="margin:0 0 8px;color:#666;font-size:13px;text-transform:uppercase;letter-spacing:1.5px">Source: /membership reservation form</p>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0">
+        <tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666;width:140px">Parent</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0"><strong>${escapeHtml(parentName)}</strong></td></tr>
+        <tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666">Email</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0"><a href="mailto:${escapeHtml(parentEmail)}" style="color:#1f3d2e">${escapeHtml(parentEmail)}</a></td></tr>
+        ${parentPhone ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666">Phone</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0"><a href="tel:${escapeHtml(parentPhone)}" style="color:#1f3d2e">${escapeHtml(parentPhone)}</a></td></tr>` : ""}
+        ${studentName ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666">Student</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0">${escapeHtml(studentName)}</td></tr>` : ""}
+        ${grade ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666">Grade</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0">${escapeHtml(grade)}</td></tr>` : ""}
+        <tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666">Tier</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0"><strong style="color:#c89a3a">${escapeHtml(tierLabel)}</strong></td></tr>
+        ${startWhen ? `<tr><td style="padding:10px 0;border-bottom:1px solid #e6dfd0;color:#666">Wants to start</td><td style="padding:10px 0;border-bottom:1px solid #e6dfd0">${escapeHtml(startWhen)}</td></tr>` : ""}
+      </table>
+      ${message ? `<div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:4px;margin:16px 0"><p style="margin:0 0 6px;color:#666;font-size:12px;text-transform:uppercase;letter-spacing:1.5px">Note from parent</p><p style="margin:0;line-height:1.55">${escapeHtml(message).replace(/\n/g, "<br/>")}</p></div>` : ""}
+      <div style="margin-top:24px;padding-top:18px;border-top:1px solid #e6dfd0">
+        <p style="margin:0 0 12px;color:#666;font-size:13px"><strong>Next step:</strong> Reply within 24 hours to schedule the free 60-min evaluation and set up monthly Stripe billing manually in Dashboard.</p>
+        <p style="margin:0;color:#999;font-size:12px">Referrer: ${escapeHtml(referrer || "(direct)")}<br/>Submitted: ${new Date().toISOString()}</p>
+      </div>
+    </div>
+  `;
+
+  const parentSubject = "Got it — we'll be in touch about your SOMATH Membership";
+  const parentHtml = `
+    <div style="font-family:Georgia,serif;max-width:600px;margin:0 auto;color:#1a2820">
+      <h2 style="color:#1f3d2e;font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;margin:0 0 18px">Hi ${escapeHtml(parentName.split(" ")[0] || parentName)},</h2>
+      <p style="line-height:1.6;font-size:16px;margin:0 0 14px">Thanks for reserving your spot for <strong>${escapeHtml(tierLabel)}</strong>. We've got your details and a SOMATH lead instructor will reach out within 24 hours to:</p>
+      <ul style="line-height:1.7;font-size:16px;padding-left:22px;margin:0 0 20px">
+        <li>Schedule the free 60-minute placement evaluation</li>
+        <li>Confirm the right cohort and start week for ${escapeHtml(studentName || "your child")}</li>
+        <li>Set up your monthly subscription (you'll get a Stripe checkout link by email)</li>
+      </ul>
+      <div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:16px 20px;border-radius:4px;margin:18px 0">
+        <p style="margin:0 0 6px;color:#666;font-size:13px;text-transform:uppercase;letter-spacing:1.5px">A quick reminder</p>
+        <p style="margin:0;line-height:1.55">SOMATH Membership: start any week, pause up to 4 weeks/year, cancel anytime with 15 days' notice. $30 off per sibling.</p>
+      </div>
+      <p style="line-height:1.6;font-size:16px;margin:18px 0 14px">Want to talk sooner? Call us at <a href="tel:+16466686151" style="color:#1f3d2e">(646) 668-6151</a> or just hit reply.</p>
+      <p style="line-height:1.6;font-size:16px;margin:18px 0 0">Talk soon,<br/><strong>Vivianne &amp; the SOMATH team</strong><br/><span style="color:#666;font-size:14px">226 W 79th St · Upper West Side, NYC</span></p>
+    </div>
+  `;
+
+  let internalResult = { ok: false, error: "email_not_configured" };
+  let parentResult = { ok: false, error: "email_not_configured" };
+  if (env.RESEND_API_KEY) {
+    const notifyTo = env.NOTIFY_TO || "hello@schoolofmath.us";
+    const [a, b] = await Promise.all([
+      sendResendEmail(env, { to: notifyTo, subject: internalSubject, html: internalHtml, replyTo: parentEmail }),
+      sendResendEmail(env, { to: parentEmail, subject: parentSubject, html: parentHtml, replyTo: notifyTo })
+    ]);
+    internalResult = a;
+    parentResult = b;
+  }
+
+  console.log(JSON.stringify({ event: "membership_reservation", parentName, parentEmail, tier, grade, startWhen, internalOk: internalResult.ok, parentOk: parentResult.ok }));
+  return jsonResponse({ ok: true, message: "Reservation received" });
+}
+__name(handleMembershipReservation, "handleMembershipReservation");
+
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -570,6 +662,7 @@ var worker_default = {
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
     if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
+    if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname.startsWith("/_secure/")) {
       return new Response("Not found", { status: 404 });
     }

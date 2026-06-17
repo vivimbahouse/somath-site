@@ -185,7 +185,7 @@
           <span class="mem-hero__chip">&#10003; Cancel with 15 days' notice</span>
           <span class="mem-hero__chip">&#10003; Same $60/hr SOMATH rate</span>
         </div>
-        <a href="/evaluation" class="mem-hero__cta">Book Free Evaluation &rarr;</a>
+        <a href="#reserve" class="mem-hero__cta">Reserve My Spot &rarr;</a>
         <a href="#tiers" class="mem-hero__cta-secondary">See Pricing</a>
       </div>
     </section>
@@ -235,7 +235,7 @@
               <li>Monthly progress note to parents</li>
               <li>Pause up to 4 weeks/year free</li>
             </ul>
-            <a href="/pre-enroll?plan=membership&tier=little-newtons" class="tier-card__cta">Start Membership &rarr;</a>
+            <a href="#reserve" data-tier="little-newtons" class="tier-card__cta">Start Membership &rarr;</a>
           </article>
 
           <article class="tier-card tier-card--featured">
@@ -254,7 +254,7 @@
               <li>Monthly progress note to parents</li>
               <li>Pause up to 4 weeks/year free</li>
             </ul>
-            <a href="/pre-enroll?plan=membership&tier=core-1x" class="tier-card__cta">Start Membership &rarr;</a>
+            <a href="#reserve" data-tier="core-1x" class="tier-card__cta">Start Membership &rarr;</a>
           </article>
 
           <article class="tier-card">
@@ -272,7 +272,7 @@
               <li>Biweekly check-in with lead instructor</li>
               <li>Pause up to 4 weeks/year free</li>
             </ul>
-            <a href="/pre-enroll?plan=membership&tier=core-2x" class="tier-card__cta">Start Membership &rarr;</a>
+            <a href="#reserve" data-tier="core-2x" class="tier-card__cta">Start Membership &rarr;</a>
           </article>
 
           <article class="tier-card">
@@ -290,7 +290,7 @@
               <li>Written score report after every test</li>
               <li>Pause up to 4 weeks/year free</li>
             </ul>
-            <a href="/pre-enroll?plan=membership&tier=shsat" class="tier-card__cta">Start Membership &rarr;</a>
+            <a href="#reserve" data-tier="shsat" class="tier-card__cta">Start Membership &rarr;</a>
           </article>
 
           <article class="tier-card">
@@ -308,7 +308,7 @@
               <li>Test-week prep blocks at no extra cost</li>
               <li>Pause up to 4 weeks/year free</li>
             </ul>
-            <a href="/pre-enroll?plan=membership&tier=ap-honors" class="tier-card__cta">Start Membership &rarr;</a>
+            <a href="#reserve" data-tier="ap-honors" class="tier-card__cta">Start Membership &rarr;</a>
           </article>
 
           <article class="tier-card" style="background: var(--paper); border-style: dashed;">
@@ -425,6 +425,101 @@
       </div>
     </section>
 
+    <section id="reserve" style="background: var(--paper); padding: 72px 0 60px; border-top: 1px solid var(--line);">
+      <div style="max-width: 880px; margin: 0 auto; padding: 0 var(--gutter);">
+        <div style="text-align: center; margin: 0 0 36px;">
+          <p style="color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.78rem; font-weight: 700; margin: 0 0 12px;">Reserve Your Spot</p>
+          <h2 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.4rem; font-weight: 500; color: var(--green); margin: 0 0 12px; line-height: 1.1;">Tell us about your child &mdash; we'll do the rest.</h2>
+          <p style="color: var(--ink-soft); font-size: 1.05rem; line-height: 1.55; max-width: 600px; margin: 0 auto;">Fill this out and a SOMATH lead instructor will reach out within 24 hours to schedule the free evaluation, confirm your start week, and email you a checkout link. No payment today.</p>
+        </div>
+
+        <form id="reservationForm" style="background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 32px 36px; display: grid; gap: 18px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="form-row">
+            <div>
+              <label for="parentName" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Parent name <span style="color: var(--gold);">*</span></label>
+              <input type="text" id="parentName" name="parentName" required maxlength="120" style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);" />
+            </div>
+            <div>
+              <label for="parentEmail" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Email <span style="color: var(--gold);">*</span></label>
+              <input type="email" id="parentEmail" name="parentEmail" required maxlength="200" style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);" />
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="form-row">
+            <div>
+              <label for="parentPhone" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Phone <span style="color: var(--ink-mute); font-weight: 400;">(optional, faster reply)</span></label>
+              <input type="tel" id="parentPhone" name="parentPhone" maxlength="40" placeholder="(646) 555-1234" style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);" />
+            </div>
+            <div>
+              <label for="studentName" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Student first name</label>
+              <input type="text" id="studentName" name="studentName" maxlength="120" style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);" />
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;" class="form-row">
+            <div>
+              <label for="grade" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Current grade</label>
+              <select id="grade" name="grade" style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);">
+                <option value="">Select grade...</option>
+                <option value="K">Kindergarten</option>
+                <option value="1">1st grade</option>
+                <option value="2">2nd grade</option>
+                <option value="3">3rd grade</option>
+                <option value="4">4th grade</option>
+                <option value="5">5th grade</option>
+                <option value="6">6th grade</option>
+                <option value="7">7th grade</option>
+                <option value="8">8th grade</option>
+                <option value="9">9th grade</option>
+                <option value="10">10th grade</option>
+                <option value="11">11th grade</option>
+                <option value="12">12th grade</option>
+              </select>
+            </div>
+            <div>
+              <label for="startWhen" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">When do you want to start?</label>
+              <select id="startWhen" name="startWhen" style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);">
+                <option value="">Select timing...</option>
+                <option value="This week">This week</option>
+                <option value="Next week">Next week</option>
+                <option value="Within 2-4 weeks">Within 2&ndash;4 weeks</option>
+                <option value="In a month or more">In a month or more</option>
+                <option value="Just exploring">Just exploring</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="tier" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Membership tier <span style="color: var(--gold);">*</span></label>
+            <select id="tier" name="tier" required style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink);">
+              <option value="">Select a tier...</option>
+              <option value="little-newtons">Little Newtons (K–2) &mdash; $369/month</option>
+              <option value="core-1x">Core 1&times;/week (3–8) &mdash; $489/month</option>
+              <option value="core-2x">Core 2&times;/week (3–8) &mdash; $929/month</option>
+              <option value="shsat">SHSAT Intensive (7–8) &mdash; $989/month</option>
+              <option value="ap-honors">AP / Honors (9–12) &mdash; $529/month</option>
+              <option value="unsure">Not sure yet — recommend a tier for me</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" style="display: block; font-size: 0.85rem; color: var(--ink-soft); font-weight: 700; margin: 0 0 6px;">Anything else we should know? <span style="color: var(--ink-mute); font-weight: 400;">(optional)</span></label>
+            <textarea id="message" name="message" rows="4" maxlength="2000" placeholder="Tell us what your child needs help with, school they attend, scheduling constraints, sibling info, etc." style="width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 6px; font-size: 1rem; background: var(--paper); font-family: inherit; color: var(--ink); resize: vertical;"></textarea>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 6px;">
+            <button type="submit" id="reservationSubmit" style="padding: 14px 32px; background: var(--green); color: var(--cream); border: 0; border-radius: 6px; font-weight: 700; font-size: 1rem; font-family: inherit; cursor: pointer;">Reserve My Spot &rarr;</button>
+            <p style="margin: 0; font-size: 0.88rem; color: var(--ink-mute); line-height: 1.45;">No payment today. We'll email a checkout link after we confirm the right cohort for your child.</p>
+          </div>
+
+          <div id="reservationError" style="display: none; background: #fce8e8; border: 1px solid #d4a4a4; border-radius: 6px; padding: 12px 16px; color: #8a3030; font-size: 0.92rem;"></div>
+        </form>
+
+        <p style="text-align: center; margin: 24px 0 0; color: var(--ink-mute); font-size: 0.92rem;">Prefer to talk? Call us at <a href="tel:+16466686151" style="color: var(--green); font-weight: 600;">(646) 668-6151</a> or book the free evaluation <a href="/evaluation" style="color: var(--green); font-weight: 600;">here</a>.</p>
+      </div>
+      <style>@media (max-width: 640px) { #reservationForm .form-row { grid-template-columns: 1fr !important; } }</style>
+    </section>
+
     <section class="mem-faq">
       <div class="mem-faq__inner">
         <h2>Membership FAQ</h2>
@@ -476,12 +571,67 @@
       <div class="mem-cta__inner">
         <h2>Free 60-minute evaluation &mdash; book your spot</h2>
         <p>Sixty minutes with a SOMATH lead instructor on the Upper West Side. We'll do a placement assessment, send a written diagnostic within 48 hours, and recommend the right tier &mdash; whether you enroll with us or not.</p>
-        <a href="/evaluation" class="btn-cta">Book Free Evaluation &rarr;</a>
-        <a href="/pre-enroll?plan=membership" class="btn-cta btn-cta--ghost">Start Membership Now &rarr;</a>
+        <a href="#reserve" class="btn-cta">Reserve My Spot &rarr;</a>
+        <a href="/evaluation" class="btn-cta btn-cta--ghost">Book Free Evaluation &rarr;</a>
       </div>
     </section>
 
     <div id="footer-mount"></div>
     <script src="/partials.js"></script>
+    <script>
+      // Pre-select tier from clicked tier-card CTA + smooth-scroll
+      document.querySelectorAll('a[href="#reserve"][data-tier]').forEach(function(a){
+        a.addEventListener('click', function(){
+          var t = a.getAttribute('data-tier');
+          var sel = document.getElementById('tier');
+          if (sel && t) sel.value = t;
+        });
+      });
+
+      // Form submission
+      var form = document.getElementById('reservationForm');
+      var submitBtn = document.getElementById('reservationSubmit');
+      var errorBox = document.getElementById('reservationError');
+      if (form) {
+        form.addEventListener('submit', async function(e){
+          e.preventDefault();
+          errorBox.style.display = 'none';
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          var payload = {
+            parentName: document.getElementById('parentName').value,
+            parentEmail: document.getElementById('parentEmail').value,
+            parentPhone: document.getElementById('parentPhone').value,
+            studentName: document.getElementById('studentName').value,
+            grade: document.getElementById('grade').value,
+            startWhen: document.getElementById('startWhen').value,
+            tier: document.getElementById('tier').value,
+            message: document.getElementById('message').value,
+            referrer: document.referrer || ''
+          };
+          try {
+            var resp = await fetch('/api/membership-reservation', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            var data = await resp.json().catch(function(){return {ok:false};});
+            if (resp.ok && data.ok) {
+              try {
+                if (window.gtag) gtag('event', 'membership_reservation', { tier: payload.tier });
+              } catch(_) {}
+              window.location.href = '/membership-thanks?tier=' + encodeURIComponent(payload.tier);
+            } else {
+              throw new Error(data.error || 'Submission failed');
+            }
+          } catch(err) {
+            errorBox.textContent = 'Sorry — something went wrong. Please call (646) 668-6151 or email hello@schoolofmath.us.';
+            errorBox.style.display = 'block';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Reserve My Spot →';
+          }
+        });
+      }
+    </script>
   </body>
 </html>
