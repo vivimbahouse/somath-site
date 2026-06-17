@@ -126,6 +126,20 @@
       .cta-strip p { color: var(--gold-soft); font-size: 1.05rem; margin: 0 0 22px; }
       .cta-strip .btn-cta { display: inline-block; background: var(--gold); color: var(--green); font-weight: 700; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-size: 1.02rem; transition: all 0.15s; }
       .cta-strip .btn-cta:hover { background: var(--cream); }
+    
+      /* Membership banner — added Phase 3 soft launch */
+      .mem-banner { background: #1f3d2e; color: #f5f0e6; padding: 18px 0; border-bottom: 3px solid #c89a3a; }
+      .mem-banner__inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
+      .mem-banner__text { margin: 0; font-size: 15.5px; line-height: 1.5; color: #f5f0e6; max-width: 760px; }
+      .mem-banner__text strong { color: #e7c876; font-weight: 600; }
+      .mem-banner__cta { display: inline-block; padding: 10px 20px; background: #c89a3a; color: #1a2820; border-radius: 5px; font-weight: 700; text-decoration: none; font-size: 14.5px; letter-spacing: 0.2px; white-space: nowrap; }
+      .mem-banner__cta:hover { background: #e7c876; }
+      @media (max-width: 720px) { .mem-banner__inner { flex-direction: column; align-items: flex-start; } .mem-banner__cta { width: 100%; text-align: center; } }
+
+      /* Secondary monthly CTA on course-card actions */
+      .course-card .btn-monthly { background: transparent; color: #1f3d2e; border: 1.5px solid #1f3d2e; border-radius: 999px; font-weight: 600; }
+      .course-card .btn-monthly:hover { background: #1f3d2e; color: #f5f0e6; }
+
     </style>
 
     <script type="application/ld+json">
@@ -181,6 +195,16 @@
       </div>
     </section>
 
+    <section class="mem-banner" role="region" aria-label="SOMATH Membership">
+      <div class="mem-banner__inner">
+        <p class="mem-banner__text">
+          <strong>New:</strong> All courses below are also available as a <strong>monthly membership</strong> &mdash; same classes, same $60/hr instructors, but you can start any week, pause when you travel, and cancel with 15 days&rsquo; notice. From $369/month.
+        </p>
+        <a href="/membership" class="mem-banner__cta">See Membership Plans &rarr;</a>
+      </div>
+    </section>
+
+
     <nav class="schedule-quick" aria-label="Jump to course">
       <div class="schedule-quick__inner">
         <span class="schedule-quick__label">Jump to:</span>
@@ -217,6 +241,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=little-newtons&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-ln-a">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-ln-a">
@@ -257,6 +282,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=kid-einsteins-a&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-ke-a">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-ke-a">
@@ -297,6 +323,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=kid-einsteins-b&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-ke-b">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-ke-b">
@@ -337,6 +364,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=young-fermats-prealgebra&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-yf-pa">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-yf-pa">
@@ -377,6 +405,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=young-fermats-algebra-ignite&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-yf-ai">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-yf-ai">
@@ -417,6 +446,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=young-fermats-geometry&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-yf-geo">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-yf-geo">
@@ -457,6 +487,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=shsat-prep&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-shsat">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-shsat">
@@ -497,6 +528,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=sat-math&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-sat">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-sat">
@@ -537,6 +569,7 @@
           </div>
           <div class="course-card__actions">
             <a href="/pre-enroll?course=pre-calculus&term=july" class="btn btn-apply">Pre-Enroll Now &rarr;</a>
+            <a href="/membership" class="btn btn-monthly">Or join monthly &rarr;</a>
             <button class="btn btn-syllabus" aria-expanded="false" data-toggle="syllabus-precalc">View Syllabus</button>
           </div>
           <div class="syllabus-panel" id="syllabus-precalc">
