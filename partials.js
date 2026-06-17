@@ -90,7 +90,7 @@
             <li><a href="tel:+16466686151">(646) 668-6151</a></li>
             <li><a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a></li>
             <li>226 W 79th St<br/>New York, NY 10024</li>
-            <li>Mon–Fri · 3:00pm–10:00pm<br/>Sat · 10:00am–6:00pm</li>
+            <li>Mon–Fri · 3:00pm–10:00pm<br/>Sat · 9:00am–6:00pm<br/>Sun · 10:00am–5:00pm</li>
           </ul>
         </div>
       </div>
