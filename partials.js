@@ -4,7 +4,7 @@
 
   const navHTML = `
     <div class="announce">
-      New: SOMATH Membership — start any week, cancel anytime, from $369/mo.
+      New: SOMATH Membership — start any week, from $369/mo.
       <a href="/membership">See plans →</a>
     </div>
     <header class="nav">
