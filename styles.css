@@ -1393,6 +1393,95 @@ details.faq__item summary::-webkit-details-marker { display: none; }
   .track__list { grid-template-columns: 1fr; }
 }
 
+/* --- 24-class syllabus block (collapsible) --- */
+.track__syllabus {
+  margin-top: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  overflow: hidden;
+}
+.track__syllabus + .track__syllabus {
+  margin-top: 14px;
+}
+.track__syllabus[open] {
+  background: #fbfaf6;
+}
+.track__syllabus-summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 22px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.track__syllabus-summary::-webkit-details-marker { display: none; }
+.track__syllabus-summary::after {
+  content: "+";
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--gold);
+  transition: transform 0.2s ease;
+}
+.track__syllabus[open] .track__syllabus-summary::after {
+  content: "–";
+}
+.track__syllabus-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.track__syllabus-sub {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.track__syllabus-grid {
+  list-style: none;
+  padding: 6px 22px 22px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 28px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.track__syllabus-grid li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.08);
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 10px;
+  align-items: baseline;
+}
+.track__syllabus-grid li:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+.track__syllabus-grid .syl-num {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  color: var(--gold);
+  font-size: 14.5px;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 720px) {
+  .track__syllabus-grid { grid-template-columns: 1fr; }
+  .track__syllabus-grid li:nth-last-child(-n+2) { border-bottom: 1px dashed rgba(0,0,0,0.08); }
+  .track__syllabus-grid li:last-child { border-bottom: none; }
+}
+
 /* ===========================================================
    BLOG
    =========================================================== */
