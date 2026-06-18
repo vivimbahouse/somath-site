@@ -318,7 +318,8 @@
     <script>
       // ---- Course catalog (mirror of course-recommendation.html) ----
       const COURSES = {
-        "little-newtons":              { title: "Little Newtons",                grade: "Grades 1–2",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+        "little-newtons-a":            { title: "Little Newtons A",              grade: "Grades 1–2",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+        "little-newtons-b":            { title: "Little Newtons B",              grade: "Grades 2–3",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
         "kid-einsteins-a":             { title: "Kid Einsteins A",               grade: "Grades 3–4",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "kid-einsteins-b":             { title: "Kid Einsteins B",               grade: "Grade 5",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grade 6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
@@ -338,7 +339,8 @@
 
       const COURSE_TIMES = {
         july: {
-          "little-newtons":              "Mon & Wed 3:00–4:30 PM",
+          "little-newtons-a":            "Mon & Wed 3:00–4:30 PM",
+          "little-newtons-b":            "Mon & Wed 3:00–4:30 PM",
           "kid-einsteins-a":             "Tue & Wed 3:00–5:00 PM",
           "kid-einsteins-b":             "Mon & Wed 4:30–6:30 PM",
           "young-fermats-prealgebra":    "Tue & Thu 5:00–7:00 PM",
@@ -349,7 +351,8 @@
           "pre-calculus":                "Fri 7:00–9:00 PM"
         },
         august: {
-          "little-newtons":              "Mon & Wed 3:00–4:30 PM",
+          "little-newtons-a":            "Mon & Wed 3:00–4:30 PM",
+          "little-newtons-b":            "Mon & Wed 3:00–4:30 PM",
           "kid-einsteins-a":             "Tue & Wed 3:00–5:00 PM",
           "kid-einsteins-b":             "Mon & Wed 4:30–6:30 PM",
           "young-fermats-prealgebra":    "Tue & Thu 5:00–7:00 PM",
@@ -360,7 +363,8 @@
           "pre-calculus":                "Fri 7:00–9:00 PM"
         },
         fall: {
-          "little-newtons":              "Mon or Wed 3:30–5:00 PM",
+          "little-newtons-a":            "Wed 3:30–5:00 PM",
+          "little-newtons-b":            "Mon 3:30–5:00 PM",
           "kid-einsteins-a":             "Tue or Wed 4:00–6:00 PM",
           "kid-einsteins-b":             "Mon or Wed 5:00–7:00 PM",
           "young-fermats-prealgebra":    "Tue or Thu 6:00–8:00 PM",
@@ -371,7 +375,8 @@
           "pre-calculus":                "Fri 8:00–10:00 PM"
         },
         weekends: {
-          "little-newtons":              "Sat or Sun 10:00–11:30 AM",
+          "little-newtons-a":            "Sun 10:00–11:30 AM",
+          "little-newtons-b":            "Sat 10:00–11:30 AM",
           "kid-einsteins-a":             "Sat 9:00–11:00 AM",
           "kid-einsteins-b":             "Sat 11:00 AM–1:00 PM",
           "young-fermats-prealgebra":    "Sat 3:00–5:00 PM",
@@ -382,7 +387,8 @@
       // Tuition calc: $60/hr standard. Mins per session × perWeek × weeks / 60 × $60
       // Weekends-specific session minutes (Little Newtons stays 90; others 120; one class/week).
       const WEEKEND_MINS = {
-        "little-newtons":              90,
+        "little-newtons-a":            90,
+        "little-newtons-b":            90,
         "kid-einsteins-a":             120,
         "kid-einsteins-b":             120,
         "young-fermats-prealgebra":    120,

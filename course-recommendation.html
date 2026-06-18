@@ -345,11 +345,11 @@
 
       // Course catalog. Each entry has the static "what is it" + term-specific dates/times/tuition.
       const COURSES = {
-        "little-newtons": {
-          title: "Little Newtons",
+        "little-newtons-a": {
+          title: "Little Newtons A",
           grade: "Grades 1–2 · Ages 6–8",
           quick: "Number sense, addition/subtraction fluency, fractions first-look, word-problem language.",
-          description: "First and second grade are the years that decide whether a child grows up confident with numbers or quietly convinced that math isn't for them. Little Newtons is built for these foundational learners who are ready to think, not just fill in worksheets. We focus on number sense up to 100, addition and subtraction fluency, an honest first look at fractions and measurement, and the language of word problems. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
+          description: "Little Newtons A is the foundational level of our K–3 program, built for 1st and 2nd graders. First and second grade are the years that decide whether a child grows up confident with numbers or quietly convinced that math isn't for them. We focus on number sense up to 100, addition and subtraction fluency, an honest first look at fractions and measurement, and the language of word problems. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 1–2 (ages 6–8)",
           syllabus: [
             ['Week 1', 'Number sense to 100 — counting, place value, comparing.'],
@@ -375,6 +375,39 @@
             ["Mtg 14", "Two-digit subtraction without regrouping."],
             ["Mtg 15", "Shapes — squares, rectangles, triangles, circles, attributes."],
             ["Mtg 16", "Patterns and sorting with numbers and shapes."]
+          ],
+          link: "/programs#little-newtons"
+        },
+        "little-newtons-b": {
+          title: "Little Newtons B",
+          grade: "Grades 2–3 · Ages 7–9",
+          quick: "Next-step foundations: stronger arithmetic fluency, intro multiplication, fractions, richer word problems.",
+          description: "Little Newtons B is the upper level of our K–3 program, built for 2nd and 3rd graders who are ready for the next step. We build on the foundations from A: stronger addition and subtraction fluency, intro to multiplication and division, place-value into the thousands, deeper work with fractions and measurement, and richer multi-step word problems — the bridge into Kid Einsteins. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
+          level: "Grades 2–3 (ages 7–9)",
+          syllabus: [
+            ['Week 1', 'Place value to 1,000 — building, comparing, and ordering larger numbers.'],
+            ['Week 2', 'Two- and three-digit addition and subtraction with regrouping.'],
+            ['Week 3', 'Intro to multiplication — equal groups, arrays, skip counting.'],
+            ['Week 4', 'Fractions on the number line — equivalence and comparing.'],
+            ['Week 5', 'Multi-step word problems with the four operations.']
+          ],
+          fallSyllabusOverride: [
+            ["Mtg 1", "Place value review and three-digit numbers."],
+            ["Mtg 2", "Comparing and ordering numbers to 1,000."],
+            ["Mtg 3", "Two-digit addition with regrouping."],
+            ["Mtg 4", "Two-digit subtraction with regrouping."],
+            ["Mtg 5", "Three-digit addition with regrouping."],
+            ["Mtg 6", "Three-digit subtraction with regrouping."],
+            ["Mtg 7", "Equal groups and intro to multiplication."],
+            ["Mtg 8", "Multiplication facts ×2, ×5, ×10 with arrays."],
+            ["Mtg 9", "Multiplication facts ×3 and ×4."],
+            ["Mtg 10", "Fractions on the number line — halves, thirds, fourths."],
+            ["Mtg 11", "Equivalent fractions."],
+            ["Mtg 12", "Measurement — length, mass, liquid volume."],
+            ["Mtg 13", "Telling time to the minute and elapsed time."],
+            ["Mtg 14", "Money — making change and solving word problems."],
+            ["Mtg 15", "Geometry — quadrilaterals, perimeter, and area concepts."],
+            ["Mtg 16", "Multi-step word problems with the four operations."]
           ],
           link: "/programs#little-newtons"
         },
@@ -655,7 +688,8 @@
           link: "/summer-schedule",
           faq: SUMMER_FAQ,
           courses: {
-            "little-newtons":              { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
+            "little-newtons-a":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
+            "little-newtons-b":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
             "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM", perWeek: 2 },
             "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM", perWeek: 2 },
             "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM", perWeek: 2 },
@@ -675,7 +709,8 @@
           link: "/august-schedule",
           faq: SUMMER_FAQ,
           courses: {
-            "little-newtons":              { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
+            "little-newtons-a":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
+            "little-newtons-b":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
             "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM", perWeek: 2 },
             "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM", perWeek: 2 },
             "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM", perWeek: 2 },
@@ -695,7 +730,8 @@
           link: "/fall-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons":              { days: "Mon or Wed", time: "3:30 – 5:00 PM", perWeek: 1 },
+            "little-newtons-a":            { days: "Wednesdays", time: "3:30 – 5:00 PM", perWeek: 1 },
+            "little-newtons-b":            { days: "Mondays",    time: "3:30 – 5:00 PM", perWeek: 1 },
             "kid-einsteins-a":             { days: "Tue or Wed", time: "4:00 – 6:00 PM", perWeek: 1 },
             "kid-einsteins-b":             { days: "Mon or Wed", time: "5:00 – 7:00 PM", perWeek: 1 },
             "young-fermats-prealgebra":    { days: "Tue or Thu", time: "6:00 – 8:00 PM", perWeek: 1 },
@@ -715,7 +751,8 @@
           link: "/weekends-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons":              { days: "Sat or Sun", time: "10:00 – 11:30 AM", perWeek: 1 },
+            "little-newtons-a":            { days: "Sundays",   time: "10:00 – 11:30 AM", perWeek: 1 },
+            "little-newtons-b":            { days: "Saturdays", time: "10:00 – 11:30 AM", perWeek: 1 },
             "kid-einsteins-a":             { days: "Saturdays", time: "9:00 – 11:00 AM",  perWeek: 1 },
             "kid-einsteins-b":             { days: "Saturdays", time: "11:00 AM – 1:00 PM", perWeek: 1 },
             "young-fermats-prealgebra":    { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },
