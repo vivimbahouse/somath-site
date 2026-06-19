@@ -22,7 +22,7 @@
           <a class="nav__link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
           <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
           <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
-          <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
+          <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
           <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit</a>
         </nav>
@@ -35,7 +35,7 @@
         <a class="nav__mobile-link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
         <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
-        <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">About</a>
+        <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
         <a class="nav__mobile-link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
         <a class="nav__mobile-cta btn btn--primary" href="/evaluation">Book Free Evaluation</a>
@@ -71,7 +71,7 @@
         <div class="footer__col">
           <h4>School</h4>
           <ul>
-            <li><a href="/about">About</a></li>
+            <li><a href="/about">Team</a></li>
             <li><a href="/blog">Journal</a></li>
             <li><a href="/contact">Visit Us</a></li>
             <li><a href="/evaluation">Free Evaluation</a></li>
