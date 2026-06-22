@@ -21,6 +21,7 @@
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
           <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
+          <a class="nav__link ${page === "courses" ? "is-active" : ""}" href="/courses/">Courses</a>
           <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
@@ -34,6 +35,7 @@
       <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
         <a class="nav__mobile-link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
         <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
+        <a class="nav__mobile-link ${page === "courses" ? "is-active" : ""}" href="/courses/">Courses</a>
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
@@ -58,6 +60,7 @@
           <h4>Enroll</h4>
           <ul>
             <li><a href="/membership"><strong>Membership — monthly</strong></a></li>
+            <li><a href="/courses/">All courses</a></li>
             <li><a href="/schedule">Year-round schedule</a></li>
             <li><a href="/shsat-prep">SHSAT Prep</a></li>
             <li><a href="/programs#little-newtons">Little Newtons (K–2)</a></li>
