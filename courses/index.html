@@ -19,6 +19,10 @@
       .course-index-card h3 { color: #1f3d2e; margin: 0 0 6px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.45rem; font-weight: 500; }
       .course-index-card p { color: #2a2a24; line-height: 1.5; font-size: 0.95rem; margin: 0 0 12px; }
       .course-index-card__price { color: #6b6657; font-size: 0.86rem; font-weight: 600; }
+      .course-index-card__cta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 14px; padding-top: 12px; border-top: 1px dashed #e0d8c4; color: #1f3d2e; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.3px; }
+      .course-index-card__arrow { color: #c89a3a; font-size: 1.05rem; transition: transform 0.18s ease; }
+      .course-index-card:hover .course-index-card__arrow { transform: translateX(4px); }
+      .course-index-card:hover .course-index-card__cta { color: #16301f; }
     </style>
   </head>
   <body data-page="courses">
@@ -29,65 +33,75 @@
         <h1>Every course we teach</h1>
         <p class="course-index__lede">From foundational K&ndash;2 math through AP Calculus &mdash; all courses run in person at 226 W 79th St on the Upper West Side, in small groups of 4 to 6 students. Pick a course to see the full syllabus, sample class format, and to enroll.</p>
         <div class="course-index__grid">
-            <a href="/courses/little-newtons-a" class="course-index-card">
+            <a href="/courses/little-newtons-a" class="course-index-card" aria-label="Open Little Newtons A — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 1–2 · Ages 6–8</span>
               <h3>Little Newtons A</h3>
               <p>Number sense, addition/subtraction fluency, fractions first-look, word-problem language.</p>
               <span class="course-index-card__price">$369 / month &middot; 90 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/little-newtons-b" class="course-index-card">
+            <a href="/courses/little-newtons-b" class="course-index-card" aria-label="Open Little Newtons B — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 2–3 · Ages 7–9</span>
               <h3>Little Newtons B</h3>
               <p>Next-step foundations: stronger arithmetic fluency, intro multiplication, fractions, richer word problems.</p>
               <span class="course-index-card__price">$369 / month &middot; 90 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/kid-einsteins-a" class="course-index-card">
+            <a href="/courses/kid-einsteins-a" class="course-index-card" aria-label="Open Kid Einsteins A — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 3–4 · Ages 8–10</span>
               <h3>Kid Einsteins A</h3>
               <p>Multiplication & division fluency, fractions, decimals, intro word problems — the upper-elementary core.</p>
               <span class="course-index-card__price">$489 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/kid-einsteins-b" class="course-index-card">
+            <a href="/courses/kid-einsteins-b" class="course-index-card" aria-label="Open Kid Einsteins B — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grade 5 · Ages 10–11</span>
               <h3>Kid Einsteins B</h3>
               <p>Fraction & decimal mastery, ratio/percent, intro geometry — the 5th-grade bridge to middle school.</p>
               <span class="course-index-card__price">$489 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/young-fermats-prealgebra" class="course-index-card">
+            <a href="/courses/young-fermats-prealgebra" class="course-index-card" aria-label="Open Young Fermats - Pre-Algebra — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grade 6 · Ages 11–12</span>
               <h3>Young Fermats - Pre-Algebra</h3>
               <p>Integers, fractions, ratios, intro algebraic thinking — the foundation for everything that follows.</p>
               <span class="course-index-card__price">$489 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/young-fermats-algebra-ignite" class="course-index-card">
+            <a href="/courses/young-fermats-algebra-ignite" class="course-index-card" aria-label="Open Young Fermats - Algebra Ignite — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 7–8 · Ages 12–14</span>
               <h3>Young Fermats - Algebra Ignite</h3>
               <p>Linear equations, systems, exponents, factoring — a real Algebra I track.</p>
               <span class="course-index-card__price">$489 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/young-fermats-geometry" class="course-index-card">
+            <a href="/courses/young-fermats-geometry" class="course-index-card" aria-label="Open Young Fermats - Geometry — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 7–8 · Ages 12–14</span>
               <h3>Young Fermats - Geometry</h3>
               <p>Angles, triangles, Pythagorean, coordinate geometry, area & volume — a real intro to proof-style thinking.</p>
               <span class="course-index-card__price">$489 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/shsat-prep" class="course-index-card">
+            <a href="/courses/shsat-prep" class="course-index-card" aria-label="Open SHSAT Prep — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 7–8 · Middle School</span>
               <h3>SHSAT Prep</h3>
               <p>Specialized HS Admissions math — question families, timing, scratch-paper strategy.</p>
               <span class="course-index-card__price">$489 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/sat-math" class="course-index-card">
+            <a href="/courses/sat-math" class="course-index-card" aria-label="Open SAT Math — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 9–11 · High School</span>
               <h3>SAT Math</h3>
               <p>Heart of Algebra · Problem Solving & Data · Passport to Advanced Math · Additional Topics.</p>
               <span class="course-index-card__price">$640 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
-            <a href="/courses/pre-calculus" class="course-index-card">
+            <a href="/courses/pre-calculus" class="course-index-card" aria-label="Open AP Prep - Pre-Calculus / Calculus — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 10–12 · High School</span>
               <h3>AP Prep - Pre-Calculus / Calculus</h3>
               <p>Functions, trig, sequences/series — the calculus foundations that actually matter.</p>
               <span class="course-index-card__price">$800 / month &middot; 120 min weekly</span>
+              <span class="course-index-card__cta">Click to view syllabus &amp; enroll <span class="course-index-card__arrow" aria-hidden="true">→</span></span>
             </a>
         </div>
       </div>
