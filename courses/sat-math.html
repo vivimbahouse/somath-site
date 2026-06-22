@@ -33,63 +33,63 @@
     <meta property="og:site_name" content="SOMATH" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
-      .course-hero { background: linear-gradient(135deg, #0a3a5f 0%, #1d3147 100%); color: #f5f1e8; padding: 56px 0 48px; }
+      .course-hero { background: linear-gradient(135deg, #1f3d2e 0%, #2a2a24 100%); color: #f5f0e6; padding: 56px 0 48px; }
       .course-hero__inner { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
-      .course-hero__eyebrow { color: #d4a548; letter-spacing: 2.5px; text-transform: uppercase; font-size: 0.78rem; font-weight: 700; margin: 0 0 12px; }
-      .course-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; font-weight: 500; margin: 0 0 14px; line-height: 1.1; color: #f5f1e8; }
+      .course-hero__eyebrow { color: #c89a3a; letter-spacing: 2.5px; text-transform: uppercase; font-size: 0.78rem; font-weight: 700; margin: 0 0 12px; }
+      .course-hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; font-weight: 500; margin: 0 0 14px; line-height: 1.1; color: #f5f0e6; }
       .course-hero__tagline { font-size: 1.15rem; color: #e0d4b8; line-height: 1.55; max-width: 720px; margin: 0; }
       .course-hero__meta { display: flex; flex-wrap: wrap; gap: 18px 32px; margin: 28px 0 0; padding: 18px 22px; background: rgba(245,241,232,0.07); border-radius: 8px; }
       .course-hero__meta-item { display: flex; flex-direction: column; gap: 4px; }
-      .course-hero__meta-label { color: #d4a548; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
-      .course-hero__meta-value { color: #f5f1e8; font-size: 1.05rem; font-weight: 600; }
+      .course-hero__meta-label { color: #c89a3a; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
+      .course-hero__meta-value { color: #f5f0e6; font-size: 1.05rem; font-weight: 600; }
 
-      .course-section { background: #f5f1e8; padding: 56px 0; border-bottom: 1px solid #e0d8c4; }
+      .course-section { background: #f5f0e6; padding: 56px 0; border-bottom: 1px solid #e0d8c4; }
       .course-section--paper { background: #fff; }
       .course-section__inner { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
-      .course-section h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #0a3a5f; margin: 0 0 8px; font-weight: 500; }
+      .course-section h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: #1f3d2e; margin: 0 0 8px; font-weight: 500; }
       .course-section__eyebrow { color: #c89a3a; letter-spacing: 2px; text-transform: uppercase; font-size: 0.76rem; font-weight: 700; margin: 0 0 8px; }
-      .course-section p { color: #1d3147; font-size: 1.02rem; line-height: 1.65; }
+      .course-section p { color: #2a2a24; font-size: 1.02rem; line-height: 1.65; }
 
       .class-block { display: flex; gap: 22px; padding: 18px 0; border-bottom: 1px solid #e0d8c4; align-items: flex-start; }
       .class-block:last-child { border-bottom: 0; }
-      .class-block__time { flex: 0 0 130px; background: #0a3a5f; color: #f5f1e8; text-align: center; padding: 14px 8px; border-radius: 6px; font-weight: 700; line-height: 1.3; }
+      .class-block__time { flex: 0 0 130px; background: #1f3d2e; color: #f5f0e6; text-align: center; padding: 14px 8px; border-radius: 6px; font-weight: 700; line-height: 1.3; }
       .class-block__min { font-size: 0.78rem; font-weight: 600; opacity: 0.85; }
       .class-block__body { flex: 1; }
-      .class-block__body h4 { color: #0a3a5f; margin: 0 0 6px; font-size: 1.1rem; }
-      .class-block__body p { margin: 0; color: #1d3147; line-height: 1.6; font-size: 0.98rem; }
+      .class-block__body h4 { color: #1f3d2e; margin: 0 0 6px; font-size: 1.1rem; }
+      .class-block__body p { margin: 0; color: #2a2a24; line-height: 1.6; font-size: 0.98rem; }
 
       .syllabus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; margin: 14px 0 0; }
       .syllabus-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #e0d8c4; }
       .syllabus-row__mtg { flex: 0 0 60px; color: #c89a3a; font-weight: 700; font-size: 0.92rem; }
-      .syllabus-row__body { color: #1d3147; font-size: 0.96rem; line-height: 1.45; }
+      .syllabus-row__body { color: #2a2a24; font-size: 0.96rem; line-height: 1.45; }
       @media (max-width: 720px) { .syllabus-grid { grid-template-columns: 1fr; } }
 
-      .enroll-card { background: #fff; border: 2px solid #0a3a5f; border-radius: 10px; padding: 28px 32px; max-width: 580px; margin: 0 auto; box-shadow: 0 6px 24px rgba(10,58,95,0.08); }
-      .enroll-card h3 { color: #0a3a5f; margin: 0 0 6px; font-size: 1.45rem; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
+      .enroll-card { background: #fff; border: 2px solid #1f3d2e; border-radius: 10px; padding: 28px 32px; max-width: 580px; margin: 0 auto; box-shadow: 0 6px 24px rgba(31,61,46,0.08); }
+      .enroll-card h3 { color: #1f3d2e; margin: 0 0 6px; font-size: 1.45rem; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
       .enroll-card__sub { color: #6b6657; font-size: 0.95rem; margin: 0 0 22px; }
-      .enroll-card__price { background: #f5f1e8; border-left: 4px solid #d4a548; border-radius: 4px; padding: 14px 18px; margin: 0 0 22px; }
-      .enroll-card__price strong { color: #0a3a5f; font-size: 1.1rem; }
+      .enroll-card__price { background: #f5f0e6; border-left: 4px solid #c89a3a; border-radius: 4px; padding: 14px 18px; margin: 0 0 22px; }
+      .enroll-card__price strong { color: #1f3d2e; font-size: 1.1rem; }
       .enroll-card__price small { display: block; color: #6b6657; font-size: 0.86rem; margin-top: 4px; line-height: 1.45; }
       .enroll-card__day { margin: 0 0 18px; }
-      .enroll-card__day-label { display: block; color: #1d3147; font-weight: 700; font-size: 0.92rem; margin: 0 0 10px; }
-      .enroll-card__day-option { display: flex; align-items: center; gap: 12px; background: #f5f1e8; border: 2px solid transparent; border-radius: 6px; padding: 12px 16px; margin: 0 0 8px; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }
+      .enroll-card__day-label { display: block; color: #2a2a24; font-weight: 700; font-size: 0.92rem; margin: 0 0 10px; }
+      .enroll-card__day-option { display: flex; align-items: center; gap: 12px; background: #f5f0e6; border: 2px solid transparent; border-radius: 6px; padding: 12px 16px; margin: 0 0 8px; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }
       .enroll-card__day-option:hover { background: #ede5d0; }
-      .enroll-card__day-option input { accent-color: #0a3a5f; }
-      .enroll-card__day-option:has(input:checked) { border-color: #0a3a5f; background: #fff; }
-      .enroll-card__day-option span.day { color: #0a3a5f; font-weight: 700; font-size: 0.98rem; }
+      .enroll-card__day-option input { accent-color: #1f3d2e; }
+      .enroll-card__day-option:has(input:checked) { border-color: #1f3d2e; background: #fff; }
+      .enroll-card__day-option span.day { color: #1f3d2e; font-weight: 700; font-size: 0.98rem; }
       .enroll-card__day-option span.time { color: #6b6657; font-size: 0.9rem; margin-left: auto; }
-      .enroll-card__cta { display: block; width: 100%; background: #0a3a5f; color: #d4a548; border: 0; padding: 14px 22px; border-radius: 6px; font-size: 1.05rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: background 0.15s ease; font-family: inherit; text-decoration: none; text-align: center; box-sizing: border-box; }
+      .enroll-card__cta { display: block; width: 100%; background: #1f3d2e; color: #c89a3a; border: 0; padding: 14px 22px; border-radius: 6px; font-size: 1.05rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: background 0.15s ease; font-family: inherit; text-decoration: none; text-align: center; box-sizing: border-box; }
       .enroll-card__cta:hover { background: #082c47; }
       .enroll-card__cta:disabled { background: #c8c2b1; color: #6b6657; cursor: not-allowed; }
       .enroll-card__cta-note { color: #6b6657; font-size: 0.82rem; margin: 12px 0 0; text-align: center; line-height: 1.45; }
 
-      .related-courses { background: #0a3a5f; color: #f5f1e8; padding: 48px 0; }
+      .related-courses { background: #1f3d2e; color: #f5f0e6; padding: 48px 0; }
       .related-courses__inner { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
-      .related-courses h2 { color: #d4a548; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 500; margin: 0 0 18px; }
+      .related-courses h2 { color: #c89a3a; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.8rem; font-weight: 500; margin: 0 0 18px; }
       .related-courses ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
       .related-courses li { background: rgba(245,241,232,0.06); padding: 14px 18px; border-radius: 6px; }
-      .related-courses a { color: #f5f1e8; font-weight: 600; text-decoration: none; }
-      .related-courses a:hover { color: #d4a548; }
+      .related-courses a { color: #f5f0e6; font-weight: 600; text-decoration: none; }
+      .related-courses a:hover { color: #c89a3a; }
       .related-courses__grade { color: #c89a3a; font-size: 0.74rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; display: block; margin: 0 0 4px; }
 </style>
     <script type="application/ld+json">
@@ -146,14 +146,14 @@
         <p style="margin: 0 0 18px;">Every SAT Math class follows the same structure so students walk in knowing what to expect and walk out with a corrected mini-quiz in hand.</p>
         
             <div class="class-block">
-              <div class="class-block__time" style="background:#d4a548;">0:00 – 0:30<br><span class="class-block__min">30 min</span></div>
+              <div class="class-block__time" style="background:#c89a3a;">0:00 – 0:30<br><span class="class-block__min">30 min</span></div>
               <div class="class-block__body">
                 <h4>Puzzles &amp; Enigmas</h4>
                 <p>Warm-up with logic puzzles, math riddles, and short brain-teaser problems. The point is to switch the brain on without yet introducing today&rsquo;s topic &mdash; students arrive at different focus levels and this 30-minute block evens the room.</p>
               </div>
             </div>
             <div class="class-block">
-              <div class="class-block__time" style="background:#0a3a5f;">0:30 – 1:00<br><span class="class-block__min">30 min</span></div>
+              <div class="class-block__time" style="background:#1f3d2e;">0:30 – 1:00<br><span class="class-block__min">30 min</span></div>
               <div class="class-block__body">
                 <h4>Subject &mdash; concept &amp; guided practice</h4>
                 <p>First half of today&rsquo;s topic. One Digital SAT topic per meeting — linear systems, advanced algebra, problem-solving and data, or additional topics in geometry/trig. Concept-first: the instructor demonstrates one or two worked examples, then students try guided practice with the teacher walking the table.</p>
@@ -167,7 +167,7 @@
               </div>
             </div>
             <div class="class-block">
-              <div class="class-block__time" style="background:#0a3a5f;">1:05 – 1:30<br><span class="class-block__min">25 min</span></div>
+              <div class="class-block__time" style="background:#1f3d2e;">1:05 – 1:30<br><span class="class-block__min">25 min</span></div>
               <div class="class-block__body">
                 <h4>Subject &mdash; word problems &amp; applications</h4>
                 <p>Second half of the topic, focused on word problems, abstraction, and math applied to real situations &mdash; the place where rote knowledge turns into real understanding. Examples we use: Reading a real Digital SAT-style data set and computing the correct statistic under timing.; Modeling exponential growth in a savings account question.; Decoding wordy SAT geometry problems — strip the words, keep the picture..</p>
@@ -243,7 +243,7 @@
           <p class="enroll-card__cta-note">Stripe secure checkout &middot; $99 registration + $50 materials charged today &middot; $640/month tuition begins on your first class week.</p>
         </div>
 
-        <p style="text-align:center; margin: 30px 0 0; color: #6b6657; font-size: 0.95rem;">Want to talk first? Call <a href="tel:+16466686151" style="color:#0a3a5f; font-weight:600;">(646) 668-6151</a> or book a <a href="/evaluation" style="color:#0a3a5f; font-weight:600;">free 60-minute evaluation</a>.</p>
+        <p style="text-align:center; margin: 30px 0 0; color: #6b6657; font-size: 0.95rem;">Want to talk first? Call <a href="tel:+16466686151" style="color:#1f3d2e; font-weight:600;">(646) 668-6151</a> or book a <a href="/evaluation" style="color:#1f3d2e; font-weight:600;">free 60-minute evaluation</a>.</p>
       </div>
     </section>
 
