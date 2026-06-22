@@ -681,7 +681,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     "",
     `Our recommendation: ${courseName}`,
     "",
-    "You can read the full course description, see the 24-class syllabus, see exactly how each class is structured (30 minutes of math puzzles, an hour of guided subject work with a 5-minute break, and a 30-minute mini-quiz corrected in class), and enroll directly here:",
+    "You can read the full course description, see the 24-class syllabus, see exactly how each class is structured, and enroll directly here:",
     "",
     courseUrl,
     ""
@@ -731,7 +731,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<p>Hi ${e(parentGreet)},</p>`,
     `<p>Thank you for bringing ${e(studentName)} in for the free evaluation. It was a real pleasure spending the hour with them, and we now have a clear picture of where they are and what comes next.</p>`,
     `<p><strong>Our recommendation:</strong> ${e(courseName)}</p>`,
-    `<p>You can read the full course description, see the 24-class syllabus, see exactly how each class is structured (30 minutes of math puzzles, an hour of guided subject work with a 5-minute break, and a 30-minute mini-quiz corrected in class), and enroll directly here:</p>`,
+    `<p>You can read the full course description, see the 24-class syllabus, see exactly how each class is structured, and enroll directly here:</p>`,
     `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`
   ];
   if (notesParagraph) {
