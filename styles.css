@@ -2243,3 +2243,7 @@ body { padding-top: 168px; }
     overflow-y: auto;
   }
 }
+
+/* Accessibility: skip-to-content link */
+.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { position: fixed; left: 12px; top: 12px; width: auto; height: auto; padding: 10px 16px; background: #1f3d2e; color: #f5f0e6; border-radius: 6px; font-weight: 700; z-index: 9999; outline: 2px solid #c89a3a; }
