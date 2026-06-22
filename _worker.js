@@ -677,7 +677,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
   const textLines = [
     `Hi ${parentGreet},`,
     "",
-    `Thank you for bringing ${studentName} in for the free evaluation. It was a real pleasure spending the hour with them, and we now have a clear picture of where they are and what comes next.`,
+    `Thank you for bringing ${studentName} in for the free evaluation. It was a real pleasure spending time with them, and we now have a clear picture of where they are and what comes next.`,
     "",
     `Our recommendation: ${courseName}`,
     "",
@@ -729,7 +729,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
   const h = [
     `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;line-height:1.55;color:#1b1b1b;max-width:620px">`,
     `<p>Hi ${e(parentGreet)},</p>`,
-    `<p>Thank you for bringing ${e(studentName)} in for the free evaluation. It was a real pleasure spending the hour with them, and we now have a clear picture of where they are and what comes next.</p>`,
+    `<p>Thank you for bringing ${e(studentName)} in for the free evaluation. It was a real pleasure spending time with them, and we now have a clear picture of where they are and what comes next.</p>`,
     `<p><strong>Our recommendation:</strong> ${e(courseName)}</p>`,
     `<p>You can read the full course description, see the 24-class syllabus, see exactly how each class is structured, and enroll directly here:</p>`,
     `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`
