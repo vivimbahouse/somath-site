@@ -60,7 +60,9 @@
 
       .syllabus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; margin: 14px 0 0; }
       .syllabus-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #e0d8c4; }
-      .syllabus-row__mtg { flex: 0 0 60px; color: #c89a3a; font-weight: 700; font-size: 0.92rem; }
+      .syllabus-row__mtg { flex: 0 0 56px; color: #c89a3a; font-weight: 700; text-align: center; line-height: 1.1; padding-top: 2px; }
+      .syllabus-row__mtg .lbl { display: block; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
+      .syllabus-row__mtg .num { display: block; font-size: 1.15rem; font-weight: 700; margin-top: 2px; }
       .syllabus-row__body { color: #2a2a24; font-size: 0.96rem; line-height: 1.45; }
       @media (max-width: 720px) { .syllabus-grid { grid-template-columns: 1fr; } }
 
@@ -179,25 +181,33 @@
     <section class="course-section">
       <div class="course-section__inner" style="max-width:780px;">
         <p class="course-section__eyebrow">Syllabus arc</p>
-        <h2>16-meeting rolling syllabus</h2>
-        <p style="margin: 0 0 6px;">Courses are rolling — a student can join at any meeting and continue without losing the thread. Here&rsquo;s the full topic arc:</p>
+        <h2>24-class rolling syllabus</h2>
+        <p style="margin: 0 0 6px;">Courses are rolling — a student can join at any class and continue without losing the thread. Here&rsquo;s the full topic arc:</p>
         <div class="syllabus-grid">
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 1</span><span class="syllabus-row__body">Number sense to 20. Counting forward and back, comparing quantities.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 2</span><span class="syllabus-row__body">Place value to 100. Tens and ones with base-10 blocks.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 3</span><span class="syllabus-row__body">Make-ten addition strategy.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 4</span><span class="syllabus-row__body">Doubles and near-doubles up to 20.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 5</span><span class="syllabus-row__body">Subtraction within 20 — take-away and missing-addend.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 6</span><span class="syllabus-row__body">Word problems with addition: drawing the picture.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 7</span><span class="syllabus-row__body">Word problems with subtraction: choosing the operation.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 8</span><span class="syllabus-row__body">Halves, fourths, and equal sharing.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 9</span><span class="syllabus-row__body">Length measurement — inches and centimeters.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 10</span><span class="syllabus-row__body">Telling time to the hour and half hour.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 11</span><span class="syllabus-row__body">Money — coins, pennies, nickels, dimes, quarters.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 12</span><span class="syllabus-row__body">Skip counting by 2s, 5s, and 10s.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 13</span><span class="syllabus-row__body">Two-digit addition without regrouping.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 14</span><span class="syllabus-row__body">Two-digit subtraction without regrouping.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 15</span><span class="syllabus-row__body">Shapes — squares, rectangles, triangles, circles, attributes.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 16</span><span class="syllabus-row__body">Patterns and sorting with numbers and shapes.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">1</span></span><span class="syllabus-row__body">Number sense to 20. Counting forward and back, comparing quantities.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">2</span></span><span class="syllabus-row__body">Place value to 100. Tens and ones with base-10 blocks.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">3</span></span><span class="syllabus-row__body">Make-ten addition strategy.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">4</span></span><span class="syllabus-row__body">Doubles and near-doubles up to 20.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">5</span></span><span class="syllabus-row__body">Subtraction within 20 — take-away and missing-addend.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">6</span></span><span class="syllabus-row__body">Word problems with addition: drawing the picture.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">7</span></span><span class="syllabus-row__body">Word problems with subtraction: choosing the operation.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">8</span></span><span class="syllabus-row__body">Halves, fourths, and equal sharing.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">9</span></span><span class="syllabus-row__body">Length measurement — inches and centimeters.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">10</span></span><span class="syllabus-row__body">Telling time to the hour and half hour.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">11</span></span><span class="syllabus-row__body">Money — coins, pennies, nickels, dimes, quarters.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">12</span></span><span class="syllabus-row__body">Skip counting by 2s, 5s, and 10s.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">13</span></span><span class="syllabus-row__body">Two-digit addition without regrouping.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">14</span></span><span class="syllabus-row__body">Two-digit subtraction without regrouping.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">15</span></span><span class="syllabus-row__body">Shapes — squares, rectangles, triangles, circles, attributes.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">16</span></span><span class="syllabus-row__body">Patterns and sorting with numbers and shapes.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">17</span></span><span class="syllabus-row__body">Two-digit addition with regrouping — carrying explained with base-10 blocks.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">18</span></span><span class="syllabus-row__body">Two-digit subtraction with regrouping — borrowing without confusion.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">19</span></span><span class="syllabus-row__body">Word problems mixing addition and subtraction — which operation and why.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">20</span></span><span class="syllabus-row__body">Place value to 1,000 — hundreds, tens, ones.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">21</span></span><span class="syllabus-row__body">Comparing and ordering three-digit numbers.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">22</span></span><span class="syllabus-row__body">Measurement — length, weight, capacity with non-standard and standard units.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">23</span></span><span class="syllabus-row__body">Time to the nearest 5 minutes and elapsed-time word problems.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">24</span></span><span class="syllabus-row__body">Cumulative review and a friendly end-of-term math celebration.</span></div>
         </div>
       </div>
     </section>

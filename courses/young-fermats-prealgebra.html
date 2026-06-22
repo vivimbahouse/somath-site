@@ -60,7 +60,9 @@
 
       .syllabus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; margin: 14px 0 0; }
       .syllabus-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #e0d8c4; }
-      .syllabus-row__mtg { flex: 0 0 60px; color: #c89a3a; font-weight: 700; font-size: 0.92rem; }
+      .syllabus-row__mtg { flex: 0 0 56px; color: #c89a3a; font-weight: 700; text-align: center; line-height: 1.1; padding-top: 2px; }
+      .syllabus-row__mtg .lbl { display: block; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
+      .syllabus-row__mtg .num { display: block; font-size: 1.15rem; font-weight: 700; margin-top: 2px; }
       .syllabus-row__body { color: #2a2a24; font-size: 0.96rem; line-height: 1.45; }
       @media (max-width: 720px) { .syllabus-grid { grid-template-columns: 1fr; } }
 
@@ -186,25 +188,33 @@
     <section class="course-section">
       <div class="course-section__inner" style="max-width:780px;">
         <p class="course-section__eyebrow">Syllabus arc</p>
-        <h2>16-meeting rolling syllabus</h2>
-        <p style="margin: 0 0 6px;">Courses are rolling — a student can join at any meeting and continue without losing the thread. Here&rsquo;s the full topic arc:</p>
+        <h2>24-class rolling syllabus</h2>
+        <p style="margin: 0 0 6px;">Courses are rolling — a student can join at any class and continue without losing the thread. Here&rsquo;s the full topic arc:</p>
         <div class="syllabus-grid">
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 1</span><span class="syllabus-row__body">Integers on the number line and absolute value.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 2</span><span class="syllabus-row__body">Adding and subtracting integers.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 3</span><span class="syllabus-row__body">Multiplying and dividing integers.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 4</span><span class="syllabus-row__body">Order of operations with integers and fractions.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 5</span><span class="syllabus-row__body">Equivalent fractions, comparing, and converting to decimals.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 6</span><span class="syllabus-row__body">All four operations on fractions and mixed numbers.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 7</span><span class="syllabus-row__body">Decimals — all four operations, including by decimals.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 8</span><span class="syllabus-row__body">Ratios and rates — equivalent ratios and unit rates.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 9</span><span class="syllabus-row__body">Proportional reasoning — solving simple proportions.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 10</span><span class="syllabus-row__body">Percent — three faces (part/whole/percent), tip, tax, discount.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 11</span><span class="syllabus-row__body">Variables and algebraic expressions — translating words.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 12</span><span class="syllabus-row__body">Evaluating expressions and combining like terms.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 13</span><span class="syllabus-row__body">One-step equations with addition and subtraction.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 14</span><span class="syllabus-row__body">One-step equations with multiplication and division.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 15</span><span class="syllabus-row__body">Two-step equations — bringing it all together.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 16</span><span class="syllabus-row__body">Word problems modeled with one- and two-step equations.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">1</span></span><span class="syllabus-row__body">Integers on the number line and absolute value.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">2</span></span><span class="syllabus-row__body">Adding and subtracting integers.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">3</span></span><span class="syllabus-row__body">Multiplying and dividing integers.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">4</span></span><span class="syllabus-row__body">Order of operations with integers and fractions.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">5</span></span><span class="syllabus-row__body">Equivalent fractions, comparing, and converting to decimals.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">6</span></span><span class="syllabus-row__body">All four operations on fractions and mixed numbers.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">7</span></span><span class="syllabus-row__body">Decimals — all four operations, including by decimals.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">8</span></span><span class="syllabus-row__body">Ratios and rates — equivalent ratios and unit rates.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">9</span></span><span class="syllabus-row__body">Proportional reasoning — solving simple proportions.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">10</span></span><span class="syllabus-row__body">Percent — three faces (part/whole/percent), tip, tax, discount.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">11</span></span><span class="syllabus-row__body">Variables and algebraic expressions — translating words.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">12</span></span><span class="syllabus-row__body">Evaluating expressions and combining like terms.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">13</span></span><span class="syllabus-row__body">One-step equations with addition and subtraction.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">14</span></span><span class="syllabus-row__body">One-step equations with multiplication and division.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">15</span></span><span class="syllabus-row__body">Two-step equations — bringing it all together.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">16</span></span><span class="syllabus-row__body">Word problems modeled with one- and two-step equations.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">17</span></span><span class="syllabus-row__body">Solving multi-step equations with variables on both sides.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">18</span></span><span class="syllabus-row__body">Solving and graphing one-variable inequalities.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">19</span></span><span class="syllabus-row__body">Functions — tables, graphs, and the vertical-line test.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">20</span></span><span class="syllabus-row__body">Linear functions — slope as rate of change.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">21</span></span><span class="syllabus-row__body">Graphing lines from slope-intercept form.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">22</span></span><span class="syllabus-row__body">Systems of two linear equations — substitution method.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">23</span></span><span class="syllabus-row__body">Word problems using systems — mixture, age, distance-rate-time.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">24</span></span><span class="syllabus-row__body">Cumulative review and an Algebra I readiness diagnostic.</span></div>
         </div>
       </div>
     </section>

@@ -60,7 +60,9 @@
 
       .syllabus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; margin: 14px 0 0; }
       .syllabus-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #e0d8c4; }
-      .syllabus-row__mtg { flex: 0 0 60px; color: #c89a3a; font-weight: 700; font-size: 0.92rem; }
+      .syllabus-row__mtg { flex: 0 0 56px; color: #c89a3a; font-weight: 700; text-align: center; line-height: 1.1; padding-top: 2px; }
+      .syllabus-row__mtg .lbl { display: block; font-size: 0.68rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
+      .syllabus-row__mtg .num { display: block; font-size: 1.15rem; font-weight: 700; margin-top: 2px; }
       .syllabus-row__body { color: #2a2a24; font-size: 0.96rem; line-height: 1.45; }
       @media (max-width: 720px) { .syllabus-grid { grid-template-columns: 1fr; } }
 
@@ -186,25 +188,33 @@
     <section class="course-section">
       <div class="course-section__inner" style="max-width:780px;">
         <p class="course-section__eyebrow">Syllabus arc</p>
-        <h2>16-meeting rolling syllabus</h2>
-        <p style="margin: 0 0 6px;">Courses are rolling — a student can join at any meeting and continue without losing the thread. Here&rsquo;s the full topic arc:</p>
+        <h2>24-class rolling syllabus</h2>
+        <p style="margin: 0 0 6px;">Courses are rolling — a student can join at any class and continue without losing the thread. Here&rsquo;s the full topic arc:</p>
         <div class="syllabus-grid">
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 1</span><span class="syllabus-row__body">Multiplication facts ×2, ×5, ×10.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 2</span><span class="syllabus-row__body">Multiplication facts ×3, ×4, ×6.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 3</span><span class="syllabus-row__body">Multiplication facts ×7, ×8, ×9 — area models.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 4</span><span class="syllabus-row__body">Distributive thinking and partial products.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 5</span><span class="syllabus-row__body">Multi-digit multiplication (2-digit × 1-digit).</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 6</span><span class="syllabus-row__body">Division facts and the inverse of multiplication.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 7</span><span class="syllabus-row__body">Long division — dividends to three digits.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 8</span><span class="syllabus-row__body">Remainders — what they mean in word problems.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 9</span><span class="syllabus-row__body">Fraction concepts — parts of a whole, parts of a set.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 10</span><span class="syllabus-row__body">Equivalent fractions and comparing fractions.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 11</span><span class="syllabus-row__body">Adding fractions with like denominators.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 12</span><span class="syllabus-row__body">Subtracting fractions with like denominators.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 13</span><span class="syllabus-row__body">Decimals to the tenths and hundredths.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 14</span><span class="syllabus-row__body">Area, perimeter, and word problems with both.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 15</span><span class="syllabus-row__body">Two-step word problems with the four operations.</span></div>
-              <div class="syllabus-row"><span class="syllabus-row__mtg">Mtg 16</span><span class="syllabus-row__body">End-of-term mixed review and timed practice.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">1</span></span><span class="syllabus-row__body">Multiplication facts ×2, ×5, ×10.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">2</span></span><span class="syllabus-row__body">Multiplication facts ×3, ×4, ×6.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">3</span></span><span class="syllabus-row__body">Multiplication facts ×7, ×8, ×9 — area models.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">4</span></span><span class="syllabus-row__body">Distributive thinking and partial products.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">5</span></span><span class="syllabus-row__body">Multi-digit multiplication (2-digit × 1-digit).</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">6</span></span><span class="syllabus-row__body">Division facts and the inverse of multiplication.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">7</span></span><span class="syllabus-row__body">Long division — dividends to three digits.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">8</span></span><span class="syllabus-row__body">Remainders — what they mean in word problems.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">9</span></span><span class="syllabus-row__body">Fraction concepts — parts of a whole, parts of a set.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">10</span></span><span class="syllabus-row__body">Equivalent fractions and comparing fractions.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">11</span></span><span class="syllabus-row__body">Adding fractions with like denominators.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">12</span></span><span class="syllabus-row__body">Subtracting fractions with like denominators.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">13</span></span><span class="syllabus-row__body">Decimals to the tenths and hundredths.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">14</span></span><span class="syllabus-row__body">Area, perimeter, and word problems with both.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">15</span></span><span class="syllabus-row__body">Two-step word problems with the four operations.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">16</span></span><span class="syllabus-row__body">End-of-term mixed review and timed practice.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">17</span></span><span class="syllabus-row__body">Long division — single-digit divisor with remainders.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">18</span></span><span class="syllabus-row__body">Long division — two-digit divisor introduced.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">19</span></span><span class="syllabus-row__body">Adding and subtracting fractions with unlike denominators.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">20</span></span><span class="syllabus-row__body">Multiplying fractions by whole numbers and by fractions.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">21</span></span><span class="syllabus-row__body">Dividing fractions — keep-change-flip and what it really means.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">22</span></span><span class="syllabus-row__body">Decimals — place value, comparing, and the four operations.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">23</span></span><span class="syllabus-row__body">Ratios and rates — word problems with unit prices and recipes.</span></div>
+              <div class="syllabus-row"><span class="syllabus-row__mtg"><span class="lbl">Class</span><span class="num">24</span></span><span class="syllabus-row__body">Cumulative review and a mixed-topic timed challenge.</span></div>
         </div>
       </div>
     </section>
