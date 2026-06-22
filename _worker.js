@@ -787,7 +787,7 @@ async function handleSendEvalEmail(request, env) {
   const courseName = EVAL_COURSES[courseSlug];
   const email = buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName });
   const deliveredTo = testMode ? "hello@schoolofmath.us" : parentEmail;
-  const replyTo = "vivianne@schoolofmath.us";
+  const replyTo = "hello@schoolofmath.us";
   const url = new URL(request.url);
   if (url.searchParams.get("preview") === "1") {
     return jsonResponse({ ok: true, to: deliveredTo, subject: email.subject, text: email.text });
