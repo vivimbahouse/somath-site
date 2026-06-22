@@ -75,6 +75,7 @@
           <h4>School</h4>
           <ul>
             <li><a href="/about">Team</a></li>
+            <li><a href="/posts/inside-somath-2026-website-tour-membership-schedule-syllabus">Watch the Tour</a></li>
             <li><a href="/blog">Journal</a></li>
             <li><a href="/contact">Visit Us</a></li>
             <li><a href="/evaluation">Free Evaluation</a></li>
