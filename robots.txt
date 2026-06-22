@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /_admin/
+Disallow: /_secure/
+Disallow: /api/
+
+Sitemap: https://www.schoolofmath.us/sitemap.xml

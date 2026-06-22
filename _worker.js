@@ -654,6 +654,160 @@ async function handleMembershipReservation(request, env) {
 }
 __name(handleMembershipReservation, "handleMembershipReservation");
 
+var EVAL_COURSES = {
+  "little-newtons-a": "Little Newtons A",
+  "little-newtons-b": "Little Newtons B",
+  "kid-einsteins-a": "Kid Einsteins A",
+  "kid-einsteins-b": "Kid Einsteins B",
+  "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
+  "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
+  "young-fermats-geometry": "Young Fermats \u2014 Geometry",
+  "shsat-prep": "SHSAT Prep",
+  "sat-math": "SAT Math",
+  "pre-calculus": "Pre-Calculus"
+};
+
+function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
+  const parentGreet = parentName ? parentName : "there";
+  const courseUrl = `https://www.schoolofmath.us/courses/${courseSlug}`;
+  const tourUrl = "https://www.schoolofmath.us/posts/inside-somath-2026-website-tour-membership-schedule-syllabus";
+  const subject = `${studentName} \u2014 your SOMATH evaluation results and recommended course`;
+  const notesParagraph = notes ? notes : "";
+
+  const textLines = [
+    `Hi ${parentGreet},`,
+    "",
+    `Thank you for bringing ${studentName} in for the free evaluation. It was a real pleasure spending the hour with them, and we now have a clear picture of where they are and what comes next.`,
+    "",
+    `Our recommendation: ${courseName}`,
+    "",
+    "You can read the full course description, see the 24-class syllabus, see exactly how each class is structured (30 minutes of math puzzles, an hour of guided subject work with a 5-minute break, and a 30-minute mini-quiz corrected in class), and enroll directly here:",
+    "",
+    courseUrl,
+    ""
+  ];
+  if (notesParagraph) {
+    textLines.push(notesParagraph, "");
+  }
+  textLines.push(
+    "Before you decide, we'd love for you to watch our short founder's tour of how SOMATH actually works \u2014 Membership, schedule, and the 24-class syllabus behind every leveled program. It will answer most of the questions parents have at this stage:",
+    "",
+    tourUrl,
+    "",
+    "A quick summary of what to expect:",
+    "",
+    "\u2022 Monthly Membership \u2014 start any week, no semester wait, $489/month flat for our Core plan (1 class per week).",
+    "\u2022 Materials fee \u2014 $99 one-time at enrollment, then $50 every 24 classes after that.",
+    "\u2022 Small cohorts (4\u20136 students), same instructor every week, same room.",
+    "\u2022 In person at 226 W 79th St, 1st Floor, Upper West Side.",
+    "\u2022 24-class rolling syllabus \u2014 your child can join at any class and continue without losing the thread.",
+    "\u2022 Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.",
+    "\u2022 Cancel anytime with 15 days' notice. No long-term contract.",
+    "",
+    "What to do next:",
+    "",
+    "1. Watch the founder's tour video above (about 3 minutes).",
+    "2. Click the course link above to see the full syllabus and pick a day of the week that fits your schedule.",
+    "3. Complete enrollment through the page \u2014 you'll be set up in our system within 24 hours and we'll confirm " + studentName + "'s first class.",
+    "",
+    "If you'd rather talk it through first, just reply to this email or call us at (646) 668-6151. We're happy to walk you through the recommendation, the schedule, or anything else on your mind before you commit.",
+    "",
+    `We're excited to have ${studentName} join us.`,
+    "",
+    "Warmly,",
+    "",
+    senderName,
+    "School of Math | SOMATH",
+    "226 W 79th St, 1st Floor, New York, NY 10024",
+    "(646) 668-6151",
+    "https://www.schoolofmath.us"
+  );
+  const text = textLines.join("\n");
+
+  const e = escapeHtml;
+  const linkStyle = "color:#1f3d2e;text-decoration:underline";
+  const h = [
+    `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;line-height:1.55;color:#1b1b1b;max-width:620px">`,
+    `<p>Hi ${e(parentGreet)},</p>`,
+    `<p>Thank you for bringing ${e(studentName)} in for the free evaluation. It was a real pleasure spending the hour with them, and we now have a clear picture of where they are and what comes next.</p>`,
+    `<p><strong>Our recommendation:</strong> ${e(courseName)}</p>`,
+    `<p>You can read the full course description, see the 24-class syllabus, see exactly how each class is structured (30 minutes of math puzzles, an hour of guided subject work with a 5-minute break, and a 30-minute mini-quiz corrected in class), and enroll directly here:</p>`,
+    `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`
+  ];
+  if (notesParagraph) {
+    h.push(`<p>${e(notesParagraph).replace(/\n/g, "<br>")}</p>`);
+  }
+  h.push(
+    `<p>Before you decide, we'd love for you to watch our short founder's tour of how SOMATH actually works \u2014 Membership, schedule, and the 24-class syllabus behind every leveled program. It will answer most of the questions parents have at this stage:</p>`,
+    `<p><a href="${tourUrl}" style="${linkStyle}">${tourUrl}</a></p>`,
+    `<p><strong>A quick summary of what to expect:</strong></p>`,
+    `<ul style="padding-left:20px">`,
+    `<li><strong>Monthly Membership</strong> \u2014 start any week, no semester wait, $489/month flat for our Core plan (1 class per week).</li>`,
+    `<li><strong>Materials fee</strong> \u2014 $99 one-time at enrollment, then $50 every 24 classes after that.</li>`,
+    `<li>Small cohorts (4\u20136 students), same instructor every week, same room.</li>`,
+    `<li>In person at 226 W 79th St, 1st Floor, Upper West Side.</li>`,
+    `<li>24-class rolling syllabus \u2014 your child can join at any class and continue without losing the thread.</li>`,
+    `<li>Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.</li>`,
+    `<li>Cancel anytime with 15 days' notice. No long-term contract.</li>`,
+    `</ul>`,
+    `<p><strong>What to do next:</strong></p>`,
+    `<ol style="padding-left:20px">`,
+    `<li>Watch the founder's tour video above (about 3 minutes).</li>`,
+    `<li>Click the course link above to see the full syllabus and pick a day of the week that fits your schedule.</li>`,
+    `<li>Complete enrollment through the page \u2014 you'll be set up in our system within 24 hours and we'll confirm ${e(studentName)}'s first class.</li>`,
+    `</ol>`,
+    `<p>If you'd rather talk it through first, just reply to this email or call us at <a href="tel:+16466686151" style="${linkStyle}">(646) 668-6151</a>. We're happy to walk you through the recommendation, the schedule, or anything else on your mind before you commit.</p>`,
+    `<p>We're excited to have ${e(studentName)} join us.</p>`,
+    `<p>Warmly,<br>${e(senderName)}<br>School of Math | SOMATH<br>226 W 79th St, 1st Floor, New York, NY 10024<br>(646) 668-6151<br><a href="https://www.schoolofmath.us" style="${linkStyle}">www.schoolofmath.us</a></p>`,
+    `</div>`
+  );
+  const html = h.join("");
+  return { subject, text, html };
+}
+__name(buildEvalEmail, "buildEvalEmail");
+
+async function handleSendEvalEmail(request, env) {
+  if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405);
+  const adminPw = request.headers.get("x-admin-password") || "";
+  if (!env.ADMIN_PASSWORD || adminPw !== env.ADMIN_PASSWORD) {
+    return jsonResponse({ error: "unauthorized" }, 401);
+  }
+  let body;
+  try { body = await request.json(); } catch (e) { return jsonResponse({ error: "invalid_body" }, 400); }
+  const parentEmail = String(body.parent_email || "").trim().toLowerCase();
+  const parentName = String(body.parent_name || "").trim().slice(0, 80);
+  const studentName = String(body.student_name || "").trim().slice(0, 80);
+  const courseSlug = String(body.course_slug || "").trim();
+  const notes = String(body.notes || "").trim().slice(0, 2000);
+  const senderName = String(body.sender_name || "Vivianne").trim().slice(0, 80) || "Vivianne";
+  const testMode = !!body.test_mode;
+  if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_parent_email" }, 400);
+  if (!studentName) return jsonResponse({ error: "missing_student_name" }, 400);
+  if (!EVAL_COURSES[courseSlug]) return jsonResponse({ error: "unknown_course" }, 400);
+  const courseName = EVAL_COURSES[courseSlug];
+  const email = buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName });
+  const deliveredTo = testMode ? "hello@schoolofmath.us" : parentEmail;
+  const replyTo = "vivianne@schoolofmath.us";
+  const url = new URL(request.url);
+  if (url.searchParams.get("preview") === "1") {
+    return jsonResponse({ ok: true, to: deliveredTo, subject: email.subject, text: email.text });
+  }
+  const subject = testMode ? `[TEST] ${email.subject}` : email.subject;
+  const sendResult = await sendResendEmail(env, {
+    to: deliveredTo,
+    subject,
+    html: email.html,
+    replyTo
+  }).catch((e) => ({ ok: false, error: "exception", detail: String(e) }));
+  if (!sendResult.ok) {
+    console.error("send-eval-email failed", JSON.stringify(sendResult));
+    return jsonResponse({ error: "send_failed", detail: sendResult.error || "unknown" }, 502);
+  }
+  console.log(JSON.stringify({ event: "eval_email_sent", parentEmail: deliveredTo, studentName, courseSlug, testMode }));
+  return jsonResponse({ ok: true, delivered_to: deliveredTo, subject });
+}
+__name(handleSendEvalEmail, "handleSendEvalEmail");
+
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -663,6 +817,14 @@ var worker_default = {
     if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
+    if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
+    if (url.pathname.startsWith("/_admin/")) {
+      const adminResp = await env.ASSETS.fetch(request);
+      const headers = new Headers(adminResp.headers);
+      headers.set("X-Robots-Tag", "noindex,nofollow,noarchive");
+      headers.set("Cache-Control", "no-store");
+      return new Response(adminResp.body, { status: adminResp.status, statusText: adminResp.statusText, headers });
+    }
     const SCHEDULE_REDIRECTS = {
       "/summer-schedule": "/schedule",
       "/august-schedule": "/schedule",

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Send Evaluation Email — SOMATH Admin</title>
+<style>
+  :root {
+    --green: #1f3d2e;
+    --green-dark: #142a1f;
+    --gold: #c89a3a;
+    --cream: #f5f0e6;
+    --ink: #1b1b1b;
+    --muted: #5b6660;
+    --line: #d8d2c4;
+    --err: #a83232;
+    --ok: #2a6b3e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    margin: 0;
+    padding: 24px 16px 80px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; }
+  h1 {
+    font-size: 22px;
+    margin: 0 0 4px;
+    color: var(--green);
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 24px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--green);
+    margin: 16px 0 6px;
+  }
+  label .opt { color: var(--muted); font-weight: 400; }
+  input[type=text], input[type=email], input[type=password], select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font: inherit;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+    border-color: var(--gold);
+  }
+  textarea { min-height: 110px; resize: vertical; font-family: inherit; }
+  .row { display: flex; gap: 12px; }
+  .row > * { flex: 1; }
+  .check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .check input { width: auto; }
+  .actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 22px;
+    flex-wrap: wrap;
+  }
+  button {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:hover { background: var(--green-dark); }
+  button.secondary {
+    background: transparent;
+    color: var(--green);
+    border: 1px solid var(--line);
+  }
+  button:disabled { opacity: 0.6; cursor: not-allowed; }
+  .msg { margin-top: 16px; padding: 12px; border-radius: 8px; font-size: 14px; display: none; }
+  .msg.show { display: block; }
+  .msg.ok { background: #e6f1ea; color: var(--ok); border: 1px solid #b9d9c2; }
+  .msg.err { background: #fbe9e9; color: var(--err); border: 1px solid #f1c0c0; }
+  .preview {
+    margin-top: 16px;
+    padding: 14px;
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    background: #fafaf6;
+    font-size: 13px;
+    color: var(--muted);
+    white-space: pre-wrap;
+    max-height: 240px;
+    overflow-y: auto;
+    display: none;
+  }
+  .preview.show { display: block; }
+  .preview b { color: var(--green); }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .gate { text-align: center; padding: 32px 16px; }
+  .gate input { max-width: 320px; margin: 8px auto 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Send Evaluation Email</h1>
+  <p class="sub">SOMATH internal · post-evaluation parent email</p>
+
+  <div id="gate" class="card gate">
+    <label for="pw">Admin password</label>
+    <input id="pw" type="password" autocomplete="off" autofocus>
+    <div><button id="gate-go">Unlock</button></div>
+    <div id="gate-msg" class="msg err"></div>
+  </div>
+
+  <div id="form" class="card" style="display:none">
+    <label for="parent_email">Parent email</label>
+    <input id="parent_email" type="email" required placeholder="parent@example.com">
+
+    <label for="parent_name">Parent name <span class="opt">(optional — leave blank to use "there")</span></label>
+    <input id="parent_name" type="text" placeholder="Jane">
+
+    <label for="student_name">Student first name</label>
+    <input id="student_name" type="text" required placeholder="Lucas">
+
+    <label for="course">Recommended course</label>
+    <select id="course" required>
+      <option value="">— Pick a course —</option>
+      <option value="little-newtons-a">Little Newtons A (Grades 1–2)</option>
+      <option value="little-newtons-b">Little Newtons B (Grades 1–2, advanced)</option>
+      <option value="kid-einsteins-a">Kid Einsteins A (Grades 3–4)</option>
+      <option value="kid-einsteins-b">Kid Einsteins B (Grades 3–4, advanced)</option>
+      <option value="young-fermats-prealgebra">Young Fermats — Pre-Algebra</option>
+      <option value="young-fermats-algebra-ignite">Young Fermats — Algebra Ignite</option>
+      <option value="young-fermats-geometry">Young Fermats — Geometry</option>
+      <option value="shsat-prep">SHSAT Prep</option>
+      <option value="sat-math">SAT Math</option>
+      <option value="pre-calculus">Pre-Calculus</option>
+    </select>
+
+    <label for="notes">Personal note <span class="opt">(optional — inserted after the recommendation paragraph)</span></label>
+    <textarea id="notes" placeholder="Quick personal note about the evaluation, anything specific you noticed, etc. Leave blank to send the standard template."></textarea>
+    <div class="hint">If you fill this in, it will appear as its own paragraph between the recommendation and the tour video.</div>
+
+    <div class="check">
+      <input id="test_mode" type="checkbox" checked>
+      <label for="test_mode" style="margin:0;color:var(--muted);font-weight:400">Test mode (send to hello@schoolofmath.us instead of the parent)</label>
+    </div>
+
+    <div class="actions">
+      <button id="preview-btn" class="secondary" type="button">Preview</button>
+      <button id="send-btn" type="button">Send email</button>
+    </div>
+
+    <div id="preview" class="preview"></div>
+    <div id="msg" class="msg"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var COURSES = {
+    "little-newtons-a": "Little Newtons A",
+    "little-newtons-b": "Little Newtons B",
+    "kid-einsteins-a": "Kid Einsteins A",
+    "kid-einsteins-b": "Kid Einsteins B",
+    "young-fermats-prealgebra": "Young Fermats — Pre-Algebra",
+    "young-fermats-algebra-ignite": "Young Fermats — Algebra Ignite",
+    "young-fermats-geometry": "Young Fermats — Geometry",
+    "shsat-prep": "SHSAT Prep",
+    "sat-math": "SAT Math",
+    "pre-calculus": "Pre-Calculus"
+  };
+
+  var $ = function(id){ return document.getElementById(id); };
+  var pwKey = "somath_admin_pw";
+
+  function showForm(){ $("gate").style.display = "none"; $("form").style.display = "block"; }
+  function showMsg(el, kind, text){
+    el.className = "msg show " + kind;
+    el.textContent = text;
+  }
+  function clearMsg(el){ el.className = "msg"; el.textContent = ""; }
+
+  // Auto-unlock if password already in sessionStorage
+  var savedPw = sessionStorage.getItem(pwKey);
+  if (savedPw) showForm();
+
+  $("gate-go").addEventListener("click", function(){
+    var pw = $("pw").value.trim();
+    if (!pw) return;
+    sessionStorage.setItem(pwKey, pw);
+    showForm();
+  });
+  $("pw").addEventListener("keydown", function(e){
+    if (e.key === "Enter") $("gate-go").click();
+  });
+
+  function getPayload(){
+    var courseSlug = $("course").value;
+    return {
+      parent_email: $("parent_email").value.trim(),
+      parent_name: $("parent_name").value.trim(),
+      student_name: $("student_name").value.trim(),
+      course_slug: courseSlug,
+      course_name: COURSES[courseSlug] || "",
+      notes: $("notes").value.trim(),
+      test_mode: $("test_mode").checked,
+      sender_name: "Vivianne"
+    };
+  }
+
+  function validate(p){
+    if (!p.parent_email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.parent_email)) return "Enter a valid parent email.";
+    if (!p.student_name) return "Enter the student's first name.";
+    if (!p.course_slug) return "Pick a recommended course.";
+    return null;
+  }
+
+  $("preview-btn").addEventListener("click", async function(){
+    var msg = $("msg"); clearMsg(msg);
+    var preview = $("preview");
+    var p = getPayload();
+    var err = validate(p);
+    if (err) { showMsg(msg, "err", err); return; }
+    preview.className = "preview show";
+    preview.innerHTML = "Loading preview…";
+    try {
+      var resp = await fetch("/api/send-eval-email?preview=1", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": sessionStorage.getItem(pwKey) || ""
+        },
+        body: JSON.stringify(p)
+      });
+      var data = await resp.json();
+      if (!resp.ok) {
+        preview.className = "preview";
+        showMsg(msg, "err", data.error || ("HTTP " + resp.status));
+        return;
+      }
+      preview.innerHTML = "<b>To:</b> " + escapeHtml(data.to) + "\n<b>Subject:</b> " + escapeHtml(data.subject) + "\n\n" + escapeHtml(data.text);
+    } catch (e) {
+      preview.className = "preview";
+      showMsg(msg, "err", "Preview failed: " + e.message);
+    }
+  });
+
+  function escapeHtml(s){
+    return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  $("send-btn").addEventListener("click", async function(){
+    var msg = $("msg"); clearMsg(msg);
+    var p = getPayload();
+    var err = validate(p);
+    if (err) { showMsg(msg, "err", err); return; }
+    var dest = p.test_mode ? "hello@schoolofmath.us (TEST MODE)" : p.parent_email;
+    if (!confirm("Send evaluation email to " + dest + "?")) return;
+    $("send-btn").disabled = true;
+    $("send-btn").textContent = "Sending…";
+    try {
+      var resp = await fetch("/api/send-eval-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": sessionStorage.getItem(pwKey) || ""
+        },
+        body: JSON.stringify(p)
+      });
+      var data = await resp.json();
+      if (!resp.ok) {
+        if (resp.status === 401) {
+          sessionStorage.removeItem(pwKey);
+          showMsg(msg, "err", "Wrong admin password. Reload the page.");
+        } else {
+          showMsg(msg, "err", data.error || ("HTTP " + resp.status));
+        }
+        return;
+      }
+      showMsg(msg, "ok", "Sent to " + data.delivered_to + (p.test_mode ? " (test mode)." : ". You can send another below."));
+      if (!p.test_mode) {
+        $("parent_email").value = "";
+        $("parent_name").value = "";
+        $("student_name").value = "";
+        $("course").value = "";
+        $("notes").value = "";
+        $("preview").className = "preview";
+        $("preview").innerHTML = "";
+      }
+    } catch (e) {
+      showMsg(msg, "err", "Send failed: " + e.message);
+    } finally {
+      $("send-btn").disabled = false;
+      $("send-btn").textContent = "Send email";
+    }
+  });
+})();
+</script>
+</body>
+</html>
