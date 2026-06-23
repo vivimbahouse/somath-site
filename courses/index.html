@@ -23,39 +23,26 @@
       .course-index-card__arrow { color: #c89a3a; font-size: 1.05rem; transition: transform 0.18s ease; }
       .course-index-card:hover .course-index-card__arrow { transform: translateX(4px); }
       .course-index-card:hover .course-index-card__cta { color: #16301f; }
-      .enrolled-banner { display: none; background: #1f3d2e; color: #f5f0e6; padding: 28px 32px; border-radius: 12px; margin: 0 0 36px; box-shadow: 0 6px 24px rgba(31,61,46,0.18); border-left: 6px solid #c89a3a; }
-      .enrolled-banner.show { display: block; }
-      .enrolled-banner__head { display: flex; align-items: center; gap: 14px; margin: 0 0 10px; }
-      .enrolled-banner__check { width: 36px; height: 36px; background: #c89a3a; color: #1f3d2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; flex-shrink: 0; }
-      .enrolled-banner h2 { color: #f5f0e6; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 1.8rem; margin: 0; }
-      .enrolled-banner p { color: #f5f0e6; line-height: 1.6; margin: 0 0 10px; opacity: 0.95; }
-      .enrolled-banner ol { color: #f5f0e6; line-height: 1.7; margin: 10px 0 0; padding-left: 22px; }
-      .enrolled-banner ol li { margin-bottom: 4px; }
-      .enrolled-banner a.banner-link { color: #c89a3a; font-weight: 700; text-decoration: underline; }
-      .enrolled-banner__close { position: absolute; top: 12px; right: 14px; background: transparent; border: none; color: #f5f0e6; opacity: 0.7; cursor: pointer; font-size: 1.4rem; line-height: 1; padding: 4px 8px; }
-      .enrolled-banner__close:hover { opacity: 1; }
-      .enrolled-banner__wrap { position: relative; }
+      .enroll-confirm { display: none; background: #1f3d2e; color: #f5f0e6; border-left: 6px solid #c89a3a; border-radius: 10px; padding: 26px 32px; margin: 0 0 36px; box-shadow: 0 8px 28px rgba(31,61,46,0.15); position: relative; }
+      .enroll-confirm.show { display: block; }
+      .enroll-confirm h2 { color: #c89a3a; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.7rem; font-weight: 500; margin: 0 0 10px; }
+      .enroll-confirm p { color: #f5f0e6; margin: 0 0 10px; line-height: 1.55; font-size: 1rem; }
+      .enroll-confirm p:last-child { margin-bottom: 0; }
+      .enroll-confirm strong { color: #c89a3a; }
+      .enroll-confirm__dismiss { position: absolute; top: 12px; right: 16px; background: transparent; border: 0; color: #f5f0e6; font-size: 1.4rem; cursor: pointer; opacity: 0.7; padding: 4px 10px; line-height: 1; }
+      .enroll-confirm__dismiss:hover { opacity: 1; }
     </style>
   </head>
   <body data-page="courses">
     <div id="header-mount"></div>
     <section class="course-index">
       <div class="course-index__inner">
-        <div class="enrolled-banner__wrap">
-          <div class="enrolled-banner" id="enrolledBanner" role="status" aria-live="polite">
-            <button type="button" class="enrolled-banner__close" id="enrolledClose" aria-label="Dismiss confirmation">&times;</button>
-            <div class="enrolled-banner__head">
-              <span class="enrolled-banner__check" aria-hidden="true">&#10003;</span>
-              <h2>Thank you &mdash; your enrollment is in.</h2>
-            </div>
-            <p>We received your $149 enrollment fee ($99 materials + $50). You'll get a confirmation email from Stripe with your receipt within a couple of minutes.</p>
-            <p><strong style="color:#c89a3a;">What happens next:</strong></p>
-            <ol>
-              <li>Vivianne will reach out within 24 hours to confirm your student's first class day and time.</li>
-              <li>Your monthly Membership ($369 or $489/month depending on the course) will be set up to start on the day of the first class.</li>
-              <li>If you have any questions in the meantime, reply to the Stripe receipt or email <a class="banner-link" href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a> or call <a class="banner-link" href="tel:+16466686151">(646) 668-6151</a>.</li>
-            </ol>
-          </div>
+        <div class="enroll-confirm" id="enrollConfirm" role="status" aria-live="polite">
+          <button type="button" class="enroll-confirm__dismiss" id="enrollConfirmDismiss" aria-label="Dismiss">&times;</button>
+          <h2>Enrollment received &mdash; thank you</h2>
+          <p>Your <strong>$149 enrollment fee</strong> ($99 materials + $50) has been processed. Your seat is held.</p>
+          <p>Vivianne will reach out within 24 hours to confirm your start date and class slot.</p>
+          <p>Your monthly Membership ($369 or $489/month depending on the course) will begin <strong>one day before your first class</strong> &mdash; set up after Vivianne confirms your start date.</p>
         </div>
         <p style="color:#c89a3a; letter-spacing:2px; text-transform:uppercase; font-size:0.78rem; font-weight:700; margin:0 0 12px;">SOMATH Courses</p>
         <h1>Every course we teach</h1>
@@ -138,26 +125,19 @@
     <script src="/partials.js"></script>
     <script>
       (function(){
-        try {
-          var params = new URLSearchParams(window.location.search);
-          if (params.get('enrolled') === '1') {
-            var banner = document.getElementById('enrolledBanner');
-            if (banner) {
-              banner.classList.add('show');
-              banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              var closeBtn = document.getElementById('enrolledClose');
-              if (closeBtn) {
-                closeBtn.addEventListener('click', function(){
-                  banner.classList.remove('show');
-                  var url = new URL(window.location.href);
-                  url.searchParams.delete('enrolled');
-                  window.history.replaceState({}, '', url.pathname + (url.search || ''));
-                });
-              }
-              if (window.gtag) { window.gtag('event', 'enrollment_complete', { event_category: 'conversion' }); }
-            }
-          }
-        } catch (e) {}
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('enrolled') === '1') {
+          var banner = document.getElementById('enrollConfirm');
+          banner.classList.add('show');
+          banner.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        var d = document.getElementById('enrollConfirmDismiss');
+        if (d) d.addEventListener('click', function(){
+          document.getElementById('enrollConfirm').classList.remove('show');
+          var url = new URL(window.location.href);
+          url.searchParams.delete('enrolled');
+          window.history.replaceState({}, '', url.toString());
+        });
       })();
     </script>
   </body>

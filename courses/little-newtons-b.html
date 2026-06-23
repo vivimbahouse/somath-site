@@ -80,6 +80,15 @@
       .enroll-card__day-option:has(input:checked) { border-color: #1f3d2e; background: #fff; }
       .enroll-card__day-option span.day { color: #1f3d2e; font-weight: 700; font-size: 0.98rem; }
       .enroll-card__day-option span.time { color: #6b6657; font-size: 0.9rem; margin-left: auto; }
+      .enroll-card__date { margin: 0 0 18px; }
+      .enroll-card__date-label { display: block; color: #2a2a24; font-weight: 700; font-size: 0.92rem; margin: 0 0 8px; }
+      .enroll-card__date-help { display: block; color: #6b6657; font-size: 0.84rem; font-weight: 400; margin: 0 0 10px; line-height: 1.45; }
+      .enroll-card__date input[type="date"] { width: 100%; padding: 12px 14px; border: 2px solid #c8c2b1; border-radius: 6px; background: #f5f0e6; color: #1f3d2e; font-size: 1rem; font-family: inherit; font-weight: 600; box-sizing: border-box; transition: border-color 0.15s ease, background 0.15s ease; }
+      .enroll-card__date input[type="date"]:focus { outline: none; border-color: #1f3d2e; background: #fff; }
+      .enroll-card__date input[type="date"]:invalid { color: #6b6657; font-weight: 400; }
+      .enroll-card__schedule-summary { background: #f5f0e6; border-left: 4px solid #c89a3a; border-radius: 4px; padding: 12px 16px; margin: 0 0 18px; color: #1f3d2e; font-size: 0.92rem; line-height: 1.55; display: none; }
+      .enroll-card__schedule-summary.show { display: block; }
+      .enroll-card__schedule-summary strong { color: #1f3d2e; }
       .enroll-card__cta { display: block; width: 100%; background: #1f3d2e; color: #c89a3a; border: 0; padding: 14px 22px; border-radius: 6px; font-size: 1.05rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: background 0.15s ease; font-family: inherit; text-decoration: none; text-align: center; box-sizing: border-box; }
       .enroll-card__cta:hover { background: #082c47; }
       .enroll-card__cta:disabled { background: #c8c2b1; color: #6b6657; cursor: not-allowed; }
@@ -247,8 +256,19 @@
               </label>
           </div>
 
+          <div class="enroll-card__date">
+            <label class="enroll-card__date-label" for="startDate">Pick your start date</label>
+            <span class="enroll-card__date-help">The first class you want to attend. Pick any day that matches the weekday you chose above.</span>
+            <input type="date" id="startDate" name="startDate" required />
+          </div>
+
+          <div class="enroll-card__schedule-summary" id="scheduleSummary">
+            <strong>Your schedule</strong><br>
+            <span id="summaryLine"></span>
+          </div>
+
           <a href="#" class="enroll-card__cta" id="checkoutBtn" data-stripe="https://buy.stripe.com/3cI3cw8Cu0PsdrU1Ew7Vm00" data-course="little-newtons-b">Continue to secure payment &rarr;</a>
-          <p class="enroll-card__cta-note">Stripe secure checkout &middot; $99 registration + $50 materials charged today &middot; $369/month tuition begins on your first class week.</p>
+          <p class="enroll-card__cta-note">Stripe secure checkout &middot; $99 registration + $50 materials charged today &middot; $369/month tuition begins <strong>one day before your first class</strong>.</p>
         </div>
 
         <p style="text-align:center; margin: 30px 0 0; color: #6b6657; font-size: 0.95rem;">Want to talk first? Call <a href="tel:+16466686151" style="color:#1f3d2e; font-weight:600;">(646) 668-6151</a> or book a <a href="/evaluation" style="color:#1f3d2e; font-weight:600;">free 60-minute evaluation</a>.</p>
@@ -302,16 +322,76 @@
     <div id="footer-mount"></div>
     <script src="/partials.js"></script>
     <script>
-      // Build the Stripe checkout URL with the selected day + course as query params so user can swap link later
-      document.getElementById('checkoutBtn').addEventListener('click', function(e){
-        e.preventDefault();
-        var stripe = this.getAttribute('data-stripe');
-        var course = this.getAttribute('data-course');
-        var dayInput = document.querySelector('input[name="dayChoice"]:checked');
-        var day = dayInput ? dayInput.value : '';
-        var url = stripe + '?client_reference_id=' + encodeURIComponent(course + ':' + day);
-        window.location.href = url;
-      });
+      (function(){
+        var DAY_INDEX = { Sunday:0, Monday:1, Tuesday:2, Wednesday:3, Thursday:4, Friday:5, Saturday:6 };
+        var dateInput = document.getElementById('startDate');
+        var summary   = document.getElementById('scheduleSummary');
+        var line      = document.getElementById('summaryLine');
+
+        // Min = tomorrow (no same-day starts)
+        var tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.min = tomorrow.toISOString().split('T')[0];
+
+        function selectedDay() {
+          var d = document.querySelector('input[name="dayChoice"]:checked');
+          return d ? d.value : '';
+        }
+        function fmtLong(d) {
+          return d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+        }
+        function updateSummary() {
+          var day = selectedDay();
+          var val = dateInput.value;
+          if (!day || !val) { summary.classList.remove('show'); return; }
+          // Parse YYYY-MM-DD as local date (avoid TZ shift)
+          var parts = val.split('-');
+          var start = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+          var startDow = start.getDay();
+          var wanted = DAY_INDEX[day];
+          var dayMatch = startDow === wanted;
+          var billing = new Date(start.getTime());
+          billing.setDate(billing.getDate() - 1);
+          var html = '';
+          html += 'First class: <strong>' + fmtLong(start) + '</strong><br>';
+          html += 'Monthly tuition begins: <strong>' + fmtLong(billing) + '</strong> (one day before your first class)';
+          if (!dayMatch) {
+            html += '<br><span style="color:#a04040;font-weight:600;">Note: that date is a ' + ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][startDow] + ', not ' + day + '. Pick a date that falls on a ' + day + '.</span>';
+          }
+          line.innerHTML = html;
+          summary.classList.add('show');
+        }
+
+        document.querySelectorAll('input[name="dayChoice"]').forEach(function(r){ r.addEventListener('change', updateSummary); });
+        dateInput.addEventListener('change', updateSummary);
+
+        document.getElementById('checkoutBtn').addEventListener('click', function(e){
+          e.preventDefault();
+          var stripe = this.getAttribute('data-stripe');
+          var course = this.getAttribute('data-course');
+          var day    = selectedDay();
+          var date   = dateInput.value;
+          if (!date) { alert('Please pick a start date.'); dateInput.focus(); return; }
+          // Validate weekday match
+          var parts = date.split('-');
+          var startDate = new Date(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10));
+          if (startDate.getDay() !== DAY_INDEX[day]) {
+            alert('Your start date falls on a different weekday than the day you picked. Please pick a date that falls on a ' + day + '.');
+            dateInput.focus(); return;
+          }
+          // Notify SOMATH of the enrollment intent (don't block redirect on failure)
+          var payload = { course: course, day: day, startDate: date };
+          try {
+            navigator.sendBeacon
+              ? navigator.sendBeacon('/api/enroll-intent', new Blob([JSON.stringify(payload)], { type:'application/json' }))
+              : fetch('/api/enroll-intent', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload), keepalive:true });
+          } catch (_) { /* swallow */ }
+          // Pass into Stripe via client_reference_id (alphanum + underscore + hyphen only, max 200 chars).
+          // Format: course__day__YYYY-MM-DD
+          var ref = (course + '__' + day + '__' + date).replace(/[^A-Za-z0-9_\-]/g,'-').slice(0,200);
+          window.location.href = stripe + '?client_reference_id=' + encodeURIComponent(ref);
+        });
+      })();
     </script>
   </body>
 </html>

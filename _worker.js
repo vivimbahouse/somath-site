@@ -808,6 +808,85 @@ async function handleSendEvalEmail(request, env) {
 }
 __name(handleSendEvalEmail, "handleSendEvalEmail");
 
+// ---- Enrollment intent notification ----
+var COURSE_TITLES = {
+  "little-newtons-a": "Little Newtons A",
+  "little-newtons-b": "Little Newtons B",
+  "kid-einsteins-a": "Kid Einsteins A",
+  "kid-einsteins-b": "Kid Einsteins B",
+  "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
+  "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
+  "young-fermats-geometry": "Young Fermats \u2014 Geometry",
+  "shsat-prep": "SHSAT Prep",
+  "sat-math": "SAT Math",
+  "pre-calculus": "AP Prep \u2014 Pre-Calculus / Calculus"
+};
+function escHtml(s) { return String(s || "").replace(/[&<>"']/g, function(c){return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];}); }
+function fmtLongDate(yyyyMmDd) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(yyyyMmDd)) return yyyyMmDd;
+  var parts = yyyyMmDd.split("-");
+  var d = new Date(Date.UTC(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10)));
+  return d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric", timeZone:"UTC" });
+}
+async function handleEnrollIntent(request, env) {
+  if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405);
+  var body;
+  try {
+    var raw = await request.text();
+    body = raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return jsonResponse({ error: "invalid_json" }, 400);
+  }
+  var course = String(body.course || "").slice(0, 80);
+  var day    = String(body.day    || "").slice(0, 16);
+  var date   = String(body.startDate || "").slice(0, 16);
+  if (!course || !day || !date) return jsonResponse({ error: "missing_fields" }, 400);
+  var title = COURSE_TITLES[course] || course;
+
+  // Compute billing start = startDate - 1 day (UTC math, then format)
+  var billingFmt = "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    var p = date.split("-");
+    var d = new Date(Date.UTC(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10)));
+    d.setUTCDate(d.getUTCDate() - 1);
+    billingFmt = d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric", timeZone:"UTC" });
+  }
+  var startFmt = fmtLongDate(date);
+
+  // Stash useful request context
+  var ua = request.headers.get("user-agent") || "";
+  var ref = request.headers.get("referer") || "";
+  var ip = request.headers.get("cf-connecting-ip") || "";
+
+  var subject = "New enrollment selection: " + title + " \u00b7 " + day + " \u00b7 starts " + date;
+  var html =
+    "<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1f3d2e;max-width:560px;\">" +
+      "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">New enrollment selection</h2>" +
+      "<p style=\"margin:0 0 16px;color:#3a3a30;\">A parent just hit \u201cContinue to secure payment\u201d on a course page. Confirm in Stripe Dashboard that the $149 payment came through, then set up their monthly subscription using the details below.</p>" +
+      "<table style=\"border-collapse:collapse;width:100%;font-size:15px;\">" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Course</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(title) + " <span style=\"color:#6b6657;\">(" + escHtml(course) + ")</span></td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Weekly day</td><td style=\"padding:8px 12px;\">" + escHtml(day) + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Start date (first class)</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(startFmt) + " <span style=\"color:#6b6657;\">(" + escHtml(date) + ")</span></td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Monthly tuition begins</td><td style=\"padding:8px 12px;\">" + escHtml(billingFmt) + " <span style=\"color:#6b6657;\">(one day before first class)</span></td></tr>" +
+      "</table>" +
+      "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Submitted just before redirect to Stripe Checkout. The matching $149 payment will appear in your Stripe Dashboard with client_reference_id = <code>" + escHtml(course) + "__" + escHtml(day) + "__" + escHtml(date) + "</code>.</em></p>" +
+      "<p style=\"margin:0;font-size:11px;color:#9a9588;\">IP: " + escHtml(ip) + " \u00b7 Referer: " + escHtml(ref) + "</p>" +
+    "</div>";
+
+  var result = await sendResendEmail(env, {
+    to: "hello@schoolofmath.us",
+    subject: subject,
+    html: html,
+    replyTo: "hello@schoolofmath.us"
+  });
+  if (!result.ok) {
+    console.error("enroll-intent email failed", result);
+    return jsonResponse({ ok: false, error: result.error }, 500);
+  }
+  return jsonResponse({ ok: true });
+}
+__name(handleEnrollIntent, "handleEnrollIntent");
+
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -818,6 +897,7 @@ var worker_default = {
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
+    if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
     if (url.pathname.startsWith("/_admin/")) {
       const adminResp = await env.ASSETS.fetch(request);
       const headers = new Headers(adminResp.headers);
