@@ -840,6 +840,9 @@ async function handleEnrollIntent(request, env) {
   var course = String(body.course || "").slice(0, 80);
   var day    = String(body.day    || "").slice(0, 16);
   var date   = String(body.startDate || "").slice(0, 16);
+  var parentName  = String(body.parentName  || "").slice(0, 120);
+  var parentEmail = String(body.parentEmail || "").slice(0, 160);
+  var studentName = String(body.studentName || "").slice(0, 120);
   if (!course || !day || !date) return jsonResponse({ error: "missing_fields" }, 400);
   var title = COURSE_TITLES[course] || course;
 
@@ -858,18 +861,22 @@ async function handleEnrollIntent(request, env) {
   var ref = request.headers.get("referer") || "";
   var ip = request.headers.get("cf-connecting-ip") || "";
 
-  var subject = "New enrollment selection: " + title + " \u00b7 " + day + " \u00b7 starts " + date;
+  var who = (parentName || parentEmail || studentName) ? (parentName || parentEmail) : "someone";
+  var subject = "Enrollment intent: " + (studentName || parentName || "parent") + " \u00b7 " + title + " \u00b7 " + day;
   var html =
     "<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1f3d2e;max-width:560px;\">" +
       "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">New enrollment selection</h2>" +
-      "<p style=\"margin:0 0 16px;color:#3a3a30;\">A parent just hit \u201cContinue to secure payment\u201d on a course page. Confirm in Stripe Dashboard that the $149 payment came through, then set up their monthly subscription using the details below.</p>" +
+      "<p style=\"margin:0 0 16px;color:#3a3a30;\"><strong>" + escHtml(who) + "</strong> just hit \u201cContinue to secure payment.\u201d Stripe should send a $149 confirmation shortly with the matching client_reference_id.</p>" +
       "<table style=\"border-collapse:collapse;width:100%;font-size:15px;\">" +
-        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Course</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(title) + " <span style=\"color:#6b6657;\">(" + escHtml(course) + ")</span></td></tr>" +
-        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Weekly day</td><td style=\"padding:8px 12px;\">" + escHtml(day) + "</td></tr>" +
-        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Start date (first class)</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(startFmt) + " <span style=\"color:#6b6657;\">(" + escHtml(date) + ")</span></td></tr>" +
-        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Monthly tuition begins</td><td style=\"padding:8px 12px;\">" + escHtml(billingFmt) + " <span style=\"color:#6b6657;\">(one day before first class)</span></td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Parent / guardian</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(parentName || "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Parent email</td><td style=\"padding:8px 12px;\">" + (parentEmail ? "<a href=\"mailto:" + escHtml(parentEmail) + "\" style=\"color:#1f3d2e;\">" + escHtml(parentEmail) + "</a>" : "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Student</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(studentName || "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Course</td><td style=\"padding:8px 12px;\">" + escHtml(title) + " <span style=\"color:#6b6657;\">(" + escHtml(course) + ")</span></td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Weekly day</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(day) + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Start date (first class)</td><td style=\"padding:8px 12px;\">" + escHtml(startFmt) + " <span style=\"color:#6b6657;\">(" + escHtml(date) + ")</span></td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Monthly tuition begins</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(billingFmt) + " <span style=\"color:#6b6657;\">(one day before first class)</span></td></tr>" +
       "</table>" +
-      "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Submitted just before redirect to Stripe Checkout. The matching $149 payment will appear in your Stripe Dashboard with client_reference_id = <code>" + escHtml(course) + "__" + escHtml(day) + "__" + escHtml(date) + "</code>.</em></p>" +
+      "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Stripe client_reference_id = <code>" + escHtml(course) + "__" + escHtml(day) + "__" + escHtml(date) + "</code>. A second \u201cPayment confirmed\u201d email will arrive once the $149 clears.</em></p>" +
       "<p style=\"margin:0;font-size:11px;color:#9a9588;\">IP: " + escHtml(ip) + " \u00b7 Referer: " + escHtml(ref) + "</p>" +
     "</div>";
 
@@ -887,6 +894,121 @@ async function handleEnrollIntent(request, env) {
 }
 __name(handleEnrollIntent, "handleEnrollIntent");
 
+// ---- Stripe webhook (verified payment confirmation) ----
+function hexToBuf(hex) {
+  var len = hex.length / 2;
+  var u8 = new Uint8Array(len);
+  for (var i = 0; i < len; i++) u8[i] = parseInt(hex.substr(i*2, 2), 16);
+  return u8.buffer;
+}
+function bufToHex(buf) {
+  var u8 = new Uint8Array(buf);
+  var s = "";
+  for (var i = 0; i < u8.length; i++) {
+    var h = u8[i].toString(16);
+    if (h.length < 2) h = "0" + h;
+    s += h;
+  }
+  return s;
+}
+function timingSafeEqualHex(aHex, bHex) {
+  if (aHex.length !== bHex.length) return false;
+  var diff = 0;
+  for (var i = 0; i < aHex.length; i++) diff |= aHex.charCodeAt(i) ^ bHex.charCodeAt(i);
+  return diff === 0;
+}
+async function verifyStripeSignature(rawBody, sigHeader, secret) {
+  if (!sigHeader || !secret) return false;
+  var parts = sigHeader.split(",");
+  var ts = "";
+  var sigs = [];
+  for (var i = 0; i < parts.length; i++) {
+    var kv = parts[i].split("=");
+    if (kv[0] === "t") ts = kv[1];
+    else if (kv[0] === "v1") sigs.push(kv[1]);
+  }
+  if (!ts || sigs.length === 0) return false;
+  // Reject events older than 5 minutes
+  var nowSec = Math.floor(Date.now()/1000);
+  if (Math.abs(nowSec - parseInt(ts,10)) > 300) return false;
+  var enc = new TextEncoder();
+  var key = await crypto.subtle.importKey("raw", enc.encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  var payload = ts + "." + rawBody;
+  var mac = await crypto.subtle.sign("HMAC", key, enc.encode(payload));
+  var computed = bufToHex(mac);
+  for (var j = 0; j < sigs.length; j++) {
+    if (timingSafeEqualHex(computed, sigs[j])) return true;
+  }
+  return false;
+}
+__name(verifyStripeSignature, "verifyStripeSignature");
+function parseRef(ref) {
+  // course__day__YYYY-MM-DD
+  if (!ref) return { course: "", day: "", date: "" };
+  var p = String(ref).split("__");
+  return { course: p[0] || "", day: p[1] || "", date: p[2] || "" };
+}
+async function handleStripeWebhook(request, env) {
+  if (request.method !== "POST") return new Response("method not allowed", { status: 405 });
+  var raw = await request.text();
+  var sig = request.headers.get("stripe-signature");
+  var secret = env.STRIPE_WEBHOOK_SECRET;
+  if (!secret) { console.error("STRIPE_WEBHOOK_SECRET missing"); return new Response("webhook not configured", { status: 500 }); }
+  var ok = await verifyStripeSignature(raw, sig, secret);
+  if (!ok) { console.error("Stripe webhook signature invalid"); return new Response("invalid signature", { status: 400 }); }
+  var event;
+  try { event = JSON.parse(raw); } catch (e) { return new Response("bad json", { status: 400 }); }
+  if (event.type !== "checkout.session.completed") {
+    return new Response("ignored", { status: 200 });
+  }
+  var s = event.data && event.data.object || {};
+  var ref = parseRef(s.client_reference_id);
+  var title = COURSE_TITLES[ref.course] || ref.course || "\u2014";
+  var custDetails = s.customer_details || {};
+  var name  = custDetails.name  || "";
+  var email = custDetails.email || s.customer_email || "";
+  var phone = custDetails.phone || "";
+  var amount = (s.amount_total != null) ? ("$" + (s.amount_total/100).toFixed(2) + " " + String(s.currency || "usd").toUpperCase()) : "\u2014";
+  var customerId = s.customer || "";
+  var pi = s.payment_intent || "";
+  var startFmt = fmtLongDate(ref.date);
+  var billingFmt = "";
+  if (/^\d{4}-\d{2}-\d{2}$/.test(ref.date)) {
+    var p = ref.date.split("-");
+    var d = new Date(Date.UTC(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10)));
+    d.setUTCDate(d.getUTCDate() - 1);
+    billingFmt = d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric", timeZone:"UTC" });
+  }
+  var dashLink = customerId ? ("https://dashboard.stripe.com/customers/" + customerId) : "";
+  var subject = "\u2705 Payment confirmed: " + (name || email || "parent") + " \u00b7 " + title;
+  var html =
+    "<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1f3d2e;max-width:580px;\">" +
+      "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">\u2705 $149 enrollment payment confirmed</h2>" +
+      "<p style=\"margin:0 0 16px;color:#3a3a30;\">Stripe just confirmed a successful $149 enrollment payment. Set up the monthly subscription on this customer when you confirm the start date.</p>" +
+      "<table style=\"border-collapse:collapse;width:100%;font-size:15px;\">" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Parent name</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(name || "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Parent email</td><td style=\"padding:8px 12px;\">" + (email ? "<a href=\"mailto:" + escHtml(email) + "\" style=\"color:#1f3d2e;\">" + escHtml(email) + "</a>" : "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Parent phone</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + (phone ? "<a href=\"tel:" + escHtml(phone) + "\" style=\"color:#1f3d2e;\">" + escHtml(phone) + "</a>" : "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Amount paid</td><td style=\"padding:8px 12px;\">" + escHtml(amount) + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Course</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(title) + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Weekly day</td><td style=\"padding:8px 12px;\">" + escHtml(ref.day || "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Start date</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(startFmt || "\u2014") + "</td></tr>" +
+        "<tr><td style=\"padding:8px 12px;font-weight:700;\">Monthly tuition begins</td><td style=\"padding:8px 12px;\">" + escHtml(billingFmt || "\u2014") + " <span style=\"color:#6b6657;\">(one day before first class)</span></td></tr>" +
+      "</table>" +
+      (dashLink ? "<p style=\"margin:18px 0 0;\"><a href=\"" + escHtml(dashLink) + "\" style=\"background:#1f3d2e;color:#c89a3a;text-decoration:none;padding:10px 18px;border-radius:6px;font-weight:700;display:inline-block;\">Open customer in Stripe \u2192</a></p>" : "") +
+      "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Customer ID: <code>" + escHtml(customerId) + "</code> \u00b7 PaymentIntent: <code>" + escHtml(pi) + "</code></em></p>" +
+    "</div>";
+  var result = await sendResendEmail(env, {
+    to: "hello@schoolofmath.us",
+    subject: subject,
+    html: html,
+    replyTo: email || "hello@schoolofmath.us"
+  });
+  if (!result.ok) console.error("webhook email send failed", result);
+  return new Response("ok", { status: 200 });
+}
+__name(handleStripeWebhook, "handleStripeWebhook");
+
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -898,6 +1020,7 @@ var worker_default = {
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
     if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
+    if (url.pathname === "/api/stripe-webhook") return handleStripeWebhook(request, env);
     if (url.pathname.startsWith("/_admin/")) {
       const adminResp = await env.ASSETS.fetch(request);
       const headers = new Headers(adminResp.headers);

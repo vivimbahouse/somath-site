@@ -89,6 +89,13 @@
       .enroll-card__schedule-summary { background: #f5f0e6; border-left: 4px solid #c89a3a; border-radius: 4px; padding: 12px 16px; margin: 0 0 18px; color: #1f3d2e; font-size: 0.92rem; line-height: 1.55; display: none; }
       .enroll-card__schedule-summary.show { display: block; }
       .enroll-card__schedule-summary strong { color: #1f3d2e; }
+      .enroll-card__who { margin: 0 0 18px; padding: 16px 18px 4px; background: #fbf9f3; border: 1px solid #e8e0c9; border-radius: 6px; }
+      .enroll-card__who-title { display: block; color: #1f3d2e; font-weight: 700; font-size: 0.95rem; margin: 0 0 12px; font-family: inherit; }
+      .enroll-card__who-row { margin: 0 0 12px; }
+      .enroll-card__who-row label { display: block; color: #2a2a24; font-weight: 600; font-size: 0.86rem; margin: 0 0 5px; }
+      .enroll-card__who-row input { width: 100%; padding: 10px 12px; border: 2px solid #d8d0b7; border-radius: 5px; background: #fff; color: #1f3d2e; font-size: 0.96rem; font-family: inherit; box-sizing: border-box; transition: border-color 0.15s ease; }
+      .enroll-card__who-row input:focus { outline: none; border-color: #1f3d2e; }
+      .enroll-card__who-row input:invalid:not(:placeholder-shown) { border-color: #b85c5c; }
       .enroll-card__cta { display: block; width: 100%; background: #1f3d2e; color: #c89a3a; border: 0; padding: 14px 22px; border-radius: 6px; font-size: 1.05rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: background 0.15s ease; font-family: inherit; text-decoration: none; text-align: center; box-sizing: border-box; }
       .enroll-card__cta:hover { background: #082c47; }
       .enroll-card__cta:disabled { background: #c8c2b1; color: #6b6657; cursor: not-allowed; }
@@ -267,6 +274,22 @@
             <span id="summaryLine"></span>
           </div>
 
+          <div class="enroll-card__who">
+            <span class="enroll-card__who-title">Who is this for?</span>
+            <div class="enroll-card__who-row">
+              <label for="parentName">Parent / guardian name</label>
+              <input type="text" id="parentName" name="parentName" autocomplete="name" placeholder="Full name" required />
+            </div>
+            <div class="enroll-card__who-row">
+              <label for="parentEmail">Parent / guardian email</label>
+              <input type="email" id="parentEmail" name="parentEmail" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+            <div class="enroll-card__who-row">
+              <label for="studentName">Student name</label>
+              <input type="text" id="studentName" name="studentName" placeholder="Student's first &amp; last name" required />
+            </div>
+          </div>
+
           <a href="#" class="enroll-card__cta" id="checkoutBtn" data-stripe="https://buy.stripe.com/3cI3cw8Cu0PsdrU1Ew7Vm00" data-course="little-newtons-b">Continue to secure payment &rarr;</a>
           <p class="enroll-card__cta-note">Stripe secure checkout &middot; $99 registration + $50 materials charged today &middot; $369/month tuition begins <strong>one day before your first class</strong>.</p>
         </div>
@@ -371,6 +394,12 @@
           var course = this.getAttribute('data-course');
           var day    = selectedDay();
           var date   = dateInput.value;
+          var parentName  = (document.getElementById('parentName').value  || '').trim();
+          var parentEmail = (document.getElementById('parentEmail').value || '').trim();
+          var studentName = (document.getElementById('studentName').value || '').trim();
+          if (!parentName)  { alert('Please enter the parent / guardian name.');  document.getElementById('parentName').focus();  return; }
+          if (!parentEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(parentEmail)) { alert('Please enter a valid parent email address.'); document.getElementById('parentEmail').focus(); return; }
+          if (!studentName) { alert('Please enter the student’s name.'); document.getElementById('studentName').focus(); return; }
           if (!date) { alert('Please pick a start date.'); dateInput.focus(); return; }
           // Validate weekday match
           var parts = date.split('-');
@@ -380,7 +409,7 @@
             dateInput.focus(); return;
           }
           // Notify SOMATH of the enrollment intent (don't block redirect on failure)
-          var payload = { course: course, day: day, startDate: date };
+          var payload = { course: course, day: day, startDate: date, parentName: parentName, parentEmail: parentEmail, studentName: studentName };
           try {
             navigator.sendBeacon
               ? navigator.sendBeacon('/api/enroll-intent', new Blob([JSON.stringify(payload)], { type:'application/json' }))
@@ -389,7 +418,9 @@
           // Pass into Stripe via client_reference_id (alphanum + underscore + hyphen only, max 200 chars).
           // Format: course__day__YYYY-MM-DD
           var ref = (course + '__' + day + '__' + date).replace(/[^A-Za-z0-9_\-]/g,'-').slice(0,200);
-          window.location.href = stripe + '?client_reference_id=' + encodeURIComponent(ref);
+          // Prefill the parent email into Stripe Checkout so the receipt + webhook customer record match.
+          var url = stripe + '?client_reference_id=' + encodeURIComponent(ref) + '&prefilled_email=' + encodeURIComponent(parentEmail);
+          window.location.href = url;
         });
       })();
     </script>
