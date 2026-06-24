@@ -116,7 +116,7 @@
         <a class="footer__social-link" href="https://www.pinterest.com/schoolofmathus/" target="_blank" rel="noopener" aria-label="Pinterest">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.65 19.31c-.09-.8-.17-2.04.04-2.92.19-.8 1.24-5.1 1.24-5.1s-.32-.64-.32-1.58c0-1.48.86-2.59 1.93-2.59.91 0 1.35.68 1.35 1.5 0 .92-.58 2.29-.88 3.56-.25 1.07.53 1.94 1.58 1.94 1.9 0 3.36-2 3.36-4.9 0-2.56-1.84-4.35-4.47-4.35a4.64 4.64 0 0 0-4.84 4.65c0 .92.35 1.91.8 2.45.09.11.1.2.07.31-.08.32-.25 1.02-.28 1.16-.05.19-.15.23-.34.14-1.28-.6-2.08-2.46-2.08-3.96 0-3.23 2.34-6.19 6.75-6.19 3.54 0 6.3 2.52 6.3 5.9 0 3.52-2.22 6.36-5.31 6.36-1.04 0-2.01-.54-2.34-1.18l-.64 2.43c-.23.89-.85 2-1.27 2.68A10 10 0 1 0 12 2Z"/></svg>
         </a>
-        <a class="footer__social-link" href="https://x.com/somathny" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <a class="footer__social-link" href="https://x.com/schoolofmathny" target="_blank" rel="noopener" aria-label="X (Twitter)">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25h6.83l4.713 6.231 5.447-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
         </a>
       </div>
