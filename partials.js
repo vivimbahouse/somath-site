@@ -107,7 +107,7 @@
         <a class="footer__social-link" href="https://www.youtube.com/@somathny" target="_blank" rel="noopener" aria-label="YouTube">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.5a3 3 0 0 0-2.1-2.1C19.5 4 12 4 12 4s-7.5 0-9.4.4A3 3 0 0 0 .5 6.5C.1 8.4.1 12 .1 12s0 3.6.4 5.5A3 3 0 0 0 2.6 19.6c1.9.4 9.4.4 9.4.4s7.5 0 9.4-.4a3 3 0 0 0 2.1-2.1c.4-1.9.4-5.5.4-5.5s0-3.6-.4-5.5ZM9.8 15.5v-7l6.2 3.5-6.2 3.5Z"/></svg>
         </a>
-        <a class="footer__social-link" href="https://www.tiktok.com/@somathny" target="_blank" rel="noopener" aria-label="TikTok">
+        <a class="footer__social-link" href="https://www.tiktok.com/@schoolofmathny" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.2a2.8 2.8 0 1 1-2-2.7v-3a5.8 5.8 0 1 0 5 5.7V8.6a7.4 7.4 0 0 0 4 1.2V6.8a4.5 4.5 0 0 1-4-4.8Z"/></svg>
         </a>
         <a class="footer__social-link" href="https://www.linkedin.com/company/108478954/" target="_blank" rel="noopener" aria-label="LinkedIn">
