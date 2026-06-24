@@ -110,7 +110,7 @@
         <a class="footer__social-link" href="https://www.tiktok.com/@schoolofmathny" target="_blank" rel="noopener" aria-label="TikTok">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.5 2h-3v13.2a2.8 2.8 0 1 1-2-2.7v-3a5.8 5.8 0 1 0 5 5.7V8.6a7.4 7.4 0 0 0 4 1.2V6.8a4.5 4.5 0 0 1-4-4.8Z"/></svg>
         </a>
-        <a class="footer__social-link" href="https://www.linkedin.com/company/108478954/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a class="footer__social-link" href="https://www.linkedin.com/company/somathny/" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.5 3h-17A1.5 1.5 0 0 0 2 4.5v15A1.5 1.5 0 0 0 3.5 21h17a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 20.5 3ZM8 18H5.3v-8.6H8V18ZM6.65 8.2a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1ZM19 18h-2.7v-4.2c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2V18H10.6v-8.6h2.6v1.2h.04a2.85 2.85 0 0 1 2.56-1.4c2.74 0 3.24 1.8 3.24 4.14V18Z"/></svg>
         </a>
         <a class="footer__social-link" href="https://www.pinterest.com/somathnyc/" target="_blank" rel="noopener" aria-label="Pinterest">
