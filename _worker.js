@@ -828,6 +828,49 @@ function fmtLongDate(yyyyMmDd) {
   var d = new Date(Date.UTC(parseInt(parts[0],10), parseInt(parts[1],10)-1, parseInt(parts[2],10)));
   return d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric", timeZone:"UTC" });
 }
+// ---- Enrollment KV helpers ----
+function randId(n) {
+  var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  var out = "";
+  var arr = new Uint8Array(n);
+  crypto.getRandomValues(arr);
+  for (var i = 0; i < n; i++) out += chars[arr[i] % chars.length];
+  return out;
+}
+function enrollKey(iso, id) { return "enroll:" + iso + ":" + id; }
+function refKey(ref) { return "ref:" + ref; }
+async function kvPutEnrollment(env, rec) {
+  if (!env.ENROLLMENTS) return null;
+  var iso = rec.createdAt || new Date().toISOString();
+  var id  = rec.id || randId(8);
+  rec.id = id;
+  rec.createdAt = iso;
+  var key = enrollKey(iso, id);
+  await env.ENROLLMENTS.put(key, JSON.stringify(rec));
+  if (rec.ref) {
+    await env.ENROLLMENTS.put(refKey(rec.ref), key);
+  }
+  return { key: key, id: id };
+}
+async function kvGetByRef(env, ref) {
+  if (!env.ENROLLMENTS || !ref) return null;
+  var key = await env.ENROLLMENTS.get(refKey(ref));
+  if (!key) return null;
+  var raw = await env.ENROLLMENTS.get(key);
+  if (!raw) return null;
+  try { return { key: key, rec: JSON.parse(raw) }; } catch (e) { return null; }
+}
+async function kvUpdate(env, key, patch) {
+  if (!env.ENROLLMENTS) return;
+  var raw = await env.ENROLLMENTS.get(key);
+  if (!raw) return;
+  var rec;
+  try { rec = JSON.parse(raw); } catch (e) { return; }
+  for (var k in patch) { if (Object.prototype.hasOwnProperty.call(patch, k)) rec[k] = patch[k]; }
+  rec.updatedAt = new Date().toISOString();
+  await env.ENROLLMENTS.put(key, JSON.stringify(rec));
+}
+
 async function handleEnrollIntent(request, env) {
   if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405);
   var body;
@@ -845,6 +888,7 @@ async function handleEnrollIntent(request, env) {
   var studentName = String(body.studentName || "").slice(0, 120);
   if (!course || !day || !date) return jsonResponse({ error: "missing_fields" }, 400);
   var title = COURSE_TITLES[course] || course;
+  var ref = course + "__" + day + "__" + date;
 
   // Compute billing start = startDate - 1 day (UTC math, then format)
   var billingFmt = "";
@@ -858,8 +902,33 @@ async function handleEnrollIntent(request, env) {
 
   // Stash useful request context
   var ua = request.headers.get("user-agent") || "";
-  var ref = request.headers.get("referer") || "";
+  var referer = request.headers.get("referer") || "";
   var ip = request.headers.get("cf-connecting-ip") || "";
+
+  // Persist enrollment intent to KV
+  try {
+    var existing = await kvGetByRef(env, ref);
+    if (existing) {
+      // Update existing intent record (parent may have re-clicked Continue with updated info)
+      await kvUpdate(env, existing.key, {
+        parentName: parentName || existing.rec.parentName,
+        parentEmail: parentEmail || existing.rec.parentEmail,
+        studentName: studentName || existing.rec.studentName,
+        ip: ip, referer: referer, userAgent: ua
+      });
+    } else {
+      await kvPutEnrollment(env, {
+        status: "intent",
+        ref: ref,
+        course: course, courseTitle: title, day: day, startDate: date,
+        parentName: parentName, parentEmail: parentEmail, studentName: studentName,
+        amountUsd: null, stripeCustomerId: "", stripeSessionId: "", paymentIntent: "",
+        ip: ip, referer: referer, userAgent: ua
+      });
+    }
+  } catch (e) {
+    console.error("KV write (intent) failed:", String(e));
+  }
 
   var who = (parentName || parentEmail || studentName) ? (parentName || parentEmail) : "someone";
   var subject = "Enrollment intent: " + (studentName || parentName || "parent") + " \u00b7 " + title + " \u00b7 " + day;
@@ -877,7 +946,7 @@ async function handleEnrollIntent(request, env) {
         "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Monthly tuition begins</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(billingFmt) + " <span style=\"color:#6b6657;\">(one day before first class)</span></td></tr>" +
       "</table>" +
       "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Stripe client_reference_id = <code>" + escHtml(course) + "__" + escHtml(day) + "__" + escHtml(date) + "</code>. A second \u201cPayment confirmed\u201d email will arrive once the $149 clears.</em></p>" +
-      "<p style=\"margin:0;font-size:11px;color:#9a9588;\">IP: " + escHtml(ip) + " \u00b7 Referer: " + escHtml(ref) + "</p>" +
+      "<p style=\"margin:0;font-size:11px;color:#9a9588;\">IP: " + escHtml(ip) + " \u00b7 Referer: " + escHtml(referer) + "</p>" +
     "</div>";
 
   var result = await sendResendEmail(env, {
@@ -962,15 +1031,45 @@ async function handleStripeWebhook(request, env) {
     return new Response("ignored", { status: 200 });
   }
   var s = event.data && event.data.object || {};
-  var ref = parseRef(s.client_reference_id);
+  var refStr = s.client_reference_id || "";
+  var ref = parseRef(refStr);
   var title = COURSE_TITLES[ref.course] || ref.course || "\u2014";
   var custDetails = s.customer_details || {};
   var name  = custDetails.name  || "";
   var email = custDetails.email || s.customer_email || "";
   var phone = custDetails.phone || "";
   var amount = (s.amount_total != null) ? ("$" + (s.amount_total/100).toFixed(2) + " " + String(s.currency || "usd").toUpperCase()) : "\u2014";
+  var amountUsd = (s.amount_total != null) ? (s.amount_total/100) : null;
   var customerId = s.customer || "";
   var pi = s.payment_intent || "";
+  var sessionId = s.id || "";
+
+  // Persist paid record to KV (update existing intent if matched by ref, else insert)
+  try {
+    var paidPatch = {
+      status: "paid",
+      paidAt: new Date().toISOString(),
+      parentName: name || "",
+      parentEmail: email || "",
+      parentPhone: phone || "",
+      amountUsd: amountUsd,
+      stripeCustomerId: customerId,
+      stripeSessionId: sessionId,
+      paymentIntent: pi
+    };
+    var matched = refStr ? await kvGetByRef(env, refStr) : null;
+    if (matched) {
+      await kvUpdate(env, matched.key, paidPatch);
+    } else {
+      paidPatch.ref = refStr;
+      paidPatch.course = ref.course; paidPatch.courseTitle = title;
+      paidPatch.day = ref.day; paidPatch.startDate = ref.date;
+      paidPatch.studentName = paidPatch.studentName || "";
+      await kvPutEnrollment(env, paidPatch);
+    }
+  } catch (e) {
+    console.error("KV write (paid) failed:", String(e));
+  }
   var startFmt = fmtLongDate(ref.date);
   var billingFmt = "";
   if (/^\d{4}-\d{2}-\d{2}$/.test(ref.date)) {
@@ -1009,6 +1108,104 @@ async function handleStripeWebhook(request, env) {
 }
 __name(handleStripeWebhook, "handleStripeWebhook");
 
+// ---- Enrollments list (admin) ----
+async function kvListEnrollments(env, limit) {
+  if (!env.ENROLLMENTS) return [];
+  var results = [];
+  var cursor = undefined;
+  var pageLimit = 1000;
+  var hardCap = limit || 5000;
+  while (results.length < hardCap) {
+    var opts = { prefix: "enroll:", limit: pageLimit };
+    if (cursor) opts.cursor = cursor;
+    var page = await env.ENROLLMENTS.list(opts);
+    for (var i = 0; i < page.keys.length; i++) {
+      var raw = await env.ENROLLMENTS.get(page.keys[i].name);
+      if (!raw) continue;
+      try { results.push(JSON.parse(raw)); } catch (e) {}
+    }
+    if (page.list_complete || !page.cursor) break;
+    cursor = page.cursor;
+  }
+  // Sort newest first
+  results.sort(function(a,b){ return (b.createdAt||"").localeCompare(a.createdAt||""); });
+  return results;
+}
+function csvEscape(v) {
+  if (v == null) return "";
+  var s = String(v);
+  if (/[",\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+  return s;
+}
+function enrollmentsToCsv(rows) {
+  var headers = [
+    "Created (ET)", "Status", "Course", "Day", "Start Date",
+    "Parent Name", "Parent Email", "Parent Phone", "Student Name",
+    "Amount USD", "Stripe Customer ID", "Stripe Session ID", "Payment Intent", "Paid At (ET)", "Ref"
+  ];
+  var lines = [headers.map(csvEscape).join(",")];
+  function fmtET(iso) {
+    if (!iso) return "";
+    try {
+      var d = new Date(iso);
+      return d.toLocaleString("en-US", { timeZone: "America/New_York", year:"numeric", month:"2-digit", day:"2-digit", hour:"2-digit", minute:"2-digit", hour12:false });
+    } catch (e) { return iso; }
+  }
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    lines.push([
+      fmtET(r.createdAt),
+      r.status || "",
+      r.courseTitle || r.course || "",
+      r.day || "",
+      r.startDate || "",
+      r.parentName || "",
+      r.parentEmail || "",
+      r.parentPhone || "",
+      r.studentName || "",
+      r.amountUsd != null ? r.amountUsd.toFixed(2) : "",
+      r.stripeCustomerId || "",
+      r.stripeSessionId || "",
+      r.paymentIntent || "",
+      fmtET(r.paidAt),
+      r.ref || ""
+    ].map(csvEscape).join(","));
+  }
+  return lines.join("\n");
+}
+async function handleEnrollmentsApi(request, env) {
+  // Authentication: x-admin-password header OR ?pw= query (for download links)
+  var url = new URL(request.url);
+  var headerPw = request.headers.get("x-admin-password") || "";
+  var queryPw  = url.searchParams.get("pw") || "";
+  var pw = headerPw || queryPw;
+  if (!env.ADMIN_PASSWORD || pw !== env.ADMIN_PASSWORD) {
+    return jsonResponse({ error: "unauthorized" }, 401);
+  }
+  var rows = await kvListEnrollments(env, 5000);
+  if (url.searchParams.get("format") === "csv") {
+    var csv = enrollmentsToCsv(rows);
+    var stamp = new Date().toISOString().slice(0,10);
+    return new Response(csv, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/csv; charset=utf-8",
+        "Content-Disposition": 'attachment; filename="somath-enrollments-' + stamp + '.csv"',
+        "X-Robots-Tag": "noindex,nofollow"
+      }
+    });
+  }
+  return new Response(JSON.stringify({ ok: true, count: rows.length, rows: rows }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-store",
+      "X-Robots-Tag": "noindex,nofollow"
+    }
+  });
+}
+__name(handleEnrollmentsApi, "handleEnrollmentsApi");
+
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
@@ -1021,6 +1218,7 @@ var worker_default = {
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
     if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
     if (url.pathname === "/api/stripe-webhook") return handleStripeWebhook(request, env);
+    if (url.pathname === "/api/enrollments") return handleEnrollmentsApi(request, env);
     if (url.pathname.startsWith("/_admin/")) {
       const adminResp = await env.ASSETS.fetch(request);
       const headers = new Headers(adminResp.headers);
