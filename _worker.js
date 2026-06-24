@@ -590,7 +590,7 @@ async function handleMembershipReservation(request, env) {
     "little-newtons": "Little Newtons (K–2) · $369/mo",
     "core-1x": "Core 1×/week · $489/mo",
     "core-2x": "Core 2×/week · $929/mo",
-    "shsat": "SHSAT Intensive · $989/mo",
+    "shsat": "SHSAT Prep · $587/mo",
     "ap-honors": "AP / Honors · $529/mo",
     "unsure": "Not sure yet — recommend a tier"
   };
