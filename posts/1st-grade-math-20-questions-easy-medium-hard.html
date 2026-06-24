@@ -65,6 +65,26 @@
       .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
       .answer-key-table th { background:#0a3a5f; color:#fff; }
       .answer-key-table tr:nth-child(even) { background:#fafafa; }
+
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & explanation"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & explanation"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
     </style>
     <script type="application/ld+json">
 {
@@ -119,9 +139,14 @@
             <li>C) 6</li>
             <li>D) 7</li>
           </ul>
-          <p class="answer">Answer: C) 6</p>
-          <p class="explain"><strong>Explanation.</strong> When we count up, each number is one more than the one before it. After 5 comes 6.</p>
-          <p class="theory"><strong>Theory &mdash; Counting and the successor.</strong> Every whole number has a &ldquo;next number&rdquo; we get by adding 1. This is called the <em>successor</em>. Counting is built on this idea: 1, 2, 3, &hellip; each step is +1.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 6</p>
+              <p class="explain"><strong>Explanation.</strong> When we count up, each number is one more than the one before it. After 5 comes 6.</p>
+              <p class="theory"><strong>Theory &mdash; Counting and the successor.</strong> Every whole number has a &ldquo;next number&rdquo; we get by adding 1. This is called the <em>successor</em>. Counting is built on this idea: 1, 2, 3, &hellip; each step is +1.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -133,9 +158,14 @@
             <li>C) 2</li>
             <li>D) 6</li>
           </ul>
-          <p class="answer">Answer: C) 2</p>
-          <p class="explain"><strong>Explanation.</strong> On a number line, 2 sits the furthest to the left, so it is the smallest.</p>
-          <p class="theory"><strong>Theory &mdash; Comparing whole numbers.</strong> Numbers can be ordered from least to greatest. Smaller numbers come earlier when we count up from 0.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 2</p>
+              <p class="explain"><strong>Explanation.</strong> On a number line, 2 sits the furthest to the left, so it is the smallest.</p>
+              <p class="theory"><strong>Theory &mdash; Comparing whole numbers.</strong> Numbers can be ordered from least to greatest. Smaller numbers come earlier when we count up from 0.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -147,9 +177,14 @@
             <li>C) 5</li>
             <li>D) 6</li>
           </ul>
-          <p class="answer">Answer: C) 5</p>
-          <p class="explain"><strong>Explanation.</strong> Touch each dot once as you count: 1, 2, 3, 4, 5.</p>
-          <p class="theory"><strong>Theory &mdash; One-to-one correspondence.</strong> Counting works because we match each object to exactly one number word. The last number you say is how many there are (this is called <em>cardinality</em>).</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 5</p>
+              <p class="explain"><strong>Explanation.</strong> Touch each dot once as you count: 1, 2, 3, 4, 5.</p>
+              <p class="theory"><strong>Theory &mdash; One-to-one correspondence.</strong> Counting works because we match each object to exactly one number word. The last number you say is how many there are (this is called <em>cardinality</em>).</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -161,9 +196,14 @@
             <li>C) 6</li>
             <li>D) 1</li>
           </ul>
-          <p class="answer">Answer: B) 5</p>
-          <p class="explain"><strong>Explanation.</strong> Start at 2 and count up 3 more: 3, 4, 5.</p>
-          <p class="theory"><strong>Theory &mdash; Addition as joining.</strong> Adding two groups means putting them together to find the total. We can also think of it as &ldquo;counting on&rdquo; from the first number.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 5</p>
+              <p class="explain"><strong>Explanation.</strong> Start at 2 and count up 3 more: 3, 4, 5.</p>
+              <p class="theory"><strong>Theory &mdash; Addition as joining.</strong> Adding two groups means putting them together to find the total. We can also think of it as &ldquo;counting on&rdquo; from the first number.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -175,9 +215,14 @@
             <li>C) 4</li>
             <li>D) 8</li>
           </ul>
-          <p class="answer">Answer: C) 4</p>
-          <p class="explain"><strong>Explanation.</strong> Start at 6 and count back 2: 5, 4.</p>
-          <p class="theory"><strong>Theory &mdash; Subtraction as taking away.</strong> Subtracting means removing some objects from a group, or finding &ldquo;how far apart&rdquo; two numbers are. It is the inverse (opposite) of addition.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 4</p>
+              <p class="explain"><strong>Explanation.</strong> Start at 6 and count back 2: 5, 4.</p>
+              <p class="theory"><strong>Theory &mdash; Subtraction as taking away.</strong> Subtracting means removing some objects from a group, or finding &ldquo;how far apart&rdquo; two numbers are. It is the inverse (opposite) of addition.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -189,9 +234,14 @@
             <li>C) Circle</li>
             <li>D) Rectangle</li>
           </ul>
-          <p class="answer">Answer: B) Triangle</p>
-          <p class="explain"><strong>Explanation.</strong> &ldquo;Tri-&rdquo; means three. A triangle has exactly 3 straight sides and 3 corners.</p>
-          <p class="theory"><strong>Theory &mdash; Defining shapes by attributes.</strong> In geometry we describe shapes by the number of sides and corners (vertices), not by their color or size.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) Triangle</p>
+              <p class="explain"><strong>Explanation.</strong> &ldquo;Tri-&rdquo; means three. A triangle has exactly 3 straight sides and 3 corners.</p>
+              <p class="theory"><strong>Theory &mdash; Defining shapes by attributes.</strong> In geometry we describe shapes by the number of sides and corners (vertices), not by their color or size.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -203,9 +253,14 @@
             <li>C) 8</li>
             <li>D) 4</li>
           </ul>
-          <p class="answer">Answer: B) 7</p>
-          <p class="explain"><strong>Explanation.</strong> The numbers are counting <em>down</em> by 1. After 8 comes 7.</p>
-          <p class="theory"><strong>Theory &mdash; Counting backwards.</strong> Just like adding 1 gives the next number, subtracting 1 gives the previous number (the <em>predecessor</em>). This builds the foundation for subtraction.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 7</p>
+              <p class="explain"><strong>Explanation.</strong> The numbers are counting <em>down</em> by 1. After 8 comes 7.</p>
+              <p class="theory"><strong>Theory &mdash; Counting backwards.</strong> Just like adding 1 gives the next number, subtracting 1 gives the previous number (the <em>predecessor</em>). This builds the foundation for subtraction.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -217,9 +272,14 @@
             <li>C) 5</li>
             <li>D) 6</li>
           </ul>
-          <p class="answer">Answer: C) 5</p>
-          <p class="explain"><strong>Explanation.</strong> Adding 1 just means &ldquo;the next number.&rdquo; After 4 comes 5.</p>
-          <p class="theory"><strong>Theory &mdash; Adding 1 is the successor.</strong> This is the same idea as counting. Every &ldquo;+1&rdquo; jumps to the next number on the number line.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 5</p>
+              <p class="explain"><strong>Explanation.</strong> Adding 1 just means &ldquo;the next number.&rdquo; After 4 comes 5.</p>
+              <p class="theory"><strong>Theory &mdash; Adding 1 is the successor.</strong> This is the same idea as counting. Every &ldquo;+1&rdquo; jumps to the next number on the number line.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -231,9 +291,14 @@
             <li>C) 5</li>
             <li>D) 6</li>
           </ul>
-          <p class="answer">Answer: B) 4</p>
-          <p class="explain"><strong>Explanation.</strong> A square has 4 equal straight sides and 4 corners.</p>
-          <p class="theory"><strong>Theory &mdash; Classifying quadrilaterals.</strong> Any shape with 4 straight sides is a <em>quadrilateral</em>. A square is a special quadrilateral where all 4 sides are the same length and all 4 corners are square corners (right angles).</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 4</p>
+              <p class="explain"><strong>Explanation.</strong> A square has 4 equal straight sides and 4 corners.</p>
+              <p class="theory"><strong>Theory &mdash; Classifying quadrilaterals.</strong> Any shape with 4 straight sides is a <em>quadrilateral</em>. A square is a special quadrilateral where all 4 sides are the same length and all 4 corners are square corners (right angles).</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -245,9 +310,14 @@
             <li>C) &#9733; &#9733;</li>
             <li>D) &#9733;</li>
           </ul>
-          <p class="answer">Answer: B) 5 stars</p>
-          <p class="explain"><strong>Explanation.</strong> Count each group. The one with 5 stars has the most.</p>
-          <p class="theory"><strong>Theory &mdash; Comparing sets by counting.</strong> To compare two groups, we count each one. The group whose count is the <em>bigger number</em> has more. This connects counting to comparing.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 5 stars</p>
+              <p class="explain"><strong>Explanation.</strong> Count each group. The one with 5 stars has the most.</p>
+              <p class="theory"><strong>Theory &mdash; Comparing sets by counting.</strong> To compare two groups, we count each one. The group whose count is the <em>bigger number</em> has more. This connects counting to comparing.</p>
+            </div>
+          </details>
         </div>
 
         <h2 id="medium">Section 2 &middot; Medium (questions 11&ndash;15)</h2>
@@ -261,9 +331,14 @@
             <li>C) 14</li>
             <li>D) 11</li>
           </ul>
-          <p class="answer">Answer: B) 13</p>
-          <p class="explain"><strong>Explanation.</strong> A nice trick: take 2 from the 5 and give it to the 8 to make 10. Now you have 10 + 3 = 13.</p>
-          <p class="theory"><strong>Theory &mdash; Make-a-ten strategy.</strong> Since our number system is base 10, decomposing numbers to make a friendly 10 makes addition faster and more accurate. This sets up place value later.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 13</p>
+              <p class="explain"><strong>Explanation.</strong> A nice trick: take 2 from the 5 and give it to the 8 to make 10. Now you have 10 + 3 = 13.</p>
+              <p class="theory"><strong>Theory &mdash; Make-a-ten strategy.</strong> Since our number system is base 10, decomposing numbers to make a friendly 10 makes addition faster and more accurate. This sets up place value later.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -275,9 +350,14 @@
             <li>C) 20</li>
             <li>D) 21</li>
           </ul>
-          <p class="answer">Answer: C) 20</p>
-          <p class="explain"><strong>Explanation.</strong> 19 has 1 ten and 9 ones. Adding 1 more makes 10 ones, which is another ten &mdash; so 2 tens = 20.</p>
-          <p class="theory"><strong>Theory &mdash; Place value and bundling.</strong> In base 10, once you have 10 ones, you &ldquo;bundle&rdquo; them into 1 ten. This is the same idea that turns 99 + 1 into 100.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 20</p>
+              <p class="explain"><strong>Explanation.</strong> 19 has 1 ten and 9 ones. Adding 1 more makes 10 ones, which is another ten &mdash; so 2 tens = 20.</p>
+              <p class="theory"><strong>Theory &mdash; Place value and bundling.</strong> In base 10, once you have 10 ones, you &ldquo;bundle&rdquo; them into 1 ten. This is the same idea that turns 99 + 1 into 100.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -289,9 +369,14 @@
             <li>C) 5</li>
             <li>D) 3</li>
           </ul>
-          <p class="answer">Answer: B) 4</p>
-          <p class="explain"><strong>Explanation.</strong> Start with 7, take away 3: 7 &minus; 3 = 4.</p>
-          <p class="theory"><strong>Theory &mdash; Subtraction word problems (take-from).</strong> Real-life math comes in stories. Translating words like &ldquo;fly away,&rdquo; &ldquo;lost,&rdquo; or &ldquo;ate&rdquo; into a minus sign is a key first-grade skill.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 4</p>
+              <p class="explain"><strong>Explanation.</strong> Start with 7, take away 3: 7 &minus; 3 = 4.</p>
+              <p class="theory"><strong>Theory &mdash; Subtraction word problems (take-from).</strong> Real-life math comes in stories. Translating words like &ldquo;fly away,&rdquo; &ldquo;lost,&rdquo; or &ldquo;ate&rdquo; into a minus sign is a key first-grade skill.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -303,9 +388,14 @@
             <li>C) 6 + 1 = 8</li>
             <li>D) 2 + 2 = 5</li>
           </ul>
-          <p class="answer">Answer: B) 4 + 3 = 7</p>
-          <p class="explain"><strong>Explanation.</strong> Only 4 + 3 actually equals 7. The others give 7, 7, and 4 respectively &mdash; none match what is written.</p>
-          <p class="theory"><strong>Theory &mdash; The equals sign means &ldquo;same as.&rdquo;</strong> Many kids think <code>=</code> means &ldquo;the answer comes next.&rdquo; It really means <em>both sides have the same value</em>. This idea will matter for algebra later.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 4 + 3 = 7</p>
+              <p class="explain"><strong>Explanation.</strong> Only 4 + 3 actually equals 7. The others give 7, 7, and 4 respectively &mdash; none match what is written.</p>
+              <p class="theory"><strong>Theory &mdash; The equals sign means &ldquo;same as.&rdquo;</strong> Many kids think <code>=</code> means &ldquo;the answer comes next.&rdquo; It really means <em>both sides have the same value</em>. This idea will matter for algebra later.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -317,9 +407,14 @@
             <li>C) Hour hand on 3, minute hand on 6</li>
             <li>D) Hour hand on 6, minute hand on 3</li>
           </ul>
-          <p class="answer">Answer: A) Hour hand on 3, minute hand on 12</p>
-          <p class="explain"><strong>Explanation.</strong> &ldquo;O&rsquo;clock&rdquo; means the minute hand points straight up at 12. The hour hand points to the hour &mdash; here, 3.</p>
-          <p class="theory"><strong>Theory &mdash; Telling time to the hour.</strong> Clocks measure time using two hands moving at different speeds. The short hand tracks hours; the long hand tracks minutes. Reading them together is an early step toward fractions of an hour.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: A) Hour hand on 3, minute hand on 12</p>
+              <p class="explain"><strong>Explanation.</strong> &ldquo;O&rsquo;clock&rdquo; means the minute hand points straight up at 12. The hour hand points to the hour &mdash; here, 3.</p>
+              <p class="theory"><strong>Theory &mdash; Telling time to the hour.</strong> Clocks measure time using two hands moving at different speeds. The short hand tracks hours; the long hand tracks minutes. Reading them together is an early step toward fractions of an hour.</p>
+            </div>
+          </details>
         </div>
 
         <h2 id="hard">Section 3 &middot; Hard (questions 16&ndash;20)</h2>
@@ -333,9 +428,14 @@
             <li>C) 7</li>
             <li>D) 8</li>
           </ul>
-          <p class="answer">Answer: C) 7</p>
-          <p class="explain"><strong>Explanation.</strong> Ask: &ldquo;6 plus what gets me to 13?&rdquo; Count up from 6: 7, 8, 9, 10, 11, 12, 13 &mdash; that&rsquo;s 7 jumps.</p>
-          <p class="theory"><strong>Theory &mdash; Inverse operations.</strong> A missing addend can be found with subtraction: 13 &minus; 6 = 7. Addition and subtraction undo each other. This is the seed of solving equations.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 7</p>
+              <p class="explain"><strong>Explanation.</strong> Ask: &ldquo;6 plus what gets me to 13?&rdquo; Count up from 6: 7, 8, 9, 10, 11, 12, 13 &mdash; that&rsquo;s 7 jumps.</p>
+              <p class="theory"><strong>Theory &mdash; Inverse operations.</strong> A missing addend can be found with subtraction: 13 &minus; 6 = 7. Addition and subtraction undo each other. This is the seed of solving equations.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -347,9 +447,14 @@
             <li>C) 8</li>
             <li>D) 9</li>
           </ul>
-          <p class="answer">Answer: B) 7</p>
-          <p class="explain"><strong>Explanation.</strong> Break 15 into 10 + 5. Take 8 from the 10 to get 2, then add the leftover 5: 2 + 5 = 7.</p>
-          <p class="theory"><strong>Theory &mdash; Subtraction with decomposition.</strong> Hard subtractions (especially across 10) get easier when you split the larger number using place value. This strategy scales to 2- and 3-digit subtraction later.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 7</p>
+              <p class="explain"><strong>Explanation.</strong> Break 15 into 10 + 5. Take 8 from the 10 to get 2, then add the leftover 5: 2 + 5 = 7.</p>
+              <p class="theory"><strong>Theory &mdash; Subtraction with decomposition.</strong> Hard subtractions (especially across 10) get easier when you split the larger number using place value. This strategy scales to 2- and 3-digit subtraction later.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -361,9 +466,14 @@
             <li>C) 13</li>
             <li>D) 4</li>
           </ul>
-          <p class="answer">Answer: C) 13</p>
-          <p class="explain"><strong>Explanation.</strong> She lost 4 and ended at 9, so before giving any away she had 9 + 4 = 13.</p>
-          <p class="theory"><strong>Theory &mdash; Start-unknown problems.</strong> When the <em>starting</em> amount is the mystery, we work the problem backwards. These are the hardest 1st-grade word problems because the action (giving away) seems to call for subtraction, but the solution uses addition.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 13</p>
+              <p class="explain"><strong>Explanation.</strong> She lost 4 and ended at 9, so before giving any away she had 9 + 4 = 13.</p>
+              <p class="theory"><strong>Theory &mdash; Start-unknown problems.</strong> When the <em>starting</em> amount is the mystery, we work the problem backwards. These are the hardest 1st-grade word problems because the action (giving away) seems to call for subtraction, but the solution uses addition.</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -375,9 +485,14 @@
             <li>C) 10</li>
             <li>D) 406</li>
           </ul>
-          <p class="answer">Answer: B) 46</p>
-          <p class="explain"><strong>Explanation.</strong> 4 tens = 40. Add 6 ones: 40 + 6 = 46.</p>
-          <p class="theory"><strong>Theory &mdash; Place value.</strong> In a 2-digit number, the left digit counts how many tens and the right digit counts how many ones. So 46 means 4 tens + 6 ones, not &ldquo;four and six.&rdquo;</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: B) 46</p>
+              <p class="explain"><strong>Explanation.</strong> 4 tens = 40. Add 6 ones: 40 + 6 = 46.</p>
+              <p class="theory"><strong>Theory &mdash; Place value.</strong> In a 2-digit number, the left digit counts how many tens and the right digit counts how many ones. So 46 means 4 tens + 6 ones, not &ldquo;four and six.&rdquo;</p>
+            </div>
+          </details>
         </div>
 
         <div class="qbox">
@@ -389,9 +504,14 @@
             <li>C) 23&cent;</li>
             <li>D) 32&cent;</li>
           </ul>
-          <p class="answer">Answer: C) 23&cent;</p>
-          <p class="explain"><strong>Explanation.</strong> Each dime is 10&cent;, so 2 dimes = 20&cent;. Each penny is 1&cent;, so 3 pennies = 3&cent;. Total: 20 + 3 = 23&cent;.</p>
-          <p class="theory"><strong>Theory &mdash; Coin values and skip counting.</strong> Money is a real-world use of place value. Counting dimes by tens (10, 20, 30&hellip;) and pennies by ones (21, 22, 23) is exactly the same idea as reading a 2-digit number.</p>
+          <details class="reveal">
+            <summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Answer: C) 23&cent;</p>
+              <p class="explain"><strong>Explanation.</strong> Each dime is 10&cent;, so 2 dimes = 20&cent;. Each penny is 1&cent;, so 3 pennies = 3&cent;. Total: 20 + 3 = 23&cent;.</p>
+              <p class="theory"><strong>Theory &mdash; Coin values and skip counting.</strong> Money is a real-world use of place value. Counting dimes by tens (10, 20, 30&hellip;) and pennies by ones (21, 22, 23) is exactly the same idea as reading a 2-digit number.</p>
+            </div>
+          </details>
         </div>
 
         <h2 id="answer-key">Answer Key</h2>
