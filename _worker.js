@@ -1182,6 +1182,42 @@ async function handleEnrollmentsApi(request, env) {
   if (!env.ADMIN_PASSWORD || pw !== env.ADMIN_PASSWORD) {
     return jsonResponse({ error: "unauthorized" }, 401);
   }
+
+  // POST = manual insert (admin-only backfill)
+  if (request.method === "POST") {
+    var body;
+    try { body = await request.json(); } catch (e) { return jsonResponse({ error: "bad_json" }, 400); }
+    if (!body || typeof body !== "object") return jsonResponse({ error: "bad_body" }, 400);
+    var now = new Date().toISOString();
+    var status = body.status === "intent" ? "intent" : "paid";
+    var rec = {
+      id: body.id || randId(),
+      createdAt: body.createdAt || now,
+      updatedAt: now,
+      status: status,
+      ref: body.ref || "",
+      course: body.course || "",
+      courseTitle: body.courseTitle || "",
+      day: body.day || "",
+      startDate: body.startDate || "",
+      parentName: body.parentName || "",
+      parentEmail: body.parentEmail || "",
+      parentPhone: body.parentPhone || "",
+      studentName: body.studentName || "",
+      amountUsd: body.amountUsd != null ? Number(body.amountUsd) : null,
+      stripeCustomerId: body.stripeCustomerId || "",
+      stripeSessionId: body.stripeSessionId || "",
+      paymentIntent: body.paymentIntent || "",
+      paidAt: body.paidAt || (status === "paid" ? now : ""),
+      ip: "",
+      referer: "admin-manual",
+      userAgent: "admin-manual",
+      notes: body.notes || ""
+    };
+    await kvPutEnrollment(env, rec);
+    return jsonResponse({ ok: true, record: rec }, 200);
+  }
+
   var rows = await kvListEnrollments(env, 5000);
   if (url.searchParams.get("format") === "csv") {
     var csv = enrollmentsToCsv(rows);
@@ -1195,7 +1231,7 @@ async function handleEnrollmentsApi(request, env) {
       }
     });
   }
-  return new Response(JSON.stringify({ ok: true, count: rows.length, rows: rows }), {
+  return new Response(JSON.stringify({ ok: true, count: rows.length, enrollments: rows, rows: rows }), {
     status: 200,
     headers: {
       "Content-Type": "application/json",
