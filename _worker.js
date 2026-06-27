@@ -1041,7 +1041,7 @@ async function handleEnrollIntent(request, env) {
   var html =
     "<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1f3d2e;max-width:560px;\">" +
       "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">New enrollment selection</h2>" +
-      "<p style=\"margin:0 0 16px;color:#3a3a30;\"><strong>" + escHtml(who) + "</strong> just hit \u201cContinue to secure payment.\u201d Stripe should send a $149 confirmation shortly with the matching client_reference_id.</p>" +
+      "<p style=\"margin:0 0 16px;color:#3a3a30;\"><strong>" + escHtml(who) + "</strong> just hit \u201cReserve My Spot — No Payment Today.\u201d Stripe should send a $149 confirmation shortly with the matching client_reference_id.</p>" +
       "<table style=\"border-collapse:collapse;width:100%;font-size:15px;\">" +
         "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Parent / guardian</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(parentName || "\u2014") + "</td></tr>" +
         "<tr><td style=\"padding:8px 12px;font-weight:700;\">Parent email</td><td style=\"padding:8px 12px;\">" + (parentEmail ? "<a href=\"mailto:" + escHtml(parentEmail) + "\" style=\"color:#1f3d2e;\">" + escHtml(parentEmail) + "</a>" : "\u2014") + "</td></tr>" +
