@@ -931,7 +931,7 @@ async function handleEnrollIntent(request, env) {
   var checkoutSessionId = "";
   if (env.STRIPE_SECRET_KEY && COURSE_PRICES[course] && trialEndUnix > 0) {
     var origin = new URL(request.url).origin;
-    var successUrl = origin + "/membership-thanks.html?session_id={CHECKOUT_SESSION_ID}";
+    var successUrl = origin + "/enrollment/thank-you?session_id={CHECKOUT_SESSION_ID}";
     var cancelUrl  = origin + "/courses/" + course + ".html";
     var monthlyUsd = COURSE_MONTHLY_USD[course] || 0;
 
@@ -1070,6 +1070,68 @@ async function handleEnrollIntent(request, env) {
   return jsonResponse({ ok: true, checkout_url: checkoutUrl, session_id: checkoutSessionId });
 }
 __name(handleEnrollIntent, "handleEnrollIntent");
+
+// ---- Order summary (read-only, called by /enrollment/thank-you) ----
+// Public endpoint, but accepts only a cs_live_* / cs_test_* session_id. Returns a
+// trimmed, non-sensitive summary of the just-completed Checkout Session so the
+// thank-you page can render a personalized confirmation. Never exposes card
+// details, full customer record, or anything beyond what the parent already saw
+// on the Checkout page.
+async function handleOrderSummary(request, env) {
+  if (request.method !== "GET") return jsonResponse({ ok: false, error: "method_not_allowed" }, 405);
+  var url = new URL(request.url);
+  var sessionId = String(url.searchParams.get("session_id") || "").trim();
+  if (!/^cs_(live|test)_[A-Za-z0-9]+$/.test(sessionId)) {
+    return jsonResponse({ ok: false, error: "invalid_session_id" }, 400);
+  }
+  if (!env.STRIPE_SECRET_KEY) {
+    return jsonResponse({ ok: false, error: "stripe_not_configured" }, 500);
+  }
+  try {
+    var resp = await fetch("https://api.stripe.com/v1/checkout/sessions/" + encodeURIComponent(sessionId) + "?expand[]=line_items&expand[]=subscription", {
+      headers: { Authorization: "Bearer " + env.STRIPE_SECRET_KEY }
+    });
+    var s = await resp.json();
+    if (!resp.ok) {
+      console.error("order-summary stripe fetch failed", resp.status, JSON.stringify(s));
+      return jsonResponse({ ok: false, error: "stripe_error" }, 502);
+    }
+    var md = s.metadata || {};
+    var subMd = (s.subscription && s.subscription.metadata) || {};
+    // Compute first monthly charge date from trial_end on the subscription
+    var firstChargeIso = "";
+    var firstChargeUnix = 0;
+    if (s.subscription && s.subscription.trial_end) {
+      firstChargeUnix = s.subscription.trial_end;
+      firstChargeIso = new Date(firstChargeUnix * 1000).toISOString();
+    }
+    var summary = {
+      ok: true,
+      session_id: s.id,
+      payment_status: s.payment_status || "",
+      amount_total_usd: (s.amount_total != null) ? s.amount_total / 100 : null,
+      currency: s.currency || "usd",
+      customer_email: (s.customer_details && s.customer_details.email) || s.customer_email || "",
+      customer_name: (s.customer_details && s.customer_details.name) || "",
+      course_slug: md.course_slug || subMd.course_slug || "",
+      course_title: md.course_title || subMd.course_title || "",
+      weekly_day: md.weekly_day || subMd.weekly_day || "",
+      first_class_date: md.first_class_date || subMd.first_class_date || "",
+      student_name: md.student_name || subMd.student_name || "",
+      parent_name: md.parent_name || subMd.parent_name || "",
+      monthly_usd: subMd.monthly_usd ? parseInt(subMd.monthly_usd, 10) : null,
+      first_charge_iso: firstChargeIso,
+      subscription_id: (s.subscription && s.subscription.id) || "",
+      subscription_status: (s.subscription && s.subscription.status) || ""
+    };
+    var headers = { "Content-Type": "application/json", "Cache-Control": "no-store" };
+    return new Response(JSON.stringify(summary), { status: 200, headers: headers });
+  } catch (e) {
+    console.error("order-summary exception", String(e));
+    return jsonResponse({ ok: false, error: "order_summary_exception" }, 502);
+  }
+}
+__name(handleOrderSummary, "handleOrderSummary");
 
 // ---- Stripe webhook (verified payment confirmation) ----
 function hexToBuf(hex) {
@@ -1361,6 +1423,7 @@ var worker_default = {
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
     if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
+    if (url.pathname === "/api/order-summary") return handleOrderSummary(request, env);
     if (url.pathname === "/api/stripe-webhook") return handleStripeWebhook(request, env);
     if (url.pathname === "/api/enrollments") return handleEnrollmentsApi(request, env);
     if (url.pathname.startsWith("/_admin/")) {
