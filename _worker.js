@@ -931,7 +931,7 @@ async function handleEnrollIntent(request, env) {
   var checkoutSessionId = "";
   if (env.STRIPE_SECRET_KEY && COURSE_PRICES[course] && trialEndUnix > 0) {
     var origin = new URL(request.url).origin;
-    var successUrl = origin + "/enrollment/thank-you?session_id={CHECKOUT_SESSION_ID}";
+    var successUrl = origin + "/membership-thanks.html?session_id={CHECKOUT_SESSION_ID}";
     var cancelUrl  = origin + "/courses/" + course + ".html";
     var monthlyUsd = COURSE_MONTHLY_USD[course] || 0;
 
