@@ -75,7 +75,8 @@
       .grid-table th, .grid-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.92rem; vertical-align: middle; }
       .grid-table th { background: var(--green); color: var(--gold-soft); font-size: 0.74rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
       .grid-table tr:last-child td { border-bottom: 0; }
-      .grid-table td.day { font-weight: 700; color: var(--green); font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.92rem; letter-spacing: 0; white-space: nowrap; background: rgba(31,61,46,0.04); }
+      .grid-table td.day { font-weight: 700; color: var(--green); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; letter-spacing: 0.3px; white-space: nowrap; background: rgba(31,61,46,0.04); line-height: 1.25; }
+      .grid-table td.day .slot-time { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.72rem; color: var(--ink-mute); font-weight: 400; margin-top: 3px; letter-spacing: 0; }
       .grid-table td.slot { color: var(--green); font-weight: 600; line-height: 1.25; }
       .grid-table td.slot .slot-time { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.78rem; color: var(--ink-mute); font-weight: 400; margin-top: 2px; letter-spacing: 0; }
       .grid-overview__foot { color: var(--ink-mute); margin-top: 16px; font-size: 0.9rem; }
@@ -252,60 +253,41 @@
             </thead>
             <tbody>
               <tr>
-                <td class="day">10:00 AM</td>
+                <td class="day">Morning<br><span class="slot-time">10:00 AM</span></td>
                 <td></td><td></td><td></td><td></td><td></td>
                 <td class="slot">Little Newtons B<br><span class="slot-time">10:00&ndash;11:30</span></td>
                 <td class="slot">Little Newtons A<br><span class="slot-time">10:00&ndash;11:30</span></td>
               </tr>
               <tr>
-                <td class="day">11:30 AM</td>
+                <td class="day">Late Morning<br><span class="slot-time">11:30 AM</span></td>
                 <td></td><td></td><td></td><td></td><td></td>
                 <td class="slot">Kid Einsteins B<br><span class="slot-time">11:30&ndash;1:30</span></td>
                 <td class="slot">Kid Einsteins A<br><span class="slot-time">11:30&ndash;1:30</span></td>
               </tr>
               <tr>
-                <td class="day">2:00 PM</td>
-                <td></td><td></td><td></td><td></td><td></td>
-                <td class="slot">YF Pre-Algebra<br><span class="slot-time">2:00&ndash;4:00</span></td>
-                <td class="slot">YF Algebra I<br><span class="slot-time">2:00&ndash;4:00</span></td>
-              </tr>
-              <tr>
-                <td class="day">3:30 PM</td>
+                <td class="day">Afternoon<br><span class="slot-time">2:00&ndash;5:30 PM</span></td>
                 <td class="slot">Little Newtons B<br><span class="slot-time">3:30&ndash;5:00</span></td>
                 <td class="slot">Kid Einsteins A<br><span class="slot-time">3:30&ndash;5:30</span></td>
                 <td class="slot">Little Newtons A<br><span class="slot-time">3:30&ndash;5:00</span></td>
                 <td class="slot">Kid Einsteins B<br><span class="slot-time">3:30&ndash;5:30</span></td>
                 <td class="slot">SHSAT Prep<br><span class="slot-time">3:30&ndash;5:30</span></td>
-                <td></td><td></td>
+                <td class="slot">YF Pre-Algebra<br><span class="slot-time">2:00&ndash;4:00</span></td>
+                <td class="slot">YF Algebra I<br><span class="slot-time">2:00&ndash;4:00</span></td>
               </tr>
               <tr>
-                <td class="day">5:00 PM</td>
+                <td class="day">Early Evening<br><span class="slot-time">5:00&ndash;7:30 PM</span></td>
                 <td class="slot">Kid Einsteins B<br><span class="slot-time">5:00&ndash;7:00</span></td>
-                <td></td>
-                <td class="slot">Kid Einsteins A<br><span class="slot-time">5:00&ndash;7:00</span></td>
-                <td></td><td></td><td></td><td></td>
-              </tr>
-              <tr>
-                <td class="day">5:30 PM</td>
-                <td></td>
                 <td class="slot">YF Pre-Algebra<br><span class="slot-time">5:30&ndash;7:30</span></td>
-                <td></td>
+                <td class="slot">Kid Einsteins A<br><span class="slot-time">5:00&ndash;7:00</span></td>
                 <td class="slot">YF Pre-Algebra<br><span class="slot-time">5:30&ndash;7:30</span></td>
                 <td class="slot">SAT Prep<br><span class="slot-time">5:30&ndash;7:30</span></td>
                 <td></td><td></td>
               </tr>
               <tr>
-                <td class="day">7:00 PM</td>
+                <td class="day">Evening<br><span class="slot-time">7:00&ndash;9:30 PM</span></td>
                 <td class="slot">YF Algebra I<br><span class="slot-time">7:00&ndash;9:00</span></td>
-                <td></td>
-                <td class="slot">YF Algebra I<br><span class="slot-time">7:00&ndash;9:00</span></td>
-                <td></td><td></td><td></td><td></td>
-              </tr>
-              <tr>
-                <td class="day">7:30 PM</td>
-                <td></td>
                 <td class="slot">YF Geometry &amp; Trig<br><span class="slot-time">7:30&ndash;9:30</span></td>
-                <td></td>
+                <td class="slot">YF Algebra I<br><span class="slot-time">7:00&ndash;9:00</span></td>
                 <td class="slot">YF Geometry &amp; Trig<br><span class="slot-time">7:30&ndash;9:30</span></td>
                 <td class="slot">AP Prep<br><span class="slot-time">7:30&ndash;9:30</span></td>
                 <td></td><td></td>
