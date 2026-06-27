@@ -31,6 +31,18 @@
       .enroll-confirm strong { color: #c89a3a; }
       .enroll-confirm__dismiss { position: absolute; top: 12px; right: 16px; background: transparent; border: 0; color: #f5f0e6; font-size: 1.4rem; cursor: pointer; opacity: 0.7; padding: 4px 10px; line-height: 1; }
       .enroll-confirm__dismiss:hover { opacity: 1; }
+      .course-index__cta-strip { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 0 0 28px; padding: 22px 26px; background: #fff; border: 2px solid #1f3d2e; border-radius: 12px; box-shadow: 0 6px 18px rgba(31,61,46,0.06); }
+      .course-index__cta-strip-copy { flex: 1 1 240px; min-width: 220px; color: #2a2a24; font-size: 0.98rem; line-height: 1.45; }
+      .course-index__cta-strip-copy strong { color: #1f3d2e; }
+      .course-index__cta-strip-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+      .course-index__cta-strip .btn-cta { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.3px; transition: transform 0.15s ease, background 0.15s ease; }
+      .course-index__cta-strip .btn-cta--primary { background: #1f3d2e; color: #f5f0e6; }
+      .course-index__cta-strip .btn-cta--primary:hover { background: #16301f; transform: translateY(-1px); }
+      .course-index__cta-strip .btn-cta--secondary { background: transparent; color: #1f3d2e; border: 2px solid #1f3d2e; padding: 10px 20px; }
+      .course-index__cta-strip .btn-cta--secondary:hover { background: #1f3d2e; color: #f5f0e6; transform: translateY(-1px); }
+      .course-index__quiz-line { margin: 0 0 32px; text-align: center; color: #6b6657; font-size: 0.95rem; }
+      .course-index__quiz-line a { color: #1f3d2e; font-weight: 700; text-decoration: underline; text-decoration-color: #c89a3a; text-underline-offset: 3px; }
+      @media (max-width: 640px) { .course-index__cta-strip { padding: 18px 18px; } .course-index__cta-strip .btn-cta { width: 100%; } .course-index__cta-strip-actions { width: 100%; } }
     </style>
   </head>
   <body data-page="courses">
@@ -47,6 +59,18 @@
         <p style="color:#c89a3a; letter-spacing:2px; text-transform:uppercase; font-size:0.78rem; font-weight:700; margin:0 0 12px;">SOMATH Courses</p>
         <h1>Every course we teach</h1>
         <p class="course-index__lede">From foundational K&ndash;2 math through AP Calculus &mdash; all courses run in person at 226 W 79th St on the Upper West Side, in small groups of 4 to 6 students. Pick a course to see the full syllabus, sample class format, and to enroll.</p>
+
+        <div class="course-index__cta-strip" role="region" aria-label="Get started">
+          <div class="course-index__cta-strip-copy">
+            <strong>Two ways to start.</strong> Come meet us first, or lock in your seat on Membership today.
+          </div>
+          <div class="course-index__cta-strip-actions">
+            <a class="btn-cta btn-cta--primary" href="/evaluation">Book Free Evaluation &rarr;</a>
+            <a class="btn-cta btn-cta--secondary" href="/membership">Start Membership</a>
+          </div>
+        </div>
+        <p class="course-index__quiz-line">Not sure which course fits? <a href="/course-recommendation">Take the 2-minute quiz &rarr;</a></p>
+
         <div class="course-index__grid">
             <a href="/courses/little-newtons-a" class="course-index-card" aria-label="Open Little Newtons A — description, sample class, syllabus, and enrollment">
               <span class="course-index-card__grade">Grades 1–2 · Ages 6–8</span>

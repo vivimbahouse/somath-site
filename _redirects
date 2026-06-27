@@ -37,3 +37,7 @@
 
 # Wix blog posts → new blog post URLs (same slug, different path)
 /post/* /posts/:splat 301
+
+# Retired pre-enroll flow — anyone hitting old links lands on Membership
+/pre-enroll          /membership 301
+/pre-enroll-success  /membership 301

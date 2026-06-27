@@ -20,7 +20,6 @@
         </div>
         <nav class="nav__links" aria-label="Primary">
           <a class="nav__link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
-          <a class="nav__link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
           <a class="nav__link ${page === "courses" ? "is-active" : ""}" href="/courses/">Courses</a>
           <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
@@ -34,7 +33,6 @@
       </div>
       <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
         <a class="nav__mobile-link ${page === "membership" ? "is-active" : ""}" href="/membership">Membership</a>
-        <a class="nav__mobile-link ${page === "programs" ? "is-active" : ""}" href="/programs">Programs</a>
         <a class="nav__mobile-link ${page === "courses" ? "is-active" : ""}" href="/courses/">Courses</a>
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
