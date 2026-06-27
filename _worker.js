@@ -821,6 +821,28 @@ var COURSE_TITLES = {
   "sat-math": "SAT Math",
   "pre-calculus": "AP Prep \u2014 Pre-Calculus / Calculus"
 };
+
+// Stripe LIVE recurring Price IDs (acct_1TheUMIWmENPPZJB) — created 2026-06-27.
+// Each course slug maps to the monthly recurring Price the parent subscribes to.
+// Bundled Checkout adds $99 enrollment + $50 materials as one-time invoice items on top.
+var COURSE_PRICES = {
+  "little-newtons-a":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $369/mo
+  "little-newtons-b":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $369/mo
+  "kid-einsteins-a":               "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $489/mo
+  "kid-einsteins-b":               "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $489/mo
+  "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
+  "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
+  "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
+  "shsat-prep":                    "price_1Tn2YLIWmENPPZJBkwL9CRip", // SHSAT $587/mo
+  "sat-math":                      "price_1Tn2YLIWmENPPZJBHl5dbt30", // SAT $640/mo
+  "pre-calculus":                  "price_1Tn2YMIWmENPPZJBwQKPTMim"  // AP $800/mo
+};
+var COURSE_MONTHLY_USD = {
+  "little-newtons-a": 369, "little-newtons-b": 369,
+  "kid-einsteins-a": 489, "kid-einsteins-b": 489,
+  "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "young-fermats-geometry": 489,
+  "shsat-prep": 587, "sat-math": 640, "pre-calculus": 800
+};
 function escHtml(s) { return String(s || "").replace(/[&<>"']/g, function(c){return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];}); }
 function fmtLongDate(yyyyMmDd) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(yyyyMmDd)) return yyyyMmDd;
@@ -892,13 +914,96 @@ async function handleEnrollIntent(request, env) {
 
   // Compute billing start = startDate - 1 day (UTC math, then format)
   var billingFmt = "";
+  var trialEndUnix = 0;
   if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     var p = date.split("-");
     var d = new Date(Date.UTC(parseInt(p[0],10), parseInt(p[1],10)-1, parseInt(p[2],10)));
     d.setUTCDate(d.getUTCDate() - 1);
     billingFmt = d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric", timeZone:"UTC" });
+    // Trial ends at noon UTC the day before first class (so first charge hits that morning ET)
+    trialEndUnix = Math.floor(d.getTime() / 1000) + (12 * 60 * 60);
   }
   var startFmt = fmtLongDate(date);
+
+  // ---- Build the BUNDLED Stripe Checkout Session ----
+  // Subscription mode + $99 enrollment + $50 materials as one-time invoice items + dynamic trial_end
+  var checkoutUrl = "";
+  var checkoutSessionId = "";
+  if (env.STRIPE_SECRET_KEY && COURSE_PRICES[course] && trialEndUnix > 0) {
+    var origin = new URL(request.url).origin;
+    var successUrl = origin + "/enrollment/thank-you?session_id={CHECKOUT_SESSION_ID}";
+    var cancelUrl  = origin + "/courses/" + course + ".html";
+    var monthlyUsd = COURSE_MONTHLY_USD[course] || 0;
+
+    var sp = new URLSearchParams();
+    sp.append("mode", "subscription");
+    sp.append("success_url", successUrl);
+    sp.append("cancel_url", cancelUrl);
+    if (parentEmail) sp.append("customer_email", parentEmail);
+    sp.append("client_reference_id", ref);
+    sp.append("payment_method_types[]", "card");
+    sp.append("billing_address_collection", "required");
+    sp.append("phone_number_collection[enabled]", "true");
+    // Line item 0 — the recurring monthly tuition
+    sp.append("line_items[0][price]", COURSE_PRICES[course]);
+    sp.append("line_items[0][quantity]", "1");
+    // Subscription trial — ends the day before first class
+    sp.append("subscription_data[trial_end]", String(trialEndUnix));
+    sp.append("subscription_data[trial_settings][end_behavior][missing_payment_method]", "cancel");
+    sp.append("subscription_data[description]", title + " \u2014 monthly tuition");
+    // Subscription metadata — powers the materials-recharge + renewal automation
+    sp.append("subscription_data[metadata][course_slug]", course);
+    sp.append("subscription_data[metadata][course_title]", title);
+    sp.append("subscription_data[metadata][weekly_day]", day);
+    sp.append("subscription_data[metadata][first_class_date]", date);
+    sp.append("subscription_data[metadata][monthly_usd]", String(monthlyUsd));
+    sp.append("subscription_data[metadata][materials_cycle_start]", date); // anchor for $50 every 6 months
+    sp.append("subscription_data[metadata][source]", "bundled_checkout_v1");
+    if (studentName) sp.append("subscription_data[metadata][student_name]", studentName);
+    if (parentName)  sp.append("subscription_data[metadata][parent_name]", parentName);
+    // Top-level Checkout Session metadata (mirrors above for webhook convenience)
+    sp.append("metadata[course_slug]", course);
+    sp.append("metadata[course_title]", title);
+    sp.append("metadata[weekly_day]", day);
+    sp.append("metadata[first_class_date]", date);
+    sp.append("metadata[ref]", ref);
+    sp.append("metadata[flow]", "bundled_checkout_v1");
+    if (studentName) sp.append("metadata[student_name]", studentName);
+    if (parentName)  sp.append("metadata[parent_name]", parentName);
+    // Add the two one-time invoice items: $99 enrollment + $50 materials, on the FIRST invoice (today)
+    // We use Stripe Checkout's `subscription_data` cannot accept add_invoice_items directly,
+    // so we add them as `line_items` with one-time price_data — Checkout will charge them today.
+    sp.append("line_items[1][quantity]", "1");
+    sp.append("line_items[1][price_data][currency]", "usd");
+    sp.append("line_items[1][price_data][unit_amount]", "9900");
+    sp.append("line_items[1][price_data][product_data][name]", "SOMATH enrollment fee");
+    sp.append("line_items[1][price_data][product_data][description]", "One-time enrollment fee \u2014 secures your spot in " + title + ".");
+    sp.append("line_items[2][quantity]", "1");
+    sp.append("line_items[2][price_data][currency]", "usd");
+    sp.append("line_items[2][price_data][unit_amount]", "5000");
+    sp.append("line_items[2][price_data][product_data][name]", "Materials fee (6-month cycle)");
+    sp.append("line_items[2][price_data][product_data][description]", "Workbooks + printed practice sets. Recharged every 6 months.");
+
+    try {
+      var resp = await fetch("https://api.stripe.com/v1/checkout/sessions", {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + env.STRIPE_SECRET_KEY,
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: sp.toString()
+      });
+      var data = await resp.json();
+      if (resp.ok) {
+        checkoutUrl = data.url || "";
+        checkoutSessionId = data.id || "";
+      } else {
+        console.error("Bundled Checkout creation failed", resp.status, JSON.stringify(data));
+      }
+    } catch (e) {
+      console.error("Bundled Checkout exception", String(e));
+    }
+  }
 
   // Stash useful request context
   var ua = request.headers.get("user-agent") || "";
@@ -914,6 +1019,7 @@ async function handleEnrollIntent(request, env) {
         parentName: parentName || existing.rec.parentName,
         parentEmail: parentEmail || existing.rec.parentEmail,
         studentName: studentName || existing.rec.studentName,
+        stripeSessionId: checkoutSessionId || existing.rec.stripeSessionId || "",
         ip: ip, referer: referer, userAgent: ua
       });
     } else {
@@ -922,7 +1028,7 @@ async function handleEnrollIntent(request, env) {
         ref: ref,
         course: course, courseTitle: title, day: day, startDate: date,
         parentName: parentName, parentEmail: parentEmail, studentName: studentName,
-        amountUsd: null, stripeCustomerId: "", stripeSessionId: "", paymentIntent: "",
+        amountUsd: null, stripeCustomerId: "", stripeSessionId: checkoutSessionId || "", paymentIntent: "",
         ip: ip, referer: referer, userAgent: ua
       });
     }
@@ -949,17 +1055,19 @@ async function handleEnrollIntent(request, env) {
       "<p style=\"margin:0;font-size:11px;color:#9a9588;\">IP: " + escHtml(ip) + " \u00b7 Referer: " + escHtml(referer) + "</p>" +
     "</div>";
 
-  var result = await sendResendEmail(env, {
+  // Fire-and-forget staff notification (don't block the redirect)
+  sendResendEmail(env, {
     to: "hello@schoolofmath.us",
     subject: subject,
     html: html,
     replyTo: "hello@schoolofmath.us"
-  });
-  if (!result.ok) {
-    console.error("enroll-intent email failed", result);
-    return jsonResponse({ ok: false, error: result.error }, 500);
+  }).catch(function(e){ console.error("enroll-intent email failed", String(e)); });
+
+  if (!checkoutUrl) {
+    // Stripe call failed or course not in catalog — surface a clear error so the frontend doesn't redirect to a broken link
+    return jsonResponse({ ok: false, error: "checkout_unavailable" }, 502);
   }
-  return jsonResponse({ ok: true });
+  return jsonResponse({ ok: true, checkout_url: checkoutUrl, session_id: checkoutSessionId });
 }
 __name(handleEnrollIntent, "handleEnrollIntent");
 

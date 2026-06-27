@@ -418,19 +418,40 @@
             alert('Your start date falls on a different weekday than the day you picked. Please pick a date that falls on a ' + day + '.');
             dateInput.focus(); return;
           }
-          // Notify SOMATH of the enrollment intent (don't block redirect on failure)
+          // Build the bundled Stripe Checkout Session via the SOMATH API,
+          // then redirect to the returned URL. This replaces the old static buy.stripe.com flow:
+          //  - subscription mode (monthly tuition)
+          //  - $99 enrollment + $50 materials as one-time line items charged today
+          //  - trial_end set to the day before first class so the first monthly charge hits then
+          //  - subscription metadata anchors materials-recharge + renewal automation
           var payload = { course: course, day: day, startDate: date, parentName: parentName, parentEmail: parentEmail, studentName: studentName };
-          try {
-            navigator.sendBeacon
-              ? navigator.sendBeacon('/api/enroll-intent', new Blob([JSON.stringify(payload)], { type:'application/json' }))
-              : fetch('/api/enroll-intent', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload), keepalive:true });
-          } catch (_) { /* swallow */ }
-          // Pass into Stripe via client_reference_id (alphanum + underscore + hyphen only, max 200 chars).
-          // Format: course__day__YYYY-MM-DD
-          var ref = (course + '__' + day + '__' + date).replace(/[^A-Za-z0-9_\-]/g,'-').slice(0,200);
-          // Prefill the parent email into Stripe Checkout so the receipt + webhook customer record match.
-          var url = stripe + '?client_reference_id=' + encodeURIComponent(ref) + '&prefilled_email=' + encodeURIComponent(parentEmail);
-          window.location.href = url;
+          var btn = this;
+          var originalLabel = btn.textContent;
+          btn.textContent = 'Preparing secure checkout\u2026';
+          btn.style.opacity = '0.75';
+          btn.style.pointerEvents = 'none';
+          fetch('/api/enroll-intent', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+            .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, body: j }; }); })
+            .then(function(res){
+              if (res.ok && res.body && res.body.checkout_url) {
+                window.location.href = res.body.checkout_url;
+                return;
+              }
+              btn.textContent = originalLabel;
+              btn.style.opacity = '';
+              btn.style.pointerEvents = '';
+              alert('Sorry \u2014 we couldn\u2019t open Stripe Checkout. Please try again, or call us at (646) 668-6151 and we\u2019ll get you enrolled in five minutes.');
+            })
+            .catch(function(){
+              btn.textContent = originalLabel;
+              btn.style.opacity = '';
+              btn.style.pointerEvents = '';
+              alert('Network error reaching Stripe. Please try again, or call (646) 668-6151.');
+            });
         });
       })();
     </script>
