@@ -59,6 +59,7 @@
           <ul>
             <li><a href="/membership"><strong>Membership — monthly</strong></a></li>
             <li><a href="/courses/">All courses</a></li>
+            <li><a href="/programs">Programs (all levels)</a></li>
             <li><a href="/schedule">Year-round schedule</a></li>
             <li><a href="/shsat-prep">SHSAT Prep</a></li>
             <li><a href="/programs#little-newtons">Little Newtons (K–2)</a></li>
