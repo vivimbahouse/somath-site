@@ -370,7 +370,9 @@ var PRE_ENROLL_COURSES = {
   "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "shsat-prep":                   { title: "SHSAT Prep",                    grade: "Grades 7\u20138",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
   "sat-math":                     { title: "SAT Math",                      grade: "Grades 9\u201311",  summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
-  "pre-calculus":                 { title: "Pre-Calculus",                  grade: "Grades 10\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 }
+  "pre-calculus":                 { title: "AP Pre-Calculus",               grade: "Grades 10\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+  "ap-calculus":                  { title: "AP Calculus AB/BC",             grade: "Grades 11\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+  "ap-statistics":                { title: "AP Statistics",                 grade: "Grades 10\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 }
 };
 var PRE_ENROLL_TERMS = {
   july:     { label: "July 2026",     dateRange: "June 29 \u2013 August 1, 2026",      weeks: 5 },
@@ -664,7 +666,9 @@ var EVAL_COURSES = {
   "young-fermats-geometry": "Young Fermats \u2014 Geometry",
   "shsat-prep": "SHSAT Prep",
   "sat-math": "SAT Math",
-  "pre-calculus": "Pre-Calculus"
+  "pre-calculus": "AP Pre-Calculus",
+  "ap-calculus": "AP Calculus AB/BC",
+  "ap-statistics": "AP Statistics"
 };
 
 function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
@@ -819,7 +823,9 @@ var COURSE_TITLES = {
   "young-fermats-geometry": "Young Fermats \u2014 Geometry",
   "shsat-prep": "SHSAT Prep",
   "sat-math": "SAT Math",
-  "pre-calculus": "AP Prep \u2014 Pre-Calculus / Calculus"
+  "pre-calculus": "AP Pre-Calculus",
+  "ap-calculus": "AP Calculus AB/BC",
+  "ap-statistics": "AP Statistics"
 };
 
 // Stripe LIVE recurring Price IDs (acct_1TheUMIWmENPPZJB) — created 2026-06-27.
@@ -835,13 +841,16 @@ var COURSE_PRICES = {
   "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "shsat-prep":                    "price_1Tn2YLIWmENPPZJBkwL9CRip", // SHSAT $587/mo
   "sat-math":                      "price_1Tn2YLIWmENPPZJBHl5dbt30", // SAT $640/mo
-  "pre-calculus":                  "price_1Tn2YMIWmENPPZJBwQKPTMim"  // AP $800/mo
+  "pre-calculus":                  "price_1Tn2YMIWmENPPZJBwQKPTMim", // AP $800/mo
+  "ap-calculus":                   "price_1Tn2YMIWmENPPZJBwQKPTMim", // AP $800/mo
+  "ap-statistics":                 "price_1Tn2YMIWmENPPZJBwQKPTMim"  // AP $800/mo
 };
 var COURSE_MONTHLY_USD = {
   "little-newtons-a": 369, "little-newtons-b": 369,
   "kid-einsteins-a": 489, "kid-einsteins-b": 489,
   "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "young-fermats-geometry": 489,
-  "shsat-prep": 587, "sat-math": 640, "pre-calculus": 800
+  "shsat-prep": 587, "sat-math": 640,
+  "pre-calculus": 800, "ap-calculus": 800, "ap-statistics": 800
 };
 function escHtml(s) { return String(s || "").replace(/[&<>"']/g, function(c){return ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c];}); }
 function fmtLongDate(yyyyMmDd) {
