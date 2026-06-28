@@ -78,6 +78,7 @@
       .grid-table td.day { font-weight: 700; color: var(--green); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; letter-spacing: 0.3px; white-space: nowrap; background: rgba(31,61,46,0.04); line-height: 1.25; }
       .grid-table td.day .slot-time { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.72rem; color: var(--ink-mute); font-weight: 400; margin-top: 3px; letter-spacing: 0; }
       .grid-table td.slot { color: var(--green); font-weight: 600; line-height: 1.25; }
+      .grid-table td.slot .slot-divider { display: block; height: 1px; background: rgba(31,61,46,0.18); margin: 8px 0; }
       .grid-table td.slot .slot-time { display: block; font-family: 'IBM Plex Mono', Menlo, monospace; font-size: 0.78rem; color: var(--ink-mute); font-weight: 400; margin-top: 2px; letter-spacing: 0; }
       .grid-overview__foot { color: var(--ink-mute); margin-top: 16px; font-size: 0.9rem; }
       @media (max-width: 720px) { .grid-table th, .grid-table td { padding: 10px 10px; font-size: 0.85rem; } }
@@ -217,7 +218,7 @@
         <div class="cadence-grid">
           <div class="cadence-tile">
             <h3>Weekday</h3>
-            <p>Once-a-week weekday classes for grades 1&ndash;8, plus high-school SAT Prep and AP Prep on Friday evenings.</p>
+            <p>Once-a-week weekday classes for grades 1&ndash;8, plus high-school SAT Prep on Friday evenings and AP Prep on Fridays and weekends.</p>
           </div>
           <div class="cadence-tile">
             <h3>Weekends</h3>
@@ -265,14 +266,14 @@
                 <td class="slot">Kid Einsteins A<br><span class="slot-time">11:30&ndash;1:30</span></td>
               </tr>
               <tr>
-                <td class="day">Afternoon<br><span class="slot-time">2:00&ndash;5:30 PM</span></td>
+                <td class="day">Afternoon<br><span class="slot-time">2:00&ndash;6:00 PM</span></td>
                 <td class="slot">Little Newtons B<br><span class="slot-time">3:30&ndash;5:00</span></td>
                 <td class="slot">Kid Einsteins A<br><span class="slot-time">3:30&ndash;5:30</span></td>
                 <td class="slot">Little Newtons A<br><span class="slot-time">3:30&ndash;5:00</span></td>
                 <td class="slot">Kid Einsteins B<br><span class="slot-time">3:30&ndash;5:30</span></td>
                 <td class="slot">SHSAT Prep<br><span class="slot-time">3:30&ndash;5:30</span></td>
-                <td class="slot">YF Pre-Algebra<br><span class="slot-time">2:00&ndash;4:00</span></td>
-                <td class="slot">YF Algebra I<br><span class="slot-time">2:00&ndash;4:00</span></td>
+                <td class="slot">YF Pre-Algebra<br><span class="slot-time">2:00&ndash;4:00</span><span class="slot-divider"></span>AP Prep<br><span class="slot-time">4:00&ndash;6:00</span></td>
+                <td class="slot">YF Algebra I<br><span class="slot-time">2:00&ndash;4:00</span><span class="slot-divider"></span>AP Prep<br><span class="slot-time">4:00&ndash;6:00</span></td>
               </tr>
               <tr>
                 <td class="day">Early Evening<br><span class="slot-time">5:00&ndash;7:30 PM</span></td>
@@ -516,8 +517,8 @@
             <h3 class="class-card__name">AP Prep</h3>
             <p class="class-card__sub">AP Calc AB/BC, AP Statistics, Pre-Calc, and honors-track support &mdash; aligned to your child&rsquo;s school syllabus with free-response drills.</p>
             <dl class="class-card__meta">
-              <div class="class-card__row"><dt>Days</dt><dd>Friday</dd></div>
-              <div class="class-card__row"><dt>Time</dt><dd>7:30 &ndash; 9:30 PM</dd></div>
+              <div class="class-card__row"><dt>Days</dt><dd>Fri, Sat &amp; Sun</dd></div>
+              <div class="class-card__row"><dt>Time</dt><dd>Fri 7:30 &ndash; 9:30 PM<br>Sat &amp; Sun 4:00 &ndash; 6:00 PM</dd></div>
               <div class="class-card__row"><dt>Length</dt><dd>120 min &middot; weekly</dd></div>
             </dl>
             <a href="/membership#reserve" data-tier="ap" class="class-card__cta">Start membership</a>
