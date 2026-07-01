@@ -368,6 +368,7 @@ var PRE_ENROLL_COURSES = {
   "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grade 6",        summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ignite": { title: "Young Fermats \u2014 Algebra Ignite",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "young-fermats-algebra-ii":     { title: "Young Fermats \u2014 Algebra II",       grade: "Grades 9\u201311",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "shsat-prep":                   { title: "SHSAT Prep",                    grade: "Grades 7\u20138",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
   "sat-math":                     { title: "SAT Math",                      grade: "Grades 9\u201311",  summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
   "pre-calculus":                 { title: "AP Pre-Calculus",               grade: "Grades 10\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
@@ -387,7 +388,8 @@ var WEEKENDS_OFFERINGS = {
   "kid-einsteins-a":              { mins: 120, dayLabel: "Saturdays", time: "9:00\u201311:00 AM" },
   "kid-einsteins-b":              { mins: 120, dayLabel: "Saturdays", time: "11:00 AM\u20131:00 PM" },
   "young-fermats-prealgebra":     { mins: 120, dayLabel: "Saturdays", time: "3:00\u20135:00 PM" },
-  "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Sundays",   time: "3:00\u20135:00 PM" }
+  "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Sundays",   time: "3:00\u20135:00 PM" },
+  "young-fermats-algebra-ii":     { mins: 120, dayLabel: "Tuesdays",  time: "5:30\u20137:30 PM" }
 };
 var WEEKENDS_DAY_CHOICES = {
   "little-newtons": ["Sat", "Sun"]
@@ -399,7 +401,8 @@ var FALL_DAY_CHOICES = {
   "kid-einsteins-b":              ["Mon", "Wed"],
   "young-fermats-prealgebra":     ["Tue", "Thu"],
   "young-fermats-algebra-ignite": ["Mon", "Wed"],
-  "young-fermats-geometry":       ["Tue", "Thu"]
+  "young-fermats-geometry":       ["Tue", "Thu"],
+  "young-fermats-algebra-ii":     ["Tue"]
 };
 var DAY_LABEL = { Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday", Sat: "Saturday", Sun: "Sunday" };
 function computeTuitionCents(courseId, termId) {
@@ -664,6 +667,7 @@ var EVAL_COURSES = {
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry",
+  "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
   "shsat-prep": "SHSAT Prep",
   "sat-math": "SAT Math",
   "pre-calculus": "AP Pre-Calculus",
@@ -821,6 +825,7 @@ var COURSE_TITLES = {
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry",
+  "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
   "shsat-prep": "SHSAT Prep",
   "sat-math": "SAT Math",
   "pre-calculus": "AP Pre-Calculus",
@@ -839,6 +844,7 @@ var COURSE_PRICES = {
   "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
+  "young-fermats-algebra-ii":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (reuses same YF price)
   "shsat-prep":                    "price_1Tn2YLIWmENPPZJBkwL9CRip", // SHSAT $587/mo
   "sat-math":                      "price_1Tn2YLIWmENPPZJBHl5dbt30", // SAT $640/mo
   "pre-calculus":                  "price_1Tn2YMIWmENPPZJBwQKPTMim", // AP $800/mo
@@ -848,7 +854,7 @@ var COURSE_PRICES = {
 var COURSE_MONTHLY_USD = {
   "little-newtons-a": 369, "little-newtons-b": 369,
   "kid-einsteins-a": 489, "kid-einsteins-b": 489,
-  "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "young-fermats-geometry": 489,
+  "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "young-fermats-geometry": 489, "young-fermats-algebra-ii": 489,
   "shsat-prep": 587, "sat-math": 640,
   "pre-calculus": 800, "ap-calculus": 800, "ap-statistics": 800
 };
