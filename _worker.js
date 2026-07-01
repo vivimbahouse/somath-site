@@ -676,6 +676,9 @@ var EVAL_COURSES = {
 };
 
 function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
+  const monthlyPrice = COURSE_MONTHLY_USD[courseSlug] || 489;
+  const sessionMinutes = (PRE_ENROLL_COURSES[courseSlug] && PRE_ENROLL_COURSES[courseSlug].fallMins) || 120;
+  const priceLine = `Monthly Membership \u2014 start any week, no semester wait, $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class).`;
   const parentGreet = parentName ? parentName : "there";
   const courseUrl = `https://www.schoolofmath.us/courses/${courseSlug}`;
   const tourUrl = "https://www.schoolofmath.us/posts/inside-somath-2026-website-tour-membership-schedule-syllabus";
@@ -704,7 +707,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     "",
     "A quick summary of what to expect:",
     "",
-    "\u2022 Monthly Membership \u2014 start any week, no semester wait, $489/month flat for our Core plan (1 class per week).",
+    "\u2022 " + priceLine,
     "\u2022 Materials fee \u2014 $99 one-time at enrollment, then $50 every 24 classes after that.",
     "\u2022 Small cohorts (4\u20136 students), same instructor every week, same room.",
     "\u2022 In person at 226 W 79th St, 1st Floor, Upper West Side.",
@@ -750,7 +753,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<p><a href="${tourUrl}" style="${linkStyle}">${tourUrl}</a></p>`,
     `<p><strong>A quick summary of what to expect:</strong></p>`,
     `<ul style="padding-left:20px">`,
-    `<li><strong>Monthly Membership</strong> \u2014 start any week, no semester wait, $489/month flat for our Core plan (1 class per week).</li>`,
+    `<li><strong>Monthly Membership</strong> \u2014 start any week, no semester wait, $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class).</li>`,
     `<li><strong>Materials fee</strong> \u2014 $99 one-time at enrollment, then $50 every 24 classes after that.</li>`,
     `<li>Small cohorts (4\u20136 students), same instructor every week, same room.</li>`,
     `<li>In person at 226 W 79th St, 1st Floor, Upper West Side.</li>`,
