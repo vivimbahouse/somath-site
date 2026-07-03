@@ -1439,6 +1439,13 @@ var worker_default = {
       target.hostname = "www.schoolofmath.us";
       return Response.redirect(target.toString(), 301);
     }
+    // Strip .html suffix with a 301 (SEO — Google's auto-strip 307 does not pass link equity as strongly).
+    if (url.pathname.endsWith(".html") && !url.pathname.startsWith("/api/")) {
+      const target = new URL(request.url);
+      target.pathname = url.pathname.slice(0, -5); // remove '.html'
+      if (target.pathname === "/index") target.pathname = "/";
+      return Response.redirect(target.toString(), 301);
+    }
     if (url.pathname === "/api/request-pdf") return handleRequestPdf(request, env);
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
