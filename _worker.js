@@ -1508,7 +1508,15 @@ var worker_default = {
         { status: 410, headers: { "Content-Type": "text/html; charset=utf-8" } }
       );
     }
-    return env.ASSETS.fetch(request);
+    const assetResp = await env.ASSETS.fetch(request);
+    // Long-cache immutable static assets — HTML stays short-cache
+    const IMMUTABLE_RE = /\.(css|js|jpg|jpeg|png|webp|svg|woff2|woff|mp4|ico|gif|avif|ttf|otf)$/i;
+    if (IMMUTABLE_RE.test(url.pathname)) {
+      const headers = new Headers(assetResp.headers);
+      headers.set("Cache-Control", "public, max-age=31536000, immutable");
+      return new Response(assetResp.body, { status: assetResp.status, statusText: assetResp.statusText, headers });
+    }
+    return assetResp;
   }
 };
 export {
