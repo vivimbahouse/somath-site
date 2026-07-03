@@ -1473,6 +1473,29 @@ var worker_default = {
     if (SCHEDULE_REDIRECTS[url.pathname]) {
       return Response.redirect(`https://www.schoolofmath.us${SCHEDULE_REDIRECTS[url.pathname]}`, 301);
     }
+    // Legacy Wix /service-page/* URLs -> current course pages (or /courses fallback)
+    if (url.pathname.startsWith("/service-page/")) {
+      const slug = url.pathname.slice("/service-page/".length).toLowerCase();
+      const SERVICE_PAGE_MAP = {
+        "young-fermats-algebra-i-a-13-y-o-1": "/courses/young-fermats-algebra-ignite",
+        "young-fermats-algebra-i-a-13-y-o": "/courses/young-fermats-algebra-ignite",
+        "young-fermats-algebra-i": "/courses/young-fermats-algebra-ignite",
+        "young-fermats-algebra-ii": "/courses/young-fermats-algebra-ii",
+        "young-fermats-geometry": "/courses/young-fermats-geometry",
+        "young-fermats-prealgebra": "/courses/young-fermats-prealgebra",
+        "kid-einsteins-a": "/courses/kid-einsteins-a",
+        "kid-einsteins-b": "/courses/kid-einsteins-b",
+        "little-newtons-a": "/courses/little-newtons-a",
+        "little-newtons-b": "/courses/little-newtons-b",
+        "shsat-prep": "/courses/shsat-prep",
+        "sat-math": "/courses/sat-math",
+        "ap-calculus": "/courses/ap-calculus",
+        "ap-statistics": "/courses/ap-statistics",
+        "pre-calculus": "/courses/pre-calculus"
+      };
+      const target = SERVICE_PAGE_MAP[slug] || "/courses";
+      return Response.redirect(`https://www.schoolofmath.us${target}`, 301);
+    }
     if (url.pathname.startsWith("/_secure/")) {
       return new Response("Not found", { status: 404 });
     }
