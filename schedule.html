@@ -171,6 +171,26 @@
       }
     }
     </script>
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What are SOMATH's hours?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Monday through Friday 3-10pm, Saturday 9am-6pm, and Sunday 10am-5pm. Weekday afternoons are the busiest slots; weekend morning slots (Saturday 9-11am, Sunday 10-12) fill first each semester." } },
+    { "@type": "Question", "name": "How do I see current class times?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The schedule page lists every currently-running class by track and time. If you don't see a time that works for your family, call (646) 668-6151 — we occasionally open new sections when demand justifies it, and can put you on a waitlist for your preferred slot." } },
+    { "@type": "Question", "name": "Can we switch class times during the semester?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if seats are available in another section of the same track. Send us the slot you'd like to move to and we'll confirm availability within one business day." } },
+    { "@type": "Question", "name": "What about holidays and school breaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH follows the NYC public school calendar for major holidays (Thanksgiving, winter break, spring break). We stay open on most one-day observances. The full closure calendar is emailed to enrolled families at the start of each semester and posted on this page." } },
+    { "@type": "Question", "name": "What if my child needs to miss a class?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every SOMATH membership includes one free make-up class per month. Coordinate the make-up with your teacher directly — most sections have another session that week where the child can join." } },
+    { "@type": "Question", "name": "Are there summer classes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Summer runs late June through late August. Programs continue with lighter cadence (usually once per week rather than twice). Summer is a particularly strong time for SHSAT and AP prep — we run intensives that compress a semester of content into 8-10 weeks." } }
+  ]
+}
+    </script>
   </head>
   <body data-page="schedule">
     <div id="header-mount"></div>
@@ -572,6 +592,49 @@
       </div>
     </section>
 
+    
+    <section id="faq" class="section pg-faq">
+      <div class="section__inner" style="max-width:820px;">
+        <h2 style="text-align:center;margin:0 0 8px;">Frequently asked questions</h2>
+        <p style="text-align:center;color:#666;margin:0 0 26px;">The most common questions parents ask us. Call (646) 668-6151 or <a href="/evaluation">book a free evaluation</a> for anything not covered here.</p>
+        
+      <details class="pg-faq__item">
+        <summary class="pg-faq__q">What are SOMATH's hours?</summary>
+        <div class="pg-faq__a"><p>Monday through Friday 3-10pm, Saturday 9am-6pm, and Sunday 10am-5pm. Weekday afternoons are the busiest slots; weekend morning slots (Saturday 9-11am, Sunday 10-12) fill first each semester.</p></div>
+      </details>
+      <details class="pg-faq__item">
+        <summary class="pg-faq__q">How do I see current class times?</summary>
+        <div class="pg-faq__a"><p>The schedule page lists every currently-running class by track and time. If you don't see a time that works for your family, call (646) 668-6151 — we occasionally open new sections when demand justifies it, and can put you on a waitlist for your preferred slot.</p></div>
+      </details>
+      <details class="pg-faq__item">
+        <summary class="pg-faq__q">Can we switch class times during the semester?</summary>
+        <div class="pg-faq__a"><p>Yes, if seats are available in another section of the same track. Send us the slot you'd like to move to and we'll confirm availability within one business day.</p></div>
+      </details>
+      <details class="pg-faq__item">
+        <summary class="pg-faq__q">What about holidays and school breaks?</summary>
+        <div class="pg-faq__a"><p>SOMATH follows the NYC public school calendar for major holidays (Thanksgiving, winter break, spring break). We stay open on most one-day observances. The full closure calendar is emailed to enrolled families at the start of each semester and posted on this page.</p></div>
+      </details>
+      <details class="pg-faq__item">
+        <summary class="pg-faq__q">What if my child needs to miss a class?</summary>
+        <div class="pg-faq__a"><p>Every SOMATH membership includes one free make-up class per month. Coordinate the make-up with your teacher directly — most sections have another session that week where the child can join.</p></div>
+      </details>
+      <details class="pg-faq__item">
+        <summary class="pg-faq__q">Are there summer classes?</summary>
+        <div class="pg-faq__a"><p>Yes. Summer runs late June through late August. Programs continue with lighter cadence (usually once per week rather than twice). Summer is a particularly strong time for SHSAT and AP prep — we run intensives that compress a semester of content into 8-10 weeks.</p></div>
+      </details>
+      </div>
+    </section>
+    <style>
+      .pg-faq { background:#fafafa; padding:56px 0; }
+      .pg-faq__item { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; border-radius:6px; padding:14px 20px; margin-bottom:10px; }
+      .pg-faq__item[open] { border-left-color:#0a3a5f; }
+      .pg-faq__q { font-weight:700; color:#0a3a5f; cursor:pointer; font-size:1.05rem; padding:2px 0; list-style:none; }
+      .pg-faq__q::-webkit-details-marker { display:none; }
+      .pg-faq__q::before { content:"+"; color:#d4a548; font-weight:700; margin-right:10px; display:inline-block; width:14px; }
+      .pg-faq__item[open] .pg-faq__q::before { content:"−"; }
+      .pg-faq__a { padding:10px 0 4px 24px; color:#333; font-size:0.98rem; line-height:1.65; }
+      .pg-faq__a p { margin:6px 0; }
+    </style>
     <div id="footer-mount"></div>
     <script src="/partials.js"></script>
     <script>
