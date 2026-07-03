@@ -769,7 +769,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `</ol>`,
     `<p>If you'd rather talk it through first, just reply to this email or call us at <a href="tel:+16466686151" style="${linkStyle}">(646) 668-6151</a>. We're happy to walk you through the recommendation, the schedule, or anything else on your mind before you commit.</p>`,
     `<p>We're excited to have ${e(studentName)} join us.</p>`,
-    `<p>Warmly,<br>${e(senderName)}<br>School of Math | SOMATH<br>226 W 79th St, 1st Floor, New York, NY 10024<br>(646) 668-6151<br><a href="https://www.schoolofmath.us" style="${linkStyle}">www.schoolofmath.us</a></p>`,
+    `<p>Warmly,<br>${e(senderName)}<br>School of Math | SOMATH<br>226 W 79th St, 1st Floor, New York, NY 10024<br>(646) 668-6151<br><a href="https://www.schoolofmath.us" style="${linkStyle}">schoolofmath.us</a></p>`,
     `</div>`
   );
   const html = h.join("");
@@ -1433,6 +1433,12 @@ __name(handleEnrollmentsApi, "handleEnrollmentsApi");
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    // Canonical host: www.schoolofmath.us. 301 apex -> www.
+    if (url.hostname === "schoolofmath.us") {
+      const target = new URL(request.url);
+      target.hostname = "www.schoolofmath.us";
+      return Response.redirect(target.toString(), 301);
+    }
     if (url.pathname === "/api/request-pdf") return handleRequestPdf(request, env);
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
