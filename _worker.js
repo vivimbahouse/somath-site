@@ -1493,7 +1493,18 @@ var worker_default = {
         "ap-statistics": "/courses/ap-statistics",
         "pre-calculus": "/courses/pre-calculus"
       };
-      const target = SERVICE_PAGE_MAP[slug] || "/courses";
+      // Exact match first; fall back to fuzzy prefix match (Wix appends age/suffixes like -11-13-y-o-1)
+      let target = SERVICE_PAGE_MAP[slug];
+      if (!target) {
+        const keysByLen = Object.keys(SERVICE_PAGE_MAP).sort((a, b) => b.length - a.length);
+        for (const key of keysByLen) {
+          if (slug.startsWith(key + "-") || slug === key) {
+            target = SERVICE_PAGE_MAP[key];
+            break;
+          }
+        }
+      }
+      if (!target) target = "/courses";
       return Response.redirect(`https://www.schoolofmath.us${target}`, 301);
     }
     if (url.pathname.startsWith("/_secure/")) {
