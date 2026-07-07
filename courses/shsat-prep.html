@@ -26,7 +26,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>SHSAT Prep (Grades 7–8) | School of Math</title>
-    <meta name="description" content="SHSAT Prep at SOMATH on the Upper West Side — Grades 7–8, Middle School. Specialized HS Admissions math — question families, timing, scratch-paper strategy. $587/month, $99 one-time registration, $50 materials every 24 classes." />
+    <meta name="description" content="SHSAT Prep at SOMATH on the Upper West Side — Grades 7–8, Middle School. Specialized HS Admissions math — question families, timing, scratch-paper strategy. $587/month, $99 one-time registration." />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
@@ -212,10 +212,10 @@
     },
     {
       "@type": "Question",
-      "name": "What is included in registration and materials?",
+      "name": "What is included in registration?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "$99 one-time registration covers a placement test, a written diagnostic, and a personalized learning plan delivered within 48 hours. $50 materials is charged at enrollment and again every 24 classes; it covers workbooks, problem sets, and printed practice tests specific to the course. Both are separate from monthly tuition."
+        "text": "$99 one-time registration covers a placement test, a written diagnostic, and a personalized learning plan delivered within 48 hours. Workbooks, problem sets, and printed practice tests are included at no extra charge. The $99 registration is separate from monthly tuition."
       }
     },
     {
@@ -368,7 +368,7 @@
         <div style="text-align:center; margin: 0 0 30px;">
           <p class="course-section__eyebrow">Enroll now</p>
           <h2>Reserve your spot in SHSAT Prep</h2>
-          <p style="max-width: 580px; margin: 0 auto;">Pick the day that fits your week, then continue to secure payment. Your seat is held the moment your registration and materials are paid.</p>
+          <p style="max-width: 580px; margin: 0 auto;">Pick the day that fits your week, then continue to secure payment. Your seat is held the moment your registration is paid.</p>
         </div>
 
         <div class="enroll-card">
@@ -378,9 +378,7 @@
           <div class="enroll-card__price">
             <strong>$587 / month</strong> &mdash; tuition (recurring)
             <small>
-              &middot; <strong>$99</strong> one-time registration (placement test, written diagnostic, learning plan)<br>
-              &middot; <strong>$50</strong> materials &mdash; charged at enrollment, then every 24 classes thereafter
-            </small>
+              &middot; <strong>$99</strong> one-time registration (placement test, written diagnostic, learning plan)</small>
           </div>
 
           <div class="enroll-card__day">
@@ -421,7 +419,7 @@
           </div>
 
           <a href="#" class="enroll-card__cta" id="checkoutBtn" data-stripe="https://buy.stripe.com/3cI3cw8Cu0PsdrU1Ew7Vm00" data-course="shsat-prep">Reserve My Spot — No Payment Today &rarr;</a>
-          <p class="enroll-card__cta-note">Stripe secure checkout &middot; $99 registration + $50 materials charged today &middot; $587/month tuition begins <strong>one day before your first class</strong>.</p>
+          <p class="enroll-card__cta-note">Stripe secure checkout &middot; $99 registration charged today &middot; $587/month tuition begins <strong>one day before your first class</strong>.</p>
         </div>
 
         <p style="text-align:center; margin: 30px 0 0; color: #6b6657; font-size: 0.95rem;">Want to talk first? Call <a href="tel:+16466686151" style="color:#1f3d2e; font-weight:600;">(646) 668-6151</a> or book a <a href="/evaluation" style="color:#1f3d2e; font-weight:600;">free 60-minute evaluation</a>.</p>
@@ -451,8 +449,8 @@
               <p class="course-faq__a">In person at 226 W 79th Street, 1st Floor, New York, NY 10024 — one block from the 79th Street 1 train and a short walk from the B and C at 81st Street. We do not offer online classes; the small-group model relies on shared whiteboard work and in-room feedback.</p>
             </details>
             <details class="course-faq__item">
-              <summary class="course-faq__q">What is included in registration and materials?</summary>
-              <p class="course-faq__a">$99 one-time registration covers a placement test, a written diagnostic, and a personalized learning plan delivered within 48 hours. $50 materials is charged at enrollment and again every 24 classes; it covers workbooks, problem sets, and printed practice tests specific to the course. Both are separate from monthly tuition.</p>
+              <summary class="course-faq__q">What is included in registration?</summary>
+              <p class="course-faq__a">$99 one-time registration covers a placement test, a written diagnostic, and a personalized learning plan delivered within 48 hours. Workbooks, problem sets, and printed practice tests are included at no extra charge. The $99 registration is separate from monthly tuition.</p>
             </details>
             <details class="course-faq__item">
               <summary class="course-faq__q">Can we pause or cancel?</summary>
@@ -583,9 +581,9 @@
           // Build the bundled Stripe Checkout Session via the SOMATH API,
           // then redirect to the returned URL. This replaces the old static buy.stripe.com flow:
           //  - subscription mode (monthly tuition)
-          //  - $99 enrollment + $50 materials as one-time line items charged today
+          //  - $99 enrollment as a one-time line item charged today
           //  - trial_end set to the day before first class so the first monthly charge hits then
-          //  - subscription metadata anchors materials-recharge + renewal automation
+          //  - subscription metadata anchors renewal automation
           var payload = { course: course, day: day, startDate: date, parentName: parentName, parentEmail: parentEmail, studentName: studentName };
           var btn = this;
           var originalLabel = btn.textContent;

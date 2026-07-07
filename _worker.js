@@ -708,7 +708,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     "A quick summary of what to expect:",
     "",
     "\u2022 " + priceLine,
-    "\u2022 Materials fee \u2014 $99 one-time at enrollment, then $50 every 24 classes after that.",
+    "\u2022 Registration fee \u2014 $99 one-time at enrollment.",
     "\u2022 Small cohorts (4\u20136 students), same instructor every week, same room.",
     "\u2022 In person at 226 W 79th St, 1st Floor, Upper West Side.",
     "\u2022 24-class rolling syllabus \u2014 your child can join at any class and continue without losing the thread.",
@@ -754,7 +754,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<p><strong>A quick summary of what to expect:</strong></p>`,
     `<ul style="padding-left:20px">`,
     `<li><strong>Monthly Membership</strong> \u2014 start any week, no semester wait, $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class).</li>`,
-    `<li><strong>Materials fee</strong> \u2014 $99 one-time at enrollment, then $50 every 24 classes after that.</li>`,
+    `<li><strong>Registration fee</strong> \u2014 $99 one-time at enrollment.</li>`,
     `<li>Small cohorts (4\u20136 students), same instructor every week, same room.</li>`,
     `<li>In person at 226 W 79th St, 1st Floor, Upper West Side.</li>`,
     `<li>24-class rolling syllabus \u2014 your child can join at any class and continue without losing the thread.</li>`,
@@ -838,7 +838,7 @@ var COURSE_TITLES = {
 
 // Stripe LIVE recurring Price IDs (acct_1TheUMIWmENPPZJB) — created 2026-06-27.
 // Each course slug maps to the monthly recurring Price the parent subscribes to.
-// Bundled Checkout adds $99 enrollment + $50 materials as one-time invoice items on top.
+// Bundled Checkout adds $99 enrollment as a one-time invoice item on top.
 var COURSE_PRICES = {
   "little-newtons-a":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $369/mo
   "little-newtons-b":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $369/mo
@@ -944,7 +944,7 @@ async function handleEnrollIntent(request, env) {
   var startFmt = fmtLongDate(date);
 
   // ---- Build the BUNDLED Stripe Checkout Session ----
-  // Subscription mode + $99 enrollment + $50 materials as one-time invoice items + dynamic trial_end
+  // Subscription mode + $99 enrollment as a one-time invoice item + dynamic trial_end
   var checkoutUrl = "";
   var checkoutSessionId = "";
   if (env.STRIPE_SECRET_KEY && COURSE_PRICES[course] && trialEndUnix > 0) {
@@ -969,13 +969,12 @@ async function handleEnrollIntent(request, env) {
     sp.append("subscription_data[trial_end]", String(trialEndUnix));
     sp.append("subscription_data[trial_settings][end_behavior][missing_payment_method]", "cancel");
     sp.append("subscription_data[description]", title + " \u2014 monthly tuition");
-    // Subscription metadata — powers the materials-recharge + renewal automation
+    // Subscription metadata — powers the renewal automation
     sp.append("subscription_data[metadata][course_slug]", course);
     sp.append("subscription_data[metadata][course_title]", title);
     sp.append("subscription_data[metadata][weekly_day]", day);
     sp.append("subscription_data[metadata][first_class_date]", date);
     sp.append("subscription_data[metadata][monthly_usd]", String(monthlyUsd));
-    sp.append("subscription_data[metadata][materials_cycle_start]", date); // anchor for $50 every 6 months
     sp.append("subscription_data[metadata][source]", "bundled_checkout_v1");
     if (studentName) sp.append("subscription_data[metadata][student_name]", studentName);
     if (parentName)  sp.append("subscription_data[metadata][parent_name]", parentName);
@@ -988,19 +987,14 @@ async function handleEnrollIntent(request, env) {
     sp.append("metadata[flow]", "bundled_checkout_v1");
     if (studentName) sp.append("metadata[student_name]", studentName);
     if (parentName)  sp.append("metadata[parent_name]", parentName);
-    // Add the two one-time invoice items: $99 enrollment + $50 materials, on the FIRST invoice (today)
-    // We use Stripe Checkout's `subscription_data` cannot accept add_invoice_items directly,
-    // so we add them as `line_items` with one-time price_data — Checkout will charge them today.
+    // Add the one-time $99 enrollment invoice item on the FIRST invoice (today).
+    // Stripe Checkout's `subscription_data` cannot accept add_invoice_items directly,
+    // so we add it as a `line_items` entry with one-time price_data — Checkout will charge it today.
     sp.append("line_items[1][quantity]", "1");
     sp.append("line_items[1][price_data][currency]", "usd");
     sp.append("line_items[1][price_data][unit_amount]", "9900");
     sp.append("line_items[1][price_data][product_data][name]", "SOMATH enrollment fee");
     sp.append("line_items[1][price_data][product_data][description]", "One-time enrollment fee \u2014 secures your spot in " + title + ".");
-    sp.append("line_items[2][quantity]", "1");
-    sp.append("line_items[2][price_data][currency]", "usd");
-    sp.append("line_items[2][price_data][unit_amount]", "5000");
-    sp.append("line_items[2][price_data][product_data][name]", "Materials fee (6-month cycle)");
-    sp.append("line_items[2][price_data][product_data][description]", "Workbooks + printed practice sets. Recharged every 6 months.");
 
     try {
       var resp = await fetch("https://api.stripe.com/v1/checkout/sessions", {
@@ -1059,7 +1053,7 @@ async function handleEnrollIntent(request, env) {
   var html =
     "<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1f3d2e;max-width:560px;\">" +
       "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">New enrollment selection</h2>" +
-      "<p style=\"margin:0 0 16px;color:#3a3a30;\"><strong>" + escHtml(who) + "</strong> just hit \u201cReserve My Spot — No Payment Today.\u201d Stripe should send a $149 confirmation shortly with the matching client_reference_id.</p>" +
+      "<p style=\"margin:0 0 16px;color:#3a3a30;\"><strong>" + escHtml(who) + "</strong> just hit \u201cReserve My Spot — No Payment Today.\u201d Stripe should send a $99 confirmation shortly with the matching client_reference_id.</p>" +
       "<table style=\"border-collapse:collapse;width:100%;font-size:15px;\">" +
         "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Parent / guardian</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(parentName || "\u2014") + "</td></tr>" +
         "<tr><td style=\"padding:8px 12px;font-weight:700;\">Parent email</td><td style=\"padding:8px 12px;\">" + (parentEmail ? "<a href=\"mailto:" + escHtml(parentEmail) + "\" style=\"color:#1f3d2e;\">" + escHtml(parentEmail) + "</a>" : "\u2014") + "</td></tr>" +
@@ -1069,7 +1063,7 @@ async function handleEnrollIntent(request, env) {
         "<tr><td style=\"padding:8px 12px;font-weight:700;\">Start date (first class)</td><td style=\"padding:8px 12px;\">" + escHtml(startFmt) + " <span style=\"color:#6b6657;\">(" + escHtml(date) + ")</span></td></tr>" +
         "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;\">Monthly tuition begins</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(billingFmt) + " <span style=\"color:#6b6657;\">(one day before first class)</span></td></tr>" +
       "</table>" +
-      "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Stripe client_reference_id = <code>" + escHtml(course) + "__" + escHtml(day) + "__" + escHtml(date) + "</code>. A second \u201cPayment confirmed\u201d email will arrive once the $149 clears.</em></p>" +
+      "<p style=\"margin:18px 0 6px;font-size:13px;color:#6b6657;\"><em>Stripe client_reference_id = <code>" + escHtml(course) + "__" + escHtml(day) + "__" + escHtml(date) + "</code>. A second \u201cPayment confirmed\u201d email will arrive once the $99 clears.</em></p>" +
       "<p style=\"margin:0;font-size:11px;color:#9a9588;\">IP: " + escHtml(ip) + " \u00b7 Referer: " + escHtml(referer) + "</p>" +
     "</div>";
 
@@ -1270,8 +1264,8 @@ async function handleStripeWebhook(request, env) {
   var subject = "\u2705 Payment confirmed: " + (name || email || "parent") + " \u00b7 " + title;
   var html =
     "<div style=\"font-family:Arial,Helvetica,sans-serif;color:#1f3d2e;max-width:580px;\">" +
-      "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">\u2705 $149 enrollment payment confirmed</h2>" +
-      "<p style=\"margin:0 0 16px;color:#3a3a30;\">Stripe just confirmed a successful $149 enrollment payment. Set up the monthly subscription on this customer when you confirm the start date.</p>" +
+      "<h2 style=\"color:#1f3d2e;margin:0 0 12px;\">\u2705 $99 enrollment payment confirmed</h2>" +
+      "<p style=\"margin:0 0 16px;color:#3a3a30;\">Stripe just confirmed a successful $99 enrollment payment. Set up the monthly subscription on this customer when you confirm the start date.</p>" +
       "<table style=\"border-collapse:collapse;width:100%;font-size:15px;\">" +
         "<tr><td style=\"padding:8px 12px;background:#f5f0e6;font-weight:700;width:170px;\">Parent name</td><td style=\"padding:8px 12px;background:#f5f0e6;\">" + escHtml(name || "\u2014") + "</td></tr>" +
         "<tr><td style=\"padding:8px 12px;font-weight:700;\">Parent email</td><td style=\"padding:8px 12px;\">" + (email ? "<a href=\"mailto:" + escHtml(email) + "\" style=\"color:#1f3d2e;\">" + escHtml(email) + "</a>" : "\u2014") + "</td></tr>" +
