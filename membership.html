@@ -140,40 +140,196 @@
     </style>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "SOMATH Membership",
-      "provider": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us", "telephone": "+1-646-668-6151", "address": { "@type": "PostalAddress", "streetAddress": "226 W 79th St 1st Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10024", "addressCountry": "US" } },
-      "areaServed": "New York, NY",
-      "description": "Monthly math tutoring membership in NYC. Start any week, pause when you travel, cancel with 15 days' notice. In-person, small-group classes on the Upper West Side. Plans from $369/month.",
-      "offers": [
-        { "@type": "Offer", "name": "Little Newtons A & B Membership (Grades 1-3)", "price": "369", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "369", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Kid Einsteins A Membership (Grades 3-4)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Kid Einsteins B Membership (Grades 4-5)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Young Fermats — Pre-Algebra Membership (Grades 5-6)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Young Fermats — Algebra I Membership (Grades 6-7)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "Young Fermats — Geometry & Trigonometry Membership (Grades 7-8)", "price": "489", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "489", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "SHSAT Prep Membership (Grades 7-8)", "price": "587", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "587", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "SAT Prep Membership (High School)", "price": "640", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "640", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } },
-        { "@type": "Offer", "name": "AP Prep Membership (High School)", "price": "800", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "800", "priceCurrency": "USD", "billingIncrement": 1, "unitText": "MONTH" } }
-      ]
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "SOMATH Membership",
+  "provider": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us",
+    "telephone": "+1-646-668-6151",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
     }
-    </script>
+  },
+  "areaServed": "New York, NY",
+  "description": "Monthly math tutoring membership in NYC. Start any week, pause when you travel, cancel with 15 days' notice. In-person, small-group classes on the Upper West Side. Plans from $369/month.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Little Newtons A & B Membership (Grades 1-3)",
+      "price": "369",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "369",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Kid Einsteins A Membership (Grades 3-4)",
+      "price": "489",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "489",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Kid Einsteins B Membership (Grades 4-5)",
+      "price": "489",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "489",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Young Fermats — Pre-Algebra Membership (Grades 5-6)",
+      "price": "489",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "489",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Young Fermats — Algebra I Membership (Grades 6-7)",
+      "price": "489",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "489",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Young Fermats — Geometry & Trigonometry Membership (Grades 7-8)",
+      "price": "489",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "489",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "SHSAT Prep Membership (Grades 7-8)",
+      "price": "587",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "587",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "SAT Prep Membership (High School)",
+      "price": "640",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "640",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "AP Prep Membership (High School)",
+      "price": "800",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "800",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitText": "MONTH"
+      }
+    }
+  ]
+}
+</script>
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Do I have to wait for a semester start?", "acceptedAnswer": { "@type": "Answer", "text": "No. SOMATH Membership lets your child start any week of the year. Pick a tier, book the free evaluation, and we slot them into the right cohort." } },
-        { "@type": "Question", "name": "How does cancellation work?", "acceptedAnswer": { "@type": "Answer", "text": "Cancel with 15 days' written notice. No early-termination fee, no contract lock-in, no hidden charges. You're billed for the remaining 15 days, then it stops." } },
-        { "@type": "Question", "name": "Can we pause membership for vacations or summer travel?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every membership includes up to 4 weeks of free pause per year. Use it for travel, illness, or a heavy school stretch. Just give us 7 days' notice." } },
-        { "@type": "Question", "name": "What is the registration fee?", "acceptedAnswer": { "@type": "Answer", "text": "A one-time $99 registration covers your child's placement test, a written diagnostic, and a personalized learning plan from a SOMATH lead instructor. Workbooks, practice packets, and take-home reference cards are included at no extra charge." } },
-        { "@type": "Question", "name": "Is there a sibling discount?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. $30 off per month for each additional child on any membership tier." } }
-      ]
+      "@type": "Question",
+      "name": "Do I have to wait for a semester start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. SOMATH Membership lets your child start any week of the year. Pick a tier, book the free evaluation, and we slot them into the right cohort."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does cancellation work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cancel with 15 days' written notice. No early-termination fee, no contract lock-in, no hidden charges. You're billed for the remaining 15 days, then it stops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we pause membership for vacations or summer travel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every membership includes up to 4 weeks of free pause per year. Use it for travel, illness, or a heavy school stretch. Just give us 7 days' notice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the registration fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A one-time $99 registration covers your child's placement test, a written diagnostic, and a personalized learning plan from a SOMATH lead instructor. Workbooks, practice packets, and take-home reference cards are included at no extra charge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a sibling discount?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. $30 off per month for each additional child on any membership tier."
+      }
     }
-    </script>
+  ]
+}
+</script>
   </head>
   <body data-page="membership">
     <div id="header-mount"></div>

@@ -67,37 +67,79 @@
   "image": "https://www.schoolofmath.us/assets/blog/analytic-geometry-diagnostic-stewart-calculus/cover.jpg",
   "datePublished": "2026-05-27",
   "dateModified": "2026-05-27",
-  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
-  "publisher": {
+  "author": {
     "@type": "Organization",
     "name": "School of Math",
-        "priceRange": "$$",
-    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+    "url": "https://www.schoolofmath.us"
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/analytic-geometry-diagnostic-stewart-calculus",
-      "areaServed": {"@type": "Place", "name": "Upper West Side, Manhattan, NYC"}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
     }
-    </script>
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/analytic-geometry-diagnostic-stewart-calculus"
+}
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the equation of the line through (2, -5) with slope -3?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use point-slope form y - y1 = m(x - x1) with point (2, -5) and slope m = -3. That gives y - (-5) = -3(x - 2), which simplifies to y + 5 = -3x + 6 and then y = -3x + 1. The y-intercept is 1 and the line drops three units for every one unit you move right." } },
-    { "@type": "Question", "name": "What is the equation of the line through (2, -5) parallel to the x-axis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A line parallel to the x-axis is horizontal, so its slope is 0 and its equation has the form y = k. Because the line passes through (2, -5), the constant y-value is -5. The equation is simply y = -5. The x-coordinate does not appear in the equation — every point on the line has y = -5 regardless of x." } },
-    { "@type": "Question", "name": "What is the equation of the line through (2, -5) parallel to the y-axis?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A line parallel to the y-axis is vertical, which means its slope is undefined. Vertical lines cannot be written as y = mx + b. Their equation always has the form x = k. Because the line passes through (2, -5), the constant x-value is 2. The equation is x = 2." } },
-    { "@type": "Question", "name": "What is the equation of the line through (2, -5) parallel to 2x - 4y = 3?",
-      "acceptedAnswer": { "@type": "Answer", "text": "First find the slope of 2x - 4y = 3. Solve for y: -4y = -2x + 3, so y = (1/2)x - 3/4. The slope is 1/2. A parallel line has the same slope, so use point-slope form with m = 1/2 and the point (2, -5): y - (-5) = (1/2)(x - 2), which simplifies to y + 5 = (1/2)x - 1 and then y = (1/2)x - 6." } },
-    { "@type": "Question", "name": "When do you use point-slope form versus slope-intercept form?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use point-slope form y - y1 = m(x - x1) when you are given a slope and a single point. It is the most direct way to build the equation. Use slope-intercept form y = mx + b when you are given the slope and the y-intercept directly, or when you want to read off the y-intercept from a finished equation. In practice, start in point-slope and simplify to slope-intercept at the end — that's exactly what we do in part (a)." } },
-    { "@type": "Question", "name": "Why does a vertical line have undefined slope instead of zero?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Slope is rise over run: (y2 - y1) / (x2 - x1). On a horizontal line every point has the same y, so the numerator is 0 and the slope is 0. On a vertical line every point has the same x, so the denominator is 0 — and division by zero is undefined, not zero. That is why y = 0 means horizontal but x = 0 (or any x = k) means vertical with undefined slope." } }
+    {
+      "@type": "Question",
+      "name": "What is the equation of the line through (2, -5) with slope -3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use point-slope form y - y1 = m(x - x1) with point (2, -5) and slope m = -3. That gives y - (-5) = -3(x - 2), which simplifies to y + 5 = -3x + 6 and then y = -3x + 1. The y-intercept is 1 and the line drops three units for every one unit you move right."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the equation of the line through (2, -5) parallel to the x-axis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A line parallel to the x-axis is horizontal, so its slope is 0 and its equation has the form y = k. Because the line passes through (2, -5), the constant y-value is -5. The equation is simply y = -5. The x-coordinate does not appear in the equation — every point on the line has y = -5 regardless of x."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the equation of the line through (2, -5) parallel to the y-axis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A line parallel to the y-axis is vertical, which means its slope is undefined. Vertical lines cannot be written as y = mx + b. Their equation always has the form x = k. Because the line passes through (2, -5), the constant x-value is 2. The equation is x = 2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the equation of the line through (2, -5) parallel to 2x - 4y = 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First find the slope of 2x - 4y = 3. Solve for y: -4y = -2x + 3, so y = (1/2)x - 3/4. The slope is 1/2. A parallel line has the same slope, so use point-slope form with m = 1/2 and the point (2, -5): y - (-5) = (1/2)(x - 2), which simplifies to y + 5 = (1/2)x - 1 and then y = (1/2)x - 6."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do you use point-slope form versus slope-intercept form?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use point-slope form y - y1 = m(x - x1) when you are given a slope and a single point. It is the most direct way to build the equation. Use slope-intercept form y = mx + b when you are given the slope and the y-intercept directly, or when you want to read off the y-intercept from a finished equation. In practice, start in point-slope and simplify to slope-intercept at the end — that's exactly what we do in part (a)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does a vertical line have undefined slope instead of zero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Slope is rise over run: (y2 - y1) / (x2 - x1). On a horizontal line every point has the same y, so the numerator is 0 and the slope is 0. On a vertical line every point has the same x, so the denominator is 0 — and division by zero is undefined, not zero. That is why y = 0 means horizontal but x = 0 (or any x = k) means vertical with undefined slope."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>

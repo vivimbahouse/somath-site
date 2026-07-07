@@ -71,35 +71,71 @@
   "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-rationalize-the-expression-stewart-problem-6/cover.jpg",
   "datePublished": "2026-05-22",
   "dateModified": "2026-05-22",
-  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
-  "publisher": {
+  "author": {
     "@type": "Organization",
     "name": "School of Math",
-        "priceRange": "$$",
-    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+    "url": "https://www.schoolofmath.us"
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-rationalize-the-expression-stewart-problem-6",
-      "areaServed": {"@type": "Place", "name": "Upper West Side, Manhattan, NYC"}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
     }
-    </script>
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-rationalize-the-expression-stewart-problem-6"
+}
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What does it mean to rationalize an expression?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Rationalizing means rewriting an expression so that a radical (square root, cube root, etc.) is no longer in the denominator (or, sometimes, no longer in the numerator). It doesn't change the value of the expression — it changes the form. The two most common moves are multiplying by the conjugate of a two-term denominator like √5 − 2, and multiplying by the radical itself when the denominator is a single √n." } },
-    { "@type": "Question", "name": "What is a conjugate?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A conjugate is the same two-term expression with the middle sign flipped. The conjugate of √5 − 2 is √5 + 2. The conjugate of a + b is a − b. When you multiply a binomial by its conjugate you get the difference of squares (a − b)(a + b) = a² − b², which is why the move works to clear radicals: any radical squared loses its radical sign." } },
-    { "@type": "Question", "name": "Why do textbooks tell you to rationalize the denominator? It looks the same either way.",
-      "acceptedAnswer": { "@type": "Answer", "text": "Historically, before calculators, rationalized denominators made hand computation easier — dividing by an integer is simpler than dividing by an irrational number. Today the bigger reason is form: standardized tests and textbooks expect simplified answers in a specific form, and most still require a rational denominator. AP Calculus actually flips this — there you often need to rationalize the NUMERATOR (as in part b of this problem) to make a limit solvable." } },
-    { "@type": "Question", "name": "Why does (√(4 + h) − 2)/h look familiar from calculus?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because it IS calculus — it's the derivative of f(x) = √x at x = 4 using the limit definition. f'(4) = lim(h→0) [f(4+h) − f(4)] / h = lim(h→0) [√(4+h) − 2] / h. If you try to plug in h = 0 directly you get 0/0. Rationalizing the numerator turns it into lim(h→0) 1 / (√(4+h) + 2) = 1 / (√4 + 2) = 1/4, which matches f'(4) = 1/(2√4) = 1/4. Stewart's diagnostic puts this problem in pre-calc to make sure students can do the algebra before they need it in AP Calculus AB." } },
-    { "@type": "Question", "name": "When do you multiply by the conjugate vs just by the radical?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If the denominator (or numerator) is a single-term radical like √n, multiply top and bottom by √n — that turns √n into n. If it's a two-term expression that contains a radical, like √5 − 2 or √(4+h) + 2, multiply by the conjugate so the cross terms cancel by the difference-of-squares pattern. The conjugate move only works on two-term binomials." } }
+    {
+      "@type": "Question",
+      "name": "What does it mean to rationalize an expression?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rationalizing means rewriting an expression so that a radical (square root, cube root, etc.) is no longer in the denominator (or, sometimes, no longer in the numerator). It doesn't change the value of the expression — it changes the form. The two most common moves are multiplying by the conjugate of a two-term denominator like √5 − 2, and multiplying by the radical itself when the denominator is a single √n."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a conjugate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A conjugate is the same two-term expression with the middle sign flipped. The conjugate of √5 − 2 is √5 + 2. The conjugate of a + b is a − b. When you multiply a binomial by its conjugate you get the difference of squares (a − b)(a + b) = a² − b², which is why the move works to clear radicals: any radical squared loses its radical sign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do textbooks tell you to rationalize the denominator? It looks the same either way.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historically, before calculators, rationalized denominators made hand computation easier — dividing by an integer is simpler than dividing by an irrational number. Today the bigger reason is form: standardized tests and textbooks expect simplified answers in a specific form, and most still require a rational denominator. AP Calculus actually flips this — there you often need to rationalize the NUMERATOR (as in part b of this problem) to make a limit solvable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does (√(4 + h) − 2)/h look familiar from calculus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because it IS calculus — it's the derivative of f(x) = √x at x = 4 using the limit definition. f'(4) = lim(h→0) [f(4+h) − f(4)] / h = lim(h→0) [√(4+h) − 2] / h. If you try to plug in h = 0 directly you get 0/0. Rationalizing the numerator turns it into lim(h→0) 1 / (√(4+h) + 2) = 1 / (√4 + 2) = 1/4, which matches f'(4) = 1/(2√4) = 1/4. Stewart's diagnostic puts this problem in pre-calc to make sure students can do the algebra before they need it in AP Calculus AB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do you multiply by the conjugate vs just by the radical?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the denominator (or numerator) is a single-term radical like √n, multiply top and bottom by √n — that turns √n into n. If it's a two-term expression that contains a radical, like √5 − 2 or √(4+h) + 2, multiply by the conjugate so the cross terms cancel by the difference-of-squares pattern. The conjugate move only works on two-term binomials."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>

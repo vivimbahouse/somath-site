@@ -55,98 +55,206 @@
     <link rel="stylesheet" href="styles.css" />
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://www.schoolofmath.us/#school",
+  "name": "School of Math",
+  "alternateName": "SOMATH",
+  "url": "https://www.schoolofmath.us/",
+  "logo": "https://www.schoolofmath.us/assets/logo-full.svg",
+  "image": "https://www.schoolofmath.us/assets/logo-full.svg",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7833649,
+    "longitude": -73.9795709
+  },
+  "hasMap": "https://maps.app.goo.gl/tYHqGLrprQaTDCVp",
+  "areaServed": [
     {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "@id": "https://www.schoolofmath.us/#school",
-      "name": "School of Math",
-      "alternateName": "SOMATH",
-      "url": "https://www.schoolofmath.us/",
-      "logo": "https://www.schoolofmath.us/assets/logo-full.svg",
-      "image": "https://www.schoolofmath.us/assets/logo-full.svg",
-      "telephone": "+1-646-668-6151",
-      "email": "hello@schoolofmath.us",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "226 W 79th St",
-        "addressLocality": "New York",
-        "addressRegion": "NY",
-        "postalCode": "10024",
-        "addressCountry": "US"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": 40.7833649, "longitude": -73.9795709 },
-      "hasMap": "https://maps.app.goo.gl/tYHqGLrprQaTDCVp",
-      "areaServed": [
-        { "@type": "Place", "name": "Upper West Side, Manhattan" },
-        { "@type": "Place", "name": "10024" },
-        { "@type": "Place", "name": "10023" },
-        { "@type": "Place", "name": "10025" }
-      ],
-      "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "15:00", "closes": "22:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "17:00" }
-      ],
-      "founder": [
-        { "@type": "Person", "name": "Vivianne Wright", "alumniOf": "Harvard University" },
-        { "@type": "Person", "name": "Marcelo Ambrozio", "alumniOf": "Northwestern University" }
-      ],
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "8", "bestRating": "5", "worstRating": "5" },
-      "sameAs": [
-        "https://www.instagram.com/schoolofmath.us/",
-        "https://www.facebook.com/profile.php?id=61568867662183",
-        "https://www.youtube.com/@somathny",
-        "https://www.tiktok.com/@schoolofmathny",
-        "https://www.linkedin.com/company/somathny/",
-        "https://www.pinterest.com/somathnyc/",
-        "https://x.com/schoolofmathny"
-      ],
-      "review": [
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Clei Olivette" },
-          "datePublished": "2026-04-06",
-          "reviewBody": "We enrolled our son in the SHSAT prep program in September. He went in scoring around 40% on practice tests and by December he was consistently above 70%. The teachers know exactly where the gaps are and go after them. He got into Bronx Science. Worth every penny."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Andres Carrillo" },
-          "datePublished": "2026-06-24",
-          "reviewBody": "Marcelo is both super passionate and talented as a teacher. He had frequent calls with me to describe our teenager's progress, often called me to discuss what book to select next and cared very deeply about her learning."
-        },
-        {
-          "@type": "Review",
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-          "author": { "@type": "Person", "name": "Benjamin L" },
-          "datePublished": "2026-06-04",
-          "reviewBody": "My son started attending NY School of Math for AP Precalculus support, and the experience has been excellent. The instructors are knowledgeable, patient, and genuinely invested in their students' success."
-        }
-      ]
+      "@type": "Place",
+      "name": "Upper West Side, Manhattan"
+    },
+    {
+      "@type": "Place",
+      "name": "10024"
+    },
+    {
+      "@type": "Place",
+      "name": "10023"
+    },
+    {
+      "@type": "Place",
+      "name": "10025"
     }
-    </script>
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "15:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "10:00",
+      "closes": "17:00"
+    }
+  ],
+  "founder": [
+    {
+      "@type": "Person",
+      "name": "Vivianne Wright",
+      "alumniOf": "Harvard University"
+    },
+    {
+      "@type": "Person",
+      "name": "Marcelo Ambrozio",
+      "alumniOf": "Northwestern University"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "8",
+    "bestRating": "5",
+    "worstRating": "5"
+  },
+  "sameAs": [
+    "https://www.instagram.com/schoolofmath.us/",
+    "https://www.facebook.com/profile.php?id=61568867662183",
+    "https://www.youtube.com/@somathny",
+    "https://www.tiktok.com/@schoolofmathny",
+    "https://www.linkedin.com/company/somathny/",
+    "https://www.pinterest.com/somathnyc/",
+    "https://x.com/schoolofmathny"
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Clei Olivette"
+      },
+      "datePublished": "2026-04-06",
+      "reviewBody": "We enrolled our son in the SHSAT prep program in September. He went in scoring around 40% on practice tests and by December he was consistently above 70%. The teachers know exactly where the gaps are and go after them. He got into Bronx Science. Worth every penny."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Andres Carrillo"
+      },
+      "datePublished": "2026-06-24",
+      "reviewBody": "Marcelo is both super passionate and talented as a teacher. He had frequent calls with me to describe our teenager's progress, often called me to discuss what book to select next and cared very deeply about her learning."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Benjamin L"
+      },
+      "datePublished": "2026-06-04",
+      "reviewBody": "My son started attending NY School of Math for AP Precalculus support, and the experience has been excellent. The instructors are knowledgeable, patient, and genuinely invested in their students' success."
+    }
+  ]
+}
+</script>
       <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How is SOMATH different from Russian Math, Kumon, or Mathnasium?",
-      "acceptedAnswer": { "@type": "Answer", "text": "We're not a chain. SOMATH is a small math school founded by two educators who've spent twenty years preparing students for MIT, Harvard, and Stanford. Classes are small (max 6 students), taught live by Harvard- and Northwestern-trained teachers, and use a teacher-designed curriculum — not franchise worksheets or software. We prioritize real problem-solving over speed drills." } },
-    { "@type": "Question", "name": "What ages and grades do you teach?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Grades 1 through 12 — from Little Newtons (ages 6-10) through SHSAT prep in middle school and AP / SAT prep in high school. Every student starts with a free 60-minute evaluation so we can recommend the right track." } },
-    { "@type": "Question", "name": "What does the free evaluation actually look like?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It's 60 minutes, one-on-one with a SOMATH teacher, at our Upper West Side location or on Zoom. We assess where your child is, what gaps to close, and which track they belong in. You'll get a written summary within 48 hours — yours to keep whether you enroll or not." } },
-    { "@type": "Question", "name": "How long are SOMATH programs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Our core programs run for 6 months in structured semesters — long enough to actually move the needle, short enough to keep the work focused. Cancel with 15 days notice, up to 4 weeks of free pause per year." } },
-    { "@type": "Question", "name": "Do you prep for the SHSAT, SAT, and APs?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. SHSAT prep is a dedicated middle-school track (grades 7-8). For high schoolers we run AP Pre-Calculus, AP Statistics, AP Calculus AB / BC, and SAT math prep. Most of our SHSAT students see 30+ point score gains." } },
-    { "@type": "Question", "name": "Where are you located?",
-      "acceptedAnswer": { "@type": "Answer", "text": "226 West 79th Street on the Upper West Side — between Broadway and Amsterdam, two blocks from the 79th Street station on the 1 line, and a short walk from the 2, B, and C lines." } }
+    {
+      "@type": "Question",
+      "name": "How is SOMATH different from Russian Math, Kumon, or Mathnasium?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We're not a chain. SOMATH is a small math school founded by two educators who've spent twenty years preparing students for MIT, Harvard, and Stanford. Classes are small (max 6 students), taught live by Harvard- and Northwestern-trained teachers, and use a teacher-designed curriculum — not franchise worksheets or software. We prioritize real problem-solving over speed drills."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ages and grades do you teach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grades 1 through 12 — from Little Newtons (ages 6-10) through SHSAT prep in middle school and AP / SAT prep in high school. Every student starts with a free 60-minute evaluation so we can recommend the right track."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the free evaluation actually look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's 60 minutes, one-on-one with a SOMATH teacher, at our Upper West Side location or on Zoom. We assess where your child is, what gaps to close, and which track they belong in. You'll get a written summary within 48 hours — yours to keep whether you enroll or not."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long are SOMATH programs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our core programs run for 6 months in structured semesters — long enough to actually move the needle, short enough to keep the work focused. Cancel with 15 days notice, up to 4 weeks of free pause per year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you prep for the SHSAT, SAT, and APs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SHSAT prep is a dedicated middle-school track (grades 7-8). For high schoolers we run AP Pre-Calculus, AP Statistics, AP Calculus AB / BC, and SAT math prep. Most of our SHSAT students see 30+ point score gains."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are you located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "226 West 79th Street on the Upper West Side — between Broadway and Amsterdam, two blocks from the 79th Street station on the 1 line, and a short walk from the 2, B, and C lines."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="home">
     <div id="nav-mount"></div>

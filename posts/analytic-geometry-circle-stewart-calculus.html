@@ -67,35 +67,71 @@
   "image": "https://www.schoolofmath.us/assets/blog/analytic-geometry-circle-stewart-calculus/cover.jpg",
   "datePublished": "2026-05-28",
   "dateModified": "2026-05-28",
-  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
-  "publisher": {
+  "author": {
     "@type": "Organization",
     "name": "School of Math",
-        "priceRange": "$$",
-    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+    "url": "https://www.schoolofmath.us"
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/analytic-geometry-circle-stewart-calculus",
-      "areaServed": {"@type": "Place", "name": "Upper West Side, Manhattan, NYC"}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
     }
-    </script>
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/analytic-geometry-circle-stewart-calculus"
+}
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What are the center and radius of x^2 + y^2 - 6x + 10y + 9 = 0?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Complete the square in x and y. Move the 9 to the right and group: (x^2 - 6x) + (y^2 + 10y) = -9. Add (6/2)^2 = 9 and (10/2)^2 = 25 to both sides: (x^2 - 6x + 9) + (y^2 + 10y + 25) = -9 + 9 + 25 = 25. Factor: (x - 3)^2 + (y + 5)^2 = 25. Compare with (x - h)^2 + (y - k)^2 = r^2 to read off center (3, -5) and radius r = 5." } },
-    { "@type": "Question", "name": "How do you complete the square on a circle equation?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Group the x-terms and y-terms separately, move the constant to the right side, then take half of each linear coefficient, square it, and add that number to both sides. For x^2 - 6x, half of -6 is -3, squared is 9 — add 9 to both sides and the left becomes (x - 3)^2. Repeat for the y-terms. The constant you add on the right is what gives you r^2." } },
-    { "@type": "Question", "name": "Why is the radius 5 and not 25?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2, so the right-hand side equals r squared, not r. After completing the square we get 25 on the right, which means r^2 = 25 and therefore r = sqrt(25) = 5. Forgetting to take the square root of r^2 is the single most common error on this problem and it costs a full point on the diagnostic." } },
-    { "@type": "Question", "name": "Why is the center (3, -5) and not (-3, 5)?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2. The center is (h, k) — the numbers being subtracted inside the parentheses, with their signs. Our equation factored to (x - 3)^2 + (y + 5)^2 = 25. The first parenthesis is x - 3, so h = 3. The second parenthesis is y + 5, which is the same as y - (-5), so k = -5. The center is therefore (3, -5)." } },
-    { "@type": "Question", "name": "Can a circle equation have no real solutions?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. After completing the square, if the right-hand side is negative, there is no real circle — a real radius cannot square to a negative number. If the right-hand side is zero, the 'circle' collapses to a single point at (h, k). Only a positive right-hand side gives a true circle with a positive radius. Our problem lands at 25, which is positive, so we have an honest circle of radius 5." } }
+    {
+      "@type": "Question",
+      "name": "What are the center and radius of x^2 + y^2 - 6x + 10y + 9 = 0?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Complete the square in x and y. Move the 9 to the right and group: (x^2 - 6x) + (y^2 + 10y) = -9. Add (6/2)^2 = 9 and (10/2)^2 = 25 to both sides: (x^2 - 6x + 9) + (y^2 + 10y + 25) = -9 + 9 + 25 = 25. Factor: (x - 3)^2 + (y + 5)^2 = 25. Compare with (x - h)^2 + (y - k)^2 = r^2 to read off center (3, -5) and radius r = 5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you complete the square on a circle equation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Group the x-terms and y-terms separately, move the constant to the right side, then take half of each linear coefficient, square it, and add that number to both sides. For x^2 - 6x, half of -6 is -3, squared is 9 — add 9 to both sides and the left becomes (x - 3)^2. Repeat for the y-terms. The constant you add on the right is what gives you r^2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the radius 5 and not 25?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2, so the right-hand side equals r squared, not r. After completing the square we get 25 on the right, which means r^2 = 25 and therefore r = sqrt(25) = 5. Forgetting to take the square root of r^2 is the single most common error on this problem and it costs a full point on the diagnostic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the center (3, -5) and not (-3, 5)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard form is (x - h)^2 + (y - k)^2 = r^2. The center is (h, k) — the numbers being subtracted inside the parentheses, with their signs. Our equation factored to (x - 3)^2 + (y + 5)^2 = 25. The first parenthesis is x - 3, so h = 3. The second parenthesis is y + 5, which is the same as y - (-5), so k = -5. The center is therefore (3, -5)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a circle equation have no real solutions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After completing the square, if the right-hand side is negative, there is no real circle — a real radius cannot square to a negative number. If the right-hand side is zero, the 'circle' collapses to a single point at (h, k). Only a positive right-hand side gives a true circle with a positive radius. Our problem lands at 25, which is positive, so we have an honest circle of radius 5."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>

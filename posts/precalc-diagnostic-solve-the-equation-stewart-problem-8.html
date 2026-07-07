@@ -71,35 +71,71 @@
   "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-the-equation-stewart-problem-8/cover.jpg",
   "datePublished": "2026-05-26",
   "dateModified": "2026-05-26",
-  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
-  "publisher": {
+  "author": {
     "@type": "Organization",
     "name": "School of Math",
-        "priceRange": "$$",
-    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+    "url": "https://www.schoolofmath.us"
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-solve-the-equation-stewart-problem-8",
-      "areaServed": {"@type": "Place", "name": "Upper West Side, Manhattan, NYC"}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
     }
-    </script>
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-solve-the-equation-stewart-problem-8"
+}
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How do I know which solving technique to pick?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Read the equation's shape. Linear with one x? Isolate x. Rational with x in the denominator? Cross-multiply, then check the domain. Quadratic? Try to factor first — if it doesn't factor cleanly, use the quadratic formula. Quartic with only even powers (x⁴, x², constant)? Substitute y = x² and treat it as a quadratic in y. Absolute value? Split into two cases. A weird mix of √(4−x) and (4−x)^(−1/2)? That's a substitution problem — let t = √(4−x). Pattern recognition is the entire skill." } },
-    { "@type": "Question", "name": "Why do I need to check the domain on rational equations?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because cross-multiplying can create solutions that weren't valid in the original equation. If the original has x in the denominator and you find x = 0 after cross-multiplying, that's an extraneous solution — it makes the original undefined. Always list the excluded values before you start so you can throw out any extraneous answers at the end. In Problem 8(b), the excluded values are x ≠ 0 and x ≠ −1, so the answer x = 1 is valid." } },
-    { "@type": "Question", "name": "When should I factor versus use the quadratic formula?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Try to factor first — if the quadratic factors into integers, factoring is faster, cleaner, and less error-prone. Look for two numbers that multiply to ac and add to b. If you can't spot them in 30 seconds, switch to the quadratic formula. Don't waste five minutes hunting for a factorization that doesn't exist. Problem 8(c) factors easily; Problem 8(d) does not, so the formula is the right move." } },
-    { "@type": "Question", "name": "What's the substitution trick on quartic equations?",
-      "acceptedAnswer": { "@type": "Answer", "text": "If an equation has only even powers of x — like x⁴ − 3x² + 2 = 0 — let y = x². The equation becomes y² − 3y + 2 = 0, a normal quadratic in y. Solve for y, then back-substitute to get x² = (each y value) and take square roots. You get twice as many x solutions as y solutions because each positive y gives two x values (±√y). This trick generalizes: anytime you see the same expression appearing squared and to the first power, substitute." } },
-    { "@type": "Question", "name": "Why is part (g) the hardest equation on the diagnostic?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because it mixes a negative fractional exponent — (4−x)^(−1/2), which means 1/√(4−x) — with a regular square root √(4−x). Students who don't recognize that both expressions are functions of the same thing (4 − x) try to attack it head-on and get stuck. The substitution t = √(4 − x) is the key: now (4−x)^(−1/2) becomes 1/t, the equation collapses into 2(4 − t²)·(1/t) − 3t = 0, and you can solve a clean quadratic in t. The hardest problems in pre-calc are almost always 'see the substitution' problems." } }
+    {
+      "@type": "Question",
+      "name": "How do I know which solving technique to pick?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Read the equation's shape. Linear with one x? Isolate x. Rational with x in the denominator? Cross-multiply, then check the domain. Quadratic? Try to factor first — if it doesn't factor cleanly, use the quadratic formula. Quartic with only even powers (x⁴, x², constant)? Substitute y = x² and treat it as a quadratic in y. Absolute value? Split into two cases. A weird mix of √(4−x) and (4−x)^(−1/2)? That's a substitution problem — let t = √(4−x). Pattern recognition is the entire skill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do I need to check the domain on rational equations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because cross-multiplying can create solutions that weren't valid in the original equation. If the original has x in the denominator and you find x = 0 after cross-multiplying, that's an extraneous solution — it makes the original undefined. Always list the excluded values before you start so you can throw out any extraneous answers at the end. In Problem 8(b), the excluded values are x ≠ 0 and x ≠ −1, so the answer x = 1 is valid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I factor versus use the quadratic formula?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try to factor first — if the quadratic factors into integers, factoring is faster, cleaner, and less error-prone. Look for two numbers that multiply to ac and add to b. If you can't spot them in 30 seconds, switch to the quadratic formula. Don't waste five minutes hunting for a factorization that doesn't exist. Problem 8(c) factors easily; Problem 8(d) does not, so the formula is the right move."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the substitution trick on quartic equations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If an equation has only even powers of x — like x⁴ − 3x² + 2 = 0 — let y = x². The equation becomes y² − 3y + 2 = 0, a normal quadratic in y. Solve for y, then back-substitute to get x² = (each y value) and take square roots. You get twice as many x solutions as y solutions because each positive y gives two x values (±√y). This trick generalizes: anytime you see the same expression appearing squared and to the first power, substitute."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is part (g) the hardest equation on the diagnostic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because it mixes a negative fractional exponent — (4−x)^(−1/2), which means 1/√(4−x) — with a regular square root √(4−x). Students who don't recognize that both expressions are functions of the same thing (4 − x) try to attack it head-on and get stuck. The substitution t = √(4 − x) is the key: now (4−x)^(−1/2) becomes 1/t, the equation collapses into 2(4 − t²)·(1/t) − 3t = 0, and you can solve a clean quadratic in t. The hardest problems in pre-calc are almost always 'see the substitution' problems."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>

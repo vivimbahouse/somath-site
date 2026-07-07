@@ -71,35 +71,71 @@
   "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7/cover.jpg",
   "datePublished": "2026-05-22",
   "dateModified": "2026-05-22",
-  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
-  "publisher": {
+  "author": {
     "@type": "Organization",
     "name": "School of Math",
-        "priceRange": "$$",
-    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+    "url": "https://www.schoolofmath.us"
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7",
-      "areaServed": {"@type": "Place", "name": "Upper West Side, Manhattan, NYC"}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
     }
-    </script>
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-rewrite-by-completing-the-square-stewart-problem-7"
+}
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What does it mean to complete the square?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Completing the square means rewriting a quadratic ax² + bx + c into the form a(x − h)² + k, called vertex form. Geometrically, you're literally completing a square: you take the linear term bx, split it in half so each half sits on one side of an x·x square, and add the missing corner piece (b/2)² to make it whole. To keep the expression equal you also subtract (b/2)² so nothing changes in value, only in form." } },
-    { "@type": "Question", "name": "Why do we take HALF the linear coefficient and square it?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because (x + b/2)² expands to x² + bx + (b/2)². The middle term bx is what you started with, and (b/2)² is the corner piece that finishes the square. Half-it-and-square-it isn't a magic recipe — it's literally the constant that completes the geometric square whose two sides are x and x + b/2." } },
-    { "@type": "Question", "name": "Why do you factor out the leading coefficient first in part (b)?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because completing the square only works directly on x² + bx — a leading coefficient of 1. When the quadratic starts with 2x² (or any a ≠ 1), you factor that a out of just the first two terms, leaving 2(x² − 6x) + 11. Now the inside is in standard complete-the-square form and you can apply the half-it-and-square-it move on the −6. Don't factor out of the constant — that creates fractions you don't need." } },
-    { "@type": "Question", "name": "When does completing the square actually get used?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It's the proof technique behind the quadratic formula — you can derive the formula by completing the square on ax² + bx + c = 0. It's how you find the vertex of any parabola (the h and k in y = a(x − h)² + k are the vertex coordinates). It's how you put conic sections — circles, ellipses, hyperbolas — into standard form. And in calculus it's a standard integration trick: 1/(x² + bx + c) becomes a clean arctangent or log integral only after you complete the square in the denominator." } },
-    { "@type": "Question", "name": "Is it OK that part (a) has a fraction inside the squared term?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes — that's the correct answer. Whenever the linear coefficient b is odd, half of it is a fraction, and that fraction lives inside the parentheses. The result (x + 1/2)² + 3/4 is fully simplified vertex form. Don't try to clear the fraction by multiplying through — that changes the expression's value. Students sometimes panic at a fraction and assume they made a mistake. They didn't." } }
+    {
+      "@type": "Question",
+      "name": "What does it mean to complete the square?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Completing the square means rewriting a quadratic ax² + bx + c into the form a(x − h)² + k, called vertex form. Geometrically, you're literally completing a square: you take the linear term bx, split it in half so each half sits on one side of an x·x square, and add the missing corner piece (b/2)² to make it whole. To keep the expression equal you also subtract (b/2)² so nothing changes in value, only in form."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do we take HALF the linear coefficient and square it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because (x + b/2)² expands to x² + bx + (b/2)². The middle term bx is what you started with, and (b/2)² is the corner piece that finishes the square. Half-it-and-square-it isn't a magic recipe — it's literally the constant that completes the geometric square whose two sides are x and x + b/2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do you factor out the leading coefficient first in part (b)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because completing the square only works directly on x² + bx — a leading coefficient of 1. When the quadratic starts with 2x² (or any a ≠ 1), you factor that a out of just the first two terms, leaving 2(x² − 6x) + 11. Now the inside is in standard complete-the-square form and you can apply the half-it-and-square-it move on the −6. Don't factor out of the constant — that creates fractions you don't need."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does completing the square actually get used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's the proof technique behind the quadratic formula — you can derive the formula by completing the square on ax² + bx + c = 0. It's how you find the vertex of any parabola (the h and k in y = a(x − h)² + k are the vertex coordinates). It's how you put conic sections — circles, ellipses, hyperbolas — into standard form. And in calculus it's a standard integration trick: 1/(x² + bx + c) becomes a clean arctangent or log integral only after you complete the square in the denominator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it OK that part (a) has a fraction inside the squared term?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — that's the correct answer. Whenever the linear coefficient b is odd, half of it is a fraction, and that fraction lives inside the parentheses. The result (x + 1/2)² + 3/4 is fully simplified vertex form. Don't try to clear the fraction by multiplying through — that changes the expression's value. Students sometimes panic at a fraction and assume they made a mistake. They didn't."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>

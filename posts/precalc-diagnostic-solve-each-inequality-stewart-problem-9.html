@@ -72,35 +72,71 @@
   "image": "https://www.schoolofmath.us/assets/blog/precalc-diagnostic-solve-each-inequality-stewart-problem-9/cover.jpg",
   "datePublished": "2026-05-26",
   "dateModified": "2026-05-26",
-  "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
-  "publisher": {
+  "author": {
     "@type": "Organization",
     "name": "School of Math",
-        "priceRange": "$$",
-    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+    "url": "https://www.schoolofmath.us"
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-solve-each-inequality-stewart-problem-9",
-      "areaServed": {"@type": "Place", "name": "Upper West Side, Manhattan, NYC"}
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
     }
-    </script>
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/precalc-diagnostic-solve-each-inequality-stewart-problem-9"
+}
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Why do I flip the inequality when I divide by a negative?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Because multiplying or dividing by a negative number reverses the order of every pair of real numbers. If a < b, then −a > −b. The same fact applies to an inequality: dividing both sides by a negative reverses the inequality sign. It is not a memorization trick — it is a consequence of how the real number line is ordered. In Problem 9(a), dividing the middle inequality −9 < −3x ≤ 12 by −3 reverses both inequalities to 3 > x ≥ −4, which we then rewrite in standard left-to-right order as −4 ≤ x < 3. Forgetting this flip is the single most common error on the entire diagnostic." } },
-    { "@type": "Question", "name": "How do I write an inequality answer in interval notation?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Use a square bracket [ or ] when the endpoint is included (≤ or ≥), and a round parenthesis ( or ) when the endpoint is excluded (< or >). Infinity always gets a parenthesis because you cannot include infinity. For a set that is the union of two disjoint intervals — for example, all x less than −2 or greater than 4 — write each interval separately and join them with the union symbol ∪: (−∞, −2) ∪ (4, ∞). Always write the smaller number on the left and the larger on the right." } },
-    { "@type": "Question", "name": "When do I need a sign chart instead of just factoring?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Anytime you have a polynomial inequality with more than one root or any rational inequality, you should draw a sign chart. The sign of a product is determined by how many of its factors are negative — once you mark each root on a number line and test the sign of every factor in each interval, the answer falls out. For x(x − 1)(x + 2) > 0 in Problem 9(c), the roots are −2, 0, 1, which carve the number line into four intervals, and the product alternates sign across them. The answer is the union of the intervals where the product is positive." } },
-    { "@type": "Question", "name": "How is a rational inequality different from a rational equation?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You cannot multiply both sides of a rational inequality by the denominator the way you can with a rational equation, because the denominator may be negative — and if it is, the inequality flips, and if it changes sign across the relevant interval, the inequality flips partway through. The safe move is to bring everything to one side, combine over a common denominator, and analyze the sign of the resulting single rational expression using its zeros and undefined points as critical points. In Problem 9(e), we rewrite (2x − 3)/(x + 1) ≤ 1 as (x − 4)/(x + 1) ≤ 0, then test signs around x = −1 (undefined) and x = 4 (zero) to get (−1, 4]." } },
-    { "@type": "Question", "name": "Why does the absolute value inequality |x − 4| < 3 unpack into a compound inequality?",
-      "acceptedAnswer": { "@type": "Answer", "text": "|x − 4| represents the distance from x to 4 on the number line, and saying that distance is less than 3 is exactly the statement that x lies within 3 units of 4 — in other words, between 1 and 7. Formally, |A| < B (with B positive) is equivalent to −B < A < B. We unpack |x − 4| < 3 as −3 < x − 4 < 3, then add 4 to all three parts to get 1 < x < 7, which in interval notation is (1, 7). The rule reverses for greater-than absolute value inequalities like |A| > B, which split into A < −B or A > B and give a union of two rays." } }
+    {
+      "@type": "Question",
+      "name": "Why do I flip the inequality when I divide by a negative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because multiplying or dividing by a negative number reverses the order of every pair of real numbers. If a < b, then −a > −b. The same fact applies to an inequality: dividing both sides by a negative reverses the inequality sign. It is not a memorization trick — it is a consequence of how the real number line is ordered. In Problem 9(a), dividing the middle inequality −9 < −3x ≤ 12 by −3 reverses both inequalities to 3 > x ≥ −4, which we then rewrite in standard left-to-right order as −4 ≤ x < 3. Forgetting this flip is the single most common error on the entire diagnostic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I write an inequality answer in interval notation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use a square bracket [ or ] when the endpoint is included (≤ or ≥), and a round parenthesis ( or ) when the endpoint is excluded (< or >). Infinity always gets a parenthesis because you cannot include infinity. For a set that is the union of two disjoint intervals — for example, all x less than −2 or greater than 4 — write each interval separately and join them with the union symbol ∪: (−∞, −2) ∪ (4, ∞). Always write the smaller number on the left and the larger on the right."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do I need a sign chart instead of just factoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anytime you have a polynomial inequality with more than one root or any rational inequality, you should draw a sign chart. The sign of a product is determined by how many of its factors are negative — once you mark each root on a number line and test the sign of every factor in each interval, the answer falls out. For x(x − 1)(x + 2) > 0 in Problem 9(c), the roots are −2, 0, 1, which carve the number line into four intervals, and the product alternates sign across them. The answer is the union of the intervals where the product is positive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is a rational inequality different from a rational equation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You cannot multiply both sides of a rational inequality by the denominator the way you can with a rational equation, because the denominator may be negative — and if it is, the inequality flips, and if it changes sign across the relevant interval, the inequality flips partway through. The safe move is to bring everything to one side, combine over a common denominator, and analyze the sign of the resulting single rational expression using its zeros and undefined points as critical points. In Problem 9(e), we rewrite (2x − 3)/(x + 1) ≤ 1 as (x − 4)/(x + 1) ≤ 0, then test signs around x = −1 (undefined) and x = 4 (zero) to get (−1, 4]."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the absolute value inequality |x − 4| < 3 unpack into a compound inequality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "|x − 4| represents the distance from x to 4 on the number line, and saying that distance is less than 3 is exactly the statement that x lies within 3 units of 4 — in other words, between 1 and 7. Formally, |A| < B (with B positive) is equivalent to −B < A < B. We unpack |x − 4| < 3 as −3 < x − 4 < 3, then add 4 to all three parts to get 1 < x < 7, which in interval notation is (1, 7). The rule reverses for greater-than absolute value inequalities like |A| > B, which split into A < −B or A > B and give a union of two rays."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>

@@ -149,58 +149,94 @@
 
     <!-- JSON-LD Schedule schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "School of Math",
-      "alternateName": "SOMATH",
-      "url": "https://www.schoolofmath.us",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "226 W 79th St, 1st Floor",
-        "addressLocality": "New York",
-        "addressRegion": "NY",
-        "postalCode": "10024",
-        "addressCountry": "US"
-      },
-      "telephone": "+1-646-668-6151",
-      "priceRange": "$$",
-      "areaServed": "Upper West Side, Manhattan, NYC",
-      "makesOffer": {
-        "@type": "Offer",
-        "name": "SOMATH Monthly Membership",
-        "description": "Monthly math tutoring membership. Start any week, pause up to 4 weeks/year, cancel with 15 days' notice.",
-        "url": "https://www.schoolofmath.us/membership",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "priceCurrency": "USD",
-          "minPrice": "369",
-          "maxPrice": "800"
-        },
-        "availability": "https://schema.org/InStock"
-      }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "School of Math",
+  "alternateName": "SOMATH",
+  "url": "https://www.schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "telephone": "+1-646-668-6151",
+  "priceRange": "$$",
+  "areaServed": "Upper West Side, Manhattan, NYC",
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "SOMATH Monthly Membership",
+    "description": "Monthly math tutoring membership. Start any week, pause up to 4 weeks/year, cancel with 15 days' notice.",
+    "url": "https://www.schoolofmath.us/membership",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "priceCurrency": "USD",
+      "minPrice": "369",
+      "maxPrice": "800"
+    },
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
       <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What are SOMATH's hours?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Monday through Friday 3-10pm, Saturday 9am-6pm, and Sunday 10am-5pm. Weekday afternoons are the busiest slots; weekend morning slots (Saturday 9-11am, Sunday 10-12) fill first each semester." } },
-    { "@type": "Question", "name": "How do I see current class times?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The schedule page lists every currently-running class by track and time. If you don't see a time that works for your family, call (646) 668-6151 — we occasionally open new sections when demand justifies it, and can put you on a waitlist for your preferred slot." } },
-    { "@type": "Question", "name": "Can we switch class times during the semester?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, if seats are available in another section of the same track. Send us the slot you'd like to move to and we'll confirm availability within one business day." } },
-    { "@type": "Question", "name": "What about holidays and school breaks?",
-      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH follows the NYC public school calendar for major holidays (Thanksgiving, winter break, spring break). We stay open on most one-day observances. The full closure calendar is emailed to enrolled families at the start of each semester and posted on this page." } },
-    { "@type": "Question", "name": "What if my child needs to miss a class?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Every SOMATH membership includes one free make-up class per month. Coordinate the make-up with your teacher directly — most sections have another session that week where the child can join." } },
-    { "@type": "Question", "name": "Are there summer classes?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Summer runs late June through late August. Programs continue with lighter cadence (usually once per week rather than twice). Summer is a particularly strong time for SHSAT and AP prep — we run intensives that compress a semester of content into 8-10 weeks." } }
+    {
+      "@type": "Question",
+      "name": "What are SOMATH's hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monday through Friday 3-10pm, Saturday 9am-6pm, and Sunday 10am-5pm. Weekday afternoons are the busiest slots; weekend morning slots (Saturday 9-11am, Sunday 10-12) fill first each semester."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I see current class times?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The schedule page lists every currently-running class by track and time. If you don't see a time that works for your family, call (646) 668-6151 — we occasionally open new sections when demand justifies it, and can put you on a waitlist for your preferred slot."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we switch class times during the semester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if seats are available in another section of the same track. Send us the slot you'd like to move to and we'll confirm availability within one business day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about holidays and school breaks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH follows the NYC public school calendar for major holidays (Thanksgiving, winter break, spring break). We stay open on most one-day observances. The full closure calendar is emailed to enrolled families at the start of each semester and posted on this page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if my child needs to miss a class?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every SOMATH membership includes one free make-up class per month. Coordinate the make-up with your teacher directly — most sections have another session that week where the child can join."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there summer classes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Summer runs late June through late August. Programs continue with lighter cadence (usually once per week rather than twice). Summer is a particularly strong time for SHSAT and AP prep — we run intensives that compress a semester of content into 8-10 weeks."
+      }
+    }
   ]
 }
-    </script>
+</script>
   </head>
   <body data-page="schedule">
     <div id="header-mount"></div>

@@ -48,87 +48,83 @@
     <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg" />
     <link rel="stylesheet" href="/styles.css" />
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SAT Math: Rounding Error & Finding E − S (30-Decimal Problem)",
+  "description": "A walkthrough of the SAT 'rounding error' problem with 30 positive non-integer decimals — set up the algebra, bound each contribution to E minus S, and decide which of −16, 6, and 10 are actually possible.",
+  "image": "https://www.schoolofmath.us/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg",
+  "datePublished": "2026-05-12",
+  "dateModified": "2026-05-12",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "priceRange": "$$",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo-full.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/sat-rounding-error-list-of-30-decimals"
+  }
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "SAT Math: Rounding Error & Finding E − S (30-Decimal Problem)",
-      "description": "A walkthrough of the SAT 'rounding error' problem with 30 positive non-integer decimals — set up the algebra, bound each contribution to E minus S, and decide which of −16, 6, and 10 are actually possible.",
-      "image": "https://www.schoolofmath.us/assets/blog/sat-rounding-error-list-of-30-decimals/cover.jpg",
-      "datePublished": "2026-05-12",
-      "dateModified": "2026-05-12",
-      "author": {
-        "@type": "Person",
-        "name": "School of Math",
-        "jobTitle": "Head of Education, Co-Founder",
-        "url": "https://www.schoolofmath.us/about"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SOMATH",
-        "priceRange": "$$",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.schoolofmath.us/assets/logo-full.svg"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.schoolofmath.us/posts/sat-rounding-error-list-of-30-decimals"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Upper West Side, Manhattan, NYC"
+      "@type": "Question",
+      "name": "What kind of SAT problem is this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a classic 'rounding error' or 'bounded sum' problem. You are given a rule that transforms each item in a list and asked which net outcomes are achievable. The right move is almost never to construct an example by trial and error — it is to bound each item's contribution algebraically and then add the bounds together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is 10 not a possible value of E − S?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each even-tenths decimal contributes at most just under 1 to E − S, and each odd-tenths decimal contributes a negative amount. With 10 even-tenths decimals and 20 odd-tenths decimals, the maximum possible value of E − S is strictly less than 10, so E − S = 10 is not reachable. The upper bound is 10 × (something less than 1) + 20 × (something negative) < 10."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are −16 and 6 both possible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the per-item contributions span a wide interval — roughly (0, 1) for the rounded-up group and (−1, 0) for the rounded-down group — the achievable values of E − S form a continuous range. That range easily covers both 6 (mostly even-tenths drove rounding up) and −16 (the odd-tenths group dominated)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an SAT or SHSAT problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The structure — long word problem, multiple Roman-numeral choices, algebraic bounding — is the SAT subject test / advanced SAT style. Variants of this exact problem show up on SHSAT, AMC 8 and AMC 10, and on AP Statistics in disguise. The bounding technique transfers cleanly across all of them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the fastest way to teach this to a student who is stuck?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stop trying to construct one example. Switch to bounding. Write each decimal as x = I + d with 0 < d < 1, compute the contribution of one item to E − S in each case (even tenths and odd tenths), and bound that single contribution. Once the per-item bound is clean, sum it across the 10 even and 20 odd decimals, and the question of which Roman-numeral values fit answers itself."
       }
     }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What kind of SAT problem is this?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "It is a classic 'rounding error' or 'bounded sum' problem. You are given a rule that transforms each item in a list and asked which net outcomes are achievable. The right move is almost never to construct an example by trial and error — it is to bound each item's contribution algebraically and then add the bounds together."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why is 10 not a possible value of E − S?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Each even-tenths decimal contributes at most just under 1 to E − S, and each odd-tenths decimal contributes a negative amount. With 10 even-tenths decimals and 20 odd-tenths decimals, the maximum possible value of E − S is strictly less than 10, so E − S = 10 is not reachable. The upper bound is 10 × (something less than 1) + 20 × (something negative) < 10."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why are −16 and 6 both possible?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Because the per-item contributions span a wide interval — roughly (0, 1) for the rounded-up group and (−1, 0) for the rounded-down group — the achievable values of E − S form a continuous range. That range easily covers both 6 (mostly even-tenths drove rounding up) and −16 (the odd-tenths group dominated)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is this an SAT or SHSAT problem?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The structure — long word problem, multiple Roman-numeral choices, algebraic bounding — is the SAT subject test / advanced SAT style. Variants of this exact problem show up on SHSAT, AMC 8 and AMC 10, and on AP Statistics in disguise. The bounding technique transfers cleanly across all of them."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the fastest way to teach this to a student who is stuck?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Stop trying to construct one example. Switch to bounding. Write each decimal as x = I + d with 0 < d < 1, compute the contribution of one item to E − S in each case (even tenths and odd tenths), and bound that single contribution. Once the per-item bound is clean, sum it across the 10 even and 20 odd decimals, and the question of which Roman-numeral values fit answers itself."
-          }
-        }
-      ]
-    }
-    </script>
+  ]
+}
+</script>
   </head>
   <body data-page="blog">
     <div id="nav-mount"></div>
