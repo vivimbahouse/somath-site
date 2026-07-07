@@ -164,15 +164,20 @@
         "addressCountry": "US"
       },
       "telephone": "+1-646-668-6151",
+      "priceRange": "$$",
       "areaServed": "Upper West Side, Manhattan, NYC",
-      "offers": {
+      "makesOffer": {
         "@type": "Offer",
         "name": "SOMATH Monthly Membership",
         "description": "Monthly math tutoring membership. Start any week, pause up to 4 weeks/year, cancel with 15 days' notice.",
         "url": "https://www.schoolofmath.us/membership",
-        "priceCurrency": "USD",
-        "lowPrice": "369",
-        "highPrice": "800"
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "priceCurrency": "USD",
+          "minPrice": "369",
+          "maxPrice": "800"
+        },
+        "availability": "https://schema.org/InStock"
       }
     }
     </script>
