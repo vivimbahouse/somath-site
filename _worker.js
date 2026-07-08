@@ -675,15 +675,30 @@ var EVAL_COURSES = {
   "ap-statistics": "AP Statistics"
 };
 
+var COURSE_SCHEDULES = {
+  "little-newtons-a":              [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Wednesday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"10:00 \u2013 11:30 AM"}],
+  "little-newtons-b":              [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"}],
+  "kid-einsteins-a":               [{d:"Tuesday",t:"3:30 \u2013 5:30 PM"},{d:"Wednesday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"11:30 AM \u2013 1:30 PM"}],
+  "kid-einsteins-b":               [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:30 PM"},{d:"Saturday",t:"11:30 AM \u2013 1:30 PM"}],
+  "young-fermats-prealgebra":      [{d:"Thursday",t:"5:30 \u2013 7:30 PM"},{d:"Saturday",t:"2:00 \u2013 4:00 PM"}],
+  "young-fermats-algebra-ignite":  [{d:"Monday",t:"7:00 \u2013 9:00 PM"},{d:"Wednesday",t:"7:00 \u2013 9:00 PM"},{d:"Sunday",t:"2:00 \u2013 4:00 PM"}],
+  "young-fermats-geometry":        [{d:"Tuesday",t:"7:30 \u2013 9:30 PM"},{d:"Thursday",t:"7:30 \u2013 9:30 PM"}],
+  "young-fermats-algebra-ii":      [{d:"Tuesday",t:"5:30 \u2013 7:30 PM"}],
+  "shsat-prep":                    [{d:"Friday",t:"3:30 \u2013 5:30 PM"}],
+  "sat-math":                      [{d:"Friday",t:"5:30 \u2013 7:30 PM"}],
+  "pre-calculus":                  [{d:"Friday",t:"7:30 \u2013 9:30 PM"},{d:"Saturday",t:"4:00 \u2013 6:00 PM"},{d:"Sunday",t:"4:00 \u2013 6:00 PM"}],
+  "ap-calculus":                   [{d:"Friday",t:"7:30 \u2013 9:30 PM"},{d:"Saturday",t:"4:00 \u2013 6:00 PM"},{d:"Sunday",t:"4:00 \u2013 6:00 PM"}],
+  "ap-statistics":                 [{d:"Friday",t:"7:30 \u2013 9:30 PM"},{d:"Saturday",t:"4:00 \u2013 6:00 PM"},{d:"Sunday",t:"4:00 \u2013 6:00 PM"}]
+};
 function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
   const monthlyPrice = COURSE_MONTHLY_USD[courseSlug] || 489;
   const sessionMinutes = (PRE_ENROLL_COURSES[courseSlug] && PRE_ENROLL_COURSES[courseSlug].fallMins) || 120;
-  const priceLine = `Monthly Membership \u2014 start any week, no semester wait, $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class).`;
+  const priceLine = `Monthly Membership \u2014 $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class). Start any week.`;
   const parentGreet = parentName ? parentName : "there";
   const courseUrl = `https://www.schoolofmath.us/courses/${courseSlug}`;
-  const tourUrl = "https://www.schoolofmath.us/posts/inside-somath-2026-website-tour-membership-schedule-syllabus";
   const subject = `${studentName} \u2014 your SOMATH evaluation results and recommended course`;
   const notesParagraph = notes ? notes : "";
+  const schedule = COURSE_SCHEDULES[courseSlug] || [];
 
   const textLines = [
     `Hi ${parentGreet},`,
@@ -692,36 +707,45 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     "",
     `Our recommendation: ${courseName}`,
     "",
-    "You can read the full course description, see the 24-class syllabus, see exactly how each class is structured, and enroll directly here:",
+    `Everything you need is on the course page \u2014 full description, 24-class syllabus, and the enrollment form where you can pick your day of the week, pick ${studentName}'s start date, and reserve the spot:`,
     "",
     courseUrl,
+    "",
+    `Scroll to "Reserve your spot in ${courseName}" at the bottom of the page \u2014 the whole thing takes about 2 minutes.`,
     ""
   ];
+  if (schedule.length) {
+    textLines.push(
+      `Days and times available for ${courseName}:`,
+      ""
+    );
+    for (const s of schedule) {
+      textLines.push(`  \u2022 ${s.d} \u2014 ${s.t}`);
+    }
+    textLines.push("", `Pick whichever slot works best for ${studentName} on the enrollment card.`, "");
+  }
   if (notesParagraph) {
     textLines.push(notesParagraph, "");
   }
   textLines.push(
-    "Before you decide, we'd love for you to watch our short founder's tour of how SOMATH actually works \u2014 Membership, schedule, and the 24-class syllabus behind every leveled program. It will answer most of the questions parents have at this stage:",
-    "",
-    tourUrl,
-    "",
     "A quick summary of what to expect:",
     "",
     "\u2022 " + priceLine,
-    "\u2022 Registration fee \u2014 $99 one-time at enrollment.",
+    "\u2022 $99 one-time registration charged today; monthly tuition begins one day before " + studentName + "'s first class.",
     "\u2022 Small cohorts (4\u20136 students), same instructor every week, same room.",
     "\u2022 In person at 226 W 79th St, 1st Floor, Upper West Side.",
-    "\u2022 24-class rolling syllabus \u2014 your child can join at any class and continue without losing the thread.",
+    "\u2022 24-class rolling syllabus \u2014 " + studentName + " can join at any class and continue without losing the thread.",
     "\u2022 Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.",
     "\u2022 Cancel anytime with 15 days' notice. No long-term contract.",
     "",
     "What to do next:",
     "",
-    "1. Watch the founder's tour video above (about 3 minutes).",
-    "2. Click the course link above to see the full syllabus and pick a day of the week that fits your schedule.",
-    "3. Complete enrollment through the page \u2014 you'll be set up in our system within 24 hours and we'll confirm " + studentName + "'s first class.",
+    "1. Open the course page above.",
+    "2. Scroll to the enrollment card, pick your day and start date, fill in your and " + studentName + "'s info.",
+    "3. Click \"Reserve My Spot \u2014 No Payment Today\" and complete Stripe checkout.",
+    "4. We'll confirm " + studentName + "'s first class within 24 hours.",
     "",
-    "If you'd rather talk it through first, just reply to this email or call us at (646) 668-6151. We're happy to walk you through the recommendation, the schedule, or anything else on your mind before you commit.",
+    "If you'd rather talk it through first, just reply to this email or call us at (646) 668-6151.",
     "",
     `We're excited to have ${studentName} join us.`,
     "",
@@ -742,32 +766,41 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<p>Hi ${e(parentGreet)},</p>`,
     `<p>Thank you for bringing ${e(studentName)} in for the free evaluation. It was a real pleasure spending time with them, and we now have a clear picture of where they are and what comes next.</p>`,
     `<p><strong>Our recommendation:</strong> ${e(courseName)}</p>`,
-    `<p>You can read the full course description, see the 24-class syllabus, see exactly how each class is structured, and enroll directly here:</p>`,
-    `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`
+    `<p>Everything you need is on the course page \u2014 full description, 24-class syllabus, and the enrollment form where you can <strong>pick your day of the week, pick ${e(studentName)}'s start date, and reserve the spot</strong>:</p>`,
+    `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`,
+    `<p>Scroll to \u201CReserve your spot in ${e(courseName)}\u201D at the bottom of the page \u2014 the whole thing takes about 2 minutes.</p>`
   ];
+  if (schedule.length) {
+    h.push(`<p><strong>Days and times available for ${e(courseName)}:</strong></p>`);
+    h.push(`<ul style="padding-left:20px;margin:0 0 12px">`);
+    for (const s of schedule) {
+      h.push(`<li>${e(s.d)} \u2014 ${e(s.t)}</li>`);
+    }
+    h.push(`</ul>`);
+    h.push(`<p>Pick whichever slot works best for ${e(studentName)} on the enrollment card.</p>`);
+  }
   if (notesParagraph) {
     h.push(`<p>${e(notesParagraph).replace(/\n/g, "<br>")}</p>`);
   }
   h.push(
-    `<p>Before you decide, we'd love for you to watch our short founder's tour of how SOMATH actually works \u2014 Membership, schedule, and the 24-class syllabus behind every leveled program. It will answer most of the questions parents have at this stage:</p>`,
-    `<p><a href="${tourUrl}" style="${linkStyle}">${tourUrl}</a></p>`,
     `<p><strong>A quick summary of what to expect:</strong></p>`,
     `<ul style="padding-left:20px">`,
-    `<li><strong>Monthly Membership</strong> \u2014 start any week, no semester wait, $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class).</li>`,
-    `<li><strong>Registration fee</strong> \u2014 $99 one-time at enrollment.</li>`,
+    `<li><strong>Monthly Membership</strong> \u2014 $${monthlyPrice}/month flat for our Core plan (1 class per week, ${sessionMinutes} min per class). Start any week.</li>`,
+    `<li><strong>$99 one-time registration</strong> charged today; monthly tuition begins one day before ${e(studentName)}'s first class.</li>`,
     `<li>Small cohorts (4\u20136 students), same instructor every week, same room.</li>`,
     `<li>In person at 226 W 79th St, 1st Floor, Upper West Side.</li>`,
-    `<li>24-class rolling syllabus \u2014 your child can join at any class and continue without losing the thread.</li>`,
+    `<li>24-class rolling syllabus \u2014 ${e(studentName)} can join at any class and continue without losing the thread.</li>`,
     `<li>Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.</li>`,
     `<li>Cancel anytime with 15 days' notice. No long-term contract.</li>`,
     `</ul>`,
     `<p><strong>What to do next:</strong></p>`,
     `<ol style="padding-left:20px">`,
-    `<li>Watch the founder's tour video above (about 3 minutes).</li>`,
-    `<li>Click the course link above to see the full syllabus and pick a day of the week that fits your schedule.</li>`,
-    `<li>Complete enrollment through the page \u2014 you'll be set up in our system within 24 hours and we'll confirm ${e(studentName)}'s first class.</li>`,
+    `<li>Open the course page above.</li>`,
+    `<li>Scroll to the enrollment card, pick your day and start date, fill in your and ${e(studentName)}'s info.</li>`,
+    `<li>Click \u201CReserve My Spot \u2014 No Payment Today\u201D and complete Stripe checkout.</li>`,
+    `<li>We'll confirm ${e(studentName)}'s first class within 24 hours.</li>`,
     `</ol>`,
-    `<p>If you'd rather talk it through first, just reply to this email or call us at <a href="tel:+16466686151" style="${linkStyle}">(646) 668-6151</a>. We're happy to walk you through the recommendation, the schedule, or anything else on your mind before you commit.</p>`,
+    `<p>If you'd rather talk it through first, just reply to this email or call us at <a href="tel:+16466686151" style="${linkStyle}">(646) 668-6151</a>.</p>`,
     `<p>We're excited to have ${e(studentName)} join us.</p>`,
     `<p>Warmly,<br>${e(senderName)}<br>School of Math | SOMATH<br>226 W 79th St, 1st Floor, New York, NY 10024<br>(646) 668-6151<br><a href="https://www.schoolofmath.us" style="${linkStyle}">schoolofmath.us</a></p>`,
     `</div>`
