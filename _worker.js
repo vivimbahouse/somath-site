@@ -1500,6 +1500,13 @@ var worker_default = {
     if (SCHEDULE_REDIRECTS[url.pathname]) {
       return Response.redirect(`https://www.schoolofmath.us${SCHEDULE_REDIRECTS[url.pathname]}`, 301);
     }
+    // Duplicate blog post slugs -> clean canonical slug (SEO consolidation)
+    const POST_REDIRECTS = {
+      "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide-1": "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide"
+    };
+    if (POST_REDIRECTS[url.pathname]) {
+      return Response.redirect(`https://www.schoolofmath.us${POST_REDIRECTS[url.pathname]}`, 301);
+    }
     // Legacy Wix /service-page/* URLs -> current course pages (or /courses fallback)
     if (url.pathname.startsWith("/service-page/")) {
       const slug = url.pathname.slice("/service-page/".length).toLowerCase();
