@@ -1502,7 +1502,9 @@ var worker_default = {
     }
     // Duplicate blog post slugs -> clean canonical slug (SEO consolidation)
     const POST_REDIRECTS = {
-      "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide-1": "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide"
+      "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide-1": "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide",
+      "/posts/why-mathematical-thinking-matters-for-your-child-s-future-1": "/posts/why-mathematical-thinking-matters-for-your-child-s-future",
+      "/posts/why-mathematical-thinking-matters-for-your-childs-future": "/posts/why-mathematical-thinking-matters-for-your-child-s-future"
     };
     if (POST_REDIRECTS[url.pathname]) {
       return Response.redirect(`https://www.schoolofmath.us${POST_REDIRECTS[url.pathname]}`, 301);
