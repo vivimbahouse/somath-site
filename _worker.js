@@ -367,7 +367,7 @@ var PRE_ENROLL_COURSES = {
   "kid-einsteins-b":              { title: "Kid Einsteins B",               grade: "Grades 4\u20135",     summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grade 6",        summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ignite": { title: "Young Fermats \u2014 Algebra Ignite",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
-  "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry and Trigonometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ii":     { title: "Young Fermats \u2014 Algebra II",       grade: "Grades 9\u201311",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "shsat-prep":                   { title: "SHSAT Prep",                    grade: "Grades 7\u20138",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
   "sat-math":                     { title: "SAT Math",                      grade: "Grades 9\u201311",  summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
@@ -666,7 +666,7 @@ var EVAL_COURSES = {
   "kid-einsteins-b": "Kid Einsteins B",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
-  "young-fermats-geometry": "Young Fermats \u2014 Geometry",
+  "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
   "shsat-prep": "SHSAT Prep",
   "sat-math": "SAT Math",
@@ -676,19 +676,19 @@ var EVAL_COURSES = {
 };
 
 var COURSE_SCHEDULES = {
-  "little-newtons-a":              [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Wednesday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"10:00 \u2013 11:30 AM"}],
-  "little-newtons-b":              [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"}],
-  "kid-einsteins-a":               [{d:"Tuesday",t:"3:30 \u2013 5:30 PM"},{d:"Wednesday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"11:30 AM \u2013 1:30 PM"}],
-  "kid-einsteins-b":               [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:30 PM"},{d:"Saturday",t:"11:30 AM \u2013 1:30 PM"}],
-  "young-fermats-prealgebra":      [{d:"Thursday",t:"5:30 \u2013 7:30 PM"},{d:"Saturday",t:"2:00 \u2013 4:00 PM"}],
-  "young-fermats-algebra-ignite":  [{d:"Monday",t:"7:00 \u2013 9:00 PM"},{d:"Wednesday",t:"7:00 \u2013 9:00 PM"},{d:"Sunday",t:"2:00 \u2013 4:00 PM"}],
-  "young-fermats-geometry":        [{d:"Tuesday",t:"7:30 \u2013 9:30 PM"},{d:"Thursday",t:"7:30 \u2013 9:30 PM"}],
-  "young-fermats-algebra-ii":      [{d:"Tuesday",t:"5:30 \u2013 7:30 PM"}],
-  "shsat-prep":                    [{d:"Friday",t:"3:30 \u2013 5:30 PM"}],
-  "sat-math":                      [{d:"Friday",t:"5:30 \u2013 7:30 PM"}],
-  "pre-calculus":                  [{d:"Friday",t:"7:30 \u2013 9:30 PM"},{d:"Saturday",t:"4:00 \u2013 6:00 PM"},{d:"Sunday",t:"4:00 \u2013 6:00 PM"}],
-  "ap-calculus":                   [{d:"Friday",t:"7:30 \u2013 9:30 PM"},{d:"Saturday",t:"4:00 \u2013 6:00 PM"},{d:"Sunday",t:"4:00 \u2013 6:00 PM"}],
-  "ap-statistics":                 [{d:"Friday",t:"7:30 \u2013 9:30 PM"},{d:"Saturday",t:"4:00 \u2013 6:00 PM"},{d:"Sunday",t:"4:00 \u2013 6:00 PM"}]
+  "little-newtons-a":              [{d:"Wednesday",t:"3:30 \u2013 5:00 PM"},{d:"Sunday",t:"10:00 \u2013 11:30 AM"}],
+  "little-newtons-b":              [{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"}],
+  "kid-einsteins-a":               [{d:"Monday",t:"3:30 \u2013 5:30 PM"},{d:"Saturday",t:"11:30 AM \u2013 1:30 PM"}],
+  "kid-einsteins-b":               [{d:"Tuesday",t:"3:30 \u2013 5:30 PM"},{d:"Sunday",t:"11:30 AM \u2013 1:30 PM"}],
+  "young-fermats-prealgebra":      [{d:"Tuesday",t:"5:30 \u2013 7:30 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"2:00 \u2013 4:00 PM"}],
+  "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:30 \u2013 7:30 PM"},{d:"Wednesday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"2:00 \u2013 4:00 PM"}],
+  "young-fermats-geometry":        [{d:"Monday",t:"7:30 \u2013 9:30 PM"}],
+  "young-fermats-algebra-ii":      [{d:"Tuesday",t:"7:30 \u2013 9:30 PM"}],
+  "shsat-prep":                    [{d:"Wednesday",t:"7:00 \u2013 9:00 PM"}],
+  "sat-math":                      [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}],
+  "pre-calculus":                  [{d:"Friday",t:"7:00 \u2013 9:00 PM"}],
+  "ap-calculus":                   [{d:"Saturday",t:"4:00 \u2013 6:00 PM"}],
+  "ap-statistics":                 [{d:"Sunday",t:"4:00 \u2013 6:00 PM"}]
 };
 function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
   const monthlyPrice = COURSE_MONTHLY_USD[courseSlug] || 489;
@@ -860,7 +860,7 @@ var COURSE_TITLES = {
   "kid-einsteins-b": "Kid Einsteins B",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
-  "young-fermats-geometry": "Young Fermats \u2014 Geometry",
+  "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
   "shsat-prep": "SHSAT Prep",
   "sat-math": "SAT Math",
