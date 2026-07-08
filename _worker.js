@@ -1504,7 +1504,11 @@ var worker_default = {
     const POST_REDIRECTS = {
       "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide-1": "/posts/mastering-advanced-quantitative-concepts-a-strategic-guide",
       "/posts/why-mathematical-thinking-matters-for-your-child-s-future-1": "/posts/why-mathematical-thinking-matters-for-your-child-s-future",
-      "/posts/why-mathematical-thinking-matters-for-your-childs-future": "/posts/why-mathematical-thinking-matters-for-your-child-s-future"
+      "/posts/why-mathematical-thinking-matters-for-your-childs-future": "/posts/why-mathematical-thinking-matters-for-your-child-s-future",
+      "/posts/ap-calc-ab-or-bc-which-should-my-child-take": "/posts/ap-calculus-ab-vs-bc-which-should-my-child-take",
+      "/posts/shsat-explained-nyc": "/posts/shsat-prep-nyc-expert-guide-2026",
+      "/posts/shsat-prep-when-to-start": "/posts/shsat-prep-timeline-upper-west-side",
+      "/posts/precalc-diagnostic-stewart-problems-1-10-uws": "/posts/precalc-diagnostic-expand-and-simplify-stewart-problem-3"
     };
     if (POST_REDIRECTS[url.pathname]) {
       return Response.redirect(`https://www.schoolofmath.us${POST_REDIRECTS[url.pathname]}`, 301);
