@@ -1466,6 +1466,53 @@ var worker_default = {
       target.hostname = "www.schoolofmath.us";
       return Response.redirect(target.toString(), 301);
     }
+    // Serve our own robots.txt (bypass Cloudflare managed robots injection).
+    // Single consolidated file: one User-agent: * group with all disallows,
+    // AI bots each in their own group, sitemap at the end.
+    if (url.pathname === "/robots.txt") {
+      const robots = [
+        "User-agent: *",
+        "Disallow: /_admin/",
+        "Disallow: /_secure/",
+        "Disallow: /api/",
+        "Allow: /",
+        "",
+        "User-agent: Amazonbot",
+        "Disallow: /",
+        "",
+        "User-agent: Applebot-Extended",
+        "Disallow: /",
+        "",
+        "User-agent: Bytespider",
+        "Disallow: /",
+        "",
+        "User-agent: CCBot",
+        "Disallow: /",
+        "",
+        "User-agent: ClaudeBot",
+        "Disallow: /",
+        "",
+        "User-agent: Google-Extended",
+        "Disallow: /",
+        "",
+        "User-agent: GPTBot",
+        "Disallow: /",
+        "",
+        "User-agent: meta-externalagent",
+        "Disallow: /",
+        "",
+        "Sitemap: https://www.schoolofmath.us/sitemap.xml",
+        ""
+      ].join("\n");
+      return new Response(robots, {
+        status: 200,
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=3600",
+          "x-robots-source": "worker"
+        }
+      });
+    }
     // Strip .html suffix with a 301 (SEO — Google's auto-strip 307 does not pass link equity as strongly).
     if (url.pathname.endsWith(".html") && !url.pathname.startsWith("/api/")) {
       const target = new URL(request.url);
