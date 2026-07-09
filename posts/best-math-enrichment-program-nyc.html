@@ -56,7 +56,10 @@
       .toc a:hover { text-decoration:underline; }
       .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
       .callout strong { color:#0a3a5f; }
-      .cmp-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; }
+      .cmp-table-wrap { overflow-x:auto; margin:14px 0 24px; -webkit-overflow-scrolling:touch; }
+      .cmp-table { width:100%; min-width:820px; border-collapse:collapse; font-size:0.95rem; }
+      .cmp-table td:first-child, .cmp-table th:first-child { position:sticky; left:0; background:inherit; }
+      .cmp-table thead th:first-child { background:#0a3a5f; }
       .cmp-table th, .cmp-table td { padding:9px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
       .cmp-table th { background:#0a3a5f; color:#fff; }
       .cmp-table tr:nth-child(even) { background:#fafafa; }
@@ -126,7 +129,7 @@
       "name": "How much does math enrichment cost in NYC in 2026?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most NYC math enrichment programs in 2026 fall into one of three price bands. National franchises like Mathnasium and Kumon typically cost roughly USD 250–400 per month for a few sessions per week. Group classes at Russian School of Math (RSM) and small-group programs like SOMATH typically run roughly USD 350–700 per month depending on grade, group size, and the number of weekly hours. Private 1:1 tutoring with experienced NYC math instructors typically ranges from USD 120 to USD 250 per hour. Online enrichment with Art of Problem Solving is dramatically cheaper — most AoPS Online courses are a few hundred dollars per course."
+        "text": "Most NYC math enrichment programs in 2026 fall into one of three price bands. National franchises like Mathnasium and Kumon typically cost roughly USD 250–400 per month for a few sessions per week. Group classes at Russian School of Math (RSM) and small-group programs like SOMATH typically run roughly USD 350–550 per month depending on grade, group size, and the number of weekly hours. Private 1:1 tutoring with experienced NYC math instructors typically ranges from USD 120 to USD 250 per hour. Online enrichment with Art of Problem Solving is dramatically cheaper — most AoPS Online courses are a few hundred dollars per course."
       }
     },
     {
@@ -280,25 +283,59 @@
         </div>
 
         <h2 id="comparison">5. Side-by-side comparison</h2>
+        <div class="cmp-table-wrap">
         <table class="cmp-table">
           <thead>
             <tr>
-              <th>Program</th>
-              <th>Format</th>
-              <th>Group size</th>
-              <th>Typical NYC cost (2026)</th>
-              <th>Best for</th>
+              <th>Attribute</th>
+              <th>RSM</th>
+              <th>AoPS Online + Beast Academy</th>
+              <th>Mathnasium</th>
+              <th>Kumon</th>
+              <th>NYC Competition Pipeline</th>
+              <th>Small-group neighborhood (SOMATH)</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>RSM</strong></td><td>In-person, once weekly</td><td>8&ndash;15</td><td>USD 400&ndash;700/month</td><td>Multi-year systematic acceleration</td></tr>
-            <tr><td><strong>AoPS Online + Beast Academy</strong></td><td>Online courses + print</td><td>Cohort-based, async</td><td>USD 300&ndash;600 / course</td><td>Self-driven problem-solvers, competition prep</td></tr>
-            <tr><td><strong>Mathnasium</strong></td><td>Drop-in center, 1&ndash;3x/week</td><td>Open-room, large</td><td>USD 250&ndash;400/month</td><td>Homework help, skill maintenance</td></tr>
-            <tr><td><strong>Kumon</strong></td><td>Daily worksheets + 2x/week center</td><td>Open-room</td><td>USD 200&ndash;300/month</td><td>Arithmetic fluency, calculation speed</td></tr>
-            <tr><td><strong>NYC Competition Pipeline</strong></td><td>School teams + weekend events</td><td>Variable</td><td>Often free or low-cost</td><td>Motivated students who want a peer community</td></tr>
-            <tr><td><strong>Small-group neighborhood (SOMATH)</strong></td><td>In-person small groups, weekly</td><td>4&ndash;8</td><td>USD 350&ndash;650/month</td><td>Personalized, teacher-led, adaptable to the child</td></tr>
+            <tr>
+              <td><strong>Format</strong></td>
+              <td>In-person, once weekly</td>
+              <td>Online courses + print</td>
+              <td>Drop-in center, 1&ndash;3x/week</td>
+              <td>Daily worksheets + 2x/week center</td>
+              <td>School teams + weekend events</td>
+              <td>In-person small groups, weekly</td>
+            </tr>
+            <tr>
+              <td><strong>Group size</strong></td>
+              <td>8&ndash;15</td>
+              <td>Cohort-based, async</td>
+              <td>Open-room, large</td>
+              <td>Open-room</td>
+              <td>Variable</td>
+              <td>4&ndash;8</td>
+            </tr>
+            <tr>
+              <td><strong>Typical NYC cost (2026)</strong></td>
+              <td>USD 400&ndash;700/month</td>
+              <td>USD 300&ndash;600 / course</td>
+              <td>USD 250&ndash;400/month</td>
+              <td>USD 200&ndash;300/month</td>
+              <td>Often free or low-cost</td>
+              <td>USD 350&ndash;550/month</td>
+            </tr>
+            <tr>
+              <td><strong>Best for</strong></td>
+              <td>Multi-year systematic acceleration</td>
+              <td>Self-driven problem-solvers, competition prep</td>
+              <td>Homework help, skill maintenance</td>
+              <td>Arithmetic fluency, calculation speed</td>
+              <td>Motivated students who want a peer community</td>
+              <td>Personalized, teacher-led, adaptable to the child</td>
+            </tr>
           </tbody>
         </table>
+        </div>
         <p style="font-size:0.85rem;color:#666;margin:-10px 0 22px;">Price ranges reflect public NYC pricing observed across multiple branches in 2026 and are intended as orientation only. Each program's exact pricing depends on grade, frequency, and location.</p>
 
         <h2 id="by-goal">6. Picking by goal: enrichment vs. SHSAT vs. AP vs. competition</h2>
