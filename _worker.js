@@ -470,6 +470,51 @@ __name(handleStudentEvaluation, "handleStudentEvaluation");
 __name(handleEvaluationCheck, "handleEvaluationCheck");
 __name(notifyEvaluationBlocked, "notifyEvaluationBlocked");
 
+// POST /api/evaluation-block  (admin) — manually add/remove KV block entries
+// Auth: x-admin-password header. Body: {email, grades: ["1st Grade", ...] | "all", action: "block"|"unblock", reason?, ttlDays?}
+async function handleEvaluationBlockAdmin(request, env) {
+  if (request.method !== "POST") return jsonResponse({ error: "method_not_allowed" }, 405);
+  const pw = request.headers.get("x-admin-password") || "";
+  const authedByAdmin = env.ADMIN_PASSWORD && pw === env.ADMIN_PASSWORD;
+  const authedByTmp = env.EVAL_ADMIN_TMP && pw === env.EVAL_ADMIN_TMP;
+  if (!authedByAdmin && !authedByTmp) {
+    return jsonResponse({ error: "unauthorized" }, 401);
+  }
+  if (!env.ENROLLMENTS) return jsonResponse({ error: "kv_not_bound" }, 500);
+  let body;
+  try { body = await request.json(); } catch (e) { return jsonResponse({ error: "invalid_json" }, 400); }
+  const email = String(body.email || "").trim().toLowerCase();
+  if (!isValidEmail(email)) return jsonResponse({ error: "invalid_email" }, 400);
+  const action = (body.action === "unblock") ? "unblock" : "block";
+  const reason = String(body.reason || "Admin manual block").slice(0, 200);
+  const ttlDays = Math.max(1, Math.min(365, Number(body.ttlDays) || 90));
+  const ttlSec = ttlDays * 86400;
+  const ALL_GRADES = ["1st Grade","2nd Grade","3rd Grade","4th Grade","5th Grade","6th Grade","7th Grade","8th Grade"];
+  let grades = body.grades;
+  if (grades === "all" || !grades) grades = ALL_GRADES;
+  if (!Array.isArray(grades)) return jsonResponse({ error: "invalid_grades" }, 400);
+  const results = [];
+  const now = new Date().toISOString();
+  for (const g of grades) {
+    const label = String(g).trim();
+    const key = `eval:${email}:${gradeKeyNormalize(label)}`;
+    try {
+      if (action === "unblock") {
+        await env.ENROLLMENTS.delete(key);
+        results.push({ key, action: "unblocked", ok: true });
+      } else {
+        const val = JSON.stringify({ submittedAt: now, studentName: "MANUAL_BLOCK", grade: label, overallPercent: 0, blockedByAdmin: true, reason });
+        await env.ENROLLMENTS.put(key, val, { expirationTtl: ttlSec });
+        results.push({ key, action: "blocked", ok: true, ttlDays });
+      }
+    } catch (e) {
+      results.push({ key, action, ok: false, error: String(e) });
+    }
+  }
+  return jsonResponse({ ok: true, email, action, count: results.length, results });
+}
+__name(handleEvaluationBlockAdmin, "handleEvaluationBlockAdmin");
+
 // ---- Pre-enroll (Stripe Checkout) ----
 var PRE_ENROLL_COURSES = {
   "little-newtons":               { title: "Little Newtons",                grade: "Grades 1\u20132",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
@@ -1635,6 +1680,7 @@ var worker_default = {
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
     if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
     if (url.pathname === "/api/evaluation-check") return handleEvaluationCheck(request, env);
+    if (url.pathname === "/api/evaluation-block") return handleEvaluationBlockAdmin(request, env);
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
