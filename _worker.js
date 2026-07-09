@@ -263,6 +263,33 @@ async function handleStudentEvaluation(request, env) {
   if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_email" }, 400);
   if (!Number.isFinite(totalCorrect) || !Number.isFinite(totalQuestions)) return jsonResponse({ error: "invalid_score" }, 400);
 
+  // ---- Evaluation gate: one submission per email+grade per 90 days ----
+  // Key: eval:<lower(email)>:<lower(grade)>  Value: { submittedAt, studentName, percent }  TTL: 90 days
+  const gateKey = `eval:${parentEmail}:${gradeKeyNormalize(grade)}`;
+  if (env.ENROLLMENTS) {
+    const priorRaw = await env.ENROLLMENTS.get(gateKey);
+    if (priorRaw) {
+      let prior;
+      try { prior = JSON.parse(priorRaw); } catch (_) { prior = { submittedAt: priorRaw }; }
+      const priorDate = prior.submittedAt ? new Date(prior.submittedAt) : null;
+      const dateStr = priorDate && !isNaN(priorDate.getTime())
+        ? priorDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "America/New_York" })
+        : "a previous date";
+      // Fire-and-forget alert to Vivianne. Send even for pre-check bypass attempts.
+      notifyEvaluationBlocked(env, {
+        parentEmail, studentName, grade, source: "submit",
+        priorSubmittedAt: prior.submittedAt || null,
+        priorStudentName: prior.studentName || null
+      }).catch(function(e){ console.log("block alert failed:", String(e)); });
+      return jsonResponse({
+        ok: false,
+        error: "already_taken",
+        message: `We already have an evaluation on file for ${parentEmail} at ${grade || "this grade level"} from ${dateStr}. Please reply to hello@schoolofmath.us if you need us to reset it or evaluate a different child.`,
+        priorSubmittedAt: prior.submittedAt || null
+      }, 409);
+    }
+  }
+
   const strandRows = strands.map(function(s) {
     const commentary = s.commentary ? `<div style="color:#555;font-size:13px;margin-top:4px;">${escapeHtml(String(s.commentary))}</div>` : "";
     return `<tr><td style="padding:8px 10px;border-bottom:1px solid #eee;vertical-align:top;"><strong>${escapeHtml(s.name)}</strong>${commentary}</td><td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:right;vertical-align:top;">${escapeHtml(String(s.correct))}/${escapeHtml(String(s.total))}</td><td style="padding:8px 10px;border-bottom:1px solid #eee;text-align:right;vertical-align:top;">${escapeHtml(String(s.percent))}%</td></tr>`;
@@ -353,12 +380,95 @@ ${missedRows ? `<h3 style="color:#c89a3a;">Questions to revisit</h3><ul style="p
     console.log("Student evaluation emails:", JSON.stringify({ school: schoolResult, parent: parentResult }));
     // If the school copy fails, report that as a hard error (their lead-capture matters more); parent failure is soft.
     if (!schoolResult.ok) return jsonResponse({ ok: false, error: schoolResult.error || "email_failed" }, 502);
+    // Persist the gate record after successful send. TTL 90 days (7776000 seconds).
+    if (env.ENROLLMENTS) {
+      try {
+        await env.ENROLLMENTS.put(gateKey, JSON.stringify({
+          submittedAt: new Date().toISOString(),
+          studentName,
+          grade,
+          overallPercent: Number.isFinite(overallPercent) ? overallPercent : null
+        }), { expirationTtl: 90 * 24 * 60 * 60 });
+      } catch (e) { console.log("eval gate write failed:", String(e)); }
+    }
     return jsonResponse({ ok: true, parentDelivered: !!parentResult.ok });
   }
   console.log(JSON.stringify({ event: "student_evaluation", grade, studentName, parentEmail, overallPercent, totalCorrect, totalQuestions }));
+  // Even when email is disabled, still record the gate.
+  if (env.ENROLLMENTS) {
+    try {
+      await env.ENROLLMENTS.put(gateKey, JSON.stringify({
+        submittedAt: new Date().toISOString(),
+        studentName, grade,
+        overallPercent: Number.isFinite(overallPercent) ? overallPercent : null
+      }), { expirationTtl: 90 * 24 * 60 * 60 });
+    } catch (e) { console.log("eval gate write failed:", String(e)); }
+  }
   return jsonResponse({ ok: true, note: "logged_only" });
 }
+function gradeKeyNormalize(g) {
+  return String(g || "").trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+__name(gradeKeyNormalize, "gradeKeyNormalize");
+
+// GET /api/evaluation-check?email=...&grade=...  ->  { taken: bool, submittedAt, message }
+async function handleEvaluationCheck(request, env) {
+  const url = new URL(request.url);
+  const email = String(url.searchParams.get("email") || "").trim().toLowerCase();
+  const grade = String(url.searchParams.get("grade") || "").trim();
+  if (!isValidEmail(email)) return jsonResponse({ taken: false, error: "invalid_email" }, 400);
+  if (!grade) return jsonResponse({ taken: false, error: "missing_grade" }, 400);
+  if (!env.ENROLLMENTS) return jsonResponse({ taken: false });
+  const gateKey = `eval:${email}:${gradeKeyNormalize(grade)}`;
+  const priorRaw = await env.ENROLLMENTS.get(gateKey);
+  if (!priorRaw) return jsonResponse({ taken: false });
+  let prior; try { prior = JSON.parse(priorRaw); } catch (_) { prior = { submittedAt: priorRaw }; }
+  const priorDate = prior.submittedAt ? new Date(prior.submittedAt) : null;
+  const dateStr = priorDate && !isNaN(priorDate.getTime())
+    ? priorDate.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "America/New_York" })
+    : "a previous date";
+  // Fire-and-forget alert to Vivianne on every block attempt.
+  notifyEvaluationBlocked(env, {
+    parentEmail: email, studentName: null, grade, source: "pre-check",
+    priorSubmittedAt: prior.submittedAt || null,
+    priorStudentName: prior.studentName || null
+  }).catch(function(e){ console.log("block alert failed:", String(e)); });
+  return jsonResponse({
+    taken: true,
+    submittedAt: prior.submittedAt || null,
+    message: `We already have an evaluation on file for ${email} at ${grade} from ${dateStr}. Please reply to hello@schoolofmath.us if you need us to reset it or evaluate a different child.`
+  });
+}
+
+// Notify Vivianne (via Resend) when a duplicate evaluation attempt is blocked.
+async function notifyEvaluationBlocked(env, info) {
+  if (!env.RESEND_API_KEY) return;
+  const notifyTo = env.NOTIFY_EMAIL || "hello@schoolofmath.us";
+  const priorDate = info.priorSubmittedAt ? new Date(info.priorSubmittedAt) : null;
+  const priorDateStr = priorDate && !isNaN(priorDate.getTime())
+    ? priorDate.toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }) + " ET"
+    : "unknown date";
+  const subject = `SOMATH eval blocked \u2014 ${info.parentEmail} tried ${info.grade || "unknown grade"} again`;
+  const html = `<div style="font-family:system-ui,-apple-system,sans-serif;color:#1f3d2e;max-width:560px;">
+<h2 style="color:#1f3d2e;border-bottom:2px solid #c89a3a;padding-bottom:8px;">Duplicate evaluation attempt blocked</h2>
+<p style="font-size:15px;">A parent tried to submit an evaluation they already have on file.</p>
+<table style="border-collapse:collapse;font-size:14px;">
+<tr><td style="padding:6px 12px 6px 0;color:#555;">Parent email:</td><td style="padding:6px 0;"><strong>${escapeHtml(info.parentEmail)}</strong></td></tr>
+<tr><td style="padding:6px 12px 6px 0;color:#555;">Grade attempted:</td><td style="padding:6px 0;"><strong>${escapeHtml(info.grade || "(unknown)")}</strong></td></tr>
+${info.studentName ? `<tr><td style="padding:6px 12px 6px 0;color:#555;">New student name:</td><td style="padding:6px 0;">${escapeHtml(info.studentName)}</td></tr>` : ""}
+${info.priorStudentName ? `<tr><td style="padding:6px 12px 6px 0;color:#555;">Prior student name:</td><td style="padding:6px 0;">${escapeHtml(info.priorStudentName)}</td></tr>` : ""}
+<tr><td style="padding:6px 12px 6px 0;color:#555;">Prior submission:</td><td style="padding:6px 0;">${escapeHtml(priorDateStr)}</td></tr>
+<tr><td style="padding:6px 12px 6px 0;color:#555;">Blocked at:</td><td style="padding:6px 0;">${escapeHtml(new Date().toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }))} ET</td></tr>
+<tr><td style="padding:6px 12px 6px 0;color:#555;">Trigger:</td><td style="padding:6px 0;">${escapeHtml(info.source === "submit" ? "Backend hard-block (pre-check bypassed)" : "Pre-check on Start button")}</td></tr>
+</table>
+<p style="font-size:13px;color:#666;margin-top:20px;">If this is a legit retake, reply to the parent and reset the KV key <code>eval:${escapeHtml(info.parentEmail)}:${escapeHtml(gradeKeyNormalize(info.grade))}</code> via the admin panel.</p>
+<p style="color:#888;font-size:12px;margin-top:20px;">SOMATH auto-alert \u2014 hello@schoolofmath.us</p>
+</div>`;
+  await sendResendEmail(env, { to: notifyTo, subject, html, replyTo: info.parentEmail });
+}
 __name(handleStudentEvaluation, "handleStudentEvaluation");
+__name(handleEvaluationCheck, "handleEvaluationCheck");
+__name(notifyEvaluationBlocked, "notifyEvaluationBlocked");
 
 // ---- Pre-enroll (Stripe Checkout) ----
 var PRE_ENROLL_COURSES = {
@@ -1524,6 +1634,7 @@ var worker_default = {
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
     if (url.pathname === "/api/student-evaluation") return handleStudentEvaluation(request, env);
+    if (url.pathname === "/api/evaluation-check") return handleEvaluationCheck(request, env);
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);

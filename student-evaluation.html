@@ -620,12 +620,33 @@
               <p class="quiz-footnote" id="intro-err-${GRADE_KEY}" style="color:#a23a3a; display:none;"></p>
             </div>
           `);
-          document.getElementById("start-btn-" + GRADE_KEY).addEventListener("click", function(){
+          document.getElementById("start-btn-" + GRADE_KEY).addEventListener("click", async function(){
+            const startBtn = document.getElementById("start-btn-" + GRADE_KEY);
             const name = document.getElementById("f-name-" + GRADE_KEY).value.trim();
             const email = document.getElementById("f-email-" + GRADE_KEY).value.trim();
             const err = document.getElementById("intro-err-" + GRADE_KEY);
+            err.style.display = "none";
             if (!name) { err.style.display="block"; err.textContent = "Please enter the student's first name."; return; }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.style.display="block"; err.textContent = "Please enter a valid parent email."; return; }
+            // Pre-check: has this email already taken THIS grade in the last 90 days?
+            startBtn.disabled = true;
+            const origLabel = startBtn.textContent;
+            startBtn.textContent = "Checking…";
+            try {
+              const checkResp = await fetch("/api/evaluation-check?email=" + encodeURIComponent(email) + "&grade=" + encodeURIComponent(GRADE_LABEL));
+              if (checkResp.ok) {
+                const checkData = await checkResp.json();
+                if (checkData && checkData.taken) {
+                  err.style.display="block";
+                  err.textContent = checkData.message || "This email has already submitted an evaluation for this grade in the last 90 days.";
+                  startBtn.disabled = false;
+                  startBtn.textContent = origLabel;
+                  return;
+                }
+              }
+            } catch (_) { /* soft-fail on network — backend still enforces */ }
+            startBtn.disabled = false;
+            startBtn.textContent = origLabel;
             state.studentName = name;
             state.parentEmail = email;
             state.stage = "quiz";
