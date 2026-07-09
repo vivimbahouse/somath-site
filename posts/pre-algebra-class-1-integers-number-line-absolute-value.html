@@ -34,7 +34,7 @@
     <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-1-integers-number-line-absolute-value" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Pre-Algebra Class 1: Integers on the Number Line & Absolute Value (25 Practice Questions) | SOMATH" />
-    <meta property="og:description" content="Free 25-question pre-algebra practice set from Class 1 of the SOMATH Young Fermats course — with lesson slides and hidden answer explanations." />
+    <meta property="og:description" content="Free 25 challenging pre-algebra practice questions from Class 1 of the SOMATH Young Fermats course — layered problems on integers, absolute value, and divisibility with hidden step-by-step answer explanations." />
     <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-1-integers-number-line-absolute-value" />
     <meta property="og:site_name" content="SOMATH" />
     <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/cover.jpg" />
@@ -46,98 +46,151 @@
     <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/cover.jpg" />
     <link rel="stylesheet" href="/styles.css" />
     <style>
-      /* ===== Slide carousel ===== */
-      .slide-carousel { margin: 22px 0 34px; }
-      .slide-carousel__stage {
-        position: relative;
-        background: #0a3a5f;
-        border-radius: 10px;
+      /* ===== Slide gallery + lightbox ===== */
+      .slide-gallery {
+        margin: 22px 0 14px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .slide-thumb {
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        background: #fff;
+        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 8px 28px rgba(10,58,95,0.18);
+        cursor: zoom-in;
+        box-shadow: 0 2px 10px rgba(10,58,95,0.10);
+        transition: transform 160ms, box-shadow 160ms;
+        position: relative;
         aspect-ratio: 1356 / 848;
       }
-      .slide-carousel__track {
-        display: flex;
-        transition: transform 380ms cubic-bezier(.4,.15,.25,1);
-        will-change: transform;
-        height: 100%;
+      .slide-thumb:hover, .slide-thumb:focus {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(10,58,95,0.20);
+        outline: none;
       }
-      .slide-carousel__slide {
-        flex: 0 0 100%;
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-      .slide-carousel__slide img {
+      .slide-thumb img {
         width: 100%;
         height: 100%;
         display: block;
         object-fit: contain;
         background: #fff;
       }
-      .slide-carousel__btn {
+      .slide-thumb__label {
+        position: absolute;
+        left: 0; right: 0; bottom: 0;
+        background: linear-gradient(to top, rgba(10,58,95,0.88), rgba(10,58,95,0));
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 22px 10px 8px;
+        line-height: 1.2;
+      }
+      .slide-thumb__num {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: #d4a548;
+        color: #0a3a5f;
+        font-weight: 800;
+        font-size: 0.72rem;
+        padding: 2px 8px;
+        border-radius: 12px;
+        letter-spacing: 0.02em;
+      }
+      .slide-gallery__hint {
+        margin: 6px 0 30px;
+        color: #555;
+        font-size: 0.9rem;
+        font-style: italic;
+        text-align: center;
+      }
+      @media (max-width: 720px) {
+        .slide-gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .slide-thumb__label { font-size: 0.72rem; padding: 18px 8px 6px; }
+      }
+
+      /* Lightbox modal */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 28, 46, 0.94);
+        display: none;
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .lightbox.is-open { display: flex; }
+      .lightbox__stage {
+        position: relative;
+        max-width: min(100vw - 40px, 1600px);
+        max-height: calc(100vh - 100px);
+        width: 100%;
+      }
+      .lightbox__img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: calc(100vh - 140px);
+        object-fit: contain;
+        border-radius: 6px;
+        background: #fff;
+        margin: 0 auto;
+      }
+      .lightbox__meta {
+        color: #f5f1e8;
+        text-align: center;
+        margin-top: 12px;
+        font-size: 0.95rem;
+      }
+      .lightbox__meta strong { color: #d4a548; }
+      .lightbox__btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
+        width: 52px;
+        height: 52px;
         border-radius: 50%;
         border: none;
-        background: rgba(255,255,255,0.92);
+        background: rgba(255,255,255,0.94);
         color: #0a3a5f;
-        font-size: 1.35rem;
-        font-weight: 700;
+        font-size: 1.7rem;
+        font-weight: 800;
         cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.18);
         display: grid;
         place-items: center;
-        transition: background 140ms, transform 140ms;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.35);
         z-index: 2;
+        transition: background 140ms;
       }
-      .slide-carousel__btn:hover { background: #d4a548; color: #0a3a5f; }
-      .slide-carousel__btn:disabled { opacity: 0.35; cursor: not-allowed; }
-      .slide-carousel__btn--prev { left: 10px; }
-      .slide-carousel__btn--next { right: 10px; }
-      .slide-carousel__meta {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 10px;
-        font-size: 0.92rem;
-        color: #555;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      .slide-carousel__counter {
-        background: #f5f1e8;
-        color: #0a3a5f;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-weight: 700;
+      .lightbox__btn:hover { background: #d4a548; }
+      .lightbox__btn:disabled { opacity: 0.35; cursor: not-allowed; }
+      .lightbox__btn--prev { left: -8px; }
+      .lightbox__btn--next { right: -8px; }
+      .lightbox__close {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        background: transparent;
+        border: 2px solid #d4a548;
+        color: #d4a548;
         font-size: 0.85rem;
-      }
-      .slide-carousel__dots {
-        display: flex;
-        gap: 6px;
-        justify-content: center;
-        margin-top: 10px;
-      }
-      .slide-carousel__dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: #d0d0d0;
-        border: none;
+        font-weight: 700;
+        padding: 6px 14px;
+        border-radius: 20px;
         cursor: pointer;
-        padding: 0;
-        transition: background 140ms, transform 140ms;
+        letter-spacing: 0.04em;
       }
-      .slide-carousel__dot--active { background: #d4a548; transform: scale(1.25); }
-      .slide-carousel__caption {
-        margin: 8px 0 0;
-        color: #333;
-        font-size: 0.95rem;
-        font-style: italic;
+      .lightbox__close:hover { background: #d4a548; color: #0a3a5f; }
+      @media (max-width: 720px) {
+        .lightbox__btn { width: 44px; height: 44px; font-size: 1.4rem; }
+        .lightbox__btn--prev { left: 4px; }
+        .lightbox__btn--next { right: 4px; }
+        .lightbox__close { top: -40px; }
       }
 
       /* ===== Practice questions ===== */
@@ -237,7 +290,6 @@
       .cta-download__body p { margin: 0; color: #333; font-size: 0.95rem; }
 
       @media (max-width: 600px) {
-        .slide-carousel__btn { width: 38px; height: 38px; font-size: 1.15rem; }
         .practice-question { padding: 14px 16px; }
       }
     </style>
@@ -273,35 +325,84 @@
     <article class="post">
       <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 1</p>
       <h1 class="post__title">Pre-Algebra Class 1: Integers on the Number Line &amp; Absolute Value</h1>
-      <p class="post__dek">The 7 lesson slides from Class 1 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 25 medium-level practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__dek">The 7 lesson slides from Class 1 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 25 challenging practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
       <p class="post__meta"><time datetime="2026-07-09">July 9, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
 
       <div class="post__body">
 
         <!-- ============ CAROUSEL ============ -->
-        <div class="slide-carousel" id="preAlgSlides" aria-label="Class 1 lesson slides">
-          <div class="slide-carousel__stage">
-            <div class="slide-carousel__track" id="carouselTrack">
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-1.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-1.jpg" alt="Slide 1: Natural numbers — the counting numbers 1, 2, 3, ..." width="1356" height="848" loading="eager" /></picture></figure>
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-2.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-2.jpg" alt="Slide 2: Whole numbers — natural numbers together with 0" width="1356" height="848" loading="lazy" /></picture></figure>
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-3.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-3.jpg" alt="Slide 3: Integers — positive and negative whole numbers and zero" width="1356" height="848" loading="lazy" /></picture></figure>
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-4.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-4.jpg" alt="Slide 4: Even and odd numbers" width="1356" height="848" loading="lazy" /></picture></figure>
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-5.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-5.jpg" alt="Slide 5: Divisibility rules for 2, 3, 4, 5, 6, 9, and 10" width="1356" height="848" loading="lazy" /></picture></figure>
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-6.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-6.jpg" alt="Slide 6: Venn diagram showing natural numbers inside whole numbers inside integers" width="1356" height="848" loading="lazy" /></picture></figure>
-              <figure class="slide-carousel__slide"><picture><source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-7.webp" type="image/webp"><img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-7.jpg" alt="Slide 7: Absolute value — distance from zero on the number line" width="1356" height="848" loading="lazy" /></picture></figure>
-            </div>
-            <button class="slide-carousel__btn slide-carousel__btn--prev" id="carouselPrev" aria-label="Previous slide">‹</button>
-            <button class="slide-carousel__btn slide-carousel__btn--next" id="carouselNext" aria-label="Next slide">›</button>
+        <div class="slide-gallery" id="preAlgGallery" aria-label="Class 1 lesson slides">
+            <button class="slide-thumb" data-slide="0" aria-label="Open slide 1: Natural numbers">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-1.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-1.jpg" alt="Slide 1: Natural numbers — the counting numbers 1, 2, 3, ..." width="1356" height="848" loading="eager" />
+              </picture>
+              <span class="slide-thumb__num">Slide 1</span>
+              <span class="slide-thumb__label">Natural numbers</span>
+            </button>
+            <button class="slide-thumb" data-slide="1" aria-label="Open slide 2: Whole numbers">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-2.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-2.jpg" alt="Slide 2: Whole numbers — natural numbers together with 0" width="1356" height="848" loading="lazy" />
+              </picture>
+              <span class="slide-thumb__num">Slide 2</span>
+              <span class="slide-thumb__label">Whole numbers</span>
+            </button>
+            <button class="slide-thumb" data-slide="2" aria-label="Open slide 3: Integers">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-3.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-3.jpg" alt="Slide 3: Integers — positive and negative whole numbers and zero" width="1356" height="848" loading="lazy" />
+              </picture>
+              <span class="slide-thumb__num">Slide 3</span>
+              <span class="slide-thumb__label">Integers</span>
+            </button>
+            <button class="slide-thumb" data-slide="3" aria-label="Open slide 4: Even &amp; odd numbers">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-4.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-4.jpg" alt="Slide 4: Even and odd numbers" width="1356" height="848" loading="lazy" />
+              </picture>
+              <span class="slide-thumb__num">Slide 4</span>
+              <span class="slide-thumb__label">Even &amp; odd numbers</span>
+            </button>
+            <button class="slide-thumb" data-slide="4" aria-label="Open slide 5: Divisibility rules">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-5.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-5.jpg" alt="Slide 5: Divisibility rules for 2, 3, 4, 5, 6, 9, and 10" width="1356" height="848" loading="lazy" />
+              </picture>
+              <span class="slide-thumb__num">Slide 5</span>
+              <span class="slide-thumb__label">Divisibility rules</span>
+            </button>
+            <button class="slide-thumb" data-slide="5" aria-label="Open slide 6: N ⊂ W ⊂ Z Venn diagram">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-6.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-6.jpg" alt="Slide 6: Venn diagram showing natural numbers inside whole numbers inside integers" width="1356" height="848" loading="lazy" />
+              </picture>
+              <span class="slide-thumb__num">Slide 6</span>
+              <span class="slide-thumb__label">N ⊂ W ⊂ Z Venn diagram</span>
+            </button>
+            <button class="slide-thumb" data-slide="6" aria-label="Open slide 7: Absolute value">
+              <picture>
+                <source srcset="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-7.webp" type="image/webp">
+                <img src="/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-7.jpg" alt="Slide 7: Absolute value — distance from zero on the number line" width="1356" height="848" loading="lazy" />
+              </picture>
+              <span class="slide-thumb__num">Slide 7</span>
+              <span class="slide-thumb__label">Absolute value</span>
+            </button>
+        </div>
+        <p class="slide-gallery__hint">Click any slide to open it full-size. Use ← / → to move between slides.</p>
+
+        <!-- Lightbox modal -->
+        <div class="lightbox" id="slideLightbox" role="dialog" aria-modal="true" aria-label="Slide viewer">
+          <div class="lightbox__stage">
+            <button class="lightbox__close" id="lbClose" aria-label="Close">✕ CLOSE</button>
+            <button class="lightbox__btn lightbox__btn--prev" id="lbPrev" aria-label="Previous slide">‹</button>
+            <img class="lightbox__img" id="lbImg" src="" alt="" />
+            <button class="lightbox__btn lightbox__btn--next" id="lbNext" aria-label="Next slide">›</button>
+            <p class="lightbox__meta"><strong id="lbNum">Slide 1</strong> of 7 &nbsp;·&nbsp; <span id="lbTitle"></span></p>
           </div>
-          <div class="slide-carousel__dots" id="carouselDots"></div>
-          <div class="slide-carousel__meta">
-            <span class="slide-carousel__counter"><span id="carouselNow">1</span> / 7</span>
-            <span>Use ← → keys, swipe on mobile, or tap the dots.</span>
-          </div>
-          <p class="slide-carousel__caption">The 7 slides from Class 1 — natural numbers, whole numbers, integers, even/odd, divisibility, the Venn N ⊂ W ⊂ Z, and absolute value.</p>
         </div>
 
-        <p><strong>What this lesson covers.</strong> Class 1 of our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra course</a> anchors the whole year. Students learn the number-line home of every kind of number they will meet — natural numbers, whole numbers, integers — plus the two ideas they will lean on all semester: divisibility rules and absolute value as distance from zero. Below are the 7 slides used in class, then 25 medium-level practice questions with step-by-step explanations that stay hidden until your child clicks to reveal.</p>
+        <p><strong>What this lesson covers.</strong> Class 1 of our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra course</a> anchors the whole year. Students learn the number-line home of every kind of number they will meet — natural numbers, whole numbers, integers — plus the two ideas they will lean on all semester: divisibility rules and absolute value as distance from zero. Below are the 7 slides used in class, then 25 challenging practice questions with step-by-step explanations that stay hidden until your child clicks to reveal.</p>
 
         <div class="callout">
           <strong>How to use this page.</strong> Have your child work through all 25 questions on paper first. Then click <em>Show answer &amp; explanation</em> under each question to check one at a time. The point is not to peek — it is to catch misunderstandings early and re-work the explanation until the method feels natural.
@@ -309,243 +410,242 @@
 
         <h2>25 Practice Questions</h2>
 
-        <!-- ========= Natural / Whole / Integers ========= -->
         <div class="section-band">Natural numbers, whole numbers, and integers on the number line (Q1–Q8)</div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q1</span></div>
-          <p class="practice-question__prompt">Give an example of a number that is a whole number but NOT a natural number. Explain why.</p>
+          <p class="practice-question__prompt">The set N of natural numbers, W of whole numbers, and Z of integers satisfy N ⊂ W ⊂ Z. List ALL numbers from this list that are in W but NOT in N: -6, 0, 3, -1, 5, 0.5, -0.25. Then explain in one sentence why the decimals do not belong to Z at all.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">0</p>
-            <p class="why"><strong>Why.</strong> Natural numbers start at 1 (N = {1, 2, 3, ...}). Whole numbers start at 0 (W = {0, 1, 2, 3, ...}). So 0 is the only whole number that is not a natural number.</p>
+            <p class="answer">Only 0 is in W but not in N.</p>
+            <p class="why"><strong>Why.</strong> N = {1, 2, 3, ...} starts at 1; W = {0, 1, 2, 3, ...} adds 0. So among the integers listed (-6, 0, 3, -1, 5), only 0 is in W but not in N. The negatives -6 and -1 are in Z but not in W. The decimals 0.5 and -0.25 are not integers at all because integers have no fractional part — they are rational numbers (in Q), not in Z.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q2</span></div>
-          <p class="practice-question__prompt">Write the next three natural numbers after 47.</p>
+          <p class="practice-question__prompt">Find two consecutive natural numbers whose sum is 4 more than three times the smaller one. Write both an equation and the two numbers.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">48, 49, 50</p>
-            <p class="why"><strong>Why.</strong> Natural numbers are the counting numbers. Just add 1 each time: 47 + 1 = 48, 48 + 1 = 49, 49 + 1 = 50.</p>
+            <p class="answer">Equation: n + (n+1) = 3n + 4. Numbers: n = -3 has no natural solution... check again: 2n + 1 = 3n + 4 gives n = -3, which is NOT a natural number, so no such pair exists.</p>
+            <p class="why"><strong>Why.</strong> Let the smaller number be n and the larger n + 1. Sum = n + (n + 1) = 2n + 1. Three times the smaller plus 4 = 3n + 4. Set equal: 2n + 1 = 3n + 4  →  -3 = n. But n = -3 is not a natural number (natural numbers start at 1). So the honest answer is: no pair of consecutive natural numbers has this property. The equation has a solution in Z, but not in N. This is why the set you are working in matters.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q3</span></div>
-          <p class="practice-question__prompt">On a number line, which is farther to the LEFT: −8 or −3?</p>
+          <p class="practice-question__prompt">On a number line, point A is at -14 and point B is at 22. Point M is the MIDPOINT of AB. What integer is M at, and how far is M from -14?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">−8</p>
-            <p class="why"><strong>Why.</strong> On a number line, negatives go left of 0. The bigger the negative sign, the farther left. −8 is 8 units left of 0; −3 is only 3 units left. So −8 is farther left.</p>
+            <p class="answer">M = 4, and M is 18 units from -14.</p>
+            <p class="why"><strong>Why.</strong> Midpoint of two integers a and b on the number line is (a + b) / 2. So M = (-14 + 22) / 2 = 8 / 2 = 4. Distance from -14 to 4 = |4 - (-14)| = |18| = 18 units. (Sanity check: distance from 4 to 22 is also |22 - 4| = 18. Same distance either way — that's what midpoint means.)</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q4</span></div>
-          <p class="practice-question__prompt">Order these integers from LEAST to GREATEST: 5, −7, 0, −2, 3, −10.</p>
+          <p class="practice-question__prompt">Order from LEAST to GREATEST: -|{-11}|, -(-8), |{-6}| - |{-3}|, -(3 - 10), 0.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">−10, −7, −2, 0, 3, 5</p>
-            <p class="why"><strong>Why.</strong> Line them up on the number line. The most negative is smallest. −10 &lt; −7 &lt; −2 &lt; 0 &lt; 3 &lt; 5.</p>
+            <p class="answer">-11, 0, 3, 7, 8</p>
+            <p class="why"><strong>Why.</strong> Simplify each: -|-11| = -(11) = -11.  -(-8) = 8.  |-6| - |-3| = 6 - 3 = 3.  -(3 - 10) = -(-7) = 7.  0 = 0. Now order: -11 &lt; 0 &lt; 3 &lt; 7 &lt; 8.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q5</span></div>
-          <p class="practice-question__prompt">Fill in the blank with &lt; or &gt;: −6 ___ −9.</p>
+          <p class="practice-question__prompt">Fill each blank with &lt; , &gt; , or = and briefly justify:  (a) -(-15) ___ |-15|   (b) -|{-9}| ___ -(-9)   (c) -(-(-4)) ___ -|4|</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">&gt;</p>
-            <p class="why"><strong>Why.</strong> On the number line, −6 is to the RIGHT of −9 (closer to 0), so −6 is greater than −9. −6 &gt; −9.</p>
+            <p class="answer">(a) =   (b) &lt;   (c) =</p>
+            <p class="why"><strong>Why.</strong> (a) -(-15) = 15 and |-15| = 15, so equal. (b) -|-9| = -9 and -(-9) = 9, so -9 &lt; 9. (c) -(-(-4)) means take -4, negate to 4, negate to -4. And -|4| = -4. So both equal -4.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q6</span></div>
-          <p class="practice-question__prompt">The temperature at 6 a.m. was −4 degrees C. By noon, it rose 11 degrees. What is the temperature at noon?</p>
+          <p class="practice-question__prompt">At 6 a.m. in Fairbanks the temperature was -18 °F. It rose 4 °F per hour until noon, then FELL 3 °F per hour until 6 p.m. What was the temperature at 6 p.m.?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">7 degrees C</p>
-            <p class="why"><strong>Why.</strong> Start at −4 and move 11 units to the right on the number line: −4 + 11 = 7. So the temperature at noon is 7 degrees C.</p>
+            <p class="answer">-12 °F</p>
+            <p class="why"><strong>Why.</strong> 6 a.m. to noon = 6 hours rising at 4 °F/hr → rise of 6 × 4 = 24 °F. Noon temp = -18 + 24 = 6 °F. Noon to 6 p.m. = 6 hours falling at 3 °F/hr → drop of 6 × 3 = 18 °F. 6 p.m. temp = 6 - 18 = -12 °F.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q7</span></div>
-          <p class="practice-question__prompt">A submarine is at −180 feet (180 feet below sea level). It descends another 65 feet. What is its new depth as an integer?</p>
+          <p class="practice-question__prompt">A submarine at -240 feet ascends at 15 feet per minute for 6 minutes, then descends at 22 feet per minute for 5 minutes. What is its final depth as an integer, and is it above or below its starting point?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">−245 feet</p>
-            <p class="why"><strong>Why.</strong> Descending means going more negative. −180 + (−65) = −245. The submarine is at −245 feet.</p>
+            <p class="answer">-260 feet; 20 feet BELOW the starting point.</p>
+            <p class="why"><strong>Why.</strong> Ascent (up = positive): +15 × 6 = +90. After ascent: -240 + 90 = -150 feet. Descent (down = negative): -22 × 5 = -110. Final: -150 + (-110) = -260 feet. Compared with starting -240: -260 - (-240) = -20, so 20 feet BELOW the start.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q8</span></div>
-          <p class="practice-question__prompt">Sara owes her brother $12 (write it as an integer). She then earns $20 and pays her brother back in full. How much money does she have left?</p>
+          <p class="practice-question__prompt">Kai's checking account started at -$42 (overdrawn). He deposited $85, paid a $30 bill, was charged a $35 overdraft fee earlier that was reversed as a credit of $35, and finally withdrew $18. Write a single signed-number expression that gives the ending balance and evaluate it.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">$8</p>
-            <p class="why"><strong>Why.</strong> Owing $12 = −12. She earns $20 (+20), so −12 + 20 = 8. She has $8 left.</p>
+            <p class="answer">-42 + 85 - 30 + 35 - 18 = $30</p>
+            <p class="why"><strong>Why.</strong> Line up the signed values: start -42, +85 deposit, -30 bill paid, +35 reversal credit, -18 withdrawal. -42 + 85 = 43. 43 - 30 = 13. 13 + 35 = 48. 48 - 18 = 30. Ending balance = $30 (positive, no longer overdrawn).</p>
           </details>
         </div>
 
-        <!-- ========= Absolute Value ========= -->
+
         <div class="section-band">Absolute value (Q9–Q14)</div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q9</span></div>
-          <p class="practice-question__prompt">What is |−15|?</p>
+          <p class="practice-question__prompt">Evaluate: |{-8}| − |{5 − 12}| + |{-3}| × |{-4}|.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">15</p>
-            <p class="why"><strong>Why.</strong> Absolute value is the distance from 0 on the number line, and distance is always positive. |−15| = 15.</p>
+            <p class="answer">13</p>
+            <p class="why"><strong>Why.</strong> |-8| = 8.  |5 - 12| = |-7| = 7.  |-3| × |-4| = 3 × 4 = 12. Now follow order of operations (multiplication before subtraction/addition, left to right): 8 - 7 + 12 = 1 + 12 = 13.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q10</span></div>
-          <p class="practice-question__prompt">What is |7| + |−4|?</p>
+          <p class="practice-question__prompt">Solve for all values of x: |x| = 17.  Then solve: |x - 3| = 10.  List every solution for each.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">11</p>
-            <p class="why"><strong>Why.</strong> |7| = 7 and |−4| = 4 (distance is always positive). 7 + 4 = 11.</p>
+            <p class="answer">x = 17 or -17;   x = 13 or -7</p>
+            <p class="why"><strong>Why.</strong> |x| = 17 means x is 17 units from 0, so x = 17 or x = -17. |x - 3| = 10 means x - 3 is 10 units from 0, so x - 3 = 10 (→ x = 13) OR x - 3 = -10 (→ x = -7). Always TWO solutions when the right side is positive.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q11</span></div>
-          <p class="practice-question__prompt">Solve: |−9| − |6|.</p>
+          <p class="practice-question__prompt">True or false, and explain each briefly: (a) |a + b| = |a| + |b| for every pair of integers a, b.  (b) |a × b| = |a| × |b| for every pair of integers a, b.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">3</p>
-            <p class="why"><strong>Why.</strong> |−9| = 9 and |6| = 6. Then 9 − 6 = 3.</p>
+            <p class="answer">(a) False.  (b) True.</p>
+            <p class="why"><strong>Why.</strong> (a) Try a = 5, b = -3: |5 + (-3)| = |2| = 2, but |5| + |-3| = 5 + 3 = 8. Not equal. The two sides are equal only when a and b have the same sign (or one is 0). (b) Try any pair: |(-4) × 3| = |-12| = 12, and |-4| × |3| = 4 × 3 = 12. This one is ALWAYS true because multiplying signs just flips positive/negative, and absolute value drops the sign.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q12</span></div>
-          <p class="practice-question__prompt">Find two different integers whose absolute value is 12.</p>
+          <p class="practice-question__prompt">Find all integers x that satisfy BOTH |x| ≤ 5 AND x ≠ 0.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">12 and −12</p>
-            <p class="why"><strong>Why.</strong> |x| = 12 means x is 12 units from 0. Two numbers fit: 12 (right of 0) and −12 (left of 0).</p>
+            <p class="answer">-5, -4, -3, -2, -1, 1, 2, 3, 4, 5 (ten integers)</p>
+            <p class="why"><strong>Why.</strong> |x| ≤ 5 means x is at most 5 units from 0, so -5 ≤ x ≤ 5. The integers in that range are -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 (eleven integers). Removing x = 0 leaves ten.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q13</span></div>
-          <p class="practice-question__prompt">A hiker walked 4 miles east, then 7 miles west from her starting point. Use absolute value to find the TOTAL distance she walked.</p>
+          <p class="practice-question__prompt">A drone starts at position 0 on a number line and makes these moves in order: +8, -15, +6, -3, +12, -20. (a) What is its final position? (b) What is the TOTAL DISTANCE it traveled?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">11 miles</p>
-            <p class="why"><strong>Why.</strong> Distance is always positive. Total distance = |4| + |−7| = 4 + 7 = 11 miles. (Her position changed, but she still walked 11 miles.)</p>
+            <p class="answer">(a) -12   (b) 64</p>
+            <p class="why"><strong>Why.</strong> (a) Final position = signed sum: 8 - 15 + 6 - 3 + 12 - 20 = (8 + 6 + 12) - (15 + 3 + 20) = 26 - 38 = -12. (b) Total distance = sum of absolute values: |8| + |-15| + |6| + |-3| + |12| + |-20| = 8 + 15 + 6 + 3 + 12 + 20 = 64. Position tells you WHERE the drone ended up; distance tells you HOW FAR it flew.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q14</span></div>
-          <p class="practice-question__prompt">Which is larger: |−20| or |15|? Explain briefly.</p>
+          <p class="practice-question__prompt">Two points P and Q are on the number line. |P| = 9, |Q| = 4, and P is to the LEFT of Q. Find every possible pair (P, Q) and the distance from P to Q in each case.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">|−20| is larger</p>
-            <p class="why"><strong>Why.</strong> |−20| = 20 and |15| = 15. Since 20 &gt; 15, |−20| is larger. Absolute value ignores the sign — only the distance from 0 matters.</p>
+            <p class="answer">(-9, -4) distance 5;  (-9, 4) distance 13. Two valid pairs.</p>
+            <p class="why"><strong>Why.</strong> |P| = 9 means P = 9 or P = -9. |Q| = 4 means Q = 4 or Q = -4. P must be LEFT of Q on the number line, so P &lt; Q. Test all four combinations: (9, 4) no, 9 &gt; 4. (9, -4) no, 9 &gt; -4. (-9, 4) yes, -9 &lt; 4, distance = |4 - (-9)| = 13. (-9, -4) yes, -9 &lt; -4, distance = |-4 - (-9)| = 5. So two valid pairs.</p>
           </details>
         </div>
 
-        <!-- ========= Even/Odd/Divisibility ========= -->
-        <div class="section-band">Even, odd, and divisibility rules (Q15–Q19)</div>
+
+        <div class="section-band">Divisibility (Q15–Q19)</div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q15</span></div>
-          <p class="practice-question__prompt">Is 246 even or odd? How do you know without dividing?</p>
+          <p class="practice-question__prompt">The number 3_4_ is a 4-digit number (each blank is one digit). Find every value of the blanks that makes the number divisible by BOTH 4 AND 9. Give all solutions.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">Even</p>
-            <p class="why"><strong>Why.</strong> Look at the last digit: 6. If the last digit is 0, 2, 4, 6, or 8, the number is even. So 246 is even.</p>
+            <p class="answer">3240, 3348, 3744. Three solutions.</p>
+            <p class="why"><strong>Why.</strong> Let the number be 3A4B where A and B are digits 0-9. (1) Divisible by 9 means the digit sum 3 + A + 4 + B = 7 + A + B is a multiple of 9. Since 0 ≤ A + B ≤ 18, the possibilities are A + B = 2 or A + B = 11. (2) Divisible by 4 means the last two digits '4B' form a multiple of 4. The multiples of 4 between 40 and 49 are 40, 44, 48, so B ∈ {0, 4, 8}. Combine the two conditions: B = 0 forces A = 2 → 3240. B = 4 forces A = 7 (only A + B = 11 works) → 3744. B = 8 forces A = 3 (only A + B = 11 works) → 3348. Verify: 3240 = 9 × 360 = 4 × 810 ✓, 3348 = 9 × 372 = 4 × 837 ✓, 3744 = 9 × 416 = 4 × 936 ✓.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q16</span></div>
-          <p class="practice-question__prompt">Is 1,584 divisible by 3? Show your work using the divisibility rule.</p>
+          <p class="practice-question__prompt">A number N leaves remainder 3 when divided by 7 and remainder 2 when divided by 5. What is the SMALLEST positive N?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">Yes</p>
-            <p class="why"><strong>Why.</strong> Rule: a number is divisible by 3 if the sum of its digits is divisible by 3. 1 + 5 + 8 + 4 = 18. 18 is divisible by 3 (18 ÷ 3 = 6), so 1,584 is divisible by 3.</p>
+            <p class="answer">N = 17</p>
+            <p class="why"><strong>Why.</strong> List numbers that leave remainder 3 when divided by 7: 3, 10, 17, 24, 31, 38, ... Test each for remainder 2 when divided by 5: 3 ÷ 5 = 0 R 3 (no). 10 ÷ 5 = 2 R 0 (no). 17 ÷ 5 = 3 R 2 (yes!). So N = 17. Check: 17 ÷ 7 = 2 R 3 ✓, 17 ÷ 5 = 3 R 2 ✓.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q17</span></div>
-          <p class="practice-question__prompt">Is 4,725 divisible by 5? By 10? Explain each.</p>
+          <p class="practice-question__prompt">The number 12! (read '12 factorial') = 12 × 11 × 10 × 9 × 8 × 7 × 6 × 5 × 4 × 3 × 2 × 1. Without computing 12!, decide: (a) Is 12! divisible by 100?  (b) By 1000?  (c) What is the largest power of 10 that divides 12!?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">By 5: yes. By 10: no.</p>
-            <p class="why"><strong>Why.</strong> Rule for 5: last digit must be 0 or 5. 4,725 ends in 5, so YES divisible by 5. Rule for 10: last digit must be 0. 4,725 ends in 5, not 0, so NOT divisible by 10.</p>
+            <p class="answer">(a) Yes. (b) No. (c) 10^2 = 100.</p>
+            <p class="why"><strong>Why.</strong> Powers of 10 come from pairs of 2s and 5s in the factorization. Count 5s first (fewer than 2s): multiples of 5 in {1,...,12} are 5 and 10, contributing one 5 each → exactly TWO factors of 5. There are plenty of 2s. So 12! has 10^2 = 100 as a factor but not 10^3 = 1000. Divisible by 100 ✓, not by 1000.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q18</span></div>
-          <p class="practice-question__prompt">Find the smallest 3-digit number that is divisible by BOTH 2 AND 3.</p>
+          <p class="practice-question__prompt">Find the smallest positive integer that is a multiple of 6 AND leaves remainder 1 when divided by 5. Also find the LARGEST such number less than 100.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">102</p>
-            <p class="why"><strong>Why.</strong> Divisible by 2 AND 3 means divisible by 6. Smallest 3-digit number is 100, but 100 ÷ 6 is not whole. Try 102: 102 ÷ 2 = 51 (yes, even) and 1 + 0 + 2 = 3, divisible by 3. So 102 works.</p>
+            <p class="answer">Smallest = 6. Largest under 100 = 96.</p>
+            <p class="why"><strong>Why.</strong> Multiples of 6: 6, 12, 18, 24, 30, 36, ... Divide each by 5 and check remainder: 6÷5 = 1 R 1 ✓ (smallest). Next candidates: keep adding 30 (LCM of 6 and 5) since after that the pattern repeats — wait, does 12 work? 12÷5 = 2 R 2, no. 18÷5 = 3 R 3, no. 24÷5 = 4 R 4, no. 30÷5 = 6 R 0, no. 36÷5 = 7 R 1 ✓. Pattern is every +30: 6, 36, 66, 96, 126, ... The largest under 100 is 96.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q19</span></div>
-          <p class="practice-question__prompt">A teacher has 96 students and wants to make equal teams. Can she make teams of 4 with no one left over? Show the divisibility check.</p>
+          <p class="practice-question__prompt">A number is called 'bright' if it is divisible by 3 but NOT by 9. How many bright numbers are there from 1 to 100 inclusive?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">Yes</p>
-            <p class="why"><strong>Why.</strong> Rule for 4: the LAST TWO digits must form a number divisible by 4. Last two digits of 96 = 96. 96 ÷ 4 = 24 exactly, so yes — 96 students split into 24 teams of 4.</p>
+            <p class="answer">22</p>
+            <p class="why"><strong>Why.</strong> Multiples of 3 from 1 to 100: floor(100 / 3) = 33 numbers (3, 6, 9, ..., 99). Multiples of 9 from 1 to 100: floor(100 / 9) = 11 numbers (9, 18, ..., 99). Bright = divisible by 3 but not by 9 = 33 - 11 = 22 numbers.</p>
           </details>
         </div>
 
-        <!-- ========= Venn / Classification ========= -->
+
         <div class="section-band">Classifying numbers with the N ⊂ W ⊂ Z Venn diagram (Q20–Q22)</div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q20</span></div>
-          <p class="practice-question__prompt">Classify the number −3: is it a natural number, whole number, integer? (Check all that apply.)</p>
+          <p class="practice-question__prompt">For each number, list every set it belongs to from {N, W, Z}:  (a) 0   (b) -17   (c) 42   (d) √25 (the positive square root)   (e) -√9</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">Integer only</p>
-            <p class="why"><strong>Why.</strong> Natural numbers start at 1 (positive only). Whole numbers start at 0 (no negatives). Integers include negatives. So −3 is an integer, but not natural or whole.</p>
+            <p class="answer">(a) W, Z (not N). (b) Z only. (c) N, W, Z. (d) N, W, Z (since √25 = 5). (e) Z only (since -√9 = -3).</p>
+            <p class="why"><strong>Why.</strong> N = {1, 2, 3, ...}, W = N ∪ {0}, Z = W ∪ negatives. Simplify each square root FIRST: √25 = 5 (a natural number), -√9 = -3 (a negative integer). Then classify each simplified value. This is why the Venn N ⊂ W ⊂ Z matters: every N is a W and every W is a Z, but the reverse is not true.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q21</span></div>
-          <p class="practice-question__prompt">True or false: Every whole number is an integer. Explain.</p>
+          <p class="practice-question__prompt">True or false, and give a counterexample where false:  (a) The sum of two integers is always an integer.  (b) The difference of two whole numbers is always a whole number.  (c) The product of two natural numbers is always a natural number.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">True</p>
-            <p class="why"><strong>Why.</strong> Whole numbers W = {0, 1, 2, 3, ...}. Integers Z include all whole numbers AND their negatives. So every whole number fits inside the set of integers. From the Venn diagram: N is inside W, W is inside Z.</p>
+            <p class="answer">(a) True. (b) False. (c) True.</p>
+            <p class="why"><strong>Why.</strong> (a) Z is closed under addition — any two integers add to an integer. Always true. (b) Not always! 3 - 7 = -4, and -4 is NOT a whole number. W is NOT closed under subtraction. (c) N is closed under multiplication — the product of two positive counting numbers is another positive counting number. Always true. These 'closure' properties are the seed of why we NEED negative numbers (Z) and later fractions (Q).</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q22</span></div>
-          <p class="practice-question__prompt">Give a number that is an integer but NOT a whole number.</p>
+          <p class="practice-question__prompt">Give ONE number in each category, or write 'impossible' with a one-sentence reason:  (a) An integer that is not a whole number.  (b) A whole number that is not a natural number.  (c) A natural number that is not an integer.  (d) An integer that is not a rational number.</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">Any negative integer (for example, −5)</p>
-            <p class="why"><strong>Why.</strong> Whole numbers are 0, 1, 2, 3, ... (no negatives). Integers include the negatives. So any negative integer like −5, −1, −100 works.</p>
+            <p class="answer">(a) -5 (any negative). (b) 0. (c) Impossible. (d) Impossible.</p>
+            <p class="why"><strong>Why.</strong> (a) Any negative like -5 is in Z but not W. (b) Only 0 is in W but not N. (c) Every natural number IS an integer since N ⊂ Z, so impossible. (d) Every integer IS a rational number (you can write it as n/1), so impossible. These questions test whether the student truly sees N ⊂ W ⊂ Z ⊂ Q as a nested chain.</p>
           </details>
         </div>
 
-        <!-- ========= Word Problems ========= -->
-        <div class="section-band">Word problems mixing integers and absolute value (Q23–Q25)</div>
+
+        <div class="section-band">Word problems mixing integers, absolute value, and divisibility (Q23–Q25)</div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q23</span></div>
-          <p class="practice-question__prompt">Marcus withdraws $25 from his bank account three times. Write this as an integer expression and find the total change to his balance.</p>
+          <p class="practice-question__prompt">A stock opened Monday at $84. It moved by these amounts each day: Mon +6, Tue -11, Wed -4, Thu +9, Fri -15. (a) What is the closing price Friday? (b) What was the HIGHEST price the stock touched at close during the week, and on which day? (c) What was the total absolute price movement (sum of the daily |changes|)?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">−75</p>
-            <p class="why"><strong>Why.</strong> Each withdrawal is −25. Three withdrawals: 3 × (−25) = −75. His balance goes down by $75, so the change is −75.</p>
+            <p class="answer">(a) $69. (b) Monday, $90. (c) $45.</p>
+            <p class="why"><strong>Why.</strong> Track running closes: Open 84. Mon close = 84 + 6 = 90. Tue = 90 - 11 = 79. Wed = 79 - 4 = 75. Thu = 75 + 9 = 84. Fri = 84 - 15 = 69. (a) Friday close = $69. (b) Highest close during the week = $90 on Monday. (c) Total movement = |6| + |-11| + |-4| + |9| + |-15| = 6 + 11 + 4 + 9 + 15 = $45. Notice how NET change (69 - 84 = -$15) is much smaller than TOTAL movement ($45) — the classic distance-vs-displacement distinction from Q13.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q24</span></div>
-          <p class="practice-question__prompt">The elevator starts at floor 0 (ground floor). It goes UP 8 floors, then DOWN 3 floors, then DOWN 6 more. What floor is it on now? Write it as an integer.</p>
+          <p class="practice-question__prompt">In a card game, positive cards score their face value and negative cards score minus their face value. Amara drew: +7, -4, +10, -6, +5, and a mystery card X. Her total score was -3. (a) Find X. (b) The winner has the score with the SMALLEST absolute value (closest to zero). If Ben's score is +8 and Cai's is -6, who wins the game between the three?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">−1</p>
-            <p class="why"><strong>Why.</strong> Start at 0. +8 = 8. Then 8 − 3 = 5. Then 5 − 6 = −1. The elevator is at floor −1 (one basement level).</p>
+            <p class="answer">(a) X = -15. (b) Amara wins (|score| = 3, smallest).</p>
+            <p class="why"><strong>Why.</strong> (a) Sum without X: 7 - 4 + 10 - 6 + 5 = 12. With X: 12 + X = -3 → X = -15. (b) Absolute values: |Amara| = |-3| = 3, |Ben| = |8| = 8, |Cai| = |-6| = 6. Smallest is 3, so Amara wins. This is a real convention in some games (like closest-to-target) — direction doesn't matter, only distance from the goal.</p>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q25</span></div>
-          <p class="practice-question__prompt">On a math test, Ana's score changed by these amounts from question to question: +4, −3, +6, −8, +2. What is the NET change in her score, and what is the TOTAL DISTANCE her score moved (use absolute value)?</p>
+          <p class="practice-question__prompt">An elevator has an emergency-power rule: it can safely operate as long as the SUM of its floor changes (with sign) stays within ±10 of the ground floor, AND the total absolute distance traveled is at most 60 floors. Starting at floor 0, the elevator moves: +5, -8, +12, -6, +3, -4, +9. (a) After all 7 moves, what is its position? (b) What is its total absolute distance? (c) Did it BREAK either rule at any point during the trip? If yes, which rule and on which move?</p>
           <details><summary>Show answer &amp; explanation</summary>
-            <p class="answer">Net change = +1. Total distance = 23.</p>
-            <p class="why"><strong>Why.</strong> Net change: add signed values: 4 + (−3) + 6 + (−8) + 2 = 1. Total distance: use absolute values (distance is always positive): |4| + |−3| + |6| + |−8| + |2| = 4 + 3 + 6 + 8 + 2 = 23. This is the classic "position vs. path length" distinction — the same idea shows up in physics as displacement vs. distance.</p>
+            <p class="answer">(a) +11. (b) 47 floors. (c) Yes — it broke the ±10 position rule on move 3 (reaches +9, safe) and on move 7 (reaches +11, unsafe). Detail: after move 3 position is +9 (safe); after move 7 it hits +11, breaking the ±10 limit.</p>
+            <p class="why"><strong>Why.</strong> Track running position after each move: 0 → +5 → -3 → +9 → +3 → +6 → +2 → +11. So (a) final = +11. (b) Total absolute distance: 5 + 8 + 12 + 6 + 3 + 4 + 9 = 47 floors (under 60, so distance rule OK). (c) Check position after each step against ±10: 5 ✓, -3 ✓, 9 ✓, 3 ✓, 6 ✓, 2 ✓, 11 ✗ (breaks +10 limit on the 7th move). So the position rule fails on move 7. This models real safety constraints: engineers care about BOTH the peak deviation and the cumulative wear — two different absolute-value ideas at once.</p>
           </details>
         </div>
 
@@ -583,64 +683,82 @@
     <div id="footer-mount"></div>
     <script src="/partials.js"></script>
 
-    <!-- Carousel JS -->
+    <!-- Slide gallery lightbox -->
     <script>
     (function(){
-      var track = document.getElementById('carouselTrack');
-      var prev = document.getElementById('carouselPrev');
-      var next = document.getElementById('carouselNext');
-      var dotsContainer = document.getElementById('carouselDots');
-      var counter = document.getElementById('carouselNow');
-      if (!track) return;
-      var slides = track.querySelectorAll('.slide-carousel__slide');
-      var total = slides.length;
+      var slides = [
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-1.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-1.webp", alt:"Slide 1: Natural numbers — the counting numbers 1, 2, 3, ...", title:"Natural numbers"},
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-2.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-2.webp", alt:"Slide 2: Whole numbers — natural numbers together with 0", title:"Whole numbers"},
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-3.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-3.webp", alt:"Slide 3: Integers — positive and negative whole numbers and zero", title:"Integers"},
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-4.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-4.webp", alt:"Slide 4: Even and odd numbers", title:"Even &amp; odd numbers"},
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-5.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-5.webp", alt:"Slide 5: Divisibility rules for 2, 3, 4, 5, 6, 9, and 10", title:"Divisibility rules"},
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-6.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-6.webp", alt:"Slide 6: Venn diagram showing natural numbers inside whole numbers inside integers", title:"N ⊂ W ⊂ Z Venn diagram"},
+        {jpg:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-7.jpg", webp:"/assets/blog/pre-algebra-class-1-integers-number-line-absolute-value/slide-7.webp", alt:"Slide 7: Absolute value — distance from zero on the number line", title:"Absolute value"}
+      ];
+      var gallery = document.getElementById('preAlgGallery');
+      var lb = document.getElementById('slideLightbox');
+      var img = document.getElementById('lbImg');
+      var titleEl = document.getElementById('lbTitle');
+      var numEl = document.getElementById('lbNum');
+      var closeBtn = document.getElementById('lbClose');
+      var prevBtn = document.getElementById('lbPrev');
+      var nextBtn = document.getElementById('lbNext');
+      if (!gallery || !lb) return;
       var idx = 0;
 
-      // Build dots
-      for (var i = 0; i < total; i++) {
-        var d = document.createElement('button');
-        d.className = 'slide-carousel__dot';
-        d.setAttribute('aria-label', 'Go to slide ' + (i+1));
-        d.dataset.i = i;
-        d.addEventListener('click', function(e){ go(parseInt(e.currentTarget.dataset.i,10)); });
-        dotsContainer.appendChild(d);
+      function show(i){
+        if (i < 0) i = 0;
+        if (i > slides.length - 1) i = slides.length - 1;
+        idx = i;
+        var s = slides[idx];
+        // Prefer webp when browser supports it
+        var testImg = new Image();
+        testImg.onload = function(){ img.src = s.webp; };
+        testImg.onerror = function(){ img.src = s.jpg; };
+        img.src = s.jpg; // start with jpg fallback, upgrade to webp async
+        testImg.src = s.webp;
+        img.alt = s.alt;
+        titleEl.textContent = s.title;
+        numEl.textContent = 'Slide ' + (idx + 1);
+        prevBtn.disabled = (idx === 0);
+        nextBtn.disabled = (idx === slides.length - 1);
       }
-      var dots = dotsContainer.querySelectorAll('.slide-carousel__dot');
+      function open(i){
+        show(i);
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
 
-      function render(){
-        track.style.transform = 'translateX(-' + (idx * 100) + '%)';
-        counter.textContent = (idx + 1);
-        for (var i = 0; i < dots.length; i++) {
-          dots[i].classList.toggle('slide-carousel__dot--active', i === idx);
-        }
-        prev.disabled = (idx === 0);
-        next.disabled = (idx === total - 1);
-      }
-      function go(n){
-        if (n < 0) n = 0;
-        if (n > total - 1) n = total - 1;
-        idx = n;
-        render();
-      }
-      prev.addEventListener('click', function(){ go(idx - 1); });
-      next.addEventListener('click', function(){ go(idx + 1); });
-
-      // Keyboard
+      gallery.addEventListener('click', function(e){
+        var btn = e.target.closest('.slide-thumb');
+        if (!btn) return;
+        open(parseInt(btn.dataset.slide, 10));
+      });
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function(){ show(idx - 1); });
+      nextBtn.addEventListener('click', function(){ show(idx + 1); });
+      lb.addEventListener('click', function(e){
+        if (e.target === lb) close();
+      });
       document.addEventListener('keydown', function(e){
-        if (e.key === 'ArrowLeft') { go(idx - 1); }
-        else if (e.key === 'ArrowRight') { go(idx + 1); }
+        if (!lb.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(idx - 1);
+        else if (e.key === 'ArrowRight') show(idx + 1);
       });
 
-      // Touch/swipe
+      // Touch swipe
       var startX = 0, isDown = false;
-      track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; isDown = true; }, {passive:true});
-      track.addEventListener('touchend', function(e){
+      lb.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; isDown = true; }, {passive:true});
+      lb.addEventListener('touchend', function(e){
         if (!isDown) return; isDown = false;
         var dx = e.changedTouches[0].clientX - startX;
-        if (Math.abs(dx) > 40) { if (dx < 0) go(idx + 1); else go(idx - 1); }
+        if (Math.abs(dx) > 40) { if (dx < 0) show(idx + 1); else show(idx - 1); }
       });
-
-      render();
     })();
     </script>
   </body>
