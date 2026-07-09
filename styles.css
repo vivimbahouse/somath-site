@@ -2292,3 +2292,55 @@ body { padding-top: 168px; }
   .course-teacher__inner { flex-direction: column; align-items: flex-start; gap: 16px; text-align: left; }
   .course-teacher__photo { flex: 0 0 96px; width: 96px; height: 96px; }
 }
+
+/* ===== SOMATH highlight: makes SOMATH stand out in comparison tables/cards ===== */
+/* Card variant: applies to .program-card, .cmp-card, or any comparison block */
+.program-card.somath-highlight,
+.cmp-card.somath-highlight,
+.somath-highlight {
+  background: linear-gradient(180deg, #f5f0e6 0%, #ffffff 55%) !important;
+  border: 1px solid #c89a3a !important;
+  border-left: 4px solid #1f3d2e !important;
+  box-shadow: 0 4px 14px rgba(31, 61, 46, 0.08);
+  position: relative;
+}
+.somath-highlight h3,
+.somath-highlight h4 { color: #1f3d2e; }
+
+/* Small badge label — inline pill next to the SOMATH name */
+.somath-badge {
+  display: inline-block;
+  background: #1f3d2e;
+  color: #f5f0e6;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  vertical-align: middle;
+  margin-left: 8px;
+  border: 1px solid #c89a3a;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.somath-badge--gold {
+  background: #c89a3a;
+  color: #1f3d2e;
+  border-color: #1f3d2e;
+}
+
+/* Table cell + row variant */
+.cmp-table td.somath-cell,
+.cmp-table th.somath-cell {
+  background: #f5f0e6 !important;
+  color: #1f3d2e;
+  font-weight: 600;
+  border-bottom: 2px solid #c89a3a;
+}
+.cmp-table tr.somath-row td {
+  background: #f5f0e6 !important;
+  border-top: 1px solid #c89a3a;
+  border-bottom: 1px solid #c89a3a;
+}
+.cmp-table tr.somath-row td:first-child { border-left: 3px solid #1f3d2e; }
