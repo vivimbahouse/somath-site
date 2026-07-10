@@ -742,7 +742,7 @@ async function handleMembershipReservation(request, env) {
   }
 
   const tierLabels = {
-    "little-newtons": "Little Newtons (K–2) · $369/mo",
+    "little-newtons": "Little Newtons (K–2) · $246/mo",
     "core-1x": "Core 1×/week · $489/mo",
     "core-2x": "Core 2×/week · $929/mo",
     "shsat": "SHSAT Prep · $587/mo",
@@ -1023,10 +1023,10 @@ var COURSE_TITLES = {
 // Each course slug maps to the monthly recurring Price the parent subscribes to.
 // Bundled Checkout adds $99 enrollment as a one-time invoice item on top.
 var COURSE_PRICES = {
-  "little-newtons-a":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $369/mo
-  "little-newtons-b":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $369/mo
-  "kid-einsteins-a":               "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $489/mo
-  "kid-einsteins-b":               "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $489/mo
+  "little-newtons-a":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $246/mo (price ID pending Stripe update)
+  "little-newtons-b":              "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $246/mo (price ID pending Stripe update)
+  "kid-einsteins-a":               "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $367/mo (price ID pending Stripe update)
+  "kid-einsteins-b":               "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $367/mo (price ID pending Stripe update)
   "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
