@@ -540,8 +540,8 @@ var WEEKENDS_OFFERINGS = {
   "little-newtons":               { mins: 60,  dayLabel: null,        time: "10:00\u201311:00 AM" },
   "kid-einsteins-a":              { mins: 90,  dayLabel: "Sundays",   time: "11:00 AM\u201312:30 PM" },
   "kid-einsteins-b":              { mins: 90,  dayLabel: "Saturdays", time: "11:00 AM\u201312:30 PM" },
-  "young-fermats-prealgebra":     { mins: 120, dayLabel: "Sundays",   time: "1:00\u20133:00 PM" },
-  "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Saturdays", time: "1:00\u20133:00 PM" },
+  "young-fermats-prealgebra":     { mins: 120, dayLabel: "Saturdays", time: "1:00\u20133:00 PM" },
+  "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Sundays",   time: "1:00\u20133:00 PM" },
   "young-fermats-algebra-ii":     { mins: 120, dayLabel: "Tuesdays",  time: "6:45\u20138:45 PM" }
 };
 var WEEKENDS_DAY_CHOICES = {
@@ -830,8 +830,8 @@ var COURSE_SCHEDULES = {
   "little-newtons-b":              [{d:"Thursday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM"}],
   "kid-einsteins-a":               [{d:"Monday",t:"3:15 \u2013 4:45 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
   "kid-einsteins-b":               [{d:"Tuesday",t:"3:15 \u2013 4:45 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"}],
-  "young-fermats-prealgebra":      [{d:"Monday",t:"4:45 \u2013 6:45 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
-  "young-fermats-algebra-ignite":  [{d:"Tuesday",t:"4:45 \u2013 6:45 PM"},{d:"Thursday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:45 \u2013 6:45 PM"},{d:"Thursday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-algebra-ignite":  [{d:"Monday",t:"4:45 \u2013 6:45 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"6:45 \u2013 8:45 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:45 \u2013 8:45 PM"}],
   "shsat-prep":                    [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
