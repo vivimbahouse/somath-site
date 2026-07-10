@@ -1759,11 +1759,20 @@ var worker_default = {
       );
     }
     const assetResp = await env.ASSETS.fetch(request);
-    // Long-cache immutable static assets — HTML stays short-cache
-    const IMMUTABLE_RE = /\.(css|js|jpg|jpeg|png|webp|svg|woff2|woff|mp4|ico|gif|avif|ttf|otf)$/i;
+    // Long-cache truly immutable static assets — images, fonts, video
+    // NOTE: root .js and .css files (partials.js, styles.css, etc.) are NOT immutable
+    // because they hold site-wide content like the announcement banner. Give them
+    // a short cache with must-revalidate so edits ship within minutes.
+    const IMMUTABLE_RE = /\.(jpg|jpeg|png|webp|svg|woff2|woff|mp4|ico|gif|avif|ttf|otf)$/i;
+    const SHORT_CACHE_RE = /\.(css|js)$/i;
     if (IMMUTABLE_RE.test(url.pathname)) {
       const headers = new Headers(assetResp.headers);
       headers.set("Cache-Control", "public, max-age=31536000, immutable");
+      return new Response(assetResp.body, { status: assetResp.status, statusText: assetResp.statusText, headers });
+    }
+    if (SHORT_CACHE_RE.test(url.pathname)) {
+      const headers = new Headers(assetResp.headers);
+      headers.set("Cache-Control", "public, max-age=300, must-revalidate");
       return new Response(assetResp.body, { status: assetResp.status, statusText: assetResp.statusText, headers });
     }
     return assetResp;
