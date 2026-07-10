@@ -317,7 +317,7 @@
 
     <div id="footer-mount"></div>
     <div id="sticky-mount"></div>
-    <script src="/partials.js?v=v20260710-246"></script>
+    <script src="/partials.js?v=v20260710-consol"></script>
 
     <script>
       // ============================================================
@@ -336,11 +336,11 @@
 
       // Course catalog. Each entry has the static "what is it" + term-specific dates/times/tuition.
       const COURSES = {
-        "little-newtons-a": {
-          title: "Little Newtons A",
+        "little-newtons": {
+          title: "Little Newtons",
           grade: "Grades 1–2 · Ages 6–8",
           quick: "Number sense, addition/subtraction fluency, fractions first-look, word-problem language.",
-          description: "Little Newtons A is the foundational level of our K–3 program, built for 1st and 2nd graders. First and second grade are the years that decide whether a child grows up confident with numbers or quietly convinced that math isn't for them. We focus on number sense up to 100, addition and subtraction fluency, an honest first look at fractions and measurement, and the language of word problems. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
+          description: "Little Newtons is the foundational level of our K–3 program, built for 1st and 2nd graders. First and second grade are the years that decide whether a child grows up confident with numbers or quietly convinced that math isn't for them. We focus on number sense up to 100, addition and subtraction fluency, an honest first look at fractions and measurement, and the language of word problems. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 1–2 (ages 6–8)",
           syllabus: [
             ['Week 1', 'Number sense to 100 — counting, place value, comparing.'],
@@ -369,44 +369,11 @@
           ],
           link: "/programs#little-newtons"
         },
-        "little-newtons-b": {
-          title: "Little Newtons B",
-          grade: "Grades 2–3 · Ages 7–9",
-          quick: "Next-step foundations: stronger arithmetic fluency, intro multiplication, fractions, richer word problems.",
-          description: "Little Newtons B is the upper level of our K–3 program, built for 2nd and 3rd graders who are ready for the next step. We build on the foundations from A: stronger addition and subtraction fluency, intro to multiplication and division, place-value into the thousands, deeper work with fractions and measurement, and richer multi-step word problems — the bridge into Kid Einsteins. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
-          level: "Grades 2–3 (ages 7–9)",
-          syllabus: [
-            ['Week 1', 'Place value to 1,000 — building, comparing, and ordering larger numbers.'],
-            ['Week 2', 'Two- and three-digit addition and subtraction with regrouping.'],
-            ['Week 3', 'Intro to multiplication — equal groups, arrays, skip counting.'],
-            ['Week 4', 'Fractions on the number line — equivalence and comparing.'],
-            ['Week 5', 'Multi-step word problems with the four operations.']
-          ],
-          fallSyllabusOverride: [
-            ["Class 1", "Place value review and three-digit numbers."],
-            ["Class 2", "Comparing and ordering numbers to 1,000."],
-            ["Class 3", "Two-digit addition with regrouping."],
-            ["Class 4", "Two-digit subtraction with regrouping."],
-            ["Class 5", "Three-digit addition with regrouping."],
-            ["Class 6", "Three-digit subtraction with regrouping."],
-            ["Class 7", "Equal groups and intro to multiplication."],
-            ["Class 8", "Multiplication facts ×2, ×5, ×10 with arrays."],
-            ["Class 9", "Multiplication facts ×3 and ×4."],
-            ["Class 10", "Fractions on the number line — halves, thirds, fourths."],
-            ["Class 11", "Equivalent fractions."],
-            ["Class 12", "Measurement — length, mass, liquid volume."],
-            ["Class 13", "Telling time to the minute and elapsed time."],
-            ["Class 14", "Money — making change and solving word problems."],
-            ["Class 15", "Geometry — quadrilaterals, perimeter, and area concepts."],
-            ["Class 16", "Multi-step word problems with the four operations."]
-          ],
-          link: "/programs#little-newtons"
-        },
-        "kid-einsteins-a": {
-          title: "Kid Einsteins A",
+        "kid-einsteins": {
+          title: "Kid Einsteins",
           grade: "Grades 3–4 · Ages 8–10",
           quick: "Multiplication & division fluency, fractions, decimals, intro word problems — the upper-elementary core.",
-          description: "Kid Einsteins A is the lower track of our upper-elementary program, built for 3rd and 4th graders. We focus on multiplication and division fluency, a careful first pass at fractions and decimals, and the structured word-problem work that pays off later on the SHSAT, SAT, and every standardized test that follows. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
+          description: "Kid Einsteins is the upper-elementary program, built for 3rd and 4th graders. We focus on multiplication and division fluency, a careful first pass at fractions and decimals, and the structured word-problem work that pays off later on the SHSAT, SAT, and every standardized test that follows. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 3–4 (ages 8–10)",
           syllabus: [
             ['Week 1', 'Multiplication facts mastery — ×2 through ×10 with area models.'],
@@ -435,45 +402,12 @@
           ],
           link: "/programs#kid-einsteins"
         },
-        "kid-einsteins-b": {
-          title: "Kid Einsteins B",
-          grade: "Grades 4–5 · Ages 10–11",
-          quick: "Fraction & decimal mastery, ratio/percent, intro geometry — the 5th-grade bridge to middle school.",
-          description: "Kid Einsteins B is the upper track of our upper-elementary program, designed for 5th graders preparing to step into pre-algebra. We push fraction and decimal fluency from competent to automatic, introduce ratio and percent reasoning, cover the geometry concepts that show up on the SHSAT, and stress-test word-problem stamina. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
-          level: "Grades 4–5 (ages 10–11)",
-          syllabus: [
-            ['Week 1', 'Fraction operations — all four with unlike denominators.'],
-            ['Week 2', 'Decimal multiplication and division; conversion fluency F/D/%.'],
-            ['Week 3', 'Ratio, rate, and percent of a number.'],
-            ['Week 4', 'Geometry — perimeter, area, angle relationships.'],
-            ['Week 5', 'Coordinate plane plus two-step word problems with fractions, percents, and geometry.']
-          ],
-          fallSyllabusOverride: [
-            ["Class 1", "Fraction operations — addition and subtraction with unlike denominators."],
-            ["Class 2", "Multiplying fractions and mixed numbers."],
-            ["Class 3", "Dividing fractions and mixed numbers."],
-            ["Class 4", "Decimal multiplication."],
-            ["Class 5", "Decimal division."],
-            ["Class 6", "Conversion fluency — fractions, decimals, percents."],
-            ["Class 7", "Ratio and rate reasoning."],
-            ["Class 8", "Percent of a number; percent change."],
-            ["Class 9", "Scale factors and similar figures."],
-            ["Class 10", "Perimeter and area of rectangles, triangles, and composite figures."],
-            ["Class 11", "Area of parallelograms and trapezoids."],
-            ["Class 12", "Volume of rectangular prisms."],
-            ["Class 13", "Angle relationships — complementary, supplementary, vertical."],
-            ["Class 14", "Coordinate plane — plotting points, all four quadrants."],
-            ["Class 15", "Two-step word problems with fractions and percents."],
-            ["Class 16", "Two-step word problems with ratios and geometry."]
-          ],
-          link: "/programs#kid-einsteins"
-        },
         "young-fermats-prealgebra": {
           title: "Young Fermats — Pre-Algebra",
-          grade: "Grade 6 · Ages 11–12",
+          grade: "Grades 5–6 · Ages 10–12",
           quick: "Integers, fractions, ratios, intro algebraic thinking — the foundation for everything that follows.",
           description: "Young Fermats Pre-Algebra is the entry track of our middle-school program. We close the arithmetic gaps that quietly hold middle schoolers back — signed numbers, fractions, ratios, percent — and start the transition to algebraic thinking: variables, expressions, and one-step equations. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
-          level: "Grade 6 (ages 11–12)",
+          level: "Grades 5–6 (ages 10–12)",
           syllabus: [
             ['Week 1', 'Integer operations and signed-number fluency.'],
             ['Week 2', 'Fractions, decimals, percents under time — conversion fluency.'],
@@ -712,16 +646,14 @@
           link: "/fall-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons-a":            { days: "Wednesdays", time: "3:15 – 4:15 PM", perWeek: 1 },
-            "little-newtons-b":            { days: "Thursdays",  time: "3:15 – 4:15 PM", perWeek: 1 },
-            "kid-einsteins-a":             { days: "Mondays",    time: "3:15 – 4:45 PM", perWeek: 1 },
-            "kid-einsteins-b":             { days: "Tuesdays",   time: "3:15 – 4:45 PM", perWeek: 1 },
-            "young-fermats-prealgebra":    { days: "Tue or Thu", time: "Tue 4:45 – 6:45 PM · Thu 4:15 – 6:15 PM", perWeek: 1 },
-            "young-fermats-algebra-ignite":{ days: "Mon or Wed", time: "Mon 4:45 – 6:45 PM · Wed 4:15 – 6:15 PM", perWeek: 1 },
-            "young-fermats-geometry":      { days: "Monday",     time: "6:45 – 8:45 PM", perWeek: 1 },
-            "young-fermats-algebra-ii":    { days: "Tuesday",    time: "6:45 – 8:45 PM", perWeek: 1 },
+            "little-newtons":               { days: "Tue or Wed", time: "3:15 – 4:15 PM", perWeek: 1 },
+            "kid-einsteins":                { days: "Mon or Thu", time: "3:30 – 5:00 PM", perWeek: 1 },
+            "young-fermats-prealgebra":    { days: "Tue or Wed", time: "4:15 – 6:15 PM", perWeek: 1 },
+            "young-fermats-algebra-ignite":{ days: "Mon or Thu", time: "5:00 – 7:00 PM", perWeek: 1 },
+            "young-fermats-geometry":      { days: "Monday",     time: "7:00 – 9:00 PM", perWeek: 1 },
+            "young-fermats-algebra-ii":    { days: "Tuesday",    time: "6:15 – 8:15 PM", perWeek: 1 },
             "shsat-prep":                  { days: "Wednesday",  time: "6:15 – 8:15 PM", perWeek: 1 },
-            "sat-math":                    { days: "Thursday",   time: "6:15 – 8:15 PM", perWeek: 1 },
+            "sat-math":                    { days: "Thursday",   time: "7:00 – 9:00 PM", perWeek: 1 },
             "pre-calculus":                { days: "Friday",     time: "7:00 – 9:00 PM", perWeek: 1 }
           }
         },
@@ -734,10 +666,8 @@
           link: "/weekends-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons-a":            { days: "Sundays",   time: "10:00 – 11:00 AM", perWeek: 1 },
-            "little-newtons-b":            { days: "Saturdays", time: "10:00 – 11:00 AM", perWeek: 1 },
-            "kid-einsteins-a":             { days: "Sundays",   time: "11:00 AM – 12:30 PM", perWeek: 1 },
-            "kid-einsteins-b":             { days: "Saturdays", time: "11:00 AM – 12:30 PM", perWeek: 1 },
+            "little-newtons":              { days: "Sat or Sun", time: "10:00 – 11:00 AM", perWeek: 1 },
+            "kid-einsteins":               { days: "Sat or Sun", time: "11:00 AM – 12:30 PM", perWeek: 1 },
             "young-fermats-prealgebra":    { days: "Saturdays", time: "1:00 – 3:00 PM",   perWeek: 1 },
             "young-fermats-algebra-ignite":{ days: "Sundays",   time: "1:00 – 3:00 PM",   perWeek: 1 },
             "ap-calculus":                 { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },

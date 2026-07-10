@@ -318,16 +318,14 @@
     </main>
 
     <div id="footer-mount"></div>
-    <script src="/partials.js?v=v20260710-246"></script>
+    <script src="/partials.js?v=v20260710-consol"></script>
 
     <script>
       // ---- Course catalog (mirror of course-recommendation.html) ----
       const COURSES = {
-        "little-newtons-a":            { title: "Little Newtons A",              grade: "Grades 1–2",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
-        "little-newtons-b":            { title: "Little Newtons B",              grade: "Grades 2–3",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
-        "kid-einsteins-a":             { title: "Kid Einsteins A",               grade: "Grades 3–4",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
-        "kid-einsteins-b":             { title: "Kid Einsteins B",               grade: "Grades 4\u20135",      summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
-        "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grade 6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "little-newtons":               { title: "Little Newtons",                grade: "Grades 1–2",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
+        "kid-einsteins":                { title: "Kid Einsteins",                 grade: "Grades 3–4",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+        "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grades 5–6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-algebra-ignite":{ title: "Young Fermats — Algebra Ignite",grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-geometry":      { title: "Young Fermats — Geometry and Trigonometry",      grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "shsat-prep":                  { title: "SHSAT Prep",                    grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
@@ -343,25 +341,21 @@
 
       const COURSE_TIMES = {
         rolling: {
-          "little-newtons-a":            "Wed 3:15–4:15 PM",
-          "little-newtons-b":            "Thu 3:15–4:15 PM",
-          "kid-einsteins-a":             "Mon 3:15–4:45 PM",
-          "kid-einsteins-b":             "Tue 3:15–4:45 PM",
-          "young-fermats-prealgebra":    "Tue 4:45–6:45 PM · Thu 4:15–6:15 PM",
-          "young-fermats-algebra-ignite":"Mon 4:45–6:45 PM · Wed 4:15–6:15 PM",
-          "young-fermats-geometry":      "Mon 6:45–8:45 PM",
-          "young-fermats-algebra-ii":    "Tue 6:45–8:45 PM",
+          "little-newtons":              "Tue 3:15–4:15 PM · Wed 3:15–4:15 PM",
+          "kid-einsteins":               "Mon 3:30–5:00 PM · Thu 3:30–5:00 PM",
+          "young-fermats-prealgebra":    "Tue 4:15–6:15 PM · Wed 4:15–6:15 PM",
+          "young-fermats-algebra-ignite":"Mon 5:00–7:00 PM · Thu 5:00–7:00 PM",
+          "young-fermats-geometry":      "Mon 7:00–9:00 PM",
+          "young-fermats-algebra-ii":    "Tue 6:15–8:15 PM",
           "shsat-prep":                  "Wed 6:15–8:15 PM",
-          "sat-math":                    "Thu 6:15–8:15 PM",
+          "sat-math":                    "Thu 7:00–9:00 PM",
           "pre-calculus":                "Fri 7:00–9:00 PM",
           "ap-calculus":                 "Sat 3:00–5:00 PM",
           "ap-statistics":               "Sun 3:00–5:00 PM"
         },
         weekends: {
-          "little-newtons-a":            "Sun 10:00–11:00 AM",
-          "little-newtons-b":            "Sat 10:00–11:00 AM",
-          "kid-einsteins-a":             "Sun 11:00 AM–12:30 PM",
-          "kid-einsteins-b":             "Sat 11:00 AM–12:30 PM",
+          "little-newtons":              "Sat 10:00–11:00 AM · Sun 10:00–11:00 AM",
+          "kid-einsteins":               "Sat 11:00 AM–12:30 PM · Sun 11:00 AM–12:30 PM",
           "young-fermats-prealgebra":    "Sat 1:00–3:00 PM",
           "young-fermats-algebra-ignite":"Sun 1:00–3:00 PM",
           "ap-calculus":                 "Sat 3:00–5:00 PM",
@@ -372,10 +366,8 @@
       // Tuition calc: $60/hr standard. Mins per session × perWeek × weeks / 60 × $60
       // Weekends-specific session minutes (Little Newtons 60; Kid Einsteins 90; others 120; one class/week).
       const WEEKEND_MINS = {
-        "little-newtons-a":            60,
-        "little-newtons-b":            60,
-        "kid-einsteins-a":             90,
-        "kid-einsteins-b":             90,
+        "little-newtons":              60,
+        "kid-einsteins":               90,
         "young-fermats-prealgebra":    120,
         "young-fermats-algebra-ignite":120,
         "ap-calculus":                 120,
