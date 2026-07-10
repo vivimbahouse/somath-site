@@ -25,8 +25,8 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Course Recommendation · July, August &amp; Fall 2026 · School of Math NYC</title>
-    <meta name="description" content="Find the right SOMATH course for your child. Pick a term — July, August, or Fall 2026 — hover any course to preview, click to see description, dates, syllabus, and FAQs." />
+    <title>Course Recommendation · Weekday or Weekend Membership · School of Math NYC</title>
+    <meta name="description" content="Find the right SOMATH course for your child. Pick weekday or weekend membership — rolling 6-month enrollment, start any week. Hover any course to preview, click to see description, schedule, syllabus, and FAQs." />
     <link rel="canonical" href="https://www.schoolofmath.us/course-recommendation" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
@@ -292,25 +292,17 @@
     <main class="container">
       <section class="crec-hero">
         <h1>Course Recommendation</h1>
-        <p>Pick a term — July, August, or Fall 2026. Hover any course to preview, then click for the full description, dates, syllabus, and FAQs. When you're ready, book a free 60-minute evaluation and we'll confirm the right fit.</p>
+        <p>Rolling 6-month membership — students can start any week. Pick weekday or weekend, hover any course to preview, then click for the full description, schedule, syllabus, and FAQs. When you're ready, book a free 60-minute evaluation and we'll confirm the right fit.</p>
       </section>
 
-      <div class="crec-tabs" role="tablist" aria-label="Choose a term">
-        <button class="crec-tab is-active" role="tab" aria-selected="true" data-term="july">
-          July 2026
-          <span class="crec-tab-sub">5-week summer intensives</span>
-        </button>
-        <button class="crec-tab" role="tab" aria-selected="false" data-term="august">
-          August 2026
-          <span class="crec-tab-sub">5-week summer intensives</span>
-        </button>
-        <button class="crec-tab" role="tab" aria-selected="false" data-term="fall">
-          Fall 2026
-          <span class="crec-tab-sub">24-week semester</span>
+      <div class="crec-tabs" role="tablist" aria-label="Choose a membership">
+        <button class="crec-tab is-active" role="tab" aria-selected="true" data-term="fall">
+          Weekday Membership
+          <span class="crec-tab-sub">Mon–Fri after school</span>
         </button>
         <button class="crec-tab" role="tab" aria-selected="false" data-term="weekends">
-          Weekends 2026
-          <span class="crec-tab-sub">Sat &amp; Sun, 24 weeks</span>
+          Weekend Membership
+          <span class="crec-tab-sub">Sat &amp; Sun mornings</span>
         </button>
       </div>
 
@@ -332,20 +324,14 @@
       // COURSE DATA
       // ============================================================
 
-      // Shared FAQs that apply across summer / fall
-      const SUMMER_FAQ = [
-        ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 60-minute evaluation first so we can confirm the right level and set expectations with the family. After that, you book the term."],
-        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. The total is session length × sessions per week × 5 weeks × $60. For example, a 2-hour class meeting 2× a week for 5 weeks = 20 hours = $1,200. A 2-hour class meeting once a week for 5 weeks = 10 hours = $600. Each course detail card shows your exact total."],
-        ["What if my child misses a session?", "Email us as soon as you know. For summer cohorts we provide a written catch-up note, problem set, and (when scheduling allows) a 30-minute office-hour to keep them on track."],
-        ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
-        ["Is there a fall continuation?", "Yes. Every summer course has a structured fall continuation in our 24-week semester. We can map the path for your child during the evaluation."]
-      ];
+      // Rolling 6-month membership FAQs
       const FALL_FAQ = [
-        ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 60-minute evaluation first so we can confirm the right level. After that, you book the term."],
-        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. The 24-week fall semester (24 × 2-hour sessions = 48 hours) totals $2,880 per term. Most families enroll via Membership at $489/month flat — Core, 1×/week."],
-        ["What if my child misses a session?", "We provide a written catch-up note plus the worked solutions and, when scheduling allows, a 30-minute office-hour. Fall students may also use one excused make-up per term."],
+        ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 60-minute evaluation first so we can confirm the right level. After that, you can start any week."],
+        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. Little Newtons (60-min classes) is $246/month, Kid Einsteins (90-min classes) is $367/month, and Young Fermats (120-min classes) is $489/month — all Membership, 1×/week."],
+        ["How long is the membership?", "6-month rolling membership. Start any week, monthly billing, cancel anytime with 15 days notice. Up to 4 weeks of free pause per year and one free make-up per month."],
+        ["What if my child misses a session?", "We provide a written catch-up note plus worked solutions and, when scheduling allows, a 30-minute office-hour. One free make-up per month is included in every membership."],
         ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
-        ["What happens when the Fall term ends?", "Students continue straight into the Winter/Spring semester (January start) without re-applying. The curriculum is built as a continuous arc."]
+        ["What happens after the 6 months?", "Membership renews on a rolling basis — no re-application needed. The curriculum is built as a continuous arc across the school year."]
       ];
 
       // Course catalog. Each entry has the static "what is it" + term-specific dates/times/tuition.
@@ -717,85 +703,45 @@
 
       // Term configuration: dates, what courses run, and the scheduling info per course
       const TERMS = {
-        "july": {
-          label: "July 2026",
-          dateRange: "June 29 – August 1, 2026",
-          cadence: "5 weeks · see each course for weekly cadence",
-          tuition: "$60/hr standard rate",
-          summary: "Five-week summer intensives. Same instructor every week, small cohorts, paced for students who want to get ahead or catch up before the fall.",
-          link: "/summer-schedule",
-          faq: SUMMER_FAQ,
-          courses: {
-            "little-newtons-a":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
-            "little-newtons-b":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
-            "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM", perWeek: 2 },
-            "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM", perWeek: 2 },
-            "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM", perWeek: 2 },
-            "young-fermats-algebra-ignite":{ days: "Mon & Wed", time: "6:30 – 8:30 PM", perWeek: 2 },
-            "young-fermats-geometry":      { days: "Tue & Thu", time: "7:00 – 9:00 PM", perWeek: 2 },
-            "shsat-prep":                  { days: "Friday",    time: "3:00 – 5:00 PM", perWeek: 1 },
-            "sat-math":                    { days: "Friday",    time: "5:00 – 7:00 PM", perWeek: 1 },
-            "pre-calculus":                { days: "Friday",    time: "7:00 – 9:00 PM", perWeek: 1 }
-          }
-        },
-        "august": {
-          label: "August 2026",
-          dateRange: "August 3 – September 4, 2026",
-          cadence: "5 weeks · see each course for weekly cadence",
-          tuition: "$60/hr standard rate",
-          summary: "Second summer term, identical structure to July. Useful for families traveling in July or students who want a final reset before the school year starts.",
-          link: "/august-schedule",
-          faq: SUMMER_FAQ,
-          courses: {
-            "little-newtons-a":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
-            "little-newtons-b":            { days: "Mon & Wed", time: "3:00 – 4:30 PM", perWeek: 2 },
-            "kid-einsteins-a":             { days: "Tue & Wed", time: "3:00 – 5:00 PM", perWeek: 2 },
-            "kid-einsteins-b":             { days: "Mon & Wed", time: "4:30 – 6:30 PM", perWeek: 2 },
-            "young-fermats-prealgebra":    { days: "Tue & Thu", time: "5:00 – 7:00 PM", perWeek: 2 },
-            "young-fermats-algebra-ignite":{ days: "Mon & Wed", time: "6:30 – 8:30 PM", perWeek: 2 },
-            "young-fermats-geometry":      { days: "Tue & Thu", time: "7:00 – 9:00 PM", perWeek: 2 },
-            "shsat-prep":                  { days: "Friday",    time: "3:00 – 5:00 PM", perWeek: 1 },
-            "sat-math":                    { days: "Friday",    time: "5:00 – 7:00 PM", perWeek: 1 },
-            "pre-calculus":                { days: "Friday",    time: "7:00 – 9:00 PM", perWeek: 1 }
-          }
-        },
         "fall": {
-          label: "Fall 2026",
-          dateRange: "August 31 – December 20, 2026",
-          cadence: "24 weeks · 1 class/week · 120 min each",
-          tuition: "$2,880 per course · $60/hr standard rate · or Membership at $489/month",
-          summary: "Full 24-week semester paced to the NYC school calendar. Continuous arc — students roll directly into the Winter/Spring term in January without re-applying.",
+          label: "Weekday Membership",
+          dateRange: "Rolling 6-month enrollment · start any week",
+          cadence: "1 class/week · length varies by course",
+          tuition: "$60/hr standard rate · Membership from $246/month",
+          summary: "Rolling 6-month membership paced to the NYC school calendar. Students can join any week and stay enrolled continuously — monthly billing, cancel anytime with 15 days notice.",
           link: "/fall-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons-a":            { days: "Wednesdays", time: "3:30 – 5:00 PM", perWeek: 1 },
-            "little-newtons-b":            { days: "Mondays",    time: "3:30 – 5:00 PM", perWeek: 1 },
-            "kid-einsteins-a":             { days: "Tue or Wed", time: "Tue 3:30 – 5:30 PM · Wed 5:00 – 7:00 PM", perWeek: 1 },
-            "kid-einsteins-b":             { days: "Mon or Thu", time: "Mon 5:00 – 7:00 PM · Thu 3:30 – 5:30 PM", perWeek: 1 },
-            "young-fermats-prealgebra":    { days: "Thursday",  time: "5:30 – 7:30 PM", perWeek: 1 },
-            "young-fermats-algebra-ignite":{ days: "Mon or Wed", time: "7:00 – 9:00 PM", perWeek: 1 },
-            "young-fermats-geometry":      { days: "Tue or Thu", time: "7:30 – 9:30 PM", perWeek: 1 },
-            "young-fermats-algebra-ii":    { days: "Tuesday",   time: "5:30 – 7:30 PM", perWeek: 1 },
-            "shsat-prep":                  { days: "Friday",     time: "3:30 – 5:30 PM", perWeek: 1 },
-            "sat-math":                    { days: "Friday",     time: "5:30 – 7:30 PM", perWeek: 1 },
-            "pre-calculus":                { days: "Friday",     time: "7:30 – 9:30 PM", perWeek: 1 }
+            "little-newtons-a":            { days: "Wednesdays", time: "3:15 – 4:15 PM", perWeek: 1 },
+            "little-newtons-b":            { days: "Thursdays",  time: "3:15 – 4:15 PM", perWeek: 1 },
+            "kid-einsteins-a":             { days: "Mondays",    time: "3:15 – 4:45 PM", perWeek: 1 },
+            "kid-einsteins-b":             { days: "Tuesdays",   time: "3:15 – 4:45 PM", perWeek: 1 },
+            "young-fermats-prealgebra":    { days: "Tue or Thu", time: "Tue 4:45 – 6:45 PM · Thu 4:15 – 6:15 PM", perWeek: 1 },
+            "young-fermats-algebra-ignite":{ days: "Mon or Wed", time: "Mon 4:45 – 6:45 PM · Wed 4:15 – 6:15 PM", perWeek: 1 },
+            "young-fermats-geometry":      { days: "Monday",     time: "6:45 – 8:45 PM", perWeek: 1 },
+            "young-fermats-algebra-ii":    { days: "Tuesday",    time: "6:45 – 8:45 PM", perWeek: 1 },
+            "shsat-prep":                  { days: "Wednesday",  time: "6:15 – 8:15 PM", perWeek: 1 },
+            "sat-math":                    { days: "Thursday",   time: "6:15 – 8:15 PM", perWeek: 1 },
+            "pre-calculus":                { days: "Friday",     time: "7:00 – 9:00 PM", perWeek: 1 }
           }
         },
         "weekends": {
-          label: "Weekends 2026",
-          dateRange: "June 20 – October 4, 2026",
-          cadence: "24 weeks · 1 class/week · Saturdays or Sundays",
-          tuition: "$60/hr standard rate · or Membership at $489/month",
-          summary: "Weekend track for families whose weekdays are too packed. Same 24-class rolling syllabus as Fall — a student can join at any meeting and continue into the next term.",
+          label: "Weekend Membership",
+          dateRange: "Rolling 6-month enrollment · start any week",
+          cadence: "1 class/week · Saturdays or Sundays",
+          tuition: "$60/hr standard rate · Membership from $246/month",
+          summary: "Weekend track for families whose weekdays are too packed. Same rolling syllabus as weekday — a student can join any week and continue continuously.",
           link: "/weekends-schedule",
           faq: FALL_FAQ,
           courses: {
-            "little-newtons-a":            { days: "Sundays",   time: "10:00 – 11:30 AM", perWeek: 1 },
-            "little-newtons-b":            { days: "Saturdays", time: "10:00 – 11:30 AM", perWeek: 1 },
-            "kid-einsteins-a":             { days: "Saturdays", time: "9:00 – 11:00 AM",  perWeek: 1 },
-            "kid-einsteins-b":             { days: "Saturdays", time: "11:00 AM – 1:00 PM", perWeek: 1 },
-            "young-fermats-prealgebra":    { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },
-            "young-fermats-algebra-ignite":{ days: "Sundays",   time: "3:00 – 5:00 PM",   perWeek: 1 }
+            "little-newtons-a":            { days: "Sundays",   time: "10:00 – 11:00 AM", perWeek: 1 },
+            "little-newtons-b":            { days: "Saturdays", time: "10:00 – 11:00 AM", perWeek: 1 },
+            "kid-einsteins-a":             { days: "Sundays",   time: "11:00 AM – 12:30 PM", perWeek: 1 },
+            "kid-einsteins-b":             { days: "Saturdays", time: "11:00 AM – 12:30 PM", perWeek: 1 },
+            "young-fermats-prealgebra":    { days: "Saturdays", time: "1:00 – 3:00 PM",   perWeek: 1 },
+            "young-fermats-algebra-ignite":{ days: "Sundays",   time: "1:00 – 3:00 PM",   perWeek: 1 },
+            "ap-calculus":                 { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },
+            "ap-statistics":               { days: "Sundays",   time: "3:00 – 5:00 PM",   perWeek: 1 }
           }
         }
       };
@@ -807,7 +753,7 @@
       const headEl = document.getElementById("crec-term-head");
       const gridEl = document.getElementById("crec-grid");
       const detailEl = document.getElementById("crec-detail");
-      let activeTerm = "july";
+      let activeTerm = "fall";
       let openCourse = null;
 
       function renderTerm(termKey) {
@@ -963,7 +909,7 @@
       tabs.forEach(t => t.addEventListener("click", () => renderTerm(t.dataset.term)));
 
       // Initial render
-      renderTerm("july");
+      renderTerm("fall");
     </script>
   </body>
 </html>

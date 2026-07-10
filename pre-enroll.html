@@ -252,7 +252,7 @@
               <input type="text" id="pe-student-name" name="student_name" required autocomplete="off" />
             </div>
             <div class="pe-field">
-              <label for="pe-student-grade">Current grade (Fall 2026)</label>
+              <label for="pe-student-grade">Current grade (2026–27 school year)</label>
               <select id="pe-student-grade" name="student_grade" required>
                 <option value="">Select…</option>
                 <option>K</option><option>1</option><option>2</option><option>3</option>
@@ -323,10 +323,10 @@
     <script>
       // ---- Course catalog (mirror of course-recommendation.html) ----
       const COURSES = {
-        "little-newtons-a":            { title: "Little Newtons A",              grade: "Grades 1–2",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
-        "little-newtons-b":            { title: "Little Newtons B",              grade: "Grades 2–3",   summerMins: 90,  fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
-        "kid-einsteins-a":             { title: "Kid Einsteins A",               grade: "Grades 3–4",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
-        "kid-einsteins-b":             { title: "Kid Einsteins B",               grade: "Grades 4\u20135",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+        "little-newtons-a":            { title: "Little Newtons A",              grade: "Grades 1–2",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
+        "little-newtons-b":            { title: "Little Newtons B",              grade: "Grades 2–3",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
+        "kid-einsteins-a":             { title: "Kid Einsteins A",               grade: "Grades 3–4",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
+        "kid-einsteins-b":             { title: "Kid Einsteins B",               grade: "Grades 4\u20135",      summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grade 6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-algebra-ignite":{ title: "Young Fermats — Algebra Ignite",grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-geometry":      { title: "Young Fermats — Geometry and Trigonometry",      grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
@@ -335,74 +335,51 @@
         "pre-calculus":                { title: "Pre-Calculus",                  grade: "Grades 10–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 }
       };
 
+      // Rolling 6-month membership. Students can start any week; billing is monthly.
       const TERMS = {
-        july:     { label: "July 2026",     dateRange: "June 29 – August 1, 2026",       weeks: 5 },
-        august:   { label: "August 2026",   dateRange: "August 3 – September 4, 2026",   weeks: 5 },
-        fall:     { label: "Fall 2026",     dateRange: "August 31 – December 20, 2026",  weeks: 16 },
-        weekends: { label: "Weekends 2026", dateRange: "June 20 – October 4, 2026",       weeks: 16 }
+        rolling:  { label: "Rolling Membership",  dateRange: "6-month rolling · start any week", weeks: 26 },
+        weekends: { label: "Weekend Membership",  dateRange: "6-month rolling · start any week", weeks: 26 }
       };
 
       const COURSE_TIMES = {
-        july: {
-          "little-newtons-a":            "Mon & Wed 3:00–4:30 PM",
-          "little-newtons-b":            "Mon & Wed 3:00–4:30 PM",
-          "kid-einsteins-a":             "Tue & Wed 3:00–5:00 PM",
-          "kid-einsteins-b":             "Mon & Wed 4:30–6:30 PM",
-          "young-fermats-prealgebra":    "Tue & Thu 5:00–7:00 PM",
-          "young-fermats-algebra-ignite":"Mon & Wed 6:30–8:30 PM",
-          "young-fermats-geometry":      "Tue & Thu 7:00–9:00 PM",
-          "shsat-prep":                  "Fri 3:00–5:00 PM",
-          "sat-math":                    "Fri 5:00–7:00 PM",
-          "pre-calculus":                "Fri 7:00–9:00 PM"
-        },
-        august: {
-          "little-newtons-a":            "Mon & Wed 3:00–4:30 PM",
-          "little-newtons-b":            "Mon & Wed 3:00–4:30 PM",
-          "kid-einsteins-a":             "Tue & Wed 3:00–5:00 PM",
-          "kid-einsteins-b":             "Mon & Wed 4:30–6:30 PM",
-          "young-fermats-prealgebra":    "Tue & Thu 5:00–7:00 PM",
-          "young-fermats-algebra-ignite":"Mon & Wed 6:30–8:30 PM",
-          "young-fermats-geometry":      "Tue & Thu 7:00–9:00 PM",
-          "shsat-prep":                  "Fri 3:00–5:00 PM",
-          "sat-math":                    "Fri 5:00–7:00 PM",
-          "pre-calculus":                "Fri 7:00–9:00 PM"
-        },
-        fall: {
-          "little-newtons-a":            "Wed 3:30–5:00 PM",
-          "little-newtons-b":            "Thu 3:30–5:00 PM",
-          "kid-einsteins-a":             "Mon 3:30–5:30 PM",
-          "kid-einsteins-b":             "Tue 3:30–5:30 PM",
-          "young-fermats-prealgebra":    "Tue 5:30–7:30 PM · Thu 5:00–7:00 PM",
-          "young-fermats-algebra-ignite":"Mon 5:30–7:30 PM · Wed 5:00–7:00 PM",
-          "young-fermats-geometry":      "Mon 7:30–9:30 PM",
-          "young-fermats-algebra-ii":    "Tue 7:30–9:30 PM",
-          "shsat-prep":                  "Wed 7:00–9:00 PM",
-          "sat-math":                    "Thu 7:00–9:00 PM",
+        rolling: {
+          "little-newtons-a":            "Wed 3:15–4:15 PM",
+          "little-newtons-b":            "Thu 3:15–4:15 PM",
+          "kid-einsteins-a":             "Mon 3:15–4:45 PM",
+          "kid-einsteins-b":             "Tue 3:15–4:45 PM",
+          "young-fermats-prealgebra":    "Tue 4:45–6:45 PM · Thu 4:15–6:15 PM",
+          "young-fermats-algebra-ignite":"Mon 4:45–6:45 PM · Wed 4:15–6:15 PM",
+          "young-fermats-geometry":      "Mon 6:45–8:45 PM",
+          "young-fermats-algebra-ii":    "Tue 6:45–8:45 PM",
+          "shsat-prep":                  "Wed 6:15–8:15 PM",
+          "sat-math":                    "Thu 6:15–8:15 PM",
           "pre-calculus":                "Fri 7:00–9:00 PM",
-          "ap-calculus":                 "Sat 4:00–6:00 PM",
-          "ap-statistics":               "Sun 4:00–6:00 PM"
+          "ap-calculus":                 "Sat 3:00–5:00 PM",
+          "ap-statistics":               "Sun 3:00–5:00 PM"
         },
         weekends: {
-          "little-newtons-a":            "Sun 10:00–11:30 AM",
-          "little-newtons-b":            "Sat 10:00–11:30 AM",
-          "kid-einsteins-a":             "Sat 11:30 AM–1:30 PM",
-          "kid-einsteins-b":             "Sun 11:30 AM–1:30 PM",
-          "young-fermats-prealgebra":    "Sat 2:00–4:00 PM",
-          "young-fermats-algebra-ignite":"Sun 2:00–4:00 PM",
-          "ap-calculus":                 "Sat 4:00–6:00 PM",
-          "ap-statistics":               "Sun 4:00–6:00 PM"
+          "little-newtons-a":            "Sun 10:00–11:00 AM",
+          "little-newtons-b":            "Sat 10:00–11:00 AM",
+          "kid-einsteins-a":             "Sun 11:00 AM–12:30 PM",
+          "kid-einsteins-b":             "Sat 11:00 AM–12:30 PM",
+          "young-fermats-prealgebra":    "Sat 1:00–3:00 PM",
+          "young-fermats-algebra-ignite":"Sun 1:00–3:00 PM",
+          "ap-calculus":                 "Sat 3:00–5:00 PM",
+          "ap-statistics":               "Sun 3:00–5:00 PM"
         }
       };
 
       // Tuition calc: $60/hr standard. Mins per session × perWeek × weeks / 60 × $60
-      // Weekends-specific session minutes (Little Newtons stays 90; others 120; one class/week).
+      // Weekends-specific session minutes (Little Newtons 60; Kid Einsteins 90; others 120; one class/week).
       const WEEKEND_MINS = {
-        "little-newtons-a":            90,
-        "little-newtons-b":            90,
-        "kid-einsteins-a":             120,
-        "kid-einsteins-b":             120,
+        "little-newtons-a":            60,
+        "little-newtons-b":            60,
+        "kid-einsteins-a":             90,
+        "kid-einsteins-b":             90,
         "young-fermats-prealgebra":    120,
-        "young-fermats-algebra-ignite":120
+        "young-fermats-algebra-ignite":120,
+        "ap-calculus":                 120,
+        "ap-statistics":               120
       };
       function tuitionFor(courseId, termId) {
         const c = COURSES[courseId];
@@ -412,12 +389,9 @@
         if (termId === "weekends") {
           mins = WEEKEND_MINS[courseId] || 120;
           perWeek = 1;
-        } else if (termId === "fall") {
+        } else {
           mins = c.fallMins;
           perWeek = c.fallPerWeek;
-        } else {
-          mins = c.summerMins;
-          perWeek = c.summerPerWeek;
         }
         const hours = (mins * perWeek * t.weeks) / 60;
         return Math.round(hours * 60);
@@ -458,7 +432,7 @@
         opt0.value = "";
         opt0.textContent = "Select a term…";
         termSel.appendChild(opt0);
-        ["july", "august", "fall", "weekends"].forEach(tid => {
+        ["rolling", "weekends"].forEach(tid => {
           const time = COURSE_TIMES[tid] && COURSE_TIMES[tid][courseId];
           if (!time) return; // course not offered in this term
           const t = TERMS[tid];
@@ -484,7 +458,7 @@
       function refreshDayPicker() {
         const tid = termSel.value;
         const cid = courseSel.value;
-        if (!(tid === "fall" || tid === "weekends") || !cid) {
+        if (!(tid === "rolling" || tid === "weekends") || !cid) {
           dayWrap.style.display = "none";
           daySel.required = false;
           daySel.value = "";
@@ -528,7 +502,7 @@
         const t = TERMS[tid];
         let time = COURSE_TIMES[tid][cid];
         // If a specific day is chosen, replace "X or Y" with the chosen day in the summary.
-        if ((tid === "fall" || tid === "weekends") && daySel.value) {
+        if ((tid === "rolling" || tid === "weekends") && daySel.value) {
           time = time.replace(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+or\s+(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/, daySel.value);
         }
         const tuition = tuitionFor(cid, tid);
