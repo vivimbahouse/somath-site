@@ -1032,6 +1032,22 @@ async function handleSendEvalEmail(request, env) {
     return jsonResponse({ error: "send_failed", detail: sendResult.error || "unknown" }, 502);
   }
   console.log(JSON.stringify({ event: "eval_email_sent", parentEmail: deliveredTo, studentName, courseSlug, testMode }));
+  if (!testMode) {
+    try {
+      await kvPutEvalSent(env, {
+        sentAt: new Date().toISOString(),
+        parentEmail: deliveredTo,
+        parentName: parentName,
+        studentName: studentName,
+        courseSlug: courseSlug,
+        courseName: courseName,
+        senderName: senderName,
+        notes: notes
+      });
+    } catch (e) {
+      console.error("eval-log kv put failed", String(e));
+    }
+  }
   return jsonResponse({ ok: true, delivered_to: deliveredTo, subject });
 }
 __name(handleSendEvalEmail, "handleSendEvalEmail");
@@ -1504,6 +1520,99 @@ async function handleStripeWebhook(request, env) {
 __name(handleStripeWebhook, "handleStripeWebhook");
 
 // ---- Enrollments list (admin) ----
+function evalSentKey(iso, id) { return "evalsent:" + iso + ":" + id; }
+async function kvPutEvalSent(env, rec) {
+  if (!env.ENROLLMENTS) return null;
+  var iso = rec.sentAt || new Date().toISOString();
+  var id = rec.id || randId(8);
+  rec.id = id;
+  rec.sentAt = iso;
+  var key = evalSentKey(iso, id);
+  await env.ENROLLMENTS.put(key, JSON.stringify(rec));
+  return { key: key, id: id };
+}
+__name(kvPutEvalSent, "kvPutEvalSent");
+async function kvListEvalSents(env, limit) {
+  if (!env.ENROLLMENTS) return [];
+  var results = [];
+  var cursor = undefined;
+  var pageLimit = 1000;
+  var hardCap = limit || 5000;
+  while (results.length < hardCap) {
+    var opts = { prefix: "evalsent:", limit: pageLimit };
+    if (cursor) opts.cursor = cursor;
+    var page = await env.ENROLLMENTS.list(opts);
+    for (var i = 0; i < page.keys.length; i++) {
+      var raw = await env.ENROLLMENTS.get(page.keys[i].name);
+      if (!raw) continue;
+      try { results.push(JSON.parse(raw)); } catch (e) {}
+    }
+    if (page.list_complete || !page.cursor) break;
+    cursor = page.cursor;
+  }
+  results.sort(function(a, b) { return (b.sentAt || "").localeCompare(a.sentAt || ""); });
+  return results;
+}
+__name(kvListEvalSents, "kvListEvalSents");
+function evalSentsToCsv(rows) {
+  var headers = ["Sent (ET)", "Parent Email", "Parent Name", "Student Name", "Course", "Course Slug", "Sender", "Notes"];
+  var lines = [headers.map(csvEscape).join(",")];
+  function fmtET(iso) {
+    if (!iso) return "";
+    try {
+      var d = new Date(iso);
+      return d.toLocaleString("en-US", { timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false });
+    } catch (e) { return iso; }
+  }
+  for (var i = 0; i < rows.length; i++) {
+    var r = rows[i];
+    lines.push([
+      fmtET(r.sentAt),
+      r.parentEmail || "",
+      r.parentName || "",
+      r.studentName || "",
+      r.courseName || "",
+      r.courseSlug || "",
+      r.senderName || "",
+      r.notes || ""
+    ].map(csvEscape).join(","));
+  }
+  return lines.join("\n");
+}
+__name(evalSentsToCsv, "evalSentsToCsv");
+
+async function handleEvalLogApi(request, env) {
+  var url = new URL(request.url);
+  var headerPw = request.headers.get("x-admin-password") || "";
+  var queryPw = url.searchParams.get("pw") || "";
+  var pw = headerPw || queryPw;
+  if (!env.ADMIN_PASSWORD || pw !== env.ADMIN_PASSWORD) {
+    return jsonResponse({ error: "unauthorized" }, 401);
+  }
+  var rows = await kvListEvalSents(env, 5000);
+  if (url.searchParams.get("format") === "csv") {
+    var csv = evalSentsToCsv(rows);
+    var stamp = new Date().toISOString().slice(0, 10);
+    return new Response(csv, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/csv; charset=utf-8",
+        "Content-Disposition": 'attachment; filename="somath-eval-log-' + stamp + '.csv"',
+        "X-Robots-Tag": "noindex,nofollow"
+      }
+    });
+  }
+  return new Response(JSON.stringify({ ok: true, count: rows.length, sends: rows }), {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-store",
+      "X-Robots-Tag": "noindex,nofollow"
+    }
+  });
+}
+__name(handleEvalLogApi, "handleEvalLogApi");
+
 async function kvListEnrollments(env, limit) {
   if (!env.ENROLLMENTS) return [];
   var results = [];
@@ -1723,6 +1832,7 @@ var worker_default = {
     if (url.pathname === "/api/order-summary") return handleOrderSummary(request, env);
     if (url.pathname === "/api/stripe-webhook") return handleStripeWebhook(request, env);
     if (url.pathname === "/api/enrollments") return handleEnrollmentsApi(request, env);
+    if (url.pathname === "/api/eval-log") return handleEvalLogApi(request, env);
     if (url.pathname.startsWith("/_admin/")) {
       const adminResp = await env.ASSETS.fetch(request);
       const headers = new Headers(adminResp.headers);
