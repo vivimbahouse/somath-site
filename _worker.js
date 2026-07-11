@@ -824,8 +824,8 @@ var EVAL_COURSES = {
 var COURSE_SCHEDULES = {
   "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"}],
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
-  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
-  "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
