@@ -821,6 +821,34 @@ var EVAL_COURSES = {
   "ap-statistics": "AP Statistics"
 };
 
+var COURSE_CLASS_COUNT = {
+  "little-newtons": 48,
+  "kid-einsteins": 48,
+  "young-fermats-prealgebra": 48,
+  "young-fermats-algebra-ignite": 48,
+  "young-fermats-geometry": 48,
+  "young-fermats-algebra-ii": 24,
+  "shsat-prep": 24,
+  "sat-math": 24,
+  "pre-calculus": 24,
+  "ap-calculus": 24,
+  "ap-statistics": 24
+};
+
+var COURSE_DESCRIPTIONS = {
+  "little-newtons": "Little Newtons is our foundational program for Grades 1\u20132 (ages 6\u20138). Over the year students build number sense, master addition and subtraction fluency, learn fractions on the number line, and get their first structured practice with word problems \u2014 all in a warm, small-group setting that keeps them engaged for a full 60 minutes.",
+  "kid-einsteins": "Kid Einsteins is our Grades 3\u20134 program (ages 8\u201310). The arc covers multiplication mastery, long division, fractions and decimals, geometric reasoning with area and perimeter, and multi-step word problems \u2014 the core of upper-elementary math, delivered in a 90-minute weekly lesson with real problem-solving depth.",
+  "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra I. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in.",
+  "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite is a real Algebra I course for Grades 7\u20138 (ages 12\u201314). The syllabus covers linear equations and inequalities, systems, exponents, factoring, quadratics and functions in the first half, then goes deeper with function composition, sequences and series, rational functions, statistics, logs, and modeling \u2014 the same depth honors students see, at a small-group pace.",
+  "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry is a two-part arc for Grades 7\u20138 (ages 12\u201314). Part A covers plane geometry end-to-end \u2014 angle relationships, triangle congruence, Pythagorean theorem, similarity, coordinate geometry, area and volume, and two-column proof. Part B is a full Trigonometry track \u2014 the unit circle, graphs of sine, cosine and tangent, identities, laws of sines and cosines, vectors, and polar coordinates.",
+  "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II is our honors-track high school course for Grades 9\u201311 (ages 14\u201317). The syllabus covers quadratics, polynomials, radicals, exponentials, logarithms, sequences, and complex functions \u2014 delivered with the depth needed for the Algebra II Regents and the SAT.",
+  "shsat-prep": "SHSAT Prep is our Specialized High School Admissions math course for Grades 7\u20138. Students master the SHSAT question families, learn timing and scratch-paper strategy, and take full-length section drills every cycle \u2014 the practice pattern that actually moves scores.",
+  "sat-math": "SAT Math is a full course covering all four College Board content areas \u2014 Heart of Algebra, Problem Solving & Data Analysis, Passport to Advanced Math, and Additional Topics \u2014 with focused practice on the calculator and no-calculator sections and regular timed drills.",
+  "pre-calculus": "AP Pre-Calculus is a full-year course for Grades 10\u201312 that covers polynomial, rational, exponential, logarithmic, and trigonometric functions, plus sequences and series \u2014 the College Board syllabus, delivered with the depth needed to walk into AP Calculus prepared.",
+  "ap-calculus": "AP Calculus AB/BC covers limits and continuity, derivatives, definite and indefinite integrals, and (for BC students) parametric, polar, and vector functions plus infinite series \u2014 aligned to your child's school syllabus and paired with free-response drills every cycle.",
+  "ap-statistics": "AP Statistics covers the College Board's four core areas \u2014 exploring data, sampling and experimentation, probability and simulation, and statistical inference \u2014 with regular free-response drills so students walk into the May exam with real fluency."
+};
+
 var COURSE_SCHEDULES = {
   "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"}],
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
@@ -843,6 +871,8 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
   const subject = `${studentName} \u2014 your SOMATH evaluation results and recommended course`;
   const notesParagraph = notes ? notes : "";
   const schedule = COURSE_SCHEDULES[courseSlug] || [];
+  const classCount = COURSE_CLASS_COUNT[courseSlug] || 24;
+  const description = COURSE_DESCRIPTIONS[courseSlug] || "";
 
   const textLines = [
     `Hi ${parentGreet},`,
@@ -850,14 +880,19 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `Thank you for bringing ${studentName} in for the free evaluation. It was a real pleasure spending time with them, and we now have a clear picture of where they are and what comes next.`,
     "",
     `Our recommendation: ${courseName}`,
-    "",
-    `Everything you need is on the course page \u2014 full description, 24-class syllabus, and the enrollment form where you can pick your day of the week, pick ${studentName}'s start date, and reserve the spot:`,
+    ""
+  ];
+  if (description) {
+    textLines.push(description, "");
+  }
+  textLines.push(
+    `Everything you need is on the course page \u2014 full description, ${classCount}-class syllabus, and the enrollment form where you can pick your day of the week, pick ${studentName}'s start date, and reserve the spot:`,
     "",
     courseUrl,
     "",
     `Scroll to "Reserve your spot in ${courseName}" at the bottom of the page \u2014 the whole thing takes about 2 minutes.`,
     ""
-  ];
+  );
   if (schedule.length) {
     textLines.push(
       `Days and times available for ${courseName}:`,
@@ -878,7 +913,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     "\u2022 $99 one-time registration charged today; monthly tuition begins one day before " + studentName + "'s first class.",
     "\u2022 Small cohorts (4\u20136 students), same instructor every week, same room.",
     "\u2022 In person at 226 W 79th St, 1st Floor, Upper West Side.",
-    "\u2022 24-class rolling syllabus \u2014 " + studentName + " can join at any class and continue without losing the thread.",
+    "\u2022 " + classCount + "-class rolling syllabus \u2014 " + studentName + " can join at any class and continue without losing the thread.",
     "\u2022 Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.",
     "\u2022 Cancel anytime with 15 days' notice. No long-term contract.",
     "",
@@ -909,11 +944,16 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:15px;line-height:1.55;color:#1b1b1b;max-width:620px">`,
     `<p>Hi ${e(parentGreet)},</p>`,
     `<p>Thank you for bringing ${e(studentName)} in for the free evaluation. It was a real pleasure spending time with them, and we now have a clear picture of where they are and what comes next.</p>`,
-    `<p><strong>Our recommendation:</strong> ${e(courseName)}</p>`,
-    `<p>Everything you need is on the course page \u2014 full description, 24-class syllabus, and the enrollment form where you can <strong>pick your day of the week, pick ${e(studentName)}'s start date, and reserve the spot</strong>:</p>`,
+    `<p><strong>Our recommendation:</strong> ${e(courseName)}</p>`
+  ];
+  if (description) {
+    h.push(`<p>${e(description)}</p>`);
+  }
+  h.push(
+    `<p>Everything you need is on the course page \u2014 full description, ${classCount}-class syllabus, and the enrollment form where you can <strong>pick your day of the week, pick ${e(studentName)}'s start date, and reserve the spot</strong>:</p>`,
     `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`,
     `<p>Scroll to \u201CReserve your spot in ${e(courseName)}\u201D at the bottom of the page \u2014 the whole thing takes about 2 minutes.</p>`
-  ];
+  );
   if (schedule.length) {
     h.push(`<p><strong>Days and times available for ${e(courseName)}:</strong></p>`);
     h.push(`<ul style="padding-left:20px;margin:0 0 12px">`);
@@ -933,7 +973,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<li><strong>$99 one-time registration</strong> charged today; monthly tuition begins one day before ${e(studentName)}'s first class.</li>`,
     `<li>Small cohorts (4\u20136 students), same instructor every week, same room.</li>`,
     `<li>In person at 226 W 79th St, 1st Floor, Upper West Side.</li>`,
-    `<li>24-class rolling syllabus \u2014 ${e(studentName)} can join at any class and continue without losing the thread.</li>`,
+    `<li>${classCount}-class rolling syllabus \u2014 ${e(studentName)} can join at any class and continue without losing the thread.</li>`,
     `<li>Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.</li>`,
     `<li>Cancel anytime with 15 days' notice. No long-term contract.</li>`,
     `</ul>`,
