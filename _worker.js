@@ -886,11 +886,11 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     textLines.push(description, "");
   }
   textLines.push(
-    `Everything you need is on the course page \u2014 full description, ${classCount}-class syllabus, and the enrollment form where you can pick your day of the week, pick ${studentName}'s start date, and reserve the spot:`,
+    `Everything you need is on the course page \u2014 full description, class syllabus, and the enrollment form where you can pick your day of the week, pick ${studentName}'s start date, and reserve the spot:`,
     "",
     courseUrl,
     "",
-    `Scroll to "Reserve your spot in ${courseName}" at the bottom of the page \u2014 the whole thing takes about 2 minutes.`,
+    `Scroll to "Reserve your spot in ${courseName}" at the top of the course page \u2014 the whole thing takes about 2 minutes.`,
     ""
   );
   if (schedule.length) {
@@ -950,9 +950,9 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     h.push(`<p>${e(description)}</p>`);
   }
   h.push(
-    `<p>Everything you need is on the course page \u2014 full description, ${classCount}-class syllabus, and the enrollment form where you can <strong>pick your day of the week, pick ${e(studentName)}'s start date, and reserve the spot</strong>:</p>`,
+    `<p>Everything you need is on the course page \u2014 full description, class syllabus, and the enrollment form where you can <strong>pick your day of the week, pick ${e(studentName)}'s start date, and reserve the spot</strong>:</p>`,
     `<p><a href="${courseUrl}" style="${linkStyle}"><strong>${courseUrl}</strong></a></p>`,
-    `<p>Scroll to \u201CReserve your spot in ${e(courseName)}\u201D at the bottom of the page \u2014 the whole thing takes about 2 minutes.</p>`
+    `<p>Scroll to \u201CReserve your spot in ${e(courseName)}\u201D at the top of the course page \u2014 the whole thing takes about 2 minutes.</p>`
   );
   if (schedule.length) {
     h.push(`<p><strong>Days and times available for ${e(courseName)}:</strong></p>`);
