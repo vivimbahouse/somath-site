@@ -521,10 +521,12 @@
         var summary   = document.getElementById('scheduleSummary');
         var line      = document.getElementById('summaryLine');
 
-        // Min = tomorrow (no same-day starts)
-        var tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        dateInput.min = tomorrow.toISOString().split('T')[0];
+        // Min = 3 days out. Stripe requires the subscription trial_end (which we set to
+        // the day before the first class) to be at least 48h in the future, so a same-day
+        // or next-day start would be rejected. 3-day floor keeps the picker safe.
+        var minStart = new Date();
+        minStart.setDate(minStart.getDate() + 3);
+        dateInput.min = minStart.toISOString().split('T')[0];
 
         function selectedDay() {
           var d = document.querySelector('input[name="dayChoice"]:checked');

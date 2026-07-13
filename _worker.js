@@ -1177,6 +1177,13 @@ async function handleEnrollIntent(request, env) {
     billingFmt = d.toLocaleDateString("en-US", { weekday:"long", month:"long", day:"numeric", year:"numeric", timeZone:"UTC" });
     // Trial ends at noon UTC the day before first class (so first charge hits that morning ET)
     trialEndUnix = Math.floor(d.getTime() / 1000) + (12 * 60 * 60);
+    // Stripe requires trial_end to be at least 48 hours in the future. If the parent
+    // picked a start date less than 2 days out, push trial_end forward to the minimum
+    // Stripe will accept. Small buffer (75 min) beyond 48h to survive clock drift.
+    var minTrialEnd = Math.floor(Date.now() / 1000) + (48 * 60 * 60) + (75 * 60);
+    if (trialEndUnix < minTrialEnd) {
+      trialEndUnix = minTrialEnd;
+    }
   }
   var startFmt = fmtLongDate(date);
 
@@ -1314,7 +1321,12 @@ async function handleEnrollIntent(request, env) {
 
   if (!checkoutUrl) {
     // Stripe call failed or course not in catalog — surface a clear error so the frontend doesn't redirect to a broken link
-    return jsonResponse({ ok: false, error: "checkout_unavailable" }, 502);
+    var errPayload = { ok: false, error: "checkout_unavailable" };
+    if (!COURSE_PRICES[course])   errPayload.reason = "unknown_course";
+    else if (!env.STRIPE_SECRET_KEY) errPayload.reason = "stripe_not_configured";
+    else if (trialEndUnix <= 0)   errPayload.reason = "invalid_start_date";
+    else                           errPayload.reason = "stripe_rejected";
+    return jsonResponse(errPayload, 502);
   }
   return jsonResponse({ ok: true, checkout_url: checkoutUrl, session_id: checkoutSessionId });
 }
