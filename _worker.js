@@ -1082,6 +1082,7 @@ var COURSE_PRICES = {
   "kid-einsteins":                 "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $367/mo
   "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
+  "regents-algebra-1":             "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (Regents Algebra 1 shares the YF price)
   "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-algebra-ii":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (reuses same YF price)
   "shsat-prep":                    "price_1Tn2YLIWmENPPZJBkwL9CRip", // SHSAT $587/mo
