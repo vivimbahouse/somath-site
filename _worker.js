@@ -521,6 +521,7 @@ var PRE_ENROLL_COURSES = {
   "kid-einsteins":                { title: "Kid Einsteins",                 grade: "Grades 3\u20134",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grades 5\u20136",       summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ignite": { title: "Young Fermats \u2014 Algebra Ignite",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "regents-algebra-1":            { title: "Regents Algebra 1 Prep",         grade: "Grades 8\u20139", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
   "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry and Trigonometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ii":     { title: "Young Fermats \u2014 Algebra II",       grade: "Grades 9\u201311",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "shsat-prep":                   { title: "SHSAT Prep",                    grade: "Grades 7\u20138",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
@@ -552,6 +553,7 @@ var FALL_DAY_CHOICES = {
   "kid-einsteins":                ["Mon", "Thu"],
   "young-fermats-prealgebra":     ["Tue", "Thu"],
   "young-fermats-algebra-ignite": ["Mon", "Wed"],
+  "regents-algebra-1":            ["Fri"],
   "young-fermats-geometry":       ["Mon"],
   "young-fermats-algebra-ii":     ["Tue"]
 };
@@ -812,6 +814,7 @@ var EVAL_COURSES = {
   "kid-einsteins": "Kid Einsteins",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
+  "regents-algebra-1": "Regents Algebra 1 Prep",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
   "shsat-prep": "SHSAT Prep",
@@ -826,6 +829,7 @@ var COURSE_CLASS_COUNT = {
   "kid-einsteins": 48,
   "young-fermats-prealgebra": 48,
   "young-fermats-algebra-ignite": 48,
+  "regents-algebra-1": 24,
   "young-fermats-geometry": 48,
   "young-fermats-algebra-ii": 24,
   "shsat-prep": 24,
@@ -840,6 +844,7 @@ var COURSE_DESCRIPTIONS = {
   "kid-einsteins": "Kid Einsteins is our Grades 3\u20134 program (ages 8\u201310). The arc covers multiplication mastery, long division, fractions and decimals, geometric reasoning with area and perimeter, and multi-step word problems \u2014 the core of upper-elementary math, delivered in a 90-minute weekly lesson with real problem-solving depth. It also opens the door to integers, ratios, and early algebraic thinking, so students walk into Grade 5 ready for Pre-Algebra instead of meeting these ideas cold.",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra I. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra I already fluent with the language they'll be using every day.",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite is a real Algebra I course for Grades 7\u20138 (ages 12\u201314). The syllabus covers linear equations and inequalities, systems, exponents, factoring, quadratics and functions in the first half, then goes deeper with function composition, sequences and series, rational functions, statistics, logs, and modeling \u2014 the same depth honors students see, at a small-group pace. It also lays the groundwork for Geometry proof-writing and the quadratic and function work that dominates Algebra II, so students step into high school math with real momentum.",
+  "regents-algebra-1": "Regents Algebra 1 Prep is a 24-meeting cohort for Grades 8\u20139 mapped directly to the NY State Regents Algebra 1 blueprint. The arc covers linear equations and inequalities, systems, exponents, polynomials, factoring, quadratics, exponential functions, sequences, and statistics \u2014 the full Common Core list, with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. Fridays 5\u20137 PM on the Upper West Side, capped at 6 students.",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry is a two-part arc for Grades 7\u20138 (ages 12\u201314). Part A covers plane geometry end-to-end \u2014 angle relationships, triangle congruence, Pythagorean theorem, similarity, coordinate geometry, area and volume, and two-column proof. Part B is a full Trigonometry track \u2014 the unit circle, graphs of sine, cosine and tangent, identities, laws of sines and cosines, vectors, and polar coordinates. Together the two parts prepare students for the trigonometric and analytic-geometry work that shows up throughout Algebra II and Pre-Calculus, so nothing comes as a surprise later.",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II is our honors-track high school course for Grades 9\u201311 (ages 14\u201317). The syllabus covers quadratics, polynomials, radicals, exponentials, logarithms, sequences, and complex functions \u2014 delivered with the depth needed for the Algebra II Regents and the SAT. It also builds the function-analysis and transformation fluency that Pre-Calculus and Calculus lean on constantly, so students arrive in those courses with the algebra already in place.",
   "shsat-prep": "SHSAT Prep is our Specialized High School Admissions math course for Grades 7\u20138. Students master the SHSAT question families, learn timing and scratch-paper strategy, and take full-length section drills every cycle \u2014 the practice pattern that actually moves scores. The algebra, geometry, and word-problem work also sets up the Algebra I and Geometry courses they'll meet in ninth grade, so the prep pays off well past test day.",
@@ -854,6 +859,7 @@ var COURSE_SCHEDULES = {
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
   "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
+  "regents-algebra-1":             [{d:"Friday",t:"5:00 \u2013 7:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
@@ -1058,6 +1064,7 @@ var COURSE_TITLES = {
   "kid-einsteins": "Kid Einsteins",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
+  "regents-algebra-1": "Regents Algebra 1 Prep",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
   "shsat-prep": "SHSAT Prep",
@@ -1086,7 +1093,7 @@ var COURSE_PRICES = {
 var COURSE_MONTHLY_USD = {
   "little-newtons": 246,
   "kid-einsteins": 367,
-  "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "young-fermats-geometry": 489, "young-fermats-algebra-ii": 489,
+  "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "regents-algebra-1": 489, "young-fermats-geometry": 489, "young-fermats-algebra-ii": 489,
   "shsat-prep": 587, "sat-math": 640,
   "pre-calculus": 800, "ap-calculus": 800, "ap-statistics": 800
 };
