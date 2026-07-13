@@ -24,7 +24,7 @@
           <a class="nav__link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
           <a class="nav__link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
           <a class="nav__link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
-          <a class="nav__link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit</a>
+          <a class="nav__link ${page === "visit" ? "is-active" : ""}" href="/visit">Visit</a>
         </nav>
         <a href="/evaluation" class="nav__cta btn btn--primary">Book Free Evaluation</a>
         <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -37,7 +37,7 @@
         <a class="nav__mobile-link ${page === "schedule" ? "is-active" : ""}" href="/schedule">Schedule</a>
         <a class="nav__mobile-link ${page === "about" ? "is-active" : ""}" href="/about">Team</a>
         <a class="nav__mobile-link ${page === "blog" ? "is-active" : ""}" href="/blog">Journal</a>
-        <a class="nav__mobile-link ${page === "contact" ? "is-active" : ""}" href="/contact">Visit Us</a>
+        <a class="nav__mobile-link ${page === "visit" ? "is-active" : ""}" href="/visit">Visit Us</a>
         <a class="nav__mobile-cta btn btn--primary" href="/evaluation">Book Free Evaluation</a>
       </div>
     </header>
@@ -76,7 +76,8 @@
             <li><a href="/about">Team</a></li>
             <li><a href="/posts/inside-somath-2026-website-tour-membership-schedule-syllabus">Watch the Tour</a></li>
             <li><a href="/blog">Journal</a></li>
-            <li><a href="/contact">Visit Us</a></li>
+            <li><a href="/visit">Visit Us</a></li>
+            <li><a href="/contact">Contact</a></li>
             <li><a href="/evaluation">Free Evaluation</a></li>
             <li><a href="/student-evaluation">Student Evaluation</a></li>
             <li><a href="/course-recommendation">Course Recommendation</a></li>
