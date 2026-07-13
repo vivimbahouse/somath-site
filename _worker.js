@@ -1766,8 +1766,10 @@ var worker_default = {
       return Response.redirect(`https://www.schoolofmath.us${CONSOLIDATED_COURSE_REDIRECTS[url.pathname]}`, 301);
     }
     // Serve our own robots.txt (bypass Cloudflare managed robots injection).
-    // Single consolidated file: one User-agent: * group with all disallows,
-    // AI bots each in their own group, sitemap at the end.
+    // We WANT AI assistants (ChatGPT, Claude, Perplexity, Gemini) to read the
+    // site so parents searching in those tools can find SOMATH. Only block
+    // admin and API paths for everyone; scraper-only bots (Bytespider,
+    // Amazonbot) stay fully blocked.
     if (url.pathname === "/robots.txt") {
       const robots = [
         "User-agent: *",
@@ -1779,25 +1781,10 @@ var worker_default = {
         "User-agent: Amazonbot",
         "Disallow: /",
         "",
-        "User-agent: Applebot-Extended",
-        "Disallow: /",
-        "",
         "User-agent: Bytespider",
         "Disallow: /",
         "",
         "User-agent: CCBot",
-        "Disallow: /",
-        "",
-        "User-agent: ClaudeBot",
-        "Disallow: /",
-        "",
-        "User-agent: Google-Extended",
-        "Disallow: /",
-        "",
-        "User-agent: GPTBot",
-        "Disallow: /",
-        "",
-        "User-agent: meta-externalagent",
         "Disallow: /",
         "",
         "Sitemap: https://www.schoolofmath.us/sitemap.xml",
@@ -1811,6 +1798,24 @@ var worker_default = {
           "x-robots-source": "worker"
         }
       });
+    }
+
+    // Serve llms.txt and llms-full.txt as text/plain (bypass the SPA fallback
+    // that otherwise returns index.html for these). Files live at the repo
+    // root so we fetch them via env.ASSETS.
+    if (url.pathname === "/llms.txt" || url.pathname === "/llms-full.txt") {
+      const assetResp = await env.ASSETS.fetch(new Request(url.origin + url.pathname));
+      if (assetResp.ok) {
+        const body = await assetResp.text();
+        return new Response(body, {
+          status: 200,
+          headers: {
+            "content-type": "text/plain; charset=utf-8",
+            "cache-control": "public, max-age=3600",
+            "x-llms-source": "worker"
+          }
+        });
+      }
     }
     // Strip .html suffix with a 301 (SEO — Google's auto-strip 307 does not pass link equity as strongly).
     if (url.pathname.endsWith(".html") && !url.pathname.startsWith("/api/")) {

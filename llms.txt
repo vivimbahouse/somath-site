@@ -1,0 +1,31 @@
+# School of Math (SOMATH)
+
+> SOMATH is a math school in New York City serving grades 1-12. Small classes of up to 6 students, taught by Harvard- and Kellogg-trained instructors on the Upper West Side (226 W 79th St, 1st Floor, NY 10024). Programs run on a rolling 6-month membership: enrichment for grades 1-8 (Little Newtons through Young Fermats), then test prep and advanced tracks (SHSAT, SAT Math, AP Pre-Calculus, AP Calculus AB/BC, AP Statistics). Every family starts with a free 60-minute in-person evaluation.
+
+Contact: hello@schoolofmath.us · (646) 668-6151 · [schoolofmath.us](https://www.schoolofmath.us/)
+
+## Core pages
+
+- [Home](https://www.schoolofmath.us/): NYC math school for grades 1–12. Small groups of 6, Harvard- & Kellogg-trained teachers, free 60-min evaluation. Upper West Side · 226 W 79th St.
+- [About SOMATH](https://www.schoolofmath.us/about): Meet Vivianne Wright (Harvard) and Marcelo Ambrozio (Northwestern) — the educators behind School of Math on the Upper West Side. 20 years preparing GMAT/GRE candidates for top business schools. Now teaching grades 1–12.
+- [All courses](https://www.schoolofmath.us/courses): Browse every SOMATH course — Little Newtons, Kid Einsteins, Young Fermats Pre-Algebra, Algebra Ignite, Geometry, Algebra II, SHSAT Prep, SAT Math, and AP Prep. Pick a day and enroll.
+- [Contact](https://www.schoolofmath.us/contact): Visit School of Math at 226 West 79th Street, Upper West Side, NYC. Steps from the 1, B, C trains. Open Mon–Fri 3–10pm, Sat 10am–6pm. Call (646) 668-6151.
+
+## Courses
+
+- [Little Newtons (Grades 1–2) | School of Math](https://www.schoolofmath.us/courses/little-newtons): Little Newtons at SOMATH on the Upper West Side — Grades 1–2, Ages 6–8. Number sense, addition/subtraction fluency, fractions, word problems. 48 classes over 12 months. $246/month, $99 one-time registration.
+- [Kid Einsteins (Grades 3–4) | School of Math](https://www.schoolofmath.us/courses/kid-einsteins): Kid Einsteins at SOMATH on the Upper West Side — Grades 3–4, Ages 8–10. Multiplication mastery, division, fractions & decimals, word problems, area & perimeter. 48 classes over 12 months. $367/month.
+- [Young Fermats - Pre-Algebra (Grades 5–6) | School of Math](https://www.schoolofmath.us/courses/young-fermats-prealgebra): Young Fermats — Pre-Algebra at SOMATH on the Upper West Side — Grades 5–6, Ages 10–12. Integers, fractions, ratios, intro algebraic thinking — the foundation for everything that follows. $489/month, $99 one-time registration.
+- [Young Fermats - Algebra Ignite (Grades 7–8) | School of Math](https://www.schoolofmath.us/courses/young-fermats-algebra-ignite): Young Fermats — Algebra Ignite at SOMATH on the Upper West Side — Grades 7–8, Ages 12–14. Linear equations, systems, exponents, factoring — a real Algebra I track. $489/month, $99 one-time registration.
+- [Young Fermats - Geometry and Trigonometry (Grades 7–8)](https://www.schoolofmath.us/courses/young-fermats-geometry): Young Fermats — Geometry and Trigonometry at SOMATH on the Upper West Side — Grades 7–8, Ages 12–14. Angles, triangles, Pythagorean, coordinate geometry, area & volume — a real intro to proof-style thinking. $489/month, $99 one-time registration.
+- [Young Fermats - Algebra II (Grades 9–11) | School of Math](https://www.schoolofmath.us/courses/young-fermats-algebra-ii): Young Fermats — Algebra II at SOMATH on the Upper West Side — Grades 9–11, Ages 14–17. Quadratics, polynomials, radicals, exponentials, logarithms, and functions — the honors-track high school course. $489/month, $99 one-time registration.
+- [AP Pre-Calculus (Grades 10–12) | School of Math](https://www.schoolofmath.us/courses/pre-calculus): AP Pre-Calculus at SOMATH on the Upper West Side — Grades 10–12. Functions, trig, sequences and series — the calculus foundations that actually matter. $800/month, $99 one-time registration.
+- [AP Calculus AB/BC (Grades 11–12) | School of Math](https://www.schoolofmath.us/courses/ap-calculus): AP Calculus AB/BC at SOMATH on the Upper West Side — Grades 11–12. Limits, derivatives, integrals, series — aligned to your child's school syllabus with free-response drills. $800/month, $99 one-time registration.
+- [AP Statistics (Grades 10–12) | School of Math](https://www.schoolofmath.us/courses/ap-statistics): AP Statistics at SOMATH on the Upper West Side — Grades 10–12. Exploring data, sampling and experimentation, probability, and statistical inference — aligned to the College Board syllabus with free-response drills. $800/month, $99 one-time registration.
+- [SAT Math (Grades 9–11) | School of Math](https://www.schoolofmath.us/courses/sat-math): SAT Math at SOMATH on the Upper West Side — Grades 9–11, High School. Heart of Algebra · Problem Solving & Data · Passport to Advanced Math · Additional Topics. $640/month, $99 one-time registration.
+- [SHSAT Prep (Grades 7–8) | School of Math](https://www.schoolofmath.us/courses/shsat-prep): SHSAT Prep at SOMATH on the Upper West Side — Grades 7–8, Middle School. Specialized HS Admissions math — question families, timing, scratch-paper strategy. $587/month, $99 one-time registration.
+
+## Optional
+
+- [Full site index (all 115+ posts and guides)](https://www.schoolofmath.us/llms-full.txt): complete markdown-linked directory of every article and resource on schoolofmath.us, grouped by topic.
+- [XML sitemap](https://www.schoolofmath.us/sitemap.xml): machine-readable list of all indexable URLs.
