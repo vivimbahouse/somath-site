@@ -94,6 +94,9 @@
       .qbox details.reveal > summary::before { content: "Show solution"; }
       .qbox details.reveal[open] > summary::before { content: "Hide solution"; }
       .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .video-embed { position:relative; width:100%; padding-bottom:56.25%; margin:24px 0 8px; border-radius:8px; overflow:hidden; background:#000; }
+      .video-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+      .video-caption { font-size:0.9rem; color:#666; text-align:center; margin:0 0 24px; font-style:italic; }
     </style>
     <script type="application/ld+json">
 {
@@ -116,7 +119,16 @@
       "url": "https://www.schoolofmath.us/assets/logo.png"
     }
   },
-  "mainEntityOfPage": "https://www.schoolofmath.us/posts/word-problems-linear-equations-35-questions"
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/word-problems-linear-equations-35-questions",
+  "video": {
+    "@type": "VideoObject",
+    "name": "Word Problems with Linear Equations — SOMATH walkthrough",
+    "description": "SOMATH teacher walks through the 5-step recipe for turning word problems into linear equations, with worked examples.",
+    "thumbnailUrl": "https://i.ytimg.com/vi/H9_OGHrbNzc/hqdefault.jpg",
+    "uploadDate": "2026-07-15",
+    "embedUrl": "https://www.youtube.com/embed/H9_OGHrbNzc",
+    "contentUrl": "https://youtu.be/H9_OGHrbNzc"
+  }
 }
 </script>
   </head>
@@ -132,6 +144,18 @@
       <div class="post__body">
 
         <p><strong>Who this is for.</strong> Pre-Algebra and Algebra I students who can already solve equations like <span class="qbox eq" style="padding:2px 6px;">3x + 5 = 20</span> mechanically, but freeze up when the same equation is buried inside a word problem about apples, coins, or trains. Nearly every algebra state test and standardized exam is more than half word problems. The math is easy; the translation is the hard part. This lesson gives you a repeatable 5-step recipe, then 35 progressively harder problems to practice on.</p>
+
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/H9_OGHrbNzc"
+            title="Word Problems with Linear Equations — SOMATH walkthrough"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"></iframe>
+        </div>
+        <p class="video-caption">Video walkthrough: SOMATH teacher works through the 5-step recipe live.</p>
 
         <div class="callout">
           <strong>How to use this set.</strong> Read the theory first &mdash; it is short. Then work through each question with paper and pencil <em>before</em> you click &ldquo;Show solution.&rdquo; The point is not to read solutions; the point is to build the reflex of turning English into an equation. If you get stuck for more than 5 minutes, peek at the first line of the solution (the equation setup), close it, and try again.
