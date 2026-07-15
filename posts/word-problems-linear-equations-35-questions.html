@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Word Problems with Linear Equations: Theory + 35 Practice Questions | SOMATH</title>
+    <meta name="description" content="Free lesson on modeling word problems with linear equations. Covers translating words into equations, solving one-variable equations, and systems of two equations. Includes 35 practice questions (10 easy, 10 medium, 5 medium-hard, 10 hard) with hidden step-by-step solutions. From SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/word-problems-linear-equations-35-questions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Word Problems with Linear Equations: Theory + 35 Practice Questions" />
+    <meta property="og:description" content="A step-by-step guide to modeling word problems with linear equations, plus 35 practice questions (10 easy, 10 medium, 5 medium-hard, 10 hard) with hidden solutions. From SOMATH on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/word-problems-linear-equations-35-questions" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="article:published_time" content="2026-07-15" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Word Problems with Linear Equations: Theory + 35 Practice Questions" />
+    <meta name="twitter:description" content="How to translate word problems into linear equations, plus 35 practice questions with hidden step-by-step solutions. From SOMATH, Upper West Side." />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box table.translate { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.96rem; }
+      .theory-box table.translate th, .theory-box table.translate td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; }
+      .theory-box table.translate th { background:#0a3a5f; color:#fff; }
+      .theory-box table.translate tr:nth-child(even) { background:#fafafa; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .difficulty { display:inline-block; font-size:0.75rem; font-weight:700; padding:2px 9px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em; margin-left:8px; vertical-align:middle; }
+      .qbox .difficulty.easy { background:#d8efd9; color:#1f5e2b; }
+      .qbox .difficulty.medium { background:#fdecc8; color:#8a5a00; }
+      .qbox .difficulty.medium-hard { background:#fde2c8; color:#9a4500; }
+      .qbox .difficulty.hard { background:#f8d6d6; color:#94232b; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.4; overflow-x:auto; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:640px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Word Problems Modeled with Linear Equations: Theory and 35 Practice Questions",
+  "description": "A step-by-step lesson on modeling word problems with linear equations. Covers variables, translating words into equations, and systems of equations. Includes 35 practice questions (10 easy, 10 medium, 5 medium-hard, 10 hard) with hidden solutions. From SOMATH on the Upper West Side, NYC.",
+  "datePublished": "2026-07-15",
+  "dateModified": "2026-07-15",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/word-problems-linear-equations-35-questions"
+}
+</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Pre-Algebra &middot; Algebra I &middot; Word Problems &middot; Linear Equations</p>
+      <h1 class="post__title">Word Problems Modeled with Linear Equations: Theory and 35 Practice Questions</h1>
+      <p class="post__dek">A step-by-step guide to modeling real-world problems with linear equations &mdash; translating English into algebra, solving one-variable equations, and setting up systems of two equations &mdash; followed by 35 practice questions (10 easy, 10 medium, 5 medium-hard, 10 hard) with hidden step-by-step solutions. Written for Pre-Algebra and Algebra I students at SOMATH on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-07-15">2026-07-15</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p><strong>Who this is for.</strong> Pre-Algebra and Algebra I students who can already solve equations like <span class="qbox eq" style="padding:2px 6px;">3x + 5 = 20</span> mechanically, but freeze up when the same equation is buried inside a word problem about apples, coins, or trains. Nearly every algebra state test and standardized exam is more than half word problems. The math is easy; the translation is the hard part. This lesson gives you a repeatable 5-step recipe, then 35 progressively harder problems to practice on.</p>
+
+        <div class="callout">
+          <strong>How to use this set.</strong> Read the theory first &mdash; it is short. Then work through each question with paper and pencil <em>before</em> you click &ldquo;Show solution.&rdquo; The point is not to read solutions; the point is to build the reflex of turning English into an equation. If you get stuck for more than 5 minutes, peek at the first line of the solution (the equation setup), close it, and try again.
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#theory">Theory &middot; The 5-Step Recipe</a></li>
+            <li><a href="#translate">Translation Table &middot; English to Algebra</a></li>
+            <li><a href="#easy">Section 1 &middot; Easy (questions 1&ndash;10)</a></li>
+            <li><a href="#medium">Section 2 &middot; Medium (questions 11&ndash;20)</a></li>
+            <li><a href="#medium-hard">Section 3 &middot; Medium-Hard (questions 21&ndash;25)</a></li>
+            <li><a href="#hard">Section 4 &middot; Hard (questions 26&ndash;35)</a></li>
+            <li><a href="#answer-key">Answer Key</a></li>
+            <li><a href="#big-ideas">Big Ideas Covered</a></li>
+          </ol>
+        </div>
+
+        <h2 id="theory">Theory &middot; The 5-Step Recipe</h2>
+
+        <p>Every linear-equation word problem &mdash; whether it is about coins, ages, mixtures, or trains &mdash; is solved with the same five steps. Do them in this exact order.</p>
+
+        <div class="theory-box">
+          <h3>Step 1 &middot; Read once for the story, once for the numbers</h3>
+          <p>The first read is just to understand what is happening. The second read is for the numbers, the units, and the question at the end (&ldquo;<em>how many&hellip;</em>&rdquo;, &ldquo;<em>what is the&hellip;</em>&rdquo;, &ldquo;<em>when will&hellip;</em>&rdquo;). Underline both the given numbers <em>and</em> the question.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 2 &middot; Name the unknown with a variable</h3>
+          <p>Pick a letter for the thing the problem is asking about, and write down what it means in a sentence. Something like &ldquo;Let <span class="eq">x</span> = the number of dimes.&rdquo; If there are two unknowns, name both: &ldquo;Let <span class="eq">x</span> = adult tickets, <span class="eq">y</span> = child tickets.&rdquo;</p>
+          <p><strong>Rule of thumb:</strong> if you can express the second unknown in terms of the first (for example, &ldquo;the number of dimes is 3 more than nickels&rdquo; &rarr; <span class="eq">d = n + 3</span>), do that and stay with one variable. Only use two variables when the two unknowns are truly independent.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 3 &middot; Translate every sentence into algebra</h3>
+          <p>Now go back to the problem, sentence by sentence, and write each fact as an equation or an expression. Words like &ldquo;is,&rdquo; &ldquo;equals,&rdquo; &ldquo;the total is&rdquo; become <span class="eq">=</span>. Words like &ldquo;more than,&rdquo; &ldquo;increased by,&rdquo; &ldquo;sum of&rdquo; become <span class="eq">+</span>. Words like &ldquo;less than,&rdquo; &ldquo;fewer,&rdquo; &ldquo;difference&rdquo; become <span class="eq">&minus;</span>. Use the translation table in the next section as a cheat sheet.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 4 &middot; Solve the equation (or system)</h3>
+          <p>Now the algebra is just algebra. For a single linear equation <span class="eq">ax + b = c</span>: subtract <span class="eq">b</span> from both sides, then divide both sides by <span class="eq">a</span>. For a system of two equations, use substitution (solve one equation for one variable, plug into the other) or elimination (add or subtract the equations to cancel a variable).</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 5 &middot; Check the answer against the story</h3>
+          <p>Plug your number <em>back into the original word problem</em> (not just the equation you wrote). Does it make sense? If the problem asks for a number of coins, is your answer a positive whole number? If it asks for a speed, is it a reasonable speed? A wrong-sign answer or a fractional child is a signal that you translated something backwards.</p>
+        </div>
+
+        <h2 id="translate">Translation Table &middot; English to Algebra</h2>
+
+        <p>This is the vocabulary you will see over and over. Memorize it.</p>
+
+        <div class="theory-box">
+          <table class="translate">
+            <thead>
+              <tr><th>English</th><th>Algebra</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>&ldquo;a number,&rdquo; &ldquo;some,&rdquo; &ldquo;how many&rdquo;</td><td><span class="eq">x</span></td></tr>
+              <tr><td>&ldquo;the sum of x and y,&rdquo; &ldquo;x more than y,&rdquo; &ldquo;x increased by y&rdquo;</td><td><span class="eq">x + y</span></td></tr>
+              <tr><td>&ldquo;x less than y,&rdquo; &ldquo;the difference between y and x,&rdquo; &ldquo;y decreased by x&rdquo;</td><td><span class="eq">y &minus; x</span> (careful with order)</td></tr>
+              <tr><td>&ldquo;twice,&rdquo; &ldquo;doubled,&rdquo; &ldquo;two times&rdquo;</td><td><span class="eq">2x</span></td></tr>
+              <tr><td>&ldquo;three times,&rdquo; &ldquo;triple&rdquo;</td><td><span class="eq">3x</span></td></tr>
+              <tr><td>&ldquo;half of,&rdquo; &ldquo;split in two&rdquo;</td><td><span class="eq">x/2</span></td></tr>
+              <tr><td>&ldquo;the product of x and y&rdquo;</td><td><span class="eq">xy</span></td></tr>
+              <tr><td>&ldquo;the quotient of x and y&rdquo;</td><td><span class="eq">x/y</span></td></tr>
+              <tr><td>&ldquo;is,&rdquo; &ldquo;equals,&rdquo; &ldquo;the result is,&rdquo; &ldquo;the total is&rdquo;</td><td><span class="eq">=</span></td></tr>
+              <tr><td>&ldquo;consecutive integers&rdquo;</td><td><span class="eq">x</span>, <span class="eq">x + 1</span>, <span class="eq">x + 2</span>, &hellip;</td></tr>
+              <tr><td>&ldquo;consecutive even (or odd) integers&rdquo;</td><td><span class="eq">x</span>, <span class="eq">x + 2</span>, <span class="eq">x + 4</span>, &hellip;</td></tr>
+              <tr><td>&ldquo;n years from now,&rdquo; &ldquo;in n years&rdquo;</td><td>add <span class="eq">n</span> to each age</td></tr>
+              <tr><td>&ldquo;n years ago&rdquo;</td><td>subtract <span class="eq">n</span> from each age</td></tr>
+              <tr><td>&ldquo;distance = rate &times; time&rdquo;</td><td><span class="eq">d = rt</span></td></tr>
+              <tr><td>&ldquo;downstream speed&rdquo; (boat + current)</td><td><span class="eq">b + c</span></td></tr>
+              <tr><td>&ldquo;upstream speed&rdquo; (boat &minus; current)</td><td><span class="eq">b &minus; c</span></td></tr>
+              <tr><td>&ldquo;work rate&rdquo; &ldquo;pipe fills tank in n hours&rdquo;</td><td>rate = <span class="eq">1/n</span> per hour</td></tr>
+              <tr><td>&ldquo;p% of x&rdquo;</td><td><span class="eq">(p/100) &middot; x</span></td></tr>
+              <tr><td>&ldquo;total value = price &times; quantity&rdquo;</td><td><span class="eq">V = pq</span> (coins, tickets, mixtures)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>With Step 2 (name the variable), Step 3 (translate), Step 4 (solve), and the vocabulary above, you can solve every single problem below. Try each one on paper before revealing the solution.</p>
+
+        <h2 id="easy">Section 1 &middot; Easy (questions 1&ndash;10)</h2>
+        <p>Single-variable equations of the form <span class="eq">ax + b = c</span>. Warm-up.</p>
+
+        <div class="qbox">
+          <h3>Question 1 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A number plus 7 equals 23. Find the number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 16</strong></p>
+            <p class="explain"><strong>Step 2 &middot; Name.</strong> Let <span class="eq">x</span> = the number.</p>
+            <p class="explain"><strong>Step 3 &middot; Translate.</strong> &ldquo;A number plus 7 equals 23&rdquo; &rarr; <span class="eq">x + 7 = 23</span>.</p>
+            <p class="explain"><strong>Step 4 &middot; Solve.</strong> Subtract 7 from both sides: <span class="eq">x = 23 &minus; 7 = 16</span>.</p>
+            <p class="explain"><strong>Step 5 &middot; Check.</strong> <span class="eq">16 + 7 = 23</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 2 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Twice a number is 46. Find the number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 23</strong></p>
+            <p class="explain"><strong>Translate:</strong> &ldquo;Twice a number is 46&rdquo; &rarr; <span class="eq">2x = 46</span>.</p>
+            <p class="explain"><strong>Solve:</strong> divide both sides by 2 &rarr; <span class="eq">x = 23</span>.</p>
+            <p class="explain"><strong>Check:</strong> <span class="eq">2 &middot; 23 = 46</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 3 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Five times a number, minus 4, equals 41. Find the number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 9</strong></p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">5x &minus; 4 = 41</span>.</p>
+            <p class="explain"><strong>Solve:</strong> add 4 &rarr; <span class="eq">5x = 45</span>; divide by 5 &rarr; <span class="eq">x = 9</span>.</p>
+            <p class="explain"><strong>Check:</strong> <span class="eq">5(9) &minus; 4 = 45 &minus; 4 = 41</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 4 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A number divided by 3 gives 12. Find the number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 36</strong></p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">x/3 = 12</span>.</p>
+            <p class="explain"><strong>Solve:</strong> multiply both sides by 3 &rarr; <span class="eq">x = 36</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 5 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Ana has some stickers. Her friend gives her 15 more, and now she has 42. How many stickers did Ana start with?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 27</strong> stickers</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = starting stickers.</p>
+            <p class="explain"><strong>Translate:</strong> starting + 15 = 42 &rarr; <span class="eq">x + 15 = 42</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">x = 42 &minus; 15 = 27</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 6 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A pencil costs $2. Lucas buys some pencils and spends a total of $18. How many pencils did he buy?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 9</strong> pencils</p>
+            <p class="explain"><strong>Translate:</strong> price &times; quantity = total &rarr; <span class="eq">2x = 18</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">x = 9</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 7 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A number, when increased by 8 and then doubled, equals 30. Find the number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 7</strong></p>
+            <p class="explain"><strong>Translate:</strong> &ldquo;increased by 8&rdquo; &rarr; <span class="eq">(x + 8)</span>; &ldquo;then doubled&rdquo; &rarr; <span class="eq">2(x + 8) = 30</span>.</p>
+            <p class="explain"><strong>Solve:</strong> divide both sides by 2 &rarr; <span class="eq">x + 8 = 15</span>; subtract 8 &rarr; <span class="eq">x = 7</span>.</p>
+            <p class="explain"><strong>Check:</strong> <span class="eq">2(7 + 8) = 2(15) = 30</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 8 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Three times a number equals 20 more than the number itself. Find the number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 10</strong></p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">3x = x + 20</span>.</p>
+            <p class="explain"><strong>Solve:</strong> subtract <span class="eq">x</span> from both sides &rarr; <span class="eq">2x = 20</span>; divide by 2 &rarr; <span class="eq">x = 10</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 9 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">The sum of two consecutive integers is 47. Find the smaller integer.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 23</strong> (integers are 23 and 24)</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = smaller integer, so the next one is <span class="eq">x + 1</span>.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">x + (x + 1) = 47</span>, i.e. <span class="eq">2x + 1 = 47</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">2x = 46</span>, so <span class="eq">x = 23</span>. The two integers are <strong>23 and 24</strong>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 10 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A taxi charges a $3 flat fee plus $2 per mile. A ride costs $17 total. How many miles was the ride?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x = 7</strong> miles</p>
+            <p class="explain"><strong>Translate:</strong> flat fee + (rate)(miles) = total &rarr; <span class="eq">3 + 2x = 17</span>.</p>
+            <p class="explain"><strong>Solve:</strong> subtract 3 &rarr; <span class="eq">2x = 14</span>; divide by 2 &rarr; <span class="eq">x = 7</span>.</p>
+          </div></details>
+        </div>
+
+        <h2 id="medium">Section 2 &middot; Medium (questions 11&ndash;20)</h2>
+        <p>Consecutive integers, age problems, perimeter, distance, and simple mixtures. Still one variable, but the setup is trickier.</p>
+
+        <div class="qbox">
+          <h3>Question 11 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">The sum of three consecutive integers is 72. Find the three integers.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>23, 24, 25</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = smallest, then <span class="eq">x + 1</span> and <span class="eq">x + 2</span> are the next two.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">x + (x + 1) + (x + 2) = 72</span>, so <span class="eq">3x + 3 = 72</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">3x = 69</span>, so <span class="eq">x = 23</span>. The three integers are <strong>23, 24, 25</strong>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 12 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A father is currently 4 times as old as his son. In 5 years, the father will be 3 times as old as his son. How old is each now?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: son is <strong>10</strong>, father is <strong>40</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = son&rsquo;s current age. Father is <span class="eq">4x</span>.</p>
+            <p class="explain"><strong>Translate (in 5 years):</strong> son will be <span class="eq">x + 5</span>, father will be <span class="eq">4x + 5</span>, and father = 3 &middot; son:</p>
+            <span class="work">4x + 5 = 3(x + 5)</span>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">4x + 5 = 3x + 15</span> &rarr; subtract <span class="eq">3x</span> from both sides &rarr; <span class="eq">x + 5 = 15</span> &rarr; <span class="eq">x = 10</span>. So father is <span class="eq">4(10) = 40</span>.</p>
+            <p class="explain"><strong>Check:</strong> in 5 years son is 15, father is 45, and <span class="eq">45 = 3 &middot; 15</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 13 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">One number is 8 more than another. Their sum is 54. Find both numbers.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>23 and 31</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = smaller number; the larger is <span class="eq">x + 8</span>.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">x + (x + 8) = 54</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">2x + 8 = 54</span> &rarr; <span class="eq">2x = 46</span> &rarr; <span class="eq">x = 23</span>. Larger = <span class="eq">23 + 8 = 31</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 14 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A rectangle&rsquo;s length is 3 more than twice its width. The perimeter is 36. Find the width and length.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: width = <strong>5</strong>, length = <strong>13</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">w</span> = width. Length = <span class="eq">2w + 3</span>.</p>
+            <p class="explain"><strong>Translate:</strong> perimeter = 2(length + width) &rarr; <span class="eq">2(w + 2w + 3) = 36</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">2(3w + 3) = 36</span> &rarr; <span class="eq">6w + 6 = 36</span> &rarr; <span class="eq">6w = 30</span> &rarr; <span class="eq">w = 5</span>. Length = <span class="eq">2(5) + 3 = 13</span>.</p>
+            <p class="explain"><strong>Check:</strong> perimeter = <span class="eq">2(13 + 5) = 36</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 15 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Marta buys 3 notebooks and 2 pens for $19. A notebook costs $3 more than a pen. What is the price of a pen?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: pen = <strong>$2</strong>, notebook = <strong>$5</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = price of a pen. Notebook = <span class="eq">x + 3</span>.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">3(x + 3) + 2x = 19</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">3x + 9 + 2x = 19</span> &rarr; <span class="eq">5x = 10</span> &rarr; <span class="eq">x = 2</span>. Notebook = $5.</p>
+            <p class="explain"><strong>Check:</strong> <span class="eq">3(5) + 2(2) = 15 + 4 = 19</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 16 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Train A leaves the station going 60 mph. One hour later, Train B leaves the same station going 75 mph in the same direction on a parallel track. How many hours (after B leaves) until B catches up with A?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>4 hours</strong> after B leaves</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">t</span> = time (in hours) after B leaves. Then A has been traveling <span class="eq">t + 1</span> hours.</p>
+            <p class="explain"><strong>Translate:</strong> when B catches A, they have gone the same distance:</p>
+            <span class="work">60(t + 1) = 75t</span>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">60t + 60 = 75t</span> &rarr; <span class="eq">60 = 15t</span> &rarr; <span class="eq">t = 4</span> hours.</p>
+            <p class="explain"><strong>Check:</strong> A traveled <span class="eq">60(5) = 300</span> miles; B traveled <span class="eq">75(4) = 300</span> miles. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 17 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A phone plan charges $20 per month plus $0.10 per minute. Last month&rsquo;s bill was $47. How many minutes were used?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>270 minutes</strong></p>
+            <p class="explain"><strong>Translate:</strong> fixed + (rate)(minutes) = total &rarr; <span class="eq">20 + 0.10x = 47</span>.</p>
+            <p class="explain"><strong>Solve:</strong> subtract 20 &rarr; <span class="eq">0.10x = 27</span>; divide by 0.10 &rarr; <span class="eq">x = 270</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 18 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">The sum of two numbers is 40. Three times the larger equals five times the smaller. Find the numbers.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: smaller = <strong>15</strong>, larger = <strong>25</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = smaller; then larger = <span class="eq">40 &minus; x</span>.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">3(40 &minus; x) = 5x</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">120 &minus; 3x = 5x</span> &rarr; <span class="eq">120 = 8x</span> &rarr; <span class="eq">x = 15</span>. Larger = <span class="eq">25</span>.</p>
+            <p class="explain"><strong>Check:</strong> <span class="eq">3(25) = 75</span> and <span class="eq">5(15) = 75</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 19 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Gym A charges a $30 sign-up fee plus $25 per month. Gym B charges $45 per month with no sign-up fee. After how many months do the two gyms cost the same?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>1.5 months</strong> (both cost $67.50 at that point)</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">m</span> = months.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">30 + 25m = 45m</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">30 = 20m</span> &rarr; <span class="eq">m = 1.5</span>.</p>
+            <p class="explain"><strong>Interpretation:</strong> at exactly 1.5 months the two plans cost the same. After that, Gym A is cheaper.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 20 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A ferry crosses a river in 30 minutes going with the current and 45 minutes against. The ferry&rsquo;s speed in still water is 12 mph. Find the speed of the current.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: current = <strong>2.4 mph</strong> (12/5)</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">c</span> = speed of the current, in mph. Downstream speed = <span class="eq">12 + c</span>; upstream speed = <span class="eq">12 &minus; c</span>. The distance across the river is the same both ways.</p>
+            <p class="explain"><strong>Translate:</strong> distance = rate &middot; time, in <em>hours</em> (30 min = 1/2 hr, 45 min = 3/4 hr):</p>
+            <span class="work">(12 + c) &middot; (1/2) = (12 &minus; c) &middot; (3/4)</span>
+            <p class="explain"><strong>Solve:</strong> multiply both sides by 4 &rarr; <span class="eq">2(12 + c) = 3(12 &minus; c)</span> &rarr; <span class="eq">24 + 2c = 36 &minus; 3c</span> &rarr; <span class="eq">5c = 12</span> &rarr; <span class="eq">c = 12/5 = 2.4</span> mph.</p>
+          </div></details>
+        </div>
+
+        <h2 id="medium-hard">Section 3 &middot; Medium-Hard (questions 21&ndash;25)</h2>
+        <p>Work problems, mixture problems, and two-variable systems. This is where most Algebra I students start to struggle.</p>
+
+        <div class="qbox">
+          <h3>Question 21 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">Two pipes together fill a tank in 6 hours. Pipe A alone fills it in 10 hours. How long does pipe B alone take?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>15 hours</strong></p>
+            <p class="explain"><strong>Idea &middot; work rates add.</strong> If pipe A fills in 10 hours, its rate is 1/10 of the tank per hour. Similarly, pipe B&rsquo;s rate is <span class="eq">1/b</span> per hour. Together, in one hour they fill <span class="eq">1/10 + 1/b</span> of the tank. Together they fill the whole tank in 6 hours, so their combined rate is <span class="eq">1/6</span> per hour.</p>
+            <p class="explain"><strong>Translate:</strong></p>
+            <span class="work">1/10 + 1/b = 1/6</span>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">1/b = 1/6 &minus; 1/10 = 5/30 &minus; 3/30 = 2/30 = 1/15</span>, so <span class="eq">b = 15</span> hours.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 22 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">You have 40 kg of an alloy that is 25% copper. How many kilograms of pure copper must you add to make the alloy 40% copper?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>10 kg</strong></p>
+            <p class="explain"><strong>Idea:</strong> track the copper only. Initial copper mass = <span class="eq">0.25 &middot; 40 = 10</span> kg. If we add <span class="eq">x</span> kg of pure copper, total mass becomes <span class="eq">40 + x</span> and total copper becomes <span class="eq">10 + x</span>.</p>
+            <p class="explain"><strong>Translate:</strong> new percentage = 40%, so</p>
+            <span class="work">(10 + x) / (40 + x) = 0.40</span>
+            <p class="explain"><strong>Solve:</strong> multiply both sides by <span class="eq">(40 + x)</span> &rarr; <span class="eq">10 + x = 0.40(40 + x) = 16 + 0.40x</span> &rarr; <span class="eq">0.60x = 6</span> &rarr; <span class="eq">x = 10</span> kg.</p>
+            <p class="explain"><strong>Check:</strong> new copper = 20 kg, new total = 50 kg, and <span class="eq">20/50 = 0.40</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 23 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">A car and a bus leave the same station at the same time, going in opposite directions. The car goes 65 mph and the bus goes 55 mph. After how many hours are they 480 miles apart?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>4 hours</strong></p>
+            <p class="explain"><strong>Idea:</strong> when two objects move in opposite directions, their separation increases at a rate equal to the <em>sum</em> of their speeds.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">65t + 55t = 480</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">120t = 480</span> &rarr; <span class="eq">t = 4</span> hours.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 24 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">A boat travels 24 km downstream in 2 hours and 24 km upstream in 3 hours. Find the boat&rsquo;s speed in still water and the speed of the current.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: boat = <strong>10 km/h</strong>, current = <strong>2 km/h</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">b</span> = boat speed in still water, <span class="eq">c</span> = current speed.</p>
+            <p class="explain"><strong>Translate:</strong> downstream, effective speed = <span class="eq">b + c</span>. From <span class="eq">d = rt</span>: <span class="eq">24 = (b + c)(2)</span>, so <span class="eq">b + c = 12</span>. Upstream: <span class="eq">24 = (b &minus; c)(3)</span>, so <span class="eq">b &minus; c = 8</span>.</p>
+            <p class="explain"><strong>Solve the system:</strong> add the two equations to eliminate <span class="eq">c</span>:</p>
+            <span class="work">(b + c) + (b &minus; c) = 12 + 8
+2b = 20
+b = 10</span>
+            <p class="explain">Then <span class="eq">c = 12 &minus; 10 = 2</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 25 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">The sum of the digits of a two-digit number is 12. When the digits are reversed, the new number is 18 more than the original. Find the original number.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>57</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">t</span> = tens digit, <span class="eq">u</span> = units digit. Then the original number is <span class="eq">10t + u</span> and the reversed number is <span class="eq">10u + t</span>.</p>
+            <p class="explain"><strong>Translate:</strong> sum of digits: <span class="eq">t + u = 12</span>. Reversed exceeds original by 18: <span class="eq">(10u + t) &minus; (10t + u) = 18</span> &rarr; <span class="eq">9u &minus; 9t = 18</span> &rarr; <span class="eq">u &minus; t = 2</span>.</p>
+            <p class="explain"><strong>Solve the system:</strong> add: <span class="eq">(t + u) + (u &minus; t) = 12 + 2</span> &rarr; <span class="eq">2u = 14</span> &rarr; <span class="eq">u = 7</span>, so <span class="eq">t = 5</span>. Original number = <span class="eq">10(5) + 7 = 57</span>.</p>
+            <p class="explain"><strong>Check:</strong> reversed = 75, and <span class="eq">75 &minus; 57 = 18</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <h2 id="hard">Section 4 &middot; Hard (questions 26&ndash;35)</h2>
+        <p>Multi-step problems: coins, mixtures with two solvents, chase problems, two-variable systems, ticket/mix pricing. These are the ones you will see on Regents and SAT.</p>
+
+        <div class="qbox">
+          <h3>Question 26 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A boy has $4.50 in nickels and dimes. He has 3 more dimes than nickels. How many of each coin does he have?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>28 nickels, 31 dimes</strong></p>
+            <p class="explain"><strong>Idea &middot; coin problems:</strong> total value = value-per-coin &times; number of coins, summed over all coin types.</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">n</span> = number of nickels. Dimes = <span class="eq">n + 3</span>. Convert everything to dollars: nickel = $0.05, dime = $0.10.</p>
+            <p class="explain"><strong>Translate:</strong> <span class="eq">0.05n + 0.10(n + 3) = 4.50</span>.</p>
+            <p class="explain"><strong>Solve:</strong></p>
+            <span class="work">0.05n + 0.10n + 0.30 = 4.50
+0.15n = 4.20
+n = 28</span>
+            <p class="explain">Dimes = <span class="eq">28 + 3 = 31</span>.</p>
+            <p class="explain"><strong>Check:</strong> value = <span class="eq">28(0.05) + 31(0.10) = 1.40 + 3.10 = 4.50</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 27 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A chemist has a 30% acid solution and a 60% acid solution. How many liters of each are needed to make 30 liters of a 50% acid solution?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>10 L of 30%</strong> and <strong>20 L of 60%</strong></p>
+            <p class="explain"><strong>Idea &middot; mixture problems:</strong> track the pure substance (acid, in this case). The total acid in the mixture equals the sum of the acid in each component.</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">x</span> = liters of 30% solution. Then liters of 60% = <span class="eq">30 &minus; x</span>.</p>
+            <p class="explain"><strong>Translate:</strong> acid in mixture = acid in solution 1 + acid in solution 2:</p>
+            <span class="work">0.30x + 0.60(30 &minus; x) = 0.50(30)
+0.30x + 18 &minus; 0.60x = 15
+&minus;0.30x = &minus;3
+x = 10</span>
+            <p class="explain">So 10 L of 30% + 20 L of 60%.</p>
+            <p class="explain"><strong>Check:</strong> acid = <span class="eq">0.30(10) + 0.60(20) = 3 + 12 = 15</span> L. And <span class="eq">15/30 = 0.50</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 28 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A train leaves NYC at 8:00 am going 50 mph. Another train leaves NYC 90 minutes later going 65 mph on the same track in the same direction. At what time does the second train catch the first?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>2:30 pm</strong> (6.5 hours after 8:00 am)</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">t</span> = hours after 8:00 am. Then train 1 has traveled <span class="eq">50t</span> miles. Train 2 started at <span class="eq">t = 1.5</span>, so at time <span class="eq">t</span> it has traveled <span class="eq">65(t &minus; 1.5)</span> miles.</p>
+            <p class="explain"><strong>Translate:</strong> catch-up means equal distances:</p>
+            <span class="work">50t = 65(t &minus; 1.5)</span>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">50t = 65t &minus; 97.5</span> &rarr; <span class="eq">97.5 = 15t</span> &rarr; <span class="eq">t = 6.5</span> hours.</p>
+            <p class="explain"><strong>Convert to time:</strong> 8:00 am + 6.5 hours = <strong>2:30 pm</strong>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 29 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A rectangle has perimeter 42. Its length is 3 more than twice its width. Find the area of the rectangle.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: width = 6, length = 15, area = <strong>90</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">w</span> = width. Length = <span class="eq">2w + 3</span>.</p>
+            <p class="explain"><strong>Translate:</strong> perimeter = <span class="eq">2(length + width) = 42</span>, so <span class="eq">length + width = 21</span>, i.e. <span class="eq">(2w + 3) + w = 21</span>.</p>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">3w + 3 = 21</span> &rarr; <span class="eq">3w = 18</span> &rarr; <span class="eq">w = 6</span>. Length = <span class="eq">2(6) + 3 = 15</span>.</p>
+            <p class="explain"><strong>Area:</strong> <span class="eq">6 &middot; 15 = 90</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 30 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A tank is filled by pipe A alone in 12 hours and by pipe B alone in 15 hours. Both pipes are opened together for 4 hours, and then pipe A is shut off. How long does pipe B alone take to finish filling the tank?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>6 more hours</strong> for B alone</p>
+            <p class="explain"><strong>Idea &middot; work in stages.</strong> Compute how much of the tank is filled in the first 4 hours (both pipes on), subtract from 1, then divide by B&rsquo;s rate.</p>
+            <p class="explain"><strong>Stage 1 (both on, 4 hours):</strong> combined rate = <span class="eq">1/12 + 1/15 = 5/60 + 4/60 = 9/60 = 3/20</span> of the tank per hour. In 4 hours: <span class="eq">4 &middot; 3/20 = 12/20 = 3/5</span> of the tank is filled. Remaining: <span class="eq">1 &minus; 3/5 = 2/5</span>.</p>
+            <p class="explain"><strong>Stage 2 (B alone):</strong> B&rsquo;s rate is <span class="eq">1/15</span> per hour. Time to fill remaining <span class="eq">2/5</span>:</p>
+            <span class="work">(1/15) &middot; t = 2/5
+t = (2/5)(15) = 6 hours</span>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 31 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Anna is currently 3 times as old as Ben. In 12 years, she will be twice as old as Ben. How old is each now?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: Ben is <strong>12</strong>, Anna is <strong>36</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">b</span> = Ben&rsquo;s current age. Anna = <span class="eq">3b</span>.</p>
+            <p class="explain"><strong>Translate (in 12 years):</strong> Anna = <span class="eq">3b + 12</span>, Ben = <span class="eq">b + 12</span>, and Anna will be twice Ben:</p>
+            <span class="work">3b + 12 = 2(b + 12)</span>
+            <p class="explain"><strong>Solve:</strong> <span class="eq">3b + 12 = 2b + 24</span> &rarr; <span class="eq">b = 12</span>. So Ben is 12, Anna is 36.</p>
+            <p class="explain"><strong>Check:</strong> in 12 years Anna = 48, Ben = 24, and <span class="eq">48 = 2 &middot; 24</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 32 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A theater sold 500 tickets and took in $3600. Adult tickets cost $10 and child tickets cost $6. How many of each were sold?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>150 adult, 350 child</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">a</span> = adult tickets, <span class="eq">c</span> = child tickets.</p>
+            <p class="explain"><strong>Translate (two equations):</strong></p>
+            <span class="work">a + c = 500
+10a + 6c = 3600</span>
+            <p class="explain"><strong>Solve by substitution:</strong> from equation 1, <span class="eq">c = 500 &minus; a</span>. Plug into equation 2:</p>
+            <span class="work">10a + 6(500 &minus; a) = 3600
+10a + 3000 &minus; 6a = 3600
+4a = 600
+a = 150</span>
+            <p class="explain">Then <span class="eq">c = 500 &minus; 150 = 350</span>.</p>
+            <p class="explain"><strong>Check:</strong> <span class="eq">10(150) + 6(350) = 1500 + 2100 = 3600</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 33 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A jar contains only quarters and dimes. There are 40 coins in total and their combined value is $7.60. How many quarters are in the jar?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>24 quarters</strong> (and 16 dimes)</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">q</span> = quarters, <span class="eq">d</span> = dimes.</p>
+            <p class="explain"><strong>Translate:</strong></p>
+            <span class="work">q + d = 40
+0.25q + 0.10d = 7.60</span>
+            <p class="explain"><strong>Solve by substitution:</strong> <span class="eq">d = 40 &minus; q</span>. Plug in:</p>
+            <span class="work">0.25q + 0.10(40 &minus; q) = 7.60
+0.25q + 4.00 &minus; 0.10q = 7.60
+0.15q = 3.60
+q = 24</span>
+            <p class="explain">Then <span class="eq">d = 40 &minus; 24 = 16</span>.</p>
+            <p class="explain"><strong>Check:</strong> value = <span class="eq">24(0.25) + 16(0.10) = 6.00 + 1.60 = 7.60</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 34 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A boat travels 45 km downstream in 3 hours and returns 45 km upstream in 5 hours. Find the boat&rsquo;s speed in still water and the speed of the current.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: boat = <strong>12 km/h</strong>, current = <strong>3 km/h</strong></p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">b</span> = boat speed in still water, <span class="eq">c</span> = current speed.</p>
+            <p class="explain"><strong>Translate:</strong> downstream: <span class="eq">45 = (b + c)(3)</span>, so <span class="eq">b + c = 15</span>. Upstream: <span class="eq">45 = (b &minus; c)(5)</span>, so <span class="eq">b &minus; c = 9</span>.</p>
+            <p class="explain"><strong>Solve the system by elimination:</strong></p>
+            <span class="work">(b + c) + (b &minus; c) = 15 + 9
+2b = 24
+b = 12</span>
+            <p class="explain">Then <span class="eq">c = 15 &minus; 12 = 3</span>.</p>
+            <p class="explain"><strong>Check:</strong> downstream time = <span class="eq">45 / 15 = 3</span> h ✓; upstream time = <span class="eq">45 / 9 = 5</span> h ✓.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 35 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A coffee shop sells Regular blend for $8 per pound and Premium blend for $14 per pound. How many pounds of each are needed to make 30 pounds of a mixture that sells for $10 per pound?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>20 lb Regular, 10 lb Premium</strong></p>
+            <p class="explain"><strong>Idea &middot; mixture with values:</strong> total value = price &times; quantity, summed.</p>
+            <p class="explain"><strong>Name:</strong> Let <span class="eq">r</span> = pounds of Regular; Premium = <span class="eq">30 &minus; r</span>.</p>
+            <p class="explain"><strong>Translate:</strong> total value of blend = <span class="eq">10 &middot; 30 = 300</span> dollars:</p>
+            <span class="work">8r + 14(30 &minus; r) = 300
+8r + 420 &minus; 14r = 300
+&minus;6r = &minus;120
+r = 20</span>
+            <p class="explain">Then Premium = <span class="eq">30 &minus; 20 = 10</span>.</p>
+            <p class="explain"><strong>Check:</strong> value = <span class="eq">20(8) + 10(14) = 160 + 140 = 300</span>. ✓</p>
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">Answer Key</h2>
+        <p>All 35 answers at a glance. Try each problem before looking here.</p>
+
+        <table class="answer-key-table">
+          <thead>
+            <tr><th>#</th><th>Level</th><th>Answer</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Easy</td><td>x = 16</td></tr>
+            <tr><td>2</td><td>Easy</td><td>x = 23</td></tr>
+            <tr><td>3</td><td>Easy</td><td>x = 9</td></tr>
+            <tr><td>4</td><td>Easy</td><td>x = 36</td></tr>
+            <tr><td>5</td><td>Easy</td><td>27 stickers</td></tr>
+            <tr><td>6</td><td>Easy</td><td>9 pencils</td></tr>
+            <tr><td>7</td><td>Easy</td><td>x = 7</td></tr>
+            <tr><td>8</td><td>Easy</td><td>x = 10</td></tr>
+            <tr><td>9</td><td>Easy</td><td>23, 24</td></tr>
+            <tr><td>10</td><td>Easy</td><td>7 miles</td></tr>
+            <tr><td>11</td><td>Medium</td><td>23, 24, 25</td></tr>
+            <tr><td>12</td><td>Medium</td><td>Son 10, Father 40</td></tr>
+            <tr><td>13</td><td>Medium</td><td>23 and 31</td></tr>
+            <tr><td>14</td><td>Medium</td><td>Width 5, Length 13</td></tr>
+            <tr><td>15</td><td>Medium</td><td>Pen $2, Notebook $5</td></tr>
+            <tr><td>16</td><td>Medium</td><td>4 hours after B leaves</td></tr>
+            <tr><td>17</td><td>Medium</td><td>270 minutes</td></tr>
+            <tr><td>18</td><td>Medium</td><td>15 and 25</td></tr>
+            <tr><td>19</td><td>Medium</td><td>1.5 months</td></tr>
+            <tr><td>20</td><td>Medium</td><td>2.4 mph</td></tr>
+            <tr><td>21</td><td>Medium-Hard</td><td>15 hours</td></tr>
+            <tr><td>22</td><td>Medium-Hard</td><td>10 kg</td></tr>
+            <tr><td>23</td><td>Medium-Hard</td><td>4 hours</td></tr>
+            <tr><td>24</td><td>Medium-Hard</td><td>Boat 10 km/h, Current 2 km/h</td></tr>
+            <tr><td>25</td><td>Medium-Hard</td><td>57</td></tr>
+            <tr><td>26</td><td>Hard</td><td>28 nickels, 31 dimes</td></tr>
+            <tr><td>27</td><td>Hard</td><td>10 L of 30%, 20 L of 60%</td></tr>
+            <tr><td>28</td><td>Hard</td><td>2:30 pm</td></tr>
+            <tr><td>29</td><td>Hard</td><td>Area = 90</td></tr>
+            <tr><td>30</td><td>Hard</td><td>6 more hours</td></tr>
+            <tr><td>31</td><td>Hard</td><td>Ben 12, Anna 36</td></tr>
+            <tr><td>32</td><td>Hard</td><td>150 adult, 350 child</td></tr>
+            <tr><td>33</td><td>Hard</td><td>24 quarters</td></tr>
+            <tr><td>34</td><td>Hard</td><td>Boat 12 km/h, Current 3 km/h</td></tr>
+            <tr><td>35</td><td>Hard</td><td>20 lb Regular, 10 lb Premium</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="big-ideas">Big Ideas Covered</h2>
+        <ul>
+          <li><strong>Variable naming.</strong> Every problem starts by writing &ldquo;Let <span class="qbox eq" style="padding:2px 6px;">x</span> = &hellip;&rdquo; in a full sentence. This is not optional.</li>
+          <li><strong>Translation.</strong> &ldquo;Is&rdquo; &rarr; <span class="qbox eq" style="padding:2px 6px;">=</span>. &ldquo;More than&rdquo; &rarr; <span class="qbox eq" style="padding:2px 6px;">+</span>. &ldquo;Less than&rdquo; &rarr; <span class="qbox eq" style="padding:2px 6px;">&minus;</span> (mind the order). &ldquo;Of&rdquo; &rarr; <span class="qbox eq" style="padding:2px 6px;">&times;</span>.</li>
+          <li><strong>Consecutive integers.</strong> Represent as <span class="qbox eq" style="padding:2px 6px;">x</span>, <span class="qbox eq" style="padding:2px 6px;">x+1</span>, <span class="qbox eq" style="padding:2px 6px;">x+2</span> (or <span class="qbox eq" style="padding:2px 6px;">x</span>, <span class="qbox eq" style="padding:2px 6px;">x+2</span>, <span class="qbox eq" style="padding:2px 6px;">x+4</span> for even/odd).</li>
+          <li><strong>Age problems.</strong> Add or subtract the same number of years from every age.</li>
+          <li><strong>Distance-rate-time.</strong> <span class="qbox eq" style="padding:2px 6px;">d = rt</span>. Same-direction chase: subtract speeds. Opposite direction: add speeds.</li>
+          <li><strong>Downstream vs. upstream.</strong> Downstream speed = boat + current; upstream = boat &minus; current.</li>
+          <li><strong>Work-rate problems.</strong> Rate = 1/(time to finish alone). Rates add when workers work together.</li>
+          <li><strong>Mixture and percent problems.</strong> Track the pure substance; final amount = sum of components.</li>
+          <li><strong>Coin/ticket problems.</strong> Total value = price &times; quantity, summed over categories.</li>
+          <li><strong>Systems of two equations.</strong> When two unknowns are truly independent, write two equations and solve by substitution or elimination.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Ready for structured practice?</strong> These 35 problems cover the core patterns you will see in every Pre-Algebra and Algebra I course, plus most SAT and Regents word problems. If your child wants weekly practice with a teacher who explains each translation step in real time, that is exactly what our <a href="/courses/young-fermats-pre-algebra">Young Fermats Pre-Algebra</a> and <a href="/courses/young-fermats-algebra-i-ignite">Algebra I (Ignite)</a> tracks are built for. Small groups of six, on the Upper West Side. <a href="/schedule">Book a trial class</a> or call us at <a href="tel:+16466686151">(646) 668-6151</a>.
+        </div>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
