@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>NY Regents Algebra I — June 2026: Full Walkthrough of All 35 Questions | SOMATH</title>
+    <meta name="description" content="Complete step-by-step walkthrough of every question on the June 2026 NY State Regents Algebra I exam. Theory refreshers plus verbatim problems with hidden solutions. Free download of the original PDF. From SOMATH on the Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-algebra-1-june-2026-walkthrough" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="NY Regents Algebra I — June 2026: Full Walkthrough of All 35 Questions" />
+    <meta property="og:description" content="Every question on the June 2026 NY Regents Algebra I exam, worked out step by step with hidden solutions. Theory refreshers, verbatim problems, and a free PDF download. From SOMATH, Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-algebra-1-june-2026-walkthrough" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="article:published_time" content="2026-07-16" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NY Regents Algebra I — June 2026: Full Walkthrough of All 35 Questions" />
+    <meta name="twitter:description" content="Every June 2026 NY Regents Algebra I question, verbatim, with step-by-step hidden solutions. Free PDF download. From SOMATH, Upper West Side." />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .download-box { background:#fff8e8; border:1px solid #d4a548; border-left:4px solid #d4a548; padding:16px 20px; margin:20px 0; border-radius:6px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+      .download-box .dl-icon { font-size:1.6rem; }
+      .download-box .dl-text { flex:1; min-width:200px; }
+      .download-box .dl-text strong { color:#0a3a5f; display:block; margin-bottom:2px; }
+      .download-box a.dl-btn { display:inline-block; background:#0a3a5f; color:#fff; padding:9px 18px; border-radius:6px; font-weight:700; text-decoration:none; font-size:0.95rem; }
+      .download-box a.dl-btn:hover { background:#082c47; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .theory-box table.formula-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.96rem; }
+      .theory-box table.formula-table th, .theory-box table.formula-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; }
+      .theory-box table.formula-table th { background:#0a3a5f; color:#fff; }
+      .theory-box table.formula-table tr:nth-child(even) { background:#fafafa; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .choices { margin:6px 0 12px; padding-left:0; list-style:none; }
+      .qbox .choices li { margin:3px 0; font-family:"Courier New", monospace; font-size:0.95rem; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.5; overflow-x:auto; font-size:0.95rem; }
+      .qbox .graph-inline { display:block; max-width:100%; height:auto; margin:12px auto; border:1px solid #e6e6e6; border-radius:6px; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:720px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "NY Regents Algebra I — June 2026: Full Walkthrough of All 35 Questions",
+  "description": "Complete step-by-step walkthrough of every question on the June 2026 NY State Regents Algebra I exam. Theory refreshers plus verbatim problems with hidden solutions. From SOMATH on the Upper West Side, NYC.",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/regents-algebra-1-june-2026-walkthrough"
+}
+</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Algebra I &middot; NY Regents &middot; Exam Prep &middot; June 2026</p>
+      <h1 class="post__title">NY Regents Algebra I — June 2026: Full Walkthrough of All 35 Questions</h1>
+      <p class="post__meta">Published July 16, 2026 &middot; SOMATH</p>
+
+      <div class="post__body">
+
+        <p>The June 17, 2026 New York State Regents Algebra I exam is one of the cleanest recent exams — it hits every core Algebra I strand without any oddball topics. It is a great snapshot of exactly what a rising 9th- or 10th-grader needs to master, whether they are aiming to take Regents this coming January, next June, or just want to test how solid their Algebra I skills are.</p>
+
+        <p>This post gives you the complete exam: every one of the 35 questions transcribed verbatim, with a step-by-step worked solution hidden under each question so students can attempt each problem first. Between the parts, we break down the underlying theory the students needed to know. And at the top of this page you can download the original PDF from the New York State Department of Education.</p>
+
+        <div class="download-box">
+          <span class="dl-icon">📄</span>
+          <div class="dl-text">
+            <strong>Download the original exam (PDF)</strong>
+            Full booklet as released by NYSED &mdash; 24 pages including reference sheet.
+          </div>
+          <a class="dl-btn" href="/assets/exams/regents-algebra-1-june-2026.pdf" download>Download PDF</a>
+        </div>
+
+        <div class="toc">
+          <h2>What&rsquo;s in this walkthrough</h2>
+          <ol>
+            <li><a href="#format">How the Regents Algebra I exam is graded</a></li>
+            <li><a href="#theory">Theory: the 10 topic areas tested</a></li>
+            <li><a href="#part1">Part I &mdash; 24 multiple-choice questions (2 pts each)</a></li>
+            <li><a href="#part2">Part II &mdash; 6 short-response questions (2 pts each)</a></li>
+            <li><a href="#part3">Part III &mdash; 4 extended-response questions (4 pts each)</a></li>
+            <li><a href="#part4">Part IV &mdash; 1 six-point question</a></li>
+            <li><a href="#answer-key">Answer key at a glance</a></li>
+          </ol>
+        </div>
+
+        <h2 id="format">How the Regents Algebra I exam is graded</h2>
+        <p>The Regents Algebra I exam is 3 hours long and has four parts, totaling <strong>86 raw points</strong> across 35 questions:</p>
+        <ul>
+          <li><strong>Part I</strong> &mdash; 24 multiple-choice questions, 2 points each (48 pts). No partial credit.</li>
+          <li><strong>Part II</strong> &mdash; 6 short-response questions, 2 points each (12 pts). Show work; a bare correct answer earns only 1 point.</li>
+          <li><strong>Part III</strong> &mdash; 4 extended-response questions, 4 points each (16 pts). Full work required.</li>
+          <li><strong>Part IV</strong> &mdash; 1 six-point question with multiple sub-parts.</li>
+        </ul>
+        <p>The 86 raw points are converted to a scaled score out of 100 using a conversion chart published by the state each June. Historically, a raw score in the low 30s scales to a passing 65, and a raw score around 60-64 scales to an 85 (the &ldquo;mastery&rdquo; level used by many high schools for course credit).</p>
+
+        <h2 id="theory">Theory: the 10 topic areas tested</h2>
+        <p>Before diving into the problems, here is a quick refresher on each of the topic clusters this June 2026 exam covered. Students who are shaky on any of these should stop at the theory box and revisit the ideas before attempting the corresponding questions.</p>
+
+        <div class="theory-box">
+          <h3>1. Arithmetic and geometric sequences</h3>
+          <p>A sequence is a list of numbers following a pattern. Two patterns dominate the Regents:</p>
+          <ul>
+            <li><strong>Arithmetic:</strong> you add a common difference <span class="eq">d</span> each step. Formula: <span class="eq">a<sub>n</sub> = a<sub>1</sub> + d(n &minus; 1)</span>.</li>
+            <li><strong>Geometric:</strong> you multiply by a common ratio <span class="eq">r</span> each step. Formula: <span class="eq">a<sub>n</sub> = a<sub>1</sub> &middot; r<sup>n&minus;1</sup></span>.</li>
+          </ul>
+          <p>Check which pattern applies: subtract consecutive terms &mdash; if the difference is constant, it is arithmetic. Divide consecutive terms &mdash; if the ratio is constant, it is geometric.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>2. Solving linear equations and inequalities</h3>
+          <p>Standard playbook: distribute, combine like terms, move variables to one side and constants to the other, then divide by the coefficient. For inequalities, everything is the same except: <strong>if you multiply or divide by a negative number, flip the inequality sign.</strong></p>
+          <p>Literal equations (like <span class="eq">A = &frac12;bh</span> solved for <span class="eq">h</span>) use the same steps as regular equations &mdash; you just leave letters where numbers usually go.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>3. Polynomials: multiplying, factoring, subtracting</h3>
+          <p>Three moves show up nearly every year:</p>
+          <ul>
+            <li><strong>FOIL / distribute</strong> to expand products of binomials: <span class="eq">(a + b)(c + d) = ac + ad + bc + bd</span>.</li>
+            <li><strong>Difference of squares:</strong> <span class="eq">a<sup>2</sup> &minus; b<sup>2</sup> = (a &minus; b)(a + b)</span>. So <span class="eq">4x<sup>2</sup> &minus; 25 = (2x &minus; 5)(2x + 5)</span>.</li>
+            <li><strong>Subtracting polynomials:</strong> distribute the minus sign to every term inside the parentheses before combining like terms. This is where the most avoidable errors happen.</li>
+          </ul>
+          <p>Also know terminology: <strong>degree</strong> is the highest exponent, <strong>leading coefficient</strong> is the number in front of that term, <strong>constant term</strong> is the term with no variable, and a <strong>trinomial</strong> has exactly three terms.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>4. Quadratics: solving four different ways</h3>
+          <p>For an equation of the form <span class="eq">ax<sup>2</sup> + bx + c = 0</span>, you have four solving methods and Regents can ask for any of them:</p>
+          <table class="formula-table">
+            <tr><th>Method</th><th>When to use it</th></tr>
+            <tr><td>Factoring</td><td>When it factors nicely with integer roots</td></tr>
+            <tr><td>Zero-product property</td><td>Whenever the equation is already in factored form &mdash; each factor set to 0 gives a root</td></tr>
+            <tr><td>Completing the square</td><td>When they ask you to convert to vertex form, or when factoring is hard</td></tr>
+            <tr><td>Quadratic formula</td><td>Always works: <span class="eq">x = (&minus;b &plusmn; &radic;(b<sup>2</sup> &minus; 4ac)) / (2a)</span></td></tr>
+          </table>
+          <p>The <strong>axis of symmetry</strong> is <span class="eq">x = &minus;b / (2a)</span>, and the vertex sits on that line. For a projectile <span class="eq">h(t) = &minus;16t<sup>2</sup> + v<sub>0</sub>t + h<sub>0</sub></span>, the max height occurs at the vertex, and the object hits the ground when <span class="eq">h(t) = 0</span>.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>5. Functions and function notation</h3>
+          <p>A <strong>function</strong> is a rule that assigns exactly one output to each input. In set-of-pairs form <span class="eq">{(3, &minus;4), (&minus;4, 3), (1, 1), &hellip;}</span>, the first coordinate cannot repeat. To evaluate <span class="eq">h(&minus;1)</span> when <span class="eq">h(x) = x<sup>2</sup> &minus; 3x + 1</span>, substitute <span class="eq">&minus;1</span> everywhere you see <span class="eq">x</span>.</p>
+          <p>The <strong>zeros</strong> of a function are the <span class="eq">x</span>-values where <span class="eq">f(x) = 0</span>. In factored form, apply the zero-product property to read them off directly.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>6. Function transformations</h3>
+          <p>Given a base function <span class="eq">f(x)</span>:</p>
+          <ul>
+            <li><span class="eq">f(x &minus; h)</span> shifts the graph <strong>right</strong> by <span class="eq">h</span>. <span class="eq">f(x + h)</span> shifts <strong>left</strong> by <span class="eq">h</span>. (Sign is opposite of what most students expect.)</li>
+            <li><span class="eq">f(x) + k</span> shifts <strong>up</strong> by <span class="eq">k</span>. <span class="eq">f(x) &minus; k</span> shifts <strong>down</strong> by <span class="eq">k</span>.</li>
+          </ul>
+          <p>So &ldquo;shift 3 right and 4 up&rdquo; is <span class="eq">f(x &minus; 3) + 4</span>.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>7. Lines: slope, forms, and graphs</h3>
+          <p>Given two points <span class="eq">(x<sub>1</sub>, y<sub>1</sub>)</span> and <span class="eq">(x<sub>2</sub>, y<sub>2</sub>)</span>, the slope is <span class="eq">m = (y<sub>2</sub> &minus; y<sub>1</sub>) / (x<sub>2</sub> &minus; x<sub>1</sub>)</span>. Then use:</p>
+          <ul>
+            <li><strong>Point-slope form:</strong> <span class="eq">y &minus; y<sub>1</sub> = m(x &minus; x<sub>1</sub>)</span>. Regents loves this one &mdash; you can use either of the two given points.</li>
+            <li><strong>Slope-intercept form:</strong> <span class="eq">y = mx + b</span>.</li>
+          </ul>
+        </div>
+
+        <div class="theory-box">
+          <h3>8. Systems of equations and inequalities</h3>
+          <p>Two equations in two unknowns are solved by <strong>substitution</strong> (isolate one variable, plug into the other) or <strong>elimination</strong> (add or subtract to cancel a variable). When one equation is linear and the other quadratic, substitution is almost always faster.</p>
+          <p>For inequalities: graph each boundary line (dashed if strict &lt; or &gt;, solid if &le; or &ge;), shade the correct side, and the solution is where the shaded regions overlap. Any point in that overlap satisfies both inequalities.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>9. Statistics: two-way tables, quartiles, correlation, regression</h3>
+          <p>Skills tested:</p>
+          <ul>
+            <li><strong>Two-way table percentages:</strong> the denominator matters &mdash; make sure you divide by the correct row or column total.</li>
+            <li><strong>Quartiles:</strong> split ordered data into halves at the median, then find the median of each half. Q1 is the median of the lower half; Q3 is the median of the upper half.</li>
+            <li><strong>Correlation vs. causation:</strong> a correlation only tells you two variables move together. It becomes <em>causal</em> only when one variable actually forces the other to change (e.g., pressing the brake pedal directly causes deceleration).</li>
+            <li><strong>Linear regression:</strong> using a calculator, enter the data into two lists and run <span class="eq">LinReg(ax+b)</span>. The <span class="eq">r</span>-value is the correlation coefficient; the closer to <span class="eq">&plusmn;1</span>, the stronger the linear fit.</li>
+          </ul>
+        </div>
+
+        <div class="theory-box">
+          <h3>10. Radicals, exponents, exponential growth, and unit conversion</h3>
+          <p>Three routine skills:</p>
+          <ul>
+            <li><strong>Radicals:</strong> <span class="eq">&radic;a &middot; &radic;b = &radic;(ab)</span>. Simplify by pulling out perfect squares: <span class="eq">&radic;18 = &radic;(9 &middot; 2) = 3&radic;2</span>. Rationalize a denominator by multiplying top and bottom by the same radical.</li>
+            <li><strong>Exponent rules:</strong> <span class="eq">(ab)<sup>n</sup> = a<sup>n</sup>b<sup>n</sup></span>, <span class="eq">(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup></span>.</li>
+            <li><strong>Exponential growth:</strong> in <span class="eq">y = a &middot; b<sup>t</sup></span>, the base <span class="eq">b</span> is <span class="eq">1 + r</span> when growing at rate <span class="eq">r</span>. So <span class="eq">V(t) = 96,949 &middot; (1.0448)<sup>t</sup></span> means 4.48% growth per year.</li>
+            <li><strong>Unit conversion:</strong> multiply by conversion factors written as fractions equal to 1. Cancel units diagonally until you get to the target.</li>
+          </ul>
+        </div>
+
+        <div class="part-header" id="part1">
+          <h2>Part I &mdash; Multiple Choice (24 questions &times; 2 pts = 48 pts)</h2>
+          <p>Answer all 24 questions in this part. Each correct answer will receive 2 credits. No partial credit will be allowed.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 1</h3>
+          <p class="prompt">What is the 20th term of the arithmetic sequence 4, 7, 10, 13, &hellip;?</p>
+          <ul class="choices"><li>(1) 61</li><li>(2) 64</li><li>(3) 79</li><li>(4) 83</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(1) 61</strong></p>
+            <p class="explain"><strong>Identify:</strong> first term <span class="eq">a<sub>1</sub> = 4</span>; common difference <span class="eq">d = 7 &minus; 4 = 3</span>.</p>
+            <p class="explain"><strong>Apply:</strong> <span class="eq">a<sub>n</sub> = a<sub>1</sub> + d(n &minus; 1)</span>.</p>
+            <p class="explain"><strong>Compute:</strong> <span class="eq">a<sub>20</sub> = 4 + 3(20 &minus; 1) = 4 + 57 = 61</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 2</h3>
+          <p class="prompt">What is the value of <span class="eq">x</span> in the equation <span class="eq">0.5x &minus; 4 = 8 &minus; x</span>?</p>
+          <ul class="choices"><li>(1) 6</li><li>(2) 8</li><li>(3) 18</li><li>(4) 24</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) 8</strong></p>
+            <p class="explain"><strong>Move all <span class="eq">x</span> to one side:</strong> add <span class="eq">x</span> to both sides &rarr; <span class="eq">1.5x &minus; 4 = 8</span>.</p>
+            <p class="explain"><strong>Move constants:</strong> add 4 &rarr; <span class="eq">1.5x = 12</span>.</p>
+            <p class="explain"><strong>Divide:</strong> <span class="eq">x = 12 / 1.5 = 8</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 3</h3>
+          <p class="prompt">The binomial <span class="eq">4x<sup>2</sup> &minus; 25</span> is equivalent to</p>
+          <ul class="choices"><li>(1) 4(x + 5)(x &minus; 5)</li><li>(2) 4(x &minus; 5)(x &minus; 5)</li><li>(3) (2x &minus; 5)(2x + 5)</li><li>(4) (2x &minus; 5)(2x &minus; 5)</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) (2x &minus; 5)(2x + 5)</strong></p>
+            <p class="explain">This is a <strong>difference of squares</strong>: <span class="eq">a<sup>2</sup> &minus; b<sup>2</sup> = (a &minus; b)(a + b)</span>.</p>
+            <p class="explain"><strong>Rewrite:</strong> <span class="eq">4x<sup>2</sup> = (2x)<sup>2</sup></span> and <span class="eq">25 = 5<sup>2</sup></span>, so <span class="eq">4x<sup>2</sup> &minus; 25 = (2x)<sup>2</sup> &minus; 5<sup>2</sup> = (2x &minus; 5)(2x + 5)</span>.</p>
+            <p class="explain"><strong>Verify by FOILing:</strong> <span class="eq">(2x)(2x) + (2x)(5) &minus; (5)(2x) &minus; (5)(5) = 4x<sup>2</sup> + 10x &minus; 10x &minus; 25 = 4x<sup>2</sup> &minus; 25</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 4</h3>
+          <p class="prompt">A function is defined by the following set of points:</p>
+          <p class="prompt" style="text-align:center;"><span class="eq">{(3, &minus;4), (&minus;4, 3), (1, 1), (x, 2)}</span></p>
+          <p class="prompt">What is a possible value for <span class="eq">x</span>?</p>
+          <ul class="choices"><li>(1) 1</li><li>(2) 2</li><li>(3) 3</li><li>(4) &minus;4</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) 2</strong></p>
+            <p class="explain"><strong>Rule:</strong> in a function, no <em>x</em>-value can appear more than once. The <em>x</em>-values already used are <span class="eq">3, &minus;4, 1</span>, so <span class="eq">x</span> cannot equal any of those.</p>
+            <p class="explain">Of the four choices, only <span class="eq">x = 2</span> is not already used, so it is the only value that keeps the relation a function.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 5</h3>
+          <p class="prompt">The expression <span class="eq">(4xy<sup>2</sup>)<sup>3</sup></span> is equivalent to</p>
+          <ul class="choices"><li>(1) 12x<sup>3</sup>y<sup>6</sup></li><li>(2) 12x<sup>3</sup>y<sup>8</sup></li><li>(3) 64x<sup>3</sup>y<sup>6</sup></li><li>(4) 64x<sup>3</sup>y<sup>8</sup></li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) 64x<sup>3</sup>y<sup>6</sup></strong></p>
+            <p class="explain"><strong>Rule:</strong> <span class="eq">(abc)<sup>n</sup> = a<sup>n</sup>b<sup>n</sup>c<sup>n</sup></span> and <span class="eq">(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup></span>.</p>
+            <p class="explain"><strong>Distribute the exponent 3 to each factor:</strong> <span class="eq">4<sup>3</sup> &middot; x<sup>3</sup> &middot; (y<sup>2</sup>)<sup>3</sup> = 64 &middot; x<sup>3</sup> &middot; y<sup>6</sup></span>.</p>
+            <p class="explain">Common trap: (2) uses <span class="eq">12 = 4 &middot; 3</span>, but the exponent multiplies, it does not distribute across the 4.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 6</h3>
+          <p class="prompt">Allison was asked to write a third-degree trinomial with a leading coefficient of 4 and a constant term of 5. Which expression satisfies these conditions?</p>
+          <ul class="choices"><li>(1) 4x<sup>3</sup> &minus; 5</li><li>(2) 3x<sup>4</sup> + 5</li><li>(3) 4x<sup>3</sup> + 8x<sup>2</sup> + 5</li><li>(4) 3x<sup>4</sup> + 2x<sup>3</sup> &minus; 5</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) 4x<sup>3</sup> + 8x<sup>2</sup> + 5</strong></p>
+            <p class="explain"><strong>Check three conditions</strong> on choice (3):</p>
+            <ul>
+              <li>Third-degree: highest exponent is 3. &check;</li>
+              <li>Trinomial: three terms (<span class="eq">4x<sup>3</sup></span>, <span class="eq">8x<sup>2</sup></span>, <span class="eq">5</span>). &check;</li>
+              <li>Leading coefficient 4 (the number in front of the highest-degree term). &check;</li>
+              <li>Constant term 5. &check;</li>
+            </ul>
+            <p class="explain">Choice (1) is a binomial, choice (2) is a binomial of degree 4, choice (4) is a trinomial but degree 4 and constant &minus;5.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 7</h3>
+          <p class="prompt">Given the sequence 128, 64, 32, &hellip;, which formula could be used to find the <span class="eq">n</span>th term of this sequence?</p>
+          <ul class="choices"><li>(1) a<sub>n</sub> = 128(&minus;2)<sup>n&minus;1</sup></li><li>(2) a<sub>n</sub> = 128(&frac12;)<sup>n&minus;1</sup></li><li>(3) a<sub>n</sub> = 128 &minus; 2(n &minus; 1)</li><li>(4) a<sub>n</sub> = 128 + &frac12;(n &minus; 1)</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) a<sub>n</sub> = 128(&frac12;)<sup>n&minus;1</sup></strong></p>
+            <p class="explain"><strong>Detect the pattern:</strong> each term is <em>half</em> the previous one, so this is <strong>geometric</strong> with common ratio <span class="eq">r = &frac12;</span>.</p>
+            <p class="explain"><strong>Apply</strong> <span class="eq">a<sub>n</sub> = a<sub>1</sub> &middot; r<sup>n&minus;1</sup></span> with <span class="eq">a<sub>1</sub> = 128</span>.</p>
+            <p class="explain">Choice (1) uses <span class="eq">r = &minus;2</span> which would give alternating signs; choices (3)-(4) are arithmetic formulas, but the differences here are not constant (128 &rarr; 64 is &minus;64, not &minus;2).</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 8</h3>
+          <p class="prompt">When a bicyclist increases the pressure on the brakes, the speed of the bicycle decreases. This relationship can best be described as a</p>
+          <ul class="choices"><li>(1) negative correlation and causal relationship</li><li>(2) negative correlation and non-causal relationship</li><li>(3) positive correlation and causal relationship</li><li>(4) positive correlation and non-causal relationship</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(1) negative correlation and causal relationship</strong></p>
+            <p class="explain"><strong>Correlation direction:</strong> brake pressure goes up, speed goes down &mdash; one variable increases while the other decreases &rarr; <em>negative</em> correlation.</p>
+            <p class="explain"><strong>Causal?</strong> Yes &mdash; the brake physically applies friction that removes energy, directly forcing the speed down. This is a genuine cause-and-effect link, not a coincidence.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 9</h3>
+          <p class="prompt">A garden club plans to plant 40 flowering plants this year. They will only purchase daffodils that cost $4 per plant and tulips that cost $5 per plant. All prices include tax. The club has $170 to spend on plants. Which equation could be used to find the number of daffodil plants, <span class="eq">d</span>, the club purchases?</p>
+          <ul class="choices"><li>(1) 4d + 5(170 &minus; d) = 40</li><li>(2) 4d + 5(40 &minus; d) = 170</li><li>(3) 5d + 4(170 &minus; d) = 40</li><li>(4) 5d + 4(40 &minus; d) = 170</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) 4d + 5(40 &minus; d) = 170</strong></p>
+            <p class="explain"><strong>Define the variables:</strong> <span class="eq">d</span> = daffodils; tulips = <span class="eq">40 &minus; d</span> since together they total 40 plants.</p>
+            <p class="explain"><strong>Set up cost equation:</strong> (daffodil cost) + (tulip cost) = total spent, so <span class="eq">4d + 5(40 &minus; d) = 170</span>.</p>
+            <p class="explain">Choices (1) and (3) put 40 on the wrong side; choice (4) swaps the daffodil price ($4) with the tulip price ($5).</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 10</h3>
+          <p class="prompt">A function is defined as <span class="eq">h(x) = x<sup>2</sup> &minus; 3x + 1</span>. What is the value of <span class="eq">h(&minus;1)</span>?</p>
+          <ul class="choices"><li>(1) 1</li><li>(2) 2</li><li>(3) 3</li><li>(4) 5</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(4) 5</strong></p>
+            <p class="explain"><strong>Substitute</strong> <span class="eq">x = &minus;1</span>:</p>
+            <span class="work">h(-1) = (-1)² - 3(-1) + 1
+     = 1 + 3 + 1
+     = 5</span>
+            <p class="explain">Watch the sign: <span class="eq">&minus;3(&minus;1) = +3</span>, not <span class="eq">&minus;3</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 11</h3>
+          <p class="prompt">The zeros of <span class="eq">p(x) = x(3x + 2)(x &minus; 5)</span> are</p>
+          <ul class="choices"><li>(1) &minus;&frac23; and 5, only</li><li>(2) &frac23; and &minus;5, only</li><li>(3) &minus;&frac23;, 0, 5</li><li>(4) &frac23;, 0, &minus;5</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) &minus;&frac23;, 0, 5</strong></p>
+            <p class="explain"><strong>Zero-product property:</strong> a product equals zero when any factor equals zero. Set each factor to 0:</p>
+            <span class="work">x = 0
+3x + 2 = 0  →  x = -2/3
+x - 5 = 0   →  x = 5</span>
+            <p class="explain">All three are zeros. Choice (1) forgets that <span class="eq">x = 0</span> is also a factor; choices (2) and (4) get the signs of &plusmn;&frac23; and &plusmn;5 wrong.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 12</h3>
+          <p class="prompt">If <span class="eq">f(x) = 1.25<sup>x</sup></span> and <span class="eq">g(x) = 3x + 10</span>, what is the smallest positive integer of <span class="eq">x</span> for which <span class="eq">f(x) &gt; g(x)</span>?</p>
+          <ul class="choices"><li>(1) 18</li><li>(2) 19</li><li>(3) 67</li><li>(4) 69</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) 19</strong></p>
+            <p class="explain"><strong>Big idea:</strong> exponential eventually beats linear. Just test the two smallest choices with your calculator.</p>
+            <span class="work">x = 18:  f(18) = 1.25^18 ≈ 55.5   g(18) = 3(18)+10 = 64   → f < g
+x = 19:  f(19) = 1.25^19 ≈ 69.4   g(19) = 3(19)+10 = 67   → f > g  ✓</span>
+            <p class="explain">The crossover happens between 18 and 19, so <span class="eq">x = 19</span> is the smallest integer where <span class="eq">f(x) &gt; g(x)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 13</h3>
+          <p class="prompt">What is an equation of the line that passes through the points <span class="eq">(2, 5)</span> and <span class="eq">(&minus;2, &minus;1)</span>?</p>
+          <ul class="choices"><li>(1) y &minus; 5 = &frac23;(x &minus; 2)</li><li>(2) y &minus; 5 = &frac32;(x &minus; 2)</li><li>(3) y &minus; 2 = &frac23;(x &minus; 5)</li><li>(4) y &minus; 2 = &frac32;(x &minus; 5)</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) y &minus; 5 = &frac32;(x &minus; 2)</strong></p>
+            <p class="explain"><strong>Slope:</strong> <span class="eq">m = (5 &minus; (&minus;1)) / (2 &minus; (&minus;2)) = 6 / 4 = 3/2</span>.</p>
+            <p class="explain"><strong>Point-slope form:</strong> <span class="eq">y &minus; y<sub>1</sub> = m(x &minus; x<sub>1</sub>)</span>. Using the point <span class="eq">(2, 5)</span>: <span class="eq">y &minus; 5 = &frac32;(x &minus; 2)</span>.</p>
+            <p class="explain">Choices (3) and (4) reverse the coordinates &mdash; they use 5 as the <em>x</em>-coordinate. Choice (1) has the slope inverted.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 14</h3>
+          <p class="prompt">At a local high school, students were asked to name the sport they like to watch the most. The results are summarized in the table below.</p>
+          <table class="formula-table" style="max-width:520px;">
+            <tr><th></th><th>Football</th><th>Basketball</th><th>Baseball</th></tr>
+            <tr><th>Male</th><td>40</td><td>35</td><td>15</td></tr>
+            <tr><th>Female</th><td>20</td><td>40</td><td>10</td></tr>
+          </table>
+          <p class="prompt">Approximately what percentage of female high school students preferred to watch basketball?</p>
+          <ul class="choices"><li>(1) 35</li><li>(2) 40</li><li>(3) 53</li><li>(4) 57</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(4) 57</strong></p>
+            <p class="explain"><strong>Watch the denominator.</strong> The question asks about <em>female students only</em>, so the denominator is the total number of females: <span class="eq">20 + 40 + 10 = 70</span>.</p>
+            <p class="explain"><strong>Compute:</strong> <span class="eq">40 / 70 &asymp; 0.5714 = 57.14%</span> &rarr; rounds to 57%.</p>
+            <p class="explain">Choice (1) 35% uses total students (75 + 70 = 145) instead of just females; choice (3) 53% comes from dividing 40 by (35+40) mixing genders.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 15</h3>
+          <p class="prompt">An equation that yields the same solutions as <span class="eq">x<sup>2</sup> &minus; 10x &minus; 24 = 0</span> is</p>
+          <ul class="choices"><li>(1) (x + 5)<sup>2</sup> = 1</li><li>(2) (x &minus; 5)<sup>2</sup> = 1</li><li>(3) (x + 5)<sup>2</sup> = 49</li><li>(4) (x &minus; 5)<sup>2</sup> = 49</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(4) (x &minus; 5)<sup>2</sup> = 49</strong></p>
+            <p class="explain"><strong>Complete the square:</strong> move the constant, then add <span class="eq">(b/2)<sup>2</sup></span> to both sides.</p>
+            <span class="work">x² - 10x - 24 = 0
+x² - 10x = 24
+x² - 10x + 25 = 24 + 25       (b/2)² = (-10/2)² = 25
+(x - 5)² = 49</span>
+            <p class="explain">The middle term is <span class="eq">&minus;10x</span> so we factor into <span class="eq">(x &minus; 5)<sup>2</sup></span>, not <span class="eq">(x + 5)<sup>2</sup></span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 16</h3>
+          <p class="prompt">The function <span class="eq">f(x)</span> is shifted three units right and four units up. The result of this transformation is</p>
+          <ul class="choices"><li>(1) f(x &minus; 3) + 4</li><li>(2) f(x + 3) + 4</li><li>(3) f(x + 4) &minus; 3</li><li>(4) f(x &minus; 4) &minus; 3</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(1) f(x &minus; 3) + 4</strong></p>
+            <p class="explain"><strong>Horizontal shift:</strong> shifting <em>right</em> by 3 replaces <span class="eq">x</span> with <span class="eq">x &minus; 3</span> (opposite sign from what most students expect).</p>
+            <p class="explain"><strong>Vertical shift:</strong> shifting <em>up</em> by 4 adds 4 to the whole function.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 17</h3>
+          <p class="prompt">Hana was asked to solve a quadratic equation. Her first step is shown below.</p>
+          <span class="work">x² - 8x = 3
+Step 1:  x² - 8x + 16 = 3 + 16</span>
+          <p class="prompt">The property that Hana used is the</p>
+          <ul class="choices"><li>(1) distributive property</li><li>(2) commutative property</li><li>(3) additive inverse property</li><li>(4) addition property of equality</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(4) addition property of equality</strong></p>
+            <p class="explain"><strong>What Hana did:</strong> she added 16 to <em>both sides</em> of the equation to complete the square. Whenever you add the same quantity to both sides of an equation, you are invoking the addition property of equality &mdash; the rule that lets equations stay balanced.</p>
+            <p class="explain">Distributive would move a factor across a sum; commutative would swap the order of terms; additive inverse would add opposites to get zero.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 18</h3>
+          <p class="prompt">A data set is given below:</p>
+          <p class="prompt" style="text-align:center;"><span class="eq">28  28  28  28  32  32  34  34  40  42</span></p>
+          <p class="prompt">What is the value of the upper quartile of this data set?</p>
+          <ul class="choices"><li>(1) 28</li><li>(2) 32</li><li>(3) 34</li><li>(4) 42</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) 34</strong></p>
+            <p class="explain"><strong>Order:</strong> data is already sorted, 10 values total.</p>
+            <p class="explain"><strong>Find the median</strong> (splits data in half): the median sits between the 5th and 6th values, both equal to 32. Median = 32.</p>
+            <p class="explain"><strong>Upper half</strong> (5 values above the median): <span class="eq">32, 34, 34, 40, 42</span>. The median of this upper half &mdash; the middle value &mdash; is 34. That&rsquo;s <strong>Q3</strong>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 19</h3>
+          <p class="prompt">When <span class="eq">&minus;3x<sup>2</sup> + 7x &minus; 1</span> is subtracted from <span class="eq">2x<sup>2</sup> &minus; 3x + 10</span>, the result is</p>
+          <ul class="choices"><li>(1) 5x<sup>2</sup> + 4x + 9</li><li>(2) 5x<sup>2</sup> &minus; 10x + 11</li><li>(3) &minus;5x<sup>2</sup> + 4x + 9</li><li>(4) &minus;5x<sup>2</sup> + 10x &minus; 11</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(2) 5x<sup>2</sup> &minus; 10x + 11</strong></p>
+            <p class="explain"><strong>Rewrite carefully:</strong> &ldquo;A is subtracted from B&rdquo; means <span class="eq">B &minus; A</span>. Here B = <span class="eq">2x<sup>2</sup> &minus; 3x + 10</span>, A = <span class="eq">&minus;3x<sup>2</sup> + 7x &minus; 1</span>.</p>
+            <span class="work">(2x² - 3x + 10) - (-3x² + 7x - 1)
+= 2x² - 3x + 10 + 3x² - 7x + 1     (distribute the minus)
+= (2 + 3)x² + (-3 - 7)x + (10 + 1)
+= 5x² - 10x + 11</span>
+            <p class="explain">The most common error is forgetting to flip <em>all three</em> signs inside the second polynomial when distributing the subtraction.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 20</h3>
+          <p class="prompt">The value of a home in Buffalo can be modeled by the function <span class="eq">V(t) = 96,949(1.0448)<sup>t</sup></span>, where <span class="eq">V(t)</span> is the value of the house after <span class="eq">t</span> years. What is the percent of increase in the value of the home each year?</p>
+          <ul class="choices"><li>(1) 1.0448%</li><li>(2) 0.0448%</li><li>(3) 0.448%</li><li>(4) 4.48%</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(4) 4.48%</strong></p>
+            <p class="explain"><strong>Growth-rate rule:</strong> in an exponential function <span class="eq">y = a &middot; b<sup>t</sup></span> with growth, <span class="eq">b = 1 + r</span> where <span class="eq">r</span> is the growth rate written as a decimal.</p>
+            <p class="explain">Here <span class="eq">b = 1.0448</span>, so <span class="eq">r = 1.0448 &minus; 1 = 0.0448 = 4.48%</span>.</p>
+            <p class="explain">Choice (1) confuses the whole growth factor with the growth rate; (2) forgets to move the decimal.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 21</h3>
+          <p class="prompt">A rod is an old English measure of distance that is equivalent to 5.5 yards. How many inches are 2.5 rods? [1 yard = 3 feet]</p>
+          <ul class="choices"><li>(1) 66</li><li>(2) 165</li><li>(3) 198</li><li>(4) 495</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(4) 495</strong></p>
+            <p class="explain"><strong>Chain of conversions:</strong> rods &rarr; yards &rarr; feet &rarr; inches.</p>
+            <span class="work">2.5 rods × (5.5 yd / 1 rod) × (3 ft / 1 yd) × (12 in / 1 ft)
+= 2.5 × 5.5 × 3 × 12
+= 495 inches</span>
+            <p class="explain">Each factor is a ratio equal to 1, so you can multiply freely and units cancel diagonally until only inches remain.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 22</h3>
+          <p class="prompt">When solving the equation <span class="eq">2x<sup>2</sup> &minus; 3x &minus; 6 = 0</span> using the quadratic formula, the solutions are</p>
+          <ul class="choices"><li>(1) (3 &plusmn; &radic;57) / 4</li><li>(2) (3 &plusmn; &radic;39) / 4</li><li>(3) (&minus;3 &plusmn; &radic;57) / 4</li><li>(4) (&minus;3 &plusmn; &radic;39) / 4</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(1) (3 &plusmn; &radic;57) / 4</strong></p>
+            <p class="explain"><strong>Identify:</strong> <span class="eq">a = 2, b = &minus;3, c = &minus;6</span>.</p>
+            <p class="explain"><strong>Quadratic formula:</strong> <span class="eq">x = (&minus;b &plusmn; &radic;(b<sup>2</sup> &minus; 4ac)) / (2a)</span>.</p>
+            <span class="work">-b = -(-3) = 3
+b² - 4ac = (-3)² - 4(2)(-6) = 9 + 48 = 57
+2a = 4
+x = (3 ± √57) / 4</span>
+            <p class="explain">The most common error is losing a sign on <span class="eq">&minus;4ac</span>: <span class="eq">&minus;4(2)(&minus;6) = +48</span>, not &minus;48. That would give 39 (choice 2), which is why 39 is the tempting distractor.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 23</h3>
+          <p class="prompt">For which function is the axis of symmetry <span class="eq">x = &minus;4</span>?</p>
+          <ul class="choices"><li>(1) f(x) = &minus;x<sup>2</sup> &minus; 4x &minus; 1</li><li>(2) g(x) = &minus;x<sup>2</sup> + 8x + 5</li><li>(3) h(x) = x<sup>2</sup> + 8x + 3</li><li>(4) k(x) = x<sup>2</sup> + x &minus; 4</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) h(x) = x<sup>2</sup> + 8x + 3</strong></p>
+            <p class="explain"><strong>Formula:</strong> axis of symmetry is <span class="eq">x = &minus;b / (2a)</span>. Compute for each:</p>
+            <span class="work">(1) a = -1, b = -4  →  x = -(-4)/(2·-1) = 4/-2 = -2   ✗
+(2) a = -1, b = 8   →  x = -8/(2·-1) = -8/-2 = 4     ✗
+(3) a = 1,  b = 8   →  x = -8/(2·1) = -8/2 = -4      ✓
+(4) a = 1,  b = 1   →  x = -1/2                       ✗</span>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 24</h3>
+          <p class="prompt">In simplest radical form, the product of <span class="eq">2&radic;6</span> and <span class="eq">5&radic;3</span> is</p>
+          <ul class="choices"><li>(1) 10</li><li>(2) 21</li><li>(3) 30&radic;2</li><li>(4) 10&radic;18</li></ul>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(3) 30&radic;2</strong></p>
+            <p class="explain"><strong>Multiply coefficients and radicals separately:</strong></p>
+            <span class="work">(2√6)(5√3) = (2·5) · √(6·3)
+           = 10 · √18
+           = 10 · √(9·2)
+           = 10 · 3 · √2
+           = 30√2</span>
+            <p class="explain">Choice (4) <span class="eq">10&radic;18</span> is <em>correct as an intermediate step</em> but not fully simplified. &ldquo;Simplest radical form&rdquo; means pulling out every perfect-square factor.</p>
+          </div></details>
+        </div>
+
+        <div class="part-header" id="part2">
+          <h2>Part II &mdash; Short Response (6 questions &times; 2 pts = 12 pts)</h2>
+          <p>Show all work. A correct numerical answer with no work shown receives only 1 credit.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 25</h3>
+          <p class="prompt">Express the product of <span class="eq">(1 &minus; 2x)</span> and <span class="eq">(3 &minus; 5x)</span> as a polynomial in standard form.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>10x<sup>2</sup> &minus; 11x + 3</strong></p>
+            <p class="explain"><strong>FOIL:</strong></p>
+            <span class="work">(1 - 2x)(3 - 5x)
+= (1)(3) + (1)(-5x) + (-2x)(3) + (-2x)(-5x)
+= 3 - 5x - 6x + 10x²
+= 10x² - 11x + 3</span>
+            <p class="explain"><strong>Standard form</strong> means writing terms in descending degree, so the <span class="eq">x<sup>2</sup></span> term comes first.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 26</h3>
+          <p class="prompt">On the set of axes below, graph <span class="eq">f(x) = |x| &minus; 3</span> over the domain <span class="eq">&minus;7 &le; x &le; 7</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: V-shaped graph with vertex at <strong>(0, &minus;3)</strong>, passing through <strong>(&minus;7, 4)</strong> and <strong>(7, 4)</strong>.</p>
+            <p class="explain"><strong>Strategy:</strong> the parent function <span class="eq">|x|</span> is a V with vertex at the origin. Subtracting 3 shifts the whole V down by 3, so the new vertex is <span class="eq">(0, &minus;3)</span>. The two arms have slopes <span class="eq">&plusmn;1</span>.</p>
+            <p class="explain"><strong>Sample points:</strong></p>
+            <span class="work">x = -7 → f = |-7| - 3 = 7 - 3 = 4
+x = -3 → f = 3 - 3 = 0
+x = 0  → f = 0 - 3 = -3     (vertex)
+x = 3  → f = 3 - 3 = 0
+x = 7  → f = 7 - 3 = 4</span>
+            <img class="graph-inline" src="/assets/blog/regents-june-2026/q26-absolute-value.png" alt="Graph of f(x) = |x| - 3 from x = -7 to x = 7. V-shape with vertex at (0, -3) and endpoints (-7, 4) and (7, 4)." />
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 27</h3>
+          <p class="prompt">Solve the inequality algebraically:</p>
+          <p class="prompt" style="text-align:center;"><span class="eq">&minus;4x + 1 &gt; 9 + 3(2x + 1) + x</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>x &lt; &minus;1</strong></p>
+            <span class="work">-4x + 1 > 9 + 3(2x + 1) + x
+-4x + 1 > 9 + 6x + 3 + x          (distribute the 3)
+-4x + 1 > 7x + 12                  (combine like terms on the right)
+-4x - 7x > 12 - 1                  (move x's left, constants right)
+-11x > 11
+x < -1                             (÷ by -11, FLIP the inequality)</span>
+            <p class="explain">The crucial move is <strong>flipping the inequality</strong> when dividing by <span class="eq">&minus;11</span>. Forgetting this is the #1 error on Regents inequality problems.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 28</h3>
+          <p class="prompt">Solve the formula <span class="eq">A = &frac12; bh</span> for <span class="eq">h</span> in terms of <span class="eq">A</span> and <span class="eq">b</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>h = 2A / b</strong></p>
+            <p class="explain"><strong>Isolate <span class="eq">h</span></strong> by undoing the operations attached to it:</p>
+            <span class="work">A = (1/2) b h
+2A = bh                     (multiply both sides by 2)
+2A / b = h                  (divide both sides by b)</span>
+            <p class="explain">This is the standard triangle-area rearrangement &mdash; useful in geometry when you know the area and base but need the height.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 29</h3>
+          <p class="prompt">The table below shows the population of Manhattan for the years indicated, according to the U.S. Census Bureau.</p>
+          <table class="formula-table" style="max-width:360px;">
+            <tr><th>Year</th><th>Population</th></tr>
+            <tr><td>1970</td><td>1,539,233</td></tr>
+            <tr><td>1980</td><td>1,428,285</td></tr>
+            <tr><td>1990</td><td>1,487,536</td></tr>
+            <tr><td>2000</td><td>1,537,195</td></tr>
+            <tr><td>2010</td><td>1,585,873</td></tr>
+            <tr><td>2020</td><td>1,643,734</td></tr>
+          </table>
+          <p class="prompt">Determine the average rate of change of the population per year between the years 1980 and 2020, rounded to the nearest integer.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>5,386 people per year</strong></p>
+            <p class="explain"><strong>Average rate of change</strong> = (change in output) / (change in input).</p>
+            <span class="work">Rate = (1,643,734 - 1,428,285) / (2020 - 1980)
+     = 215,449 / 40
+     = 5,386.225
+     ≈ 5,386 (nearest integer)</span>
+            <p class="explain">Only the endpoints of the interval matter &mdash; the values in between (1990, 2000, 2010) are irrelevant for this calculation.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 30</h3>
+          <p class="prompt">Rewrite <span class="eq">5 / &radic;3</span> as a fraction with a rational denominator.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>5&radic;3 / 3</strong></p>
+            <p class="explain"><strong>Rationalize</strong> by multiplying numerator and denominator by <span class="eq">&radic;3</span>:</p>
+            <span class="work">5/√3 · (√3/√3) = 5√3 / (√3 · √3)
+                       = 5√3 / 3</span>
+            <p class="explain">This works because <span class="eq">&radic;3 &middot; &radic;3 = 3</span>, giving an integer denominator.</p>
+          </div></details>
+        </div>
+
+        <div class="part-header" id="part3">
+          <h2>Part III &mdash; Extended Response (4 questions &times; 4 pts = 16 pts)</h2>
+          <p>Show all work. A correct numerical answer with no work shown receives only 1 credit.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 31</h3>
+          <p class="prompt">A ball is tossed up into the air from the deck of a building. The distance that the ball is above the ground <span class="eq">t</span> seconds after it is tossed can be modeled by the function <span class="eq">D(t) = &minus;16t<sup>2</sup> + 32t + 48</span>, where the distance is measured in feet.</p>
+          <p class="prompt">On the set of axes, graph <span class="eq">D(t) = &minus;16t<sup>2</sup> + 32t + 48</span>. State the maximum number of feet above the ground that the ball will reach. State the number of seconds after the toss it will take the ball to hit the ground.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>Max height = 64 ft. Ball hits ground at t = 3 seconds.</strong></p>
+            <p class="explain"><strong>Vertex (max height) &mdash;</strong> use <span class="eq">t = &minus;b / (2a)</span> with <span class="eq">a = &minus;16, b = 32</span>:</p>
+            <span class="work">t = -32 / (2·-16) = -32 / -32 = 1 second
+D(1) = -16(1)² + 32(1) + 48
+     = -16 + 32 + 48 = 64 feet</span>
+            <p class="explain"><strong>Ground (D = 0) &mdash;</strong> set the function equal to 0 and solve:</p>
+            <span class="work">-16t² + 32t + 48 = 0
+-16(t² - 2t - 3) = 0            (factor out -16)
+t² - 2t - 3 = 0
+(t - 3)(t + 1) = 0
+t = 3  or  t = -1                (reject negative)
+→ t = 3 seconds</span>
+            <p class="explain"><strong>Key points for the graph:</strong> y-intercept <span class="eq">(0, 48)</span>, vertex <span class="eq">(1, 64)</span>, root <span class="eq">(3, 0)</span>. Parabola opens downward.</p>
+            <img class="graph-inline" src="/assets/blog/regents-june-2026/q31-projectile.png" alt="Graph of D(t) = -16t² + 32t + 48 from t = 0 to t = 3. Parabola starts at (0, 48), peaks at (1, 64), and returns to zero at (3, 0)." />
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 32</h3>
+          <p class="prompt">Solve the following system of equations algebraically for all values of <span class="eq">x</span> and <span class="eq">y</span>.</p>
+          <p class="prompt" style="text-align:center;"><span class="eq">y = &minus;2x + 3</span><br /><span class="eq">y = x<sup>2</sup> &minus; 5x + 3</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>(0, 3) and (3, &minus;3)</strong></p>
+            <p class="explain"><strong>Set the two expressions for <span class="eq">y</span> equal to each other:</strong></p>
+            <span class="work">-2x + 3 = x² - 5x + 3
+0 = x² - 5x + 3 + 2x - 3        (move everything to one side)
+0 = x² - 3x
+0 = x(x - 3)
+x = 0  or  x = 3</span>
+            <p class="explain"><strong>Find <span class="eq">y</span> for each</strong> using the simpler linear equation <span class="eq">y = &minus;2x + 3</span>:</p>
+            <span class="work">x = 0 → y = -2(0) + 3 = 3    →  (0, 3)
+x = 3 → y = -2(3) + 3 = -3   →  (3, -3)</span>
+            <p class="explain">Always verify by plugging into the second (quadratic) equation. At <span class="eq">(3, &minus;3)</span>: <span class="eq">y = 9 &minus; 15 + 3 = &minus;3</span> &check;.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 33</h3>
+          <p class="prompt">The table below shows the number of years of experience, <span class="eq">x</span>, working as a salesperson and their corresponding salaries, <span class="eq">y</span>, in thousands of dollars.</p>
+          <table class="formula-table" style="max-width:360px;">
+            <tr><th>Years (x)</th><th>Salary (y, thousands)</th></tr>
+            <tr><td>2</td><td>15</td></tr>
+            <tr><td>3</td><td>28</td></tr>
+            <tr><td>5</td><td>42</td></tr>
+            <tr><td>9</td><td>54</td></tr>
+            <tr><td>13</td><td>64</td></tr>
+            <tr><td>16</td><td>90</td></tr>
+          </table>
+          <p class="prompt">State the linear regression equation for these data. Round all values to the nearest hundredth. State the correlation coefficient to the nearest hundredth. State what the correlation coefficient indicates about the linear fit of the data.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>y = 4.61x + 11.93</strong>; <strong>r &asymp; 0.98</strong>; the data have a <strong>strong positive linear relationship</strong>.</p>
+            <p class="explain"><strong>On a TI-84:</strong></p>
+            <ol>
+              <li>Press <span class="eq">STAT</span> &rarr; <span class="eq">1: Edit</span>. Enter <span class="eq">x</span> values in L1, <span class="eq">y</span> values in L2.</li>
+              <li>Turn on diagnostics: <span class="eq">2nd &rarr; 0 (CATALOG)</span> &rarr; scroll to <span class="eq">DiagnosticOn</span> &rarr; <span class="eq">ENTER</span> twice.</li>
+              <li>Press <span class="eq">STAT &rarr; CALC &rarr; 4: LinReg(ax+b)</span>. Set <span class="eq">Xlist:L1</span>, <span class="eq">Ylist:L2</span>. Calculate.</li>
+            </ol>
+            <p class="explain"><strong>Calculator output:</strong> <span class="eq">a &asymp; 4.6094</span>, <span class="eq">b &asymp; 11.9296</span>, <span class="eq">r &asymp; 0.9836</span>. Rounded: <span class="eq">y = 4.61x + 11.93</span> and <span class="eq">r = 0.98</span>.</p>
+            <p class="explain"><strong>Interpretation:</strong> since <span class="eq">r &asymp; 0.98</span> is very close to <span class="eq">+1</span>, there is a strong positive linear correlation &mdash; as years of experience increase, salary tends to increase, and a linear model fits the data very well.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 34</h3>
+          <p class="prompt">Graph the system of inequalities on the set of axes below. Then state the coordinates of a point that satisfies both inequalities. Justify your answer.</p>
+          <p class="prompt" style="text-align:center;"><span class="eq">2y &lt; x &minus; 8</span><br /><span class="eq">3x + y &ge; 6</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: any point in the shaded overlap works &mdash; e.g. <strong>(5, &minus;3)</strong>.</p>
+            <p class="explain"><strong>Rewrite each in slope-intercept form:</strong></p>
+            <span class="work">2y < x - 8   →   y < (1/2)x - 4     boundary y = (1/2)x - 4, DASHED, shade below
+3x + y ≥ 6   →   y ≥ -3x + 6         boundary y = -3x + 6,     SOLID,   shade above</span>
+            <p class="explain"><strong>Test the point (5, &minus;3):</strong></p>
+            <span class="work">Inequality 1:  2(-3) < 5 - 8  →  -6 < -3   ✓
+Inequality 2:  3(5) + (-3) ≥ 6  →  12 ≥ 6  ✓</span>
+            <p class="explain">Both are satisfied, so <span class="eq">(5, &minus;3)</span> is in the overlap region.</p>
+            <img class="graph-inline" src="/assets/blog/regents-june-2026/q34-inequalities.png" alt="Graph of the system 2y < x - 8 (dashed) and 3x + y ≥ 6 (solid). The overlap region is shaded and the point (5, -3) is highlighted inside it." />
+          </div></details>
+        </div>
+
+        <div class="part-header" id="part4">
+          <h2>Part IV &mdash; Six-Point Question (1 question &times; 6 pts = 6 pts)</h2>
+          <p>Show all work. A correct numerical answer with no work shown receives only 1 credit.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 35</h3>
+          <p class="prompt">At a department store in a tax-free state, Jane can either buy three tank tops and two sweatshirts for $52, or two tank tops and one sweatshirt for $30. If <span class="eq">x</span> represents the price of one tank top and <span class="eq">y</span> represents the cost of one sweatshirt, write a system of equations that could be used to model this situation. On the set of axes, graph the system. State the coordinates of the point of intersection of your lines. Explain what each coordinate of the point of intersection means in the context of the problem.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <strong>System: 3x + 2y = 52 and 2x + y = 30.</strong> Intersection: <strong>(8, 14)</strong>. Tank top = <strong>$8</strong>, sweatshirt = <strong>$14</strong>.</p>
+            <p class="explain"><strong>Write the system.</strong> Each purchase becomes one linear equation:</p>
+            <span class="work">3 tank tops + 2 sweatshirts = $52 → 3x + 2y = 52
+2 tank tops + 1 sweatshirt = $30  → 2x + y = 30</span>
+            <p class="explain"><strong>Solve algebraically</strong> (elimination or substitution). Using substitution on the second equation:</p>
+            <span class="work">2x + y = 30   →   y = 30 - 2x
+Substitute into 3x + 2y = 52:
+3x + 2(30 - 2x) = 52
+3x + 60 - 4x = 52
+-x = -8
+x = 8
+Then y = 30 - 2(8) = 14</span>
+            <p class="explain"><strong>Interpretation.</strong> The <em>x</em>-coordinate <span class="eq">x = 8</span> is the price of one tank top ($8). The <em>y</em>-coordinate <span class="eq">y = 14</span> is the price of one sweatshirt ($14). Together, this is the only pair of prices consistent with both of Jane&rsquo;s purchases.</p>
+            <img class="graph-inline" src="/assets/blog/regents-june-2026/q35-system.png" alt="Graph of 3x + 2y = 52 and 2x + y = 30 on a coordinate plane. The two lines intersect at (8, 14)." />
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">Answer key at a glance</h2>
+        <table class="answer-key-table">
+          <thead><tr><th>#</th><th>Part</th><th>Answer</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>I</td><td>(1) 61</td></tr>
+            <tr><td>2</td><td>I</td><td>(2) 8</td></tr>
+            <tr><td>3</td><td>I</td><td>(3) (2x&minus;5)(2x+5)</td></tr>
+            <tr><td>4</td><td>I</td><td>(2) 2</td></tr>
+            <tr><td>5</td><td>I</td><td>(3) 64x³y⁶</td></tr>
+            <tr><td>6</td><td>I</td><td>(3) 4x³ + 8x² + 5</td></tr>
+            <tr><td>7</td><td>I</td><td>(2) 128(&frac12;)ⁿ⁻¹</td></tr>
+            <tr><td>8</td><td>I</td><td>(1) neg. correlation, causal</td></tr>
+            <tr><td>9</td><td>I</td><td>(2) 4d + 5(40−d) = 170</td></tr>
+            <tr><td>10</td><td>I</td><td>(4) 5</td></tr>
+            <tr><td>11</td><td>I</td><td>(3) −&frac23;, 0, 5</td></tr>
+            <tr><td>12</td><td>I</td><td>(2) 19</td></tr>
+            <tr><td>13</td><td>I</td><td>(2) y − 5 = &frac32;(x − 2)</td></tr>
+            <tr><td>14</td><td>I</td><td>(4) 57</td></tr>
+            <tr><td>15</td><td>I</td><td>(4) (x − 5)² = 49</td></tr>
+            <tr><td>16</td><td>I</td><td>(1) f(x − 3) + 4</td></tr>
+            <tr><td>17</td><td>I</td><td>(4) addition property of equality</td></tr>
+            <tr><td>18</td><td>I</td><td>(3) 34</td></tr>
+            <tr><td>19</td><td>I</td><td>(2) 5x² − 10x + 11</td></tr>
+            <tr><td>20</td><td>I</td><td>(4) 4.48%</td></tr>
+            <tr><td>21</td><td>I</td><td>(4) 495</td></tr>
+            <tr><td>22</td><td>I</td><td>(1) (3 ± √57)/4</td></tr>
+            <tr><td>23</td><td>I</td><td>(3) h(x) = x² + 8x + 3</td></tr>
+            <tr><td>24</td><td>I</td><td>(3) 30√2</td></tr>
+            <tr><td>25</td><td>II</td><td>10x² − 11x + 3</td></tr>
+            <tr><td>26</td><td>II</td><td>V-shape, vertex (0, −3)</td></tr>
+            <tr><td>27</td><td>II</td><td>x &lt; −1</td></tr>
+            <tr><td>28</td><td>II</td><td>h = 2A/b</td></tr>
+            <tr><td>29</td><td>II</td><td>5,386 people/year</td></tr>
+            <tr><td>30</td><td>II</td><td>5√3 / 3</td></tr>
+            <tr><td>31</td><td>III</td><td>Max 64 ft, hits ground at t = 3 s</td></tr>
+            <tr><td>32</td><td>III</td><td>(0, 3) and (3, −3)</td></tr>
+            <tr><td>33</td><td>III</td><td>y = 4.61x + 11.93; r ≈ 0.98</td></tr>
+            <tr><td>34</td><td>III</td><td>(5, −3) satisfies both</td></tr>
+            <tr><td>35</td><td>IV</td><td>Tank top $8, sweatshirt $14</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <strong>Preparing for Regents Algebra I this year?</strong> Working through past exams is the single most effective form of Regents prep, and this June 2026 exam is a great starting point because it covers every topic on the exam without any oddball surprises. Our <a href="/courses/regents-algebra-1">Regents Algebra I</a> track at SOMATH is built around exactly this kind of practice &mdash; a rolling 24-meeting curriculum that pairs topic instruction with weekly timed exam sections, in small groups of six on the Upper West Side. <a href="/schedule">Book a trial class</a> or call us at <a href="tel:+16466686151">(646) 668-6151</a>.
+        </div>
+
+        <div class="download-box" style="margin-top:32px;">
+          <span class="dl-icon">📄</span>
+          <div class="dl-text">
+            <strong>Grab the original exam</strong>
+            Practice under real conditions &mdash; time yourself for 3 hours.
+          </div>
+          <a class="dl-btn" href="/assets/exams/regents-algebra-1-june-2026.pdf" download>Download PDF</a>
+        </div>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
