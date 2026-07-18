@@ -1078,8 +1078,8 @@ var COURSE_TITLES = {
 // Each course slug maps to the monthly recurring Price the parent subscribes to.
 // Bundled Checkout adds $99 enrollment as a one-time invoice item on top.
 var COURSE_PRICES = {
-  "little-newtons":                "price_1Tn2YLIWmENPPZJBgIFNu6pX", // LN $246/mo
-  "kid-einsteins":                 "price_1Tn2YLIWmENPPZJBnwNpCKaY", // KE $367/mo
+  "little-newtons":                "price_1TufY0IWmENPPZJBW5f0ad2C", // LN $246/mo (new 2026-07-18; replaces old $369 price_1Tn2YLIWmENPPZJBgIFNu6pX)
+  "kid-einsteins":                 "price_1TufY0IWmENPPZJBmWY0G833", // KE $367/mo (new 2026-07-18; replaces old $489 price_1Tn2YLIWmENPPZJBnwNpCKaY)
   "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
   "regents-algebra-1":             "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (Regents Algebra 1 shares the YF price)
