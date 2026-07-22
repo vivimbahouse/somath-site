@@ -46,36 +46,66 @@
 <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="styles.css" />
     <style>
-      .blog-search { max-width:720px; margin:8px auto 0; padding:0 20px; }
-      .blog-search__wrap { position:relative; display:flex; align-items:center; }
-      .blog-search__input {
-        width:100%;
-        padding:14px 46px 14px 46px;
-        font-size:1rem;
+      /* Compact search anchored to the top-right of the pagehead, right next to the divider under the nav. */
+      .pagehead { position:relative; }
+      .blog-search-mini {
+        position:absolute;
+        top:16px;
+        right:24px;
+        z-index:5;
+        display:flex;
+        align-items:center;
+        gap:0;
+      }
+      .blog-search-mini__toggle {
+        width:36px; height:36px;
+        display:flex; align-items:center; justify-content:center;
+        background:#fff;
+        border:1px solid #d4d1ca;
+        border-radius:50%;
+        color:#1f3d2e;
+        cursor:pointer;
+        transition:background 0.15s, border-color 0.15s;
+      }
+      .blog-search-mini__toggle:hover { background:#f5f1e8; border-color:#c89a3a; }
+      .blog-search-mini__toggle svg { width:16px; height:16px; }
+      .blog-search-mini__box {
+        position:relative;
+        display:none;
+        align-items:center;
+        margin-right:6px;
+      }
+      .blog-search-mini.is-open .blog-search-mini__box { display:flex; }
+      .blog-search-mini.is-open .blog-search-mini__toggle { display:none; }
+      .blog-search-mini__input {
+        width:220px;
+        padding:7px 30px 7px 12px;
+        font-size:0.9rem;
         font-family:inherit;
-        border:1.5px solid #d4d1ca;
+        border:1px solid #1f3d2e;
         border-radius:999px;
         background:#fff;
         color:#1f3d2e;
         outline:none;
-        transition:border-color 0.15s, box-shadow 0.15s;
-        box-shadow:0 1px 3px rgba(0,0,0,0.04);
         box-sizing:border-box;
       }
-      .blog-search__input:focus { border-color:#1f3d2e; box-shadow:0 0 0 3px rgba(31,61,46,0.12); }
-      .blog-search__icon {
-        position:absolute; left:16px; top:50%; transform:translateY(-50%);
-        width:20px; height:20px; color:#7a7974; pointer-events:none;
+      .blog-search-mini__input:focus { box-shadow:0 0 0 2px rgba(31,61,46,0.15); }
+      .blog-search-mini__close {
+        position:absolute; right:6px; top:50%; transform:translateY(-50%);
+        width:22px; height:22px;
+        display:flex; align-items:center; justify-content:center;
+        background:#e6e6e6; color:#1f3d2e; border:none; border-radius:50%;
+        cursor:pointer; font-size:0.95rem; line-height:1; font-weight:700;
       }
-      .blog-search__clear {
-        position:absolute; right:14px; top:50%; transform:translateY(-50%);
-        width:24px; height:24px; display:none; align-items:center; justify-content:center;
-        background:#e6e6e6; color:#1f3d2e; border:none; border-radius:50%; cursor:pointer;
-        font-size:1rem; line-height:1; font-weight:700;
+      .blog-search-mini__close:hover { background:#d4d1ca; }
+      .blog-search-mini__count {
+        position:absolute; top:38px; right:0;
+        font-size:0.78rem; color:#7a7974; white-space:nowrap;
       }
-      .blog-search__clear:hover { background:#d4d1ca; }
-      .blog-search.has-value .blog-search__clear { display:flex; }
-      .blog-search__count { margin-top:10px; font-size:0.9rem; color:#7a7974; text-align:center; min-height:1.2em; }
+      @media (max-width: 640px) {
+        .blog-search-mini { top:12px; right:16px; }
+        .blog-search-mini__input { width:170px; font-size:0.85rem; }
+      }
       .blog-card.hidden { display:none !important; }
       .blog-empty {
         display:none; text-align:center; padding:48px 20px; color:#7a7974;
@@ -134,18 +164,20 @@
           into pieces you can actually use this week.
         </p>
 
-        <div class="blog-search" id="blog-search">
-          <label for="blog-search-input" class="visually-hidden" style="position:absolute;left:-9999px;">Search the blog</label>
-          <div class="blog-search__wrap">
-            <svg class="blog-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="search" id="blog-search-input" class="blog-search__input" placeholder="Search posts — try 'SAT', 'algebra', 'grade 4', 'SHSAT'…" autocomplete="off" aria-label="Search the SOMATH blog" />
-            <button type="button" class="blog-search__clear" id="blog-search-clear" aria-label="Clear search">×</button>
-          </div>
-          <div class="blog-search__count" id="blog-search-count" aria-live="polite"></div>
+      </div>
+
+      <div class="blog-search-mini" id="blog-search">
+        <div class="blog-search-mini__box">
+          <input type="search" id="blog-search-input" class="blog-search-mini__input" placeholder="Search posts…" autocomplete="off" aria-label="Search the SOMATH blog" />
+          <button type="button" class="blog-search-mini__close" id="blog-search-clear" aria-label="Close search">×</button>
+          <div class="blog-search-mini__count" id="blog-search-count" aria-live="polite"></div>
         </div>
+        <button type="button" class="blog-search-mini__toggle" id="blog-search-toggle" aria-label="Search the blog" title="Search posts">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </div>
     </section>
 
@@ -1297,19 +1329,29 @@
       var qparam = params.get('q');
       if (qparam) { input.value = qparam; }
 
+      var toggle = document.getElementById('blog-search-toggle');
+      function openBox() {
+        wrap.classList.add('is-open');
+        setTimeout(function() { input.focus(); }, 10);
+      }
+      function closeBox() {
+        if (input.value) { input.value = ''; apply(); }
+        wrap.classList.remove('is-open');
+      }
       input.addEventListener('input', apply);
-      clearBtn.addEventListener('click', function() {
-        input.value = '';
-        input.focus();
-        apply();
-      });
-      // "/" keyboard shortcut to focus search (unless typing in a field).
+      toggle.addEventListener('click', openBox);
+      clearBtn.addEventListener('click', closeBox);
+      // Escape key closes the search
+      input.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeBox(); });
+      // "/" keyboard shortcut opens search (unless typing in a field).
       document.addEventListener('keydown', function(e) {
         if (e.key === '/' && document.activeElement !== input && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '')) {
           e.preventDefault();
-          input.focus();
+          openBox();
         }
       });
+      // Auto-open if there's an initial ?q= value
+      if (input.value) { wrap.classList.add('is-open'); }
       apply();
     })();
     </script>
