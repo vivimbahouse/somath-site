@@ -45,6 +45,45 @@
     <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .blog-search { max-width:720px; margin:8px auto 0; padding:0 20px; }
+      .blog-search__wrap { position:relative; display:flex; align-items:center; }
+      .blog-search__input {
+        width:100%;
+        padding:14px 46px 14px 46px;
+        font-size:1rem;
+        font-family:inherit;
+        border:1.5px solid #d4d1ca;
+        border-radius:999px;
+        background:#fff;
+        color:#1f3d2e;
+        outline:none;
+        transition:border-color 0.15s, box-shadow 0.15s;
+        box-shadow:0 1px 3px rgba(0,0,0,0.04);
+        box-sizing:border-box;
+      }
+      .blog-search__input:focus { border-color:#1f3d2e; box-shadow:0 0 0 3px rgba(31,61,46,0.12); }
+      .blog-search__icon {
+        position:absolute; left:16px; top:50%; transform:translateY(-50%);
+        width:20px; height:20px; color:#7a7974; pointer-events:none;
+      }
+      .blog-search__clear {
+        position:absolute; right:14px; top:50%; transform:translateY(-50%);
+        width:24px; height:24px; display:none; align-items:center; justify-content:center;
+        background:#e6e6e6; color:#1f3d2e; border:none; border-radius:50%; cursor:pointer;
+        font-size:1rem; line-height:1; font-weight:700;
+      }
+      .blog-search__clear:hover { background:#d4d1ca; }
+      .blog-search.has-value .blog-search__clear { display:flex; }
+      .blog-search__count { margin-top:10px; font-size:0.9rem; color:#7a7974; text-align:center; min-height:1.2em; }
+      .blog-card.hidden { display:none !important; }
+      .blog-empty {
+        display:none; text-align:center; padding:48px 20px; color:#7a7974;
+        background:#fafafa; border:1px dashed #d4d1ca; border-radius:8px; margin-top:20px;
+      }
+      .blog-empty.show { display:block; }
+      .blog-empty strong { color:#1f3d2e; display:block; margin-bottom:6px; font-size:1.1rem; }
+    </style>
       <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -94,11 +133,28 @@
           team. Twenty years in the room with kids learning math, distilled
           into pieces you can actually use this week.
         </p>
+
+        <div class="blog-search" id="blog-search">
+          <label for="blog-search-input" class="visually-hidden" style="position:absolute;left:-9999px;">Search the blog</label>
+          <div class="blog-search__wrap">
+            <svg class="blog-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="blog-search-input" class="blog-search__input" placeholder="Search posts — try 'SAT', 'algebra', 'grade 4', 'SHSAT'…" autocomplete="off" aria-label="Search the SOMATH blog" />
+            <button type="button" class="blog-search__clear" id="blog-search-clear" aria-label="Clear search">×</button>
+          </div>
+          <div class="blog-search__count" id="blog-search-count" aria-live="polite"></div>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="section__inner">
+        <div class="blog-empty" id="blog-empty">
+          <strong>No matching posts.</strong>
+          Try a different keyword, or <button type="button" onclick="document.getElementById('blog-search-clear').click()" style="background:none;border:none;color:#1f3d2e;text-decoration:underline;cursor:pointer;font:inherit;padding:0;">clear the search</button>.
+        </div>
         <div class="blog-grid">
           <a class="blog-card" href="/posts/digital-sat-practice-test-10-math-module-1-walkthrough">
             <span class="blog-card__category">Digital SAT &middot; Math Module 1 &middot; Practice Test 10 &middot; Exam Prep</span>
@@ -1199,5 +1255,63 @@
     <div id="footer-mount"></div>
     <div id="sticky-mount"></div>
     <script src="partials.js?v=v20260710-246"></script>
+    <script>
+    (function() {
+      var input = document.getElementById('blog-search-input');
+      var wrap = document.getElementById('blog-search');
+      var clearBtn = document.getElementById('blog-search-clear');
+      var count = document.getElementById('blog-search-count');
+      var empty = document.getElementById('blog-empty');
+      if (!input) return;
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.blog-grid .blog-card'));
+      // Precompute lowercase searchable text for each card (title + dek + category + meta + href).
+      var searchable = cards.map(function(c) {
+        return (c.textContent + ' ' + (c.getAttribute('href') || '')).toLowerCase().replace(/\s+/g, ' ');
+      });
+      var total = cards.length;
+
+      function apply() {
+        var raw = input.value.trim().toLowerCase();
+        wrap.classList.toggle('has-value', raw.length > 0);
+        if (!raw) {
+          cards.forEach(function(c) { c.classList.remove('hidden'); });
+          count.textContent = '';
+          empty.classList.remove('show');
+          return;
+        }
+        // Multi-term AND search: split on whitespace, every term must appear.
+        var terms = raw.split(/\s+/).filter(Boolean);
+        var visible = 0;
+        cards.forEach(function(c, i) {
+          var hay = searchable[i];
+          var match = terms.every(function(t) { return hay.indexOf(t) !== -1; });
+          if (match) { c.classList.remove('hidden'); visible++; }
+          else { c.classList.add('hidden'); }
+        });
+        count.textContent = visible === 0 ? '' : (visible + ' of ' + total + ' posts');
+        empty.classList.toggle('show', visible === 0);
+      }
+
+      // Support ?q= in the URL so we can link straight to a filtered view.
+      var params = new URLSearchParams(window.location.search);
+      var qparam = params.get('q');
+      if (qparam) { input.value = qparam; }
+
+      input.addEventListener('input', apply);
+      clearBtn.addEventListener('click', function() {
+        input.value = '';
+        input.focus();
+        apply();
+      });
+      // "/" keyboard shortcut to focus search (unless typing in a field).
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement !== input && !/^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || '')) {
+          e.preventDefault();
+          input.focus();
+        }
+      });
+      apply();
+    })();
+    </script>
   </body>
 </html>
