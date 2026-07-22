@@ -86,7 +86,8 @@
       .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
       .qbox .explain { margin:0 0 6px; }
       .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; }
-      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.55; overflow-x:auto; font-size:0.93rem; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere; display:block; margin:8px 0; line-height:1.55; overflow-x:auto; font-size:0.93rem; max-width:100%; box-sizing:border-box; }
+      @media (max-width: 600px) { .qbox .work { font-size:0.82rem; padding:8px 10px; } }
       .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:720px; }
       .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
       .answer-key-table th { background:#0a3a5f; color:#fff; }
@@ -827,11 +828,13 @@ So:  WX/YZ = 10/3
           <p class="explain">Since 52 &ne; 0, the product is zero only when one of the two remaining factors is zero.</p>
           <span class="work">Factor 1: x³ + 64 = 0
   x³ = −64
-  x = −4  (one real cube root; the other two roots are complex)
+  x = −4
+  (one real cube root; the other two roots are complex)
 
 Factor 2: x⁴ − 81 = 0
   x⁴ = 81 = 3⁴
-  x = ±3  (two real fourth roots; the other two roots are imaginary, ±3i)</span>
+  x = ±3
+  (two real fourth roots; the other two roots are imaginary, ±3i)</span>
           <p class="explain">Distinct real solutions: <span class="eq">&minus;4, &minus;3, 3</span> &mdash; exactly three.</p>
           </div></details>
         </div>
