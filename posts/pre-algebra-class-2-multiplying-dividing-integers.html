@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions with Answers) | SOMATH</title>
+    <meta name="description" content="A free 25-question pre-algebra practice set from Class 2 of the SOMATH Young Fermats course — sign rules for products and quotients, multi-digit computation, order of operations with signed integers, and real-life word problems. Includes hidden answer explanations you can reveal one at a time. From School of Math, 226 W 79th St, Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-2-multiplying-dividing-integers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Free 25 pre-algebra practice questions from Class 2 of the SOMATH Young Fermats course — sign rules, multi-digit computation, order of operations, and word problems with hidden step-by-step explanations." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-2-multiplying-dividing-integers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-07-22" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Sign-rule cheat sheet + 25 practice questions with hidden step-by-step explanations. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      .shortcuts {
+        margin: 8px 0 26px;
+        border: 1px solid #d4d1ca;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shortcuts__row {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.98rem;
+      }
+      .shortcuts__row:last-child { border-bottom: 0; }
+      .shortcuts__row strong { color: #0a3a5f; }
+      .shortcuts__row .plus  { color: #0a7a3d; font-weight: 700; }
+      .shortcuts__row .minus { color: #a13544; font-weight: 700; }
+      @media (max-width: 600px) {
+        .shortcuts__row { grid-template-columns: 1fr; gap: 4px; }
+      }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #0a3a5f;
+        font-weight: 600;
+        font-size: 0.9rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 140ms;
+        color: #d4a548;
+      }
+      .practice-question details[open] summary::before { transform: rotate(90deg); }
+      .practice-question summary:hover { color: #d4a548; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      .cta-download {
+        background: #f5f1e8;
+        border: 1px solid #d4a548;
+        padding: 20px 24px;
+        border-radius: 10px;
+        margin: 24px 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .cta-download__body { flex: 1 1 300px; }
+      .cta-download__body h3 { margin: 0 0 4px; color: #0a3a5f; }
+      .cta-download__body p { margin: 0; color: #333; font-size: 0.95rem; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 2: Multiplying & Dividing Integers (25 Practice Questions)",
+  "description": "Free 25-question pre-algebra practice set from Class 2 of the SOMATH Young Fermats course — sign rules for products and quotients, multi-digit computation, order of operations, and real-life word problems.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-2-multiplying-dividing-integers"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the two sign rules for multiplying and dividing integers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SAME signs give a POSITIVE result. DIFFERENT signs give a NEGATIVE result. These two rules apply to both multiplication and division."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is (-3)^2 the same as -3^2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. (-3)^2 = (-3) × (-3) = 9 (positive). But -3^2 with no parentheses means -(3^2) = -9. The parentheses tell you whether to square the negative or apply the negative sign after squaring."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you divide by zero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Division by zero is undefined. For example, -15 ÷ 0 has no answer. But 0 ÷ -15 = 0 is fine — zero can be divided BY another number, but you can never divide BY zero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know the sign of a product with several factors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count the number of negative factors. An EVEN count of negatives gives a POSITIVE product. An ODD count of negatives gives a NEGATIVE product. If any factor is zero, the product is zero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5–6 students, ages 10–12. It takes students from integers on the number line through systems of equations — the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 2</p>
+      <h1 class="post__title">Pre-Algebra Class 2: Multiplying &amp; Dividing Integers</h1>
+      <p class="post__dek">A quick sign-rule cheat sheet from Class 2 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 25 practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-07-22">July 22, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>Class 2 is where students stop just <em>adding and subtracting</em> integers and start <em>multiplying and dividing</em> them. The arithmetic gets faster once students memorize two sign rules — and every question in this class is an application of those rules.</p>
+
+        <h2>The two rules you must know cold</h2>
+        <p>Every product and every quotient of two signed numbers follows one of these two rules. They apply to BOTH multiplication and division.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">SAME signs</p>
+            <p class="rule-card__sub">positive &times; positive · negative &times; negative</p>
+            <p class="rule-card__result">result is POSITIVE <span class="plus">(+)</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">DIFFERENT signs</p>
+            <p class="rule-card__sub">positive &times; negative · negative &times; positive</p>
+            <p class="rule-card__result">result is NEGATIVE <span class="minus">(−)</span></p>
+          </div>
+        </div>
+
+        <h2>Shortcuts for products with 3 or more factors</h2>
+        <p>Instead of applying the sign rule step by step, just count how many <strong>negative</strong> factors the product has:</p>
+
+        <div class="shortcuts">
+          <div class="shortcuts__row"><span><strong>EVEN</strong> number of negatives</span><span>→ product is <span class="plus">POSITIVE</span></span></div>
+          <div class="shortcuts__row"><span><strong>ODD</strong> number of negatives</span><span>→ product is <span class="minus">NEGATIVE</span></span></div>
+          <div class="shortcuts__row"><span>Any factor is <strong>0</strong></span><span>→ product is <strong>0</strong></span></div>
+        </div>
+
+        <h2>Two rules students always forget</h2>
+        <div class="callout">
+          <p><strong>1. Division by 0 is undefined.</strong> Something like (−15) &divide; 0 has no answer at all. But 0 &divide; (−15) = 0 is perfectly fine. <em>Zero on top is OK; zero on the bottom is not.</em></p>
+          <p style="margin-top:10px;"><strong>2. Parentheses matter with exponents.</strong> (−3)<sup>2</sup> = (−3)(−3) = <span style="color:#0a7a3d;">+9</span>. But −3<sup>2</sup> with no parentheses means −(3<sup>2</sup>) = <span style="color:#a13544;">−9</span>. Without parentheses, you square first and apply the negative sign after.</p>
+        </div>
+
+        <p>The 25 questions below march from pure sign-rule drill through multi-digit computation and order of operations, and finish with real-life word problems where negative numbers stand for temperature drops, dives below sea level, and debt.</p>
+
+        <div class="cta-download">
+          <div class="cta-download__body">
+            <h3>Prefer a printable version?</h3>
+            <p>A clean printable PDF with the sign-rule cheat sheet and all 25 questions — the step-by-step answers stay online for the teacher or parent to check.</p>
+          </div>
+          <a href="/assets/pdfs/pre-algebra-class-2-multiplying-dividing-integers-25-questions.pdf" download style="background:#d4a548;color:#0a3a5f;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;white-space:nowrap;">Download PDF ↓</a>
+        </div>
+
+        <h2>25 practice questions with hidden answers</h2>
+
+        <div class="section-band">Sign rules &amp; quick computation (Q1–Q8)</div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span></div>
+          <p class="practice-question__prompt">Fill in each blank with + or -:  (a) (positive) &times; (negative) = ___    (b) (negative) &times; (negative) = ___    (c) (negative) &divide; (positive) = ___    (d) (negative) &divide; (negative) = ___</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(a) -   (b) +   (c) -   (d) +</p>
+            <p class="why"><strong>Why.</strong> The two rules for signs: SAME signs give a POSITIVE result, DIFFERENT signs give a NEGATIVE result. This is true for both multiplication and division. So (a) different signs → negative. (b) same signs → positive. (c) different signs → negative. (d) same signs → positive.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span></div>
+          <p class="practice-question__prompt">Compute in your head:  (a) (-4) &times; 6   (b) (-3) &times; (-9)   (c) 8 &times; (-7)   (d) (-5) &times; (-5)</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(a) -24   (b) 27   (c) -56   (d) 25</p>
+            <p class="why"><strong>Why.</strong> Multiply the digits, then apply the sign rule. (a) 4 &times; 6 = 24, different signs → -24. (b) 3 &times; 9 = 27, same signs → +27. (c) 8 &times; 7 = 56, different signs → -56. (d) 5 &times; 5 = 25, same signs → +25.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span></div>
+          <p class="practice-question__prompt">Compute:  (a) (-48) &divide; 6   (b) (-72) &divide; (-8)   (c) 54 &divide; (-9)   (d) 0 &divide; (-15)</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(a) -8   (b) 9   (c) -6   (d) 0</p>
+            <p class="why"><strong>Why.</strong> Divide the digits, then apply the sign rule. (a) 48 &divide; 6 = 8, different signs → -8. (b) 72 &divide; 8 = 9, same signs → +9. (c) 54 &divide; 9 = 6, different signs → -6. (d) 0 divided by any nonzero number is always 0 — no sign needed.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span></div>
+          <p class="practice-question__prompt">True or false: (-15) &divide; 0 = 0. Explain.</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">False. Division by 0 is UNDEFINED.</p>
+            <p class="why"><strong>Why.</strong> You can never divide by 0. Ask yourself &quot;what number times 0 gives -15?&quot; — no such number exists, because anything times 0 is 0. So -15 &divide; 0 has no answer at all; we say it is undefined. Do not confuse this with 0 &divide; (-15) = 0, which IS a valid statement.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span></div>
+          <p class="practice-question__prompt">Without computing, decide if each product is POSITIVE, NEGATIVE, or ZERO:  (a) (-2) &times; (-3) &times; (-4)   (b) (-1) &times; (-1) &times; (-1) &times; (-1)   (c) (-7) &times; 5 &times; 0 &times; (-2)   (d) (-2) &times; (-3) &times; 4 &times; (-5)</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(a) negative   (b) positive   (c) zero   (d) negative</p>
+            <p class="why"><strong>Why.</strong> Count how many NEGATIVE factors there are. An EVEN count of negatives → positive product. An ODD count → negative product. If ANY factor is 0, the whole product is 0. (a) 3 negatives (odd) → negative. (b) 4 negatives (even) → positive. (c) contains 0 → zero. (d) 3 negatives (odd) → negative.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span></div>
+          <p class="practice-question__prompt">Compute:  (a) (-1)^7   (b) (-1)^100   (c) (-2)^3   (d) (-2)^4</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(a) -1   (b) 1   (c) -8   (d) 16</p>
+            <p class="why"><strong>Why.</strong> For (-1) raised to a power: ODD exponent → -1, EVEN exponent → +1. So (-1)^7 = -1 (7 is odd) and (-1)^100 = 1 (100 is even). For (-2): (-2)^3 = (-2)(-2)(-2) = 4·(-2) = -8. (-2)^4 = (-2)(-2)(-2)(-2) = 4·4 = 16 (four negatives make positive).</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span></div>
+          <p class="practice-question__prompt">Which is bigger: (-3)^2 or -3^2? Show why.</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(-3)^2 = 9 is bigger. -3^2 = -9.</p>
+            <p class="why"><strong>Why.</strong> The parentheses change EVERYTHING. (-3)^2 means (-3) &times; (-3) = 9 (positive, because same signs). But -3^2 with no parentheses means -(3^2) — you square 3 first, THEN apply the negative sign. So -3^2 = -(9) = -9. This is one of the most common mistakes on tests — always look for the parentheses.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span></div>
+          <p class="practice-question__prompt">Fill in the missing number:  (a) (-6) &times; ___ = -42    (b) ___ &divide; (-4) = 9    (c) (-8) &times; ___ = 56</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">(a) 7   (b) -36   (c) -7</p>
+            <p class="why"><strong>Why.</strong> Work backwards. (a) 42 &divide; 6 = 7 (digits). Signs: negative &times; ? = negative, so ? must be POSITIVE. Answer 7. (b) 9 &times; (-4) = -36 (check: -36 &divide; -4 = 9 ✓). (c) 56 &divide; 8 = 7. Signs: negative &times; ? = positive, so ? must be NEGATIVE. Answer -7.</p>
+          </details>
+        </div>
+        <div class="section-band">Products &amp; quotients with multi-digit integers (Q9–Q16)</div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span></div>
+          <p class="practice-question__prompt">(-13) &times; 12 = ?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-156</p>
+            <p class="why"><strong>Why.</strong> 13 &times; 12 = 156 (compute normally: 13 &times; 10 = 130, 13 &times; 2 = 26, 130 + 26 = 156). Different signs → negative. Final: -156.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span></div>
+          <p class="practice-question__prompt">(-25) &times; (-16) = ?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">400</p>
+            <p class="why"><strong>Why.</strong> Same signs → positive. 25 &times; 16 = 400 (25 &times; 16 = 25 &times; 4 &times; 4 = 100 &times; 4 = 400). Final: +400.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span></div>
+          <p class="practice-question__prompt">(-144) &divide; (-12) = ?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">12</p>
+            <p class="why"><strong>Why.</strong> Same signs → positive. 144 &divide; 12 = 12 (since 12 &times; 12 = 144). Final: +12.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span></div>
+          <p class="practice-question__prompt">225 &divide; (-15) = ?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-15</p>
+            <p class="why"><strong>Why.</strong> Different signs → negative. 225 &divide; 15: notice 15 &times; 15 = 225, so 225 &divide; 15 = 15. Final: -15.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span></div>
+          <p class="practice-question__prompt">(-8) &times; 25 &times; (-4) = ?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">800</p>
+            <p class="why"><strong>Why.</strong> Two negatives (even count) → positive result. Regroup for easy multiplication: 25 &times; (-4) = -100, then (-8) &times; (-100) = 800. Or: (-8) &times; (-4) = 32, then 32 &times; 25 = 800.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span></div>
+          <p class="practice-question__prompt">Evaluate:  (-2)^5</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-32</p>
+            <p class="why"><strong>Why.</strong> (-2)^5 = (-2)(-2)(-2)(-2)(-2). Group in pairs: (-2)(-2) = 4, (-2)(-2) = 4. So we have 4 &times; 4 &times; (-2) = 16 &times; (-2) = -32. Or use the shortcut: 2^5 = 32, and an ODD number of negatives → negative. So (-2)^5 = -32.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span></div>
+          <p class="practice-question__prompt">(-360) &divide; (-9) &divide; (-5) = ? (compute left to right)</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-8</p>
+            <p class="why"><strong>Why.</strong> Division is LEFT TO RIGHT, one step at a time. Step 1: (-360) &divide; (-9) = 40 (same signs → positive; 360 &divide; 9 = 40). Step 2: 40 &divide; (-5) = -8 (different signs → negative; 40 &divide; 5 = 8). Final: -8.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span></div>
+          <p class="practice-question__prompt">Fill in the missing number:  (-234) &divide; ___ = -18</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">13</p>
+            <p class="why"><strong>Why.</strong> Signs first: negative &divide; ? = negative, so ? must be POSITIVE. Digits: 234 &divide; ? = 18, so ? = 234 &divide; 18 = 13. Check: (-234) &divide; 13 = -18 ✓ (since 13 &times; 18 = 234).</p>
+          </details>
+        </div>
+        <div class="section-band">Order of operations with signed integers (Q17–Q20)</div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span></div>
+          <p class="practice-question__prompt">Evaluate:  (-3) &times; 4 + (-2) &times; (-5)</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-2</p>
+            <p class="why"><strong>Why.</strong> PEMDAS: do the multiplications FIRST, then add. (-3) &times; 4 = -12. (-2) &times; (-5) = +10. Now add: -12 + 10 = -2. Final: -2.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span></div>
+          <p class="practice-question__prompt">Evaluate:  20 &divide; (-4) - (-6) &times; 3</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">13</p>
+            <p class="why"><strong>Why.</strong> PEMDAS: division and multiplication first, left to right. 20 &divide; (-4) = -5 (different signs). (-6) &times; 3 = -18 (different signs). Now the expression becomes -5 - (-18) = -5 + 18 = 13. Final: +13.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span></div>
+          <p class="practice-question__prompt">Evaluate:  (-2)^3 &times; 5 - (-4)^2</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-56</p>
+            <p class="why"><strong>Why.</strong> PEMDAS: exponents first, then multiplication, then subtraction. (-2)^3 = -8 (odd exponent → negative). (-4)^2 = 16 (even exponent → positive). Now: -8 &times; 5 - 16 = -40 - 16 = -56. Final: -56.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span></div>
+          <p class="practice-question__prompt">Evaluate:  ( (-12) + 4 ) &times; (-3) &divide; 6</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">4</p>
+            <p class="why"><strong>Why.</strong> Parentheses first: (-12) + 4 = -8. Then left to right: (-8) &times; (-3) = 24 (same signs). Finally 24 &divide; 6 = 4. Final: +4.</p>
+          </details>
+        </div>
+        <div class="section-band">Word problems — real-life signed products &amp; quotients (Q21–Q25)</div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span></div>
+          <p class="practice-question__prompt">The temperature drops 3 &deg;F every hour. If it is 5 &deg;F right now, what will the temperature be 6 hours from now?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-13 &deg;F</p>
+            <p class="why"><strong>Why.</strong> &quot;Drops 3 &deg;F per hour&quot; means the change is -3 &deg;F/hour. Over 6 hours, total change = -3 &times; 6 = -18 &deg;F. New temperature = 5 + (-18) = -13 &deg;F.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span></div>
+          <p class="practice-question__prompt">A submarine is diving at 12 meters per minute. It started at sea level (0 m). Where is it 8 minutes later? (positive = above sea level, negative = below)</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-96 meters (96 m below sea level)</p>
+            <p class="why"><strong>Why.</strong> Diving at 12 m per minute means the rate is -12 m/min. Over 8 minutes, total change = -12 &times; 8 = -96 m. Starting at 0, new depth = 0 + (-96) = -96 m.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span></div>
+          <p class="practice-question__prompt">A stock lost $84 in value over 7 days at a steady rate. What was the average change per day?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-$12 per day</p>
+            <p class="why"><strong>Why.</strong> &quot;Lost $84&quot; means total change = -$84. Steady rate over 7 days: average = -84 &divide; 7 = -$12 per day. The negative sign tells us the stock LOST value on average.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span></div>
+          <p class="practice-question__prompt">Amara owes her brother $6. She owes him for 4 more toys at the same price. What integer represents her total debt after buying the extra toys?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">-$30 (she owes $30 total)</p>
+            <p class="why"><strong>Why.</strong> Debt is represented by NEGATIVE numbers. She already owes -$6 (that's 1 toy). Four more toys at -$6 each = 4 &times; (-6) = -$24. Total debt = -6 + (-24) = -$30. She owes her brother $30 total.</p>
+          </details>
+        </div>
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span></div>
+          <p class="practice-question__prompt">A hot-air balloon is descending at a rate of 8 feet per second. If it needs to descend 480 feet to land, how many seconds until it lands?</p>
+          <details><summary>Show answer &amp; explanation</summary>
+            <p class="answer">60 seconds (1 minute)</p>
+            <p class="why"><strong>Why.</strong> &quot;Descending 8 feet per second&quot; is a rate of -8 ft/sec. Total descent needed = -480 ft. Time = distance &divide; rate = (-480) &divide; (-8) = +60 seconds. Same signs → positive time, which makes physical sense (time can't be negative). The balloon lands after 60 seconds, or 1 minute.</p>
+          </details>
+        </div>
+
+
+        <div class="cta-download">
+          <div class="cta-download__body">
+            <h3>Printable version</h3>
+            <p>The same 25 questions plus a one-page sign-rule cheat sheet, ready to print for homework or classroom use.</p>
+          </div>
+          <a href="/assets/pdfs/pre-algebra-class-2-multiplying-dividing-integers-25-questions.pdf" download style="background:#d4a548;color:#0a3a5f;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;white-space:nowrap;">Download PDF ↓</a>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 2 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5–6 students (ages 10–12). The full arc runs from integers on the number line through systems of linear equations and probability — the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 60-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child's current level against the readiness signals for Pre-Algebra and Algebra 1 — and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 2 is a taste — Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days' notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course →</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1: Integers on the Number Line &amp; Absolute Value (25 Practice Questions)</a></li>
+          <li><a href="/posts/should-my-child-take-algebra-1-before-high-school-nyc">Should My Child Take Algebra 1 Before High School? An NYC Parent's Guide</a></li>
+          <li><a href="/posts/heschel-school-rising-8th-grade-summer-math-packet-solved">Heschel Rising 8th Grade Summer Math Packet — Solved &amp; Explained</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
