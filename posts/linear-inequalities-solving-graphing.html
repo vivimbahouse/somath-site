@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Linear Inequalities: Solving and Graphing (Theory + 30 Practice Questions) | SOMATH</title>
+    <meta name="description" content="Free Algebra I lesson on solving and graphing linear inequalities. Covers the flip-the-sign rule, interval and set-builder notation, number-line graphs, compound inequalities, absolute-value inequalities, and two-variable inequalities in the coordinate plane. Includes 30 practice questions (10 easy, 10 medium, 5 medium-hard, 5 hard) with hidden step-by-step solutions. From SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/linear-inequalities-solving-graphing" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Linear Inequalities: Solving and Graphing (Theory + 30 Practice Questions)" />
+    <meta property="og:description" content="A step-by-step Algebra I guide to solving and graphing linear inequalities, plus 30 practice questions (10 easy, 10 medium, 5 medium-hard, 5 hard) with hidden solutions. From SOMATH on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/linear-inequalities-solving-graphing" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="article:published_time" content="2026-07-22" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Linear Inequalities: Solving and Graphing (Theory + 30 Practice Questions)" />
+    <meta name="twitter:description" content="How to solve and graph linear inequalities, plus 30 practice questions with hidden step-by-step solutions. From SOMATH, Upper West Side." />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .download-box { background:#fff8e8; border:1px solid #d4a548; border-left:4px solid #d4a548; padding:16px 20px; margin:20px 0; border-radius:6px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+      .download-box .dl-icon { font-size:1.6rem; }
+      .download-box .dl-text { flex:1; min-width:200px; }
+      .download-box .dl-text strong { color:#0a3a5f; display:block; margin-bottom:2px; }
+      .download-box a.dl-btn { display:inline-block; background:#0a3a5f; color:#fff; padding:9px 18px; border-radius:6px; font-weight:700; text-decoration:none; font-size:0.95rem; }
+      .download-box a.dl-btn:hover { background:#082c47; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box table.translate { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.96rem; }
+      .theory-box table.translate th, .theory-box table.translate td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; }
+      .theory-box table.translate th { background:#0a3a5f; color:#fff; }
+      .theory-box table.translate tr:nth-child(even) { background:#fafafa; }
+      .theory-box .warn { background:#fff4e0; border-left:4px solid #d4a548; padding:10px 14px; margin:10px 0; border-radius:4px; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .difficulty { display:inline-block; font-size:0.75rem; font-weight:700; padding:2px 9px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em; margin-left:8px; vertical-align:middle; }
+      .qbox .difficulty.easy { background:#d8efd9; color:#1f5e2b; }
+      .qbox .difficulty.medium { background:#fdecc8; color:#8a5a00; }
+      .qbox .difficulty.medium-hard { background:#fde2c8; color:#9a4500; }
+      .qbox .difficulty.hard { background:#f8d6d6; color:#94232b; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.4; overflow-x:auto; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:640px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .video-embed { position:relative; width:100%; padding-bottom:56.25%; margin:24px 0 8px; border-radius:8px; overflow:hidden; background:#000; }
+      .video-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+      .video-caption { font-size:0.9rem; color:#666; text-align:center; margin:0 0 24px; font-style:italic; }
+      /* Inline SVG number-line graphs */
+      .numline { display:block; margin:10px auto; max-width:100%; height:auto; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linear Inequalities: Solving and Graphing (Theory and 30 Practice Questions)",
+  "description": "A step-by-step Algebra I lesson on solving and graphing linear inequalities. Covers the flip-the-sign rule for multiplication and division by negatives, interval and set-builder notation, number-line graphs, compound inequalities, absolute-value inequalities, and two-variable inequalities in the coordinate plane. Includes 30 practice questions (10 easy, 10 medium, 5 medium-hard, 5 hard) with hidden solutions. From SOMATH on the Upper West Side, NYC.",
+  "datePublished": "2026-07-22",
+  "dateModified": "2026-07-22",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/linear-inequalities-solving-graphing"
+}
+</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Algebra I &middot; Algebra Ignite &middot; Inequalities &middot; Graphing</p>
+      <h1 class="post__title">Linear Inequalities: Solving and Graphing (Theory and 30 Practice Questions)</h1>
+      <p class="post__dek">A step-by-step guide to solving and graphing linear inequalities &mdash; the flip-the-sign rule, interval and set-builder notation, number-line graphs, compound and absolute-value inequalities, and two-variable inequalities in the coordinate plane &mdash; followed by 30 practice questions (10 easy, 10 medium, 5 medium-hard, 5 hard) with hidden step-by-step solutions. Written for Algebra I students in the SOMATH Algebra Ignite track on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-07-22">2026-07-22</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p><strong>Who this is for.</strong> Algebra I students who can already solve a linear equation like <span class="qbox eq" style="padding:2px 6px;">3x + 5 = 20</span> but freeze up the first time the equals sign turns into a &lt;, &gt;, &le;, or &ge;. Inequalities show up on almost every unit test, every Regents, every SAT, and every SHSAT. The mechanics are 95% the same as equations. The 5% that is different (the flip-the-sign rule, the two kinds of endpoints, and the shading in the plane) trips up almost every student the first time. This lesson closes that gap.</p>
+
+        <div class="callout">
+          <strong>Prerequisite check.</strong> Before you dive in, you should be comfortable solving one-variable linear equations. If &ldquo;subtract from both sides, then divide from both sides&rdquo; is not automatic for you, review our post on <a href="/posts/word-problems-linear-equations-35-questions">word problems modeled with linear equations</a> first &mdash; then come back here.
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#theory">Theory &middot; The 4 Rules of Inequalities</a></li>
+            <li><a href="#notation">Notation &middot; Number Lines, Intervals, Set-Builder</a></li>
+            <li><a href="#compound">Compound Inequalities (AND / OR)</a></li>
+            <li><a href="#absolute">Absolute-Value Inequalities</a></li>
+            <li><a href="#twovar">Two-Variable Inequalities in the Plane</a></li>
+            <li><a href="#easy">Section 1 &middot; Easy (questions 1&ndash;10)</a></li>
+            <li><a href="#medium">Section 2 &middot; Medium (questions 11&ndash;20)</a></li>
+            <li><a href="#mediumhard">Section 3 &middot; Medium-Hard (questions 21&ndash;25)</a></li>
+            <li><a href="#hard">Section 4 &middot; Hard (questions 26&ndash;30)</a></li>
+            <li><a href="#answer-key">Answer Key</a></li>
+          </ol>
+        </div>
+
+        <h2 id="theory">Theory &middot; The 4 Rules of Inequalities</h2>
+
+        <p>An <strong>inequality</strong> is a statement that two expressions are not equal &mdash; one is bigger, smaller, or at least as big as the other. There are four symbols you must know cold:</p>
+
+        <div class="theory-box">
+          <table class="translate">
+            <thead><tr><th>Symbol</th><th>Read as</th><th>Endpoint on number line</th></tr></thead>
+            <tbody>
+              <tr><td><span class="eq">&lt;</span></td><td>&ldquo;is less than&rdquo; (strict)</td><td>Open circle &deg;</td></tr>
+              <tr><td><span class="eq">&gt;</span></td><td>&ldquo;is greater than&rdquo; (strict)</td><td>Open circle &deg;</td></tr>
+              <tr><td><span class="eq">&le;</span></td><td>&ldquo;is less than or equal to&rdquo;</td><td>Closed dot &bull;</td></tr>
+              <tr><td><span class="eq">&ge;</span></td><td>&ldquo;is greater than or equal to&rdquo;</td><td>Closed dot &bull;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="theory-box">
+          <h3>Rule 1 &middot; Solve exactly like an equation &mdash; except when you multiply or divide by a negative</h3>
+          <p>You can add or subtract the same number from both sides, and the inequality stays true. You can multiply or divide both sides by any <em>positive</em> number, and it stays true. All the moves you would use on an equation are still legal.</p>
+          <div class="warn"><strong>The one rule you cannot break.</strong> If you multiply or divide both sides of an inequality by a <em>negative</em> number, you must <em>flip the inequality symbol</em>. So <span class="eq">&lt;</span> becomes <span class="eq">&gt;</span>, and <span class="eq">&ge;</span> becomes <span class="eq">&le;</span>. Skipping this step is the #1 mistake on Regents inequality problems.</p>
+          <p><strong>Why?</strong> Because 2 &lt; 4 is true, but multiply both sides by &minus;1 and you get &minus;2 &lt; &minus;4, which is false. The flip fixes it: &minus;2 &gt; &minus;4.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Rule 2 &middot; The solution is (almost always) a set, not a single number</h3>
+          <p>An equation like <span class="eq">2x + 3 = 11</span> has one answer: <span class="eq">x = 4</span>. An inequality like <span class="eq">2x + 3 &gt; 11</span> has infinitely many answers: every number bigger than 4 works. Your job is to describe that entire set &mdash; not just one number in it.</p>
+          <p>The three standard ways to describe the set are: a <strong>number-line graph</strong>, <strong>interval notation</strong>, and <strong>set-builder notation</strong>. All three say the same thing. On a test, do whichever the question asks for &mdash; and if it says &ldquo;solve,&rdquo; do all three.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Rule 3 &middot; Endpoints: open for strict, closed for &ldquo;or equal to&rdquo;</h3>
+          <p>When you graph an inequality on a number line, the endpoint tells the reader whether the number itself is included. A strict inequality (<span class="eq">&lt;</span> or <span class="eq">&gt;</span>) gets an <em>open circle</em>: the endpoint is <em>not</em> a solution. A non-strict inequality (<span class="eq">&le;</span> or <span class="eq">&ge;</span>) gets a <em>closed dot</em>: the endpoint <em>is</em> a solution. Then shade the arrow toward every number that works.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Rule 4 &middot; Always check your answer with a test point</h3>
+          <p>Pick any number in your shaded region and plug it back into the original inequality. If it makes a true statement, your answer is right. If it makes a false statement, you probably forgot to flip the sign in Rule 1.</p>
+          <p><strong>Example.</strong> Solve <span class="eq">&minus;3x + 5 &lt; 14</span>. Subtract 5: <span class="eq">&minus;3x &lt; 9</span>. Divide by &minus;3 <em>and flip</em>: <span class="eq">x &gt; &minus;3</span>. Test point: try <span class="eq">x = 0</span>. Original: <span class="eq">&minus;3(0) + 5 = 5</span>, and 5 &lt; 14 is true. Answer checks out.</p>
+        </div>
+
+        <h2 id="notation">Notation &middot; Number Lines, Intervals, Set-Builder</h2>
+
+        <p>Every inequality can be described three ways. Learn to translate between them fluently:</p>
+
+        <div class="theory-box">
+          <table class="translate">
+            <thead><tr><th>Inequality</th><th>Number line</th><th>Interval notation</th><th>Set-builder</th></tr></thead>
+            <tbody>
+              <tr><td><span class="eq">x &lt; 3</span></td><td>Open at 3, arrow left</td><td><span class="eq">(&minus;&infin;, 3)</span></td><td><span class="eq">{x | x &lt; 3}</span></td></tr>
+              <tr><td><span class="eq">x &le; 3</span></td><td>Closed at 3, arrow left</td><td><span class="eq">(&minus;&infin;, 3]</span></td><td><span class="eq">{x | x &le; 3}</span></td></tr>
+              <tr><td><span class="eq">x &gt; 3</span></td><td>Open at 3, arrow right</td><td><span class="eq">(3, &infin;)</span></td><td><span class="eq">{x | x &gt; 3}</span></td></tr>
+              <tr><td><span class="eq">x &ge; 3</span></td><td>Closed at 3, arrow right</td><td><span class="eq">[3, &infin;)</span></td><td><span class="eq">{x | x &ge; 3}</span></td></tr>
+              <tr><td><span class="eq">&minus;2 &le; x &lt; 5</span></td><td>Closed &minus;2, open 5, shade between</td><td><span class="eq">[&minus;2, 5)</span></td><td><span class="eq">{x | &minus;2 &le; x &lt; 5}</span></td></tr>
+            </tbody>
+          </table>
+          <div class="warn"><strong>Bracket vs. parenthesis.</strong> A square bracket <span class="eq">[ ]</span> means <em>included</em> (matches closed dot &bull; and matches <span class="eq">&le;</span> / <span class="eq">&ge;</span>). A round parenthesis <span class="eq">( )</span> means <em>excluded</em> (matches open circle &deg; and matches strict <span class="eq">&lt;</span> / <span class="eq">&gt;</span>). <strong>Infinity always gets a parenthesis</strong>, never a bracket &mdash; infinity is a direction, not a number, so you can never &ldquo;include&rdquo; it.</p>
+        </div>
+
+        <h2 id="compound">Compound Inequalities (AND / OR)</h2>
+
+        <p>A <strong>compound inequality</strong> is two inequalities joined by AND or OR. AND means <em>both</em> must be true; OR means <em>either</em> is enough.</p>
+
+        <div class="theory-box">
+          <h3>AND (intersection) &mdash; shade the overlap</h3>
+          <p>A compound inequality like <span class="eq">&minus;3 &lt; x &le; 5</span> is shorthand for <span class="eq">x &gt; &minus;3</span> <strong>AND</strong> <span class="eq">x &le; 5</span>. On a number line, shade only the part that both individual inequalities agree on: the segment between &minus;3 (open) and 5 (closed). Interval: <span class="eq">(&minus;3, 5]</span>.</p>
+          <p><strong>Solving.</strong> Do the same operation to <em>all three parts</em> at once. Example: <span class="eq">1 &le; 2x + 3 &lt; 11</span>. Subtract 3 from every part: <span class="eq">&minus;2 &le; 2x &lt; 8</span>. Divide every part by 2: <span class="eq">&minus;1 &le; x &lt; 4</span>. Interval: <span class="eq">[&minus;1, 4)</span>.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>OR (union) &mdash; shade both pieces</h3>
+          <p>A compound inequality like <span class="eq">x &lt; &minus;2</span> OR <span class="eq">x &ge; 4</span> has a solution set that is <em>two separate pieces</em> of the number line. You cannot write it as one interval &mdash; you have to write the union: <span class="eq">(&minus;&infin;, &minus;2) &cup; [4, &infin;)</span>.</p>
+          <div class="warn"><strong>Watch out.</strong> Do not try to combine two OR-inequalities into one three-part statement. Something like &ldquo;<span class="eq">x &lt; &minus;2</span> or <span class="eq">x &gt; 4</span>&rdquo; is <em>not</em> the same as <span class="eq">4 &lt; x &lt; &minus;2</span> (which is impossible &mdash; no number is both bigger than 4 and less than &minus;2). Always leave OR-inequalities as two pieces.</p>
+        </div>
+
+        <h2 id="absolute">Absolute-Value Inequalities</h2>
+
+        <p>An absolute-value inequality has the form <span class="qbox eq" style="padding:2px 6px;">|expression| &lt; k</span> or <span class="qbox eq" style="padding:2px 6px;">|expression| &gt; k</span>. Recall that <span class="eq">|x|</span> means the distance of <span class="eq">x</span> from 0 on the number line. So <span class="eq">|x| &lt; 3</span> reads &ldquo;<em>x</em> is within 3 of zero&rdquo; and <span class="eq">|x| &gt; 3</span> reads &ldquo;<em>x</em> is more than 3 away from zero.&rdquo;</p>
+
+        <div class="theory-box">
+          <h3>&ldquo;Less than&rdquo; &rarr; AND (a sandwich)</h3>
+          <p>If <span class="eq">|expression| &lt; k</span> (with k &gt; 0), then <span class="eq">&minus;k &lt; expression &lt; k</span>. The solution is a single interval around zero.</p>
+          <p><strong>Example.</strong> Solve <span class="eq">|2x &minus; 1| &le; 7</span>. Rewrite as <span class="eq">&minus;7 &le; 2x &minus; 1 &le; 7</span>. Add 1: <span class="eq">&minus;6 &le; 2x &le; 8</span>. Divide by 2: <span class="eq">&minus;3 &le; x &le; 4</span>. Interval: <span class="eq">[&minus;3, 4]</span>.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>&ldquo;Greater than&rdquo; &rarr; OR (two arrows)</h3>
+          <p>If <span class="eq">|expression| &gt; k</span> (with k &gt; 0), then <span class="eq">expression &lt; &minus;k</span> OR <span class="eq">expression &gt; k</span>. The solution is two pieces, both going outward.</p>
+          <p><strong>Example.</strong> Solve <span class="eq">|3x + 2| &gt; 8</span>. Split: <span class="eq">3x + 2 &lt; &minus;8</span> OR <span class="eq">3x + 2 &gt; 8</span>. First: <span class="eq">3x &lt; &minus;10</span>, so <span class="eq">x &lt; &minus;10/3</span>. Second: <span class="eq">3x &gt; 6</span>, so <span class="eq">x &gt; 2</span>. Solution: <span class="eq">(&minus;&infin;, &minus;10/3) &cup; (2, &infin;)</span>.</p>
+          <div class="warn"><strong>Two special cases.</strong> <span class="eq">|x| &lt; 0</span> has <em>no solution</em> (absolute value is never negative). <span class="eq">|x| &gt; &minus;5</span> has <em>all real numbers</em> as its solution (every absolute value is at least 0, which is already greater than &minus;5). Always check the right-hand side before you split.</p>
+        </div>
+
+        <h2 id="twovar">Two-Variable Inequalities in the Plane</h2>
+
+        <p>A one-variable inequality (<span class="eq">x &gt; 3</span>) graphs on a <em>number line</em>. A two-variable inequality (<span class="eq">y &gt; 2x + 1</span>) graphs on a <em>coordinate plane</em> &mdash; the solution is a shaded half-plane bounded by a straight line.</p>
+
+        <div class="theory-box">
+          <h3>The 4-step recipe for graphing <span class="eq">y &lt;/&gt; mx + b</span></h3>
+          <ol>
+            <li><strong>Solve for y</strong> if the inequality is not already in that form.</li>
+            <li><strong>Graph the boundary line</strong> <span class="eq">y = mx + b</span> using slope-intercept. Use a <em>dashed</em> line for strict (<span class="eq">&lt;</span> or <span class="eq">&gt;</span>) and a <em>solid</em> line for non-strict (<span class="eq">&le;</span> or <span class="eq">&ge;</span>).</li>
+            <li><strong>Shade above or below.</strong> Above the line if <span class="eq">y &gt;</span> or <span class="eq">y &ge;</span>; below if <span class="eq">y &lt;</span> or <span class="eq">y &le;</span>. (This works only after you solve for y first.)</li>
+            <li><strong>Test point.</strong> Pick a point <em>not on</em> the boundary &mdash; usually (0, 0) if it's not on the line &mdash; and plug into the original inequality. If it makes a true statement, you shaded correctly. If false, shade the other side.</li>
+          </ol>
+        </div>
+
+        <div class="theory-box">
+          <h3>Vertical and horizontal boundaries</h3>
+          <p>If the inequality is <span class="eq">x &gt; 3</span> in the plane, the boundary is the <em>vertical</em> line <span class="eq">x = 3</span> (dashed here), and you shade everything to the <em>right</em>. If it's <span class="eq">y &le; &minus;2</span>, the boundary is the <em>horizontal</em> line <span class="eq">y = &minus;2</span> (solid), and you shade everything <em>below</em>.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Systems of inequalities</h3>
+          <p>Two inequalities together (a system) are graphed by shading each one separately and looking for where the shadings <em>overlap</em>. The overlap region is the solution set of the system &mdash; every point in it satisfies both inequalities at once. On tests, students often use two different shading colors (or diagonal hatching in opposite directions) so the overlap is easy to see.</p>
+        </div>
+
+        <div class="callout">
+          <strong>Pattern to memorize.</strong> Multiply or divide by a negative &rarr; <em>flip</em>. Strict inequality &rarr; <em>open</em> circle or <em>dashed</em> line. &ldquo;Or equal to&rdquo; &rarr; <em>closed</em> dot or <em>solid</em> line. Absolute value less than &rarr; sandwich (AND). Absolute value greater than &rarr; two arrows (OR). Every inequality problem is one of these five patterns.
+        </div>
+
+        <h2 id="easy">Section 1 &middot; Easy (questions 1&ndash;10)</h2>
+        <p>One-step and two-step inequalities. Solve for x and write the solution in the form x &lt; a, x &ge; a, etc.</p>
+
+        <div class="qbox">
+          <h3>Question 1 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">x + 4 &gt; 9</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &gt; 5</span></p>
+            <p class="explain">Subtract 4 from both sides. No flip needed (we only added/subtracted). Interval: <span class="eq">(5, &infin;)</span>. Open circle at 5, arrow right.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 2 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">x &minus; 7 &le; &minus;2</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &le; 5</span></p>
+            <p class="explain">Add 7 to both sides. Interval: <span class="eq">(&minus;&infin;, 5]</span>. Closed dot at 5, arrow left.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 3 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">3x &lt; 15</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; 5</span></p>
+            <p class="explain">Divide both sides by 3. Positive divisor &mdash; no flip. Interval: <span class="eq">(&minus;&infin;, 5)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 4 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">&minus;2x &lt; 10</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &gt; &minus;5</span></p>
+            <p class="explain">Divide both sides by &minus;2. Negative divisor &mdash; <em>flip</em> the &lt; to &gt;. Interval: <span class="eq">(&minus;5, &infin;)</span>. This is the classic sign-flip problem.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 5 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">2x + 5 &ge; 13</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &ge; 4</span></p>
+            <p class="explain">Subtract 5: <span class="eq">2x &ge; 8</span>. Divide by 2: <span class="eq">x &ge; 4</span>. Interval: <span class="eq">[4, &infin;)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 6 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">4 &minus; x &gt; 1</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; 3</span></p>
+            <p class="explain">Subtract 4: <span class="eq">&minus;x &gt; &minus;3</span>. Multiply both sides by &minus;1 <em>and flip</em>: <span class="eq">x &lt; 3</span>. Interval: <span class="eq">(&minus;&infin;, 3)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 7 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">x/3 &le; 4</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &le; 12</span></p>
+            <p class="explain">Multiply both sides by 3. Positive multiplier &mdash; no flip. Interval: <span class="eq">(&minus;&infin;, 12]</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 8 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">&minus;x/4 &ge; 2</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &le; &minus;8</span></p>
+            <p class="explain">Multiply both sides by &minus;4 <em>and flip</em> the &ge; to &le;. Interval: <span class="eq">(&minus;&infin;, &minus;8]</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 9 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">5x &minus; 3 &lt; 2x + 6</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; 3</span></p>
+            <p class="explain">Subtract 2x: <span class="eq">3x &minus; 3 &lt; 6</span>. Add 3: <span class="eq">3x &lt; 9</span>. Divide by 3: <span class="eq">x &lt; 3</span>. Interval: <span class="eq">(&minus;&infin;, 3)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 10 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Write the inequality shown on this number line: closed dot at &minus;2, arrow going right.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &ge; &minus;2</span></p>
+            <p class="explain">Closed dot &rarr; &ldquo;or equal to.&rdquo; Arrow right &rarr; greater than. Interval: <span class="eq">[&minus;2, &infin;)</span>. Set-builder: <span class="eq">{x | x &ge; &minus;2}</span>.</p>
+          </div></details>
+        </div>
+
+        <h2 id="medium">Section 2 &middot; Medium (questions 11&ndash;20)</h2>
+        <p>Multi-step, distribution, fractions, compound inequalities, and simple absolute-value.</p>
+
+        <div class="qbox">
+          <h3>Question 11 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">3(x &minus; 2) &lt; 12</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; 6</span></p>
+            <p class="explain">Distribute: <span class="eq">3x &minus; 6 &lt; 12</span>. Add 6: <span class="eq">3x &lt; 18</span>. Divide by 3: <span class="eq">x &lt; 6</span>. Interval: <span class="eq">(&minus;&infin;, 6)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 12 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">&minus;4(2x + 1) &ge; 20</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &le; &minus;3</span></p>
+            <p class="explain">Distribute: <span class="eq">&minus;8x &minus; 4 &ge; 20</span>. Add 4: <span class="eq">&minus;8x &ge; 24</span>. Divide by &minus;8 <em>and flip</em>: <span class="eq">x &le; &minus;3</span>. Interval: <span class="eq">(&minus;&infin;, &minus;3]</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 13 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">(x + 3)/2 &gt; 5</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &gt; 7</span></p>
+            <p class="explain">Multiply both sides by 2 (positive, no flip): <span class="eq">x + 3 &gt; 10</span>. Subtract 3: <span class="eq">x &gt; 7</span>. Interval: <span class="eq">(7, &infin;)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 14 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">6 &minus; 2x &le; 4x &minus; 12</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &ge; 3</span></p>
+            <p class="explain">Add 2x to both sides: <span class="eq">6 &le; 6x &minus; 12</span>. Add 12: <span class="eq">18 &le; 6x</span>. Divide by 6: <span class="eq">3 &le; x</span>, i.e. <span class="eq">x &ge; 3</span>. Interval: <span class="eq">[3, &infin;)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 15 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve the compound inequality: <span class="eq">&minus;1 &lt; 2x + 3 &le; 9</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;2 &lt; x &le; 3</span></p>
+            <p class="explain">Subtract 3 from every part: <span class="eq">&minus;4 &lt; 2x &le; 6</span>. Divide every part by 2: <span class="eq">&minus;2 &lt; x &le; 3</span>. Interval: <span class="eq">(&minus;2, 3]</span>. Open circle at &minus;2, closed dot at 3, shade between.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 16 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve the compound inequality: <span class="eq">x &minus; 4 &lt; &minus;5</span> OR <span class="eq">x &minus; 4 &ge; 1</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; &minus;1</span> OR <span class="eq">x &ge; 5</span></p>
+            <p class="explain">Solve each side separately. Left: <span class="eq">x &lt; &minus;1</span>. Right: <span class="eq">x &ge; 5</span>. Interval: <span class="eq">(&minus;&infin;, &minus;1) &cup; [5, &infin;)</span>. Two arrows going outward.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 17 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">|x| &le; 6</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;6 &le; x &le; 6</span></p>
+            <p class="explain">&ldquo;Less than&rdquo; absolute value &rarr; sandwich. Rewrite as <span class="eq">&minus;6 &le; x &le; 6</span>. Interval: <span class="eq">[&minus;6, 6]</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 18 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">|x &minus; 2| &gt; 5</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; &minus;3</span> OR <span class="eq">x &gt; 7</span></p>
+            <p class="explain">&ldquo;Greater than&rdquo; absolute value &rarr; two arrows. Split: <span class="eq">x &minus; 2 &lt; &minus;5</span> OR <span class="eq">x &minus; 2 &gt; 5</span>. First: <span class="eq">x &lt; &minus;3</span>. Second: <span class="eq">x &gt; 7</span>. Interval: <span class="eq">(&minus;&infin;, &minus;3) &cup; (7, &infin;)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 19 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Write the interval-notation solution to <span class="eq">x &lt; 4</span> AND <span class="eq">x &ge; &minus;1</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">[&minus;1, 4)</span></p>
+            <p class="explain">AND &rarr; intersection. The overlap is <span class="eq">&minus;1 &le; x &lt; 4</span>. Closed bracket at &minus;1 (from &ge;), open parenthesis at 4 (from strict &lt;).</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 20 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">2x/3 &minus; 1 &lt; 5</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; 9</span></p>
+            <p class="explain">Add 1: <span class="eq">2x/3 &lt; 6</span>. Multiply by 3/2 (positive, no flip): <span class="eq">x &lt; 9</span>. Interval: <span class="eq">(&minus;&infin;, 9)</span>.</p>
+          </div></details>
+        </div>
+
+        <h2 id="mediumhard">Section 3 &middot; Medium-Hard (questions 21&ndash;25)</h2>
+        <p>Fractions with LCD clearing, absolute-value with coefficient, word-problem set-up, and graphing in the coordinate plane.</p>
+
+        <div class="qbox">
+          <h3>Question 21 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">(x + 1)/3 &minus; (x &minus; 2)/4 &ge; 1</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &ge; 2</span></p>
+            <p class="explain">Multiply both sides by the LCD 12 (positive, no flip): <span class="eq">4(x + 1) &minus; 3(x &minus; 2) &ge; 12</span>. Distribute: <span class="eq">4x + 4 &minus; 3x + 6 &ge; 12</span>. Combine: <span class="eq">x + 10 &ge; 12</span>. Subtract 10: <span class="eq">x &ge; 2</span>. Interval: <span class="eq">[2, &infin;)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 22 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">|3x + 5| &lt; 11</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;16/3 &lt; x &lt; 2</span></p>
+            <p class="explain">&ldquo;Less than&rdquo; absolute value &rarr; sandwich. Rewrite as <span class="eq">&minus;11 &lt; 3x + 5 &lt; 11</span>. Subtract 5 from every part: <span class="eq">&minus;16 &lt; 3x &lt; 6</span>. Divide every part by 3 (positive): <span class="eq">&minus;16/3 &lt; x &lt; 2</span>. Interval: <span class="eq">(&minus;16/3, 2)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 23 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">A ride-share app charges a $3 base fee plus $2.50 per mile. Nora has at most $18 to spend. Write and solve an inequality for the greatest whole number of miles she can travel.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: 6 miles</p>
+            <p class="explain">Let m = miles. Then <span class="eq">3 + 2.5m &le; 18</span>. Subtract 3: <span class="eq">2.5m &le; 15</span>. Divide by 2.5: <span class="eq">m &le; 6</span>. The greatest whole-mile trip she can afford is 6 miles.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 24 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">Graph the solution of <span class="eq">y &lt; 2x &minus; 3</span> in the coordinate plane. Describe the boundary and which region is shaded.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: Dashed boundary line <span class="eq">y = 2x &minus; 3</span>; shade the region <em>below</em> the line.</p>
+            <p class="explain">The boundary is <span class="eq">y = 2x &minus; 3</span> (slope 2, y-intercept &minus;3). Strict <span class="eq">&lt;</span> &rarr; <em>dashed</em>. Since the inequality is <span class="eq">y &lt;</span>, shade <em>below</em>. Check with test point (0, 0): <span class="eq">0 &lt; 2(0) &minus; 3 = &minus;3</span>? No, 0 &lt; &minus;3 is false. So (0, 0) is <em>not</em> in the solution &mdash; it's above the line, and we shaded below. Correct.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 25 <span class="difficulty medium-hard">Medium-Hard</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">5 &minus; 3(2x &minus; 1) &gt; 2(x + 4) &minus; 5</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">x &lt; 5/8</span></p>
+            <p class="explain">Distribute both sides: <span class="eq">5 &minus; 6x + 3 &gt; 2x + 8 &minus; 5</span>. Simplify: <span class="eq">8 &minus; 6x &gt; 2x + 3</span>. Subtract 2x: <span class="eq">8 &minus; 8x &gt; 3</span>. Subtract 8: <span class="eq">&minus;8x &gt; &minus;5</span>. Divide by &minus;8 <em>and flip</em>: <span class="eq">x &lt; 5/8</span>. Interval: <span class="eq">(&minus;&infin;, 5/8)</span>.</p>
+          </div></details>
+        </div>
+
+        <h2 id="hard">Section 4 &middot; Hard (questions 26&ndash;30)</h2>
+        <p>Compound absolute-value, systems of inequalities, no-solution / all-real cases, and modeling.</p>
+
+        <div class="qbox">
+          <h3>Question 26 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">2|x &minus; 4| + 3 &lt; 11</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">0 &lt; x &lt; 8</span></p>
+            <p class="explain"><em>Isolate the absolute value first.</em> Subtract 3: <span class="eq">2|x &minus; 4| &lt; 8</span>. Divide by 2: <span class="eq">|x &minus; 4| &lt; 4</span>. Now the sandwich: <span class="eq">&minus;4 &lt; x &minus; 4 &lt; 4</span>. Add 4 to every part: <span class="eq">0 &lt; x &lt; 8</span>. Interval: <span class="eq">(0, 8)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 27 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Determine all values of x that satisfy <span class="eq">|2x + 3| &ge; &minus;4</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: All real numbers, <span class="eq">(&minus;&infin;, &infin;)</span></p>
+            <p class="explain">Absolute value is always &ge; 0, and 0 &ge; &minus;4 is automatically true. So <em>every</em> real number x satisfies this inequality. This is the &ldquo;all real numbers&rdquo; case &mdash; don't waste time splitting; recognize it and write the answer.</p>
+            <p class="explain"><strong>Related trap:</strong> If the problem had been <span class="eq">|2x + 3| &le; &minus;4</span>, the answer would be <em>no solution</em> (an absolute value is never less than a negative). Always look at the right side of an absolute-value inequality before you split.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 28 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Solve the system in the coordinate plane and describe the solution region: <span class="eq">y &ge; x + 1</span> AND <span class="eq">y &lt; &minus;2x + 4</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: The wedge-shaped region <em>above</em> the solid line <span class="eq">y = x + 1</span> and <em>below</em> the dashed line <span class="eq">y = &minus;2x + 4</span>. The two boundaries meet at (1, 2); the solution is bounded on the left by their intersection.</p>
+            <p class="explain">Line 1: <span class="eq">y = x + 1</span>, solid (because &ge;), shade above. Line 2: <span class="eq">y = &minus;2x + 4</span>, dashed (because strict &lt;), shade below. The overlap is a wedge to the left of the intersection point. Solve the system to find the vertex: set <span class="eq">x + 1 = &minus;2x + 4</span> &rarr; <span class="eq">3x = 3</span> &rarr; <span class="eq">x = 1, y = 2</span>. Test point (0, 3): first, 3 &ge; 0 + 1 = 1 &check;. Second, 3 &lt; &minus;2(0) + 4 = 4 &check;. So (0, 3) is in the region &mdash; that confirms the wedge to the left.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 29 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Sasha earns $12 per hour babysitting and $8 per hour dog-walking. She wants to earn at least $120 this week and can work no more than 15 hours total. Write a system of inequalities for the number of babysitting hours <span class="eq">b</span> and dog-walking hours <span class="eq">d</span>, and describe one combination that works.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">12b + 8d &ge; 120</span>, <span class="eq">b + d &le; 15</span>, <span class="eq">b &ge; 0</span>, <span class="eq">d &ge; 0</span>. One valid combination: <span class="eq">b = 10, d = 0</span> (earns $120, works 10 hours).</p>
+            <p class="explain">Total pay: <span class="eq">12b + 8d &ge; 120</span> (&ldquo;at least $120&rdquo;). Total hours: <span class="eq">b + d &le; 15</span> (&ldquo;no more than 15 hours&rdquo;). Non-negativity: hours can't be negative. The solution region in the (b, d)-plane is bounded by these four inequalities. Any lattice point in the region is a valid combination. Another example: <span class="eq">b = 6, d = 6</span> (pay $72 + $48 = $120 &check;, hours 12 &check;).</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 30 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Solve for x: <span class="eq">|4x &minus; 7| &lt; 2x + 1</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">1 &lt; x &lt; 4</span></p>
+            <p class="explain">This is the trickiest form: the right side is a <em>variable expression</em>, not a constant. Two things must be true. First, <span class="eq">2x + 1 &gt; 0</span> (otherwise the absolute value, which is &ge; 0, cannot be less than a non-positive number). That gives <span class="eq">x &gt; &minus;1/2</span>. Second, apply the &ldquo;less than&rdquo; sandwich: <span class="eq">&minus;(2x + 1) &lt; 4x &minus; 7 &lt; 2x + 1</span>.</p>
+            <p class="explain"><strong>Right piece:</strong> <span class="eq">4x &minus; 7 &lt; 2x + 1</span> &rarr; <span class="eq">2x &lt; 8</span> &rarr; <span class="eq">x &lt; 4</span>.</p>
+            <p class="explain"><strong>Left piece:</strong> <span class="eq">&minus;(2x + 1) &lt; 4x &minus; 7</span> &rarr; <span class="eq">&minus;2x &minus; 1 &lt; 4x &minus; 7</span> &rarr; <span class="eq">6 &lt; 6x</span> &rarr; <span class="eq">x &gt; 1</span>.</p>
+            <p class="explain">Combine with <span class="eq">x &gt; &minus;1/2</span> from the domain check: the intersection is <span class="eq">1 &lt; x &lt; 4</span>. Interval: <span class="eq">(1, 4)</span>. Test point (0, 0) is <em>not</em> in the interval: check original &mdash; <span class="eq">|4(0) &minus; 7| = 7</span>, and <span class="eq">2(0) + 1 = 1</span>; 7 &lt; 1 is false, as expected. Test x = 2 (should be in): <span class="eq">|4(2) &minus; 7| = 1</span>, <span class="eq">2(2) + 1 = 5</span>; 1 &lt; 5 is true. Correct.</p>
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">Answer Key</h2>
+        <p>All 30 answers at a glance. Try each problem before looking here.</p>
+
+        <table class="answer-key-table">
+          <thead>
+            <tr><th>#</th><th>Level</th><th>Answer</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Easy</td><td>x &gt; 5</td></tr>
+            <tr><td>2</td><td>Easy</td><td>x &le; 5</td></tr>
+            <tr><td>3</td><td>Easy</td><td>x &lt; 5</td></tr>
+            <tr><td>4</td><td>Easy</td><td>x &gt; &minus;5 (flip!)</td></tr>
+            <tr><td>5</td><td>Easy</td><td>x &ge; 4</td></tr>
+            <tr><td>6</td><td>Easy</td><td>x &lt; 3 (flip!)</td></tr>
+            <tr><td>7</td><td>Easy</td><td>x &le; 12</td></tr>
+            <tr><td>8</td><td>Easy</td><td>x &le; &minus;8 (flip!)</td></tr>
+            <tr><td>9</td><td>Easy</td><td>x &lt; 3</td></tr>
+            <tr><td>10</td><td>Easy</td><td>x &ge; &minus;2</td></tr>
+            <tr><td>11</td><td>Medium</td><td>x &lt; 6</td></tr>
+            <tr><td>12</td><td>Medium</td><td>x &le; &minus;3 (flip!)</td></tr>
+            <tr><td>13</td><td>Medium</td><td>x &gt; 7</td></tr>
+            <tr><td>14</td><td>Medium</td><td>x &ge; 3</td></tr>
+            <tr><td>15</td><td>Medium</td><td>&minus;2 &lt; x &le; 3</td></tr>
+            <tr><td>16</td><td>Medium</td><td>x &lt; &minus;1 OR x &ge; 5</td></tr>
+            <tr><td>17</td><td>Medium</td><td>&minus;6 &le; x &le; 6</td></tr>
+            <tr><td>18</td><td>Medium</td><td>x &lt; &minus;3 OR x &gt; 7</td></tr>
+            <tr><td>19</td><td>Medium</td><td>[&minus;1, 4)</td></tr>
+            <tr><td>20</td><td>Medium</td><td>x &lt; 9</td></tr>
+            <tr><td>21</td><td>Medium-Hard</td><td>x &ge; 2</td></tr>
+            <tr><td>22</td><td>Medium-Hard</td><td>&minus;16/3 &lt; x &lt; 2</td></tr>
+            <tr><td>23</td><td>Medium-Hard</td><td>6 miles</td></tr>
+            <tr><td>24</td><td>Medium-Hard</td><td>Dashed y = 2x &minus; 3; shade below</td></tr>
+            <tr><td>25</td><td>Medium-Hard</td><td>x &lt; 5/8 (flip!)</td></tr>
+            <tr><td>26</td><td>Hard</td><td>0 &lt; x &lt; 8</td></tr>
+            <tr><td>27</td><td>Hard</td><td>All real numbers</td></tr>
+            <tr><td>28</td><td>Hard</td><td>Wedge above solid y = x + 1 and below dashed y = &minus;2x + 4</td></tr>
+            <tr><td>29</td><td>Hard</td><td>12b + 8d &ge; 120, b + d &le; 15, b,d &ge; 0</td></tr>
+            <tr><td>30</td><td>Hard</td><td>1 &lt; x &lt; 4</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="big-ideas">Big Ideas Covered</h2>
+        <ul>
+          <li><strong>Flip on negative.</strong> Multiplying or dividing both sides by a negative number flips the inequality. Equations don't have this rule &mdash; inequalities do. Miss it once and every answer that follows is wrong.</li>
+          <li><strong>Open vs. closed endpoints.</strong> Strict (<span class="qbox eq" style="padding:2px 6px;">&lt;</span>, <span class="qbox eq" style="padding:2px 6px;">&gt;</span>) &rarr; open circle &deg; and parenthesis <span class="qbox eq" style="padding:2px 6px;">( )</span>. Non-strict (<span class="qbox eq" style="padding:2px 6px;">&le;</span>, <span class="qbox eq" style="padding:2px 6px;">&ge;</span>) &rarr; closed dot &bull; and bracket <span class="qbox eq" style="padding:2px 6px;">[ ]</span>. Infinity always gets a parenthesis.</li>
+          <li><strong>Interval vs. set-builder vs. number-line.</strong> All three describe the same solution set. On a test, do what's asked &mdash; if it just says &ldquo;solve,&rdquo; giving all three is the safest habit.</li>
+          <li><strong>Compound AND</strong> &rarr; a single interval (the overlap). <strong>Compound OR</strong> &rarr; a union of two pieces. Don't try to squeeze OR into one three-part statement.</li>
+          <li><strong>Absolute value &ldquo;less than&rdquo;</strong> &rarr; sandwich (AND). <strong>Absolute value &ldquo;greater than&rdquo;</strong> &rarr; two arrows (OR). Always isolate the absolute value first.</li>
+          <li><strong>Special cases.</strong> Absolute value less than a negative &rarr; no solution. Absolute value greater than a negative &rarr; all real numbers. Recognize these instantly.</li>
+          <li><strong>Two-variable inequalities.</strong> Solid line for &le;/&ge;, dashed for &lt;/&gt;. Shade above for &gt;, below for &lt;. Always verify with a test point.</li>
+          <li><strong>Systems of inequalities.</strong> Graph each separately and find the overlap. The overlap region is the solution set.</li>
+          <li><strong>Test point every time.</strong> Even on easy problems, plug one number back in. It catches sign-flip errors before they compound.</li>
+          <li><strong>Modeling.</strong> &ldquo;At most&rdquo; &rarr; <span class="qbox eq" style="padding:2px 6px;">&le;</span>. &ldquo;At least&rdquo; &rarr; <span class="qbox eq" style="padding:2px 6px;">&ge;</span>. &ldquo;More than&rdquo; / &ldquo;greater than&rdquo; &rarr; strict <span class="qbox eq" style="padding:2px 6px;">&gt;</span>. &ldquo;Fewer than&rdquo; / &ldquo;less than&rdquo; &rarr; strict <span class="qbox eq" style="padding:2px 6px;">&lt;</span>.</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Ready for structured practice?</strong> Linear inequalities are the first place in Algebra I where students discover that &ldquo;more math rules&rdquo; is a lie &mdash; you only have to know one new move (the flip) and the rest is the same algebra you already know. If your child wants to work through inequalities systematically with a teacher who catches sign-flip errors in real time, that is exactly what our <a href="/courses/young-fermats-algebra-i-ignite">Algebra I (Ignite)</a> track is built for. Small groups of six, on the Upper West Side. <a href="/schedule">Book a trial class</a> or call us at <a href="tel:+16466686151">(646) 668-6151</a>.
+        </div>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
