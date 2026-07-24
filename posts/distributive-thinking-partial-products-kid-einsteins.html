@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Distributive Thinking &amp; Partial Products &mdash; 25 Practice Questions with Theory &amp; Hidden Answers (Kid Einsteins, Grades 3&ndash;5) | SOMATH NYC</title>
+    <meta name="description" content="Free grades 3&ndash;5 math lesson on the distributive property and partial products: split any hard multiplication into two easier ones. Includes the area-model theory, the box method, the standard-algorithm connection, and 25 practice questions (10 easy, 10 medium, 5 hard) with click-to-reveal step-by-step answers. Built for SOMATH's Kid Einsteins class on the Upper West Side of NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/distributive-thinking-partial-products-kid-einsteins" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Distributive Thinking &amp; Partial Products &mdash; 25 Questions with Theory &amp; Hidden Answers (Kid Einsteins)" />
+    <meta property="og:description" content="A complete grade 3&ndash;5 lesson on the distributive property and partial products: theory, box method, standard-algorithm connection, and 25 questions (10 easy, 10 medium, 5 hard) with hidden step-by-step answers. From SOMATH, Upper West Side NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/distributive-thinking-partial-products-kid-einsteins" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-24" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Distributive Thinking &amp; Partial Products &mdash; 25 Questions with Hidden Answers" />
+    <meta name="twitter:description" content="Grade 3&ndash;5 lesson on the distributive property and partial products: theory + 25 questions with click-to-reveal answers. From SOMATH, Upper West Side NYC." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .fact-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:520px; }
+      .fact-table th, .fact-table td { padding:8px 12px; text-align:center; border-bottom:1px solid #e6e6e6; font-family:"Courier New", monospace; }
+      .fact-table th { background:#0a3a5f; color:#fff; font-family:inherit; }
+      .fact-table tr:nth-child(even) { background:#fafafa; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.55; overflow-x:auto; font-size:0.95rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:720px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .difficulty { display:inline-block; font-size:0.72rem; font-weight:700; padding:2px 10px; border-radius:999px; margin-left:8px; vertical-align:middle; text-transform:uppercase; letter-spacing:0.03em; }
+      .difficulty.easy { background:#e6efe2; color:#2e5a1f; }
+      .difficulty.medium { background:#f9edd2; color:#8a5a12; }
+      .difficulty.hard { background:#f2d6cf; color:#7a2a12; }
+      /* Area / box-model grid */
+      .area-model { margin:14px 0 8px; font-family:"Courier New", monospace; }
+      .area-model table { border-collapse:collapse; margin:0 0 4px; }
+      .area-model td { border:1px solid #0a3a5f; text-align:center; background:#f5f1e8; padding:6px 8px; font-weight:700; color:#0a3a5f; }
+      .area-model td.split { background:#e6efe2; }
+      .area-model td.split2 { background:#f9edd2; }
+      .area-model td.split3 { background:#f2d6cf; }
+      .area-model td.split4 { background:#d9e6f0; }
+      .area-model .lbl { border:none; background:none; font-weight:700; color:#0a3a5f; text-align:center; padding:2px 6px; }
+      .area-model .side { border:none; background:none; font-weight:700; color:#0a3a5f; text-align:right; padding:6px 8px 6px 0; }
+      .area-model .caption { font-family:inherit; font-size:0.94rem; color:#333; margin:4px 0 10px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Distributive Thinking & Partial Products — 25 Practice Questions with Theory & Hidden Answers (Kid Einsteins)",
+  "description": "A complete grades 3–5 lesson on the distributive property and partial products: theory, box method, standard-algorithm connection, and 25 questions (10 easy, 10 medium, 5 hard) with click-to-reveal step-by-step answers. From SOMATH, the Upper West Side math school in NYC.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-07-24",
+  "dateModified": "2026-07-24",
+  "author": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/distributive-thinking-partial-products-kid-einsteins" },
+  "keywords": "distributive property, partial products, box method, area model multiplication, grade 3 math, grade 4 math, grade 5 math, kid einsteins, multi-digit multiplication, math tutor NYC, Upper West Side math"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#somath",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": "New York City"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the distributive property in 3rd, 4th, and 5th grade math?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The distributive property says you can multiply a sum by breaking it into pieces, multiplying each piece, and adding the results. In symbols: a × (b + c) = (a × b) + (a × c). In a picture, it's a rectangle chopped into two smaller rectangles — the total area equals the sum of the two piece areas. In 3rd–5th grade, this is the single most useful idea for turning a hard multiplication into two easy ones." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are partial products?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Partial products are the smaller multiplications you get when you split a bigger multiplication using place value. For example, 23 × 6 becomes (20 × 6) + (3 × 6) = 120 + 18 = 138. The 120 and 18 are the two partial products. Every partial product is a rectangle in the area model." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the box method in multiplication?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The box method is the area-model rectangle written as a table. Break each factor into place-value pieces along the sides of a grid, multiply each cell, then add all the cells together. For 23 × 47 you get a 2×2 grid with the pieces 20×40, 20×7, 3×40, 3×7 — add all four to get 1,081. The box method is the same math as the standard algorithm, just laid out where every step is visible." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the distributive property connect to the standard multiplication algorithm?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The standard multiplication algorithm — the one with the carries you learn in 4th and 5th grade — is a compressed form of partial products. Every line you write in the algorithm is one row of partial products. Understanding the distributive property first (with the box method) makes the standard algorithm click, because students see what each carry actually means: it is the tens digit of a partial product being combined into the next column." }
+    },
+    {
+      "@type": "Question",
+      "name": "When do children first learn the distributive property?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In the Common Core standards used across most US schools, the distributive property is introduced in 3rd grade (splitting a rectangle) and used heavily in 4th and 5th grade to multiply multi-digit numbers. It shows up again in 6th–8th grade for expressions like 3(x + 4), and again in high school algebra for FOIL and polynomial multiplication. The same picture — a rectangle split into pieces — is used every single time." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find a small-group math class in NYC that teaches this way?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH runs the Kid Einsteins program (grades 3–5) at 226 W 79th St on the Upper West Side of NYC. Classes are small groups of 6–8 students and use area models, the box method, and partial products as the core mental picture for every multiplication. Call (646) 668-6151 or email hello@schoolofmath.us to book a free evaluation." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Kid Einsteins &middot; Distributive Property &middot; Grades 3&ndash;5 &middot; NYC Math Class</p>
+      <h1 class="post__title">Distributive Thinking &amp; Partial Products &mdash; 25 Practice Questions with Theory &amp; Hidden Answers (Kid Einsteins)</h1>
+      <p class="post__dek">The single most useful idea in grade-school multiplication: <strong>split a hard problem into two easier ones</strong>. This class-ready lesson teaches the <strong>distributive property</strong> and <strong>partial products</strong> using area models and the box method, then finishes with <strong>25 practice questions</strong> &mdash; 10 easy, 10 medium, 5 hard &mdash; each with click-to-reveal step-by-step answers. Built for the <a href="/">SOMATH</a> <strong>Kid Einsteins</strong> program (grades 3&ndash;5) on the Upper West Side of Manhattan.</p>
+      <p class="post__meta"><time datetime="2026-07-24">2026-07-24</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>This is <strong>Class 4</strong> of the SOMATH <a href="/courses/kid-einsteins">Kid Einsteins</a> multiplication arc. In <a href="/posts/multiplication-facts-7-8-9-area-models-kid-einsteins">Class 3</a> we drilled the three trickiest times tables (&times;7, &times;8, &times;9) using the area model. In this class we take the same picture &mdash; a rectangle chopped in two &mdash; and turn it into the engine for <em>every</em> hard multiplication your student will ever meet: multi-digit numbers, algebraic expressions, even fractions.</p>
+
+        <p>The main idea is only one sentence: <strong>if a multiplication is too hard to see in one step, split one of the numbers into two friendlier pieces, multiply each piece, and add.</strong> That&rsquo;s <strong>distributive thinking</strong>. The two smaller multiplications you get are called <strong>partial products</strong>. This lesson makes both ideas concrete, then drills them with 25 questions. Written by the same team that teaches Kid Einsteins at <a href="/">SOMATH</a>, run by cofounders Marcelo Ramos (Northwestern) and Vivianne Wright (Harvard).</p>
+
+        <div class="callout">
+          <strong>How to use this in a class (40&ndash;50 min):</strong>
+          <ol style="margin:8px 0 0 20px;">
+            <li>Warm-up: read the theory aloud and draw one split rectangle together (10 min).</li>
+            <li>Work through the box-method example <span class="eq">23 &times; 47</span> as a class (10 min).</li>
+            <li>Students attempt the 25 questions with the answers hidden (20 min).</li>
+            <li>Reveal answers together and re-teach any that missed 3+ students (10 min).</li>
+          </ol>
+        </div>
+
+        <div class="toc">
+          <h2>What&rsquo;s in this lesson</h2>
+          <ol>
+            <li><a href="#big-idea">The one-sentence big idea</a></li>
+            <li><a href="#distributive">Theory: what the distributive property really says</a></li>
+            <li><a href="#partial-products">Theory: partial products (splitting by place value)</a></li>
+            <li><a href="#box-method">The box method &mdash; the area model as a table</a></li>
+            <li><a href="#two-digit">Two-digit &times; two-digit with the box method</a></li>
+            <li><a href="#algorithm-connection">How this becomes the standard algorithm</a></li>
+            <li><a href="#tricks">Six friendly splits every student should know</a></li>
+            <li><a href="#questions">25 practice questions (10 easy, 10 medium, 5 hard)</a></li>
+            <li><a href="#answer-key">Answer key summary</a></li>
+            <li><a href="#somath">About SOMATH &amp; Kid Einsteins</a></li>
+          </ol>
+        </div>
+
+        <h2 id="big-idea">1. The one-sentence big idea</h2>
+        <div class="callout">
+          <strong>Distributive thinking:</strong> <em>If a multiplication is hard, split one number into two friendly pieces, multiply each piece separately, then add the two answers.</em>
+        </div>
+        <p>Every technique in this class &mdash; area models, partial products, the box method, and the standard algorithm &mdash; is the same idea in different clothing. Once a student <em>sees</em> that a multiplication is a rectangle that can be chopped in two, hard multiplication becomes almost automatic.</p>
+
+        <h2 id="distributive">2. Theory: what the distributive property really says</h2>
+        <div class="theory-box">
+          <h3>Split the sum, then add the pieces</h3>
+          <p>The <strong>distributive property</strong> says that multiplying a number by a sum is the same as multiplying by each piece of the sum and adding the results:</p>
+          <span class="work">a × (b + c) = (a × b) + (a × c)</span>
+          <p>In everyday language: <strong>&ldquo;multiply, then add&rdquo; equals &ldquo;add, then multiply.&rdquo;</strong> As a picture, it&rsquo;s a rectangle sliced into two smaller rectangles.</p>
+
+          <p><strong>Example:</strong> <span class="eq">6 &times; 13</span>. The number 13 is not on any times table you memorized &mdash; but <span class="eq">13 = 10 + 3</span>, and both of those <em>are</em> easy:</p>
+          <span class="work">6 × 13 = 6 × (10 + 3)
+       = (6 × 10) + (6 × 3)
+       = 60 + 18
+       = 78</span>
+
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">10</td><td class="lbl">3</td></tr>
+              <tr><td class="side">6</td><td class="split">60</td><td class="split2">18</td></tr>
+            </table>
+            <p class="caption">Split 13 into <span class="eq">10 + 3</span>. Green box: <span class="eq">6 &times; 10 = 60</span>. Gold box: <span class="eq">6 &times; 3 = 18</span>. Add: <span class="eq">60 + 18 = 78</span>.</p>
+          </div>
+
+          <p>The magic is not the property &mdash; it&rsquo;s the freedom. You get to pick the split. Always pick the split that lands you on numbers you already know.</p>
+        </div>
+
+        <h2 id="partial-products">3. Theory: partial products (splitting by place value)</h2>
+        <div class="theory-box">
+          <h3>The place-value split is the one to memorize</h3>
+          <p>A <strong>partial product</strong> is one of the smaller multiplications you get after splitting. The most useful split is always by <strong>place value</strong>: break a two-digit number into its tens and its ones.</p>
+
+          <p><strong>Example:</strong> <span class="eq">27 &times; 4</span>. Split 27 into <span class="eq">20 + 7</span>:</p>
+          <span class="work">27 × 4 = (20 × 4) + (7 × 4)
+       =   80    +    28
+       =        108</span>
+
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">20</td><td class="lbl">7</td></tr>
+              <tr><td class="side">4</td><td class="split">80</td><td class="split2">28</td></tr>
+            </table>
+            <p class="caption">Two partial products: <span class="eq">80</span> and <span class="eq">28</span>. Add them to get <span class="eq">108</span>.</p>
+          </div>
+
+          <p><strong>Why place value?</strong> Because multiplying by 10, 20, 30, 100, 200, and so on is just a smaller multiplication followed by adding zeros. So splitting by tens and ones guarantees that at least one of your partial products is easy.</p>
+
+          <ul>
+            <li><span class="eq">20 &times; 4</span> = <span class="eq">2 &times; 4 &times; 10</span> = <span class="eq">80</span></li>
+            <li><span class="eq">30 &times; 6</span> = <span class="eq">3 &times; 6 &times; 10</span> = <span class="eq">180</span></li>
+            <li><span class="eq">40 &times; 50</span> = <span class="eq">4 &times; 5 &times; 100</span> = <span class="eq">2000</span></li>
+          </ul>
+        </div>
+
+        <h2 id="box-method">4. The box method &mdash; the area model as a table</h2>
+        <div class="theory-box">
+          <h3>Rows, columns, and one cell per partial product</h3>
+          <p>The <strong>box method</strong> is the area-model rectangle written as a grid. Break the factors into place-value pieces along the top and left of a table. Fill in each cell with that row&rsquo;s piece times that column&rsquo;s piece. Add all the cells.</p>
+
+          <p><strong>Example:</strong> <span class="eq">46 &times; 7</span>. Split 46 into <span class="eq">40 + 6</span>. One row, two columns:</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">40</td><td class="lbl">6</td></tr>
+              <tr><td class="side">7</td><td class="split">280</td><td class="split2">42</td></tr>
+            </table>
+            <p class="caption">Two partial products: <span class="eq">7 &times; 40 = 280</span> and <span class="eq">7 &times; 6 = 42</span>. Total: <span class="eq">280 + 42 = 322</span>.</p>
+          </div>
+
+          <p>The box method has two virtues: it never hides a step, and it works with any size number. You can split into three pieces, four pieces, hundreds and tens and ones. Same picture every time.</p>
+        </div>
+
+        <h2 id="two-digit">5. Two-digit &times; two-digit with the box method</h2>
+        <div class="theory-box">
+          <h3>Two-by-two grid, four partial products</h3>
+          <p>When both factors are two-digit numbers, split <em>both</em> of them. You get a <strong>two-by-two box with four partial products</strong>.</p>
+
+          <p><strong>Example:</strong> <span class="eq">23 &times; 47</span>. Split: <span class="eq">23 = 20 + 3</span> and <span class="eq">47 = 40 + 7</span>.</p>
+
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">40</td><td class="lbl">7</td></tr>
+              <tr><td class="side">20</td><td class="split">800</td><td class="split2">140</td></tr>
+              <tr><td class="side">3</td><td class="split3">120</td><td class="split4">21</td></tr>
+            </table>
+            <p class="caption">Four partial products, one per cell. Add all four to get the answer.</p>
+          </div>
+
+          <span class="work">23 × 47 = (20 × 40) + (20 × 7) + (3 × 40) + (3 × 7)
+       =    800    +   140    +   120    +   21
+       =                 1,081</span>
+
+          <p>Notice: <strong>every partial product is a fact you already know</strong>. <span class="eq">2 &times; 4 = 8</span> makes <span class="eq">20 &times; 40 = 800</span>. <span class="eq">3 &times; 7 = 21</span> stays 21. The box method is nothing more than four small multiplications plus one addition.</p>
+        </div>
+
+        <h2 id="algorithm-connection">6. How this becomes the standard algorithm</h2>
+        <div class="theory-box">
+          <h3>The stacked algorithm is compressed partial products</h3>
+          <p>When you learn to stack numbers and &ldquo;carry the 1&rdquo; in 4th or 5th grade, you are doing the same partial products &mdash; just compressed. Every line of the stacked algorithm is a partial product.</p>
+
+          <p><strong>Example:</strong> <span class="eq">23 &times; 47</span> the stacked way (this reads bottom-up, right-to-left):</p>
+          <span class="work">      23
+    ×  47
+    ______
+     161     ← 23 × 7 = (20 × 7) + (3 × 7) = 140 + 21 = 161
+   + 920     ← 23 × 40 = (20 × 40) + (3 × 40) = 800 + 120 = 920
+    ______
+    1,081</span>
+
+          <p>Two lines instead of four cells &mdash; but the same four partial products are living inside those two lines. The box method makes them visible; the algorithm hides them for speed. Both are correct. Teach the box first, then the algorithm makes sense.</p>
+        </div>
+
+        <h2 id="tricks">7. Six friendly splits every student should know</h2>
+        <div class="theory-box">
+          <h3>Pick the split so the pieces are easy</h3>
+          <ul>
+            <li><strong>Times 11:</strong> Split into <span class="eq">10 + 1</span>. <span class="eq">7 &times; 11 = 70 + 7 = 77</span>.</li>
+            <li><strong>Times 12:</strong> Split into <span class="eq">10 + 2</span>. <span class="eq">6 &times; 12 = 60 + 12 = 72</span>.</li>
+            <li><strong>Times 15:</strong> Split into <span class="eq">10 + 5</span>. <span class="eq">8 &times; 15 = 80 + 40 = 120</span>.</li>
+            <li><strong>Times 19:</strong> Split into <span class="eq">20 &minus; 1</span> (subtract instead of add). <span class="eq">6 &times; 19 = 120 &minus; 6 = 114</span>.</li>
+            <li><strong>Times 25:</strong> Split into <span class="eq">20 + 5</span> or think &ldquo;a quarter of 100.&rdquo; <span class="eq">8 &times; 25 = 160 + 40 = 200</span>.</li>
+            <li><strong>Times 99:</strong> Split into <span class="eq">100 &minus; 1</span>. <span class="eq">7 &times; 99 = 700 &minus; 7 = 693</span>.</li>
+          </ul>
+          <p>The general rule: split so that one piece is a multiple of 10 (or 100). Multiplying by 10 or 100 is free &mdash; the rest is just an easier fact.</p>
+        </div>
+
+        <div class="callout">
+          <strong>Class summary in one sentence:</strong> <em>Split one number into two friendly pieces &mdash; usually tens and ones &mdash; multiply each piece, then add.</em>
+        </div>
+
+        <div class="part-header" id="questions">
+          <h2>25 Practice Questions</h2>
+          <p>10 easy, 10 medium, 5 hard. Every question can be solved with a split of your choosing &mdash; try to pick the friendliest split each time. Click <em>Show answer &amp; solution</em> to check your reasoning.</p>
+        </div>
+
+        <!-- ================= EASY (Q1–Q10) ================= -->
+
+        <!-- Q1 -->
+        <div class="qbox">
+          <h3>Question 1 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Use the split <span class="eq">14 = 10 + 4</span> to compute <span class="eq">3 &times; 14</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 42</p>
+          <span class="work">3 × 14 = 3 × (10 + 4)
+       = (3 × 10) + (3 × 4)
+       = 30 + 12
+       = 42</span>
+          <p class="explain">Two partial products: <span class="eq">30</span> and <span class="eq">12</span>. Splitting by place value turns a &ldquo;3 &times; 14&rdquo; step into two facts your student already knows.</p>
+          </div></details>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qbox">
+          <h3>Question 2 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Use the split <span class="eq">16 = 10 + 6</span> to compute <span class="eq">5 &times; 16</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 80</p>
+          <span class="work">5 × 16 = (5 × 10) + (5 × 6)
+       = 50 + 30
+       = 80</span>
+          <p class="explain">Partial products <span class="eq">50</span> and <span class="eq">30</span>. Notice both are multiples of ten &mdash; sometimes the split gives you two very tidy pieces.</p>
+          </div></details>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qbox">
+          <h3>Question 3 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Ms. Chen buys <strong>6 packs of markers</strong>. Each pack has <strong>12 markers</strong>. How many markers does she have in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 72 markers</p>
+          <span class="work">6 × 12 = (6 × 10) + (6 × 2)
+       = 60 + 12
+       = 72</span>
+          <p class="explain">Split 12 into <span class="eq">10 + 2</span>. Two partial products (<span class="eq">60</span> and <span class="eq">12</span>), quick addition, done.</p>
+          </div></details>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qbox">
+          <h3>Question 4 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A minivan holds <strong>7 people</strong>. A tour company runs <strong>13 minivans</strong>. How many people can ride in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 91 people</p>
+          <span class="work">7 × 13 = (7 × 10) + (7 × 3)
+       = 70 + 21
+       = 91</span>
+          <p class="explain">Split 13 into <span class="eq">10 + 3</span>. The two partial products are <span class="eq">70</span> and <span class="eq">21</span>; add them to get <span class="eq">91</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qbox">
+          <h3>Question 5 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Use place-value splitting to compute <span class="eq">8 &times; 15</span>. Show the two partial products.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 120</p>
+          <span class="work">8 × 15 = (8 × 10) + (8 × 5)
+       = 80 + 40
+       = 120</span>
+          <p class="explain">Partial products <span class="eq">80</span> and <span class="eq">40</span>. Both are multiples of 10 &mdash; that&rsquo;s the friendly split of 15 doing its job.</p>
+          </div></details>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qbox">
+          <h3>Question 6 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A rectangular garden is <strong>4 feet wide</strong> and <strong>18 feet long</strong>. What is its area?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 72 square feet</p>
+          <span class="work">4 × 18 = (4 × 10) + (4 × 8)
+       = 40 + 32
+       = 72</span>
+          <p class="explain">Area is length &times; width. Split 18 into <span class="eq">10 + 8</span>. The two partial products (<span class="eq">40</span> and <span class="eq">32</span>) are literally the two smaller rectangles the garden splits into.</p>
+          </div></details>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qbox">
+          <h3>Question 7 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Use the split <span class="eq">19 = 20 &minus; 1</span> to compute <span class="eq">6 &times; 19</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 114</p>
+          <span class="work">6 × 19 = (6 × 20) − (6 × 1)
+       = 120 − 6
+       = 114</span>
+          <p class="explain">Splits can subtract too. Because 19 is one less than 20, it&rsquo;s often easier to overshoot to 20 and take one copy back.</p>
+          </div></details>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qbox">
+          <h3>Question 8 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A pack of stickers has <strong>25 stickers</strong>. Ana buys <strong>4 packs</strong>. How many stickers does she have?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 100 stickers</p>
+          <span class="work">4 × 25 = (4 × 20) + (4 × 5)
+       = 80 + 20
+       = 100</span>
+          <p class="explain">Split 25 into <span class="eq">20 + 5</span>. Partial products <span class="eq">80</span> and <span class="eq">20</span>. Nice round total &mdash; that&rsquo;s the &times;25 pattern (4 groups of 25 = 100 = a full dollar).</p>
+          </div></details>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qbox">
+          <h3>Question 9 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">A carton holds <strong>6 eggs</strong>. A store receives <strong>17 cartons</strong>. How many eggs is that in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 102 eggs</p>
+          <span class="work">6 × 17 = (6 × 10) + (6 × 7)
+       = 60 + 42
+       = 102</span>
+          <p class="explain">Split 17 into <span class="eq">10 + 7</span>. Both partial products (<span class="eq">60</span> and <span class="eq">42</span>) are facts your student already knows from earlier Kid Einsteins classes.</p>
+          </div></details>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qbox">
+          <h3>Question 10 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Draw the box method for <span class="eq">5 &times; 24</span>. What are the two partial products, and what is the answer?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: partial products 100 and 20; total 120</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">20</td><td class="lbl">4</td></tr>
+              <tr><td class="side">5</td><td class="split">100</td><td class="split2">20</td></tr>
+            </table>
+          </div>
+          <span class="work">5 × 24 = (5 × 20) + (5 × 4)
+       = 100 + 20
+       = 120</span>
+          <p class="explain">Two cells, two partial products. This box is the same picture as a 5-by-24 rectangle cut into a 5-by-20 piece and a 5-by-4 piece.</p>
+          </div></details>
+        </div>
+
+        <!-- ================= MEDIUM (Q11–Q20) ================= -->
+
+        <!-- Q11 -->
+        <div class="qbox">
+          <h3>Question 11 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">23 &times; 6</span> using partial products.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 138</p>
+          <span class="work">23 × 6 = (20 × 6) + (3 × 6)
+       = 120 + 18
+       = 138</span>
+          <p class="explain">Two partial products: <span class="eq">120</span> and <span class="eq">18</span>. This is exactly what a 5th grader is doing in their head when they &ldquo;multiply, carry the 1.&rdquo;</p>
+          </div></details>
+        </div>
+
+        <!-- Q12 -->
+        <div class="qbox">
+          <h3>Question 12 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A school orders <strong>36 pizzas</strong>, and each pizza is cut into <strong>8 slices</strong>. How many slices are there in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 288 slices</p>
+          <span class="work">8 × 36 = (8 × 30) + (8 × 6)
+       = 240 + 48
+       = 288</span>
+          <p class="explain">Split 36 into <span class="eq">30 + 6</span>. Partial products <span class="eq">240</span> and <span class="eq">48</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q13 -->
+        <div class="qbox">
+          <h3>Question 13 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Marcus reads <strong>27 pages</strong> per day for <strong>7 days</strong>. How many pages does he read in the week?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 189 pages</p>
+          <span class="work">7 × 27 = (7 × 20) + (7 × 7)
+       = 140 + 49
+       = 189</span>
+          <p class="explain">Split 27 into <span class="eq">20 + 7</span>. Notice that <span class="eq">7 &times; 7 = 49</span> is one of the trickier facts from Class 3 &mdash; that&rsquo;s why we drilled it.</p>
+          </div></details>
+        </div>
+
+        <!-- Q14 -->
+        <div class="qbox">
+          <h3>Question 14 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A theater has <strong>14 rows</strong> and <strong>15 seats in each row</strong>. How many seats does the theater have?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 210 seats</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">10</td><td class="lbl">5</td></tr>
+              <tr><td class="side">10</td><td class="split">100</td><td class="split2">50</td></tr>
+              <tr><td class="side">4</td><td class="split3">40</td><td class="split4">20</td></tr>
+            </table>
+          </div>
+          <span class="work">14 × 15 = (10 × 10) + (10 × 5) + (4 × 10) + (4 × 5)
+        =   100     +   50     +   40     +   20
+        =              210</span>
+          <p class="explain">Two-digit &times; two-digit means four partial products. This is our first taste of the 2&times;2 box &mdash; the same picture we&rsquo;ll use for <span class="eq">23 &times; 47</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q15 -->
+        <div class="qbox">
+          <h3>Question 15 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">45 &times; 12</span> using the box method.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 540</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">40</td><td class="lbl">5</td></tr>
+              <tr><td class="side">10</td><td class="split">400</td><td class="split2">50</td></tr>
+              <tr><td class="side">2</td><td class="split3">80</td><td class="split4">10</td></tr>
+            </table>
+          </div>
+          <span class="work">45 × 12 = 400 + 50 + 80 + 10
+        =        540</span>
+          <p class="explain">Four partial products: <span class="eq">400</span>, <span class="eq">50</span>, <span class="eq">80</span>, <span class="eq">10</span>. Notice how quickly they add when you group the round ones first: <span class="eq">400 + 80 = 480</span>, then <span class="eq">50 + 10 = 60</span>, then <span class="eq">480 + 60 = 540</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q16 -->
+        <div class="qbox">
+          <h3>Question 16 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A gym class has <strong>25 students</strong> in each of <strong>8 sections</strong>. How many students are in gym class in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 200 students</p>
+          <span class="work">8 × 25 = (8 × 20) + (8 × 5)
+       = 160 + 40
+       = 200</span>
+          <p class="explain">Split 25 into <span class="eq">20 + 5</span>. Alternate shortcut: 4 groups of 25 make 100, so 8 groups make 200. Both routes give the same answer &mdash; that&rsquo;s the point of distributive thinking.</p>
+          </div></details>
+        </div>
+
+        <!-- Q17 -->
+        <div class="qbox">
+          <h3>Question 17 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Use the split <span class="eq">99 = 100 &minus; 1</span> to compute <span class="eq">7 &times; 99</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 693</p>
+          <span class="work">7 × 99 = (7 × 100) − (7 × 1)
+       = 700 − 7
+       = 693</span>
+          <p class="explain">Multiplying by 99 looks scary but is really &ldquo;multiply by 100, then subtract one copy.&rdquo; The distributive property works with subtraction too: <span class="eq">a &times; (b &minus; c) = (a &times; b) &minus; (a &times; c)</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q18 -->
+        <div class="qbox">
+          <h3>Question 18 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A parking garage has <strong>18 floors</strong>, and each floor holds <strong>24 cars</strong>. How many cars can the garage hold?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 432 cars</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">20</td><td class="lbl">4</td></tr>
+              <tr><td class="side">10</td><td class="split">200</td><td class="split2">40</td></tr>
+              <tr><td class="side">8</td><td class="split3">160</td><td class="split4">32</td></tr>
+            </table>
+          </div>
+          <span class="work">18 × 24 = 200 + 40 + 160 + 32
+        =        432</span>
+          <p class="explain">Four partial products: <span class="eq">200</span>, <span class="eq">40</span>, <span class="eq">160</span>, <span class="eq">32</span>. Grouped adds: <span class="eq">200 + 160 = 360</span>, then <span class="eq">40 + 32 = 72</span>, then <span class="eq">360 + 72 = 432</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q19 -->
+        <div class="qbox">
+          <h3>Question 19 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Which is bigger, <span class="eq">6 &times; 47</span> or <span class="eq">7 &times; 39</span>? Use partial products to compare.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: <span class="eq">6 &times; 47</span> is bigger (282 vs. 273, a difference of 9)</p>
+          <span class="work">6 × 47 = (6 × 40) + (6 × 7)
+       = 240 + 42
+       = 282
+
+7 × 39 = (7 × 40) − (7 × 1)   ← split 39 as 40 − 1
+       = 280 − 7
+       = 273</span>
+          <p class="explain">Two different products, both handled by splitting into a friendly form. Then compare: <span class="eq">282 &gt; 273</span> by 9.</p>
+          </div></details>
+        </div>
+
+        <!-- Q20 -->
+        <div class="qbox">
+          <h3>Question 20 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">A soccer league has <strong>16 teams</strong>. Each team has <strong>23 players</strong>. How many players are in the league?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 368 players</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">20</td><td class="lbl">3</td></tr>
+              <tr><td class="side">10</td><td class="split">200</td><td class="split2">30</td></tr>
+              <tr><td class="side">6</td><td class="split3">120</td><td class="split4">18</td></tr>
+            </table>
+          </div>
+          <span class="work">16 × 23 = 200 + 30 + 120 + 18
+        =        368</span>
+          <p class="explain">Four partial products, all small. Grouped adds: <span class="eq">200 + 120 = 320</span>, then <span class="eq">30 + 18 = 48</span>, then <span class="eq">320 + 48 = 368</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- ================= HARD (Q21–Q25) ================= -->
+
+        <!-- Q21 -->
+        <div class="qbox">
+          <h3>Question 21 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Compute <span class="eq">23 &times; 47</span> using the box method. Show the four partial products.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 1,081</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">40</td><td class="lbl">7</td></tr>
+              <tr><td class="side">20</td><td class="split">800</td><td class="split2">140</td></tr>
+              <tr><td class="side">3</td><td class="split3">120</td><td class="split4">21</td></tr>
+            </table>
+          </div>
+          <span class="work">23 × 47 = (20 × 40) + (20 × 7) + (3 × 40) + (3 × 7)
+        =    800    +   140    +   120    +   21
+        =                 1,081</span>
+          <p class="explain">Four partial products: <span class="eq">800</span>, <span class="eq">140</span>, <span class="eq">120</span>, <span class="eq">21</span>. Add them any order you like. This is the &ldquo;canonical&rdquo; two-digit &times; two-digit example &mdash; every student should be able to write this grid from memory by the end of Class 4.</p>
+          </div></details>
+        </div>
+
+        <!-- Q22 -->
+        <div class="qbox">
+          <h3>Question 22 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A school buys <strong>36 boxes of notebooks</strong>. Each box holds <strong>48 notebooks</strong>. How many notebooks did the school buy?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 1,728 notebooks</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">40</td><td class="lbl">8</td></tr>
+              <tr><td class="side">30</td><td class="split">1,200</td><td class="split2">240</td></tr>
+              <tr><td class="side">6</td><td class="split3">240</td><td class="split4">48</td></tr>
+            </table>
+          </div>
+          <span class="work">36 × 48 = 1,200 + 240 + 240 + 48
+        =         1,728</span>
+          <p class="explain">Four partial products, two of which happen to be equal (<span class="eq">240</span> appears twice). Grouped adds: <span class="eq">1,200 + 240 + 240 = 1,680</span>, then <span class="eq">1,680 + 48 = 1,728</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q23 -->
+        <div class="qbox">
+          <h3>Question 23 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Fill in the missing partial product so that <span class="eq">28 &times; 15 = 200 + \_\_\_ + 80 + 40</span>. What is the missing partial product, and what is the total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: missing partial product = 100; total = 420</p>
+          <span class="work">28 × 15 = (20 × 10) + (20 × 5) + (8 × 10) + (8 × 5)
+        =    200     +   100    +    80    +   40
+        =                   420</span>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">10</td><td class="lbl">5</td></tr>
+              <tr><td class="side">20</td><td class="split">200</td><td class="split2">100</td></tr>
+              <tr><td class="side">8</td><td class="split3">80</td><td class="split4">40</td></tr>
+            </table>
+          </div>
+          <p class="explain">The missing cell is <span class="eq">20 &times; 5 = 100</span>. This kind of &ldquo;find the missing partial product&rdquo; problem is the fastest way to check that a student really understands the box method &mdash; not just how to fill it in, but how to read it.</p>
+          </div></details>
+        </div>
+
+        <!-- Q24 -->
+        <div class="qbox">
+          <h3>Question 24 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">A rectangular auditorium is being tiled. The floor is <strong>34 feet by 26 feet</strong>. Each tile is exactly <strong>1 square foot</strong>. How many tiles are needed? Use the box method and list your four partial products.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 884 tiles</p>
+          <div class="area-model">
+            <table>
+              <tr><td class="lbl">&times;</td><td class="lbl">20</td><td class="lbl">6</td></tr>
+              <tr><td class="side">30</td><td class="split">600</td><td class="split2">180</td></tr>
+              <tr><td class="side">4</td><td class="split3">80</td><td class="split4">24</td></tr>
+            </table>
+          </div>
+          <span class="work">34 × 26 = 600 + 180 + 80 + 24
+        =        884</span>
+          <p class="explain">Area of the auditorium in square feet is the same as the number of 1-by-1 tiles. Four partial products: <span class="eq">600</span>, <span class="eq">180</span>, <span class="eq">80</span>, <span class="eq">24</span>. The box method is literally how a contractor would break up the floor to tile it in sections.</p>
+          </div></details>
+        </div>
+
+        <!-- Q25 -->
+        <div class="qbox">
+          <h3>Question 25 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt"><strong>Challenge:</strong> A gardener has a rectangular plot that is <strong>25 feet by 18 feet</strong>. She adds a <strong>2-foot-wide walking path</strong> along the entire 25-foot side, making the plot 25 feet by 20 feet. What is the area of the new plot, and what is the area of just the path? Use distributive thinking.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: new plot area = 500 sq ft; path area = 50 sq ft</p>
+          <span class="work">Original plot: 25 × 18 = (25 × 10) + (25 × 8)
+                        = 250 + 200
+                        = 450 sq ft
+
+New plot:      25 × 20 = 500 sq ft   (a friendly multiple of 100)
+
+Path area = new − original
+          = 500 − 450
+          = 50 sq ft
+
+Or directly:   25 × 2  = 50 sq ft   ← the path IS a 25-by-2 rectangle</span>
+          <p class="explain">Two ways to see the same answer. <strong>Distributively:</strong> <span class="eq">25 &times; 20 = 25 &times; (18 + 2) = (25 &times; 18) + (25 &times; 2) = 450 + 50 = 500</span>. That last line is the whole idea of this lesson in one equation: <em>adding a piece to a rectangle&rsquo;s side is exactly the same as adding a new rectangle of partial products</em>. This is also the picture your student will use again when they FOIL <span class="eq">(x + 2)(x + 5)</span> in Algebra 1 &mdash; same rectangle, same split, same answer.</p>
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">Answer key summary</h2>
+        <table class="answer-key-table">
+          <tr><th>Q#</th><th>Answer</th><th>Q#</th><th>Answer</th><th>Q#</th><th>Answer</th></tr>
+          <tr><td>1</td><td>42</td><td>10</td><td>120</td><td>19</td><td>6&times;47 (282)</td></tr>
+          <tr><td>2</td><td>80</td><td>11</td><td>138</td><td>20</td><td>368</td></tr>
+          <tr><td>3</td><td>72</td><td>12</td><td>288</td><td>21</td><td>1,081</td></tr>
+          <tr><td>4</td><td>91</td><td>13</td><td>189</td><td>22</td><td>1,728</td></tr>
+          <tr><td>5</td><td>120</td><td>14</td><td>210</td><td>23</td><td>100; total 420</td></tr>
+          <tr><td>6</td><td>72</td><td>15</td><td>540</td><td>24</td><td>884</td></tr>
+          <tr><td>7</td><td>114</td><td>16</td><td>200</td><td>25</td><td>500 &amp; 50</td></tr>
+          <tr><td>8</td><td>100</td><td>17</td><td>693</td><td></td><td></td></tr>
+          <tr><td>9</td><td>102</td><td>18</td><td>432</td><td></td><td></td></tr>
+        </table>
+
+        <h2 id="somath">About SOMATH &amp; Kid Einsteins</h2>
+        <div class="callout">
+          <p><strong>SOMATH &mdash; School of Math</strong> is a math-focused school on the Upper West Side of Manhattan for students in grades 1&ndash;12. The <strong>Kid Einsteins</strong> program (grades 3&ndash;5) drills multiplication and division fluency, fractions and decimals, area and perimeter, ratios, and structured word problems in small groups of 6&ndash;8 students. This is <strong>Class 4</strong> of the Kid Einsteins arc &mdash; the natural sequel to Class 3 (&times;7, &times;8, &times;9 with area models).</p>
+          <p>Classes are taught by cofounder <strong>Marcelo Ramos</strong> (Northwestern-trained, 15+ years teaching math in NYC) and the SOMATH team.</p>
+          <p><strong>Location:</strong> 226 W 79th St, 1st Floor, New York, NY 10024 (Upper West Side)<br>
+          <strong>Phone:</strong> (646) 668-6151<br>
+          <strong>Email:</strong> hello@schoolofmath.us</p>
+          <p><a href="/">Book a free evaluation</a> for your child &mdash; we&rsquo;ll assess where they are and place them in the right small group.</p>
+        </div>
+
+        <h2>Related SOMATH posts</h2>
+        <ul>
+          <li><a href="/posts/multiplication-facts-7-8-9-area-models-kid-einsteins">Multiplication Facts &times;7, &times;8, and &times;9 &mdash; Area Models (Kid Einsteins Class 3)</a></li>
+          <li><a href="/posts/multiplication-facts-3-4-6-young-fermats">Multiplication Facts &times;3, &times;4, and &times;6 &mdash; 25 Practice Questions</a></li>
+          <li><a href="/posts/pre-algebra-class-2-multiplying-dividing-integers">Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions)</a></li>
+          <li><a href="/blog">All SOMATH blog posts &raquo;</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
