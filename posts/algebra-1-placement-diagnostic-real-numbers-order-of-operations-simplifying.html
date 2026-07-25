@@ -105,15 +105,12 @@
       .difficulty.easy { background:#e6efe2; color:#2e5a1f; }
       .difficulty.medium { background:#f9edd2; color:#8a5a12; }
       .difficulty.hard { background:#f2d6cf; color:#7a2a12; }
-      /* Real-number Venn nesting */
-      .rn-nest { background:#f5f1e8; border:1px solid #0a3a5f; border-radius:8px; padding:12px 16px; margin:14px 0; font-family:"Courier New", monospace; font-size:0.95rem; color:#0a3a5f; }
-      .rn-nest .row { margin:4px 0; }
-      .rn-nest .r0 { padding-left:0; font-weight:700; }
-      .rn-nest .r1 { padding-left:20px; }
-      .rn-nest .r2 { padding-left:40px; }
-      .rn-nest .r3 { padding-left:60px; }
-      .rn-nest .r4 { padding-left:80px; }
-      .rn-nest .r5 { padding-left:100px; }
+      /* Real-number Venn diagram */
+      .rn-venn { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:18px; margin:16px 0; text-align:center; }
+      .rn-venn svg { max-width:100%; height:auto; display:block; margin:0 auto; }
+      .rn-venn-caption { color:#0a3a5f; font-size:0.92rem; margin:10px 0 0; }
+      .rn-legend { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 16px; margin:12px 0 0; font-size:0.88rem; }
+      .rn-legend .swatch { display:inline-block; width:14px; height:14px; border-radius:3px; vertical-align:middle; margin-right:6px; border:1px solid rgba(10,58,95,0.4); }
     </style>
     <script type="application/ld+json">
 {
@@ -254,15 +251,108 @@
           <h3>Every number has a name and a home</h3>
           <p>The <strong>real numbers</strong> are every number you can place on a number line. Real numbers split into an infinite nesting of sets. Each set is a subset of the next one out.</p>
 
-          <div class="rn-nest">
-            <div class="row r0">Real numbers (&#8477;)</div>
-            <div class="row r1">├── Rational numbers (&#8474;) &mdash; can be written as a fraction of integers</div>
-            <div class="row r2">│&nbsp;&nbsp;&nbsp;├── Integers (&#8484;) &mdash; …, &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, …</div>
-            <div class="row r3">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── Whole numbers &mdash; 0, 1, 2, 3, …</div>
-            <div class="row r4">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── Natural (counting) numbers &mdash; 1, 2, 3, …</div>
-            <div class="row r2">│&nbsp;&nbsp;&nbsp;└── Non-integer rationals &mdash; 1/2, &minus;3/4, 0.75, 0.333…</div>
-            <div class="row r1">└── Irrational numbers &mdash; cannot be written as a fraction of integers</div>
-            <div class="row r2">&nbsp;&nbsp;&nbsp;&nbsp;e.g. &radic;2, &radic;3, &radic;5, &pi;, e</div>
+          <div class="rn-venn" role="figure" aria-label="Venn diagram of the real-number system">
+            <svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="rn-venn-title rn-venn-desc">
+              <title id="rn-venn-title">The Real-Number System &mdash; Nested Venn Diagram</title>
+              <desc id="rn-venn-desc">A rounded rectangle labeled Real Numbers contains two side-by-side regions: Rational Numbers on the left and Irrational Numbers on the right. Inside Rational Numbers, nested ovals show Integers containing Whole Numbers containing Natural Numbers. Example numbers appear inside each region.</desc>
+
+              <!-- Real numbers (outer rounded rectangle) -->
+              <rect x="12" y="12" width="616" height="436" rx="18" ry="18"
+                    fill="#fbf7ec" stroke="#0a3a5f" stroke-width="2.5"/>
+              <text x="320" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#0a3a5f">
+                Real Numbers (&#8477;)
+              </text>
+
+              <!-- Rational numbers ellipse (left, larger) -->
+              <ellipse cx="235" cy="250" rx="210" ry="170"
+                       fill="#e6efe2" stroke="#2e5a1f" stroke-width="2"/>
+              <text x="110" y="105" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#2e5a1f">
+                Rational (&#8474;)
+              </text>
+
+              <!-- Integers ellipse (nested inside rational) -->
+              <ellipse cx="235" cy="270" rx="165" ry="130"
+                       fill="#f9edd2" stroke="#8a5a12" stroke-width="2"/>
+              <text x="130" y="160" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#8a5a12">
+                Integers (&#8484;)
+              </text>
+
+              <!-- Whole numbers ellipse (nested inside integers) -->
+              <ellipse cx="260" cy="290" rx="120" ry="90"
+                       fill="#f2d6cf" stroke="#7a2a12" stroke-width="2"/>
+              <text x="175" y="215" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#7a2a12">
+                Whole
+              </text>
+
+              <!-- Natural numbers ellipse (innermost) -->
+              <ellipse cx="285" cy="305" rx="75" ry="58"
+                       fill="#d9e6f0" stroke="#0a3a5f" stroke-width="2"/>
+              <text x="285" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="12" font-weight="700" fill="#0a3a5f">
+                Natural
+              </text>
+              <!-- example numbers inside natural -->
+              <text x="285" y="305" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="700" fill="#0a3a5f">
+                1, 2, 3, 7
+              </text>
+              <text x="285" y="324" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" fill="#0a3a5f">
+                &radic;9, 100
+              </text>
+
+              <!-- 0 inside Whole but outside Natural -->
+              <text x="215" y="350" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="700" fill="#7a2a12">
+                0
+              </text>
+
+              <!-- Negative integers inside Integers but outside Whole (upper-left corner of Integers ellipse) -->
+              <text x="120" y="215" text-anchor="middle" font-family="'Courier New', monospace" font-size="14" font-weight="700" fill="#5a3a08">
+                &minus;3, &minus;7
+              </text>
+              <text x="120" y="233" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#5a3a08">
+                &minus;100
+              </text>
+
+              <!-- Non-integer rationals inside Rational but outside Integers (bottom-left band) -->
+              <text x="170" y="400" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#1e4013">
+                1/2, &minus;3/4
+              </text>
+              <text x="170" y="418" text-anchor="middle" font-family="'Courier New', monospace" font-size="13" font-weight="700" fill="#1e4013">
+                0.75, 0.333&hellip;
+              </text>
+
+              <!-- Irrational numbers ellipse (right side, DISJOINT from rational) -->
+              <ellipse cx="520" cy="250" rx="100" ry="165"
+                       fill="#e2dcf0" stroke="#4a2e7a" stroke-width="2"/>
+              <text x="520" y="120" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#4a2e7a">
+                Irrational
+              </text>
+              <text x="520" y="215" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" font-weight="700" fill="#4a2e7a">
+                &radic;2
+              </text>
+              <text x="520" y="245" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" font-weight="700" fill="#4a2e7a">
+                &radic;3&nbsp;&nbsp;&radic;5
+              </text>
+              <text x="520" y="278" text-anchor="middle" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#4a2e7a">
+                &pi;
+              </text>
+              <text x="520" y="308" text-anchor="middle" font-family="'Courier New', monospace" font-size="16" font-weight="700" fill="#4a2e7a">
+                e
+              </text>
+              <text x="520" y="345" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#4a2e7a">
+                non-repeating,
+              </text>
+              <text x="520" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#4a2e7a">
+                non-terminating
+              </text>
+            </svg>
+            <p class="rn-venn-caption"><strong>The sets nest.</strong> Every natural number is a whole number, every whole number is an integer, every integer is rational, every rational is real. Rationals and irrationals are <em>disjoint</em> &mdash; a number is one or the other, never both, never neither.</p>
+            <div class="rn-legend">
+              <span><span class="swatch" style="background:#d9e6f0;"></span>Natural</span>
+              <span><span class="swatch" style="background:#f2d6cf;"></span>Whole</span>
+              <span><span class="swatch" style="background:#f9edd2;"></span>Integer</span>
+              <span><span class="swatch" style="background:#e6efe2;"></span>Rational</span>
+              <span><span class="swatch" style="background:#e2dcf0;"></span>Irrational</span>
+              <span><span class="swatch" style="background:#fbf7ec;"></span>Real</span>
+            </div>
           </div>
 
           <p>Two rules that catch 90% of student mistakes:</p>
