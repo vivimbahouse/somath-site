@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Algebra 1 Placement Diagnostic &mdash; Real Numbers, Order of Operations &amp; Simplifying Expressions (30 Questions with Hidden Answers) | SOMATH NYC</title>
+    <meta name="description" content="Free Algebra 1 placement diagnostic covering the real-number system, order of operations (PEMDAS), and simplifying expressions with variables. Includes full theory and 30 practice questions with escalating difficulty (10 easy, 12 medium, 8 hard/word problems) and click-to-reveal step-by-step answers. Perfect prerequisite check before Algebra 1 at SOMATH on the Upper West Side of NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/algebra-1-placement-diagnostic-real-numbers-order-of-operations-simplifying" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Algebra 1 Placement Diagnostic &mdash; Real Numbers, Order of Operations &amp; Simplifying Expressions (30 Questions with Hidden Answers)" />
+    <meta property="og:description" content="Free Algebra 1 placement diagnostic: theory on the real-number system, order of operations (PEMDAS), and simplifying expressions with variables, plus 30 practice questions (10 easy, 12 medium, 8 hard/word problems) with click-to-reveal step-by-step solutions. From SOMATH, Upper West Side NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/algebra-1-placement-diagnostic-real-numbers-order-of-operations-simplifying" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-25" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Algebra 1 Placement Diagnostic &mdash; 30 Questions with Hidden Answers" />
+    <meta name="twitter:description" content="Real-number system, order of operations, simplifying expressions with variables. Theory + 30 questions with click-to-reveal answers. From SOMATH, Upper West Side NYC." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .fact-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:640px; }
+      .fact-table th, .fact-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; }
+      .fact-table th { background:#0a3a5f; color:#fff; }
+      .fact-table tr:nth-child(even) { background:#fafafa; }
+      .fact-table code { font-family:"Courier New", monospace; background:#f5f1e8; padding:1px 6px; border-radius:3px; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.55; overflow-x:auto; font-size:0.95rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:760px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .difficulty { display:inline-block; font-size:0.72rem; font-weight:700; padding:2px 10px; border-radius:999px; margin-left:8px; vertical-align:middle; text-transform:uppercase; letter-spacing:0.03em; }
+      .difficulty.easy { background:#e6efe2; color:#2e5a1f; }
+      .difficulty.medium { background:#f9edd2; color:#8a5a12; }
+      .difficulty.hard { background:#f2d6cf; color:#7a2a12; }
+      /* Real-number Venn nesting */
+      .rn-nest { background:#f5f1e8; border:1px solid #0a3a5f; border-radius:8px; padding:12px 16px; margin:14px 0; font-family:"Courier New", monospace; font-size:0.95rem; color:#0a3a5f; }
+      .rn-nest .row { margin:4px 0; }
+      .rn-nest .r0 { padding-left:0; font-weight:700; }
+      .rn-nest .r1 { padding-left:20px; }
+      .rn-nest .r2 { padding-left:40px; }
+      .rn-nest .r3 { padding-left:60px; }
+      .rn-nest .r4 { padding-left:80px; }
+      .rn-nest .r5 { padding-left:100px; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Algebra 1 Placement Diagnostic — Real Numbers, Order of Operations & Simplifying Expressions (30 Questions with Hidden Answers)",
+  "description": "A complete Algebra 1 placement diagnostic covering the real-number system, order of operations, and simplifying expressions with variables. Full theory and 30 practice questions (10 easy, 12 medium, 8 hard/word problems) with click-to-reveal step-by-step answers. From SOMATH, the Upper West Side math school in NYC.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-07-25",
+  "dateModified": "2026-07-25",
+  "author": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/algebra-1-placement-diagnostic-real-numbers-order-of-operations-simplifying" },
+  "keywords": "algebra 1 placement, algebra 1 diagnostic, real number system, order of operations, PEMDAS, simplifying expressions, combining like terms, algebra prerequisites, algebra 1 nyc, upper west side math, young fermats algebra ignite"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#somath",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": "New York City"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the real-number system in Algebra 1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The real-number system is the set of every number that can be placed on a continuous number line. It nests: the natural numbers (1, 2, 3, …) sit inside the whole numbers (0, 1, 2, …), which sit inside the integers (…, −2, −1, 0, 1, 2, …), which sit inside the rationals (any number that can be written as a fraction of integers, including terminating and repeating decimals), which sit inside the reals (rationals together with irrationals like √2 and π). Every real number is either rational or irrational — there is no third option." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the order of operations (PEMDAS) and why does it matter in Algebra 1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The order of operations tells you which operation to do first when an expression has more than one. The standard order — Parentheses, Exponents, Multiplication and Division (left to right), Addition and Subtraction (left to right) — is a convention that guarantees any two people who evaluate the same expression get the same answer. In Algebra 1 the order of operations is used every single day: when you substitute a value into an expression, when you check a solution, when you simplify before combining like terms." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you simplify an algebraic expression with variables?",
+      "acceptedAnswer": { "@type": "Answer", "text": "To simplify an algebraic expression: (1) apply the distributive property to remove parentheses, (2) combine like terms — terms with the exact same variable part — by adding or subtracting their coefficients, and (3) write the result with terms in a conventional order, usually highest power of the variable first. Only like terms can be combined: 3x and 5x combine to 8x, but 3x and 5x² do not combine because they are not the same kind of term." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are like terms in Algebra 1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Like terms are terms that have the exact same variable part — including exponents. 4x and −9x are like terms. 7x² and 2x² are like terms. But 3x and 3x² are not like terms because the exponents differ, and 5xy and 5x are not like terms because the variable parts differ. Only like terms can be combined into a single term by adding or subtracting their coefficients." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my child ready for Algebra 1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A student is ready for Algebra 1 when they can (a) place any given number in the correct set of the real-number system, (b) evaluate a multi-step numerical expression using the order of operations without a calculator, (c) simplify an algebraic expression by distributing and combining like terms, and (d) substitute a value into an expression and evaluate it. This placement diagnostic tests all four skills. If a student scores 24/30 or better with clear work, they are ready. Below 24/30, work through the theory sections and re-test." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I take a small-group Algebra 1 class in NYC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH runs the Young Fermats Algebra Ignite program (Algebra 1) at 226 W 79th St on the Upper West Side of Manhattan. Classes are small groups of 6–8 students, taught by cofounder Marcelo Ramos (Northwestern) and the SOMATH team. Every student takes this placement diagnostic before starting, so we can place them in the right group and fill any gaps before Class 1. Call (646) 668-6151 or email hello@schoolofmath.us to book a free evaluation." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Young Fermats &middot; Algebra 1 &middot; Placement Diagnostic &middot; Grades 7&ndash;9 &middot; NYC Math Class</p>
+      <h1 class="post__title">Algebra 1 Placement Diagnostic &mdash; Real Numbers, Order of Operations &amp; Simplifying Expressions (30 Questions with Hidden Answers)</h1>
+      <p class="post__dek">The pre-Algebra 1 checkpoint. Before you touch a single linear equation, you need three things absolutely automatic: <strong>the real-number system</strong>, <strong>the order of operations</strong>, and <strong>simplifying algebraic expressions with variables</strong>. This diagnostic teaches the theory for all three, then tests them with <strong>30 questions</strong> &mdash; 10 easy, 12 medium, 8 hard (including word problems) &mdash; each with click-to-reveal step-by-step answers. Built as <strong>Class 0</strong> of the <a href="/">SOMATH</a> <a href="/courses/young-fermats-algebra-ignite">Young Fermats Algebra Ignite</a> program on the Upper West Side of Manhattan.</p>
+      <p class="post__meta"><time datetime="2026-07-25">2026-07-25</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>Most students who struggle in Algebra 1 do not struggle with algebra &mdash; they struggle with the arithmetic and structure that algebra <em>assumes</em>. This diagnostic is designed to catch every one of those gaps in a single sitting. It is the same test every student takes on Day 1 at SOMATH before starting <a href="/courses/young-fermats-algebra-ignite">Algebra Ignite</a>.</p>
+
+        <p>Three ideas, in this order, are the entire prerequisite:</p>
+        <ol>
+          <li><strong>The real-number system</strong> &mdash; knowing what kind of number you are working with.</li>
+          <li><strong>The order of operations</strong> &mdash; knowing what to do first when a problem has several operations stacked on top of each other.</li>
+          <li><strong>Simplifying expressions with variables</strong> &mdash; distributing, combining like terms, and evaluating.</li>
+        </ol>
+        <p>All three are practiced together in real algebra work every day. This diagnostic teaches each one, then mixes them.</p>
+
+        <div class="callout">
+          <strong>How to use this diagnostic (60&ndash;90 min):</strong>
+          <ol style="margin:8px 0 0 20px;">
+            <li>Read the three theory sections aloud (20 min). No skipping &mdash; even students who &ldquo;know it&rdquo; often have holes.</li>
+            <li>Take all 30 questions with answers hidden (40&ndash;60 min). No calculator. Show all work.</li>
+            <li>Reveal answers one at a time. Score honestly.</li>
+            <li>Below 24/30 &rarr; work through the missed sections and retake. 24&ndash;27/30 &rarr; ready with light review. 28+/30 &rarr; ready to start Class 1.</li>
+          </ol>
+        </div>
+
+        <div class="toc">
+          <h2>What&rsquo;s in this diagnostic</h2>
+          <ol>
+            <li><a href="#big-idea">The three prerequisite ideas</a></li>
+            <li><a href="#real-numbers">Theory 1: the real-number system</a></li>
+            <li><a href="#order-of-ops">Theory 2: the order of operations (PEMDAS)</a></li>
+            <li><a href="#simplifying">Theory 3: simplifying expressions with variables</a></li>
+            <li><a href="#common-mistakes">Common mistakes (memorize these before the test)</a></li>
+            <li><a href="#questions">30 diagnostic questions (10 easy, 12 medium, 8 hard)</a></li>
+            <li><a href="#answer-key">Answer key summary</a></li>
+            <li><a href="#scoring">Scoring &amp; placement guidance</a></li>
+            <li><a href="#somath">About SOMATH &amp; Algebra Ignite</a></li>
+          </ol>
+        </div>
+
+        <h2 id="big-idea">1. The three prerequisite ideas</h2>
+        <div class="callout">
+          <strong>Placement rule:</strong> <em>If a student cannot classify a number, evaluate a stacked expression, or simplify <span class="eq">3(x + 4) &minus; 2x</span> without hesitation, they are not ready for Algebra 1 yet.</em>
+        </div>
+        <p>These three skills are not &ldquo;review.&rdquo; They are the language algebra is written in. A student who is shaky on any one of them will feel lost by Class 3, and by Class 6 they will believe they &ldquo;can&rsquo;t do math.&rdquo; That is a fixable problem &mdash; but only if we catch it here.</p>
+
+        <h2 id="real-numbers">2. Theory 1: the real-number system</h2>
+        <div class="theory-box">
+          <h3>Every number has a name and a home</h3>
+          <p>The <strong>real numbers</strong> are every number you can place on a number line. Real numbers split into an infinite nesting of sets. Each set is a subset of the next one out.</p>
+
+          <div class="rn-nest">
+            <div class="row r0">Real numbers (&#8477;)</div>
+            <div class="row r1">├── Rational numbers (&#8474;) &mdash; can be written as a fraction of integers</div>
+            <div class="row r2">│&nbsp;&nbsp;&nbsp;├── Integers (&#8484;) &mdash; …, &minus;3, &minus;2, &minus;1, 0, 1, 2, 3, …</div>
+            <div class="row r3">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── Whole numbers &mdash; 0, 1, 2, 3, …</div>
+            <div class="row r4">│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── Natural (counting) numbers &mdash; 1, 2, 3, …</div>
+            <div class="row r2">│&nbsp;&nbsp;&nbsp;└── Non-integer rationals &mdash; 1/2, &minus;3/4, 0.75, 0.333…</div>
+            <div class="row r1">└── Irrational numbers &mdash; cannot be written as a fraction of integers</div>
+            <div class="row r2">&nbsp;&nbsp;&nbsp;&nbsp;e.g. &radic;2, &radic;3, &radic;5, &pi;, e</div>
+          </div>
+
+          <p>Two rules that catch 90% of student mistakes:</p>
+          <ul>
+            <li><strong>Every whole number is an integer.</strong> Every integer is a rational number. Every rational number is a real number. The sets nest &mdash; they do not overlap in strange ways.</li>
+            <li><strong>Every real number is either rational or irrational</strong> &mdash; never both, never neither. There is no third category.</li>
+          </ul>
+
+          <p><strong>Rational vs. irrational &mdash; the fastest test:</strong> a number is rational if its decimal expansion <em>terminates</em> (like 0.75) or <em>repeats</em> in a fixed pattern (like 0.3333&hellip; or 0.142857142857&hellip;). If the decimal goes on forever with no repeating pattern, it is irrational.</p>
+
+          <table class="fact-table">
+            <tr><th>Number</th><th>Classification (smallest set it belongs to)</th></tr>
+            <tr><td><code>7</code></td><td>Natural (also whole, integer, rational, real)</td></tr>
+            <tr><td><code>0</code></td><td>Whole (also integer, rational, real) &mdash; but <em>not</em> natural</td></tr>
+            <tr><td><code>&minus;4</code></td><td>Integer (also rational, real) &mdash; but <em>not</em> whole</td></tr>
+            <tr><td><code>3/8</code></td><td>Rational (also real) &mdash; but <em>not</em> integer</td></tr>
+            <tr><td><code>0.75</code></td><td>Rational (equals 3/4)</td></tr>
+            <tr><td><code>0.3333…</code></td><td>Rational (equals 1/3) &mdash; repeating decimal</td></tr>
+            <tr><td><code>&radic;9</code></td><td>Natural (equals 3) &mdash; perfect squares are rational</td></tr>
+            <tr><td><code>&radic;2</code></td><td>Irrational (also real) &mdash; not rational</td></tr>
+            <tr><td><code>&pi;</code></td><td>Irrational (also real)</td></tr>
+            <tr><td><code>22/7</code></td><td>Rational &mdash; a rational approximation of &pi;, but not equal to &pi;</td></tr>
+          </table>
+
+          <p><strong>The biggest trap:</strong> <span class="eq">&radic;9 = 3</span> is a natural number. <span class="eq">&radic;10</span> is irrational. The square root symbol is not what makes a number irrational &mdash; it&rsquo;s whether the number under the root is a perfect square.</p>
+        </div>
+
+        <h2 id="order-of-ops">3. Theory 2: the order of operations (PEMDAS)</h2>
+        <div class="theory-box">
+          <h3>One expression, one answer &mdash; only if everyone follows the same rules</h3>
+          <p>The <strong>order of operations</strong> is the convention every mathematician and calculator on Earth agrees to. It says: when an expression has more than one operation, do them in this order:</p>
+
+          <table class="fact-table">
+            <tr><th>Order</th><th>Operation</th><th>Detail</th></tr>
+            <tr><td>1</td><td><strong>P</strong>arentheses (and any other grouping symbols)</td><td>Brackets, braces, the top and bottom of a fraction bar, and the inside of a square root are all &ldquo;parentheses.&rdquo;</td></tr>
+            <tr><td>2</td><td><strong>E</strong>xponents (and roots)</td><td>Powers first, then roots at the same level.</td></tr>
+            <tr><td>3</td><td><strong>M</strong>ultiplication and <strong>D</strong>ivision</td><td>Left to right, in the order they appear. Not multiplication first.</td></tr>
+            <tr><td>4</td><td><strong>A</strong>ddition and <strong>S</strong>ubtraction</td><td>Left to right, in the order they appear. Not addition first.</td></tr>
+          </table>
+
+          <p><strong>Example 1 &mdash; the classic misread:</strong> <span class="eq">8 &divide; 2 &times; 4</span></p>
+          <span class="work">Multiplication and division are the SAME level.
+Do them LEFT TO RIGHT.
+
+8 ÷ 2 × 4
+= 4 × 4        ← division first, because it&rsquo;s on the left
+= 16</span>
+
+          <p>Students who think &ldquo;M before D&rdquo; will do <span class="eq">2 &times; 4 = 8</span> first and get <span class="eq">1</span>. That is wrong. PEMDAS is really P&nbsp;/&nbsp;E&nbsp;/&nbsp;M&thinsp;D&nbsp;/&nbsp;A&thinsp;S &mdash; four levels, not six.</p>
+
+          <p><strong>Example 2 &mdash; exponents outrank negatives:</strong> <span class="eq">&minus;3&sup2;</span> vs. <span class="eq">(&minus;3)&sup2;</span></p>
+          <span class="work">−3²   = −(3 × 3)    = −9   ← exponent applies to 3 only
+(−3)² = (−3)(−3)    = +9   ← parentheses include the negative</span>
+
+          <p>The negative sign in <span class="eq">&minus;3&sup2;</span> is not part of the base &mdash; it&rsquo;s subtraction (or the &ldquo;opposite of&rdquo; operator) applied after the exponent. This distinction is worth points on every algebra exam.</p>
+
+          <p><strong>Example 3 &mdash; a full stacked expression:</strong> <span class="eq">4 + 2 &times; (3 + 1)&sup2; &divide; 8 &minus; 5</span></p>
+          <span class="work">4 + 2 × (3 + 1)² ÷ 8 − 5
+= 4 + 2 × (4)²   ÷ 8 − 5    ← P: inside the parentheses
+= 4 + 2 × 16     ÷ 8 − 5    ← E: exponent
+= 4 + 32         ÷ 8 − 5    ← MD, left to right: multiplication first
+= 4 + 4                − 5    ← MD, left to right: then division
+= 8                    − 5    ← AS, left to right: addition first
+= 3</span>
+
+          <p><strong>The fraction-bar rule:</strong> a fraction bar acts like invisible parentheses around the entire top and the entire bottom. Simplify the numerator, simplify the denominator, then divide.</p>
+          <span class="work">   3² + 7      9 + 7      16
+ ───────── = ─────── = ─────── = 4
+  10 − 6      10 − 6      4</span>
+        </div>
+
+        <h2 id="simplifying">4. Theory 3: simplifying expressions with variables</h2>
+        <div class="theory-box">
+          <h3>Distribute, combine like terms, order the result</h3>
+
+          <p>An <strong>algebraic expression</strong> is a combination of numbers, variables, and operations &mdash; but no equals sign. <span class="eq">3x + 5</span>, <span class="eq">2(y &minus; 4) + 7y</span>, and <span class="eq">4a&sup2;b</span> are all expressions.</p>
+
+          <p><strong>Vocabulary you need in one paragraph:</strong> a <strong>term</strong> is a piece of an expression separated by <span class="eq">+</span> or <span class="eq">&minus;</span>. A term&rsquo;s <strong>coefficient</strong> is the number multiplied by the variable part. Two terms are <strong>like terms</strong> only if their variable parts (letters <em>and</em> exponents) match exactly. A <strong>constant</strong> is a term with no variable.</p>
+
+          <table class="fact-table">
+            <tr><th>Expression</th><th>Terms</th><th>Coefficients</th><th>Constants</th></tr>
+            <tr><td><code>3x + 5</code></td><td>3x, 5</td><td>3</td><td>5</td></tr>
+            <tr><td><code>7x&sup2; &minus; 4x + 9</code></td><td>7x², −4x, 9</td><td>7, −4</td><td>9</td></tr>
+            <tr><td><code>2xy &minus; y + 6</code></td><td>2xy, −y, 6</td><td>2, −1</td><td>6</td></tr>
+          </table>
+
+          <p><strong>Simplifying is always three steps in this order:</strong></p>
+          <ol>
+            <li><strong>Distribute</strong> to remove parentheses: <span class="eq">a(b + c) = ab + ac</span>.</li>
+            <li><strong>Combine like terms</strong> by adding or subtracting coefficients.</li>
+            <li><strong>Write the result in conventional order</strong> &mdash; usually highest exponent first, constant last.</li>
+          </ol>
+
+          <p><strong>Worked example:</strong> Simplify <span class="eq">3(x + 4) &minus; 2(x &minus; 5) + 7</span>.</p>
+          <span class="work">3(x + 4) − 2(x − 5) + 7
+= 3x + 12 − 2x + 10 + 7      ← distribute (watch the sign of the −2)
+= (3x − 2x) + (12 + 10 + 7)  ← group like terms
+= x + 29</span>
+
+          <p><strong>The distributive property with a minus sign is the #1 error zone.</strong> <span class="eq">&minus;2(x &minus; 5)</span> becomes <span class="eq">&minus;2x + 10</span>, not <span class="eq">&minus;2x &minus; 10</span>. The minus sign flips the sign of every term inside the parentheses.</p>
+
+          <p><strong>Combining like terms rules:</strong></p>
+          <ul>
+            <li><span class="eq">3x + 5x = 8x</span> &nbsp; (same variable part)</li>
+            <li><span class="eq">7x&sup2; &minus; 2x&sup2; = 5x&sup2;</span> &nbsp; (same variable part with same exponent)</li>
+            <li><span class="eq">3x + 5x&sup2;</span> = <span class="eq">3x + 5x&sup2;</span> &nbsp; (DIFFERENT variable parts &mdash; cannot combine)</li>
+            <li><span class="eq">4xy + 2yx = 6xy</span> &nbsp; (multiplication is commutative &mdash; <span class="eq">xy = yx</span>)</li>
+            <li><span class="eq">3x + 4</span> &nbsp; = <span class="eq">3x + 4</span> &nbsp; (a variable term and a constant are never like terms)</li>
+          </ul>
+
+          <p><strong>Evaluating an expression</strong> means substituting a specific number for each variable and using the order of operations. If <span class="eq">x = &minus;2</span>, then <span class="eq">3x&sup2; &minus; 5x + 1 = 3(&minus;2)&sup2; &minus; 5(&minus;2) + 1 = 3(4) + 10 + 1 = 23</span>. <em>Always</em> put substituted numbers in parentheses &mdash; especially negatives.</p>
+        </div>
+
+        <h2 id="common-mistakes">5. Common mistakes (memorize these before the test)</h2>
+        <div class="theory-box">
+          <h3>Nine landmines &mdash; every student steps on at least one</h3>
+          <ul>
+            <li><strong>&radic;9 is rational, not irrational.</strong> <span class="eq">&radic;9 = 3</span>. Only non-perfect-square roots are irrational.</li>
+            <li><strong>&minus;3&sup2; is <em>not</em> +9.</strong> Exponents happen before the minus sign. <span class="eq">&minus;3&sup2; = &minus;9</span>. To get +9 you need <span class="eq">(&minus;3)&sup2;</span>.</li>
+            <li><strong>8 &divide; 2 &times; 4 is 16, not 1.</strong> Multiplication and division are the same level; go left to right.</li>
+            <li><strong>3 + 4 &times; 2 is 11, not 14.</strong> Multiplication before addition, always.</li>
+            <li><strong>&minus;2(x &minus; 5) = &minus;2x + 10</strong> (the minus flips both signs), not <span class="eq">&minus;2x &minus; 10</span>.</li>
+            <li><strong>3x and 5x&sup2; are not like terms.</strong> The exponents must match.</li>
+            <li><strong>Evaluating with negatives requires parentheses.</strong> If <span class="eq">x = &minus;3</span> then <span class="eq">x&sup2; = (&minus;3)&sup2; = 9</span>. Writing <span class="eq">&minus;3&sup2;</span> loses the parentheses and returns &minus;9.</li>
+            <li><strong>A fraction bar is invisible parentheses.</strong> Simplify top and bottom separately before you divide.</li>
+            <li><strong>Every real number is rational or irrational &mdash; never both.</strong> A number is not &ldquo;both&rdquo; because it&rsquo;s written two ways.</li>
+          </ul>
+        </div>
+
+        <div class="part-header" id="questions">
+          <h2>30 diagnostic questions (10 easy &middot; 12 medium &middot; 8 hard)</h2>
+          <p>No calculator. Show all work. Reveal answers one at a time.</p>
+        </div>
+
+        <!-- ============================================= EASY ============================================= -->
+
+        <!-- Q1 -->
+        <div class="qbox">
+          <h3>Question 1 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Classify the number <span class="eq">&minus;7</span>. List every set of the real-number system it belongs to (natural, whole, integer, rational, irrational, real).</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: integer, rational, real</p>
+          <p class="explain"><span class="eq">&minus;7</span> is a negative counting number, so it is an <strong>integer</strong>. Every integer is <strong>rational</strong> (it can be written as <span class="eq">&minus;7/1</span>). Every rational number is <strong>real</strong>. It is <em>not</em> natural or whole (both require the number to be zero or positive), and it is <em>not</em> irrational.</p>
+          </div></details>
+        </div>
+
+        <!-- Q2 -->
+        <div class="qbox">
+          <h3>Question 2 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">4 + 3 &times; 5</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 19</p>
+          <span class="work">4 + 3 × 5
+= 4 + 15    ← multiplication first
+= 19</span>
+          </div></details>
+        </div>
+
+        <!-- Q3 -->
+        <div class="qbox">
+          <h3>Question 3 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">20 &minus; 6 &divide; 2</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 17</p>
+          <span class="work">20 − 6 ÷ 2
+= 20 − 3    ← division before subtraction
+= 17</span>
+          </div></details>
+        </div>
+
+        <!-- Q4 -->
+        <div class="qbox">
+          <h3>Question 4 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Simplify by combining like terms: <span class="eq">6x + 3x</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 9x</p>
+          <p class="explain">Same variable part (just <span class="eq">x</span>), so add the coefficients: <span class="eq">6 + 3 = 9</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q5 -->
+        <div class="qbox">
+          <h3>Question 5 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Simplify: <span class="eq">8y &minus; 5y + 2y</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 5y</p>
+          <span class="work">8y − 5y + 2y
+= (8 − 5 + 2)y
+= 5y</span>
+          </div></details>
+        </div>
+
+        <!-- Q6 -->
+        <div class="qbox">
+          <h3>Question 6 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Classify each number as rational or irrational: (a) <span class="eq">0.75</span>, (b) <span class="eq">&pi;</span>, (c) <span class="eq">&radic;16</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: (a) rational; (b) irrational; (c) rational</p>
+          <p class="explain">(a) <span class="eq">0.75 = 3/4</span> &mdash; a fraction of integers, so rational. (b) &pi; is the classic irrational number &mdash; its decimal never repeats. (c) <span class="eq">&radic;16 = 4</span>, which is a natural number and therefore rational. The square root symbol does not make a number irrational; only non-perfect-square roots are irrational.</p>
+          </div></details>
+        </div>
+
+        <!-- Q7 -->
+        <div class="qbox">
+          <h3>Question 7 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">(6 + 2) &times; 3</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 24</p>
+          <span class="work">(6 + 2) × 3
+= 8 × 3       ← parentheses first
+= 24</span>
+          </div></details>
+        </div>
+
+        <!-- Q8 -->
+        <div class="qbox">
+          <h3>Question 8 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Simplify: <span class="eq">4x + 7 + 2x &minus; 3</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 6x + 4</p>
+          <span class="work">4x + 7 + 2x − 3
+= (4x + 2x) + (7 − 3)   ← group like terms
+= 6x + 4</span>
+          </div></details>
+        </div>
+
+        <!-- Q9 -->
+        <div class="qbox">
+          <h3>Question 9 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Evaluate <span class="eq">5&sup2;</span>. Then evaluate <span class="eq">2&sup3;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 25 and 8</p>
+          <span class="work">5² = 5 × 5     = 25
+2³ = 2 × 2 × 2 = 8</span>
+          </div></details>
+        </div>
+
+        <!-- Q10 -->
+        <div class="qbox">
+          <h3>Question 10 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Distribute: <span class="eq">3(x + 5)</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 3x + 15</p>
+          <span class="work">3(x + 5)
+= 3·x + 3·5
+= 3x + 15</span>
+          </div></details>
+        </div>
+
+        <!-- ============================================= MEDIUM ============================================= -->
+
+        <!-- Q11 -->
+        <div class="qbox">
+          <h3>Question 11 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">12 &divide; 4 &times; 3 + 1</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 10</p>
+          <span class="work">12 ÷ 4 × 3 + 1
+= 3 × 3 + 1     ← division first (left to right)
+= 9 + 1         ← then multiplication
+= 10</span>
+          <p class="explain">Multiplication and division are the same level. Going left to right, division comes first. A student who does <span class="eq">4 &times; 3 = 12</span> first will get <span class="eq">12 &divide; 12 + 1 = 2</span> &mdash; wrong.</p>
+          </div></details>
+        </div>
+
+        <!-- Q12 -->
+        <div class="qbox">
+          <h3>Question 12 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">&minus;4&sup2; + (&minus;4)&sup2;</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 0</p>
+          <span class="work">−4²    = −(4 × 4)    = −16
+(−4)²  = (−4)(−4)   = +16
+Sum: −16 + 16 = 0</span>
+          <p class="explain">The parentheses matter. Without them, the exponent applies only to the 4, and the negative is applied after. This shows up on almost every Algebra 1 quiz.</p>
+          </div></details>
+        </div>
+
+        <!-- Q13 -->
+        <div class="qbox">
+          <h3>Question 13 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Simplify: <span class="eq">2(x + 3) + 4(x &minus; 1)</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 6x + 2</p>
+          <span class="work">2(x + 3) + 4(x − 1)
+= 2x + 6 + 4x − 4    ← distribute both
+= (2x + 4x) + (6 − 4) ← group like terms
+= 6x + 2</span>
+          </div></details>
+        </div>
+
+        <!-- Q14 -->
+        <div class="qbox">
+          <h3>Question 14 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Simplify: <span class="eq">5(2y &minus; 3) &minus; 3(y + 4)</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 7y − 27</p>
+          <span class="work">5(2y − 3) − 3(y + 4)
+= 10y − 15 − 3y − 12    ← distribute; watch the −3 flipping the +4 to −12
+= (10y − 3y) + (−15 − 12)
+= 7y − 27</span>
+          <p class="explain">The <span class="eq">&minus;3</span> distributes over both <span class="eq">y</span> and <span class="eq">+4</span>. It becomes <span class="eq">&minus;3y</span> and <span class="eq">&minus;12</span>. Missing the sign on the constant is the most common mistake in Algebra 1.</p>
+          </div></details>
+        </div>
+
+        <!-- Q15 -->
+        <div class="qbox">
+          <h3>Question 15 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">3 + 2(5 &minus; 1)&sup2; &divide; 4</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 11</p>
+          <span class="work">3 + 2(5 − 1)² ÷ 4
+= 3 + 2(4)²  ÷ 4    ← P
+= 3 + 2·16   ÷ 4    ← E
+= 3 + 32     ÷ 4    ← MD, left to right: multiplication first
+= 3 + 8              ← then division
+= 11</span>
+          </div></details>
+        </div>
+
+        <!-- Q16 -->
+        <div class="qbox">
+          <h3>Question 16 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">If <span class="eq">x = &minus;2</span>, evaluate <span class="eq">3x&sup2; &minus; 4x + 7</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 27</p>
+          <span class="work">Substitute x = −2 (use parentheses!):
+3(−2)² − 4(−2) + 7
+= 3·4 − (−8) + 7    ← (−2)² = 4;  −4·(−2) = +8
+= 12 + 8 + 7
+= 27</span>
+          <p class="explain">Always wrap the substituted value in parentheses. That way <span class="eq">(&minus;2)&sup2; = 4</span> instead of the mistaken <span class="eq">&minus;2&sup2; = &minus;4</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- Q17 -->
+        <div class="qbox">
+          <h3>Question 17 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Simplify: <span class="eq">7x + 2y &minus; 3x + 5y &minus; y</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 4x + 6y</p>
+          <span class="work">7x + 2y − 3x + 5y − y
+= (7x − 3x) + (2y + 5y − y)
+= 4x + 6y</span>
+          <p class="explain">Only combine like terms. <span class="eq">x</span> terms combine with <span class="eq">x</span> terms; <span class="eq">y</span> terms combine with <span class="eq">y</span> terms. They cannot merge into one.</p>
+          </div></details>
+        </div>
+
+        <!-- Q18 -->
+        <div class="qbox">
+          <h3>Question 18 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Evaluate the fraction: <span class="eq">(4&sup2; &minus; 1) &divide; (2&sup2; + 1)</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 3</p>
+          <span class="work">Treat the fraction bar as parentheses on top and bottom:
+Top:    4² − 1 = 16 − 1 = 15
+Bottom: 2² + 1 = 4 + 1  = 5
+Divide: 15 ÷ 5 = 3</span>
+          </div></details>
+        </div>
+
+        <!-- Q19 -->
+        <div class="qbox">
+          <h3>Question 19 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Which of the following is <em>not</em> a rational number? (a) <span class="eq">0.4</span>, (b) <span class="eq">&minus;9</span>, (c) <span class="eq">&radic;7</span>, (d) <span class="eq">22/7</span>. Explain.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: (c) &radic;7 is not rational</p>
+          <p class="explain"><span class="eq">0.4 = 2/5</span> is rational. <span class="eq">&minus;9</span> is an integer and therefore rational. <span class="eq">22/7</span> is a fraction of integers, so it is rational (it is <em>not</em> equal to &pi; &mdash; it is only a close approximation). <span class="eq">&radic;7</span> is irrational because 7 is not a perfect square: its decimal expansion is nonrepeating and nonterminating.</p>
+          </div></details>
+        </div>
+
+        <!-- Q20 -->
+        <div class="qbox">
+          <h3>Question 20 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Simplify: <span class="eq">4(3x &minus; 2) &minus; (x &minus; 6)</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 11x − 2</p>
+          <span class="work">4(3x − 2) − (x − 6)
+= 12x − 8 − x + 6      ← the minus in front of (x − 6) means −1(x − 6) = −x + 6
+= (12x − x) + (−8 + 6)
+= 11x − 2</span>
+          <p class="explain">The bare minus sign in front of parentheses is really <span class="eq">&minus;1</span>. It flips every sign inside.</p>
+          </div></details>
+        </div>
+
+        <!-- Q21 -->
+        <div class="qbox">
+          <h3>Question 21 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">(&minus;3)&sup2; &minus; 2(4 &minus; 7) + 5</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 20</p>
+          <span class="work">(−3)² − 2(4 − 7) + 5
+= (−3)² − 2(−3)  + 5    ← P: inside the second parentheses
+= 9    − 2(−3)  + 5    ← E
+= 9    − (−6)   + 5    ← M
+= 9 + 6 + 5             ← subtracting a negative = adding
+= 20</span>
+          </div></details>
+        </div>
+
+        <!-- Q22 -->
+        <div class="qbox">
+          <h3>Question 22 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">If <span class="eq">a = 3</span> and <span class="eq">b = &minus;5</span>, evaluate <span class="eq">2a &minus; 3b + ab</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 6</p>
+          <span class="work">2a − 3b + ab
+= 2(3) − 3(−5) + (3)(−5)
+= 6    − (−15) + (−15)
+= 6 + 15 − 15
+= 6</span>
+          </div></details>
+        </div>
+
+        <!-- ============================================= HARD ============================================= -->
+
+        <!-- Q23 (word) -->
+        <div class="qbox">
+          <h3>Question 23 <span class="difficulty hard">Hard &middot; Word Problem</span></h3>
+          <p class="prompt">A cell-phone plan charges a flat monthly fee of $25 plus 8 cents per minute of talk time. Write an algebraic expression for the total monthly cost in dollars if you talk for <span class="eq">m</span> minutes. Then evaluate the expression for <span class="eq">m = 175</span> minutes.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: expression = 25 + 0.08m; cost at 175 min = $39.00</p>
+          <span class="work">Total cost = fixed fee + (rate per min × minutes)
+           = 25 + 0.08m
+
+Evaluate at m = 175:
+= 25 + 0.08(175)
+= 25 + 14
+= 39</span>
+          <p class="explain">Every &ldquo;flat fee plus a per-unit rate&rdquo; word problem in Algebra 1 has this exact form: <span class="eq">y = b + rx</span>. Getting fluent at translating words into <span class="eq">25 + 0.08m</span> is the single biggest predictor of success in linear equations.</p>
+          </div></details>
+        </div>
+
+        <!-- Q24 (word) -->
+        <div class="qbox">
+          <h3>Question 24 <span class="difficulty hard">Hard &middot; Word Problem</span></h3>
+          <p class="prompt">The perimeter of a rectangle is given by <span class="eq">P = 2L + 2W</span>. A rectangle has length <span class="eq">L = 3x + 2</span> and width <span class="eq">W = x &minus; 4</span>. Write a simplified expression for its perimeter <span class="eq">P</span>, then evaluate <span class="eq">P</span> when <span class="eq">x = 7</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: P = 8x − 4; when x = 7, P = 52</p>
+          <span class="work">P = 2L + 2W
+  = 2(3x + 2) + 2(x − 4)
+  = 6x + 4 + 2x − 8      ← distribute
+  = (6x + 2x) + (4 − 8)  ← combine
+  = 8x − 4
+
+At x = 7:
+P = 8(7) − 4 = 56 − 4 = 52</span>
+          <p class="explain">Two skills at once: simplifying and evaluating. Distribute before you combine like terms. Only after the expression is fully simplified should you plug in the number.</p>
+          </div></details>
+        </div>
+
+        <!-- Q25 -->
+        <div class="qbox">
+          <h3>Question 25 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Evaluate: <span class="eq">[3 + (5 &minus; 8)&sup2;] &divide; (&minus;2)&sup2; &minus; 3</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 0</p>
+          <span class="work">[3 + (5 − 8)²] ÷ (−2)² − 3
+= [3 + (−3)²]  ÷ (−2)² − 3    ← P: innermost
+= [3 + 9]      ÷ (−2)² − 3    ← E: inner exponent
+= 12           ÷ 4      − 3    ← simplify brackets; (−2)² = 4
+= 3                     − 3    ← D
+= 0</span>
+          <p class="explain">Nested grouping symbols work from the inside out. <span class="eq">(&minus;3)&sup2; = 9</span> because the parentheses include the negative.</p>
+          </div></details>
+        </div>
+
+        <!-- Q26 (word) -->
+        <div class="qbox">
+          <h3>Question 26 <span class="difficulty hard">Hard &middot; Word Problem</span></h3>
+          <p class="prompt">A student has <span class="eq">n</span> nickels and twice as many dimes as nickels. Write a simplified expression for the total value of the coins <em>in cents</em>. Then find the total in cents if <span class="eq">n = 12</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: expression = 25n cents; at n = 12, total = 300 cents ($3.00)</p>
+          <span class="work">Nickels: n     coins × 5 cents each  = 5n
+Dimes:   2n    coins × 10 cents each = 20n
+Total = 5n + 20n = 25n cents
+
+At n = 12:
+Total = 25(12) = 300 cents = $3.00</span>
+          <p class="explain">Two coin quantities, both a multiple of <span class="eq">n</span>, so their values add cleanly. The English &ldquo;twice as many dimes as nickels&rdquo; translates directly to <span class="eq">2n</span>. This is the template every mixture/coin word problem uses in Algebra 1.</p>
+          </div></details>
+        </div>
+
+        <!-- Q27 -->
+        <div class="qbox">
+          <h3>Question 27 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Simplify: <span class="eq">3x&sup2; &minus; 2(x&sup2; &minus; 4x) + 5x</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: x² + 13x</p>
+          <span class="work">3x² − 2(x² − 4x) + 5x
+= 3x² − 2x² + 8x + 5x    ← distribute −2 over both terms
+= (3x² − 2x²) + (8x + 5x)
+= x² + 13x</span>
+          <p class="explain">Now both like-term families are present: <span class="eq">x&sup2;</span> terms combine with <span class="eq">x&sup2;</span> terms, and <span class="eq">x</span> terms combine with <span class="eq">x</span> terms. They do NOT combine with each other. The <span class="eq">&minus;2 &times; &minus;4x = +8x</span> sign flip is the step where most students slip.</p>
+          </div></details>
+        </div>
+
+        <!-- Q28 (word) -->
+        <div class="qbox">
+          <h3>Question 28 <span class="difficulty hard">Hard &middot; Word Problem</span></h3>
+          <p class="prompt">A rectangular garden is <span class="eq">x</span> feet wide and <span class="eq">2x + 3</span> feet long. It is surrounded by a walkway that is 2 feet wide on all four sides. Write a simplified expression for the outer perimeter (garden + walkway), then find it when <span class="eq">x = 5</span> feet.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: outer perimeter = 6x + 22; at x = 5, perimeter = 52 feet</p>
+          <span class="work">Adding a 2-ft walkway on each side increases width AND length by 4 ft
+(2 ft on each of the two opposite sides).
+
+Outer width  = x + 4
+Outer length = (2x + 3) + 4 = 2x + 7
+
+Outer perimeter = 2(outer length) + 2(outer width)
+                = 2(2x + 7) + 2(x + 4)
+                = 4x + 14 + 2x + 8
+                = 6x + 22
+
+At x = 5:
+= 6(5) + 22
+= 30 + 22
+= 52 feet</span>
+          <p class="explain">Two lessons in one problem. First: adding a 2-ft border on <em>both</em> sides adds 4 ft total to each dimension &mdash; not 2. Second: distribute carefully, then combine like terms, then substitute. This is exactly the workflow in every geometry-based algebra problem.</p>
+          </div></details>
+        </div>
+
+        <!-- Q29 -->
+        <div class="qbox">
+          <h3>Question 29 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Simplify: <span class="eq">4(2a &minus; 3b) &minus; 2[3a &minus; (a + b)] + 5b</span></p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 4a − 5b</p>
+          <span class="work">4(2a − 3b) − 2[3a − (a + b)] + 5b
+
+Step 1: innermost parentheses first.
+      −(a + b) = −a − b
+So the bracketed piece becomes 3a − a − b = 2a − b.
+
+Step 2: substitute back.
+= 4(2a − 3b) − 2(2a − b) + 5b
+
+Step 3: distribute.
+= 8a − 12b − 4a + 2b + 5b
+
+Step 4: combine like terms.
+= (8a − 4a) + (−12b + 2b + 5b)
+= 4a  + (−5b)
+= 4a − 5b</span>
+          <p class="explain">Nested grouping symbols (brackets outside parentheses) are graded from the inside out. Once the inner minus is distributed, the rest is standard combine-like-terms work. This exact structure shows up in every Regents Algebra 1 exam.</p>
+          </div></details>
+        </div>
+
+        <!-- Q30 (word — hardest) -->
+        <div class="qbox">
+          <h3>Question 30 <span class="difficulty hard">Hard &middot; Word Problem</span></h3>
+          <p class="prompt"><strong>Challenge:</strong> A gym offers two membership plans. <strong>Plan A</strong> charges a $60 one-time enrollment fee plus $40 per month. <strong>Plan B</strong> charges no enrollment fee but $55 per month. (a) Write simplified expressions for the total cost of each plan after <span class="eq">m</span> months. (b) Evaluate both at <span class="eq">m = 3</span> months and at <span class="eq">m = 5</span> months. (c) At which of those two lengths is Plan A cheaper?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: A(m) = 60 + 40m; B(m) = 55m; at m = 3 A costs $180 vs B $165 (B cheaper); at m = 5 A costs $260 vs B $275 (A cheaper).</p>
+          <span class="work">(a) Expressions:
+   Plan A: A(m) = 60 + 40m       ← flat fee plus per-month rate
+   Plan B: B(m) =      55m        ← no fee, per-month rate only
+
+(b) Evaluate at m = 3:
+   A(3) = 60 + 40(3) = 60 + 120 = 180  →  $180
+   B(3) =      55(3) =        165        →  $165
+
+    Evaluate at m = 5:
+   A(5) = 60 + 40(5) = 60 + 200 = 260  →  $260
+   B(5) =      55(5) =        275        →  $275
+
+(c) At m = 3, B is cheaper by $15.
+    At m = 5, A is cheaper by $15.
+    → Plan A is cheaper at 5 months.</span>
+          <p class="explain">Break-even reasoning is one of the most useful ideas in Algebra 1. Plan A saves you $15 per month vs. Plan B (because $55 &minus; $40 = $15), but starts $60 behind. So the plans cross at <span class="eq">60 &divide; 15 = 4</span> months. Below 4 months Plan B wins; above 4 months Plan A wins. This problem is the &ldquo;numerical&rdquo; version of the linear-systems problem you will solve algebraically in Class 6.</p>
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">Answer key summary</h2>
+        <table class="answer-key-table">
+          <tr><th>Q#</th><th>Answer</th><th>Q#</th><th>Answer</th><th>Q#</th><th>Answer</th></tr>
+          <tr><td>1</td><td>int, rat, real</td><td>11</td><td>10</td><td>21</td><td>20</td></tr>
+          <tr><td>2</td><td>19</td><td>12</td><td>0</td><td>22</td><td>6</td></tr>
+          <tr><td>3</td><td>17</td><td>13</td><td>6x + 2</td><td>23</td><td>25 + 0.08m; $39</td></tr>
+          <tr><td>4</td><td>9x</td><td>14</td><td>7y &minus; 27</td><td>24</td><td>8x &minus; 4; 52</td></tr>
+          <tr><td>5</td><td>5y</td><td>15</td><td>11</td><td>25</td><td>0</td></tr>
+          <tr><td>6</td><td>rat, irr, rat</td><td>16</td><td>27</td><td>26</td><td>25n; 300&cent;</td></tr>
+          <tr><td>7</td><td>24</td><td>17</td><td>4x + 6y</td><td>27</td><td>x&sup2; + 13x</td></tr>
+          <tr><td>8</td><td>6x + 4</td><td>18</td><td>3</td><td>28</td><td>6x + 22; 52 ft</td></tr>
+          <tr><td>9</td><td>25 &amp; 8</td><td>19</td><td>(c) &radic;7</td><td>29</td><td>4a &minus; 5b</td></tr>
+          <tr><td>10</td><td>3x + 15</td><td>20</td><td>11x &minus; 2</td><td>30</td><td>see solution</td></tr>
+        </table>
+
+        <h2 id="scoring">Scoring &amp; placement guidance</h2>
+        <div class="callout">
+          <ul style="margin:0; padding-left:20px;">
+            <li><strong>28&ndash;30 / 30</strong> &mdash; Ready to start <a href="/courses/young-fermats-algebra-ignite">Algebra Ignite Class 1</a> (linear equations in one variable) immediately.</li>
+            <li><strong>24&ndash;27 / 30</strong> &mdash; Ready with light review. Re-read whichever theory section produced the misses (real numbers &sect;2, order of operations &sect;3, simplifying &sect;4) and re-attempt those specific questions before starting.</li>
+            <li><strong>18&ndash;23 / 30</strong> &mdash; Not ready. Work through <a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1 (Integers)</a> and <a href="/posts/pre-algebra-class-2-multiplying-dividing-integers">Pre-Algebra Class 2 (Multiplying &amp; Dividing Integers)</a> first, then retake this diagnostic.</li>
+            <li><strong>Below 18 / 30</strong> &mdash; Book a <a href="/">free evaluation</a>. There is a gap earlier in arithmetic (fractions, negatives, or place value) that needs to be closed before Algebra 1 will feel doable.</li>
+          </ul>
+        </div>
+
+        <h2 id="somath">About SOMATH &amp; Algebra Ignite</h2>
+        <div class="callout">
+          <p><strong>SOMATH &mdash; School of Math</strong> is a math-focused school on the Upper West Side of Manhattan for students in grades 1&ndash;12. The <strong>Young Fermats Algebra Ignite</strong> program is our small-group Algebra 1 course &mdash; 15 classes plus this placement diagnostic (Class 0). Every student takes this diagnostic on Day 1 so we can place them in the right group and fill any gaps before Class 1.</p>
+          <p>Classes are taught by cofounder <strong>Marcelo Ramos</strong> (Northwestern-trained, 15+ years teaching math in NYC) and the SOMATH team.</p>
+          <p><strong>Location:</strong> 226 W 79th St, 1st Floor, New York, NY 10024 (Upper West Side)<br>
+          <strong>Phone:</strong> (646) 668-6151<br>
+          <strong>Email:</strong> hello@schoolofmath.us</p>
+          <p><a href="/">Book a free evaluation</a> for your child &mdash; we&rsquo;ll assess where they are and place them in the right small group.</p>
+        </div>
+
+        <h2>Related SOMATH posts</h2>
+        <ul>
+          <li><a href="/courses/young-fermats-algebra-ignite">Young Fermats Algebra Ignite &mdash; full course syllabus</a></li>
+          <li><a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1: Integers, Number Line &amp; Absolute Value</a></li>
+          <li><a href="/posts/pre-algebra-class-2-multiplying-dividing-integers">Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions)</a></li>
+          <li><a href="/posts/word-problems-linear-equations-35-questions">Word Problems Modeled with Linear Equations</a></li>
+          <li><a href="/posts/when-should-my-child-start-algebra">When Should My Child Start Algebra?</a></li>
+          <li><a href="/blog">All SOMATH blog posts &raquo;</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
