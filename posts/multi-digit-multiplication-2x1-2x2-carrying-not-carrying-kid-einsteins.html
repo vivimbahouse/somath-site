@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Multi-Digit Multiplication &mdash; 2&times;1 and 2&times;2, With &amp; Without Carrying (30 Questions, Hidden Answers) | Kid Einsteins Class 5 | SOMATH NYC</title>
+    <meta name="description" content="Free grades 3&ndash;5 math lesson on multi-digit multiplication: 2-digit &times; 1-digit and 2-digit &times; 2-digit, both without carrying and with carrying. Includes the box-method theory, the standard-algorithm walkthrough, what &lsquo;carrying&rsquo; actually means in terms of place value, and 30 practice questions (16 easy, 6 medium, 4 hard, 4 word problems) with click-to-reveal step-by-step answers. Built for SOMATH's Kid Einsteins class on the Upper West Side of NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/multi-digit-multiplication-2x1-2x2-carrying-not-carrying-kid-einsteins" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Multi-Digit Multiplication &mdash; 2&times;1 and 2&times;2, With &amp; Without Carrying (30 Questions, Hidden Answers) | Kid Einsteins Class 5" />
+    <meta property="og:description" content="Grades 3&ndash;5 lesson on 2-digit &times; 1-digit and 2-digit &times; 2-digit multiplication, no-carry and with-carry, with 30 practice questions (16 easy, 6 medium, 4 hard, 4 word problems) and click-to-reveal step-by-step answers. From SOMATH, Upper West Side NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/multi-digit-multiplication-2x1-2x2-carrying-not-carrying-kid-einsteins" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-26" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Multi-Digit Multiplication &mdash; 30 Questions with Hidden Answers (Kid Einsteins Class 5)" />
+    <meta name="twitter:description" content="Grades 3&ndash;5 lesson on 2&times;1 and 2&times;2 multiplication, with and without carrying: theory + 30 questions with click-to-reveal answers. From SOMATH, Upper West Side NYC." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.55; overflow-x:auto; font-size:0.95rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:720px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .difficulty { display:inline-block; font-size:0.72rem; font-weight:700; padding:2px 10px; border-radius:999px; margin-left:8px; vertical-align:middle; text-transform:uppercase; letter-spacing:0.03em; }
+      .difficulty.easy { background:#e6efe2; color:#2e5a1f; }
+      .difficulty.medium { background:#f9edd2; color:#8a5a12; }
+      .difficulty.hard { background:#f2d6cf; color:#7a2a12; }
+      .difficulty.word { background:#d9e6f0; color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Multi-Digit Multiplication — 2×1 and 2×2, With & Without Carrying (30 Questions, Hidden Answers) | Kid Einsteins Class 5",
+  "description": "A complete grades 3–5 lesson on multi-digit multiplication: 2-digit × 1-digit and 2-digit × 2-digit, no-carry and with-carry. Includes the box method, the standard algorithm, an explanation of what 'carrying' really means in place value, and 30 questions (16 easy, 6 medium, 4 hard, 4 word problems) with click-to-reveal step-by-step answers. From SOMATH, the Upper West Side math school in NYC.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-07-26",
+  "dateModified": "2026-07-26",
+  "author": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/multi-digit-multiplication-2x1-2x2-carrying-not-carrying-kid-einsteins" },
+  "keywords": "multi-digit multiplication, 2-digit by 1-digit multiplication, 2-digit by 2-digit multiplication, carrying in multiplication, regrouping, standard algorithm, box method, grade 3 math, grade 4 math, grade 5 math, kid einsteins, math tutor NYC, Upper West Side math"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#somath",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": "New York City"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does 'carrying' actually mean in multi-digit multiplication?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Carrying (also called regrouping) happens when a digit-by-digit multiplication gives a result larger than 9. The ones digit of that result stays in the current column; the tens digit is 'carried' up to the next column and added to whatever multiplication happens there. Carrying is just place value: you can't fit a two-digit number into a one-digit column, so the tens part moves left to where the tens live." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you multiply a 2-digit number by a 1-digit number without carrying?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Line the numbers up so the ones digits stack. Multiply the ones column: single-digit result → write it in the ones column. Multiply the tens column: single-digit result → write it in the tens column. That's it. Example: 34 × 2 = 68. The 4 × 2 = 8 stays in the ones column, the 3 × 2 = 6 stays in the tens column. No carrying because both partial results were one digit." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you multiply a 2-digit number by a 1-digit number with carrying?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Multiply the ones digit by the multiplier. If the answer is 10 or more, write the ones digit in the ones column and carry the tens digit above the tens column. Then multiply the tens digit by the multiplier and add the carry. Example: 27 × 3 → 7 × 3 = 21, write 1, carry 2. Then 2 × 3 = 6, plus the carried 2 = 8. Answer: 81." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you multiply two 2-digit numbers using the standard algorithm?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Stack the numbers. First, multiply the top number by the ones digit of the bottom number (with any needed carrying). That's the first partial product. Then multiply the top number by the tens digit of the bottom number — this is really multiplication by a multiple of 10, so shift one column to the left (or write a 0 in the ones column as a placeholder). Add the two partial products. Example: 47 × 26 = 282 + 940 = 1,222." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do we shift left (or add a zero) on the second line of 2-digit × 2-digit multiplication?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because the tens digit of the bottom number represents a multiple of 10, not a multiple of 1. When you 'multiply by the 2 in 26,' you're really multiplying by 20. The 0 in the ones place of the second partial product isn't decoration — it's the correct value. Kids who skip that 0 are the ones who get wrong answers on 2-digit multiplication tests. The 0 is what makes the tens line up with the tens." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find a small-group math class in NYC that teaches multi-digit multiplication?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH runs the Kid Einsteins program (grades 3–5) at 226 W 79th St on the Upper West Side of NYC. Classes are small groups of 6–8 students. Class 5 of the Kid Einsteins arc covers exactly this content: 2-digit × 1-digit and 2-digit × 2-digit, with and without carrying, using both the box method and the standard algorithm. Call (646) 668-6151 or email hello@schoolofmath.us to book a free evaluation." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Kid Einsteins &middot; Multi-Digit Multiplication &middot; Grades 3&ndash;5 &middot; NYC Math Class</p>
+      <h1 class="post__title">Multi-Digit Multiplication &mdash; 2&times;1 and 2&times;2, With &amp; Without Carrying (30 Questions with Hidden Answers) | Kid Einsteins Class 5</h1>
+      <p class="post__dek">The class where students go from &ldquo;I can multiply&rdquo; to &ldquo;I can multiply <em>anything</em>.&rdquo; This lesson teaches <strong>2-digit &times; 1-digit</strong> and <strong>2-digit &times; 2-digit</strong> multiplication in four escalating levels &mdash; no carrying, then carrying &mdash; using the box method and the standard algorithm side by side. Finishes with <strong>30 practice questions</strong> (16 easy, 6 medium, 4 hard, 4 word problems), each with click-to-reveal step-by-step answers. Built for the <a href="/">SOMATH</a> <strong>Kid Einsteins</strong> program (grades 3&ndash;5) on the Upper West Side of Manhattan.</p>
+      <p class="post__meta"><time datetime="2026-07-26">2026-07-26</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>This is <strong>Class 5</strong> of the SOMATH <a href="/courses/kid-einsteins">Kid Einsteins</a> multiplication arc. In <a href="/posts/distributive-thinking-partial-products-kid-einsteins">Class 4</a> we learned that any hard multiplication can be split into easier pieces using the <strong>distributive property</strong> and <strong>partial products</strong>. In this class we take that same idea and run it through the four cases students will meet every week for the rest of grade school:</p>
+
+        <ol>
+          <li><strong>2-digit &times; 1-digit, no carrying</strong> &mdash; the confidence builder</li>
+          <li><strong>2-digit &times; 1-digit, with carrying</strong> &mdash; where regrouping enters</li>
+          <li><strong>2-digit &times; 2-digit, no carrying</strong> &mdash; where the second partial product appears</li>
+          <li><strong>2-digit &times; 2-digit, with carrying</strong> &mdash; the full standard algorithm</li>
+        </ol>
+
+        <p>Every case is the <em>same</em> math &mdash; area of a rectangle, split into pieces. The difference between the cases is only whether a piece happens to be bigger than the column it lives in. When it is, we carry. Written by the same team that teaches Kid Einsteins at <a href="/">SOMATH</a>, run by cofounders Marcelo Ramos (Northwestern) and Vivianne Wright (Harvard).</p>
+
+        <div class="callout">
+          <strong>How to use this in a class (45&ndash;55 min):</strong>
+          <ol style="margin:8px 0 0 20px;">
+            <li>Warm-up: 3 quick 2&times;1 no-carry problems on the board (5 min).</li>
+            <li>Work through the four theory sections aloud, drawing the box for each (15 min).</li>
+            <li>Students attempt Q1&ndash;Q16 with answers hidden (15 min).</li>
+            <li>Reveal answers together; students continue to Q17&ndash;Q30 (15 min).</li>
+            <li>Wrap-up: pick 1 word problem, solve it as a class using the box method (5 min).</li>
+          </ol>
+        </div>
+
+        <div class="toc">
+          <h2>What&rsquo;s in this lesson</h2>
+          <ol>
+            <li><a href="#big-idea">The big idea in one sentence</a></li>
+            <li><a href="#case1">Case 1 &mdash; 2-digit &times; 1-digit, no carrying</a></li>
+            <li><a href="#case2">Case 2 &mdash; 2-digit &times; 1-digit, with carrying</a></li>
+            <li><a href="#case3">Case 3 &mdash; 2-digit &times; 2-digit, no carrying</a></li>
+            <li><a href="#case4">Case 4 &mdash; 2-digit &times; 2-digit, with carrying</a></li>
+            <li><a href="#mistakes">Six mistakes that cost points on every test</a></li>
+            <li><a href="#practice">30 practice questions (hidden answers)</a></li>
+            <li><a href="#answer-key">Answer key summary</a></li>
+            <li><a href="#somath">About SOMATH &amp; Kid Einsteins</a></li>
+          </ol>
+        </div>
+
+        <h2 id="big-idea">The big idea in one sentence</h2>
+        <div class="callout">
+          <p><strong>Every multi-digit multiplication is a stack of one-digit multiplications, kept in the right columns by place value.</strong> Carrying is what you do when one of those one-digit multiplications overflows its column.</p>
+        </div>
+
+        <p>That&rsquo;s the whole lesson. Everything below is just <em>how</em> to keep things in the right columns.</p>
+
+        <h2 id="case1">Case 1 &mdash; 2-digit &times; 1-digit, no carrying</h2>
+
+        <div class="theory-box">
+          <h3>What to do</h3>
+          <p>Stack the numbers so the ones digits line up. Multiply the ones column. Then multiply the tens column. Write each answer directly below its column. If both partial answers are one digit, you are done &mdash; no carrying is needed.</p>
+          <p><strong>Example:</strong> <span class="eq">34 &times; 2</span></p>
+          <span class="qbox" style="border-left:none;background:transparent;padding:0;margin:0;"><span class="work">    3 4
+  ×   2
+  -----
+    6 8
+
+  Ones: 4 × 2 = 8   → write 8 in the ones column
+  Tens: 3 × 2 = 6   → write 6 in the tens column</span></span>
+          <p>Both partial answers (8 and 6) fit in a single column. No carrying. Answer: <strong>68</strong>.</p>
+          <p><strong>Rule of thumb:</strong> if the ones digit of the top number is 4 or less, and the multiplier is small (2 or 3), you will almost always avoid carrying. It&rsquo;s a great starting point for building confidence.</p>
+        </div>
+
+        <h2 id="case2">Case 2 &mdash; 2-digit &times; 1-digit, with carrying</h2>
+
+        <div class="theory-box">
+          <h3>What to do</h3>
+          <p>Same stack, same left-to-right idea &mdash; but this time a single-digit multiplication produces a two-digit result. The ones digit of that result stays in the current column; the tens digit is written above the next column to the left and added into <em>that</em> multiplication.</p>
+          <p><strong>Example:</strong> <span class="eq">27 &times; 3</span></p>
+          <span class="qbox" style="border-left:none;background:transparent;padding:0;margin:0;"><span class="work">      2
+      2 7
+    ×   3
+    -----
+      8 1
+
+  Ones: 7 × 3 = 21   → write 1 in the ones column,
+                       carry the 2 above the tens column.
+  Tens: 2 × 3 = 6, then add the carry: 6 + 2 = 8
+                     → write 8 in the tens column.</span></span>
+          <p>Answer: <strong>81</strong>.</p>
+          <p><strong>What the carry really is.</strong> <span class="eq">7 &times; 3 = 21</span> is really <strong>20 + 1</strong>. The 1 belongs in the ones column. The 20 belongs one column to the left &mdash; that&rsquo;s the tens column. Instead of writing &ldquo;20&rdquo; underneath, we just note the &ldquo;2 tens&rdquo; at the top of the tens column and add them into the next multiplication. Carrying is <em>bookkeeping</em>, not magic.</p>
+          <p><strong>Order matters:</strong> multiply <em>first</em>, then add the carry. Students who do it in the wrong order (add carry, then multiply) get wrong answers every time.</p>
+        </div>
+
+        <h2 id="case3">Case 3 &mdash; 2-digit &times; 2-digit, no carrying</h2>
+
+        <div class="theory-box">
+          <h3>What to do</h3>
+          <p>Now the multiplier has two digits, which means there will be <strong>two partial products</strong>. The first partial product is the top number times the ones digit of the bottom. The second partial product is the top number times the tens digit of the bottom &mdash; but the tens digit is really a multiple of 10, so the second partial product must be <strong>shifted one column to the left</strong>. We usually write a 0 in the ones column of the second line as a placeholder.</p>
+          <p><strong>Example:</strong> <span class="eq">23 &times; 12</span></p>
+          <span class="qbox" style="border-left:none;background:transparent;padding:0;margin:0;"><span class="work">      2 3
+    × 1 2
+    -----
+      4 6     ← 23 × 2  (first partial product)
+    2 3 0     ← 23 × 10 (second partial product, shift left)
+    -----
+    2 7 6
+
+  Step 1: 23 × 2 = 46           → write 46
+  Step 2: 23 × 1 (of the tens) = 23, but that "1" is 10,
+          so the real product is 23 × 10 = 230.
+          Write 230, or equivalently write 23 shifted one column left.
+  Step 3: Add the two partial products: 46 + 230 = 276</span></span>
+          <p>Answer: <strong>276</strong>.</p>
+          <p><strong>The shift is the whole point.</strong> The reason 2-digit &times; 2-digit is harder than 2-digit &times; 1-digit is not the multiplication &mdash; it&rsquo;s the <em>alignment</em>. The 2 in 12 is not 2, it&rsquo;s 20. Every wrong answer on a 2-digit &times; 2-digit problem where the multiplications themselves are correct is either (a) the student forgot to shift, or (b) the student forgot to add. Practice the shift until it becomes automatic.</p>
+        </div>
+
+        <h2 id="case4">Case 4 &mdash; 2-digit &times; 2-digit, with carrying</h2>
+
+        <div class="theory-box">
+          <h3>What to do</h3>
+          <p>The full standard algorithm. Combine everything so far: two partial products, and each partial product may itself require carrying. Also &mdash; and this trips up almost every student &mdash; the carry from the <em>first</em> partial product must be <strong>erased or crossed out</strong> before starting the second partial product. Otherwise it gets added into the wrong multiplication.</p>
+          <p><strong>Example:</strong> <span class="eq">47 &times; 26</span></p>
+          <span class="qbox" style="border-left:none;background:transparent;padding:0;margin:0;"><span class="work">        4
+        4 7
+      × 2 6
+      -----
+        2 8 2    ← 47 × 6  (first partial product, with carry)
+      -----
+      Now erase the "4" carry — we're done with it.
+
+        1
+        4 7
+      × 2 6
+      -----
+        2 8 2
+      9 4 0      ← 47 × 20 (second partial product, with new carry)
+      -----
+    1  2 2 2
+
+  First partial product (47 × 6):
+    Ones: 7 × 6 = 42   → write 2, carry 4
+    Tens: 4 × 6 = 24, + carried 4 = 28
+                       → write 8 in tens, 2 in hundreds
+    First partial product = 282
+
+  Second partial product (47 × 20):
+    Ones: put a 0 as the placeholder (we're multiplying by 20, not 2)
+    Then compute 47 × 2:
+      Ones (of 47) × 2:  7 × 2 = 14 → write 4, carry 1
+      Tens (of 47) × 2:  4 × 2 = 8, + carried 1 = 9
+    Second partial product = 940
+
+  Add:
+      282
+    + 940
+    -----
+    1,222</span></span>
+          <p>Answer: <strong>1,222</strong>.</p>
+          <p><strong>Two carries, two purposes.</strong> The first carry (the 4) belongs to <span class="eq">47 &times; 6</span>. The second carry (the 1) belongs to <span class="eq">47 &times; 2</span>. They live in different multiplications; they never interact. Kids who mix them up write things like &ldquo;1,262&rdquo; instead of &ldquo;1,222&rdquo;. Cross out the first carry before starting the second partial product.</p>
+        </div>
+
+        <h2 id="mistakes">Six mistakes that cost points on every test</h2>
+
+        <div class="theory-box">
+          <ol>
+            <li><strong>Forgetting to add the carry.</strong> You wrote the &ldquo;2&rdquo; above the tens column of <span class="eq">27 &times; 3</span>, then computed <span class="eq">2 &times; 3 = 6</span> and wrote 6 &mdash; forgetting to add the 2. Correct: <span class="eq">6 + 2 = 8</span>.</li>
+            <li><strong>Adding the carry <em>before</em> multiplying.</strong> Some students do <span class="eq">(2 + 2) &times; 3 = 12</span>. Wrong. Multiply first, add carry after.</li>
+            <li><strong>Forgetting the 0 (shift) on the second line of 2&times;2.</strong> Writing <span class="eq">282 + 94 = 376</span> instead of <span class="eq">282 + 940 = 1,222</span>. The zero is not decoration &mdash; it&rsquo;s the difference between 2 and 20.</li>
+            <li><strong>Using the first carry inside the second partial product.</strong> After finishing <span class="eq">47 &times; 6</span>, the &ldquo;4&rdquo; on top belongs to <em>that</em> multiplication. When you start <span class="eq">47 &times; 2</span>, cross it out.</li>
+            <li><strong>Lining up the columns wrong when you add.</strong> The ones of the second partial product must sit under the tens of the first. If you write the shift as a placeholder 0, this alignment is automatic. If you skip the 0, you have to eyeball it &mdash; and eyeballing loses points.</li>
+            <li><strong>Multiplying only the ones digit of the top by the tens digit of the bottom.</strong> The top number is <em>whole</em>: you must multiply the <em>entire top number</em> by each digit of the bottom. So in <span class="eq">47 &times; 26</span>, the second partial product is <span class="eq">47 &times; 2 = 94</span> (then shift), not <span class="eq">7 &times; 2 = 14</span>.</li>
+          </ol>
+        </div>
+
+        <h2 id="practice">30 practice questions</h2>
+        <p>Answers are hidden. Click <strong>&ldquo;Show answer &amp; solution&rdquo;</strong> to reveal each one. Questions 1&ndash;16 are 2-digit &times; 1-digit (with and without carrying). Questions 17&ndash;22 are 2-digit &times; 2-digit without carrying. Questions 23&ndash;26 are 2-digit &times; 2-digit with carrying. Questions 27&ndash;30 are word problems.</p>
+
+        <div class="part-header">
+          <h2>Part A &mdash; 2-digit &times; 1-digit, NO carrying (Q1&ndash;Q8)</h2>
+          <p>Build confidence. Every partial product fits in one column.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 1 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">12 &times; 3</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 36</p>
+          <span class="work">    1 2
+  ×   3
+  -----
+    3 6
+
+  Ones: 2 × 3 = 6
+  Tens: 1 × 3 = 3</span>
+          <p class="explain">No carrying: both partial answers are one digit.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 2 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">21 &times; 4</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 84</p>
+          <span class="work">    2 1
+  ×   4
+  -----
+    8 4
+
+  Ones: 1 × 4 = 4
+  Tens: 2 × 4 = 8</span>
+          <p class="explain">Ones digit 1 makes this a no-carry problem for any single-digit multiplier.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 3 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">34 &times; 2</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 68</p>
+          <span class="work">    3 4
+  ×   2
+  -----
+    6 8
+
+  Ones: 4 × 2 = 8
+  Tens: 3 × 2 = 6</span>
+          <p class="explain">The example from the theory section. Because 4 &times; 2 = 8 (single digit), no carry.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 4 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">23 &times; 3</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 69</p>
+          <span class="work">    2 3
+  ×   3
+  -----
+    6 9
+
+  Ones: 3 × 3 = 9
+  Tens: 2 × 3 = 6</span>
+          <p class="explain">3 &times; 3 = 9, which just barely fits in one column. Any bigger and we&rsquo;d be carrying.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 5 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">32 &times; 3</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 96</p>
+          <span class="work">    3 2
+  ×   3
+  -----
+    9 6
+
+  Ones: 2 × 3 = 6
+  Tens: 3 × 3 = 9</span>
+          <p class="explain">Both partial products are single digits. Notice the tens digit of the answer is exactly the top tens digit times the multiplier.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 6 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">43 &times; 2</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 86</p>
+          <span class="work">    4 3
+  ×   2
+  -----
+    8 6
+
+  Ones: 3 × 2 = 6
+  Tens: 4 × 2 = 8</span>
+          <p class="explain">No carry &mdash; the biggest partial product is 4 &times; 2 = 8, still single digit.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 7 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">24 &times; 2</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 48</p>
+          <span class="work">    2 4
+  ×   2
+  -----
+    4 8
+
+  Ones: 4 × 2 = 8
+  Tens: 2 × 2 = 4</span>
+          <p class="explain">Simple check: doubling 24 should give 48. It does.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 8 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">11 &times; 9</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 99</p>
+          <span class="work">    1 1
+  ×   9
+  -----
+    9 9
+
+  Ones: 1 × 9 = 9
+  Tens: 1 × 9 = 9</span>
+          <p class="explain">Even with a large multiplier (9), 1 &times; 9 = 9 stays in one column. Whenever both digits of the top number are 1, no carry is possible.</p>
+          </div></details>
+        </div>
+
+        <div class="part-header">
+          <h2>Part B &mdash; 2-digit &times; 1-digit, WITH carrying (Q9&ndash;Q16)</h2>
+          <p>Now a single-digit multiplication overflows its column. Multiply first, then add the carry.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 9 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">27 &times; 3</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 81</p>
+          <span class="work">      2
+      2 7
+    ×   3
+    -----
+      8 1
+
+  Ones: 7 × 3 = 21   → write 1, carry 2.
+  Tens: 2 × 3 = 6, + carry 2 = 8.</span>
+          <p class="explain">The example from the theory section. Note the carry is written above the tens column so we don&rsquo;t forget to add it.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 10 <span class="difficulty easy">Easy</span></h3>
+          <p class="prompt">Compute <span class="eq">46 &times; 2</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 92</p>
+          <span class="work">      1
+      4 6
+    ×   2
+    -----
+      9 2
+
+  Ones: 6 × 2 = 12   → write 2, carry 1.
+  Tens: 4 × 2 = 8, + carry 1 = 9.</span>
+          <p class="explain">A small carry (1) &mdash; but skip it and you&rsquo;d write 82, which is wrong by 10. That&rsquo;s exactly what the carried 1 represents: one whole ten.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 11 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">38 &times; 4</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 152</p>
+          <span class="work">      3
+      3 8
+    ×   4
+    -----
+    1 5 2
+
+  Ones: 8 × 4 = 32   → write 2, carry 3.
+  Tens: 3 × 4 = 12, + carry 3 = 15.
+         → write 5 in tens, 1 in hundreds.</span>
+          <p class="explain">Here the <em>tens</em> multiplication itself gives a two-digit number (15), so the answer has a hundreds digit. The single-digit multiplier didn&rsquo;t prevent a three-digit answer &mdash; that&rsquo;s allowed.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 12 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">56 &times; 7</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 392</p>
+          <span class="work">      4
+      5 6
+    ×   7
+    -----
+    3 9 2
+
+  Ones: 6 × 7 = 42   → write 2, carry 4.
+  Tens: 5 × 7 = 35, + carry 4 = 39.
+         → write 9 in tens, 3 in hundreds.</span>
+          <p class="explain">Sanity check: 56 &times; 7 should be a little less than 60 &times; 7 = 420. 392 is 28 less than 420, and 4 &times; 7 = 28. Checks out.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 13 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">89 &times; 6</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 534</p>
+          <span class="work">      5
+      8 9
+    ×   6
+    -----
+    5 3 4
+
+  Ones: 9 × 6 = 54   → write 4, carry 5.
+  Tens: 8 × 6 = 48, + carry 5 = 53.
+         → write 3 in tens, 5 in hundreds.</span>
+          <p class="explain">Bigger carry (5). Sanity check: 89 &times; 6 &asymp; 90 &times; 6 = 540, and we get 534, which is 6 less than 540 &mdash; exactly right because 1 &times; 6 = 6.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 14 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">47 &times; 8</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 376</p>
+          <span class="work">      5
+      4 7
+    ×   8
+    -----
+    3 7 6
+
+  Ones: 7 × 8 = 56   → write 6, carry 5.
+  Tens: 4 × 8 = 32, + carry 5 = 37.
+         → write 7 in tens, 3 in hundreds.</span>
+          <p class="explain">Both the ones and tens multiplications produce two-digit numbers, so we carry once and produce a three-digit answer.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 15 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">63 &times; 9</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 567</p>
+          <span class="work">      2
+      6 3
+    ×   9
+    -----
+    5 6 7
+
+  Ones: 3 × 9 = 27   → write 7, carry 2.
+  Tens: 6 × 9 = 54, + carry 2 = 56.
+         → write 6 in tens, 5 in hundreds.</span>
+          <p class="explain">63 &times; 9 = 63 &times; 10 &minus; 63 = 630 &minus; 63 = 567. Same answer, different route &mdash; a great mental-math cross-check.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 16 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">78 &times; 5</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 390</p>
+          <span class="work">      4
+      7 8
+    ×   5
+    -----
+    3 9 0
+
+  Ones: 8 × 5 = 40   → write 0, carry 4.
+  Tens: 7 × 5 = 35, + carry 4 = 39.
+         → write 9 in tens, 3 in hundreds.</span>
+          <p class="explain">Multiplying by 5 &mdash; the ones digit of the answer is always 0 or 5. Here we get 0 because 8 &times; 5 = 40 has zero ones.</p>
+          </div></details>
+        </div>
+
+        <div class="part-header">
+          <h2>Part C &mdash; 2-digit &times; 2-digit, NO carrying (Q17&ndash;Q22)</h2>
+          <p>Now the multiplier has two digits, so there are two partial products. Shift the second one left.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 17 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">12 &times; 13</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 156</p>
+          <span class="work">      1 2
+    × 1 3
+    -----
+      3 6     ← 12 × 3
+    1 2 0     ← 12 × 10
+    -----
+    1 5 6
+
+  12 × 3  = 36  (no carry: 2×3=6, 1×3=3)
+  12 × 10 = 120 (shift left, add a 0)
+  Total: 36 + 120 = 156</span>
+          <p class="explain">Classic starter 2&times;2 problem. Both partial products are one-carry-free, so the whole answer is arithmetic-clean.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 18 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">21 &times; 14</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 294</p>
+          <span class="work">      2 1
+    × 1 4
+    -----
+      8 4     ← 21 × 4
+    2 1 0     ← 21 × 10
+    -----
+    2 9 4
+
+  21 × 4  = 84
+  21 × 10 = 210
+  Total: 84 + 210 = 294</span>
+          <p class="explain">Both partial products are clean single-carry-free multiplications. Adding them is straightforward &mdash; no borrowing, no regrouping.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 19 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">31 &times; 22</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 682</p>
+          <span class="work">      3 1
+    × 2 2
+    -----
+      6 2     ← 31 × 2
+    6 2 0     ← 31 × 20
+    -----
+    6 8 2
+
+  31 × 2  = 62
+  31 × 20 = 620
+  Total: 62 + 620 = 682</span>
+          <p class="explain">Doubling twice: 31 &times; 2 = 62, and 62 &times; 11 = 682 (since 22 = 2 &times; 11). Or just: 31 &times; 22 = 682.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 20 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">23 &times; 12</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 276</p>
+          <span class="work">      2 3
+    × 1 2
+    -----
+      4 6     ← 23 × 2
+    2 3 0     ← 23 × 10
+    -----
+    2 7 6
+
+  23 × 2  = 46
+  23 × 10 = 230
+  Total: 46 + 230 = 276</span>
+          <p class="explain">The theory example. Note the placeholder 0 on the second line &mdash; it&rsquo;s what makes the tens of 46 line up under the tens of 23.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 21 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">41 &times; 21</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 861</p>
+          <span class="work">      4 1
+    × 2 1
+    -----
+      4 1     ← 41 × 1
+    8 2 0     ← 41 × 20
+    -----
+    8 6 1
+
+  41 × 1  = 41
+  41 × 20 = 820
+  Total: 41 + 820 = 861</span>
+          <p class="explain">Multiplying by 1 is copying &mdash; the first partial product is just the top number. Notice how easy the addition becomes when both partial products are carry-free.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 22 <span class="difficulty medium">Medium</span></h3>
+          <p class="prompt">Compute <span class="eq">22 &times; 34</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 748</p>
+          <span class="work">      2 2
+    × 3 4
+    -----
+      8 8     ← 22 × 4
+    6 6 0     ← 22 × 30
+    -----
+    7 4 8
+
+  22 × 4  = 88
+  22 × 30 = 660
+  Total: 88 + 660 = 748</span>
+          <p class="explain">Every digit of the top is 2, so both partial products have the same digit pattern (88 and 66). Beautiful test of the shift: 660 is 66 shifted one column left.</p>
+          </div></details>
+        </div>
+
+        <div class="part-header">
+          <h2>Part D &mdash; 2-digit &times; 2-digit, WITH carrying (Q23&ndash;Q26)</h2>
+          <p>The full standard algorithm. Two partial products, each with its own carry. Cross out the first carry before starting the second.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 23 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Compute <span class="eq">47 &times; 26</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 1,222</p>
+          <span class="work">      4 7
+    × 2 6
+    -----
+    2 8 2     ← 47 × 6  (7×6=42 write 2 carry 4; 4×6=24+4=28)
+    9 4 0     ← 47 × 20 (7×2=14 write 4 carry 1; 4×2=8+1=9; then shift)
+    -----
+  1 2 2 2
+
+  First partial product  47 × 6  = 282
+  Second partial product 47 × 20 = 940
+  Sum: 282 + 940 = 1,222</span>
+          <p class="explain">The full theory-section example. The two carries (4 and 1) belong to <em>different</em> multiplications &mdash; don&rsquo;t let them get confused.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 24 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Compute <span class="eq">68 &times; 39</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 2,652</p>
+          <span class="work">      6 8
+    × 3 9
+    -----
+    6 1 2     ← 68 × 9  (8×9=72 write 2 carry 7; 6×9=54+7=61)
+  2 0 4 0     ← 68 × 30 (8×3=24 write 4 carry 2; 6×3=18+2=20; then shift)
+    -----
+  2 6 5 2
+
+  First partial product  68 × 9  = 612
+  Second partial product 68 × 30 = 2,040
+  Sum: 612 + 2,040 = 2,652</span>
+          <p class="explain">Big carries (7 and 2). Sanity check: 68 &times; 39 is close to 70 &times; 40 = 2,800, and we&rsquo;re at 2,652 &mdash; about 150 less. That&rsquo;s reasonable because we overestimated both factors.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 25 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Compute <span class="eq">84 &times; 57</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 4,788</p>
+          <span class="work">      8 4
+    × 5 7
+    -----
+    5 8 8     ← 84 × 7  (4×7=28 write 8 carry 2; 8×7=56+2=58)
+  4 2 0 0     ← 84 × 50 (4×5=20 write 0 carry 2; 8×5=40+2=42; then shift)
+    -----
+  4 7 8 8
+
+  First partial product  84 × 7  = 588
+  Second partial product 84 × 50 = 4,200
+  Sum: 588 + 4,200 = 4,788</span>
+          <p class="explain">Notice the second partial product 84 &times; 50 = 4,200 has a zero from the ones-digit multiplication (4 &times; 5 = 20 → write 0 carry 2) <em>and</em> the placeholder zero from the shift. Two different zeros with two different meanings.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 26 <span class="difficulty hard">Hard</span></h3>
+          <p class="prompt">Compute <span class="eq">96 &times; 48</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 4,608</p>
+          <span class="work">      9 6
+    × 4 8
+    -----
+    7 6 8     ← 96 × 8  (6×8=48 write 8 carry 4; 9×8=72+4=76)
+  3 8 4 0     ← 96 × 40 (6×4=24 write 4 carry 2; 9×4=36+2=38; then shift)
+    -----
+  4 6 0 8
+
+  First partial product  96 × 8  = 768
+  Second partial product 96 × 40 = 3,840
+  Sum: 768 + 3,840 = 4,608</span>
+          <p class="explain">Both factors are close to 100 and 50, so 96 &times; 48 &asymp; 100 &times; 50 = 5,000 &mdash; and we&rsquo;re at 4,608. Perfect ballpark check. Always estimate before you multiply, then compare when you&rsquo;re done.</p>
+          </div></details>
+        </div>
+
+        <div class="part-header">
+          <h2>Part E &mdash; Word problems (Q27&ndash;Q30)</h2>
+          <p>Real-world uses of the four cases above. Set up the multiplication, then solve.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 27 <span class="difficulty word">Word</span></h3>
+          <p class="prompt">A pack of crayons contains <strong>24</strong> crayons. A kindergarten teacher orders <strong>8 packs</strong> for her classroom. How many crayons will she receive in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 192 crayons</p>
+          <span class="work">Setup: 24 × 8
+
+      3
+      2 4
+    ×   8
+    -----
+    1 9 2
+
+  Ones: 4 × 8 = 32   → write 2, carry 3.
+  Tens: 2 × 8 = 16, + carry 3 = 19.
+         → write 9 in tens, 1 in hundreds.</span>
+          <p class="explain">A 2-digit &times; 1-digit problem <em>with</em> carrying. Word problems that use &ldquo;each&rdquo; or &ldquo;per&rdquo; almost always translate to a multiplication.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 28 <span class="difficulty word">Word</span></h3>
+          <p class="prompt">A school orders <strong>15 packs of pencils</strong>. Each pack contains <strong>12 pencils</strong>. How many pencils total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 180 pencils</p>
+          <span class="work">Setup: 15 × 12
+
+      1 5
+    × 1 2
+    -----
+      3 0     ← 15 × 2
+    1 5 0     ← 15 × 10
+    -----
+    1 8 0
+
+  15 × 2  = 30
+  15 × 10 = 150
+  Total: 30 + 150 = 180</span>
+          <p class="explain">A 2-digit &times; 2-digit problem <em>without</em> carrying inside either partial product &mdash; a gentle intro to Case 3 in a real setting.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 29 <span class="difficulty word">Word</span></h3>
+          <p class="prompt">A field trip has <strong>26 students</strong>. Each student needs to bring <strong>$17</strong> for the museum entry fee. How much money should the class collect in total?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: $442</p>
+          <span class="work">Setup: 26 × 17
+
+      2 6
+    × 1 7
+    -----
+    1 8 2     ← 26 × 7  (6×7=42 write 2 carry 4; 2×7=14+4=18)
+    2 6 0     ← 26 × 10
+    -----
+    4 4 2
+
+  First partial product  26 × 7  = 182
+  Second partial product 26 × 10 = 260
+  Sum: 182 + 260 = 442</span>
+          <p class="explain">A 2-digit &times; 2-digit problem with carrying inside the first partial product but not the second (because the tens digit of 17 is 1). Real-world money problem &mdash; these show up on every 4th and 5th grade test.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 30 <span class="difficulty word">Word</span></h3>
+          <p class="prompt">A movie theater has <strong>48 rows</strong> of seats. Each row has <strong>32 seats</strong>. What is the total capacity of the theater?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+          <p class="answer">Answer: 1,536 seats</p>
+          <span class="work">Setup: 48 × 32
+
+      4 8
+    × 3 2
+    -----
+      9 6     ← 48 × 2  (8×2=16 write 6 carry 1; 4×2=8+1=9)
+    1 4 4 0   ← 48 × 30 (8×3=24 write 4 carry 2; 4×3=12+2=14; then shift)
+    -----
+    1 5 3 6
+
+  First partial product  48 × 2  = 96
+  Second partial product 48 × 30 = 1,440
+  Sum: 96 + 1,440 = 1,536</span>
+          <p class="explain">The hardest word problem: a 2-digit &times; 2-digit multiplication with carrying in <em>both</em> partial products. Ballpark check: 50 &times; 30 = 1,500, and our answer 1,536 is right there. This is exactly the picture you use again in high school for &ldquo;rectangle of area <span class="eq">(a)(b)</span>&rdquo; problems in geometry and algebra.</p>
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">Answer key summary</h2>
+        <table class="answer-key-table">
+          <tr><th>Q#</th><th>Answer</th><th>Q#</th><th>Answer</th><th>Q#</th><th>Answer</th></tr>
+          <tr><td>1</td><td>36</td><td>11</td><td>152</td><td>21</td><td>861</td></tr>
+          <tr><td>2</td><td>84</td><td>12</td><td>392</td><td>22</td><td>748</td></tr>
+          <tr><td>3</td><td>68</td><td>13</td><td>534</td><td>23</td><td>1,222</td></tr>
+          <tr><td>4</td><td>69</td><td>14</td><td>376</td><td>24</td><td>2,652</td></tr>
+          <tr><td>5</td><td>96</td><td>15</td><td>567</td><td>25</td><td>4,788</td></tr>
+          <tr><td>6</td><td>86</td><td>16</td><td>390</td><td>26</td><td>4,608</td></tr>
+          <tr><td>7</td><td>48</td><td>17</td><td>156</td><td>27</td><td>192</td></tr>
+          <tr><td>8</td><td>99</td><td>18</td><td>294</td><td>28</td><td>180</td></tr>
+          <tr><td>9</td><td>81</td><td>19</td><td>682</td><td>29</td><td>442</td></tr>
+          <tr><td>10</td><td>92</td><td>20</td><td>276</td><td>30</td><td>1,536</td></tr>
+        </table>
+
+        <h2 id="somath">About SOMATH &amp; Kid Einsteins</h2>
+        <div class="callout">
+          <p><strong>SOMATH &mdash; School of Math</strong> is a math-focused school on the Upper West Side of Manhattan for students in grades 1&ndash;12. The <strong>Kid Einsteins</strong> program (grades 3&ndash;5) drills multiplication and division fluency, fractions and decimals, area and perimeter, ratios, and structured word problems in small groups of 6&ndash;8 students. This is <strong>Class 5</strong> of the Kid Einsteins arc &mdash; the natural sequel to <a href="/posts/distributive-thinking-partial-products-kid-einsteins">Class 4 (Distributive Thinking &amp; Partial Products)</a>.</p>
+          <p>Classes are taught by cofounder <strong>Marcelo Ramos</strong> (Northwestern-trained, 15+ years teaching math in NYC) and the SOMATH team.</p>
+          <p><strong>Location:</strong> 226 W 79th St, 1st Floor, New York, NY 10024 (Upper West Side)<br>
+          <strong>Phone:</strong> (646) 668-6151<br>
+          <strong>Email:</strong> hello@schoolofmath.us</p>
+          <p><a href="/">Book a free evaluation</a> for your child &mdash; we&rsquo;ll assess where they are and place them in the right small group.</p>
+        </div>
+
+        <h2>Related SOMATH posts</h2>
+        <ul>
+          <li><a href="/posts/distributive-thinking-partial-products-kid-einsteins">Distributive Thinking &amp; Partial Products &mdash; Kid Einsteins Class 4 (25 Questions)</a></li>
+          <li><a href="/posts/multiplication-facts-7-8-9-area-models-kid-einsteins">Multiplication Facts &times;7, &times;8, and &times;9 &mdash; Area Models (Kid Einsteins Class 3)</a></li>
+          <li><a href="/posts/multiplication-facts-3-4-6-young-fermats">Multiplication Facts &times;3, &times;4, and &times;6 &mdash; 25 Practice Questions</a></li>
+          <li><a href="/blog">All SOMATH blog posts &raquo;</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260710-consol"></script>
+  </body>
+</html>
