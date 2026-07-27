@@ -59,6 +59,7 @@
           <ul>
             <li><a href="/membership"><strong>Membership — monthly</strong></a></li>
             <li><a href="/courses/">All courses</a></li>
+            <li><a href="/math-enrichment-nyc">Math enrichment (grades 1–12)</a></li>
             <li><a href="/programs">Programs (all levels)</a></li>
             <li><a href="/schedule">Year-round schedule</a></li>
             <li><a href="/shsat-prep">SHSAT Prep</a></li>
