@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry June 2026 &mdash; Part III Answers &amp; Explanations (Questions 32&ndash;34) | SOMATH NYC</title>
+    <meta name="description" content="Free worked solutions for every Part III question on the June 2026 NYS Regents Geometry exam. 4-credit medium-length problems: elevation and depression to find building height, pyramid volume with density and count, and a formal triangle proof. Original NYSED PDF attached. Prepared by SOMATH, an NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-3-answers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry June 2026 &mdash; Part III Answers &amp; Explanations" />
+    <meta property="og:description" content="Every Part III answer for the June 2026 NYS Geometry Regents, worked step-by-step with the theorem behind each question. Original NYSED PDF attached." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-3-answers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-28" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry June 2026 &mdash; Part III Answers" />
+    <meta name="twitter:description" content="Every Part III medium-length solution for the June 2026 NYS Geometry Regents, with theory." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; font-size:1.15rem; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .pdf-box { background:#fff8e5; border:1px solid #e8d691; border-left:4px solid #d4a548; padding:22px 26px; margin:24px 0 32px; border-radius:6px; }
+      .pdf-box h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .pdf-box p { margin:0 0 12px; color:#333; }
+      .pdf-btn { display:inline-block; background:#d4a548; color:#0a3a5f; padding:10px 20px; text-decoration:none; font-weight:700; border-radius:6px; font-size:0.98rem; }
+      .pdf-btn:hover { background:#c89a3a; color:#fff; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      details.qcard { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:0; margin:16px 0; border-radius:6px; box-shadow:0 2px 6px rgba(10,58,95,0.05); overflow:hidden; }
+      details.qcard summary { list-style:none; cursor:pointer; padding:18px 22px; user-select:none; }
+      details.qcard summary::-webkit-details-marker { display:none; }
+      details.qcard summary::after { content:"Answer"; display:inline-block; margin-top:10px; background:#0a3a5f; color:#fff; padding:6px 14px; border-radius:4px; font-size:0.85rem; font-weight:700; }
+      details.qcard[open] summary::after { content:"Hide"; background:#7a2a2a; }
+      details.qcard summary strong { color:#0a3a5f; font-size:1.02rem; }
+      details.qcard summary p { margin:8px 0 0; color:#333; }
+      details.qcard .solution { padding:0 22px 20px; border-top:1px dashed #e0d8c4; margin-top:14px; padding-top:16px; }
+      details.qcard .solution h4 { color:#0a3a5f; margin:12px 0 6px; font-size:1rem; }
+      details.qcard .solution p { margin:8px 0; color:#333; line-height:1.7; }
+      details.qcard .solution ol { padding-left:22px; color:#333; }
+      details.qcard .solution ol li { margin:6px 0; line-height:1.7; }
+      details.qcard .solution .ans { background:#e6efe2; padding:10px 14px; border-radius:4px; font-weight:700; color:#0a3a5f; display:inline-block; margin:8px 0; }
+      details.qcard .solution .theory { background:#f5f1e8; padding:12px 16px; border-radius:4px; margin:12px 0; font-size:0.94rem; }
+      details.qcard .solution .theory strong { color:#0a3a5f; }
+      details.qcard .solution table.proof { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.95rem; }
+      details.qcard .solution table.proof th, details.qcard .solution table.proof td { border:1px solid #e0d8c4; padding:8px 10px; text-align:left; vertical-align:top; }
+      details.qcard .solution table.proof th { background:#0a3a5f; color:#fff; font-weight:700; }
+      details.qcard .solution table.proof td:first-child { width:50%; }
+      .related-list { list-style:none; padding:0; margin:16px 0 0; }
+      .related-list li { padding:10px 0; border-bottom:1px dashed #e0d8c4; }
+      .related-list li a { color:#0a3a5f; font-weight:700; text-decoration:none; }
+      .related-list li a:hover { text-decoration:underline; }
+      .about-somath { background:#0a3a5f; color:#f5f1e8; padding:32px 30px; margin:36px 0 0; border-radius:8px; }
+      .about-somath h3 { color:#d4a548; margin:0 0 12px; font-size:1.25rem; }
+      .about-somath p { margin:0 0 12px; color:#e6efe2; line-height:1.65; }
+      .about-somath a { color:#d4a548; font-weight:700; }
+      .about-somath a:hover { color:#f5f1e8; }
+      .rubric { background:#fff8e5; border:1px solid #e8d691; padding:12px 16px; margin:12px 0; border-radius:6px; font-size:0.92rem; }
+      .rubric strong { color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry June 2026 Answers &amp; Explanations — Part III (Questions 32–34)",
+  "description": "Every Part III medium-length solution for the June 2026 New York State Geometry Regents exam, worked step-by-step with the theorem behind each question. Original NYSED PDF attached.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-07-28",
+  "dateModified": "2026-07-28",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo-somath.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-3-answers" },
+  "about": [
+    { "@type": "Thing", "name": "NYS Regents Geometry Exam" },
+    { "@type": "Thing", "name": "Angle of elevation and angle of depression" },
+    { "@type": "Thing", "name": "Right-triangle trigonometry" },
+    { "@type": "Thing", "name": "Volume of a pyramid" },
+    { "@type": "Thing", "name": "Density and unit conversion" },
+    { "@type": "Thing", "name": "Isosceles triangle base angles" },
+    { "@type": "Thing", "name": "AA similarity criterion" },
+    { "@type": "Thing", "name": "Two-column proof" }
+  ],
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".callout"] }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#business",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": { "@type": "PostalAddress", "streetAddress": "226 W 79th St, 1st Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10024", "addressCountry": "US" }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I earn full 4 credits on a Part III Regents Geometry question?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Show every step. Name the theorem, formula, or definition you cite. On numerical questions, show formula substitutions with numbers and only round at the very end. On proofs, use a two-column format with statements on the left and matching reasons on the right, and finish with a clear concluding statement." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I combine angle of elevation and angle of depression to find a height?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Split the target height at the observer's line of sight. The part above uses the angle of elevation, and the part below uses the angle of depression, each with the shared horizontal distance. On Q32, TB = 80·tan(36°) + 80·tan(18°) ≈ 58.12 + 25.99 ≈ 84 feet." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I compute the maximum number of pyramids from a fixed amount of clay?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Compute the volume of one pyramid with V = (1/3) · (base area) · height, multiply by the density to get the mass of one pyramid, then divide the total clay by that mass and round down. On Q33, V = (1/3)(12²)(8) = 384 cm³, mass per pyramid = 384·1.25 = 480 g, and N = 15000/480 = 31.25 → 31 pyramids." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove DE/BE = HF/CF in Q34?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because AB ≅ AC, the base angles of the isosceles triangle satisfy ∠B ≅ ∠C. DE ⊥ BC and HF ⊥ BC give right angles at E and F. So △DBE ~ △HCF by the AA similarity criterion. Corresponding sides of similar triangles are proportional, so DE/BE = HF/CF." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Regents Geometry Part III proofs have to be two-column?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Two-column and paragraph proofs both earn full credit as long as every statement is justified by a reason (postulate, theorem, or definition) and the logical flow is correct." }
+    }
+  ]
+}
+    </script>
+
+    <script src="/partials.js?v=v20260728-regents3" defer></script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <main class="container" style="padding-top:24px;">
+      <article style="max-width:820px;margin:0 auto;">
+        <p style="color:#666;font-size:0.9rem;margin:0 0 6px;"><a href="/blog" style="color:#0a3a5f;text-decoration:none;">&larr; SOMATH Blog</a> &middot; <a href="/regents-prep-nyc" style="color:#0a3a5f;text-decoration:none;">Regents Prep NYC</a> &middot; Updated July 28, 2026</p>
+        <h1 style="color:#0a3a5f;margin:0 0 10px;line-height:1.2;">Regents Geometry June 2026 &mdash; Part III Answers &amp; Explanations</h1>
+        <p style="font-size:1.08rem;color:#333;line-height:1.65;margin:0 0 18px;">Free worked solutions for every Part III question on the June 2026 New York State Regents Geometry exam. Each 4-credit question is broken down into the exact steps that earn full credit, with the theorem or formula named. Click a question to reveal the answer. This is Part III of a four-post series covering all 35 questions.</p>
+
+        <div class="pdf-box">
+          <h3>📄 Original NYSED exam (PDF)</h3>
+          <p>All diagrams and reference sheet are in the official New York State Education Department release. Open it in a second tab so you can see the figures as you work through the questions below.</p>
+          <a class="pdf-btn" href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">Download the June 2026 Geometry Regents PDF</a>
+        </div>
+
+        <div class="callout">
+          <p style="margin:0;"><strong>How Part III is graded.</strong> Each question is worth <strong>4 credits</strong>. A correct numerical answer with <em>no work</em> receives only 1 credit. Show formula substitutions, name the theorem or definition you use, and give the final answer with correct units. Proofs may be written in two-column, paragraph, or flow-chart form &mdash; the grader looks for a valid <em>reason</em> beside every statement.</p>
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#part-3-topics">What Part III tests</a></li>
+            <li><a href="#part-3-questions">Part III &mdash; Questions 32&ndash;34 (click to reveal)</a></li>
+            <li><a href="#answer-key">Part III answer key</a></li>
+            <li><a href="#big-ideas">Big ideas to remember</a></li>
+            <li><a href="#related">More Regents Geometry help</a></li>
+          </ol>
+        </div>
+
+        <h2 id="part-3-topics" style="color:#0a3a5f;margin-top:36px;">What Part III tests</h2>
+        <p>Part III is where the Regents shifts from short answers to multi-step reasoning. The three questions each ask you to apply <em>several</em> ideas in the same problem: identify the geometric setup, choose the right formula or theorem, execute the algebra or the proof cleanly, and finish with a correctly stated answer. On this exam Part III covers right-triangle trigonometry with two angles from one point, three-dimensional volume &amp; density with unit conversion, and a formal similar-triangles proof.</p>
+
+        <div class="theory-box">
+          <h3>Angle of elevation vs. angle of depression</h3>
+          <p>Both are measured from a <strong>horizontal line of sight</strong> at the observer. If you look <em>up</em> to a point, you have an angle of elevation; if you look <em>down</em>, an angle of depression. When one observer sees both the top and the bottom of something across a horizontal gap, split the target height at the eye-line: the top part is <em>d</em>&thinsp;&middot;&thinsp;tan(elevation) and the bottom part is <em>d</em>&thinsp;&middot;&thinsp;tan(depression).</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Volume of a pyramid</h3>
+          <p><em>V</em> = &frac13; &middot; <em>B</em> &middot; <em>h</em>, where <em>B</em> is the area of the base and <em>h</em> is the perpendicular height (from apex to base). For a square base with side <em>s</em>, <em>B</em> = <em>s</em>&sup2;. This is on the Geometry Regents reference sheet.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Density &amp; unit conversion</h3>
+          <p>Mass = volume &times; density. Watch the units: if density is given in g/cm&sup3;, convert kilograms to grams (&times; 1000) before dividing. &ldquo;Maximum number of pieces&rdquo; always uses the <em>floor</em> function &mdash; you cannot make 31.25 pyramids, only 31.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Isosceles triangle base-angle theorem</h3>
+          <p>In a triangle, if two sides are congruent, the angles opposite those sides are congruent. Any perpendicular dropped from a point on one leg to the base creates a right triangle whose acute angle at the base is the base angle of the isosceles triangle.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>AA (Angle-Angle) similarity</h3>
+          <p>Two triangles are similar if two pairs of corresponding angles are congruent. Because triangle angle sums are 180&deg;, the third pair is automatically congruent. Once similar, all pairs of corresponding sides are in the same ratio &mdash; the standard way to conclude a proportion like <em>DE</em>&thinsp;/&thinsp;<em>BE</em> = <em>HF</em>&thinsp;/&thinsp;<em>CF</em>.</p>
+        </div>
+
+        <div class="part-header">
+          <h2>Part III &mdash; Questions 32&ndash;34</h2>
+          <p id="part-3-questions">4 credits each &middot; 3 questions &middot; click any card to reveal the full worked solution.</p>
+        </div>
+
+        <details class="qcard"><summary><strong>Question 32</strong><p>Maria wants to determine the height of the building across the street from her position, <em>M</em>. The angle of elevation from <em>M</em> to the top of the building, <em>T</em>, is 36&deg;. From <em>M</em>, the angle of depression to the base of the building, <em>B</em>, is 18&deg;. The buildings are 80 feet apart. Determine and state, to the <em>nearest foot</em>, the height of the building <em>TB</em> across the street.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Draw the horizontal line of sight</h4>
+            <p>Let <em>H</em> be the point on the far building directly across from <em>M</em>. Then <em>MH</em> is horizontal, <em>MH</em> = 80 ft (the given gap between buildings), and <em>MH</em> meets <em>TB</em> at a right angle. The building's height <em>TB</em> splits into two pieces at <em>H</em>: an upper piece <em>TH</em> (above the line of sight) and a lower piece <em>HB</em> (below).</p>
+
+            <h4>Step 2 &mdash; Use the elevation to find <em>TH</em></h4>
+            <p>In right &triangle;<em>MHT</em>, the 36&deg; elevation angle sits at <em>M</em> with opposite side <em>TH</em> and adjacent side <em>MH</em> = 80:</p>
+            <p>tan(36&deg;) = <em>TH</em>&thinsp;/&thinsp;80 &rArr; <em>TH</em> = 80&thinsp;&middot;&thinsp;tan(36&deg;) &asymp; 58.12 ft.</p>
+
+            <h4>Step 3 &mdash; Use the depression to find <em>HB</em></h4>
+            <p>In right &triangle;<em>MHB</em>, the 18&deg; depression angle sits at <em>M</em> with opposite side <em>HB</em> and adjacent side <em>MH</em> = 80:</p>
+            <p>tan(18&deg;) = <em>HB</em>&thinsp;/&thinsp;80 &rArr; <em>HB</em> = 80&thinsp;&middot;&thinsp;tan(18&deg;) &asymp; 25.99 ft.</p>
+
+            <h4>Step 4 &mdash; Add the two pieces</h4>
+            <p><em>TB</em> = <em>TH</em> + <em>HB</em> &asymp; 58.12 + 25.99 &asymp; 84.12 ft.</p>
+
+            <p class="ans">TB &asymp; 84 feet</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 4 credits requires both trig set-ups shown, both partial heights computed, the sum written, and the final rounded answer. Round <em>only</em> at the very end &mdash; rounding <em>TH</em> and <em>HB</em> to whole numbers before adding drops a credit.</div>
+
+            <div class="theory"><strong>Theory.</strong> tan(&theta;) = opposite / adjacent in a right triangle. Angles of elevation and depression are both measured from the same horizontal line, so a single observer looking both up and down at a target creates two right triangles that share the horizontal leg.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 33</strong><p>An artist uses clay to make solid pyramids with a square base whose sides measure 12 cm, and each pyramid has height 8 cm. The density of the clay is 1.25 g/cm&sup3;. If the artist has 15 kilograms of clay, determine and state the maximum number of pyramids that can be made.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Volume of one pyramid</h4>
+            <p><em>V</em> = &frac13; &middot; (side)&sup2; &middot; height = &frac13; &middot; 12&sup2; &middot; 8 = &frac13; &middot; 144 &middot; 8 = 384 cm&sup3;.</p>
+
+            <h4>Step 2 &mdash; Mass of one pyramid</h4>
+            <p>Mass = volume &times; density = 384 &middot; 1.25 = 480 g per pyramid.</p>
+
+            <h4>Step 3 &mdash; Convert 15 kg to grams</h4>
+            <p>15 kg = 15 &middot; 1000 = 15,000 g.</p>
+
+            <h4>Step 4 &mdash; Divide and take the floor</h4>
+            <p>Number of pyramids = 15,000 &divide; 480 = 31.25.</p>
+            <p>You cannot make a fraction of a pyramid, and the problem asks for the <em>maximum</em>. Round down.</p>
+
+            <p class="ans">The artist can make at most 31 pyramids.</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 4 credits requires (a) the volume formula with the &frac13;, (b) the density calculation, (c) the kg-to-g conversion, and (d) the floor. Writing &ldquo;31.25 pyramids&rdquo; as the final answer costs a credit &mdash; the interpretation matters.</div>
+
+            <div class="theory"><strong>Theory.</strong> A pyramid&rsquo;s volume is <em>one-third</em> the volume of the prism with the same base and height. Always look on the reference sheet before writing pyramid or cone formulas &mdash; forgetting the &frac13; is one of the most common Regents Geometry errors.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 34</strong><p>Given: &triangle;<em>ABC</em>, <em>AB</em> &cong; <em>AC</em>, <em>DE</em> &perp; <em>BC</em>, and <em>HF</em> &perp; <em>BC</em>. (Points <em>D</em> on <em>AB</em>, <em>E</em> on <em>BC</em>, <em>H</em> on <em>AC</em>, <em>F</em> on <em>BC</em>.) Prove: <em>DE</em>&thinsp;/&thinsp;<em>BE</em> = <em>HF</em>&thinsp;/&thinsp;<em>CF</em>.</p></summary>
+          <div class="solution">
+            <h4>Two-column proof</h4>
+            <table class="proof">
+              <tr><th>Statements</th><th>Reasons</th></tr>
+              <tr><td>1. &triangle;<em>ABC</em> with <em>AB</em> &cong; <em>AC</em>, <em>DE</em> &perp; <em>BC</em>, and <em>HF</em> &perp; <em>BC</em>.</td><td>1. Given.</td></tr>
+              <tr><td>2. &ang;<em>DEB</em> and &ang;<em>HFC</em> are right angles.</td><td>2. Perpendicular segments form right angles.</td></tr>
+              <tr><td>3. &ang;<em>DEB</em> &cong; &ang;<em>HFC</em>.</td><td>3. All right angles are congruent.</td></tr>
+              <tr><td>4. &ang;<em>B</em> &cong; &ang;<em>C</em>.</td><td>4. Base angles of an isosceles triangle are congruent (from <em>AB</em> &cong; <em>AC</em>).</td></tr>
+              <tr><td>5. &triangle;<em>DBE</em> &sim; &triangle;<em>HCF</em>.</td><td>5. AA similarity (from steps 3 and 4).</td></tr>
+              <tr><td>6. <em>DE</em>&thinsp;/&thinsp;<em>BE</em> = <em>HF</em>&thinsp;/&thinsp;<em>CF</em>.</td><td>6. Corresponding sides of similar triangles are proportional. &#x25A0;</td></tr>
+            </table>
+
+            <p class="ans">&therefore; DE&thinsp;/&thinsp;BE = HF&thinsp;/&thinsp;CF, as required.</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 4 credits requires (a) both right angles established, (b) the base-angle-theorem step (this is the pivot of the proof), (c) AA similarity named, and (d) the concluding proportion. Common credit loss: skipping the &ldquo;right angles are congruent&rdquo; step or forgetting to name the similarity criterion.</div>
+
+            <div class="theory"><strong>Theory.</strong> Whenever a Geometry proof asks for a proportion of segments, aim for two similar triangles. AA is usually the easiest similarity criterion to reach, and the isosceles-triangle base-angle theorem is often the trick that unlocks the second angle pair.</div>
+          </div>
+        </details>
+
+        <h2 id="answer-key" style="color:#0a3a5f;margin-top:36px;">Part III answer key</h2>
+        <ul>
+          <li><strong>Q32.</strong> <em>TB</em> = 80&thinsp;tan(36&deg;) + 80&thinsp;tan(18&deg;) &asymp; <strong>84 ft</strong></li>
+          <li><strong>Q33.</strong> 15,000 g &divide; (&frac13;&thinsp;&middot;&thinsp;144&thinsp;&middot;&thinsp;8&thinsp;&middot;&thinsp;1.25) g = 31.25 &rarr; <strong>31 pyramids</strong></li>
+          <li><strong>Q34.</strong> AA similarity &rarr; corresponding sides proportional &rarr; <em>DE</em>&thinsp;/&thinsp;<em>BE</em> = <em>HF</em>&thinsp;/&thinsp;<em>CF</em>. &#x25A0;</li>
+        </ul>
+
+        <h2 id="big-ideas" style="color:#0a3a5f;margin-top:36px;">Big ideas to remember on test day</h2>
+        <ul>
+          <li><strong>Split real-world heights at the eye-line.</strong> When one observer measures both an elevation and a depression, the target has two pieces, each solved with tan(&theta;) &middot; (horizontal distance).</li>
+          <li><strong>Never round in the middle.</strong> Q32 loses a credit if <em>TH</em> and <em>HB</em> are rounded to whole numbers before adding.</li>
+          <li><strong>Reference sheet first.</strong> Q33 has a &frac13; that lives on the reference sheet &mdash; do not write the pyramid formula from memory.</li>
+          <li><strong>Floor for &ldquo;maximum number&rdquo; problems.</strong> 31.25 pyramids means 31 pyramids.</li>
+          <li><strong>Every proof statement needs a reason.</strong> No exceptions. &ldquo;Given,&rdquo; a theorem, or a definition &mdash; but a reason.</li>
+          <li><strong>Base-angle theorem unlocks isosceles-triangle proofs.</strong> Q34 depends on it; expect it on future Regents proofs too.</li>
+        </ul>
+
+        <h2 id="related" style="color:#0a3a5f;margin-top:36px;">More Regents Geometry help</h2>
+        <ul class="related-list">
+          <li><a href="/posts/regents-geometry-june-2026-part-1-answers">Regents Geometry June 2026 &mdash; Part I (Questions 1&ndash;24)</a></li>
+          <li><a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 &mdash; Part II (Questions 25&ndash;31)</a></li>
+          <li><a href="/posts/regents-geometry-june-2026-part-4-answers">Regents Geometry June 2026 &mdash; Part IV (Question 35, 6 credits)</a></li>
+          <li><a href="/regents-prep-nyc">SOMATH Regents Geometry tutoring &mdash; NYC private and small-group prep</a></li>
+          <li><a href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">Download the original NYSED PDF (June 2026 Geometry)</a></li>
+        </ul>
+
+        <div class="about-somath">
+          <h3>About SOMATH</h3>
+          <p><strong>SOMATH &mdash; School of Math</strong> is an Upper West Side math school for grades 1&ndash;12. We teach year-round math enrichment for K&ndash;8 and dedicated Regents, SAT, and SHSAT prep for high schoolers. Our co-founder <strong>Marcelo Ambrozio</strong> (Northwestern) leads the Regents team and personally trains every tutor. Small groups (max 6), free 60-minute evaluation, one-time $99 enrollment fee.</p>
+          <p><a href="/regents-prep-nyc">Regents prep at SOMATH &rarr;</a> &middot; <a href="/evaluation">Book a free evaluation &rarr;</a> &middot; <a href="tel:+16466686151">(646) 668-6151</a></p>
+        </div>
+
+        <p style="margin-top:36px;color:#666;font-size:0.88rem;text-align:center;">This walkthrough is provided for educational purposes. The June 2026 Geometry Regents exam is publicly released by the New York State Education Department. Questions and figures are the property of NYSED.</p>
+
+      </article>
+    </main>
+
+    <div id="footer-mount"></div>
+  </body>
+</html>

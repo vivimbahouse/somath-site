@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry June 2026 &mdash; Part IV Answer &amp; Full 6-Credit Solution (Question 35) | SOMATH NYC</title>
+    <meta name="description" content="Free worked solution for the 6-credit Part IV coordinate-geometry question on the June 2026 NYS Regents Geometry exam. Find D so ABCD is a parallelogram, prove ABCD is a parallelogram, find the midpoint E of BC, and prove △ABE is isosceles. Original NYSED PDF attached. Prepared by SOMATH, an NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-4-answers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry June 2026 &mdash; Part IV Answer &amp; Full 6-Credit Solution" />
+    <meta property="og:description" content="Every step of the June 2026 Part IV coordinate-geometry question, worked with the theorem behind each move. Original NYSED PDF attached." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-4-answers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-28" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry June 2026 &mdash; Part IV Answer" />
+    <meta name="twitter:description" content="Complete worked solution for the 6-credit Part IV question on the June 2026 Geometry Regents." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; font-size:1.15rem; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .pdf-box { background:#fff8e5; border:1px solid #e8d691; border-left:4px solid #d4a548; padding:22px 26px; margin:24px 0 32px; border-radius:6px; }
+      .pdf-box h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .pdf-box p { margin:0 0 12px; color:#333; }
+      .pdf-btn { display:inline-block; background:#d4a548; color:#0a3a5f; padding:10px 20px; text-decoration:none; font-weight:700; border-radius:6px; font-size:0.98rem; }
+      .pdf-btn:hover { background:#c89a3a; color:#fff; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      details.qcard { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:0; margin:16px 0; border-radius:6px; box-shadow:0 2px 6px rgba(10,58,95,0.05); overflow:hidden; }
+      details.qcard summary { list-style:none; cursor:pointer; padding:18px 22px; user-select:none; }
+      details.qcard summary::-webkit-details-marker { display:none; }
+      details.qcard summary::after { content:"Answer"; display:inline-block; margin-top:10px; background:#0a3a5f; color:#fff; padding:6px 14px; border-radius:4px; font-size:0.85rem; font-weight:700; }
+      details.qcard[open] summary::after { content:"Hide"; background:#7a2a2a; }
+      details.qcard summary strong { color:#0a3a5f; font-size:1.02rem; }
+      details.qcard summary p { margin:8px 0 0; color:#333; }
+      details.qcard .solution { padding:0 22px 20px; border-top:1px dashed #e0d8c4; margin-top:14px; padding-top:16px; }
+      details.qcard .solution h4 { color:#0a3a5f; margin:16px 0 6px; font-size:1rem; }
+      details.qcard .solution p { margin:8px 0; color:#333; line-height:1.7; }
+      details.qcard .solution ol { padding-left:22px; color:#333; }
+      details.qcard .solution ol li { margin:6px 0; line-height:1.7; }
+      details.qcard .solution .ans { background:#e6efe2; padding:10px 14px; border-radius:4px; font-weight:700; color:#0a3a5f; display:inline-block; margin:8px 0; }
+      details.qcard .solution .theory { background:#f5f1e8; padding:12px 16px; border-radius:4px; margin:12px 0; font-size:0.94rem; }
+      details.qcard .solution .theory strong { color:#0a3a5f; }
+      .partlabel { display:inline-block; background:#0a3a5f; color:#fff; padding:3px 9px; border-radius:4px; font-size:0.82rem; font-weight:700; margin:0 0 6px; }
+      .related-list { list-style:none; padding:0; margin:16px 0 0; }
+      .related-list li { padding:10px 0; border-bottom:1px dashed #e0d8c4; }
+      .related-list li a { color:#0a3a5f; font-weight:700; text-decoration:none; }
+      .related-list li a:hover { text-decoration:underline; }
+      .about-somath { background:#0a3a5f; color:#f5f1e8; padding:32px 30px; margin:36px 0 0; border-radius:8px; }
+      .about-somath h3 { color:#d4a548; margin:0 0 12px; font-size:1.25rem; }
+      .about-somath p { margin:0 0 12px; color:#e6efe2; line-height:1.65; }
+      .about-somath a { color:#d4a548; font-weight:700; }
+      .about-somath a:hover { color:#f5f1e8; }
+      .rubric { background:#fff8e5; border:1px solid #e8d691; padding:12px 16px; margin:12px 0; border-radius:6px; font-size:0.92rem; }
+      .rubric strong { color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry June 2026 Answer &amp; Explanation — Part IV (Question 35, 6 credits)",
+  "description": "Every step of the Part IV coordinate-geometry question on the June 2026 New York State Geometry Regents, worked with the theorem behind each move. Original NYSED PDF attached.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-07-28",
+  "dateModified": "2026-07-28",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo-somath.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-4-answers" },
+  "about": [
+    { "@type": "Thing", "name": "NYS Regents Geometry Exam" },
+    { "@type": "Thing", "name": "Coordinate geometry" },
+    { "@type": "Thing", "name": "Parallelogram proof on the coordinate plane" },
+    { "@type": "Thing", "name": "Slope formula" },
+    { "@type": "Thing", "name": "Midpoint formula" },
+    { "@type": "Thing", "name": "Distance formula" },
+    { "@type": "Thing", "name": "Isosceles triangle proof" }
+  ],
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".callout"] }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#business",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": { "@type": "PostalAddress", "streetAddress": "226 W 79th St, 1st Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10024", "addressCountry": "US" }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I earn all 6 credits on the Part IV Regents Geometry question?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each sub-part must be shown separately. You must (a) state the coordinates of D and show the reasoning, (b) prove ABCD is a parallelogram with a valid method (opposite sides parallel using slopes is standard), (c) state the midpoint E of BC using the midpoint formula, and (d) prove △ABE is isosceles by showing two sides are congruent with the distance formula. Every calculation must appear on paper." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find the missing fourth vertex of a parallelogram from three given vertices?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In parallelogram ABCD, the diagonals AC and BD bisect each other. Set the midpoint of AC equal to the midpoint of BD and solve for D. For A(-3,-1) and C(-1,8), midpoint of AC is (-2, 3.5). Setting (-5+Dx)/2 = -2 gives Dx = 1, and (2+Dy)/2 = 3.5 gives Dy = 5. So D(1, 5)." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the easiest way to prove a quadrilateral on the coordinate plane is a parallelogram?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Show that both pairs of opposite sides have equal slopes, so both pairs are parallel. For ABCD with A(-3,-1), B(-5,2), C(-1,8), D(1,5): slope AB = -3/2, slope DC = -3/2, slope BC = 3/2, slope AD = 3/2. Both pairs are parallel, so ABCD is a parallelogram." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove a coordinate-geometry triangle is isosceles?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the distance formula to compute the lengths of two sides. If they are equal, the triangle is isosceles (a triangle with at least two congruent sides). Show every distance-formula substitution on paper." }
+    }
+  ]
+}
+    </script>
+
+    <script src="/partials.js?v=v20260728-regents4" defer></script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <main class="container" style="padding-top:24px;">
+      <article style="max-width:820px;margin:0 auto;">
+        <p style="color:#666;font-size:0.9rem;margin:0 0 6px;"><a href="/blog" style="color:#0a3a5f;text-decoration:none;">&larr; SOMATH Blog</a> &middot; <a href="/regents-prep-nyc" style="color:#0a3a5f;text-decoration:none;">Regents Prep NYC</a> &middot; Updated July 28, 2026</p>
+        <h1 style="color:#0a3a5f;margin:0 0 10px;line-height:1.2;">Regents Geometry June 2026 &mdash; Part IV Answer &amp; Full Solution</h1>
+        <p style="font-size:1.08rem;color:#333;line-height:1.65;margin:0 0 18px;">Free worked solution for the 6-credit Part IV question on the June 2026 New York State Regents Geometry exam. This is the longest question on the test &mdash; a coordinate-geometry problem with four sub-parts. This is the final post in our four-post series covering all 35 questions.</p>
+
+        <div class="pdf-box">
+          <h3>📄 Original NYSED exam (PDF)</h3>
+          <p>All diagrams, coordinate grids, and reference sheet are in the official New York State Education Department release. Open it in a second tab so you can see the figure as you work through the question below.</p>
+          <a class="pdf-btn" href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">Download the June 2026 Geometry Regents PDF</a>
+        </div>
+
+        <div class="callout">
+          <p style="margin:0;"><strong>How Part IV is graded.</strong> Part IV is the <em>single hardest</em> question on the test, worth <strong>6 credits</strong>. A correct numerical answer with no work receives only 1 credit. Each of the four sub-parts is graded separately, so partial credit is available &mdash; do not skip a sub-part just because you are stuck on an earlier one. Use the optional grid on the following page to visualize the points, but every algebraic step must still be written out.</p>
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#part-4-topics">What Part IV tests</a></li>
+            <li><a href="#part-4-question">Part IV &mdash; Question 35 (click to reveal)</a></li>
+            <li><a href="#big-ideas">Big ideas to remember</a></li>
+            <li><a href="#related">More Regents Geometry help</a></li>
+          </ol>
+        </div>
+
+        <h2 id="part-4-topics" style="color:#0a3a5f;margin-top:36px;">What Part IV tests</h2>
+        <p>Every recent Geometry Regents ends with a large coordinate-geometry question. The Regents wants to know whether you can move fluently between four core coordinate tools &mdash; slope, midpoint, distance, and the equation of a line &mdash; and whether you can attach the right theorem to each calculation. This June 2026 question stitches together <em>all three</em> foundational coordinate formulas and then asks you to reach a shape classification (parallelogram) and a triangle classification (isosceles).</p>
+
+        <div class="theory-box">
+          <h3>The three coordinate formulas you will use</h3>
+          <ul>
+            <li><strong>Slope</strong> from (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>) to (<em>x</em><sub>2</sub>, <em>y</em><sub>2</sub>): <em>m</em> = (<em>y</em><sub>2</sub> &minus; <em>y</em><sub>1</sub>) / (<em>x</em><sub>2</sub> &minus; <em>x</em><sub>1</sub>).</li>
+            <li><strong>Midpoint</strong>: <em>M</em> = ((<em>x</em><sub>1</sub> + <em>x</em><sub>2</sub>) / 2, (<em>y</em><sub>1</sub> + <em>y</em><sub>2</sub>) / 2).</li>
+            <li><strong>Distance</strong>: <em>d</em> = &radic;((<em>x</em><sub>2</sub> &minus; <em>x</em><sub>1</sub>)&sup2; + (<em>y</em><sub>2</sub> &minus; <em>y</em><sub>1</sub>)&sup2;).</li>
+          </ul>
+        </div>
+
+        <div class="theory-box">
+          <h3>Ways to prove a quadrilateral is a parallelogram (coordinate plane)</h3>
+          <ul>
+            <li>Show <em>both pairs</em> of opposite sides are parallel (equal slopes). &larr; used here.</li>
+            <li>Show both pairs of opposite sides are congruent (equal distances).</li>
+            <li>Show one pair of opposite sides is <em>both</em> parallel and congruent.</li>
+            <li>Show the diagonals bisect each other (equal midpoints).</li>
+          </ul>
+        </div>
+
+        <div class="theory-box">
+          <h3>Isosceles triangle definition</h3>
+          <p>A triangle with <em>at least two</em> congruent sides is isosceles. On the coordinate plane, prove isosceles by computing two side lengths with the distance formula and showing they are equal.</p>
+        </div>
+
+        <div class="part-header">
+          <h2>Part IV &mdash; Question 35 (6 credits)</h2>
+          <p id="part-4-question">Coordinate geometry &middot; four sub-parts &middot; click the card to reveal the full worked solution.</p>
+        </div>
+
+        <details class="qcard"><summary><strong>Question 35</strong><p>Triangle <em>ABC</em> has vertices <em>A</em>(&minus;3, &minus;1), <em>B</em>(&minus;5, 2), and <em>C</em>(&minus;1, 8).</p><p>(a) State the coordinates of point <em>D</em> such that quadrilateral <em>ABCD</em> is a parallelogram.<br>(b) Prove <em>ABCD</em> is a parallelogram.<br>(c) State the coordinates of point <em>E</em>, the midpoint of <em>BC</em>.<br>(d) Prove &triangle;<em>ABE</em> is an isosceles triangle.</p></summary>
+          <div class="solution">
+
+            <span class="partlabel">Part (a)</span>
+            <h4>Find the fourth vertex <em>D</em></h4>
+            <p><strong>Idea.</strong> In parallelogram <em>ABCD</em>, the diagonals are <em>AC</em> and <em>BD</em>, and they bisect each other. That means the midpoint of <em>AC</em> equals the midpoint of <em>BD</em>.</p>
+            <p><strong>Midpoint of <em>AC</em>:</strong> ((&minus;3 + (&minus;1))/2, (&minus;1 + 8)/2) = (&minus;4/2, 7/2) = (&minus;2, 3.5).</p>
+            <p><strong>Set midpoint of <em>BD</em> equal:</strong> ((&minus;5 + <em>D</em><sub><em>x</em></sub>) / 2, (2 + <em>D</em><sub><em>y</em></sub>) / 2) = (&minus;2, 3.5).</p>
+            <p>Solve each coordinate:</p>
+            <ul>
+              <li>(&minus;5 + <em>D</em><sub><em>x</em></sub>) / 2 = &minus;2 &rArr; &minus;5 + <em>D</em><sub><em>x</em></sub> = &minus;4 &rArr; <em>D</em><sub><em>x</em></sub> = 1.</li>
+              <li>(2 + <em>D</em><sub><em>y</em></sub>) / 2 = 3.5 &rArr; 2 + <em>D</em><sub><em>y</em></sub> = 7 &rArr; <em>D</em><sub><em>y</em></sub> = 5.</li>
+            </ul>
+            <p class="ans">D = (1, 5)</p>
+
+            <span class="partlabel">Part (b)</span>
+            <h4>Prove <em>ABCD</em> is a parallelogram (slopes method)</h4>
+            <p><strong>Method.</strong> If both pairs of opposite sides have equal slopes, both pairs are parallel, so <em>ABCD</em> is a parallelogram.</p>
+
+            <p><strong>Slope of <em>AB</em></strong> from <em>A</em>(&minus;3, &minus;1) to <em>B</em>(&minus;5, 2):</p>
+            <p><em>m</em><sub><em>AB</em></sub> = (2 &minus; (&minus;1)) / (&minus;5 &minus; (&minus;3)) = 3 / (&minus;2) = &minus;3/2.</p>
+
+            <p><strong>Slope of <em>DC</em></strong> from <em>D</em>(1, 5) to <em>C</em>(&minus;1, 8):</p>
+            <p><em>m</em><sub><em>DC</em></sub> = (8 &minus; 5) / (&minus;1 &minus; 1) = 3 / (&minus;2) = &minus;3/2.</p>
+
+            <p><em>m</em><sub><em>AB</em></sub> = <em>m</em><sub><em>DC</em></sub>, so <em>AB</em> &parallel; <em>DC</em>.</p>
+
+            <p><strong>Slope of <em>BC</em></strong> from <em>B</em>(&minus;5, 2) to <em>C</em>(&minus;1, 8):</p>
+            <p><em>m</em><sub><em>BC</em></sub> = (8 &minus; 2) / (&minus;1 &minus; (&minus;5)) = 6 / 4 = 3/2.</p>
+
+            <p><strong>Slope of <em>AD</em></strong> from <em>A</em>(&minus;3, &minus;1) to <em>D</em>(1, 5):</p>
+            <p><em>m</em><sub><em>AD</em></sub> = (5 &minus; (&minus;1)) / (1 &minus; (&minus;3)) = 6 / 4 = 3/2.</p>
+
+            <p><em>m</em><sub><em>BC</em></sub> = <em>m</em><sub><em>AD</em></sub>, so <em>BC</em> &parallel; <em>AD</em>.</p>
+
+            <p class="ans">Both pairs of opposite sides are parallel, so <em>ABCD</em> is a parallelogram (definition of parallelogram).</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full credit here requires <em>all four slope calculations</em> shown, both parallel-side conclusions stated, and the parallelogram conclusion invoking the definition (or the &ldquo;both pairs parallel&rdquo; theorem). Skipping the concluding statement about parallel sides loses a credit even when the four slopes are correct.</div>
+
+            <span class="partlabel">Part (c)</span>
+            <h4>Find the midpoint <em>E</em> of <em>BC</em></h4>
+            <p><em>E</em> = ((<em>x</em><sub><em>B</em></sub> + <em>x</em><sub><em>C</em></sub>) / 2, (<em>y</em><sub><em>B</em></sub> + <em>y</em><sub><em>C</em></sub>) / 2) = ((&minus;5 + (&minus;1)) / 2, (2 + 8) / 2) = (&minus;6/2, 10/2).</p>
+            <p class="ans">E = (&minus;3, 5)</p>
+
+            <span class="partlabel">Part (d)</span>
+            <h4>Prove &triangle;<em>ABE</em> is isosceles</h4>
+            <p><strong>Method.</strong> Compute the three side lengths using the distance formula and show at least two of them are equal.</p>
+
+            <p><strong>Length of <em>AB</em></strong> from <em>A</em>(&minus;3, &minus;1) to <em>B</em>(&minus;5, 2):</p>
+            <p><em>AB</em> = &radic;((&minus;5 &minus; (&minus;3))&sup2; + (2 &minus; (&minus;1))&sup2;) = &radic;((&minus;2)&sup2; + 3&sup2;) = &radic;(4 + 9) = &radic;13.</p>
+
+            <p><strong>Length of <em>BE</em></strong> from <em>B</em>(&minus;5, 2) to <em>E</em>(&minus;3, 5):</p>
+            <p><em>BE</em> = &radic;((&minus;3 &minus; (&minus;5))&sup2; + (5 &minus; 2)&sup2;) = &radic;(2&sup2; + 3&sup2;) = &radic;(4 + 9) = &radic;13.</p>
+
+            <p><em>AB</em> = <em>BE</em> = &radic;13, so &triangle;<em>ABE</em> has two congruent sides.</p>
+
+            <p class="ans">&therefore; &triangle;ABE is isosceles (a triangle with at least two congruent sides is isosceles). &#x25A0;</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full credit for (d) requires (i) using the distance formula on paper &mdash; do <em>not</em> just state the numeric distances, (ii) showing at least two sides are equal, and (iii) invoking the definition of isosceles. Computing all three sides is optional and does not add credit, but many students prefer it as a check.</div>
+
+            <div class="theory"><strong>Theory.</strong> The three coordinate tools have three matching purposes: <em>slope</em> answers &ldquo;are these lines parallel or perpendicular?&rdquo;, <em>midpoint</em> answers &ldquo;what is the point exactly between these two?&rdquo;, and <em>distance</em> answers &ldquo;how long is this segment?&rdquo; Every coordinate-geometry Regents Part IV question can be dissected into applications of one or more of these three formulas.</div>
+          </div>
+        </details>
+
+        <h2 id="big-ideas" style="color:#0a3a5f;margin-top:36px;">Big ideas to remember on test day</h2>
+        <ul>
+          <li><strong>Attack the sub-parts in any order.</strong> If you are stuck on the parallelogram proof, do parts (c) and (d) first &mdash; each sub-part is graded separately.</li>
+          <li><strong>Diagonals bisect each other</strong> is the fastest route to finding a missing parallelogram vertex from three given ones. Midpoint = midpoint.</li>
+          <li><strong>Four slopes for a parallelogram, three sides for an isosceles.</strong> Match the tool to the goal.</li>
+          <li><strong>Show every substitution.</strong> The distance formula counts as three lines of work: formula, substituted, simplified. Skip any of the three and you may lose a credit.</li>
+          <li><strong>Leave the radical.</strong> &radic;13 is exact; do not decimal-approximate unless the problem asks for it.</li>
+          <li><strong>Write the concluding sentence.</strong> &ldquo;&therefore; ABCD is a parallelogram because both pairs of opposite sides are parallel.&rdquo; &ldquo;&therefore; &triangle;ABE is isosceles because AB = BE.&rdquo; These sentences are how the grader knows you finished the proof.</li>
+        </ul>
+
+        <h2 id="related" style="color:#0a3a5f;margin-top:36px;">More Regents Geometry help</h2>
+        <ul class="related-list">
+          <li><a href="/posts/regents-geometry-june-2026-part-1-answers">Regents Geometry June 2026 &mdash; Part I (Questions 1&ndash;24)</a></li>
+          <li><a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 &mdash; Part II (Questions 25&ndash;31)</a></li>
+          <li><a href="/posts/regents-geometry-june-2026-part-3-answers">Regents Geometry June 2026 &mdash; Part III (Questions 32&ndash;34)</a></li>
+          <li><a href="/regents-prep-nyc">SOMATH Regents Geometry tutoring &mdash; NYC private and small-group prep</a></li>
+          <li><a href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">Download the original NYSED PDF (June 2026 Geometry)</a></li>
+        </ul>
+
+        <div class="about-somath">
+          <h3>About SOMATH</h3>
+          <p><strong>SOMATH &mdash; School of Math</strong> is an Upper West Side math school for grades 1&ndash;12. We teach year-round math enrichment for K&ndash;8 and dedicated Regents, SAT, and SHSAT prep for high schoolers. Our co-founder <strong>Marcelo Ambrozio</strong> (Northwestern) leads the Regents team and personally trains every tutor. Small groups (max 6), free 60-minute evaluation, one-time $99 enrollment fee.</p>
+          <p><a href="/regents-prep-nyc">Regents prep at SOMATH &rarr;</a> &middot; <a href="/evaluation">Book a free evaluation &rarr;</a> &middot; <a href="tel:+16466686151">(646) 668-6151</a></p>
+        </div>
+
+        <p style="margin-top:36px;color:#666;font-size:0.88rem;text-align:center;">This walkthrough is provided for educational purposes. The June 2026 Geometry Regents exam is publicly released by the New York State Education Department. Questions and figures are the property of NYSED.</p>
+
+      </article>
+    </main>
+
+    <div id="footer-mount"></div>
+  </body>
+</html>
