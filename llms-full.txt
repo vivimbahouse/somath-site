@@ -79,6 +79,10 @@ In this po…
 
 - [AMC 8 Prep NYC: 2026 Parent's Guide (Timeline & Content)](https://www.schoolofmath.us/posts/amc-8-prep-nyc-guide): AMC 8 prep for NYC middle schoolers — what the test actually is, the content areas that matter, honest timing (start 12 months out), score targets, and a week-by-week study plan. From School of Math (SOMATH), 226 W 79th St, Upper West Side.
 
+## Regents Geometry
+
+- [Regents Geometry June 2026 — Part I Answers & Explanations (Questions 1–24)](https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-1-answers): Every Part I question from the June 2026 NYS Geometry Regents exam with click-to-reveal answers, worked solutions, and the theorem behind each one. Original NYSED PDF attached. Covers rigid motions, midsegment theorem, right-triangle trigonometry (co-function, geometric mean altitude), circles (standard form, arc length, tangent-secant power of a point), coordinate geometry (partitioning, dilations of lines), 3D solids (rotating a right triangle to make a cone, cross-sections of a rectangular prism), triangle inequality, and rhombus/parallelogram tests. First of a four-post series covering all 35 questions across Parts I–IV. Prepared by SOMATH — School of Math, an Upper West Side math school. Free download of the original NYSED PDF at /assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf.
+
 ## Regents Algebra 1
 
 - [Grade 3 Regents Math: Reading a Water Container in Liters](https://www.schoolofmath.us/posts/grade-3-regents-water-container-measurement): A Regents-style elementary measurement question: a container is marked 2 L through 12 L, the water sits right at the 8 L line. Walk through how to read scales, estimate to the nearest liter, and teach the skill that earns easy points on NY state math exams.
