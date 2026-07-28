@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry June 2026 &mdash; Part II Answers &amp; Explanations (Questions 25&ndash;31) | SOMATH NYC</title>
+    <meta name="description" content="Free worked solutions for every Part II short-answer question on the June 2026 NYS Regents Geometry exam. Click any question to reveal the step-by-step answer, credit-earning work, and the theorem it tests. Original NYSED PDF attached. Prepared by SOMATH, an NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-2-answers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry June 2026 &mdash; Part II Answers &amp; Explanations" />
+    <meta property="og:description" content="Every Part II answer for the June 2026 NYS Geometry Regents, worked step-by-step with the theorem behind each question. Original NYSED PDF attached." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-2-answers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-28" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry June 2026 &mdash; Part II Answers" />
+    <meta name="twitter:description" content="Every Part II short-answer solution for the June 2026 NYS Geometry Regents, with theory." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; font-size:1.15rem; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .pdf-box { background:#fff8e5; border:1px solid #e8d691; border-left:4px solid #d4a548; padding:22px 26px; margin:24px 0 32px; border-radius:6px; }
+      .pdf-box h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .pdf-box p { margin:0 0 12px; color:#333; }
+      .pdf-btn { display:inline-block; background:#d4a548; color:#0a3a5f; padding:10px 20px; text-decoration:none; font-weight:700; border-radius:6px; font-size:0.98rem; }
+      .pdf-btn:hover { background:#c89a3a; color:#fff; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      details.qcard { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:0; margin:16px 0; border-radius:6px; box-shadow:0 2px 6px rgba(10,58,95,0.05); overflow:hidden; }
+      details.qcard summary { list-style:none; cursor:pointer; padding:18px 22px; user-select:none; }
+      details.qcard summary::-webkit-details-marker { display:none; }
+      details.qcard summary::after { content:"\002B  Reveal answer &amp; work"; display:inline-block; margin-top:10px; background:#0a3a5f; color:#fff; padding:6px 14px; border-radius:4px; font-size:0.85rem; font-weight:700; }
+      details.qcard[open] summary::after { content:"\2212  Hide work"; background:#7a2a2a; }
+      details.qcard summary strong { color:#0a3a5f; font-size:1.02rem; }
+      details.qcard summary p { margin:8px 0 0; color:#333; }
+      details.qcard .solution { padding:0 22px 20px; border-top:1px dashed #e0d8c4; margin-top:14px; padding-top:16px; }
+      details.qcard .solution h4 { color:#0a3a5f; margin:12px 0 6px; font-size:1rem; }
+      details.qcard .solution p { margin:8px 0; color:#333; line-height:1.7; }
+      details.qcard .solution ol { padding-left:22px; color:#333; }
+      details.qcard .solution ol li { margin:6px 0; line-height:1.7; }
+      details.qcard .solution .ans { background:#e6efe2; padding:10px 14px; border-radius:4px; font-weight:700; color:#0a3a5f; display:inline-block; margin:8px 0; }
+      details.qcard .solution .theory { background:#f5f1e8; padding:12px 16px; border-radius:4px; margin:12px 0; font-size:0.94rem; }
+      details.qcard .solution .theory strong { color:#0a3a5f; }
+      .related-list { list-style:none; padding:0; margin:16px 0 0; }
+      .related-list li { padding:10px 0; border-bottom:1px dashed #e0d8c4; }
+      .related-list li a { color:#0a3a5f; font-weight:700; text-decoration:none; }
+      .related-list li a:hover { text-decoration:underline; }
+      .about-somath { background:#0a3a5f; color:#f5f1e8; padding:32px 30px; margin:36px 0 0; border-radius:8px; }
+      .about-somath h3 { color:#d4a548; margin:0 0 12px; font-size:1.25rem; }
+      .about-somath p { margin:0 0 12px; color:#e6efe2; line-height:1.65; }
+      .about-somath a { color:#d4a548; font-weight:700; }
+      .about-somath a:hover { color:#f5f1e8; }
+      .rubric { background:#fff8e5; border:1px solid #e8d691; padding:12px 16px; margin:12px 0; border-radius:6px; font-size:0.92rem; }
+      .rubric strong { color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry June 2026 Answers &amp; Explanations — Part II (Questions 25–31)",
+  "description": "Every Part II short-answer solution for the June 2026 New York State Geometry Regents exam, worked step-by-step with the theorem behind each question. Original NYSED PDF attached.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-07-28",
+  "dateModified": "2026-07-28",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo-somath.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/regents-geometry-june-2026-part-2-answers" },
+  "about": [
+    { "@type": "Thing", "name": "NYS Regents Geometry Exam" },
+    { "@type": "Thing", "name": "Rigid motions and coordinate geometry" },
+    { "@type": "Thing", "name": "Parallelogram angle relationships" },
+    { "@type": "Thing", "name": "Cylinder volume and density" },
+    { "@type": "Thing", "name": "Side-splitter theorem (basic proportionality)" },
+    { "@type": "Thing", "name": "Area of a triangle using SAS trig" },
+    { "@type": "Thing", "name": "Angle bisector construction (compass and straightedge)" },
+    { "@type": "Thing", "name": "Rectangle proof from parallelogram diagonals" }
+  ],
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".callout"] }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#business",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": { "@type": "PostalAddress", "streetAddress": "226 W 79th St, 1st Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10024", "addressCountry": "US" }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I earn full 2 credits on Part II of the Geometry Regents?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Show all necessary steps. A correct numerical answer with no work receives only 1 credit. Write formula substitutions, name the theorem or definition you are using, and box or underline your final answer with correct units." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I describe a sequence of rigid motions for Q25?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Compare the orientations of the two congruent triangles. If they match, use a translation, rotation, or a rotation composition. If they differ, include a reflection. For the June 2026 Q25, one valid sequence is: reflect triangle DAN over the y-axis, then translate the image 1 unit left and 8 units down. That maps D(-6,5) → (5,-3) = M, A(-2,5) → (1,-3) = I, and N(-4,2) → (3,-6) = K." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the area formula that uses two sides and the included angle?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For a triangle with sides a and b and included angle C, the area equals (1/2)·a·b·sin(C). On Q29, area = (1/2)·8·15·sin(33°) ≈ 32.7 square units." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove a parallelogram is a rectangle from its diagonals?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In a parallelogram, diagonals bisect each other. If diagonals also happen to be congruent, the parallelogram is a rectangle. On Q31, RP = 12 gives RM = 2·RP = 24. Since GA = 24, both diagonals are 24, so GRAM is a rectangle." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the side-splitter (basic proportionality) theorem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If a line parallel to one side of a triangle intersects the other two sides, it divides those sides in the same ratio. On Q28, for BF parallel to CD, AB/BC = AF/FD, giving 40/30 = 64/FD, so FD = 48." }
+    }
+  ]
+}
+    </script>
+
+    <script src="/partials.js?v=v20260728-regents2" defer></script>
+  </head>
+  <body>
+    <header id="header" data-page-title="Regents Geometry June 2026 — Part II Answers &amp; Explanations"></header>
+
+    <main class="container" style="padding-top:24px;">
+      <article style="max-width:820px;margin:0 auto;">
+        <p style="color:#666;font-size:0.9rem;margin:0 0 6px;"><a href="/blog" style="color:#0a3a5f;text-decoration:none;">&larr; SOMATH Blog</a> &middot; <a href="/regents-prep-nyc" style="color:#0a3a5f;text-decoration:none;">Regents Prep NYC</a> &middot; Updated July 28, 2026</p>
+        <h1 style="color:#0a3a5f;margin:0 0 10px;line-height:1.2;">Regents Geometry June 2026 &mdash; Part II Answers &amp; Explanations</h1>
+        <p style="font-size:1.08rem;color:#333;line-height:1.65;margin:0 0 18px;">Free worked solutions for every Part II short-answer question on the June 2026 New York State Regents Geometry exam. Each 2-credit question is broken down into the exact steps that earn full credit, with the theorem or formula named. Click a question to reveal the answer. This is Part II of a four-post series covering all 35 questions.</p>
+
+        <div class="pdf-box">
+          <h3>📄 Original NYSED exam (PDF)</h3>
+          <p>All diagrams and reference sheet are in the official New York State Education Department release. Open it in a second tab so you can see the figures as you work through the questions below.</p>
+          <a class="pdf-btn" href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">Download the June 2026 Geometry Regents PDF</a>
+        </div>
+
+        <div class="callout">
+          <p style="margin:0;"><strong>How Part II is graded.</strong> Each question is worth 2 credits. A correct numerical answer with <em>no work shown</em> earns only <strong>1 credit</strong>. To earn full credit you must show formula substitutions, name any theorem you cite, and clearly state your final answer with correct units. Write in pen; graphs and drawings in pencil.</p>
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#part-2-topics">What Part II tests</a></li>
+            <li><a href="#part-2-questions">Part II &mdash; Questions 25&ndash;31 (click to reveal)</a></li>
+            <li><a href="#answer-key">Part II answer key</a></li>
+            <li><a href="#big-ideas">Big ideas to remember</a></li>
+            <li><a href="#related">More Regents Geometry help</a></li>
+          </ol>
+        </div>
+
+        <h2 id="part-2-topics" style="color:#0a3a5f;margin-top:36px;">What Part II tests</h2>
+        <p>Part II is where the Geometry Regents rewards students who <em>show what they know</em>. The seven questions test whether you can execute a formula cleanly, cite the theorem behind a proof step, or perform a construction with a compass and straightedge. Nothing on this section requires proof-writing at the Part IV level &mdash; but the graders <em>are</em> looking for reasoning, not just numbers.</p>
+
+        <div class="theory-box">
+          <h3>Rigid motions on the coordinate plane</h3>
+          <p>Translations, rotations, and reflections all preserve distance and angle. Two congruent figures always have a rigid-motion sequence between them. If the two figures have the <em>same orientation</em> (both clockwise or both counterclockwise), you can map one to the other with a translation, rotation, or their composition. If orientations <em>differ</em>, your sequence must include at least one reflection.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Parallel lines &amp; parallelogram angle relationships</h3>
+          <p>When a transversal cuts two parallel lines, corresponding, alternate interior, and alternate exterior angles are congruent, while same-side (co-interior) angles are supplementary. Opposite sides of a parallelogram are parallel, so any segment inside a parallelogram can act as a transversal.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>3-D volume &amp; density</h3>
+          <p>Cylinder volume is <em>V = &pi;r&sup2;h</em>. Weight (or mass) equals volume times density, when density is given as weight per unit volume. Always convert diameter to radius before substituting.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Side-splitter / basic proportionality theorem</h3>
+          <p>If a segment inside a triangle is parallel to one side, it divides the other two sides in the same ratio. This is how &ldquo;prove parallel by proportion&rdquo; questions like Q28 are set up.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Area of a triangle from two sides &amp; the included angle</h3>
+          <p>Area = &frac12;&thinsp;<em>a</em>&thinsp;<em>b</em>&thinsp;sin(<em>C</em>) where <em>C</em> is the angle <em>between</em> sides of length <em>a</em> and <em>b</em>. This is on the Geometry Regents reference sheet.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Compass &amp; straightedge constructions</h3>
+          <p>You must be able to construct: perpendicular bisector of a segment, angle bisector, perpendicular to a line at (or from) a point, and a line parallel to a given line through a point. All construction marks must be left visible &mdash; do not erase your arcs.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Proving a parallelogram is a special quadrilateral</h3>
+          <p>A parallelogram is a <strong>rectangle</strong> iff its diagonals are congruent. A parallelogram is a <strong>rhombus</strong> iff its diagonals are perpendicular <em>or</em> its diagonals bisect its vertex angles. A parallelogram is a <strong>square</strong> iff both conditions hold.</p>
+        </div>
+
+        <div class="part-header">
+          <h2>Part II &mdash; Questions 25&ndash;31</h2>
+          <p id="part-2-questions">2 credits each &middot; 7 questions &middot; click any card to reveal the full worked solution.</p>
+        </div>
+
+        <details class="qcard"><summary><strong>Question 25</strong><p>On the set of axes in the exam, &triangle;<em>DAN</em> &cong; &triangle;<em>MIK</em>. Describe a sequence of rigid motions that maps &triangle;<em>DAN</em> onto &triangle;<em>MIK</em>.</p><p style="font-size:0.9rem;color:#666;">Coordinates (from the figure in the <a href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">official NYSED PDF</a>): <em>D</em>(&minus;6, 5), <em>A</em>(&minus;2, 5), <em>N</em>(&minus;4, 2); <em>M</em>(5, &minus;3), <em>I</em>(1, &minus;3), <em>K</em>(3, &minus;6).</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Check orientation</h4>
+            <p>Going <em>D</em> &rarr; <em>A</em> &rarr; <em>N</em>, we move right and then down: clockwise. Going <em>M</em> &rarr; <em>I</em> &rarr; <em>K</em>, we move left and then down: counterclockwise. Orientations differ, so a <strong>reflection</strong> must be part of the sequence.</p>
+
+            <h4>Step 2 &mdash; Try a reflection over the y-axis</h4>
+            <p>Reflecting (<em>x</em>, <em>y</em>) &rarr; (&minus;<em>x</em>, <em>y</em>):</p>
+            <ul>
+              <li><em>D</em>(&minus;6, 5) &rarr; <em>D&prime;</em>(6, 5)</li>
+              <li><em>A</em>(&minus;2, 5) &rarr; <em>A&prime;</em>(2, 5)</li>
+              <li><em>N</em>(&minus;4, 2) &rarr; <em>N&prime;</em>(4, 2)</li>
+            </ul>
+
+            <h4>Step 3 &mdash; Translate to land on <em>MIK</em></h4>
+            <p>Translate <em>D&prime;</em>(6, 5) to <em>M</em>(5, &minus;3): shift = &lang;&minus;1, &minus;8&rang;. Verify the other two:</p>
+            <ul>
+              <li><em>A&prime;</em>(2, 5) + &lang;&minus;1, &minus;8&rang; = (1, &minus;3) = <em>I</em> &check;</li>
+              <li><em>N&prime;</em>(4, 2) + &lang;&minus;1, &minus;8&rang; = (3, &minus;6) = <em>K</em> &check;</li>
+            </ul>
+
+            <p class="ans">A sequence that works: reflect &triangle;<em>DAN</em> over the y-axis, then translate the image 1 unit left and 8 units down.</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Any valid rigid-motion sequence receives full 2 credits. Other correct answers include composition of two reflections whose axes are related, or a rotation + a reflection. Just make sure the two orientations differ and that your final image lands exactly on <em>MIK</em>.</div>
+
+            <div class="theory"><strong>Theory.</strong> Fundamental Theorem of Isometries: every isometry of the plane is a composition of at most 3 reflections. Same-orientation congruent figures are related by 0 or 2 reflections (i.e. a translation or rotation). Opposite-orientation figures need exactly 1 or 3 reflections.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 26</strong><p>In parallelogram <em>LEAD</em>, <em>C</em> is on diagonal <em>DE</em> and <em>S</em> is on side <em>DA</em> such that <em>SC</em> &perp; <em>DE</em>. If m&ang;<em>LED</em> = 21&deg;, determine and state the measure of &ang;<em>CSA</em>.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Use the parallel-side property of a parallelogram</h4>
+            <p>In parallelogram <em>LEAD</em>, opposite sides <em>LE</em> and <em>DA</em> are parallel. Diagonal <em>DE</em> is a transversal crossing both.</p>
+
+            <h4>Step 2 &mdash; Identify alternate interior angles</h4>
+            <p>On the transversal <em>DE</em>, angles &ang;<em>LED</em> (at <em>E</em>) and &ang;<em>EDA</em> (at <em>D</em>) are alternate interior angles between the parallels <em>LE</em> and <em>DA</em>. Alternate interior angles are congruent:</p>
+            <p>m&ang;<em>EDA</em> = m&ang;<em>LED</em> = 21&deg;.</p>
+            <p>Because <em>C</em> lies on <em>DE</em> and <em>S</em> lies on <em>DA</em>, this is the same angle as &ang;<em>CDS</em>. So m&ang;<em>CDS</em> = 21&deg;.</p>
+
+            <h4>Step 3 &mdash; Solve the small right triangle <em>SCD</em></h4>
+            <p>Given <em>SC</em> &perp; <em>DE</em>, so m&ang;<em>SCD</em> = 90&deg;. The three angles of &triangle;<em>SCD</em> sum to 180&deg;:</p>
+            <p>m&ang;<em>DSC</em> = 180&deg; &minus; 90&deg; &minus; 21&deg; = <strong>69&deg;</strong>.</p>
+
+            <h4>Step 4 &mdash; Finish with a linear pair</h4>
+            <p>Points <em>D</em>, <em>S</em>, <em>A</em> are collinear (<em>S</em> is on <em>DA</em>), so &ang;<em>DSC</em> and &ang;<em>CSA</em> form a linear pair at <em>S</em>:</p>
+            <p>m&ang;<em>CSA</em> = 180&deg; &minus; 69&deg; = <strong>111&deg;</strong>.</p>
+
+            <p class="ans">m&ang;CSA = 111&deg;</p>
+
+            <div class="theory"><strong>Theory.</strong> Parallel-line angles (alternate interior, corresponding, co-interior), the triangle-angle-sum theorem, and the linear-pair postulate together handle almost every parallelogram angle problem on the Regents.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 27</strong><p>A section of a white pine tree trunk is modeled by a cylinder. The diameter of the trunk is 1.5 feet, and the height of this section is 8 feet. If white pine weighs 25 pounds per cubic foot, determine and state the weight of this section, to the <em>nearest pound</em>.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Find the radius</h4>
+            <p><em>r</em> = &frac12; &middot; 1.5 = 0.75 ft.</p>
+
+            <h4>Step 2 &mdash; Compute the cylinder volume</h4>
+            <p><em>V</em> = &pi;<em>r</em>&sup2;<em>h</em> = &pi;(0.75)&sup2;(8) = &pi;(0.5625)(8) = 4.5&pi; &asymp; 14.137 ft&sup3;.</p>
+
+            <h4>Step 3 &mdash; Multiply by the density</h4>
+            <p>Weight = volume &times; density = 14.137 &middot; 25 &asymp; 353.43 lb.</p>
+
+            <p class="ans">Weight &asymp; 353 pounds</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Show <em>V = &pi;r&sup2;h</em> with numbers substituted, then multiply by 25. Rounding must happen at the very end &mdash; do not round the volume prematurely, or you may lose the credit for the final answer.</div>
+
+            <div class="theory"><strong>Theory.</strong> Density = mass&thinsp;/&thinsp;volume, so mass (or weight, in a uniform gravitational field) = density &times; volume. When density is given per unit volume, this collapses to a one-step multiplication once the volume is known.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 28</strong><p>In &triangle;<em>ADC</em>, points <em>B</em> and <em>F</em> are on <em>AC</em> and <em>AD</em>, respectively, such that <em>AB</em> = 40, <em>BC</em> = 30, and <em>BF</em> is drawn. If <em>AF</em> = 64, determine and state the length of <em>FD</em> that would prove <em>BF</em> &parallel; <em>CD</em>.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Recall the side-splitter theorem</h4>
+            <p>If a segment inside a triangle is <em>parallel</em> to one side of the triangle, it divides the other two sides <em>proportionally</em>. Conversely, if that proportion holds, the segment must be parallel to the third side.</p>
+
+            <h4>Step 2 &mdash; Write the proportion for <em>BF</em> &parallel; <em>CD</em></h4>
+            <p><em>BF</em> would be parallel to <em>CD</em> exactly when it splits sides <em>AC</em> and <em>AD</em> in the same ratio:</p>
+            <p><em>AB</em> / <em>BC</em> = <em>AF</em> / <em>FD</em></p>
+            <p>40 / 30 = 64 / <em>FD</em>.</p>
+
+            <h4>Step 3 &mdash; Solve for <em>FD</em></h4>
+            <p>Cross-multiply: 40 &middot; <em>FD</em> = 30 &middot; 64 = 1920.</p>
+            <p><em>FD</em> = 1920 / 40 = <strong>48</strong>.</p>
+
+            <p class="ans">FD = 48</p>
+
+            <div class="theory"><strong>Theory (converse of the side-splitter).</strong> If <em>B</em> is on <em>AC</em>, <em>F</em> is on <em>AD</em>, and <em>AB</em>&thinsp;/&thinsp;<em>BC</em> = <em>AF</em>&thinsp;/&thinsp;<em>FD</em>, then <em>BF</em> &parallel; <em>CD</em>. This is the &ldquo;converse&rdquo; that lets you <em>construct</em> parallels from ratios.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 29</strong><p>In &triangle;<em>CLM</em>, m&ang;<em>C</em> = 33&deg;, <em>CL</em> = 8, and <em>CM</em> = 15. Determine and state, to the <em>nearest tenth</em>, the area of &triangle;<em>CLM</em>.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Identify the &ldquo;SAS&rdquo; setup</h4>
+            <p>You are given two sides and the included angle: <em>CL</em> = 8, <em>CM</em> = 15, and &ang;<em>C</em> is the angle <em>between</em> those two sides. This is the exact setup for the SAS area formula.</p>
+
+            <h4>Step 2 &mdash; Apply the trig area formula</h4>
+            <p>Area = &frac12; &middot; (<em>CL</em>) &middot; (<em>CM</em>) &middot; sin(<em>C</em>).</p>
+            <p>= &frac12; &middot; 8 &middot; 15 &middot; sin(33&deg;)</p>
+            <p>= 60 &middot; sin(33&deg;)</p>
+            <p>&asymp; 60 &middot; 0.5446</p>
+            <p>&asymp; 32.678.</p>
+
+            <p class="ans">Area &asymp; 32.7 square units</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Show the formula, substitute numbers, and give the rounded answer. If you drop the &frac12;, you will double the area &mdash; a common Regents error.</div>
+
+            <div class="theory"><strong>Theory (SAS area formula).</strong> Area = &frac12;&thinsp;<em>a</em>&thinsp;<em>b</em>&thinsp;sin(<em>C</em>). Requires the angle to be between the two given sides. This formula lives on the Geometry Regents reference sheet.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 30</strong><p>In the diagram of &triangle;<em>ABC</em>, use a compass and straightedge to construct the angle bisector of &ang;<em>ABC</em>. [Leave all construction marks.]</p></summary>
+          <div class="solution">
+            <h4>Step-by-step construction (of the angle bisector of &ang;<em>ABC</em>)</h4>
+            <ol>
+              <li><strong>Arc from the vertex.</strong> Place the compass point on <em>B</em>. Open it to any convenient radius and draw an arc that crosses both ray <em>BA</em> and ray <em>BC</em>. Label the crossing points <em>P</em> (on <em>BA</em>) and <em>Q</em> (on <em>BC</em>).</li>
+              <li><strong>Two arcs from <em>P</em> and <em>Q</em>.</strong> Keep the compass open to <em>any</em> radius greater than half of <em>PQ</em>. Place the compass point on <em>P</em> and draw an arc in the interior of &ang;<em>ABC</em>. Without changing the compass width, place the point on <em>Q</em> and draw a second arc that crosses the first. Label the intersection <em>R</em>.</li>
+              <li><strong>Draw the bisector.</strong> Use the straightedge to draw ray <em>BR</em>. This is the angle bisector of &ang;<em>ABC</em>.</li>
+              <li><strong>Leave every construction mark visible.</strong> Do not erase your arcs. The graders need to see them to award credit.</li>
+            </ol>
+
+            <p class="ans">Ray <em>BR</em> bisects &ang;<em>ABC</em> because <em>BP</em> = <em>BQ</em> (same first-arc radius) and <em>PR</em> = <em>QR</em> (same second-arc radius), so &triangle;<em>BPR</em> &cong; &triangle;<em>BQR</em> by SSS, forcing &ang;<em>PBR</em> &cong; &ang;<em>QBR</em>.</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full credit requires (a) the vertex arc that produces <em>P</em> and <em>Q</em>, (b) two equal-radius arcs from <em>P</em> and <em>Q</em> meeting at <em>R</em>, and (c) the ray from <em>B</em> through <em>R</em>. Erasing construction marks is a common credit loss.</div>
+
+            <div class="theory"><strong>Theory.</strong> The angle-bisector construction is really an SSS congruence proof in disguise. Equal radii create equal segments; equal segments create congruent triangles; congruent triangles have congruent corresponding angles.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 31</strong><p>The diagonals of parallelogram <em>GRAM</em> intersect at <em>P</em>. If <em>RP</em> = 12 and <em>GA</em> = 24, explain why <em>GRAM</em> is a rectangle.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Use the parallelogram diagonal property</h4>
+            <p>In any parallelogram, the diagonals <em>bisect each other</em>. Point <em>P</em> is therefore the midpoint of both diagonals <em>GA</em> and <em>RM</em>.</p>
+
+            <h4>Step 2 &mdash; Compute <em>RM</em></h4>
+            <p>Because <em>P</em> is the midpoint of <em>RM</em>, we have <em>RM</em> = 2 &middot; <em>RP</em> = 2 &middot; 12 = 24.</p>
+
+            <h4>Step 3 &mdash; Compare the diagonals</h4>
+            <p>The problem gives <em>GA</em> = 24. So <em>GA</em> = <em>RM</em> = 24 &mdash; the two diagonals are congruent.</p>
+
+            <h4>Step 4 &mdash; Apply the rectangle test</h4>
+            <p><strong>Theorem:</strong> a parallelogram is a rectangle if and only if its diagonals are congruent. <em>GRAM</em> is a parallelogram (given) with congruent diagonals (just shown), so <em>GRAM</em> is a rectangle.</p>
+
+            <p class="ans">Therefore <em>GRAM</em> is a rectangle.</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 2 credits requires (a) stating that diagonals of a parallelogram bisect each other, (b) computing <em>RM</em> = 24 from that, (c) naming the theorem &ldquo;a parallelogram with congruent diagonals is a rectangle&rdquo; and (d) concluding.</div>
+
+            <div class="theory"><strong>Theory (rectangle test).</strong> Parallelogram + congruent diagonals &hArr; rectangle. Parallelogram + perpendicular diagonals &hArr; rhombus. Both &hArr; square.</div>
+          </div>
+        </details>
+
+        <h2 id="answer-key" style="color:#0a3a5f;margin-top:36px;">Part II answer key</h2>
+        <ul>
+          <li><strong>Q25.</strong> Reflect &triangle;<em>DAN</em> over the y-axis; translate the image 1 left and 8 down.</li>
+          <li><strong>Q26.</strong> m&ang;<em>CSA</em> = <strong>111&deg;</strong></li>
+          <li><strong>Q27.</strong> Weight &asymp; <strong>353 pounds</strong></li>
+          <li><strong>Q28.</strong> <em>FD</em> = <strong>48</strong></li>
+          <li><strong>Q29.</strong> Area &asymp; <strong>32.7</strong> square units</li>
+          <li><strong>Q30.</strong> Angle-bisector construction: vertex arc + two equal arcs from crossing points + ray from vertex through their intersection.</li>
+          <li><strong>Q31.</strong> Diagonals bisect each other &rarr; <em>RM</em> = 24 = <em>GA</em> &rarr; parallelogram with congruent diagonals is a rectangle.</li>
+        </ul>
+
+        <h2 id="big-ideas" style="color:#0a3a5f;margin-top:36px;">Big ideas to remember on test day</h2>
+        <ul>
+          <li><strong>Show the theorem name.</strong> Part II graders want to see &ldquo;alternate interior angles,&rdquo; &ldquo;diagonals bisect each other,&rdquo; &ldquo;side-splitter,&rdquo; etc.</li>
+          <li><strong>Never round early.</strong> Q27 and Q29 both lose credit if you round the volume or the sine before finishing.</li>
+          <li><strong>Leave your construction marks.</strong> Q30 costs 2 full credits if the arcs are erased.</li>
+          <li><strong>Two-part statements.</strong> Rectangle test: <em>parallelogram</em> + <em>congruent diagonals</em>. Both halves matter.</li>
+          <li><strong>Rigid-motion orientation check.</strong> If the two figures spin in opposite directions, your sequence must include an <em>odd</em> number of reflections.</li>
+          <li><strong>Side-splitter is set up as a proportion, not a subtraction.</strong> The ratio <em>AB</em>&thinsp;/&thinsp;<em>BC</em> equals <em>AF</em>&thinsp;/&thinsp;<em>FD</em> &mdash; never <em>AB</em>&thinsp;/&thinsp;<em>AC</em>.</li>
+        </ul>
+
+        <h2 id="related" style="color:#0a3a5f;margin-top:36px;">More Regents Geometry help</h2>
+        <ul class="related-list">
+          <li><a href="/posts/regents-geometry-june-2026-part-1-answers">Regents Geometry June 2026 &mdash; Part I (Questions 1&ndash;24)</a></li>
+          <li><a href="/regents-prep-nyc">SOMATH Regents Geometry tutoring &mdash; NYC private and small-group prep</a></li>
+          <li><a href="/posts/regents-algebra-1-january-2026-answers-explanations">Regents Algebra 1 January 2026 answers &amp; explanations</a></li>
+          <li><a href="/posts/regents-alg1-june-2026-answers-explanations">Regents Algebra 1 June 2026 answers &amp; explanations</a></li>
+          <li><a href="/assets/regents/geometry-june-2026/nysed-geometry-june-2026.pdf" target="_blank" rel="noopener">Download the original NYSED PDF (June 2026 Geometry)</a></li>
+        </ul>
+
+        <div class="about-somath">
+          <h3>About SOMATH</h3>
+          <p><strong>SOMATH &mdash; School of Math</strong> is an Upper West Side math school for grades 1&ndash;12. We teach year-round math enrichment for K&ndash;8 and dedicated Regents, SAT, and SHSAT prep for high schoolers. Our co-founder <strong>Marcelo Ambrozio</strong> (Northwestern) leads the Regents team and personally trains every tutor. Small groups (max 6), free 60-minute evaluation, one-time $99 enrollment fee.</p>
+          <p><a href="/regents-prep-nyc">Regents prep at SOMATH &rarr;</a> &middot; <a href="/evaluation">Book a free evaluation &rarr;</a> &middot; <a href="tel:+16466686151">(646) 668-6151</a></p>
+        </div>
+
+        <p style="margin-top:36px;color:#666;font-size:0.88rem;text-align:center;">This walkthrough is provided for educational purposes. The June 2026 Geometry Regents exam is publicly released by the New York State Education Department. Questions and figures are the property of NYSED.</p>
+
+      </article>
+    </main>
+
+    <footer id="footer"></footer>
+  </body>
+</html>
