@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (30 Practice Questions with Answers) | SOMATH</title>
+    <meta name="description" content="A free 30-question pre-algebra practice set from Class 12 of the SOMATH Young Fermats course — evaluating algebraic expressions with signed values, identifying like terms, combining like terms with the distributive property, and simplifying multi-variable expressions. Questions increase in difficulty from single-variable substitution to multi-step simplification. Includes hidden step-by-step answer explanations you can reveal one at a time." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (30 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Free 30 pre-algebra practice questions from Class 12 of the SOMATH Young Fermats course — evaluating expressions, like terms, distributive property, and multi-variable simplification with hidden step-by-step explanations." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-07-29" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (30 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Rules cheat-sheet + 30 practice questions with hidden step-by-step explanations, increasing in difficulty. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      .shortcuts {
+        margin: 8px 0 26px;
+        border: 1px solid #d4d1ca;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shortcuts__row {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.98rem;
+      }
+      .shortcuts__row:last-child { border-bottom: 0; }
+      .shortcuts__row strong { color: #0a3a5f; }
+      .shortcuts__row .plus  { color: #0a7a3d; font-weight: 700; }
+      .shortcuts__row .minus { color: #a13544; font-weight: 700; }
+      @media (max-width: 600px) {
+        .shortcuts__row { grid-template-columns: 1fr; gap: 4px; }
+      }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__level {
+        display: inline-block;
+        background: #f5f1e8;
+        color: #7a5a1c;
+        font-weight: 700;
+        border: 1px solid #d4a548;
+        border-radius: 20px;
+        padding: 2px 10px;
+        margin-right: 8px;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #fff;
+        background: #0a3a5f;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        list-style: none;
+        display: inline-block;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::after { content: "Answer"; }
+      .practice-question details[open] summary { background: #7a2a2a; }
+      .practice-question details[open] summary::after { content: "Hide"; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 12: Evaluating Expressions & Combining Like Terms (30 Practice Questions)",
+  "description": "Free 30-question pre-algebra practice set from Class 12 of the SOMATH Young Fermats course — evaluating algebraic expressions with signed values, identifying like terms, combining like terms, the distributive property, and simplifying multi-variable expressions. Questions increase in difficulty.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-07-29",
+  "dateModified": "2026-07-29",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does it mean to evaluate an algebraic expression?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To evaluate an expression means to substitute a given number for each variable and then simplify using the order of operations (PEMDAS). For example, evaluating 3x + 5 when x = 4 gives 3(4) + 5 = 12 + 5 = 17."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are like terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Like terms are terms that have the exact same variables raised to the exact same powers. Only the numerical coefficient can be different. For example, 3x and −7x are like terms; 5x² and 2x are NOT like terms because the exponents differ; and 4xy and 9yx ARE like terms because multiplication is commutative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you combine like terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add or subtract the numerical coefficients and keep the variable part exactly the same. For example, 3x + 5x = 8x, and 7y² − 2y² = 5y². You never change the exponent or the variable letter when combining."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the distributive property?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The distributive property says a(b + c) = ab + ac. You multiply the outside factor by every term inside the parentheses. It is essential for simplifying expressions like 3(2x + 5) = 6x + 15 and for handling a leading minus sign, since −(x − 4) means −1 · (x − 4) = −x + 4."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5–6 students, ages 10–12. It takes students from integers on the number line through systems of equations — the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 12</p>
+      <h1 class="post__title">Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms</h1>
+      <p class="post__dek">The two skills of Class 12 in the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 30 practice questions that grow harder as you go &mdash; from single-variable substitution to multi-step distribution and simplification. Every question has a hidden step-by-step answer you can reveal one at a time. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-07-29">July 29, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>Class 12 is where the arithmetic of the first 11 classes turns into <em>algebra</em>. Students take an algebraic expression &mdash; something with letters like <em>x</em>, <em>y</em>, or <em>a</em> &mdash; and either <strong>evaluate</strong> it (plug numbers in and compute a value) or <strong>simplify</strong> it (combine the parts that go together). Both skills are the foundation of every equation-solving class that follows.</p>
+
+        <h2>The two big ideas</h2>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">Evaluating an expression</p>
+            <p class="rule-card__sub">plug the number in, then compute</p>
+            <p class="rule-card__result">substitute &rarr; use PEMDAS &rarr; number</p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">Combining like terms</p>
+            <p class="rule-card__sub">add coefficients, keep the variable part</p>
+            <p class="rule-card__result">3x + 5x = <span class="plus">8x</span></p>
+          </div>
+        </div>
+
+        <h2>What counts as a like term?</h2>
+        <p><strong>Like terms</strong> have the <em>exact same variable part</em> &mdash; same letters, each raised to the same power. Only the coefficient (the number in front) can be different.</p>
+
+        <div class="shortcuts">
+          <div class="shortcuts__row"><span><strong>3x</strong> and <strong>&minus;7x</strong></span><span>&rarr; <span class="plus">LIKE terms</span> (both are &#8220;x&#8221;)</span></div>
+          <div class="shortcuts__row"><span><strong>5x&sup2;</strong> and <strong>2x</strong></span><span>&rarr; <span class="minus">NOT like</span> (different exponents)</span></div>
+          <div class="shortcuts__row"><span><strong>4xy</strong> and <strong>9yx</strong></span><span>&rarr; <span class="plus">LIKE terms</span> (order doesn&rsquo;t matter)</span></div>
+          <div class="shortcuts__row"><span><strong>&minus;6</strong> and <strong>11</strong></span><span>&rarr; <span class="plus">LIKE terms</span> (both constants)</span></div>
+          <div class="shortcuts__row"><span><strong>7a&sup2;b</strong> and <strong>&minus;3ab&sup2;</strong></span><span>&rarr; <span class="minus">NOT like</span> (a&sup2;b vs ab&sup2;)</span></div>
+        </div>
+
+        <h2>The distributive property (your simplifying superpower)</h2>
+        <div class="callout">
+          <p><strong>a(b + c) = a&middot;b + a&middot;c.</strong> Multiply the outside factor by <em>every</em> term inside the parentheses. Example: 3(2x + 5) = 6x + 15.</p>
+          <p style="margin-top:10px;"><strong>A leading minus sign is really &minus;1.</strong> So &minus;(x &minus; 4) means &minus;1&middot;(x &minus; 4) = &minus;x + 4. This is the #1 place students lose points &mdash; the second sign flips.</p>
+        </div>
+
+        <h2>Three rules students always forget</h2>
+        <div class="callout">
+          <p><strong>1. Write the substitution in parentheses.</strong> When you plug a negative number in, put it in parentheses so the sign is safe. Evaluating x&sup2; at x = &minus;3 means (&minus;3)&sup2; = 9, not &minus;9.</p>
+          <p style="margin-top:10px;"><strong>2. Unlike terms cannot be combined.</strong> 3x + 5y stays 3x + 5y. There is no simpler form. Only <em>like</em> terms combine.</p>
+          <p style="margin-top:10px;"><strong>3. The variable part never changes.</strong> When you combine 4x + 3x you get 7x, not 7x&sup2;. Adding coefficients does not add exponents.</p>
+        </div>
+
+        <p>The 30 questions below start with pure substitution (Q1&ndash;Q6), move through identifying and combining like terms (Q7&ndash;Q15), then distributive property (Q16&ndash;Q22), and finish with multi-step simplify-and-evaluate problems and one word problem (Q23&ndash;Q30). Every level is tagged so you can jump to what you want to practice.</p>
+
+        <h2>30 practice questions with hidden answers</h2>
+
+        <div class="section-band">Level 1 — Evaluating single-variable expressions (Q1–Q6)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Evaluate 3x + 5 when x = 4.</div>
+          <details><summary></summary>
+            <div class="answer">17</div>
+            <div class="why"><strong>Why.</strong> Substitute 4 for x: 3(4) + 5. Multiplication before addition (PEMDAS): 12 + 5 = 17.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Evaluate 2n &minus; 7 when n = 10.</div>
+          <details><summary></summary>
+            <div class="answer">13</div>
+            <div class="why"><strong>Why.</strong> Substitute 10 for n: 2(10) &minus; 7 = 20 &minus; 7 = 13.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Evaluate <sup>1</sup>&frasl;<sub>2</sub>&thinsp;y + 6 when y = 8.</div>
+          <details><summary></summary>
+            <div class="answer">10</div>
+            <div class="why"><strong>Why.</strong> Substitute 8: <sup>1</sup>&frasl;<sub>2</sub>(8) + 6 = 4 + 6 = 10.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Evaluate 5x &minus; 12 when x = &minus;3. (Put the substitution in parentheses so the negative is safe.)</div>
+          <details><summary></summary>
+            <div class="answer">&minus;27</div>
+            <div class="why"><strong>Why.</strong> Substitute (&minus;3) for x: 5(&minus;3) &minus; 12 = &minus;15 &minus; 12 = &minus;27.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Evaluate x&sup2; + 4 when x = &minus;3.</div>
+          <details><summary></summary>
+            <div class="answer">13</div>
+            <div class="why"><strong>Why.</strong> Substitute (&minus;3): (&minus;3)&sup2; + 4 = 9 + 4 = 13. The parentheses matter &mdash; (&minus;3)&sup2; = 9, not &minus;9.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Evaluate 3(2x + 1) when x = 5.</div>
+          <details><summary></summary>
+            <div class="answer">33</div>
+            <div class="why"><strong>Why.</strong> Parentheses first: 2(5) + 1 = 11. Then multiply: 3(11) = 33. (Or distribute first: 6x + 3, then substitute: 6(5) + 3 = 33.)</div>
+          </details>
+        </div>
+
+        <div class="section-band">Level 2 — Identifying and combining like terms (Q7–Q15)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">For each pair, decide if they are LIKE terms or NOT like terms.<br>(a) 4x and 9x<br>(b) 3y and 3y&sup2;<br>(c) 5ab and &minus;2ab<br>(d) 6 and 11</div>
+          <details><summary></summary>
+            <div class="answer">(a) like&nbsp;&nbsp;&nbsp;(b) NOT like&nbsp;&nbsp;&nbsp;(c) like&nbsp;&nbsp;&nbsp;(d) like</div>
+            <div class="why"><strong>Why.</strong> Like terms need the <em>exact same</em> variable part. (a) both are x &mdash; like. (b) one is y, the other y&sup2; &mdash; the exponents differ, NOT like. (c) both are ab &mdash; like. (d) two constants (no variables at all) are always like.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Simplify: 3x + 5x</div>
+          <details><summary></summary>
+            <div class="answer">8x</div>
+            <div class="why"><strong>Why.</strong> Both terms have the variable x, so they are like terms. Add the coefficients: 3 + 5 = 8. Keep x. Result: 8x.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Simplify: 9y &minus; 4y</div>
+          <details><summary></summary>
+            <div class="answer">5y</div>
+            <div class="why"><strong>Why.</strong> Subtract coefficients: 9 &minus; 4 = 5. Keep y. Result: 5y.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span><span class="practice-question__level">Easy</span></div>
+          <div class="practice-question__prompt">Simplify: 7a + 3a &minus; 5a</div>
+          <details><summary></summary>
+            <div class="answer">5a</div>
+            <div class="why"><strong>Why.</strong> All three terms are like (they share the variable a). Combine coefficients left to right: 7 + 3 = 10, then 10 &minus; 5 = 5. Result: 5a.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Simplify: 6x + 4 &minus; 2x + 9</div>
+          <details><summary></summary>
+            <div class="answer">4x + 13</div>
+            <div class="why"><strong>Why.</strong> Group like terms first. x-terms: 6x &minus; 2x = 4x. Constants: 4 + 9 = 13. Write the sum: 4x + 13. Unlike terms cannot be combined further.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Simplify: 5x + 3y &minus; 2x + 7y</div>
+          <details><summary></summary>
+            <div class="answer">3x + 10y</div>
+            <div class="why"><strong>Why.</strong> Two families of like terms. x-terms: 5x &minus; 2x = 3x. y-terms: 3y + 7y = 10y. Answer: 3x + 10y. (x and y are NOT like, so they stay separate.)</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Simplify: 8m &minus; 3 &minus; 5m + 12 &minus; m</div>
+          <details><summary></summary>
+            <div class="answer">2m + 9</div>
+            <div class="why"><strong>Why.</strong> m-terms: 8m &minus; 5m &minus; m = (8 &minus; 5 &minus; 1)m = 2m. Constants: &minus;3 + 12 = 9. Answer: 2m + 9.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Simplify: 4x&sup2; + 3x &minus; x&sup2; + 5x</div>
+          <details><summary></summary>
+            <div class="answer">3x&sup2; + 8x</div>
+            <div class="why"><strong>Why.</strong> Terms with x&sup2; are one family; terms with x are another. x&sup2;-terms: 4x&sup2; &minus; x&sup2; = 3x&sup2;. x-terms: 3x + 5x = 8x. Answer: 3x&sup2; + 8x. Never combine x&sup2; with x.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Simplify: 6ab + 4a &minus; 2ab + 3b &minus; 5a</div>
+          <details><summary></summary>
+            <div class="answer">4ab &minus; a + 3b</div>
+            <div class="why"><strong>Why.</strong> Three families of terms. ab-terms: 6ab &minus; 2ab = 4ab. a-terms: 4a &minus; 5a = &minus;a. b-terms: 3b (nothing to combine). Answer: 4ab &minus; a + 3b. Note ab, a, and b are all different variable parts.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Level 3 — The distributive property (Q16–Q22)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Expand: 3(x + 4)</div>
+          <details><summary></summary>
+            <div class="answer">3x + 12</div>
+            <div class="why"><strong>Why.</strong> Distribute 3 to every term inside: 3&middot;x + 3&middot;4 = 3x + 12.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Expand: 5(2y &minus; 3)</div>
+          <details><summary></summary>
+            <div class="answer">10y &minus; 15</div>
+            <div class="why"><strong>Why.</strong> 5&middot;(2y) + 5&middot;(&minus;3) = 10y &minus; 15. Distribute to both terms, including the subtraction sign.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Expand: &minus;4(x + 6)</div>
+          <details><summary></summary>
+            <div class="answer">&minus;4x &minus; 24</div>
+            <div class="why"><strong>Why.</strong> The outside factor is &minus;4, so distribute the negative too. (&minus;4)&middot;x + (&minus;4)&middot;6 = &minus;4x &minus; 24. Both signs come out negative.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Expand: &minus;2(3x &minus; 5)</div>
+          <details><summary></summary>
+            <div class="answer">&minus;6x + 10</div>
+            <div class="why"><strong>Why.</strong> (&minus;2)&middot;(3x) + (&minus;2)&middot;(&minus;5) = &minus;6x + 10. The negative outside times the negative inside makes the second term POSITIVE. This sign-flip is a top source of errors.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span><span class="practice-question__level">Medium</span></div>
+          <div class="practice-question__prompt">Expand: &minus;(x &minus; 7)</div>
+          <details><summary></summary>
+            <div class="answer">&minus;x + 7</div>
+            <div class="why"><strong>Why.</strong> A leading minus sign means &ldquo;multiply by &minus;1.&rdquo; &minus;1&middot;(x &minus; 7) = &minus;1&middot;x + (&minus;1)&middot;(&minus;7) = &minus;x + 7. Every sign inside the parentheses flips.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Expand and simplify: 3(x + 2) + 5(x &minus; 4)</div>
+          <details><summary></summary>
+            <div class="answer">8x &minus; 14</div>
+            <div class="why"><strong>Why.</strong> Distribute each parenthesis first. 3(x + 2) = 3x + 6. 5(x &minus; 4) = 5x &minus; 20. Now the expression is 3x + 6 + 5x &minus; 20. Combine like terms: x-terms 3x + 5x = 8x; constants 6 &minus; 20 = &minus;14. Answer: 8x &minus; 14.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Expand and simplify: 4(2x + 3) &minus; 2(x &minus; 5)</div>
+          <details><summary></summary>
+            <div class="answer">6x + 22</div>
+            <div class="why"><strong>Why.</strong> Watch the second distribution &mdash; the &minus;2 is negative. 4(2x + 3) = 8x + 12. &minus;2(x &minus; 5) = &minus;2x + 10 (the second sign flipped because negative &times; negative = positive). Combine: (8x &minus; 2x) + (12 + 10) = 6x + 22.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Level 4 — Simplify then evaluate; multi-step (Q23–Q30)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Simplify then evaluate at x = 2:  2(x + 3) + 4x</div>
+          <details><summary></summary>
+            <div class="answer">18</div>
+            <div class="why"><strong>Why.</strong> Simplify first: 2(x + 3) + 4x = 2x + 6 + 4x = 6x + 6. Substitute x = 2: 6(2) + 6 = 12 + 6 = 18. (Sanity check without simplifying: 2(2+3) + 4(2) = 2&middot;5 + 8 = 10 + 8 = 18 &check;.)</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Evaluate 3x&sup2; &minus; 2x + 7 when x = &minus;2.</div>
+          <details><summary></summary>
+            <div class="answer">23</div>
+            <div class="why"><strong>Why.</strong> Substitute (&minus;2) in parentheses. 3(&minus;2)&sup2; &minus; 2(&minus;2) + 7. Exponent first: (&minus;2)&sup2; = 4, so 3&middot;4 = 12. Middle term: &minus;2(&minus;2) = +4. Constant: 7. Sum: 12 + 4 + 7 = 23.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Evaluate 2a &minus; 3b + 5ab when a = 4 and b = &minus;1.</div>
+          <details><summary></summary>
+            <div class="answer">&minus;9</div>
+            <div class="why"><strong>Why.</strong> Substitute both values in parentheses. 2(4) &minus; 3(&minus;1) + 5(4)(&minus;1) = 8 &minus; (&minus;3) + (&minus;20) = 8 + 3 &minus; 20 = &minus;9.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q26</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Simplify: 3(2x &minus; 1) &minus; (x + 4) + 5</div>
+          <details><summary></summary>
+            <div class="answer">5x &minus; 2</div>
+            <div class="why"><strong>Why.</strong> Distribute both parentheses. 3(2x &minus; 1) = 6x &minus; 3. &minus;(x + 4) = &minus;x &minus; 4 (leading minus flips both signs). Now: 6x &minus; 3 &minus; x &minus; 4 + 5. Combine like terms: x-terms 6x &minus; x = 5x; constants &minus;3 &minus; 4 + 5 = &minus;2. Answer: 5x &minus; 2.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q27</span><span class="practice-question__level">Hard</span></div>
+          <div class="practice-question__prompt">Simplify: 4x&sup2; &minus; 3(x&sup2; &minus; 2x) + 6x</div>
+          <details><summary></summary>
+            <div class="answer">x&sup2; + 12x</div>
+            <div class="why"><strong>Why.</strong> Distribute &minus;3 first: &minus;3(x&sup2; &minus; 2x) = &minus;3x&sup2; + 6x (both signs flip). Now the expression is 4x&sup2; &minus; 3x&sup2; + 6x + 6x. Combine x&sup2;-terms: 4x&sup2; &minus; 3x&sup2; = x&sup2;. Combine x-terms: 6x + 6x = 12x. Answer: x&sup2; + 12x.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q28</span><span class="practice-question__level">Challenge</span></div>
+          <div class="practice-question__prompt">Simplify: 2(3x + 4) &minus; 5(2x &minus; 1) + 3(x + 6)</div>
+          <details><summary></summary>
+            <div class="answer">&minus;x + 31</div>
+            <div class="why"><strong>Why.</strong> Distribute each group. 2(3x + 4) = 6x + 8. &minus;5(2x &minus; 1) = &minus;10x + 5 (negative &times; negative = positive on the second term). 3(x + 6) = 3x + 18. Sum: 6x + 8 &minus; 10x + 5 + 3x + 18. x-terms: 6x &minus; 10x + 3x = &minus;x. Constants: 8 + 5 + 18 = 31. Answer: &minus;x + 31.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q29</span><span class="practice-question__level">Challenge</span></div>
+          <div class="practice-question__prompt">Simplify then evaluate at x = &minus;3 and y = 4:  2(x + 3y) &minus; (4x &minus; y)</div>
+          <details><summary></summary>
+            <div class="answer">Simplified: &minus;2x + 7y &nbsp;·&nbsp; Value: 34</div>
+            <div class="why"><strong>Why.</strong> Distribute first. 2(x + 3y) = 2x + 6y. &minus;(4x &minus; y) = &minus;4x + y (leading minus flips both signs). Combine: x-terms 2x &minus; 4x = &minus;2x; y-terms 6y + y = 7y. So the expression is &minus;2x + 7y. Substitute (&minus;3) and (4): &minus;2(&minus;3) + 7(4) = 6 + 28 = 34.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q30</span><span class="practice-question__level">Challenge</span></div>
+          <div class="practice-question__prompt">A rectangle has length (2x + 5) and width (x + 3). Write a simplified expression for its perimeter, then evaluate at x = 4.</div>
+          <details><summary></summary>
+            <div class="answer">Perimeter: 6x + 16 &nbsp;·&nbsp; At x = 4: 40 units</div>
+            <div class="why"><strong>Why.</strong> Perimeter of a rectangle = 2&middot;length + 2&middot;width. P = 2(2x + 5) + 2(x + 3). Distribute: 4x + 10 + 2x + 6. Combine like terms: x-terms 4x + 2x = 6x; constants 10 + 6 = 16. So P = 6x + 16. Substitute x = 4: P = 6(4) + 16 = 24 + 16 = 40 units. (Check by finding length and width first: length = 2(4)+5 = 13, width = 4+3 = 7, P = 2(13) + 2(7) = 26 + 14 = 40 &check;.)</div>
+          </details>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 12 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5&ndash;6 students (ages 10&ndash;12). The full arc runs from integers on the number line through systems of linear equations and probability &mdash; the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 60-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child's current level against the readiness signals for Pre-Algebra and Algebra 1 &mdash; and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 12 is a taste &mdash; Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days&rsquo; notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course &rarr;</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1: Integers on the Number Line &amp; Absolute Value (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-2-multiplying-dividing-integers">Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions)</a></li>
+          <li><a href="/posts/should-my-child-take-algebra-1-before-high-school-nyc">Should My Child Take Algebra 1 Before High School? An NYC Parent&rsquo;s Guide</a></li>
+          <li><a href="/posts/heschel-school-rising-8th-grade-summer-math-packet-solved">Heschel Rising 8th Grade Summer Math Packet &mdash; Solved &amp; Explained</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260729-prealg12"></script>
+  </body>
+</html>
