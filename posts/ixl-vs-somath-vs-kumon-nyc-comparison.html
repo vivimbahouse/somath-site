@@ -69,7 +69,17 @@
       .signal { background:#0a3a5f; color:#fff; padding:16px 18px; border-radius:8px; }
       .signal__title { color:#d4a548; font-weight:700; display:block; margin-bottom:6px; font-size:1.02rem; }
       .signal__body { font-size:0.9rem; opacity:0.95; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -430,7 +440,18 @@
 
         <p>We built the evaluation this way on purpose. Families choosing between IXL, Kumon, and SOMATH often do so with very limited information about where their child actually is. A one-hour diagnostic and a written report changes that. If the report suggests your child would be better served elsewhere, we say so.</p>
 
-        <h2 id="faq">11. FAQ</h2>
+        
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus and SAT Math in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2 id="faq">11. FAQ</h2>
         <h3>What is the difference between IXL, Kumon, and SOMATH?</h3>
         <p>IXL is a self-paced app used alone at home. Kumon is a worksheet franchise with light center check-ins. SOMATH is a small-group in-person teacher-led math school on the Upper West Side. Three fundamentally different teaching models.</p>
         <h3>How much does each cost?</h3>

@@ -66,7 +66,17 @@
       .checklist { background:#f5f1e8; padding:18px 26px; border-radius:8px; margin:18px 0; }
       .checklist li { margin:6px 0; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -498,7 +508,18 @@
           <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">Book your free evaluation &rarr;</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
         </div>
 
-        <h2 id="faq">FAQ</h2>
+        
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus and SAT Math in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2 id="faq">FAQ</h2>
 
         <h3>How much math should my child do over the summer?</h3>
         <p>For most students, one to two sessions per week (60&ndash;90 minutes each) is plenty to prevent summer learning loss and keep skills sharp without burning out. Three or more sessions per week is appropriate only for students who are actively catching up after a difficult school year, or for rising 8th graders in the final prep window before the October SHSAT. The goal is maintenance and moderate growth &mdash; not a summer school grind. If your child is leaving school in strong shape and just needs to stay sharp, two sessions per week of good instruction does that. If they are heading into a high-stakes test or have real gaps, three sessions may be warranted for a defined period (not the entire summer).</p>

@@ -68,7 +68,17 @@
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; }
       .timeline-row { display:flex; gap:18px; margin:10px 0; align-items:flex-start; }
       .timeline-label { background:#0a3a5f; color:#fff; border-radius:4px; padding:4px 10px; font-size:0.85rem; font-weight:700; white-space:nowrap; min-width:90px; text-align:center; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -348,7 +358,18 @@
           <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">Book your free evaluation &rarr;</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
         </div>
 
-        <h2 id="faq">FAQ</h2>
+        
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 7–8</div>
+          <h2 class="course-cta-card__h">Want your child in a SHSAT Prep class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Small-group SHSAT prep for Grades 7–8 targeting Stuyvesant, Bronx Science, Brooklyn Tech, and the other Specialized High Schools. Full-length section drills every cycle and math taught for real mastery, not just tricks.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/shsat-prep" class="course-cta-card__primary">See the SHSAT Prep course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2 id="faq">FAQ</h2>
 
         <h3>When should my UWS 5th grader start Hunter prep?</h3>
         <p>Most UWS families should begin structured Hunter math prep at the start of 5th grade &mdash; September of the year before the January entrance exam. That gives roughly 16&ndash;20 weeks to build the pre-algebra and problem-solving skills the exam tests, without burning out the child before test day. Families who start in 4th grade are building an enrichment foundation, not cramming, which is even better. The worst outcome is starting in December for a January exam &mdash; there is not enough time to change habits under that pressure.</p>

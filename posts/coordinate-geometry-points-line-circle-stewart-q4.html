@@ -57,7 +57,17 @@
       .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -209,7 +219,18 @@
           <p>At SOMATH we teach Stewart Q4 as one continuous chain, not six separate problems. Students label the two points once at the top of scratch paper. From there, slope feeds the line equation; the midpoint and slope feed the perpendicular bisector; the midpoint and distance feed the circle. Every formula reuses something we already wrote down. By the time students leave that lesson they have a worksheet that documents how a single labeled pair of points unlocks the whole of plane geometry — and they keep that habit for AP Calculus, where multi-step problems live or die on whether you reuse earlier work cleanly.</p>
           <p>Our classroom at 226 W 79th St — Upper West Side, between Broadway and Amsterdam — runs small groups of three to five students with whiteboards on every wall. We don't hand out worksheet stacks. We introduce each technique with the why, drill it on three increasingly hostile problems, and tie it back to the calculus context where the student will meet it next. Q4 is the cornerstone problem we use to teach NYC independent-school students how to chain coordinate-geometry skills before they hit Stewart's calculus chapters.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>How do you find the slope between two points?</h3>
           <p>Use <span class="mathx"><i>m</i> = (<i>y</i><sub>2</sub> − <i>y</i><sub>1</sub>) / (<i>x</i><sub>2</sub> − <i>x</i><sub>1</sub>)</span>. Subtract the <span class="mathx"><i>y</i></span>-coordinates in the numerator and the <span class="mathx"><i>x</i></span>-coordinates in the denominator, in the same order. With <span class="mathx"><i>A</i>(−7, 4)</span> and <span class="mathx"><i>B</i>(5, −12)</span>, slope is <span class="mathx">(−12 − 4)/(5 − (−7)) = −16/12 = −4/3</span>.</p>
           <h3>What is the perpendicular bisector and how do you find its equation?</h3>

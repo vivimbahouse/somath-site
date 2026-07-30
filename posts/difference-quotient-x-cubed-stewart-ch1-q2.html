@@ -54,7 +54,17 @@
       .mathx sub { bottom: -0.25em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -202,7 +212,18 @@
           <p>Every AP Calc and pre-calc student at SOMATH does the difference quotient on three functions in their first week — <span class="mathx"><i>x</i><sup>2</sup></span>, <span class="mathx"><i>x</i><sup>3</sup></span>, and <span class="mathx">1/<i>x</i></span> — at three points each. Same four steps every time: expand <span class="mathx"><i>f</i>(<i>a</i> + <i>h</i>)</span>, compute <span class="mathx"><i>f</i>(<i>a</i>)</span>, subtract, divide by <span class="mathx"><i>h</i></span>. The point is not to memorize the answers but to make the procedure automatic, so when the limit shows up next chapter the student is not also wrestling with algebra.</p>
           <p>We teach this in small groups of three to five at 226 W 79th St (Upper West Side, between Broadway and Amsterdam), with whiteboards on every wall and no worksheet stacks. Each technique gets the binomial expansion, the cancellation diagnosis, and the link to the derivative. By the time the AP Calc class meets limits, the difference quotient is muscle memory.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>What is the difference quotient and why does it matter?</h3>
           <p>The difference quotient is <span class="mathx">[<i>f</i>(<i>a</i> + <i>h</i>) − <i>f</i>(<i>a</i>)] / <i>h</i></span>. Geometrically it is the slope of the secant line through the two points <span class="mathx">(<i>a</i>, <i>f</i>(<i>a</i>))</span> and <span class="mathx">(<i>a</i> + <i>h</i>, <i>f</i>(<i>a</i> + <i>h</i>))</span> on the graph of <span class="mathx"><i>f</i></span>. As <span class="mathx"><i>h</i> → 0</span>, that secant line tilts toward the tangent line, and its slope becomes the derivative.</p>
           <h3>Is there a faster way using the power rule?</h3>

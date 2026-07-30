@@ -54,7 +54,17 @@
       .mathx sub { bottom: -0.25em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -201,7 +211,18 @@
           <p>We teach Stewart Ch.1 Q3 as a three-station drill: rational, cube root, double square root. Same picture every time — a function with one or more pieces, and a flowchart that says "denominator? exclude zeros. even radical? require ≥ 0. odd radical? skip." Students cycle through five functions per station, with progressively trickier denominators and radicands, until each rule is automatic. By the end of the lesson a student can find the domain of any Chapter 1 function in under a minute.</p>
           <p>Our small-group classroom at 226 W 79th St (Upper West Side, between Broadway and Amsterdam) keeps groups of three to five students at whiteboards on every wall. Each rule gets the why, the how, and three increasingly hostile examples — including ones designed to trick students into pattern-matching. This problem is the gate every pre-calc and AP Calc student walks through at SOMATH before they touch limits.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>What is the domain of a function?</h3>
           <p>The domain is the set of all input values (typically <span class="mathx"><i>x</i></span>) for which the function produces a real output. For algebraic functions in Chapter 1 of Stewart, finding the domain is equivalent to spotting every operation that has a restriction (division by zero, even roots of negatives, log of nonpositives later in the textbook) and excluding the inputs that would violate those restrictions.</p>
           <h3>Why does the cube root not restrict the domain when the square root does?</h3>

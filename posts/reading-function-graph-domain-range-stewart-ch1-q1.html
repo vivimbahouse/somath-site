@@ -54,7 +54,17 @@
       .mathx sub { bottom: -0.25em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -197,7 +207,18 @@
           <p>We teach Stewart Ch.1 Q1 as a five-station drill. Same picture, five different reflexes: read forward (input → output), read backward (output → input), find zeros, write the domain, write the range. Students cycle through all five operations on the same graph until each one is automatic, then we change the graph and run it again. By the end of the lesson students can look at any function plot and answer all five questions in under thirty seconds — which is exactly the speed Stewart's later chapters assume.</p>
           <p>Our classroom at 226 W 79th St (Upper West Side, between Broadway and Amsterdam) runs small groups of three to five students with whiteboards on every wall. We don't hand out worksheet stacks. Each technique gets introduced with the why, drilled on three increasingly hostile graphs, and tied back to the calculus context where the student will meet it next. This problem is the gate every AP Calc and pre-calc student walks through at SOMATH.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>What is the difference between f(−1) = −2 and f(x) = 2?</h3>
           <p>The first asks "what is the output when the input is <span class="mathx">−1</span>?" — you give it an <span class="mathx"><i>x</i></span>, it gives you back a <span class="mathx"><i>y</i></span>. The second asks "what inputs produce the output <span class="mathx">2</span>?" — you give it a <span class="mathx"><i>y</i></span>, it gives you back all the <span class="mathx"><i>x</i></span>'s that map there. Forward versus backward, single output versus possibly many inputs.</p>
           <h3>How accurate does an estimate from a graph need to be?</h3>

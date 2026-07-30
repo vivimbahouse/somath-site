@@ -61,7 +61,17 @@
       .mathx .op { padding: 0 0.18em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .boxed { display: inline-block; border: 1.5px solid #0a3a5f; border-radius: 4px; padding: 2px 10px; margin: 0 2px; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -197,7 +207,18 @@
           <p>At SOMATH (226 W 79th St, UWS), we teach rationalization with a two-line checklist: <strong>(1)</strong> identify the two-term radical, <strong>(2)</strong> multiply top and bottom by its conjugate. Then we drill the difference-of-squares pattern <span class="mathx">(<i>a</i> − <i>b</i>)(<i>a</i> + <i>b</i>) = <i>a</i><sup>2</sup> − <i>b</i><sup>2</sup></span> until students can do it in their head. Once those two skills are automatic, both parts of Problem 6 take under a minute each.</p>
           <p>We pair this lesson with a 10-problem mixed practice — half pre-calc style (rationalize the denominator), half AP Calc style (rationalize the numerator inside a limit). Students who can do all ten in 15 minutes are ready for the first derivative chapter of Calculus AB.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>What does it mean to rationalize an expression?</h3>
           <p>Rationalizing means rewriting an expression so that a radical (square root, cube root, etc.) is no longer in the denominator (or, sometimes, no longer in the numerator). It doesn't change the value of the expression — it changes the form. The two most common moves are multiplying by the conjugate of a two-term denominator like <span class="mathx"><span class="sqrt"><span class="rad">5</span></span> − 2</span>, and multiplying by the radical itself when the denominator is a single <span class="mathx"><span class="sqrt"><span class="rad"><i>n</i></span></span></span>.</p>
           <h3>What is a conjugate?</h3>

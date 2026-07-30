@@ -61,7 +61,17 @@
       .mathx .op { padding: 0 0.18em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .boxed { display: inline-block; border: 1.5px solid #0a3a5f; border-radius: 4px; padding: 2px 10px; margin: 0 2px; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -230,7 +240,18 @@
           <h2>How SOMATH teaches the equation-solving toolkit on the Upper West Side</h2>
           <p>We start every new pre-calc student with a diagnostic identical in structure to Stewart's. Five to seven equations of different shapes, no calculator, no help. Then we sit with the student and ask — <em>before they pick up a pencil</em> — what shape each one is and what the first move would be. The algebra is downstream of the recognition; the recognition is the whole game. From our classroom on 226 W 79th St we run small groups of 3–5 students, every lesson on whiteboards, every step shown out loud. Every new student gets a free 60-minute evaluation and a written diagnostic within 48 hours, even if they don't enroll.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>How do I know which solving technique to pick?</h3>
           <p>Read the equation's shape first. Linear, rational, factorable quadratic, quadratic formula, even-power substitution, absolute value, or matched-expression substitution. The shape tells you the first move.</p>
           <h3>Why check the domain on rational equations?</h3>

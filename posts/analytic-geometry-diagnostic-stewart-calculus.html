@@ -57,7 +57,17 @@
       .mathx .frac > .den { display: block; padding: 1px 0.35em 0; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; font-family:'Cambria Math','Latin Modern Math','STIX Two Math',Cambria,serif; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -215,7 +225,18 @@
           <p>Every incoming AP Calculus and college calculus student at SOMATH takes a four-part line diagnostic in the first session — Stewart's Question 1 or one very close to it. They have three minutes. We are not looking for speed; we are looking for which of the three mistakes above is still live. Part (a) shows whether point-slope is fluent. Part (b) and part (c) show whether horizontal vs vertical is reliable. Part (d) shows whether the student can extract a slope from standard form and then re-use it. Whatever the gaps are, those become the focus of the first two weeks.</p>
           <p>From our classroom on 226 W 79th St (Upper West Side, between Broadway and Amsterdam) we run small groups of 3–5 students. Whiteboards on every wall, every step written out, every counter-example demonstrated. We do not do worksheet stacks. The point of Stewart's diagnostic is to find the missing piece before the calculus content arrives — and that is exactly the role this Q1 plays in our intake.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>Why use point-slope form instead of slope-intercept?</h3>
           <p>Point-slope form is the natural choice when you have a slope and a point but not the y-intercept. Slope-intercept requires you to know <span class="mathx"><i>b</i></span> up front. You can always finish by simplifying point-slope into slope-intercept, which is exactly what we did in parts (a) and (d).</p>
           <h3>What is the slope of a line parallel to the y-axis?</h3>

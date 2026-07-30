@@ -112,7 +112,17 @@
       .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
       .answer-key-table th { background:#1f3d2e; color:#fff; }
       .answer-key-table tr:nth-child(even) { background:#fafafa; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1061,7 +1071,18 @@ Flux(larger) = (9/10) &middot; total flux
           <a class="dl-btn" href="/#evaluation">Book Evaluation</a>
         </div>
 
-        <h2 id="faq">Digital SAT FAQ</h2>
+        
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 9–12</div>
+          <h2 class="course-cta-card__h">Want your child in an SAT Math class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Small-group Digital SAT Math prep on the Upper West Side. Full Bluebook + Desmos drilling, timed Modules 1 & 2, weekly score tracking, and a free 60-minute in-person diagnostic before enrollment.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/sat-math" class="course-cta-card__primary">See the SAT Math course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2 id="faq">Digital SAT FAQ</h2>
 
         <h3>What is on Module 2 of the Digital SAT Math section?</h3>
         <p>Module 2 of the Digital SAT Math section is a 35-minute, 22-question module (20 scored + 2 pretest). Unlike Module 1, Module 2 is stage-adaptive: the difficulty of the questions you see depends on how you performed on Module 1. It draws from the same four content domains as Module 1 &mdash; Algebra, Advanced Math, Problem-Solving &amp; Data Analysis, and Geometry &amp; Trigonometry &mdash; but the harder Module 2 form leans more heavily on multi-step algebra, quadratics, exponentials, and coordinate geometry. The Bluebook Desmos calculator is available on every question.</p>

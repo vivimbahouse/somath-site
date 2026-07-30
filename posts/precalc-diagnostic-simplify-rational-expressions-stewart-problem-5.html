@@ -62,7 +62,17 @@
       .mathx .op { padding: 0 0.18em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .boxed { display: inline-block; border: 1.5px solid #0a3a5f; border-radius: 4px; padding: 2px 10px; margin: 0 2px; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -218,7 +228,18 @@
           <p>At SOMATH (226 W 79th St, UWS), we teach rational expressions with a four-step checklist we call FCDR: <strong>F</strong>actor everything, <strong>C</strong>ancel only matching factors, <strong>D</strong>istribute the minus when subtracting, <strong>R</strong>estrict the domain from the original. Every student writes those four letters in the margin before starting a problem, and they don't touch a single expression until they've factored.</p>
           <p>If your high schooler is heading into pre-calc, AP Calc AB/BC, or SAT Math 2, the diagnostic Problem 5 is a great one-session topic: 10 minutes of factoring review, 40 minutes of all four parts, then a 30-minute mixed worksheet. Most students walk in able to do (a) and walk out able to do (d) — the complex fraction — without help.</p>
 
-          <h2>FAQ</h2>
+          
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
           <h3>Why do you have to write the domain restrictions when simplifying a rational expression?</h3>
           <p>Cancelling a factor like <span class="mathx">(<i>x</i> + 1)</span> from numerator and denominator changes the function's domain. The original expression <span class="mathx">(<i>x</i><sup>2</sup>+3<i>x</i>+2)/(<i>x</i><sup>2</sup>−<i>x</i>−2)</span> is undefined at <span class="mathx"><i>x</i> = −1</span> and <span class="mathx"><i>x</i> = 2</span>. After cancelling you get <span class="mathx">(<i>x</i>+2)/(<i>x</i>−2)</span>, which only flags <span class="mathx"><i>x</i> = 2</span>. To preserve equivalence you must list <span class="mathx"><i>x</i> ≠ −1, 2</span> alongside the simplified form. On the SHSAT, SAT, and AP Calc, the missing restriction is the most common point deduction on this topic.</p>
           <h3>How do you simplify a complex fraction (a fraction with fractions inside)?</h3>

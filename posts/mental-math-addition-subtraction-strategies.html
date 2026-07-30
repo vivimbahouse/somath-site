@@ -118,7 +118,17 @@
       .video-wrap { position:relative; padding-bottom:56.25%; height:0; margin:20px 0 8px; border-radius:8px; overflow:hidden; background:#000; }
       .video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
       .video-caption { text-align:center; color:#5c5952; font-size:0.92rem; margin:0 0 22px; font-style:italic; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -226,7 +236,7 @@
 
         <p>Mental math is the single most valuable skill a student can build in grades 2, 3, and 4. It is <em>not</em> the same thing as memorizing facts and it is <em>not</em> the same thing as the column algorithm your child does on paper. Mental math is the ability to <strong>rearrange numbers in your head</strong> so that a hard problem becomes an easy one. That skill unlocks fractions, decimals, algebra, and every word problem a student will ever see.</p>
 
-        <p>Written by the same team that teaches at <a href="/">SOMATH</a>, a math-focused school on the Upper West Side of NYC run by cofounder Marcelo Ramos (Northwestern) and cofounder Vivianne Wright (Harvard).</p>
+        <p>Written by the same team that teaches at <a href="/">SOMATH</a>, a math-focused school on the Upper West Side of NYC run by cofounder Marcelo Ambrozio (Northwestern) and cofounder Vivianne Wright (Harvard).</p>
 
         <div class="no-pencil">
           <h2><span class="icon">✏️❌</span> No pencil. No paper. Mental math only.</h2>
@@ -802,7 +812,7 @@ Total: 500 + 40 + 10 = 550</span>
         <h2 id="somath">About SOMATH</h2>
         <div class="callout">
           <p><strong>SOMATH &mdash; School of Math</strong> is a math-focused school on the Upper West Side of Manhattan for students in grades 1&ndash;12. Mental math fluency is a core weekly focus in both the <strong>Kid Einsteins</strong> program (grades 1&ndash;2) and the <strong>Young Fermats</strong> program (grades 3&ndash;5).</p>
-          <p>Classes are taught by cofounder <strong>Marcelo Ramos</strong> (Northwestern-trained, 15+ years teaching math in NYC) and the SOMATH team, in small groups of 6&ndash;8 students.</p>
+          <p>Classes are taught by cofounder <strong>Marcelo Ambrozio</strong> (Northwestern-trained, 15+ years teaching math in NYC) and the SOMATH team, in small groups of 6&ndash;8 students.</p>
           <p><strong>Location:</strong> 226 W 79th St, 1st Floor, New York, NY 10024 (Upper West Side)<br>
           <strong>Phone:</strong> (646) 668-6151<br>
           <strong>Email:</strong> hello@schoolofmath.us</p>
@@ -817,7 +827,18 @@ Total: 500 + 40 + 10 = 550</span>
         </ul>
 
       </div>
-    </article>
+    
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus and SAT Math in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
 
     <div id="footer-mount"></div>
     <script src="/partials.js?v=v20260726-enrich"></script>

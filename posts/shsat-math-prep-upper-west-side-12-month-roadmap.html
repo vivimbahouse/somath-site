@@ -63,7 +63,17 @@
       .checklist { background:#f5f1e8; padding:18px 26px; border-radius:8px; margin:18px 0; }
       .checklist li { margin:6px 0; }
       .answer-box { display:inline-block; background:#e6efe2; color:#0a3a5f; font-weight:600; padding:4px 14px; border-radius:6px; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -273,7 +283,18 @@
           <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">Book your free evaluation &rarr;</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
         </div>
 
-        <h2 id="faq">FAQ</h2>
+        
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 7–8</div>
+          <h2 class="course-cta-card__h">Want your child in a SHSAT Prep class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Small-group SHSAT prep for Grades 7–8 targeting Stuyvesant, Bronx Science, Brooklyn Tech, and the other Specialized High Schools. Full-length section drills every cycle and math taught for real mastery, not just tricks.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/shsat-prep" class="course-cta-card__primary">See the SHSAT Prep course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2 id="faq">FAQ</h2>
         <h3>When should my UWS 7th grader start SHSAT prep?</h3>
         <p>The summer before 7th grade, or no later than September of 7th grade. Starting in 8th grade compresses everything into one year while your child is managing a full school schedule and extracurriculars. The earlier start gives time for proper diagnostic work, unhurried topic mastery, and a genuine taper period before the October test. Students from Anderson, NEST+m, MS 54, MS 256, and MS 245 who score at the top of the Stuyvesant or Bronx Science range almost universally started structured prep in 7th grade or earlier.</p>
 

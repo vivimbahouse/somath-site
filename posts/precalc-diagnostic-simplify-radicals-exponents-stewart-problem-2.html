@@ -64,7 +64,17 @@
       .mathx .paren-pow > .exp { font-size: 0.72em; position: relative; top: -0.4em; margin-left: 0.05em; }
       .mathd { display: block; text-align: center; margin: 18px 0 22px; }
       .mathx .op { padding: 0 0.18em; }
-    </style>
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -303,7 +313,18 @@
           <p style="font-size:0.9rem;color:#666;margin-top:8px;">226 W 79th St, 1st Floor · Upper West Side · Mon–Fri 3–10pm, Sat 10am–6pm · <a href="tel:+16466686151">(646) 668-6151</a> · <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a></p>
         </div>
 
-        <h2>FAQ</h2>
+        
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
+          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+<h2>FAQ</h2>
 
         <h3>How do you simplify <span class="mathx"><span class="sqrt"><span class="rad">200</span></span> − <span class="sqrt"><span class="rad">32</span></span></span>?</h3>
         <p>Pull out the largest perfect-square factor from each radical. <span class="mathx"><span class="sqrt"><span class="rad">200</span></span> = <span class="sqrt"><span class="rad">100 · 2</span></span> = 10<span class="sqrt"><span class="rad">2</span></span></span>, and <span class="mathx"><span class="sqrt"><span class="rad">32</span></span> = <span class="sqrt"><span class="rad">16 · 2</span></span> = 4<span class="sqrt"><span class="rad">2</span></span></span>. Both share <span class="mathx"><span class="sqrt"><span class="rad">2</span></span></span>, so subtract: <span class="mathx">10<span class="sqrt"><span class="rad">2</span></span> − 4<span class="sqrt"><span class="rad">2</span></span> = 6<span class="sqrt"><span class="rad">2</span></span></span>.</p>
