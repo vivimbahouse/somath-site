@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry: Which Transformation Changes a Rectangle's Area? | SOMATH NYC</title>
+    <meta name="description" content="A worked NYS Regents Geometry question on rigid motions vs. dilations. See which transformation changes a rectangle's area, why the other three preserve it, and watch the full video walkthrough. Free lesson from SOMATH, an Upper West Side NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="../assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-rigid-motion-vs-dilation-area-question" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry: Which Transformation Changes a Rectangle's Area?" />
+    <meta property="og:description" content="A worked NYS Regents Geometry question on rigid motions vs. dilations. See why three of the four options preserve area and one does not, with a full video walkthrough." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-rigid-motion-vs-dilation-area-question" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-07-31" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry: Which Transformation Changes a Rectangle's Area?" />
+    <meta name="twitter:description" content="Rigid motions vs. dilations on the NYS Regents Geometry exam — a worked question and video walkthrough." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry: Which Transformation Changes a Rectangle's Area?",
+  "description": "A worked NYS Regents Geometry multiple-choice question on rigid motions vs. dilations, with the full theory of area-preserving transformations and a video walkthrough.",
+  "datePublished": "2026-07-31",
+  "dateModified": "2026-07-31",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo-full.svg"
+    }
+  },
+  "video": {
+    "@type": "VideoObject",
+    "name": "Regents Geometry — Which Transformation Changes a Rectangle's Area?",
+    "description": "Full walkthrough of a NYS Regents Geometry multiple-choice question on rigid motions and dilations.",
+    "thumbnailUrl": "https://img.youtube.com/vi/YeDmPK0HMrM/maxresdefault.jpg",
+    "uploadDate": "2026-07-31",
+    "contentUrl": "https://youtu.be/YeDmPK0HMrM",
+    "embedUrl": "https://www.youtube.com/embed/YeDmPK0HMrM"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/regents-geometry-rigid-motion-vs-dilation-area-question"
+  },
+  "about": [
+    { "@type": "Thing", "name": "Rigid motion" },
+    { "@type": "Thing", "name": "Isometry" },
+    { "@type": "Thing", "name": "Dilation" },
+    { "@type": "Thing", "name": "Vertical stretch" },
+    { "@type": "Thing", "name": "NYS Regents Geometry" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which transformation would result in the area of a rectangle's image being different from the area of its pre-image?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A vertical stretch of scale factor 3 with respect to y = 0. Reflections, translations, and rotations are rigid motions (isometries) and preserve area. A vertical stretch is a non-rigid transformation that multiplies vertical distances by the scale factor, so the image area is 3 times the pre-image area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do rigid motions preserve area on the NYS Regents Geometry exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Reflections, translations, and rotations are rigid motions — they preserve distance between any two points, and therefore preserve length, angle measure, and area. Any figure and its rigid-motion image are congruent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a dilation or stretch change the area of a figure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A dilation with scale factor k in every direction multiplies area by k². A one-directional stretch with scale factor k multiplies area by k (because only one dimension is scaled). Both are non-rigid transformations and produce a figure similar — not congruent — to the original."
+      }
+    }
+  ]
+}
+</script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry</p>
+      <h1 class="post__title">Regents Geometry: Which Transformation Changes a Rectangle's Area?</h1>
+      <p class="post__dek">A NYS Regents Geometry multiple-choice question, worked line by line — plus the rigid-motion vs. dilation theory every Upper West Side high-school student needs before test day.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>July 31, 2026</span>
+        <span>4 min read</span>
+      </div>
+
+      <div class="post__body">
+
+<!-- ===== THE QUESTION ===== -->
+<div class="theory-box" style="background:#f5f1e8;border-left:4px solid #d4a548;">
+  <h3 style="color:#0a3a5f;">The Question (NYS Regents Geometry)</h3>
+  <p><strong>Which transformation would result in the area of a rectangle's image being different from the area of its pre-image?</strong></p>
+  <ol style="padding-left:24px;margin:10px 0 0;">
+    <li>a reflection over the <em>y</em>-axis</li>
+    <li>a translation 4 units to the right</li>
+    <li>a rotation of 90° counterclockwise about the origin</li>
+    <li>a vertical stretch of scale factor 3 with respect to <em>y</em> = 0</li>
+  </ol>
+</div>
+
+<!-- ===== VIDEO ===== -->
+<figure class="post__youtube">
+  <div class="post__youtube-frame">
+    <iframe src="https://www.youtube.com/embed/YeDmPK0HMrM?rel=0" title="Regents Geometry — Which transformation changes a rectangle's area? (SOMATH walkthrough)"
+      loading="lazy" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+  <figcaption style="text-align:center;color:#666;font-size:0.92rem;margin-top:8px;">Full SOMATH video walkthrough — under 90 seconds.</figcaption>
+</figure>
+
+<!-- ===== ANSWER UPFRONT ===== -->
+<div class="callout" style="background:#e6efe2;border-left:4px solid #0a3a5f;padding:18px 22px;margin:22px 0;border-radius:6px;">
+  <p style="margin:0;font-size:1.05rem;"><strong>Answer:</strong> (4) a vertical stretch of scale factor 3 with respect to <em>y</em> = 0.</p>
+  <p style="margin:8px 0 0;color:#333;">Options (1), (2), and (3) are <strong>rigid motions</strong> and preserve area. Option (4) is a <strong>non-rigid transformation</strong> that multiplies the vertical dimension by 3, so the image area is three times the pre-image area.</p>
+</div>
+
+<!-- ===== THEORY ===== -->
+<h2 id="theory">The Theory: Rigid Motions vs. Non-Rigid Transformations</h2>
+
+<p>Every transformation on the Regents Geometry exam falls into one of two families. Knowing which family a transformation belongs to answers area, congruence, and similarity questions almost instantly.</p>
+
+<div class="theory-box" style="background:#fff;border:1px solid #e6e6e6;border-left:4px solid #0a3a5f;padding:18px 22px;margin:18px 0;border-radius:6px;">
+  <h3 style="color:#0a3a5f;margin:0 0 10px;">Rigid Motions (Isometries)</h3>
+  <p style="margin:8px 0;">A <strong>rigid motion</strong> — also called an <strong>isometry</strong> — is a transformation that preserves the distance between every pair of points. There are exactly three:</p>
+  <ul style="padding-left:22px;margin:8px 0;">
+    <li><strong>Translations</strong> — slide every point the same vector.</li>
+    <li><strong>Reflections</strong> — flip every point across a line.</li>
+    <li><strong>Rotations</strong> — turn every point through a fixed angle around a center.</li>
+  </ul>
+  <p style="margin:8px 0;">Because rigid motions preserve distance, they also preserve <strong>length, angle measure, perimeter, and area</strong>. The pre-image and image are always <strong>congruent</strong>.</p>
+  <p style="margin:8px 0;color:#555;font-size:0.94rem;"><em>Composition matters:</em> any composition of rigid motions is still a rigid motion, so glide reflections and double reflections also preserve area.</p>
+</div>
+
+<div class="theory-box" style="background:#fff;border:1px solid #e6e6e6;border-left:4px solid #b56a3a;padding:18px 22px;margin:18px 0;border-radius:6px;">
+  <h3 style="color:#b56a3a;margin:0 0 10px;">Non-Rigid Transformations</h3>
+  <p style="margin:8px 0;">A <strong>non-rigid transformation</strong> changes distance between at least some pairs of points. On the Regents, the two you must know are:</p>
+  <ul style="padding-left:22px;margin:8px 0;">
+    <li><strong>Dilations</strong> (scale factor <em>k</em> in every direction from a center) — multiply every length by <em>k</em>, so area is multiplied by <em>k</em><sup>2</sup>.</li>
+    <li><strong>Stretches</strong> (scale factor <em>k</em> in one direction only) — multiply one dimension by <em>k</em>, so area is multiplied by <em>k</em>.</li>
+  </ul>
+  <p style="margin:8px 0;">Non-rigid transformations produce a figure that is <strong>similar but not congruent</strong> to the original (or, for shears, neither).</p>
+</div>
+
+<!-- ===== WORKED SOLUTION ===== -->
+<h2 id="solution">Testing Each Option, Step by Step</h2>
+
+<p>Take any rectangle — say the corners <em>A</em>(0, 0), <em>B</em>(4, 0), <em>C</em>(4, 2), <em>D</em>(0, 2). Original area = 4 × 2 = <strong>8 square units</strong>. Now check each choice.</p>
+
+<h3 style="color:#0a3a5f;">(1) Reflection over the <em>y</em>-axis</h3>
+<p>The rule is (<em>x</em>, <em>y</em>) → (−<em>x</em>, <em>y</em>). The image corners become <em>A</em>′(0, 0), <em>B</em>′(−4, 0), <em>C</em>′(−4, 2), <em>D</em>′(0, 2). Sides are still 4 and 2. <strong>Area = 8.</strong> Rigid motion → area preserved.</p>
+
+<h3 style="color:#0a3a5f;">(2) Translation 4 units to the right</h3>
+<p>The rule is (<em>x</em>, <em>y</em>) → (<em>x</em> + 4, <em>y</em>). The rectangle slides but does not deform. <strong>Area = 8.</strong> Rigid motion → area preserved.</p>
+
+<h3 style="color:#0a3a5f;">(3) Rotation of 90° counterclockwise about the origin</h3>
+<p>The rule is (<em>x</em>, <em>y</em>) → (−<em>y</em>, <em>x</em>). The rectangle turns but its side lengths do not change. <strong>Area = 8.</strong> Rigid motion → area preserved.</p>
+
+<h3 style="color:#b56a3a;">(4) Vertical stretch of scale factor 3 with respect to <em>y</em> = 0</h3>
+<p>The rule is (<em>x</em>, <em>y</em>) → (<em>x</em>, 3<em>y</em>). Horizontal lengths are unchanged, but vertical lengths triple. New corners: <em>A</em>′(0, 0), <em>B</em>′(4, 0), <em>C</em>′(4, 6), <em>D</em>′(0, 6). New area = 4 × 6 = <strong>24 square units</strong> — exactly 3 times the original.</p>
+
+<p>Only option (4) changes the area. <strong>The correct choice is (4).</strong></p>
+
+<!-- ===== SHORTCUT ===== -->
+<h2 id="shortcut">The 5-Second Shortcut for Test Day</h2>
+<div class="callout" style="background:#fff8e5;border:1px solid #e8d691;border-left:4px solid #d4a548;padding:20px 24px;margin:20px 0;border-radius:6px;">
+  <p style="margin:0 0 10px;"><strong>On any Regents Geometry area-of-image question, scan the four options and mentally sort each into "rigid" or "non-rigid":</strong></p>
+  <ul style="padding-left:22px;margin:8px 0;">
+    <li>Words like <em>translate, reflect, rotate, glide</em> → rigid → area unchanged.</li>
+    <li>Words like <em>dilate, stretch, compress, scale factor</em> → non-rigid → area changes.</li>
+  </ul>
+  <p style="margin:8px 0 0;">The option that changes area is almost always the one non-rigid transformation in the list. This question is a textbook example.</p>
+</div>
+
+<!-- ===== COMMON ERRORS ===== -->
+<h2 id="mistakes">Common Regents Mistakes on This Question Type</h2>
+<ul>
+  <li><strong>Confusing rotation with dilation.</strong> A rotation turns the figure — it does not resize it. Only dilations and stretches resize.</li>
+  <li><strong>Forgetting that a <em>k</em>-factor dilation multiplies area by <em>k</em><sup>2</sup>, not <em>k</em>.</strong> If the problem said "dilation of scale factor 3," the new area would be 9× the original — not 3×. Watch the wording carefully.</li>
+  <li><strong>Assuming "with respect to <em>y</em> = 0" means rotation.</strong> "With respect to a line" for a stretch means that line stays fixed and everything else moves perpendicular to it. The <em>x</em>-axis (<em>y</em> = 0) is fixed here; every other point moves vertically.</li>
+  <li><strong>Reading "stretch" as "translate."</strong> A stretch is a scaling in one direction, not a slide. Different word, different family.</li>
+</ul>
+
+<!-- ===== REGENTS PREP CTA ===== -->
+<div class="callout" style="background:#e6efe2;border-left:4px solid #0a3a5f;padding:20px 24px;margin:22px 0;border-radius:6px;">
+  <p style="margin:0 0 8px;color:#0a3a5f;"><strong>Studying for the NYS Regents Geometry?</strong></p>
+  <p style="margin:8px 0;">SOMATH's Young Fermats Geometry track covers every Regents topic — rigid motions, dilations, triangle congruence and similarity, circles, coordinate proofs, and volume — with weekly graded work and full past-Regents walkthroughs. Our students consistently score in the 90+ range.</p>
+  <p style="margin:12px 0 0;">
+    <a href="/posts/regents-geometry-june-2026-part-1-answers" style="color:#0a3a5f;font-weight:700;">See all June 2026 Regents Geometry answers &amp; explanations →</a>
+  </p>
+</div>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Want a real read on where your child stands for Regents Geometry?</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation at our Upper West Side classroom.
+            We diagnose exactly what your child knows, send a written summary within 48 hours,
+            and tell you honestly what to work on next — even if you don't enroll.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 9–11</div>
+          <h2 class="course-cta-card__h">Want your child in a Regents Geometry class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Full-year course covering every Regents Geometry topic — transformations, congruence, similarity, right triangles, circles, coordinate proofs, and volume — with weekly graded work and full past-exam walkthroughs.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/young-fermats-geometry" class="course-cta-card__primary">See the Young Fermats Geometry course &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More Regents Geometry from SOMATH</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/regents-geometry-june-2026-part-1-answers">
+          <span class="blog-card__category">Regents Geometry</span>
+          <h2 class="blog-card__title">Regents Geometry June 2026 — Part I Answers &amp; Explanations</h2>
+          <p class="blog-card__dek">Every Part I multiple-choice answer for the June 2026 NYS Geometry Regents, worked step by step with the theorem behind each question.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 12 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/regents-geometry-june-2026-part-2-answers">
+          <span class="blog-card__category">Regents Geometry</span>
+          <h2 class="blog-card__title">Regents Geometry June 2026 — Part II Answers &amp; Explanations</h2>
+          <p class="blog-card__dek">Every Part II constructed-response answer for the June 2026 NYS Geometry Regents, with full proofs and diagrams.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/regents-geometry-june-2026-part-3-answers">
+          <span class="blog-card__category">Regents Geometry</span>
+          <h2 class="blog-card__title">Regents Geometry June 2026 — Part III Answers &amp; Explanations</h2>
+          <p class="blog-card__dek">Every Part III constructed-response answer for the June 2026 NYS Geometry Regents, with step-by-step solutions.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 8 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/regents-geometry-june-2026-part-4-answers">
+          <span class="blog-card__category">Regents Geometry</span>
+          <h2 class="blog-card__title">Regents Geometry June 2026 — Part IV Answers &amp; Explanations</h2>
+          <p class="blog-card__dek">The full 6-point Part IV proof from the June 2026 NYS Geometry Regents, walked through slowly.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 6 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
