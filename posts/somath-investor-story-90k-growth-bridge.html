@@ -134,45 +134,52 @@
 </script>
 
 <style>
-  .invest-hero {
-    background: linear-gradient(135deg, #0f2a1e 0%, #1f3d2e 100%);
-    color: #fff;
+  .post__body .invest-hero {
+    background: linear-gradient(135deg, #0f2a1e 0%, #1f3d2e 100%) !important;
+    color: #ffffff !important;
     padding: 44px 34px;
     border-radius: 12px;
     margin: 18px 0 28px;
   }
-  .invest-hero__eyebrow {
-    color: #d4a548;
+  .post__body .invest-hero__eyebrow {
+    color: #f0c65a !important;
     font-size: 0.82rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 700;
     margin: 0 0 12px;
   }
-  .invest-hero__h {
-    color: #fff;
-    font-size: clamp(1.6rem, 2.6vw, 2.15rem);
-    line-height: 1.18;
-    margin: 0 0 12px;
+  .post__body .invest-hero__h {
+    color: #ffffff !important;
+    font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+    line-height: 1.22;
+    margin: 0 0 14px !important;
     font-weight: 800;
+    font-family: var(--font-display, inherit);
   }
-  .invest-hero__dek {
-    color: #e6dfc9;
+  .post__body .invest-hero__h em { color: #f0c65a !important; font-style: italic; }
+  .post__body .invest-hero__dek {
+    color: #f0ecdf !important;
     font-size: 1.02rem;
     margin: 0 0 22px;
     max-width: 720px;
+    line-height: 1.55;
   }
-  .invest-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-  .invest-hero__cta {
+  .post__body .invest-hero__dek em { color: #ffffff !important; font-style: italic; }
+  .post__body .invest-hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+  .post__body .invest-hero__cta {
     display: inline-block;
     padding: 12px 22px;
     border-radius: 6px;
     font-weight: 700;
     text-decoration: none;
     font-size: 0.98rem;
+    line-height: 1.2;
   }
-  .invest-hero__cta--gold { background: #d4a548; color: #0f2a1e; }
-  .invest-hero__cta--ghost { background: transparent; color: #fff; border: 1.5px solid #d4a548; }
+  .post__body .invest-hero__cta--gold { background: #d4a548 !important; color: #0f2a1e !important; }
+  .post__body .invest-hero__cta--gold:hover { background: #e0b45a !important; }
+  .post__body .invest-hero__cta--ghost { background: rgba(255,255,255,0.06) !important; color: #ffffff !important; border: 1.5px solid #f0c65a !important; }
+  .post__body .invest-hero__cta--ghost:hover { background: rgba(255,255,255,0.14) !important; }
 
   .kpi-strip {
     display: grid;
@@ -226,7 +233,7 @@
   .invest-h3 { color: #0f2a1e; font-size: 1.15rem; margin: 22px 0 8px; font-weight: 700; }
   .invest-lede { color: #333; font-size: 1.05rem; margin: 0 0 12px; }
 
-  .thesis-box {
+  .post__body .thesis-box {
     background: #fff;
     border: 1px solid #e6d691;
     border-left: 5px solid #d4a548;
@@ -234,12 +241,16 @@
     margin: 24px 0;
     border-radius: 6px;
   }
-  .thesis-box h4 {
-    color: #0f2a1e;
-    margin: 0 0 10px;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
+  .post__body .thesis-box h4 {
+    color: #0f2a1e !important;
+    margin: 0 0 10px !important;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 800;
   }
+  .post__body .thesis-box p { color: #1f3d2e; }
+  .post__body .thesis-box p strong { color: #0f2a1e; }
 
   .use-of-funds {
     background: #f5f1e8;
@@ -262,31 +273,35 @@
   .use-of-funds th { color: #0f2a1e; font-weight: 700; font-size: 0.86rem; letter-spacing: 0.06em; text-transform: uppercase; }
   .use-of-funds td:first-child { font-weight: 700; color: #1f3d2e; white-space: nowrap; }
 
-  .close-cta {
-    background: #1f3d2e;
-    color: #fff;
+  .post__body .close-cta {
+    background: #1f3d2e !important;
+    color: #ffffff !important;
     padding: 34px 32px;
     border-radius: 12px;
     margin: 34px 0 20px;
     text-align: center;
   }
-  .close-cta h3 {
-    color: #d4a548;
-    margin: 0 0 10px;
+  .post__body .close-cta h3 {
+    color: #f0c65a !important;
+    margin: 0 0 10px !important;
     font-size: 1.35rem;
     font-weight: 800;
+    font-family: var(--font-display, inherit);
   }
-  .close-cta p { color: #e6dfc9; margin: 8px 0; }
-  .close-cta a.btn-gold {
-    background: #d4a548;
-    color: #0f2a1e;
+  .post__body .close-cta p { color: #f0ecdf !important; margin: 8px 0; }
+  .post__body .close-cta p strong { color: #ffffff !important; }
+  .post__body .close-cta a.btn-gold {
+    background: #d4a548 !important;
+    color: #0f2a1e !important;
     padding: 13px 26px;
     border-radius: 6px;
     font-weight: 700;
     text-decoration: none;
     display: inline-block;
     margin-top: 12px;
+    border-bottom: none !important;
   }
+  .post__body .close-cta a.btn-gold:hover { background: #e0b45a !important; color: #0f2a1e !important; }
 </style>
   </head>
   <body data-page="blog">
