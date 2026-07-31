@@ -1777,11 +1777,42 @@ __name(handleEnrollmentsApi, "handleEnrollmentsApi");
 var worker_default = {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    // Canonical host: www.schoolofmath.us. 301 apex -> www.
+    // ---------- Canonicalization (SEO) ----------
+    // Rule 1: force HTTPS. Detect via CF-Visitor header (Cloudflare exposes
+    // the original client protocol here; url.protocol is always https at the
+    // worker layer). 301 permanent so Google collapses http/https duplicates.
+    const cfVisitor = request.headers.get("cf-visitor") || "";
+    if (cfVisitor.includes('"scheme":"http"')) {
+      const httpsTarget = new URL(request.url);
+      httpsTarget.protocol = "https:";
+      httpsTarget.hostname = "www.schoolofmath.us";
+      return Response.redirect(httpsTarget.toString(), 301);
+    }
+    // Rule 2: canonical host www.schoolofmath.us. 301 apex -> www.
     if (url.hostname === "schoolofmath.us") {
       const target = new URL(request.url);
       target.hostname = "www.schoolofmath.us";
       return Response.redirect(target.toString(), 301);
+    }
+    // Rule 3: strip trailing slash on file-backed pages. Cloudflare Pages default
+    // is a 307 temporary redirect, which fragments Google's index between
+    // /about and /about/. Force 301 permanent so the canonical is unambiguous.
+    // Exception: keep the trailing slash on directory URLs served by index.html.
+    const DIR_INDEX_PATHS = new Set(["/courses/"]);
+    if (
+      url.pathname.length > 1 &&
+      url.pathname.endsWith("/") &&
+      !DIR_INDEX_PATHS.has(url.pathname)
+    ) {
+      const stripped = new URL(request.url);
+      stripped.pathname = url.pathname.replace(/\/+$/, "") || "/";
+      return Response.redirect(stripped.toString(), 301);
+    }
+    // Rule 4: /home is a duplicate of /. 301 to root.
+    if (url.pathname === "/home") {
+      const rootTarget = new URL(request.url);
+      rootTarget.pathname = "/";
+      return Response.redirect(rootTarget.toString(), 301);
     }
     // Consolidated course pages: little-newtons-a/b and kid-einsteins-a/b -> single course page (301).
     const CONSOLIDATED_COURSE_REDIRECTS = {
