@@ -1824,6 +1824,18 @@ var worker_default = {
     if (CONSOLIDATED_COURSE_REDIRECTS[url.pathname]) {
       return Response.redirect(`https://www.schoolofmath.us${CONSOLIDATED_COURSE_REDIRECTS[url.pathname]}`, 301);
     }
+    // Duplicate-post canonicalization (SEO): 6 old thin/duplicate posts 301 to the stronger canonical.
+    const CONSOLIDATED_POST_REDIRECTS = {
+      "/posts/math-tutoring-services-upper-west-side-nyc": "/posts/best-math-tutor-upper-west-side",
+      "/posts/best-math-tutoring-upper-west-side": "/posts/best-math-tutor-upper-west-side",
+      "/posts/shsat-prep-upper-west-side": "/posts/shsat-prep-upper-west-side-complete-2026-guide",
+      "/posts/best-math-enrichment-upper-west-side-parents-guide": "/posts/best-math-enrichment-program-nyc",
+      "/posts/best-math-enrichment-schools-in-ny-is-somath": "/posts/best-math-enrichment-program-nyc",
+      "/posts/master-nyc-specialized-exams-proven-strategies-for-success": "/posts/master-the-nyc-specialized-exams-proven-success-strategies"
+    };
+    if (CONSOLIDATED_POST_REDIRECTS[url.pathname]) {
+      return Response.redirect(`https://www.schoolofmath.us${CONSOLIDATED_POST_REDIRECTS[url.pathname]}`, 301);
+    }
     // Serve our own robots.txt (bypass Cloudflare managed robots injection).
     // We WANT AI assistants (ChatGPT, Claude, Perplexity, Gemini) to read the
     // site so parents searching in those tools can find SOMATH. Only block
