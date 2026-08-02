@@ -1797,12 +1797,17 @@ var worker_default = {
     // Rule 3: strip trailing slash on file-backed pages. Cloudflare Pages default
     // is a 307 temporary redirect, which fragments Google's index between
     // /about and /about/. Force 301 permanent so the canonical is unambiguous.
-    // Exception: keep the trailing slash on directory URLs served by index.html.
+    // Exception: keep the trailing slash on directory URLs served by index.html,
+    // and skip admin/API paths entirely (they are served by env.ASSETS.fetch
+    // and Cloudflare Pages does its own directory-index redirect, which would
+    // loop against our 301 strip here).
     const DIR_INDEX_PATHS = new Set(["/courses/"]);
     if (
       url.pathname.length > 1 &&
       url.pathname.endsWith("/") &&
-      !DIR_INDEX_PATHS.has(url.pathname)
+      !DIR_INDEX_PATHS.has(url.pathname) &&
+      !url.pathname.startsWith("/_admin/") &&
+      !url.pathname.startsWith("/api/")
     ) {
       const stripped = new URL(request.url);
       stripped.pathname = url.pathname.replace(/\/+$/, "") || "/";
