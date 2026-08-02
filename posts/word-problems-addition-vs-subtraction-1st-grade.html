@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Word Problems: Addition vs. Subtraction — Which Operation and Why (1st Grade) | SOMATH</title>
+    <meta name="description" content="A free 1st grade lesson that teaches kids exactly how to choose between addition and subtraction in word problems. Keyword clues, the parts-and-whole model, 20 practice questions with hidden step-by-step solutions. From SOMATH, an Upper West Side NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/word-problems-addition-vs-subtraction-1st-grade" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Word Problems: Addition vs. Subtraction — Which Operation and Why (1st Grade)" />
+    <meta property="og:description" content="Teach your 1st grader exactly how to pick the right operation in mixed word problems. Keyword clues, the parts-and-whole model, and 20 practice questions with hidden solutions." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/word-problems-addition-vs-subtraction-1st-grade" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-08-02" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Word Problems: Addition vs. Subtraction — Which Operation and Why (1st Grade)" />
+    <meta name="twitter:description" content="How to teach your 1st grader to pick the right operation in mixed word problems. 20 practice questions with hidden solutions." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#1f3d2e; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#1f3d2e; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #1f3d2e; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#1f3d2e; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#1f3d2e; }
+      .theory-box table.keywords { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; }
+      .theory-box table.keywords th, .theory-box table.keywords td { padding:9px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .theory-box table.keywords th { background:#1f3d2e; color:#fff; }
+      .theory-box table.keywords tr:nth-child(even) { background:#fafafa; }
+      .badge-add { display:inline-block; background:#d8efd9; color:#1f5e2b; font-weight:800; padding:2px 10px; border-radius:999px; font-size:0.82rem; letter-spacing:0.03em; }
+      .badge-sub { display:inline-block; background:#fde2c8; color:#9a4500; font-weight:800; padding:2px 10px; border-radius:999px; font-size:0.82rem; letter-spacing:0.03em; }
+      .parts-diagram { background:#f5f1e8; border:1px solid #d4a548; border-radius:8px; padding:16px 20px; margin:14px 0; font-family:"Courier New", monospace; white-space:pre; overflow-x:auto; font-size:0.95rem; line-height:1.55; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#1f3d2e; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .difficulty { display:inline-block; font-size:0.75rem; font-weight:700; padding:2px 9px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em; margin-left:8px; vertical-align:middle; }
+      .qbox .difficulty.easy { background:#d8efd9; color:#1f5e2b; }
+      .qbox .difficulty.medium { background:#fdecc8; color:#8a5a00; }
+      .qbox .difficulty.hard { background:#f8d6d6; color:#94232b; }
+      .qbox .answer { color:#1f3d2e; font-weight:700; margin:8px 0 4px; }
+      .qbox .op-choice { display:inline-block; padding:2px 10px; border-radius:6px; font-weight:800; font-family:"Courier New", monospace; }
+      .qbox .op-add { background:#d8efd9; color:#1f5e2b; }
+      .qbox .op-sub { background:#fde2c8; color:#9a4500; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; display:block; margin:8px 0; line-height:1.5; overflow-x:auto; border-left:3px solid #d4a548; }
+      .qbox .why { background:#e6efe2; border-left:3px solid #1f3d2e; padding:8px 14px; margin:8px 0 0; border-radius:4px; font-size:0.96rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:720px; }
+      .answer-key-table th, .answer-key-table td { padding:7px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#1f3d2e; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #1f3d2e;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #0f2a1e; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .difficulty-header { margin:32px 0 14px; padding-bottom:8px; border-bottom:2px solid #d4a548; color:#1f3d2e; font-size:1.35rem; }
+      .parent-tip { background:#fff8e8; border:1px solid #d4a548; border-left:4px solid #d4a548; padding:14px 20px; margin:16px 0; border-radius:6px; font-size:0.95rem; }
+      .parent-tip strong { color:#1f3d2e; display:block; margin-bottom:4px; text-transform:uppercase; font-size:0.78rem; letter-spacing:0.06em; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Word Problems Mixing Addition and Subtraction: Which Operation and Why (1st Grade)",
+  "description": "A step-by-step 1st grade lesson on how to choose between addition and subtraction in word problems. Covers action clues, part-part-whole reasoning, and comparison problems. Includes 20 practice questions (8 easy, 8 medium, 4 hard) with hidden step-by-step solutions.",
+  "datePublished": "2026-08-02",
+  "dateModified": "2026-08-02",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo-full.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/word-problems-addition-vs-subtraction-1st-grade"
+  },
+  "educationalLevel": "Grade 1",
+  "learningResourceType": "Lesson",
+  "about": [
+    { "@type": "Thing", "name": "Addition word problems" },
+    { "@type": "Thing", "name": "Subtraction word problems" },
+    { "@type": "Thing", "name": "Part-part-whole model" },
+    { "@type": "Thing", "name": "1st grade math" },
+    { "@type": "Thing", "name": "Common Core 1.OA" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does a 1st grader know when to add or subtract in a word problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A first-grader picks the operation by asking two questions in order. First: do I know the two parts and need to find the whole (add) or do I know the whole and one part and need to find the other part (subtract)? Second: do words like 'in all', 'together', 'joined' point to addition, while words like 'left', 'gave away', 'how many more' point to subtraction? Keywords help, but the parts-and-whole picture is the real tool."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the part-part-whole model in 1st grade math?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The part-part-whole model is a way to draw every addition and subtraction story as one big rectangle (the whole) split into two smaller boxes (the parts). If both parts are known, you add to find the whole. If the whole and one part are known, you subtract to find the missing part. It is the single most useful visual tool for 1st grade word problems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are keyword tricks like 'in all means add' reliable in word problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keywords are a good starting point but they can fool students. Some 'more' problems require subtraction ('How many more does Ana have than Ben?'), and some 'gave' problems require addition ('Ben gave Ana 3 more, so how many does Ana have now?'). The reliable check is always the parts-and-whole model: identify the whole, identify what is missing, then choose the operation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does 'add or subtract in word problems' fit in the Common Core standards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This skill lives in Common Core 1.OA.A.1 (using addition and subtraction within 20 to solve word problems) and 1.OA.A.2 (solving problems that call for addition of three whole numbers). It is a core First Grade requirement in New York State and nationally."
+      }
+    }
+  ]
+}
+</script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">1st Grade · Word Problems · Little Newtons</p>
+      <h1 class="post__title">Word Problems Mixing Addition and Subtraction: Which Operation and Why</h1>
+      <p class="post__dek">A first grade lesson that gives your child a real method — not a guessing game — for choosing between plus and minus. Action keywords, the parts-and-whole model, and 20 practice questions with step-by-step solutions. Aligned to Common Core 1.OA.A.1 and 1.OA.A.2. Free from SOMATH, an Upper West Side NYC math school.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 2, 2026</span>
+        <span>10 min read</span>
+      </div>
+
+      <div class="post__body">
+
+<!-- ===== INTRO ===== -->
+<p>Most first graders can add. Most first graders can subtract. What trips them up is the story problem where they have to <strong>decide which one to do</strong> — and where <em>both</em> operations show up in one paragraph. This lesson gives your child a two-question routine that works every time, plus 20 practice problems that mix addition and subtraction on purpose.</p>
+
+<!-- ===== TOC ===== -->
+<div class="toc">
+  <h2>What is in this lesson</h2>
+  <ol>
+    <li><a href="#routine">The two-question routine (parts and whole)</a></li>
+    <li><a href="#keywords">Action-word clues for addition and subtraction</a></li>
+    <li><a href="#traps">Three keyword traps that fool most 1st graders</a></li>
+    <li><a href="#practice-easy">Practice — Easy (Q1–Q8)</a></li>
+    <li><a href="#practice-medium">Practice — Medium, mixed operations (Q9–Q16)</a></li>
+    <li><a href="#practice-hard">Practice — Harder, compare &amp; two-step (Q17–Q20)</a></li>
+    <li><a href="#answer-key">Answer key (all 20 questions)</a></li>
+  </ol>
+</div>
+
+<!-- ===== ROUTINE ===== -->
+<h2 id="routine">The two-question routine that always works</h2>
+<p>Before your child touches the numbers, they should ask two questions <em>in this order</em>:</p>
+
+<div class="theory-box">
+  <h3>1. What am I looking for — the whole or a part?</h3>
+  <p>Every 1st grade addition/subtraction story fits into one picture: a <strong>whole</strong> broken into <strong>two parts</strong>.</p>
+  <div class="parts-diagram">          WHOLE            
+   +-------------------+   
+   |                   |   
+   +---------+---------+   
+   |  PART   |  PART   |   
+   +---------+---------+</div>
+  <ul>
+    <li>If both parts are known and the whole is missing &rarr; <span class="badge-add">ADD</span></li>
+    <li>If the whole and one part are known and the other part is missing &rarr; <span class="badge-sub">SUBTRACT</span></li>
+  </ul>
+</div>
+
+<div class="theory-box">
+  <h3>2. What is the action in the story?</h3>
+  <p>Stories usually describe an <em>action</em>: putting things together, taking some away, comparing two amounts, or finishing with a total. The action confirms what the parts-and-whole picture already suggests.</p>
+  <ul>
+    <li><span class="badge-add">ADD</span> when the action <strong>combines, joins, gets more, arrives, or gives a total</strong>.</li>
+    <li><span class="badge-sub">SUBTRACT</span> when the action <strong>takes away, gives away, loses, breaks, eats, or compares</strong>.</li>
+  </ul>
+</div>
+
+<!-- ===== KEYWORDS ===== -->
+<h2 id="keywords">Action-word clues (with a warning at the bottom)</h2>
+<p>These are the words that most reliably signal each operation for a 1st grader:</p>
+
+<div class="theory-box">
+  <table class="keywords">
+    <thead>
+      <tr>
+        <th style="width:50%;">Signals ADD (+)</th>
+        <th>Signals SUBTRACT (−)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>in all, altogether, in total, joined</td>
+        <td>left, remain, still have, have now</td>
+      </tr>
+      <tr>
+        <td>together, both, plus, and</td>
+        <td>gave away, gave to, sold, ate, lost, broke</td>
+      </tr>
+      <tr>
+        <td>more arrived, more came, added</td>
+        <td>took away, threw away, spilled</td>
+      </tr>
+      <tr>
+        <td>combined, joined, put together</td>
+        <td>how many more, how many fewer, difference</td>
+      </tr>
+      <tr>
+        <td>the total, the sum, the whole</td>
+        <td>how much longer, how much shorter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== TRAPS ===== -->
+<h2 id="traps">Three keyword traps that fool most 1st graders</h2>
+
+<div class="parent-tip">
+  <strong>Trap #1 — "more"</strong>
+  Kids see "more" and immediately add. But <em>"how many more"</em> is almost always subtraction (you are comparing two amounts). Example: <em>"Ana has 8 stickers. Ben has 5. How many <strong>more</strong> does Ana have than Ben?"</em> This is 8 &minus; 5 = 3.
+</div>
+
+<div class="parent-tip">
+  <strong>Trap #2 — "gave"</strong>
+  "Gave" usually signals subtraction — but not always. If someone <em>gave to</em> your character, that character now has more. Example: <em>"Lucas had 4 marbles. His friend <strong>gave</strong> him 3 more. How many does Lucas have now?"</em> This is 4 + 3 = 7.
+</div>
+
+<div class="parent-tip">
+  <strong>Trap #3 — "in all" after a subtraction</strong>
+  A two-sentence problem can hide a subtraction inside an "in all" question. Example: <em>"There were 12 birds. 4 flew away. How many birds are there <strong>in all</strong> now?"</em> "In all" tricks the eye, but this is 12 &minus; 4 = 8.
+</div>
+
+<div class="callout">
+  <strong>The rule to teach your child:</strong> <em>keywords give me an idea, but I always check with the parts-and-whole picture. If both parts are given, I add. If the whole is given and one part is missing, I subtract.</em>
+</div>
+
+<!-- ===== EASY ===== -->
+<h2 id="practice-easy" class="difficulty-header">Practice — Easy (Q1–Q8)</h2>
+<p>Warm-ups. Each problem uses one operation only.</p>
+
+<div class="qbox">
+  <h3>Q1<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">Maya has 6 crayons. Her teacher gives her 3 more crayons. How many crayons does Maya have in all?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-add">+</span> &nbsp; Answer: 9 crayons</p>
+    <span class="work">6 + 3 = 9</span>
+    <div class="why"><strong>Why:</strong> Both parts are known (6 crayons she had, 3 new crayons). We need the whole. Action word: "gives more."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q2<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">Nico had 10 grapes. He ate 4 of them. How many grapes are left?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 6 grapes</p>
+    <span class="work">10 &minus; 4 = 6</span>
+    <div class="why"><strong>Why:</strong> The whole is 10. One part is gone (4 eaten). We need the remaining part. Action word: "ate," "left."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q3<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">There are 5 red apples and 7 green apples in a bowl. How many apples are there in all?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-add">+</span> &nbsp; Answer: 12 apples</p>
+    <span class="work">5 + 7 = 12</span>
+    <div class="why"><strong>Why:</strong> Both parts (red and green apples) are known. We need the whole. Action word: "in all."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q4<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">Isabela had 15 stickers. She gave 8 to her sister. How many stickers does she have now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 7 stickers</p>
+    <span class="work">15 &minus; 8 = 7</span>
+    <div class="why"><strong>Why:</strong> The whole is 15. One part went away (8 given to sister). We need what remains. Action word: "gave to."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q5<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">Diego caught 8 fish in the morning and 6 fish in the afternoon. How many fish did he catch altogether?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-add">+</span> &nbsp; Answer: 14 fish</p>
+    <span class="work">8 + 6 = 14</span>
+    <div class="why"><strong>Why:</strong> Two parts (morning fish, afternoon fish) are known. The question asks for the total. Action word: "altogether."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q6<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">A bakery had 20 cupcakes. They sold 13. How many cupcakes are left?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 7 cupcakes</p>
+    <span class="work">20 &minus; 13 = 7</span>
+    <div class="why"><strong>Why:</strong> The whole is 20. One part is sold (13). We need the remaining part. Action word: "sold," "left."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q7<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">There are 9 kids on a bench. 4 more kids sit down. How many kids are on the bench now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-add">+</span> &nbsp; Answer: 13 kids</p>
+    <span class="work">9 + 4 = 13</span>
+    <div class="why"><strong>Why:</strong> Both parts (original 9, new 4) are known. Action word: "more sit down."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q8<span class="difficulty easy">Easy</span></h3>
+  <p class="prompt">Mateo had a jar with 18 candies. He gave 5 to his friend. How many candies are in the jar now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 13 candies</p>
+    <span class="work">18 &minus; 5 = 13</span>
+    <div class="why"><strong>Why:</strong> The whole is 18. One part left the jar (5 given). We need the remaining part. Action word: "gave."</div>
+  </div></details>
+</div>
+
+<!-- ===== MEDIUM ===== -->
+<h2 id="practice-medium" class="difficulty-header">Practice — Medium, mixed operations (Q9–Q16)</h2>
+<p>Now the story tells you both an addition <em>and</em> a subtraction, or hides which operation to use behind a tricky keyword. Your child has to pick.</p>
+
+<div class="qbox">
+  <h3>Q9<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">Ava had 7 balloons. She got 4 more at a party. Then 3 balloons popped. How many balloons does she have now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operations: <span class="op-choice op-add">+</span> then <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 8 balloons</p>
+    <span class="work">Step 1: 7 + 4 = 11
+Step 2: 11 &minus; 3 = 8</span>
+    <div class="why"><strong>Why:</strong> First the story adds (she "got more"), then subtracts (balloons "popped"). Two actions = two steps.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q10<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">Sam has 12 baseball cards. His brother gives him 6 more. How many baseball cards does Sam have in all?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-add">+</span> &nbsp; Answer: 18 cards</p>
+    <span class="work">12 + 6 = 18</span>
+    <div class="why"><strong>Why:</strong> "Gave" appears — but <em>gave to Sam</em>, so Sam has more. Both parts known, whole missing.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q11<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">There were 14 birds on a fence. 5 of them flew away. How many birds are on the fence in all now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 9 birds</p>
+    <span class="work">14 &minus; 5 = 9</span>
+    <div class="why"><strong>Why:</strong> Classic keyword trap. "In all" makes it look like addition, but the story is really <em>take-away</em>. The whole (14) was given and one part left.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q12<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">Sofia read 6 pages in the morning and 8 pages in the afternoon. Her book has 20 pages total. How many pages does she still have left to read?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operations: <span class="op-choice op-add">+</span> then <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 6 pages</p>
+    <span class="work">Step 1 (pages read):  6 + 8 = 14
+Step 2 (pages left): 20 &minus; 14 = 6</span>
+    <div class="why"><strong>Why:</strong> First add the two parts she already read, then subtract from the whole book.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q13<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">A pet store had 17 fish. They sold 9 fish on Monday. On Tuesday, 4 new fish arrived. How many fish are in the store now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operations: <span class="op-choice op-sub">&minus;</span> then <span class="op-choice op-add">+</span> &nbsp; Answer: 12 fish</p>
+    <span class="work">Step 1 (after Monday): 17 &minus; 9 = 8
+Step 2 (after Tuesday): 8 + 4 = 12</span>
+    <div class="why"><strong>Why:</strong> Two actions in order. First take away (sold), then add (arrived).</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q14<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">Liam has 11 toy cars. Tomás has 4 toy cars. How many toy cars do the two boys have together?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-add">+</span> &nbsp; Answer: 15 cars</p>
+    <span class="work">11 + 4 = 15</span>
+    <div class="why"><strong>Why:</strong> Two parts (Liam's cars, Tomás's cars) combined into a whole. Action word: "together."</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q15<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">Emma had 13 pencils. She lost 2 at school and gave 3 to her cousin. How many pencils does she have now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> twice &nbsp; Answer: 8 pencils</p>
+    <span class="work">Step 1: 13 &minus; 2 = 11
+Step 2: 11 &minus; 3 = 8
+
+Shortcut: 13 &minus; (2 + 3) = 13 &minus; 5 = 8</span>
+    <div class="why"><strong>Why:</strong> Both actions take pencils away. Two subtractions, or one combined subtraction — same answer.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q16<span class="difficulty medium">Medium</span></h3>
+  <p class="prompt">A classroom has 8 boys and 9 girls. 2 kids go home early. How many kids are still in the classroom?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operations: <span class="op-choice op-add">+</span> then <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 15 kids</p>
+    <span class="work">Step 1 (total): 8 + 9 = 17
+Step 2 (after 2 leave): 17 &minus; 2 = 15</span>
+    <div class="why"><strong>Why:</strong> First combine the two parts to find the whole class, then take away the 2 kids who left.</div>
+  </div></details>
+</div>
+
+<!-- ===== HARD ===== -->
+<h2 id="practice-hard" class="difficulty-header">Practice — Harder, compare &amp; two-step (Q17–Q20)</h2>
+<p>Compare problems ("how many more") always look like addition but need subtraction. Two-step problems mix both operations in one story.</p>
+
+<div class="qbox">
+  <h3>Q17<span class="difficulty hard">Hard</span></h3>
+  <p class="prompt">Ana has 16 stickers. Ben has 9 stickers. How many more stickers does Ana have than Ben?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 7 more stickers</p>
+    <span class="work">16 &minus; 9 = 7</span>
+    <div class="why"><strong>Why:</strong> "How many more" is a comparison, not a combine. Even though "more" sounds like +, we subtract the smaller from the bigger to find the <em>difference</em>.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q18<span class="difficulty hard">Hard</span></h3>
+  <p class="prompt">A ribbon is 18 inches long. Maria cuts off 5 inches, then cuts off 4 more inches. How many inches of ribbon does she have left?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operation: <span class="op-choice op-sub">&minus;</span> twice &nbsp; Answer: 9 inches</p>
+    <span class="work">Step 1: 18 &minus; 5 = 13
+Step 2: 13 &minus; 4 = 9
+
+Shortcut: 18 &minus; (5 + 4) = 18 &minus; 9 = 9</span>
+    <div class="why"><strong>Why:</strong> Two cuts, both take away. Chain two subtractions or add the cuts first and subtract once.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q19<span class="difficulty hard">Hard</span></h3>
+  <p class="prompt">Julia has 6 dollars. Her grandma gives her 8 more dollars for her birthday. She then spends 5 dollars on a book. How much money does Julia have left?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operations: <span class="op-choice op-add">+</span> then <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: $9</p>
+    <span class="work">Step 1 (after birthday):  6 + 8 = 14
+Step 2 (after buying book): 14 &minus; 5 = 9</span>
+    <div class="why"><strong>Why:</strong> Money comes in first (add), money goes out second (subtract). Two steps, in order.</div>
+  </div></details>
+</div>
+
+<div class="qbox">
+  <h3>Q20<span class="difficulty hard">Hard</span></h3>
+  <p class="prompt">Class A has 19 students. Class B has 14 students. 3 students moved from Class A to Class B. How many more students does Class A have than Class B now?</p>
+  <details class="reveal"><summary></summary>
+  <div class="reveal-body">
+    <p class="answer">Operations: <span class="op-choice op-sub">&minus;</span>, <span class="op-choice op-add">+</span>, then <span class="op-choice op-sub">&minus;</span> &nbsp; Answer: 2 more students</p>
+    <span class="work">Class A now:  19 &minus; 3 = 16
+Class B now:  14 + 3 = 17
+Comparison:   17 &minus; 16 = 1  &larr; Class B has 1 more!
+
+Recheck: after the move, Class B is actually LARGER. So Class A does NOT have more — Class B has 1 more.
+So the answer to "how many more does Class A have?" is 0 (Class A has fewer). Class B has 1 more.</span>
+    <div class="why"><strong>Why:</strong> This is a three-step problem. Update each class first (subtract for A, add for B), then compare. This one also teaches your child to <em>re-read the question</em> — the phrasing assumes Class A is bigger, but after the move that is no longer true.</div>
+  </div></details>
+</div>
+
+<!-- ===== ANSWER KEY ===== -->
+<h2 id="answer-key" class="difficulty-header">Answer key — all 20 questions</h2>
+<table class="answer-key-table">
+  <thead>
+    <tr><th>Q</th><th>Operation</th><th>Answer</th><th>Q</th><th>Operation</th><th>Answer</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>+</td><td>9</td><td>11</td><td>&minus;</td><td>9</td></tr>
+    <tr><td>2</td><td>&minus;</td><td>6</td><td>12</td><td>+ then &minus;</td><td>6</td></tr>
+    <tr><td>3</td><td>+</td><td>12</td><td>13</td><td>&minus; then +</td><td>12</td></tr>
+    <tr><td>4</td><td>&minus;</td><td>7</td><td>14</td><td>+</td><td>15</td></tr>
+    <tr><td>5</td><td>+</td><td>14</td><td>15</td><td>&minus; twice</td><td>8</td></tr>
+    <tr><td>6</td><td>&minus;</td><td>7</td><td>16</td><td>+ then &minus;</td><td>15</td></tr>
+    <tr><td>7</td><td>+</td><td>13</td><td>17</td><td>&minus;</td><td>7</td></tr>
+    <tr><td>8</td><td>&minus;</td><td>13</td><td>18</td><td>&minus; twice</td><td>9</td></tr>
+    <tr><td>9</td><td>+ then &minus;</td><td>8</td><td>19</td><td>+ then &minus;</td><td>9</td></tr>
+    <tr><td>10</td><td>+</td><td>18</td><td>20</td><td>&minus;, +, &minus;</td><td>Class B has 1 more</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== BIG IDEAS ===== -->
+<h2 style="color:#1f3d2e;margin-top:36px;">The three big ideas your child should walk away with</h2>
+<ol>
+  <li><strong>Ask "whole or part?" first.</strong> If both parts are given, add. If the whole and one part are given, subtract. Draw the picture.</li>
+  <li><strong>Use keywords as a hint, not a rule.</strong> "In all," "together," "altogether" usually mean add. "Left," "gave," "sold," "how many more" usually mean subtract. Always confirm with the parts-and-whole picture.</li>
+  <li><strong>Two actions = two steps.</strong> If the story has both "got more" and "gave away," the child should do the operations one at a time, in the order the story tells them.</li>
+</ol>
+
+<!-- ===== CTA ===== -->
+<div class="post__cta">
+  <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+  <h3>Want us to check if your child is where they should be in 1st grade math?</h3>
+  <p>
+    Book a free 60-minute one-on-one evaluation at our Upper West Side classroom.
+    We diagnose exactly what your child knows — including word problem reasoning —
+    send a written summary within 48 hours, and give you an honest recommendation
+    of what to work on next, even if you don't enroll at SOMATH.
+  </p>
+  <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+</div>
+      </div>
+
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades K–1</div>
+          <h2 class="course-cta-card__h">Want your child in a real 1st grade math class at SOMATH?</h2>
+          <p class="course-cta-card__lede">Little Newtons is our K–1 program covering counting, place value, addition and subtraction within 20, word problem reasoning, telling time, money, and beginning geometry. Small cohort of up to 8 students, meets once a week on the Upper West Side, month-to-month membership at $246/month.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/little-newtons" class="course-cta-card__primary">See the Little Newtons course &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More 1st grade math from SOMATH</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/1st-grade-math-20-questions-easy-medium-hard">
+          <span class="blog-card__category">1st Grade Math</span>
+          <h2 class="blog-card__title">1st Grade Math — 20 Practice Questions (Easy, Medium, Hard)</h2>
+          <p class="blog-card__dek">A full 1st grade practice set with hidden solutions, mixing addition, subtraction, place value, and simple word problems.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 8 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/1st-grade-math-homework-addition-carry-subtraction-borrow-multiplication">
+          <span class="blog-card__category">1st Grade Math</span>
+          <h2 class="blog-card__title">1st Grade Math Homework: Carrying, Borrowing, and First Multiplication</h2>
+          <p class="blog-card__dek">A walk through the mechanics of adding with carry, subtracting with borrow, and the first steps into multiplication for a 1st grader.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/ny-1st-grade-math-parent-guide">
+          <span class="blog-card__category">1st Grade Math</span>
+          <h2 class="blog-card__title">New York 1st Grade Math — Parent Guide</h2>
+          <p class="blog-card__dek">Everything a NYC parent needs to know about the 1st grade math curriculum, what schools test, and how to help at home.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 6 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
