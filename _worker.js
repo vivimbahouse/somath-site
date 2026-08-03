@@ -634,6 +634,7 @@ async function handlePreEnroll(request, env) {
   params.append("cancel_url", cancelUrl);
   params.append("customer_email", parent_email);
   params.append("payment_method_types[]", "card");
+  params.append("allow_promotion_codes", "true");
   params.append("line_items[0][quantity]", "1");
   params.append("line_items[0][price_data][currency]", "usd");
   params.append("line_items[0][price_data][unit_amount]", String(depositCents));
@@ -1214,6 +1215,7 @@ async function handleEnrollIntent(request, env) {
     sp.append("payment_method_types[]", "card");
     sp.append("billing_address_collection", "required");
     sp.append("phone_number_collection[enabled]", "true");
+    sp.append("allow_promotion_codes", "true");
     // Line item 0 — the recurring monthly tuition
     sp.append("line_items[0][price]", COURSE_PRICES[course]);
     sp.append("line_items[0][quantity]", "1");
