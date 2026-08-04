@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals (25 Practice Questions with Answers) | SOMATH</title>
+    <meta name="description" content="A free 25-question pre-algebra practice set from Class 5 of the SOMATH Young Fermats course — building equivalent fractions, simplifying to lowest terms, comparing fractions with common denominators or cross-multiplication, and converting fractions to decimals (terminating and repeating). Includes hidden step-by-step answer explanations. From School of Math, 226 W 79th St, Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals (25 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Free 25 pre-algebra practice questions from Class 5 of the SOMATH Young Fermats course — equivalent fractions, simplifying, comparing, and converting to terminating or repeating decimals, with hidden step-by-step explanations." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-08-04" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals (25 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Fraction cheat sheet + 25 practice questions with hidden step-by-step explanations. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      .shortcuts {
+        margin: 8px 0 26px;
+        border: 1px solid #d4d1ca;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shortcuts__row {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.98rem;
+      }
+      .shortcuts__row:last-child { border-bottom: 0; }
+      .shortcuts__row strong { color: #0a3a5f; }
+      .shortcuts__row .plus  { color: #0a7a3d; font-weight: 700; }
+      .shortcuts__row .minus { color: #a13544; font-weight: 700; }
+      @media (max-width: 600px) {
+        .shortcuts__row { grid-template-columns: 1fr; gap: 4px; }
+      }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #0a3a5f;
+        font-weight: 600;
+        font-size: 0.9rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 140ms;
+        color: #d4a548;
+      }
+      .practice-question details[open] summary::before { transform: rotate(90deg); }
+      .practice-question summary:hover { color: #d4a548; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 5: Equivalent Fractions, Comparing & Converting to Decimals (25 Practice Questions)",
+  "description": "Free 25-question pre-algebra practice set from Class 5 of the SOMATH Young Fermats course — equivalent fractions, simplifying to lowest terms, comparing fractions, and converting fractions to terminating or repeating decimals.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-08-04",
+  "dateModified": "2026-08-04",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Equivalent fractions" },
+    { "@type": "Thing", "name": "Simplifying fractions" },
+    { "@type": "Thing", "name": "Comparing fractions" },
+    { "@type": "Thing", "name": "Converting fractions to decimals" },
+    { "@type": "Thing", "name": "Terminating and repeating decimals" }
+  ],
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you build an equivalent fraction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply (or divide) BOTH the numerator and the denominator by the SAME nonzero number. The value of the fraction stays the same because you are multiplying by a form of 1 — for example, 2/2 or 5/5. So 3/4 = 3×5 / 4×5 = 15/20, and both fractions represent exactly the same amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you simplify a fraction to lowest terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the numerator and denominator by their greatest common factor (GCF). A fraction is in lowest terms when the only common factor left between the top and bottom is 1. Example: 18/24 has GCF 6, so 18÷6 / 24÷6 = 3/4."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the fastest way to compare two fractions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cross-multiply. For a/b vs. c/d (with positive denominators), compare a×d to c×b. The fraction whose 'cross-product' is bigger is the bigger fraction. Example: 3/5 vs. 4/7 → 3×7 = 21 and 4×5 = 20, so 3/5 > 4/7. This is faster than finding a common denominator when you just need a comparison, not addition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you convert a fraction to a decimal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the numerator by the denominator. If the denominator's prime factors are only 2s and 5s, the decimal will terminate (end). Otherwise, the decimal will repeat. Example: 3/8 = 3 ÷ 8 = 0.375 (terminates because 8 = 2×2×2). But 2/3 = 0.666... = 0.6 with a bar over the 6 (repeats because 3 is not a factor of any power of 10)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5–6 students, ages 10–12. It takes students from integers on the number line through systems of equations — the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 5</p>
+      <h1 class="post__title">Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals</h1>
+      <p class="post__dek">A quick fractions cheat sheet from Class 5 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 25 practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-08-04">August 4, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>Class 5 is where students stop thinking of fractions as isolated shapes on a page and start treating them as <em>numbers</em> — numbers that can be rewritten, compared, and converted to decimals. Every question on the SHSAT, SAT, and Regents that involves fractions rests on the three moves in this class.</p>
+
+        <h2>The three moves you must know cold</h2>
+        <p>Every fraction question in Class 5 uses one of these three ideas. Master them and the arithmetic slows down while the confidence speeds up.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">EQUIVALENT fractions</p>
+            <p class="rule-card__sub">multiply (or divide) top AND bottom by the same nonzero number</p>
+            <p class="rule-card__result">value <span class="plus">stays the same</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">COMPARE fractions</p>
+            <p class="rule-card__sub">common denominator · or cross-multiply</p>
+            <p class="rule-card__result">bigger cross-product <span class="plus">= bigger fraction</span></p>
+          </div>
+        </div>
+
+        <h2>Converting a fraction to a decimal</h2>
+        <p>To turn a fraction into a decimal, <strong>divide the numerator by the denominator</strong>. Whether the decimal terminates or repeats depends only on the denominator (in lowest terms):</p>
+
+        <div class="shortcuts">
+          <div class="shortcuts__row"><span>Denominator's only prime factors are <strong>2 and/or 5</strong></span><span>→ decimal <span class="plus">TERMINATES</span></span></div>
+          <div class="shortcuts__row"><span>Denominator has <strong>any other prime</strong> (3, 7, 11, …)</span><span>→ decimal <span class="minus">REPEATS</span></span></div>
+          <div class="shortcuts__row"><span>Common examples: halves, quarters, fifths, eighths, tenths</span><span>→ terminate</span></div>
+          <div class="shortcuts__row"><span>Common examples: thirds, sixths, sevenths, ninths</span><span>→ repeat</span></div>
+        </div>
+
+        <h2>Two rules students always forget</h2>
+        <div class="callout">
+          <p><strong>1. Multiply BOTH numerator AND denominator by the same thing.</strong> Doing it to only one changes the value of the fraction. 3/4 ≠ 6/4 — but 3/4 = 6/8 because we multiplied both by 2.</p>
+          <p style="margin-top:10px;"><strong>2. Cross-multiplication only compares (or checks equivalence), it does <em>not</em> compute a new fraction.</strong> If 3×7 = 4×5 + 1, that only tells you 3/5 > 4/7. It does <em>not</em> give you a new fraction. To add or subtract fractions you still need a common denominator.</p>
+        </div>
+
+        <p>The 25 questions below march from pure equivalence drill through simplifying, comparing, and converting to decimals, and finish with real-life word problems where fractions and decimals appear side by side.</p>
+
+        <h2>25 practice questions with hidden answers</h2>
+
+        <div class="section-band">Building equivalent fractions (Q1–Q5)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span></div>
+          <div class="practice-question__prompt">Fill in the missing number to make each pair equivalent:<br>(a) 3/4 = ___ /20<br>(b) 2/5 = 8/___<br>(c) 7/9 = ___ /45<br>(d) 5/6 = 25/___</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 15&nbsp;&nbsp;&nbsp;(b) 20&nbsp;&nbsp;&nbsp;(c) 35&nbsp;&nbsp;&nbsp;(d) 30</div>
+            <div class="why"><strong>Why.</strong> Find the multiplier that changes the denominator (or numerator), then apply it to the OTHER part. (a) 4×5 = 20, so 3×5 = 15. (b) 2×4 = 8, so 5×4 = 20. (c) 9×5 = 45, so 7×5 = 35. (d) 5×5 = 25, so 6×5 = 30.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span></div>
+          <div class="practice-question__prompt">Write three fractions equivalent to 4/7.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Examples: 8/14, 12/21, 20/35 (any 4k/7k for a positive whole number k)</div>
+            <div class="why"><strong>Why.</strong> Multiply both numerator and denominator by the same nonzero whole number. 4/7 × 2/2 = 8/14. 4/7 × 3/3 = 12/21. 4/7 × 5/5 = 20/35. All of these represent the exact same amount — the "×2/2" or "×3/3" is really "×1", so the value never changes.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span></div>
+          <div class="practice-question__prompt">True or false: 6/10 = 9/15. Explain.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">TRUE. Both simplify to 3/5.</div>
+            <div class="why"><strong>Why.</strong> Simplify each. 6/10 ÷ 2/2 = 3/5. 9/15 ÷ 3/3 = 3/5. Same simplified form → equivalent. Or cross-multiply as a check: 6×15 = 90 and 10×9 = 90. Equal cross-products confirm the fractions are equivalent.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span></div>
+          <div class="practice-question__prompt">Which of the following is NOT equivalent to 3/5?<br>(a) 6/10&nbsp;&nbsp;(b) 9/15&nbsp;&nbsp;(c) 12/25&nbsp;&nbsp;(d) 15/25</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(c) 12/25 is NOT equivalent.</div>
+            <div class="why"><strong>Why.</strong> Test each: 6/10 = 3/5 ✓ (÷2). 9/15 = 3/5 ✓ (÷3). 15/25 = 3/5 ✓ (÷5). But 12/25: if it equaled 3/5, then 3×5 (=15) should equal 5×12 / 5 — cross-multiply directly: 3×25 = 75, but 5×12 = 60. Different cross-products → not equivalent. In fact 12/25 = 0.48 while 3/5 = 0.60.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span></div>
+          <div class="practice-question__prompt">A cake recipe uses 3/8 cup of butter. Rewrite this amount with a denominator of 24 so it can be split evenly among 24 muffin cups.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">9/24 cup of butter</div>
+            <div class="why"><strong>Why.</strong> To change the denominator from 8 to 24, multiply by 3 (because 8 × 3 = 24). Apply the same multiplier to the numerator: 3 × 3 = 9. So 3/8 = 9/24. Now the recipe distributes as 9 "twenty-fourths" — one twenty-fourth per muffin cup, using 9 of the 24 units of butter total.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Simplifying to lowest terms (Q6–Q11)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span></div>
+          <div class="practice-question__prompt">Simplify each fraction to lowest terms:<br>(a) 12/18&nbsp;&nbsp;(b) 20/50&nbsp;&nbsp;(c) 15/45&nbsp;&nbsp;(d) 24/32</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 2/3&nbsp;&nbsp;&nbsp;(b) 2/5&nbsp;&nbsp;&nbsp;(c) 1/3&nbsp;&nbsp;&nbsp;(d) 3/4</div>
+            <div class="why"><strong>Why.</strong> Divide top and bottom by their GCF. (a) GCF(12,18)=6 → 12/18 = 2/3. (b) GCF(20,50)=10 → 20/50 = 2/5. (c) GCF(15,45)=15 → 15/45 = 1/3. (d) GCF(24,32)=8 → 24/32 = 3/4.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span></div>
+          <div class="practice-question__prompt">Simplify 36/60 to lowest terms. Show the GCF you used.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">36/60 = 3/5 (GCF = 12)</div>
+            <div class="why"><strong>Why.</strong> Factor: 36 = 2×2×3×3 and 60 = 2×2×3×5. Common factors: 2×2×3 = 12. Divide both by 12: 36 ÷ 12 = 3 and 60 ÷ 12 = 5. So 36/60 = 3/5. Check that 3 and 5 share no common factor other than 1 (they don't — both are prime) → confirmed lowest terms.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span></div>
+          <div class="practice-question__prompt">Which of the following is already in lowest terms?<br>(a) 8/12&nbsp;&nbsp;(b) 7/12&nbsp;&nbsp;(c) 9/12&nbsp;&nbsp;(d) 10/12</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(b) 7/12 is already in lowest terms.</div>
+            <div class="why"><strong>Why.</strong> A fraction is in lowest terms when GCF(top, bottom) = 1. (a) 8/12 shares 4 → simplifies to 2/3. (b) 7/12: 7 is prime and does not divide 12, so GCF = 1 → already simplified. (c) 9/12 shares 3 → 3/4. (d) 10/12 shares 2 → 5/6.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span></div>
+          <div class="practice-question__prompt">Simplify each improper fraction to a mixed number in lowest terms:<br>(a) 17/5&nbsp;&nbsp;(b) 30/12&nbsp;&nbsp;(c) 45/20</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 3&nbsp;2/5&nbsp;&nbsp;&nbsp;(b) 2&nbsp;1/2&nbsp;&nbsp;&nbsp;(c) 2&nbsp;1/4</div>
+            <div class="why"><strong>Why.</strong> Divide numerator by denominator; the quotient is the whole part and the remainder over the original denominator is the fraction part. (a) 17÷5 = 3 R 2 → 3 2/5 (already lowest terms). (b) 30÷12 = 2 R 6 → 2 6/12 = 2 1/2 (÷6). (c) 45÷20 = 2 R 5 → 2 5/20 = 2 1/4 (÷5).</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span></div>
+          <div class="practice-question__prompt">A student writes 42/56 in lowest terms as 6/8. Is the student finished? If not, finish the simplification.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Not finished. 42/56 = 6/8 = 3/4.</div>
+            <div class="why"><strong>Why.</strong> The student divided top and bottom by 7 correctly to get 6/8, but 6 and 8 still share a common factor of 2. Divide again: 6/8 = 3/4. GCF(3, 4) = 1 → NOW in lowest terms. The one-shot way is to divide by the full GCF: GCF(42, 56) = 14, and 42/14 = 3, 56/14 = 4, so 42/56 = 3/4 immediately.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span></div>
+          <div class="practice-question__prompt">In a class of 30 students, 18 walk to school. What fraction of the class walks to school, in lowest terms?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3/5 of the class walks to school.</div>
+            <div class="why"><strong>Why.</strong> 18 out of 30 = 18/30. GCF(18, 30) = 6. Divide: 18÷6 = 3 and 30÷6 = 5. So 18/30 = 3/5. As a decimal that's 0.6 or 60% of the class — always give the fraction answer in lowest terms unless the problem says otherwise.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Comparing fractions (Q12–Q17)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span></div>
+          <div class="practice-question__prompt">Compare using &lt;, &gt;, or =:<br>(a) 3/8 ___ 5/8&nbsp;&nbsp;(b) 4/9 ___ 7/9&nbsp;&nbsp;(c) 5/12 ___ 5/12</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 3/8 &lt; 5/8&nbsp;&nbsp;&nbsp;(b) 4/9 &lt; 7/9&nbsp;&nbsp;&nbsp;(c) 5/12 = 5/12</div>
+            <div class="why"><strong>Why.</strong> When two fractions have the SAME denominator, whichever has the bigger numerator is bigger — the pieces are the same size, so you're just counting how many. (c) Identical fractions are equal to themselves.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span></div>
+          <div class="practice-question__prompt">Compare using &lt;, &gt;, or =:<br>(a) 3/4 ___ 3/8&nbsp;&nbsp;(b) 2/5 ___ 2/7&nbsp;&nbsp;(c) 1/3 ___ 1/2</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 3/4 &gt; 3/8&nbsp;&nbsp;&nbsp;(b) 2/5 &gt; 2/7&nbsp;&nbsp;&nbsp;(c) 1/3 &lt; 1/2</div>
+            <div class="why"><strong>Why.</strong> When two fractions have the SAME numerator, whichever has the SMALLER denominator is bigger — larger denominators mean you cut the whole into more (smaller) pieces. Same "3 pieces" but each piece is bigger in fourths than in eighths, so 3/4 &gt; 3/8. Same idea for 2/5 &gt; 2/7 and 1/2 &gt; 1/3.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span></div>
+          <div class="practice-question__prompt">Compare 5/8 and 7/12 using a common denominator.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">5/8 &gt; 7/12</div>
+            <div class="why"><strong>Why.</strong> LCM(8, 12) = 24. Rewrite: 5/8 = 15/24 (×3/3) and 7/12 = 14/24 (×2/2). Now the denominators match: 15/24 &gt; 14/24, so 5/8 &gt; 7/12.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span></div>
+          <div class="practice-question__prompt">Compare 3/5 and 4/7 using cross-multiplication.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3/5 &gt; 4/7</div>
+            <div class="why"><strong>Why.</strong> Cross-multiply: 3 × 7 = 21 (the "3/5 cross-product") and 4 × 5 = 20 (the "4/7 cross-product"). The bigger cross-product marks the bigger fraction: 21 &gt; 20, so 3/5 &gt; 4/7. Cross-multiplication is fastest when denominators don't share obvious factors.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span></div>
+          <div class="practice-question__prompt">Order from least to greatest: 5/6, 3/4, 7/8.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3/4 &lt; 5/6 &lt; 7/8</div>
+            <div class="why"><strong>Why.</strong> LCM(6, 4, 8) = 24. Rewrite: 5/6 = 20/24, 3/4 = 18/24, 7/8 = 21/24. Sort by numerator: 18/24 &lt; 20/24 &lt; 21/24. So 3/4 &lt; 5/6 &lt; 7/8. As a decimal check: 0.75 &lt; 0.833… &lt; 0.875 ✓.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span></div>
+          <div class="practice-question__prompt">Which is closer to 1: 11/12 or 7/8? Justify.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">11/12 is closer to 1.</div>
+            <div class="why"><strong>Why.</strong> The distance from 1 is the "missing piece." 1 − 11/12 = 1/12. 1 − 7/8 = 1/8. Now compare 1/12 vs. 1/8: same numerator, and 12 &gt; 8, so 1/12 &lt; 1/8. The SMALLER gap wins → 11/12 is closer to 1. Rule of thumb: the closer the numerator is to the denominator, the closer the fraction is to 1.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Fraction ↔ decimal conversion (Q18–Q22)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span></div>
+          <div class="practice-question__prompt">Convert each fraction to a decimal:<br>(a) 1/2&nbsp;&nbsp;(b) 3/4&nbsp;&nbsp;(c) 7/10&nbsp;&nbsp;(d) 9/25</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 0.5&nbsp;&nbsp;&nbsp;(b) 0.75&nbsp;&nbsp;&nbsp;(c) 0.7&nbsp;&nbsp;&nbsp;(d) 0.36</div>
+            <div class="why"><strong>Why.</strong> Divide numerator by denominator. Shortcut when the denominator is a factor of 10, 100, or 1000: rewrite with that denominator and read off the decimal. (a) 1/2 = 5/10 = 0.5. (b) 3/4 = 75/100 = 0.75. (c) 7/10 = 0.7 already. (d) 9/25 = 36/100 (×4/4) = 0.36. All four terminate because the denominators only have factors of 2 and 5.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span></div>
+          <div class="practice-question__prompt">Convert 3/8 to a decimal using long division. Show the steps.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3/8 = 0.375</div>
+            <div class="why"><strong>Why.</strong> Divide 3 ÷ 8. 8 goes into 3 zero times → write 0. and continue. 8 into 30 goes 3 times (24), remainder 6. Bring down a 0 → 60. 8 into 60 goes 7 times (56), remainder 4. Bring down a 0 → 40. 8 into 40 goes 5 times exactly. So 3/8 = 0.375. It terminates because 8 = 2³ (only 2s as prime factors).</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span></div>
+          <div class="practice-question__prompt">Which of these fractions gives a REPEATING decimal?<br>(a) 3/8&nbsp;&nbsp;(b) 5/6&nbsp;&nbsp;(c) 7/20&nbsp;&nbsp;(d) 11/40</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(b) 5/6 gives a repeating decimal (0.833…).</div>
+            <div class="why"><strong>Why.</strong> Check each denominator in lowest terms — if its only prime factors are 2 and 5, the decimal terminates; otherwise it repeats. (a) 8 = 2³ → terminates (0.375). (b) 6 = 2 × 3 → the "3" makes it repeat. 5/6 = 0.8333… (c) 20 = 2² × 5 → terminates (0.35). (d) 40 = 2³ × 5 → terminates (0.275). Only (b) has a prime factor other than 2 or 5.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span></div>
+          <div class="practice-question__prompt">Convert to a decimal (write repeating digits with a bar):<br>(a) 1/3&nbsp;&nbsp;(b) 2/3&nbsp;&nbsp;(c) 1/9&nbsp;&nbsp;(d) 4/11</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 0.<span style="text-decoration:overline;">3</span> (0.333…)&nbsp;&nbsp;&nbsp;(b) 0.<span style="text-decoration:overline;">6</span> (0.666…)&nbsp;&nbsp;&nbsp;(c) 0.<span style="text-decoration:overline;">1</span> (0.111…)&nbsp;&nbsp;&nbsp;(d) 0.<span style="text-decoration:overline;">36</span> (0.3636…)</div>
+            <div class="why"><strong>Why.</strong> Long division reveals the repeating block. (a) 1 ÷ 3 = 0.333… → the 3 repeats. (b) 2 ÷ 3 = 0.666… → the 6 repeats. (c) 1 ÷ 9 = 0.111… (all "n/9" fractions repeat the digit n). (d) 4 ÷ 11 = 0.363636… → the two-digit block "36" repeats. The bar over the digits marks the repeating part.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span></div>
+          <div class="practice-question__prompt">Convert each decimal to a fraction in lowest terms:<br>(a) 0.4&nbsp;&nbsp;(b) 0.25&nbsp;&nbsp;(c) 0.125&nbsp;&nbsp;(d) 0.72</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 2/5&nbsp;&nbsp;&nbsp;(b) 1/4&nbsp;&nbsp;&nbsp;(c) 1/8&nbsp;&nbsp;&nbsp;(d) 18/25</div>
+            <div class="why"><strong>Why.</strong> Read the decimal as "over a power of 10", then simplify. (a) 0.4 = 4/10 = 2/5 (÷2). (b) 0.25 = 25/100 = 1/4 (÷25). (c) 0.125 = 125/1000 = 1/8 (÷125). (d) 0.72 = 72/100 = 18/25 (÷4). Count the digits after the decimal point — that many zeros in the denominator.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Real-life word problems (Q23–Q25)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span></div>
+          <div class="practice-question__prompt">In one basketball game Maya made 15 out of 20 free throws. In the next game she made 18 out of 25. In which game did she shoot a higher percentage?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">The first game (75% vs. 72%).</div>
+            <div class="why"><strong>Why.</strong> Compare 15/20 to 18/25. Convert each to a decimal: 15/20 = 3/4 = 0.75 = 75%. 18/25 = 72/100 = 0.72 = 72%. Or cross-multiply: 15 × 25 = 375 and 18 × 20 = 360. 375 &gt; 360, so 15/20 &gt; 18/25. First game had the higher percentage.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span></div>
+          <div class="practice-question__prompt">A pizza is cut into 12 equal slices. Jayden eats 3 slices and Ana eats 2 slices. What fraction of the pizza is left, in lowest terms? Also write that fraction as a decimal.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">7/12 of the pizza is left, ≈ 0.5833… (0.58<span style="text-decoration:overline;">3</span>).</div>
+            <div class="why"><strong>Why.</strong> Together they ate 3 + 2 = 5 slices out of 12, so 5/12 is gone and 12/12 − 5/12 = 7/12 is left. GCF(7, 12) = 1 → already in lowest terms. As a decimal, 7 ÷ 12 = 0.58333… The 3 repeats because 12 = 2² × 3 contains the prime 3.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span></div>
+          <div class="practice-question__prompt">A recipe uses 3/4 cup of sugar for every 2/3 cup of flour. Which ingredient does the recipe use MORE of, and by how much (as a fraction of a cup)?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Sugar, by 1/12 cup more than flour.</div>
+            <div class="why"><strong>Why.</strong> Compare 3/4 and 2/3. Common denominator 12: 3/4 = 9/12 and 2/3 = 8/12. Sugar (9/12) &gt; flour (8/12). Difference = 9/12 − 8/12 = 1/12 cup. So the recipe uses 1/12 cup more sugar than flour. (As a decimal that's about 0.083 cup — roughly 1&nbsp;1/3 tablespoons.)</div>
+          </details>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 5 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5–6 students (ages 10–12). The full arc runs from integers on the number line through systems of linear equations and probability — the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 60-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child's current level against the readiness signals for Pre-Algebra and Algebra 1 — and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 5 is a taste — Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days' notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course →</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1: Integers on the Number Line &amp; Absolute Value (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-2-multiplying-dividing-integers">Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms">Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (25 Practice Questions)</a></li>
+          <li><a href="/posts/fractions-and-decimals-how-they-connect-strategies-and-practice">Fractions &amp; Decimals: How They Connect — Strategies and Practice</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260804-prealg-class5"></script>
+  </body>
+</html>
