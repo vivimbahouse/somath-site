@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry January 2026 &mdash; Part IV Answer &amp; Full 6-Credit Solution (Question 35) | SOMATH NYC</title>
+    <meta name="description" content="Free worked solution for the 6-credit Part IV coordinate-geometry question on the January 2026 NYS Regents Geometry exam. Prove quadrilateral ABCD is a trapezoid using slopes, prove segment EF is parallel to AD and BC, and use the distance formula to test whether EF equals ½(AD + BC) — a full walk-through of the trapezoid midsegment theorem on the coordinate plane. Original NYSED PDF attached. Prepared by SOMATH, an NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-january-2026-part-4-answers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry January 2026 &mdash; Part IV Answer &amp; Full 6-Credit Solution" />
+    <meta property="og:description" content="Every step of the January 2026 Part IV coordinate-geometry question, worked with the theorem behind each move. Original NYSED PDF attached." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-january-2026-part-4-answers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-08-04" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry January 2026 &mdash; Part IV Answer" />
+    <meta name="twitter:description" content="Complete worked solution for the 6-credit Part IV question on the January 2026 Geometry Regents." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; font-size:1.15rem; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .pdf-box { background:#fff8e5; border:1px solid #e8d691; border-left:4px solid #d4a548; padding:22px 26px; margin:24px 0 32px; border-radius:6px; }
+      .pdf-box h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .pdf-box p { margin:0 0 12px; color:#333; }
+      .pdf-btn { display:inline-block; background:#d4a548; color:#0a3a5f; padding:10px 20px; text-decoration:none; font-weight:700; border-radius:6px; font-size:0.98rem; }
+      .pdf-btn:hover { background:#c89a3a; color:#fff; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      details.qcard { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:0; margin:16px 0; border-radius:6px; box-shadow:0 2px 6px rgba(10,58,95,0.05); overflow:hidden; }
+      details.qcard summary { list-style:none; cursor:pointer; padding:18px 22px; user-select:none; }
+      details.qcard summary::-webkit-details-marker { display:none; }
+      details.qcard summary::after { content:"Answer"; display:inline-block; margin-top:10px; background:#0a3a5f; color:#fff; padding:6px 14px; border-radius:4px; font-size:0.85rem; font-weight:700; }
+      details.qcard[open] summary::after { content:"Hide"; background:#7a2a2a; }
+      details.qcard summary strong { color:#0a3a5f; font-size:1.02rem; }
+      details.qcard summary p { margin:8px 0 0; color:#333; }
+      details.qcard .solution { padding:0 22px 20px; border-top:1px dashed #e0d8c4; margin-top:14px; padding-top:16px; }
+      details.qcard .solution h4 { color:#0a3a5f; margin:16px 0 6px; font-size:1rem; }
+      details.qcard .solution p { margin:8px 0; color:#333; line-height:1.7; }
+      details.qcard .solution ol { padding-left:22px; color:#333; }
+      details.qcard .solution ol li { margin:6px 0; line-height:1.7; }
+      details.qcard .solution .ans { background:#e6efe2; padding:10px 14px; border-radius:4px; font-weight:700; color:#0a3a5f; display:inline-block; margin:8px 0; }
+      details.qcard .solution .theory { background:#f5f1e8; padding:12px 16px; border-radius:4px; margin:12px 0; font-size:0.94rem; }
+      details.qcard .solution .theory strong { color:#0a3a5f; }
+      .partlabel { display:inline-block; background:#0a3a5f; color:#fff; padding:3px 9px; border-radius:4px; font-size:0.82rem; font-weight:700; margin:0 0 6px; }
+      .related-list { list-style:none; padding:0; margin:16px 0 0; }
+      .related-list li { padding:10px 0; border-bottom:1px dashed #e0d8c4; }
+      .related-list li a { color:#0a3a5f; font-weight:700; text-decoration:none; }
+      .related-list li a:hover { text-decoration:underline; }
+      .about-somath { background:#0a3a5f; color:#f5f1e8; padding:32px 30px; margin:36px 0 0; border-radius:8px; }
+      .about-somath h3 { color:#d4a548; margin:0 0 12px; font-size:1.25rem; }
+      .about-somath p { margin:0 0 12px; color:#e6efe2; line-height:1.65; }
+      .about-somath a { color:#d4a548; font-weight:700; }
+      .about-somath a:hover { color:#f5f1e8; }
+      .rubric { background:#fff8e5; border:1px solid #e8d691; padding:12px 16px; margin:12px 0; border-radius:6px; font-size:0.92rem; }
+      .rubric strong { color:#0a3a5f; }
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry January 2026 Answer &amp; Explanation — Part IV (Question 35, 6 credits)",
+  "description": "Every step of the Part IV coordinate-geometry question on the January 2026 New York State Geometry Regents, worked with the theorem behind each move. Original NYSED PDF attached.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-08-04",
+  "dateModified": "2026-08-04",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo-somath.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/regents-geometry-january-2026-part-4-answers" },
+  "about": [
+    { "@type": "Thing", "name": "NYS Regents Geometry Exam" },
+    { "@type": "Thing", "name": "Coordinate geometry" },
+    { "@type": "Thing", "name": "Trapezoid proof on the coordinate plane" },
+    { "@type": "Thing", "name": "Slope formula" },
+    { "@type": "Thing", "name": "Parallel lines from equal slopes" },
+    { "@type": "Thing", "name": "Distance formula" },
+    { "@type": "Thing", "name": "Trapezoid midsegment theorem" }
+  ],
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".callout"] }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#business",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": { "@type": "PostalAddress", "streetAddress": "226 W 79th St, 1st Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10024", "addressCountry": "US" }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I earn all 6 credits on the Part IV Regents Geometry question?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each sub-part is graded separately. On Q35 January 2026 you must (a) prove ABCD is a trapezoid by showing exactly one pair of opposite sides has equal slopes, (b) show slope of EF equals the slope of AD and BC to prove EF is parallel to both, and (c) use the distance formula to compute AD, BC, and EF, then check whether EF equals ½(AD + BC). Every calculation must appear on paper." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove a quadrilateral is a trapezoid on the coordinate plane?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Compute the slopes of all four sides using the slope formula. Show that exactly one pair of opposite sides has equal slopes (so that pair is parallel) and that the other pair does not (so those two sides are not parallel). By the definition of a trapezoid — a quadrilateral with exactly one pair of parallel sides — the quadrilateral is a trapezoid. Some Regents textbooks use the inclusive definition (at least one pair), in which case showing one pair is enough." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove two coordinate segments are parallel?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Use the slope formula on each segment. If the two slopes are equal, the segments are parallel. On Q35, slope EF = (5 − (−3)) / (3 − (−3)) = 8/6 = 4/3, and slope AD = slope BC = 4/3, so EF is parallel to both AD and BC." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the trapezoid midsegment theorem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The midsegment of a trapezoid — the segment connecting the midpoints of the two non-parallel sides — is parallel to both bases and equal in length to half the sum of the bases. On Q35, E(−3, −3) is the midpoint of AB, F(3, 5) is the midpoint of DC, AD = 5, BC = 15, and EF = 10 = ½(5 + 15), which confirms the theorem." }
+    }
+  ]
+}
+    </script>
+
+    <script src="/partials.js?v=v20260804-regents-geom-jan-part4" defer></script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <main class="container" style="padding-top:24px;">
+      <article style="max-width:820px;margin:0 auto;">
+        <p style="color:#666;font-size:0.9rem;margin:0 0 6px;"><a href="/blog" style="color:#0a3a5f;text-decoration:none;">&larr; SOMATH Blog</a> &middot; <a href="/regents-prep-nyc" style="color:#0a3a5f;text-decoration:none;">Regents Prep NYC</a> &middot; Updated August 4, 2026</p>
+        <h1 style="color:#0a3a5f;margin:0 0 10px;line-height:1.2;">Regents Geometry January 2026 &mdash; Part IV Answer &amp; Full Solution</h1>
+        <p style="font-size:1.08rem;color:#333;line-height:1.65;margin:0 0 18px;">Free worked solution for the 6-credit Part IV question on the January 2026 New York State Regents Geometry exam. This is the longest question on the test &mdash; a coordinate-geometry problem with four sub-parts. This is the final post in our four-post series covering all 35 questions.</p>
+
+        <div class="pdf-box">
+          <h3>📄 Original NYSED exam (PDF)</h3>
+          <p>All diagrams, coordinate grids, and reference sheet are in the official New York State Education Department release. Open it in a second tab so you can see the figure as you work through the question below.</p>
+          <a class="pdf-btn" href="/assets/regents/geometry-january-2026/nysed-geometry-january-2026.pdf" target="_blank" rel="noopener">Download the January 2026 Geometry Regents PDF</a>
+        </div>
+
+        <div class="callout">
+          <p style="margin:0;"><strong>How Part IV is graded.</strong> Part IV is the <em>single hardest</em> question on the test, worth <strong>6 credits</strong>. A correct numerical answer with no work receives only 1 credit. Each of the three sub-parts is graded separately, so partial credit is available &mdash; do not skip a sub-part just because you are stuck on an earlier one. Use the coordinate grid printed with the question to visualize the points, but every algebraic step must still be written out.</p>
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#part-4-topics">What Part IV tests</a></li>
+            <li><a href="#part-4-question">Part IV &mdash; Question 35 (click to reveal)</a></li>
+            <li><a href="#big-ideas">Big ideas to remember</a></li>
+            <li><a href="#related">More Regents Geometry help</a></li>
+          </ol>
+        </div>
+
+        <h2 id="part-4-topics" style="color:#0a3a5f;margin-top:36px;">What Part IV tests</h2>
+        <p>Every recent Geometry Regents ends with a large coordinate-geometry question. The Regents wants to know whether you can move fluently between four core coordinate tools &mdash; slope, midpoint, distance, and the equation of a line &mdash; and whether you can attach the right theorem to each calculation. This January 2026 question stitches together <em>all three</em> foundational coordinate formulas and then asks you to reach a shape classification (trapezoid), a parallel-lines conclusion (segment EF parallel to two sides), and a length verification for the trapezoid midsegment theorem.</p>
+
+        <div class="theory-box">
+          <h3>The three coordinate formulas you will use</h3>
+          <ul>
+            <li><strong>Slope</strong> from (<em>x</em><sub>1</sub>, <em>y</em><sub>1</sub>) to (<em>x</em><sub>2</sub>, <em>y</em><sub>2</sub>): <em>m</em> = (<em>y</em><sub>2</sub> &minus; <em>y</em><sub>1</sub>) / (<em>x</em><sub>2</sub> &minus; <em>x</em><sub>1</sub>).</li>
+            <li><strong>Midpoint</strong>: <em>M</em> = ((<em>x</em><sub>1</sub> + <em>x</em><sub>2</sub>) / 2, (<em>y</em><sub>1</sub> + <em>y</em><sub>2</sub>) / 2).</li>
+            <li><strong>Distance</strong>: <em>d</em> = &radic;((<em>x</em><sub>2</sub> &minus; <em>x</em><sub>1</sub>)&sup2; + (<em>y</em><sub>2</sub> &minus; <em>y</em><sub>1</sub>)&sup2;).</li>
+          </ul>
+        </div>
+
+        <div class="theory-box">
+          <h3>How to prove a quadrilateral is a trapezoid (coordinate plane)</h3>
+          <ul>
+            <li>Compute the slopes of all four sides.</li>
+            <li>Show <em>exactly one</em> pair of opposite sides has equal slopes (that pair is parallel).</li>
+            <li>Show the other pair does <em>not</em> have equal slopes (that pair is not parallel).</li>
+            <li>State the conclusion: by the definition of a trapezoid, the quadrilateral is a trapezoid.</li>
+          </ul>
+        </div>
+
+        <div class="theory-box">
+          <h3>Parallel lines from equal slopes</h3>
+          <p>Two non-vertical lines are parallel if and only if they have the same slope. Two vertical lines (undefined slope) are also parallel to each other, but a vertical line is <em>not</em> parallel to a line of slope 0 &mdash; those two are perpendicular. Watch for vertical sides on the coordinate plane; they need a sentence noting the undefined slope, not a numerical value.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Trapezoid midsegment theorem</h3>
+          <p>The midsegment of a trapezoid &mdash; the segment connecting the midpoints of the two non-parallel sides (the legs) &mdash; is parallel to both bases <em>and</em> equal in length to half the sum of the two bases. Symbolically: if the bases are <em>b</em><sub>1</sub> and <em>b</em><sub>2</sub>, the midsegment has length &frac12;(<em>b</em><sub>1</sub> + <em>b</em><sub>2</sub>). This is the theorem being verified in part (c) of Q35.</p>
+        </div>
+
+        <div class="part-header">
+          <h2>Part IV &mdash; Question 35 (6 credits)</h2>
+          <p id="part-4-question">Coordinate geometry &middot; four sub-parts &middot; click the card to reveal the full worked solution.</p>
+        </div>
+
+        <details class="qcard"><summary><strong>Question 35</strong><p>Quadrilateral <em>ABCD</em> is graphed on the set of axes with vertices at <em>A</em>(&minus;3, 1), <em>B</em>(&minus;3, &minus;7), <em>C</em>(6, 5), and <em>D</em>(0, 5). Segment <em>EF</em> is graphed with endpoints <em>E</em>(&minus;3, &minus;3) and <em>F</em>(3, 5).</p><p>(a) Prove <em>ABCD</em> is a trapezoid.<br>(b) Use coordinate geometry to prove <em>EF</em> is parallel to <em>AD</em> and <em>BC</em>.<br>(c) Is <em>EF</em> = &frac12;(<em>AD</em> + <em>BC</em>)? Use coordinate geometry to justify your answer.</p></summary>
+          <div class="solution">
+
+            <span class="partlabel">Part (a)</span>
+            <h4>Prove <em>ABCD</em> is a trapezoid</h4>
+            <p><strong>Method.</strong> A trapezoid is a quadrilateral with exactly one pair of parallel opposite sides. Compute all four side slopes and show only one pair is equal.</p>
+
+            <p><strong>Slope of <em>AB</em></strong> from <em>A</em>(&minus;3, 1) to <em>B</em>(&minus;3, &minus;7):</p>
+            <p>The <em>x</em>-coordinates are equal, so <em>AB</em> is a vertical segment. Its slope is <strong>undefined</strong>.</p>
+
+            <p><strong>Slope of <em>CD</em></strong> from <em>C</em>(6, 5) to <em>D</em>(0, 5):</p>
+            <p><em>m</em><sub><em>CD</em></sub> = (5 &minus; 5) / (0 &minus; 6) = 0 / (&minus;6) = <strong>0</strong>. <em>CD</em> is horizontal.</p>
+
+            <p><em>AB</em> and <em>CD</em> are <em>not</em> parallel (undefined slope vs. 0 &mdash; a vertical line and a horizontal line are perpendicular, not parallel).</p>
+
+            <p><strong>Slope of <em>AD</em></strong> from <em>A</em>(&minus;3, 1) to <em>D</em>(0, 5):</p>
+            <p><em>m</em><sub><em>AD</em></sub> = (5 &minus; 1) / (0 &minus; (&minus;3)) = 4 / 3.</p>
+
+            <p><strong>Slope of <em>BC</em></strong> from <em>B</em>(&minus;3, &minus;7) to <em>C</em>(6, 5):</p>
+            <p><em>m</em><sub><em>BC</em></sub> = (5 &minus; (&minus;7)) / (6 &minus; (&minus;3)) = 12 / 9 = 4 / 3.</p>
+
+            <p><em>m</em><sub><em>AD</em></sub> = <em>m</em><sub><em>BC</em></sub> = 4/3, so <em>AD</em> &parallel; <em>BC</em>.</p>
+
+            <p class="ans">Exactly one pair of opposite sides is parallel (<em>AD</em> &parallel; <em>BC</em>), so <em>ABCD</em> is a trapezoid (definition of a trapezoid). &#x25A0;</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full credit for (a) requires (i) both slope calculations for the parallel pair, (ii) evidence that the other pair is <em>not</em> parallel (state the undefined slope on <em>AB</em> and the 0 slope on <em>CD</em>, or explicitly say a vertical line and a horizontal line are not parallel), and (iii) the concluding statement citing the definition of a trapezoid. Skipping the &ldquo;not parallel&rdquo; step on <em>AB</em> and <em>CD</em> is the most common credit loss on this sub-part.</div>
+
+            <span class="partlabel">Part (b)</span>
+            <h4>Prove <em>EF</em> &parallel; <em>AD</em> and <em>EF</em> &parallel; <em>BC</em></h4>
+            <p><strong>Method.</strong> Compute the slope of <em>EF</em> and compare it to the slopes of <em>AD</em> and <em>BC</em> from part (a).</p>
+
+            <p><strong>Slope of <em>EF</em></strong> from <em>E</em>(&minus;3, &minus;3) to <em>F</em>(3, 5):</p>
+            <p><em>m</em><sub><em>EF</em></sub> = (5 &minus; (&minus;3)) / (3 &minus; (&minus;3)) = 8 / 6 = 4 / 3.</p>
+
+            <p>From part (a), <em>m</em><sub><em>AD</em></sub> = 4/3 and <em>m</em><sub><em>BC</em></sub> = 4/3.</p>
+
+            <p class="ans">&therefore; <em>m</em><sub><em>EF</em></sub> = <em>m</em><sub><em>AD</em></sub> = <em>m</em><sub><em>BC</em></sub> = 4/3, so <em>EF</em> &parallel; <em>AD</em> and <em>EF</em> &parallel; <em>BC</em> (two non-vertical lines are parallel if and only if they have the same slope). &#x25A0;</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full credit for (b) requires the slope formula on <em>EF</em> with substituted numbers, an explicit comparison to both <em>AD</em> and <em>BC</em>, and a concluding sentence citing the &ldquo;same slope implies parallel&rdquo; theorem. If part (a) is skipped, the slopes of <em>AD</em> and <em>BC</em> must be recomputed here.</div>
+
+            <span class="partlabel">Part (c)</span>
+            <h4>Is <em>EF</em> = &frac12;(<em>AD</em> + <em>BC</em>)?</h4>
+            <p><strong>Method.</strong> Use the distance formula to compute the exact lengths of <em>AD</em>, <em>BC</em>, and <em>EF</em>, then compare <em>EF</em> to &frac12;(<em>AD</em> + <em>BC</em>).</p>
+
+            <p><strong>Length of <em>AD</em></strong> from <em>A</em>(&minus;3, 1) to <em>D</em>(0, 5):</p>
+            <p><em>AD</em> = &radic;((0 &minus; (&minus;3))&sup2; + (5 &minus; 1)&sup2;) = &radic;(3&sup2; + 4&sup2;) = &radic;(9 + 16) = &radic;25 = <strong>5</strong>.</p>
+
+            <p><strong>Length of <em>BC</em></strong> from <em>B</em>(&minus;3, &minus;7) to <em>C</em>(6, 5):</p>
+            <p><em>BC</em> = &radic;((6 &minus; (&minus;3))&sup2; + (5 &minus; (&minus;7))&sup2;) = &radic;(9&sup2; + 12&sup2;) = &radic;(81 + 144) = &radic;225 = <strong>15</strong>.</p>
+
+            <p><strong>Length of <em>EF</em></strong> from <em>E</em>(&minus;3, &minus;3) to <em>F</em>(3, 5):</p>
+            <p><em>EF</em> = &radic;((3 &minus; (&minus;3))&sup2; + (5 &minus; (&minus;3))&sup2;) = &radic;(6&sup2; + 8&sup2;) = &radic;(36 + 64) = &radic;100 = <strong>10</strong>.</p>
+
+            <p><strong>Test the identity:</strong> &frac12;(<em>AD</em> + <em>BC</em>) = &frac12;(5 + 15) = &frac12;(20) = <strong>10</strong>.</p>
+
+            <p><em>EF</em> = 10 and &frac12;(<em>AD</em> + <em>BC</em>) = 10, so the two are equal.</p>
+
+            <p class="ans">Yes, <em>EF</em> = &frac12;(<em>AD</em> + <em>BC</em>). &#x25A0;</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full credit for (c) requires (i) the distance formula on all three segments with substituted numbers, (ii) the arithmetic &frac12;(5 + 15) = 10 shown, and (iii) an explicit &ldquo;yes&rdquo; answer. Stating the numeric distances without the distance-formula work drops credit &mdash; the problem says &ldquo;use coordinate geometry.&rdquo;</div>
+
+            <div class="theory"><strong>Why this works &mdash; the midsegment theorem.</strong> <em>E</em>(&minus;3, &minus;3) is the midpoint of leg <em>AB</em> (halfway between (&minus;3, 1) and (&minus;3, &minus;7)) and <em>F</em>(3, 5) is the midpoint of leg <em>DC</em> (halfway between (0, 5) and (6, 5)). So segment <em>EF</em> is the <em>midsegment</em> of trapezoid <em>ABCD</em>. The trapezoid midsegment theorem says the midsegment is parallel to both bases and equal in length to half their sum &mdash; exactly what parts (b) and (c) verified with coordinates.</div>
+
+            <div class="theory"><strong>Theory.</strong> The three coordinate tools have three matching purposes: <em>slope</em> answers &ldquo;are these lines parallel or perpendicular?&rdquo;, <em>midpoint</em> answers &ldquo;what is the point exactly between these two?&rdquo;, and <em>distance</em> answers &ldquo;how long is this segment?&rdquo; Every coordinate-geometry Regents Part IV question can be dissected into applications of one or more of these three formulas.</div>
+          </div>
+        </details>
+
+        <h2 id="big-ideas" style="color:#0a3a5f;margin-top:36px;">Big ideas to remember on test day</h2>
+        <ul>
+          <li><strong>Attack the sub-parts in any order.</strong> Each of the three sub-parts is graded separately. If you get stuck on the trapezoid proof, jump to the distance-formula sub-part and come back.</li>
+          <li><strong>Trapezoid = exactly one pair of parallel sides.</strong> You must show the &ldquo;other&rdquo; pair is not parallel, not just that one pair is.</li>
+          <li><strong>Vertical vs. horizontal is <em>not</em> parallel.</strong> A vertical segment has undefined slope, a horizontal one has slope 0 &mdash; they are perpendicular. Do not skip this observation on part (a).</li>
+          <li><strong>Same slope means parallel.</strong> That is the whole content of part (b): compute slope of <em>EF</em>, match it to slopes of <em>AD</em> and <em>BC</em>, cite the theorem.</li>
+          <li><strong>Distance formula = three lines of work.</strong> Formula, substituted, simplified. Skip any of the three and you may lose a credit.</li>
+          <li><strong>Leave the radical only when it is a radical.</strong> On Q35 all three distances simplify to whole numbers (5, 15, 10) &mdash; that is not always the case, and on other exams &radic;13 or &radic;50 must be left in exact form.</li>
+          <li><strong>Write the concluding sentence.</strong> &ldquo;&therefore; ABCD is a trapezoid because exactly one pair of opposite sides is parallel.&rdquo; &ldquo;&therefore; EF &parallel; AD and EF &parallel; BC.&rdquo; &ldquo;Yes, EF = &frac12;(AD + BC).&rdquo; These sentences are how the grader knows you finished the proof.</li>
+          <li><strong>Recognize the midsegment.</strong> Once you see that <em>E</em> is the midpoint of <em>AB</em> and <em>F</em> is the midpoint of <em>DC</em>, part (c) is guaranteed to work out by the midsegment theorem &mdash; the coordinate work is just verifying the theorem.</li>
+        </ul>
+
+        <h2 id="related" style="color:#0a3a5f;margin-top:36px;">More Regents Geometry help</h2>
+        <ul class="related-list">
+          <li><a href="/posts/regents-geometry-january-2026-part-1-answers">Regents Geometry January 2026 &mdash; Part I (Questions 1&ndash;24)</a></li>
+          <li><a href="/posts/regents-geometry-january-2026-part-2-answers">Regents Geometry January 2026 &mdash; Part II (Questions 25&ndash;31)</a></li>
+          <li><a href="/posts/regents-geometry-january-2026-part-3-answers">Regents Geometry January 2026 &mdash; Part III (Questions 32&ndash;34)</a></li>
+          <li><a href="/posts/regents-geometry-june-2026-part-4-answers">Regents Geometry June 2026 &mdash; Part IV (Question 35, 6 credits)</a></li>
+          <li><a href="/regents-prep-nyc">SOMATH Regents Geometry tutoring &mdash; NYC private and small-group prep</a></li>
+          <li><a href="/assets/regents/geometry-january-2026/nysed-geometry-january-2026.pdf" target="_blank" rel="noopener">Download the original NYSED PDF (January 2026 Geometry)</a></li>
+        </ul>
+
+        <div class="about-somath">
+          <h3>About SOMATH</h3>
+          <p><strong>SOMATH &mdash; School of Math</strong> is an Upper West Side math school for grades 1&ndash;12. We teach year-round math enrichment for K&ndash;8 and dedicated Regents, SAT, and SHSAT prep for high schoolers. Our co-founder <strong>Marcelo Ambrozio</strong> (Northwestern) leads the Regents team and personally trains every tutor. Small groups (max 6), free 60-minute evaluation, one-time $99 enrollment fee.</p>
+          <p><a href="/regents-prep-nyc">Regents prep at SOMATH &rarr;</a> &middot; <a href="/evaluation">Book a free evaluation &rarr;</a> &middot; <a href="tel:+16466686151">(646) 668-6151</a></p>
+        </div>
+
+        <p style="margin-top:36px;color:#666;font-size:0.88rem;text-align:center;">This walkthrough is provided for educational purposes. The January 2026 Geometry Regents exam is publicly released by the New York State Education Department. Questions and figures are the property of NYSED.</p>
+
+      
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 9–12 · NY State Regents</div>
+          <h2 class="course-cta-card__h">Want your child in a Regents Geometry & Trigonometry Prep class at SOMATH?</h2>
+          <p class="course-cta-card__lede">24-meeting Friday cohort mapped to the NY State Regents Geometry blueprint — constructions, congruence, similarity, right-triangle trig, laws of sines & cosines, circles, coordinate geometry, and 3D solids. Three timed mock exams built in.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/regents-geometry" class="course-cta-card__primary">See the Regents Geometry & Trigonometry Prep course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+    </main>
+
+    <div id="footer-mount"></div>
+  </body>
+</html>
