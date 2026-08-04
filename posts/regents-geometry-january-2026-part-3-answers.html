@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry January 2026 &mdash; Part III Answers &amp; Explanations (Questions 32&ndash;34) | SOMATH NYC</title>
+    <meta name="description" content="Free worked solutions for every Part III question on the January 2026 NYS Regents Geometry exam. 4-credit medium-length problems: isosceles-triangle altitude with right-triangle trig, a congruent-triangles proof in a parallelogram, and a composite prism-plus-pyramid volume with density. Original NYSED PDF attached. Prepared by SOMATH, an NYC math school." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-january-2026-part-3-answers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry January 2026 &mdash; Part III Answers &amp; Explanations" />
+    <meta property="og:description" content="Every Part III answer for the January 2026 NYS Geometry Regents, worked step-by-step with the theorem behind each question. Original NYSED PDF attached." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-january-2026-part-3-answers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-08-04" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry January 2026 &mdash; Part III Answers" />
+    <meta name="twitter:description" content="Every Part III medium-length solution for the January 2026 NYS Geometry Regents, with theory." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; font-size:1.15rem; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .pdf-box { background:#fff8e5; border:1px solid #e8d691; border-left:4px solid #d4a548; padding:22px 26px; margin:24px 0 32px; border-radius:6px; }
+      .pdf-box h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .pdf-box p { margin:0 0 12px; color:#333; }
+      .pdf-btn { display:inline-block; background:#d4a548; color:#0a3a5f; padding:10px 20px; text-decoration:none; font-weight:700; border-radius:6px; font-size:0.98rem; }
+      .pdf-btn:hover { background:#c89a3a; color:#fff; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      details.qcard { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:0; margin:16px 0; border-radius:6px; box-shadow:0 2px 6px rgba(10,58,95,0.05); overflow:hidden; }
+      details.qcard summary { list-style:none; cursor:pointer; padding:18px 22px; user-select:none; }
+      details.qcard summary::-webkit-details-marker { display:none; }
+      details.qcard summary::after { content:"Answer"; display:inline-block; margin-top:10px; background:#0a3a5f; color:#fff; padding:6px 14px; border-radius:4px; font-size:0.85rem; font-weight:700; }
+      details.qcard[open] summary::after { content:"Hide"; background:#7a2a2a; }
+      details.qcard summary strong { color:#0a3a5f; font-size:1.02rem; }
+      details.qcard summary p { margin:8px 0 0; color:#333; }
+      details.qcard .solution { padding:0 22px 20px; border-top:1px dashed #e0d8c4; margin-top:14px; padding-top:16px; }
+      details.qcard .solution h4 { color:#0a3a5f; margin:12px 0 6px; font-size:1rem; }
+      details.qcard .solution p { margin:8px 0; color:#333; line-height:1.7; }
+      details.qcard .solution ol { padding-left:22px; color:#333; }
+      details.qcard .solution ol li { margin:6px 0; line-height:1.7; }
+      details.qcard .solution .ans { background:#e6efe2; padding:10px 14px; border-radius:4px; font-weight:700; color:#0a3a5f; display:inline-block; margin:8px 0; }
+      details.qcard .solution .theory { background:#f5f1e8; padding:12px 16px; border-radius:4px; margin:12px 0; font-size:0.94rem; }
+      details.qcard .solution .theory strong { color:#0a3a5f; }
+      details.qcard .solution table.proof { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.95rem; }
+      details.qcard .solution table.proof th, details.qcard .solution table.proof td { border:1px solid #e0d8c4; padding:8px 10px; text-align:left; vertical-align:top; }
+      details.qcard .solution table.proof th { background:#0a3a5f; color:#fff; font-weight:700; }
+      details.qcard .solution table.proof td:first-child { width:50%; }
+      .related-list { list-style:none; padding:0; margin:16px 0 0; }
+      .related-list li { padding:10px 0; border-bottom:1px dashed #e0d8c4; }
+      .related-list li a { color:#0a3a5f; font-weight:700; text-decoration:none; }
+      .related-list li a:hover { text-decoration:underline; }
+      .about-somath { background:#0a3a5f; color:#f5f1e8; padding:32px 30px; margin:36px 0 0; border-radius:8px; }
+      .about-somath h3 { color:#d4a548; margin:0 0 12px; font-size:1.25rem; }
+      .about-somath p { margin:0 0 12px; color:#e6efe2; line-height:1.65; }
+      .about-somath a { color:#d4a548; font-weight:700; }
+      .about-somath a:hover { color:#f5f1e8; }
+      .rubric { background:#fff8e5; border:1px solid #e8d691; padding:12px 16px; margin:12px 0; border-radius:6px; font-size:0.92rem; }
+      .rubric strong { color:#0a3a5f; }
+    
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+</style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry January 2026 Answers &amp; Explanations — Part III (Questions 32–34)",
+  "description": "Every Part III medium-length solution for the January 2026 New York State Geometry Regents exam, worked step-by-step with the theorem behind each question. Original NYSED PDF attached.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-08-04",
+  "dateModified": "2026-08-04",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo-somath.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/regents-geometry-january-2026-part-3-answers" },
+  "about": [
+    { "@type": "Thing", "name": "NYS Regents Geometry Exam" },
+    { "@type": "Thing", "name": "Isosceles triangle altitude to the base" },
+    { "@type": "Thing", "name": "Right-triangle trigonometry (tan and cos)" },
+    { "@type": "Thing", "name": "Perimeter of an isosceles triangle" },
+    { "@type": "Thing", "name": "Parallelogram diagonals bisect each other" },
+    { "@type": "Thing", "name": "SAS triangle congruence" },
+    { "@type": "Thing", "name": "Two-column proof" },
+    { "@type": "Thing", "name": "Volume of a rectangular prism" },
+    { "@type": "Thing", "name": "Volume of a rectangular pyramid" },
+    { "@type": "Thing", "name": "Density and composite solids" }
+  ],
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".callout"] }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#business",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": { "@type": "PostalAddress", "streetAddress": "226 W 79th St, 1st Floor", "addressLocality": "New York", "addressRegion": "NY", "postalCode": "10024", "addressCountry": "US" }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I earn full 4 credits on a Part III Regents Geometry question?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Show every step. Name the theorem, formula, or definition you cite. On numerical questions, show formula substitutions with numbers and only round at the very end. On proofs, use a two-column format with statements on the left and matching reasons on the right, and finish with a clear concluding statement." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find the perimeter of an isosceles triangle from its altitude and vertex angle?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The altitude to the base bisects both the vertex angle and the base. Split the isosceles triangle into two congruent right triangles. In each, the half-vertex-angle is opposite half the base, and the altitude is adjacent to it, so half-base = altitude · tan(half-angle) and leg = altitude / cos(half-angle). On Q32, half-base = 8·tan(40°) ≈ 6.7128, so BC ≈ 13.4256, and AB = 8/cos(40°) ≈ 10.4433. Perimeter = 2·AB + BC ≈ 34.3." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I prove △MIE ≅ △LSE in Q33?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Given MS ∥ IL and MS ≅ IL, quadrilateral SMIL is a parallelogram (one pair of opposite sides both parallel and congruent). In a parallelogram, the diagonals bisect each other, so ME ≅ LE and IE ≅ SE. Vertical angles ∠MEI ≅ ∠LES. By SAS, △MIE ≅ △LSE." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find the mass of a composite prism-plus-pyramid solid?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Compute each volume separately, add them, then multiply by the density. On Q34: prism V = 12·6·3 = 216 cm³; pyramid V = (1/3)·(12·6)·10 = 240 cm³; total V = 456 cm³. Mass = 456·2.5 = 1140 grams." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do Regents Geometry Part III proofs have to be two-column?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Two-column and paragraph proofs both earn full credit as long as every statement is justified by a reason (postulate, theorem, or definition) and the logical flow is correct." }
+    }
+  ]
+}
+    </script>
+
+    <script src="/partials.js?v=v20260804-regents-geom-jan-part3" defer></script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <main class="container" style="padding-top:24px;">
+      <article style="max-width:820px;margin:0 auto;">
+        <p style="color:#666;font-size:0.9rem;margin:0 0 6px;"><a href="/blog" style="color:#0a3a5f;text-decoration:none;">&larr; SOMATH Blog</a> &middot; <a href="/regents-prep-nyc" style="color:#0a3a5f;text-decoration:none;">Regents Prep NYC</a> &middot; Updated August 4, 2026</p>
+        <h1 style="color:#0a3a5f;margin:0 0 10px;line-height:1.2;">Regents Geometry January 2026 &mdash; Part III Answers &amp; Explanations</h1>
+        <p style="font-size:1.08rem;color:#333;line-height:1.65;margin:0 0 18px;">Free worked solutions for every Part III question on the January 2026 New York State Regents Geometry exam. Each 4-credit question is broken down into the exact steps that earn full credit, with the theorem or formula named. Click a question to reveal the answer. This is Part III of a four-post series covering all 35 questions.</p>
+
+        <div class="pdf-box">
+          <h3>📄 Original NYSED exam (PDF)</h3>
+          <p>All diagrams and reference sheet are in the official New York State Education Department release. Open it in a second tab so you can see the figures as you work through the questions below.</p>
+          <a class="pdf-btn" href="/assets/regents/geometry-january-2026/nysed-geometry-january-2026.pdf" target="_blank" rel="noopener">Download the January 2026 Geometry Regents PDF</a>
+        </div>
+
+        <div class="callout">
+          <p style="margin:0;"><strong>How Part III is graded.</strong> Each question is worth <strong>4 credits</strong>. A correct numerical answer with <em>no work</em> receives only 1 credit. Show formula substitutions, name the theorem or definition you use, and give the final answer with correct units. Proofs may be written in two-column, paragraph, or flow-chart form &mdash; the grader looks for a valid <em>reason</em> beside every statement.</p>
+        </div>
+
+        <div class="toc">
+          <h2>Sections</h2>
+          <ol>
+            <li><a href="#part-3-topics">What Part III tests</a></li>
+            <li><a href="#part-3-questions">Part III &mdash; Questions 32&ndash;34 (click to reveal)</a></li>
+            <li><a href="#answer-key">Part III answer key</a></li>
+            <li><a href="#big-ideas">Big ideas to remember</a></li>
+            <li><a href="#related">More Regents Geometry help</a></li>
+          </ol>
+        </div>
+
+        <h2 id="part-3-topics" style="color:#0a3a5f;margin-top:36px;">What Part III tests</h2>
+        <p>Part III is where the Regents shifts from short answers to multi-step reasoning. The three questions each ask you to apply <em>several</em> ideas in the same problem: identify the geometric setup, choose the right formula or theorem, execute the algebra or the proof cleanly, and finish with a correctly stated answer. On this exam Part III covers the altitude of an isosceles triangle with right-triangle trigonometry, a formal congruent-triangles proof inside a parallelogram, and the volume of a composite prism-plus-pyramid solid with density.</p>
+
+        <div class="theory-box">
+          <h3>Altitude of an isosceles triangle</h3>
+          <p>In an isosceles triangle, the altitude drawn from the vertex angle to the base is <em>also</em> the perpendicular bisector of the base and the angle bisector of the vertex angle. That single segment cuts the isosceles triangle into two congruent right triangles &mdash; the fastest way to set up trigonometry when the vertex angle and altitude are known.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>SOH-CAH-TOA in a right triangle</h3>
+          <p>sin(&theta;) = opposite / hypotenuse, cos(&theta;) = adjacent / hypotenuse, tan(&theta;) = opposite / adjacent. On Q32, the half-triangle at the base has the half-vertex angle at <em>A</em>, its opposite leg is half the base, and its adjacent leg is the altitude &mdash; so tan gives the half-base and cos gives the slant leg.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Parallelogram from one pair of sides</h3>
+          <p>If one pair of opposite sides of a quadrilateral is both <em>parallel and congruent</em>, the quadrilateral is a parallelogram. Once you have a parallelogram, both pairs of opposite sides are parallel and congruent, and &mdash; crucially for Q33 &mdash; the diagonals bisect each other.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>SAS triangle congruence</h3>
+          <p>Two triangles are congruent if two sides and the <em>included</em> angle of one triangle are congruent to two sides and the included angle of the other. Vertical angles at the intersection of two lines are always congruent, which supplies the included angle whenever a proof lives at the crossing of two segments.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Volume of a composite solid + density</h3>
+          <p>For a solid glued together from simpler shapes, add the individual volumes. Rectangular prism: <em>V</em> = <em>l</em>&thinsp;&middot;&thinsp;<em>w</em>&thinsp;&middot;&thinsp;<em>h</em>. Rectangular pyramid: <em>V</em> = &frac13;&thinsp;&middot;&thinsp;<em>l</em>&thinsp;&middot;&thinsp;<em>w</em>&thinsp;&middot;&thinsp;<em>h</em>. Then mass = total volume &times; density. Both formulas are on the reference sheet &mdash; do not write them from memory.</p>
+        </div>
+
+        <div class="part-header">
+          <h2>Part III &mdash; Questions 32&ndash;34</h2>
+          <p id="part-3-questions">4 credits each &middot; 3 questions &middot; click any card to reveal the full worked solution.</p>
+        </div>
+
+        <details class="qcard"><summary><strong>Question 32</strong><p>In isosceles &triangle;<em>ABC</em>, <em>AD</em> is an altitude drawn to base <em>BC</em>. If m&ang;<em>BAC</em> = 80&deg; and <em>AD</em> = 8, determine and state the perimeter of &triangle;<em>ABC</em>, to the <em>nearest tenth</em>.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Use the altitude to split the triangle in half</h4>
+            <p>Because &triangle;<em>ABC</em> is isosceles with <em>AB</em> &cong; <em>AC</em>, the altitude <em>AD</em> from the vertex angle is also the perpendicular bisector of <em>BC</em> and the bisector of &ang;<em>BAC</em>. So &triangle;<em>ABD</em> and &triangle;<em>ACD</em> are congruent right triangles, and &ang;<em>BAD</em> = &ang;<em>CAD</em> = 80&deg;&thinsp;/&thinsp;2 = 40&deg;.</p>
+
+            <h4>Step 2 &mdash; Solve for half the base using tangent</h4>
+            <p>In right &triangle;<em>ABD</em>, the 40&deg; angle at <em>A</em> has opposite side <em>BD</em> and adjacent side <em>AD</em> = 8:</p>
+            <p>tan(40&deg;) = <em>BD</em>&thinsp;/&thinsp;8 &rArr; <em>BD</em> = 8&thinsp;&middot;&thinsp;tan(40&deg;) &asymp; 6.7128.</p>
+            <p>By symmetry, <em>DC</em> = <em>BD</em>, so <em>BC</em> = 2&thinsp;&middot;&thinsp;<em>BD</em> &asymp; 13.4256.</p>
+
+            <h4>Step 3 &mdash; Solve for a leg using cosine</h4>
+            <p>In the same right triangle, the 40&deg; angle has adjacent side <em>AD</em> = 8 and hypotenuse <em>AB</em>:</p>
+            <p>cos(40&deg;) = 8&thinsp;/&thinsp;<em>AB</em> &rArr; <em>AB</em> = 8&thinsp;/&thinsp;cos(40&deg;) &asymp; 10.4433.</p>
+            <p>Because <em>AB</em> &cong; <em>AC</em>, we also have <em>AC</em> &asymp; 10.4433.</p>
+
+            <h4>Step 4 &mdash; Add all three sides and round at the end</h4>
+            <p>Perimeter = <em>AB</em> + <em>AC</em> + <em>BC</em> &asymp; 10.4433 + 10.4433 + 13.4256 &asymp; 34.3122.</p>
+
+            <p class="ans">Perimeter of &triangle;<em>ABC</em> &asymp; 34.3</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 4 credits requires (a) the half-angle statement 80&deg;&thinsp;&divide;&thinsp;2 = 40&deg; (or an equivalent argument), (b) a trig equation with substitution to find half the base or a leg, (c) both <em>BC</em> and <em>AB</em> computed, and (d) the perimeter rounded correctly at the very end. Rounding <em>BD</em> to 6.7 before doubling can drop a credit for a rounding-mid-work error.</div>
+
+            <div class="theory"><strong>Theory.</strong> The altitude from the vertex angle of an isosceles triangle is a triple-duty segment: perpendicular bisector of the base, angle bisector of the vertex angle, and median to the base. This is what lets you attack an isosceles-triangle problem with plain right-triangle trigonometry.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 33</strong><p>In quadrilateral <em>SMIL</em>, diagonals <em>IS</em> and <em>ML</em> intersect at point <em>E</em>, <em>MS</em> &parallel; <em>IL</em>, and <em>MS</em> &cong; <em>IL</em>. Prove: &triangle;<em>MIE</em> &cong; &triangle;<em>LSE</em>.</p></summary>
+          <div class="solution">
+            <h4>Plan</h4>
+            <p>The given information &mdash; one pair of opposite sides both parallel and congruent &mdash; is the standard shortcut for a parallelogram. Once <em>SMIL</em> is a parallelogram, its diagonals bisect each other, which supplies two pairs of congruent sides at <em>E</em>. Vertical angles at <em>E</em> then close the proof by SAS.</p>
+
+            <h4>Two-column proof</h4>
+            <table class="proof">
+              <tr><th>Statements</th><th>Reasons</th></tr>
+              <tr><td>1. Quadrilateral <em>SMIL</em> with diagonals <em>IS</em> and <em>ML</em> intersecting at <em>E</em>, <em>MS</em> &parallel; <em>IL</em>, and <em>MS</em> &cong; <em>IL</em>.</td><td>1. Given.</td></tr>
+              <tr><td>2. <em>SMIL</em> is a parallelogram.</td><td>2. A quadrilateral is a parallelogram if one pair of opposite sides is both parallel and congruent.</td></tr>
+              <tr><td>3. <em>ME</em> &cong; <em>LE</em> and <em>IE</em> &cong; <em>SE</em>.</td><td>3. The diagonals of a parallelogram bisect each other.</td></tr>
+              <tr><td>4. &ang;<em>MEI</em> &cong; &ang;<em>LES</em>.</td><td>4. Vertical angles are congruent.</td></tr>
+              <tr><td>5. &triangle;<em>MIE</em> &cong; &triangle;<em>LSE</em>.</td><td>5. SAS (from steps 3 and 4: <em>ME</em> &cong; <em>LE</em>, &ang;<em>MEI</em> &cong; &ang;<em>LES</em>, <em>IE</em> &cong; <em>SE</em>). &#x25A0;</td></tr>
+            </table>
+
+            <p class="ans">&therefore; &triangle;<em>MIE</em> &cong; &triangle;<em>LSE</em>, as required.</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 4 credits requires (a) naming the &ldquo;parallelogram from one pair&rdquo; theorem, (b) using &ldquo;diagonals bisect each other&rdquo; to get two pairs of congruent segments, (c) citing vertical angles, and (d) naming SAS. Jumping straight to SAS without justifying why <em>ME</em> &cong; <em>LE</em> and <em>IE</em> &cong; <em>SE</em> drops credit.</div>
+
+            <div class="theory"><strong>Theory.</strong> The five &ldquo;is-a-parallelogram&rdquo; theorems (both pairs parallel, both pairs congruent, one pair parallel <em>and</em> congruent, diagonals bisect each other, both pairs of opposite angles congruent) are worth memorizing verbatim &mdash; they unlock most Regents parallelogram proofs in one or two lines.</div>
+          </div>
+        </details>
+
+        <details class="qcard"><summary><strong>Question 34</strong><p>A solid glass trophy is composed of a rectangular prism and a rectangular pyramid. The prism has a length of 12&thinsp;cm, a width of 6&thinsp;cm, and a height of 3&thinsp;cm. The pyramid sits on top of the prism and shares its 12&thinsp;cm &times; 6&thinsp;cm face; the pyramid&rsquo;s height is 10&thinsp;cm. If the density of glass is 2.5&thinsp;g/cm&sup3;, determine and state the mass of the trophy, in grams.</p></summary>
+          <div class="solution">
+            <h4>Step 1 &mdash; Volume of the rectangular prism</h4>
+            <p><em>V</em><sub>prism</sub> = <em>l</em>&thinsp;&middot;&thinsp;<em>w</em>&thinsp;&middot;&thinsp;<em>h</em> = 12&thinsp;&middot;&thinsp;6&thinsp;&middot;&thinsp;3 = 216 cm&sup3;.</p>
+
+            <h4>Step 2 &mdash; Volume of the rectangular pyramid</h4>
+            <p><em>V</em><sub>pyramid</sub> = &frac13; &middot; (base area) &middot; height = &frac13; &middot; (12&thinsp;&middot;&thinsp;6) &middot; 10 = &frac13; &middot; 72 &middot; 10 = 240 cm&sup3;.</p>
+
+            <h4>Step 3 &mdash; Total volume of the trophy</h4>
+            <p><em>V</em><sub>total</sub> = <em>V</em><sub>prism</sub> + <em>V</em><sub>pyramid</sub> = 216 + 240 = 456 cm&sup3;.</p>
+
+            <h4>Step 4 &mdash; Mass from density</h4>
+            <p>Mass = volume &times; density = 456&thinsp;&middot;&thinsp;2.5 = 1140 g.</p>
+
+            <p class="ans">Mass of the trophy = 1140 grams</p>
+
+            <div class="rubric"><strong>Rubric.</strong> Full 4 credits requires (a) the prism formula with substituted numbers, (b) the pyramid formula with the &frac13;, (c) the two volumes added, and (d) the density multiplication with correct units. Forgetting the &frac13; on the pyramid is the single most common Regents mistake on solid-volume problems.</div>
+
+            <div class="theory"><strong>Theory.</strong> A rectangular pyramid&rsquo;s volume is exactly <em>one-third</em> that of a rectangular prism with the same base and height. For any composite solid, add the piece volumes first and multiply by density last &mdash; never re-do the density calculation on each piece unless different materials are used.</div>
+          </div>
+        </details>
+
+        <h2 id="answer-key" style="color:#0a3a5f;margin-top:36px;">Part III answer key</h2>
+        <ul>
+          <li><strong>Q32.</strong> Perimeter = 2&thinsp;&middot;&thinsp;(8&thinsp;/&thinsp;cos&thinsp;40&deg;) + 2&thinsp;&middot;&thinsp;(8&thinsp;tan&thinsp;40&deg;) &asymp; 20.887 + 13.426 &asymp; <strong>34.3</strong></li>
+          <li><strong>Q33.</strong> One pair of opposite sides parallel <em>and</em> congruent &rarr; parallelogram &rarr; diagonals bisect each other &rarr; SAS &rarr; <strong>&triangle;<em>MIE</em> &cong; &triangle;<em>LSE</em>. &#x25A0;</strong></li>
+          <li><strong>Q34.</strong> (12&thinsp;&middot;&thinsp;6&thinsp;&middot;&thinsp;3) + (&frac13;&thinsp;&middot;&thinsp;12&thinsp;&middot;&thinsp;6&thinsp;&middot;&thinsp;10) = 216 + 240 = 456 cm&sup3;; 456&thinsp;&middot;&thinsp;2.5 = <strong>1140 grams</strong></li>
+        </ul>
+
+        <h2 id="big-ideas" style="color:#0a3a5f;margin-top:36px;">Big ideas to remember on test day</h2>
+        <ul>
+          <li><strong>The altitude of an isosceles triangle is triple-duty.</strong> It is the perpendicular bisector of the base, the angle bisector of the vertex angle, and the median to the base &mdash; the single fact that unlocks Q32.</li>
+          <li><strong>Never round in the middle.</strong> Q32 loses a credit if you round <em>BD</em> or <em>AB</em> before summing to get the perimeter.</li>
+          <li><strong>Memorize the five parallelogram tests.</strong> One pair of opposite sides parallel <em>and</em> congruent &rarr; parallelogram was the pivot on Q33.</li>
+          <li><strong>Diagonals of a parallelogram bisect each other.</strong> Two free pairs of congruent segments &mdash; use them.</li>
+          <li><strong>Vertical angles are always available.</strong> Whenever two segments cross, the two angles opposite each other at the crossing are congruent. Costs nothing to cite, often finishes a proof.</li>
+          <li><strong>Reference sheet before every solid.</strong> Prism <em>V</em> = <em>lwh</em> and pyramid <em>V</em> = &frac13;&thinsp;<em>lwh</em> live on the sheet &mdash; the &frac13; on the pyramid is the most-missed detail on the exam.</li>
+          <li><strong>Composite solids: add volumes, then multiply by density once.</strong> Never re-apply density to each piece unless the materials are different.</li>
+        </ul>
+
+        <h2 id="related" style="color:#0a3a5f;margin-top:36px;">More Regents Geometry help</h2>
+        <ul class="related-list">
+          <li><a href="/posts/regents-geometry-january-2026-part-1-answers">Regents Geometry January 2026 &mdash; Part I (Questions 1&ndash;24)</a></li>
+          <li><a href="/posts/regents-geometry-january-2026-part-2-answers">Regents Geometry January 2026 &mdash; Part II (Questions 25&ndash;31)</a></li>
+          <li><a href="/posts/regents-geometry-january-2026-part-4-answers">Regents Geometry January 2026 &mdash; Part IV (Question 35, 6 credits)</a></li>
+          <li><a href="/posts/regents-geometry-june-2026-part-3-answers">Regents Geometry June 2026 &mdash; Part III (Questions 32&ndash;34)</a></li>
+          <li><a href="/regents-prep-nyc">SOMATH Regents Geometry tutoring &mdash; NYC private and small-group prep</a></li>
+          <li><a href="/assets/regents/geometry-january-2026/nysed-geometry-january-2026.pdf" target="_blank" rel="noopener">Download the original NYSED PDF (January 2026 Geometry)</a></li>
+        </ul>
+
+        <div class="about-somath">
+          <h3>About SOMATH</h3>
+          <p><strong>SOMATH &mdash; School of Math</strong> is an Upper West Side math school for grades 1&ndash;12. We teach year-round math enrichment for K&ndash;8 and dedicated Regents, SAT, and SHSAT prep for high schoolers. Our co-founder <strong>Marcelo Ambrozio</strong> (Northwestern) leads the Regents team and personally trains every tutor. Small groups (max 6), free 60-minute evaluation, one-time $99 enrollment fee.</p>
+          <p><a href="/regents-prep-nyc">Regents prep at SOMATH &rarr;</a> &middot; <a href="/evaluation">Book a free evaluation &rarr;</a> &middot; <a href="tel:+16466686151">(646) 668-6151</a></p>
+        </div>
+
+        <p style="margin-top:36px;color:#666;font-size:0.88rem;text-align:center;">This walkthrough is provided for educational purposes. The January 2026 Geometry Regents exam is publicly released by the New York State Education Department. Questions and figures are the property of NYSED.</p>
+
+      
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH course &middot; Grades 9–12 · NY State Regents</div>
+          <h2 class="course-cta-card__h">Want your child in a Regents Geometry & Trigonometry Prep class at SOMATH?</h2>
+          <p class="course-cta-card__lede">24-meeting Friday cohort mapped to the NY State Regents Geometry blueprint — constructions, congruence, similarity, right-triangle trig, laws of sines & cosines, circles, coordinate geometry, and 3D solids. Three timed mock exams built in.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/regents-geometry" class="course-cta-card__primary">See the Regents Geometry & Trigonometry Prep course &rarr;</a>
+            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+    </main>
+
+    <div id="footer-mount"></div>
+  </body>
+</html>
