@@ -47,6 +47,39 @@
     <meta name="twitter:description" content="A neighborhood-by-neighborhood guide to after school math programs on the Upper West Side — SOMATH, Launch Math, Rocket Club, Mathnasium, and RSM compared honestly on class size, pricing, teachers, and fit." />
     <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/after-school-math-program-upper-west-side/cover.jpg" />
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* Comparison table - desktop */
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table tr.is-featured td:first-child { border-left:4px solid #c89a3a; }
+
+      /* Mobile: switch to card view */
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { border-left:4px solid #c89a3a; background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 8px; margin:0 0 8px; border-bottom:1px solid #e6e6e6; font-size:1.05rem; font-weight:700; color:#1f3d2e; display:block; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      /* Real CTA buttons in the course-cta-card */
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+    </style>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -233,7 +266,8 @@
 
 <p>The comparison table below is our honest read of the five programs above based on public information, tours, and hundreds of conversations with UWS parents who have tried them.</p>
 
-<table>
+<div class="cmp-table-wrap">
+<table class="cmp-table">
   <thead>
     <tr>
       <th>Program</th>
@@ -241,58 +275,59 @@
       <th>Grades</th>
       <th>Class size</th>
       <th>Monthly price</th>
-      <th>Written diagnostic?</th>
+      <th>Diagnostic</th>
       <th>Best for</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><strong>SOMATH</strong></td>
-      <td>226 W 79th St</td>
-      <td>1–12</td>
-      <td>4–8</td>
-      <td>$369–489</td>
-      <td>Yes, free, 48-hour turnaround</td>
-      <td>Small-group enrichment K–12 with teacher relationship</td>
+    <tr class="is-featured">
+      <td data-label="Program"><strong>SOMATH</strong></td>
+      <td data-label="Location">226 W 79th St</td>
+      <td data-label="Grades">1–12</td>
+      <td data-label="Class size">4–8</td>
+      <td data-label="Monthly price">$369–489</td>
+      <td data-label="Diagnostic">Yes, free, 48-hour turnaround</td>
+      <td data-label="Best for">Small-group K–12 with teacher relationship</td>
     </tr>
     <tr>
-      <td>Launch Math</td>
-      <td>173 W 81st St</td>
-      <td>Pre-K–8</td>
-      <td>Small</td>
-      <td>Varies (high)</td>
-      <td>Ask</td>
-      <td>STEM-blended after school for elementary</td>
+      <td data-label="Program">Launch Math</td>
+      <td data-label="Location">173 W 81st St</td>
+      <td data-label="Grades">Pre-K–8</td>
+      <td data-label="Class size">Small</td>
+      <td data-label="Monthly price">Varies (high)</td>
+      <td data-label="Diagnostic">Ask</td>
+      <td data-label="Best for">STEM-blended after school for elementary</td>
     </tr>
     <tr>
-      <td>Rocket Club</td>
-      <td>522 Amsterdam</td>
-      <td>Pre-K–7</td>
-      <td>Small</td>
-      <td>Mid-to-high</td>
-      <td>Ask</td>
-      <td>Modern project-based math, Pre-K–7 only</td>
+      <td data-label="Program">Rocket Club</td>
+      <td data-label="Location">522 Amsterdam</td>
+      <td data-label="Grades">Pre-K–7</td>
+      <td data-label="Class size">Small</td>
+      <td data-label="Monthly price">Mid-to-high</td>
+      <td data-label="Diagnostic">Ask</td>
+      <td data-label="Best for">Project-based math, Pre-K–7 only</td>
     </tr>
     <tr>
-      <td>RSM</td>
-      <td>237 W 72nd St</td>
-      <td>K–12</td>
-      <td>12–15</td>
-      <td>$450–550</td>
-      <td>Placement test</td>
-      <td>Structured franchise curriculum</td>
+      <td data-label="Program">RSM</td>
+      <td data-label="Location">237 W 72nd St</td>
+      <td data-label="Grades">K–12</td>
+      <td data-label="Class size">12–15</td>
+      <td data-label="Monthly price">$450–550</td>
+      <td data-label="Diagnostic">Placement test</td>
+      <td data-label="Best for">Structured franchise curriculum</td>
     </tr>
     <tr>
-      <td>Mathnasium</td>
-      <td>506 Amsterdam</td>
-      <td>K–12</td>
-      <td>Drop-in</td>
-      <td>$350–450</td>
-      <td>Placement test</td>
-      <td>Remediation and homework help</td>
+      <td data-label="Program">Mathnasium</td>
+      <td data-label="Location">506 Amsterdam</td>
+      <td data-label="Grades">K–12</td>
+      <td data-label="Class size">Drop-in</td>
+      <td data-label="Monthly price">$350–450</td>
+      <td data-label="Diagnostic">Placement test</td>
+      <td data-label="Best for">Remediation and homework help</td>
     </tr>
   </tbody>
 </table>
+</div>
 
 <p>Prices are approximate and change. Ask each program for their current rate in writing, including registration fees, materials fees, and any minimum commitment.</p>
 
