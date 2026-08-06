@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression (SOMATH Upper West Side Guide) | SOMATH</title>
+    <meta name="description" content="Non-rigid transformations for NY Regents Geometry &mdash; dilation, stretch, and compression &mdash; explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master similarity and dilation on the Regents." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression (SOMATH Upper West Side Guide)" />
+    <meta property="og:description" content="Non-rigid transformations for NY Regents Geometry &mdash; dilation, stretch, and compression &mdash; explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master similarity and dilation on the Regents." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/regents-geometry-non-rigid-transformations/cover.jpg" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="article:published_time" content="2026-08-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression (SOMATH Upper West Side Guide)" />
+    <meta name="twitter:description" content="Non-rigid transformations for NY Regents Geometry &mdash; dilation, stretch, and compression &mdash; explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master similarity and dilation on the Regents." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/regents-geometry-non-rigid-transformations/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* Comparison / rules table - desktop */
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      /* Mobile: switch to card view */
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      /* Real CTA buttons */
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      /* Concept cards for each transformation */
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      /* Worked-example callout */
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+
+      /* Callout for the rigid vs non-rigid pair */
+      .pair-callout { background:#f0ede2; border:1px solid #e6d9b8; border-radius:10px; padding:16px 20px; margin:20px 0; }
+      .pair-callout p { margin:0; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression (SOMATH Upper West Side Guide)",
+  "description": "Non-rigid transformations for NY Regents Geometry — dilation, stretch, and compression — explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master similarity and dilation on the Regents.",
+  "image": "https://www.schoolofmath.us/assets/blog/regents-geometry-non-rigid-transformations/cover.jpg",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a non-rigid transformation in Regents Geometry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A non-rigid transformation is a movement of a figure on the coordinate plane that changes the figure's size (and often its shape). Because size changes, area, side lengths, and perimeter all change. The three non-rigid transformations covered in Regents Geometry are dilation (resizes proportionally from a center point, keeps shape), stretch (changes size in one direction only), and compression (shrinks the figure in one or both directions). Only dilation preserves shape — the image is similar to the pre-image. Stretch and compression change shape."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the coordinate rules for dilation, stretch, and compression?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dilation (center at origin, scale factor k): (x, y) → (kx, ky). Every coordinate is multiplied by the same scale factor. Horizontal stretch (factor k, k > 1): (x, y) → (kx, y). Vertical stretch (factor k, k > 1): (x, y) → (x, ky). Horizontal compression (0 < k < 1): (x, y) → (kx, y). Vertical compression (0 < k < 1): (x, y) → (x, ky). Note: horizontal compression uses the same rule format as horizontal stretch — the only difference is whether k is greater than 1 (stretch) or between 0 and 1 (compression)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a dilation change the area of a figure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under a dilation with scale factor k, side lengths and perimeter are multiplied by |k|, but area is multiplied by k² (k-squared). If k = 2, sides double and area quadruples. If k = 3, sides triple and area is nine times as large. If k = 1/2, sides are halved and area is 1/4 of the original. This k² rule is one of the most commonly tested facts on Regents Geometry — the Regents will ask, for example, 'A rectangle is dilated by scale factor 3. If the original area is 12 sq units, what is the new area?' Answer: 12 × 3² = 108 sq units."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a rigid and non-rigid transformation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rigid transformations (translation, reflection, rotation) preserve size and shape — they produce congruent figures. Non-rigid transformations (dilation, stretch, compression) change size — they do not produce congruent figures. Dilation is the special non-rigid transformation that preserves shape while changing size — its image is similar to the pre-image. Stretch and compression change both size and shape. On the Regents Geometry exam, congruence proofs use rigid transformations; similarity proofs allow rigid transformations plus dilation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does SOMATH math enrichment prepare Upper West Side students for Regents dilation and similarity questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH covers dilations and similarity across our Young Fermats (grades 5–8) and high-school Geometry tracks. Students first build dilations physically with a scale factor before they see the coordinate rule, then derive the k² area relationship themselves before we hand them the summary. By the time a SOMATH student sits for the Regents Geometry exam, they can (1) apply the dilation coordinate rule from memory, (2) predict how side lengths, perimeter, and area change with any scale factor, and (3) chain a dilation with rigid transformations to produce a full similarity argument — the three skills the Regents actually tests. Every SOMATH family starts with a free 60-minute evaluation and a written diagnostic within 48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is SOMATH and how do I book a math enrichment or Regents Geometry evaluation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH is at 226 West 79th Street, first floor, on the Upper West Side of Manhattan, between Broadway and Amsterdam. Phone (646) 668-6151. Every family starts with a free 60-minute in-person evaluation and receives a written diagnostic within 48 hours — yours to keep whether you enroll or not. Book at schoolofmath.us/evaluation."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Math Enrichment</p>
+      <h1 class="post__title">Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression</h1>
+      <p class="post__dek">Dilations, stretches, and compressions &mdash; the non-rigid transformations that change size (and sometimes shape) on the NY Regents Geometry exam. Here is what they are, how the coordinate rules work, why area scales as k&sup2;, and how SOMATH's math enrichment on the Upper West Side prepares students to master them.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 6, 2026</span>
+        <span>10 min read</span>
+      </div>
+
+      <figure class="post__cover"><picture><source srcset="/assets/blog/regents-geometry-non-rigid-transformations/cover.webp" type="image/webp"><img src="/assets/blog/regents-geometry-non-rigid-transformations/cover.jpg" alt="SOMATH infographic — Non-Rigid Transformations: dilation, stretch, and compression with coordinate rules, area rules, and a summary table. School of Math, Upper West Side NYC." width="1536" height="1024" /></picture></figure>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> a non-rigid transformation changes the size of a figure on the coordinate plane. Because size changes, so does area. The three tested in Regents Geometry are <strong>dilation</strong> (resizes proportionally from a center point &mdash; the only non-rigid transformation that keeps shape), <strong>stretch</strong> (changes size in one direction), and <strong>compression</strong> (shrinks in one or both directions). Under a dilation with scale factor <em>k</em>, side lengths and perimeter multiply by |<em>k</em>|, but area multiplies by <em>k</em>&sup2;. Only dilation produces similar figures; stretch and compression change shape.</p>
+
+<p>This is Part 2 of our transformations pair. Part 1 covered <a href="/posts/regents-geometry-rigid-transformations-somath-guide">rigid transformations &mdash; translation, reflection, and rotation</a>. Together, the two posts give Upper West Side Regents Geometry students the full transformation toolkit the June and January Regents exams draw from.</p>
+
+<div class="pair-callout">
+<p><strong>The pair, in one sentence:</strong> rigid transformations (translation, reflection, rotation) move a figure without changing it &rarr; congruent images. Non-rigid transformations (dilation, stretch, compression) change size &rarr; non-congruent images. Dilation is the bridge &mdash; it changes size but keeps shape, so its images are <em>similar</em> to the original.</p>
+</div>
+
+<p>SOMATH &mdash; <a href="/">School of Math on the Upper West Side</a> at <strong>226 West 79th Street, first floor</strong>, phone <a href="tel:+16466686151">(646) 668-6151</a> &mdash; covers dilations and similarity across our <a href="/courses/">Young Fermats (grades 5&ndash;8) and high-school Geometry tracks</a>. Every family starts with a <a href="/evaluation">free 60-minute in-person evaluation</a> and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+
+<h2>What is a non-rigid transformation?</h2>
+
+<p>A <strong>non-rigid transformation</strong> is any movement of a figure on the coordinate plane that <em>changes</em> the figure's size. Unlike rigid transformations (translation, reflection, rotation) &mdash; which preserve size, shape, side lengths, angles, perimeter, and area &mdash; non-rigid transformations do not preserve size, and typically do not preserve area, side lengths, or perimeter.</p>
+
+<p>The three non-rigid transformations covered in Regents Geometry are:</p>
+<ol>
+  <li><strong>Dilation</strong> &mdash; resizes the figure proportionally from a center point. Keeps shape. Its images are <em>similar</em> to the original.</li>
+  <li><strong>Stretch</strong> &mdash; changes size in one direction only (horizontal or vertical). Changes shape.</li>
+  <li><strong>Compression</strong> &mdash; shrinks the figure in one or both directions. Changes shape.</li>
+</ol>
+
+<p>Angles are preserved under all three of these when applied uniformly in one direction &mdash; but sides and area change. That is the whole point of "non-rigid": the figure is no longer congruent to itself after the transformation.</p>
+
+<h2>The three non-rigid transformations, in detail</h2>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Non-rigid transformation #1</div>
+  <h3>Dilation &mdash; resize from a center point</h3>
+  <p>A <strong>dilation</strong> resizes every point of the figure by a scale factor <em>k</em>, measured from a fixed <em>center of dilation</em>. On the Regents, the center is almost always the origin.</p>
+  <p><strong>Coordinate rule (center at origin, scale factor <em>k</em>):</strong> <span class="concept-card__rule">(x, y) &rarr; (kx, ky)</span></p>
+  <p>Multiply every x and y by the same scale factor.</p>
+  <ul>
+    <li>If <em>k</em> &gt; 1 &rarr; the image is an <em>enlargement</em> (bigger than the original).</li>
+    <li>If 0 &lt; <em>k</em> &lt; 1 &rarr; the image is a <em>reduction</em> (smaller than the original).</li>
+    <li>If <em>k</em> = 1 &rarr; the image is identical to the original (trivial case).</li>
+    <li>If <em>k</em> is negative &rarr; the image is on the opposite side of the center of dilation (still resized by |<em>k</em>|).</li>
+  </ul>
+  <p><strong>Example (k = 2):</strong> dilate the rectangle with vertices (&minus;3, 1), (&minus;1, 1), (&minus;1, 2), (&minus;3, 2) by scale factor 2 about the origin. Apply <code>(x, y) &rarr; (2x, 2y)</code>. New vertices: (&minus;6, 2), (&minus;2, 2), (&minus;2, 4), (&minus;6, 4). Same rectangle, twice as tall and twice as wide.</p>
+  <p><strong>Effect on measurements:</strong></p>
+  <ul>
+    <li>Side lengths are multiplied by |<em>k</em>|.</li>
+    <li>Perimeter is multiplied by |<em>k</em>|.</li>
+    <li>Area is multiplied by <em>k</em>&sup2;.</li>
+    <li>Angles remain the same.</li>
+    <li>Shape is the same &mdash; the image is <em>similar</em> to the pre-image.</li>
+  </ul>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Non-rigid transformation #2</div>
+  <h3>Stretch &mdash; change size in one direction</h3>
+  <p>A <strong>stretch</strong> multiplies coordinates in one direction only. A horizontal stretch by factor <em>k</em> (with <em>k</em> &gt; 1) makes the figure wider. A vertical stretch makes it taller.</p>
+  <p><strong>Coordinate rules:</strong></p>
+  <ul>
+    <li>Horizontal stretch: <span class="concept-card__rule">(x, y) &rarr; (kx, y)</span> &nbsp; (k &gt; 1)</li>
+    <li>Vertical stretch: <span class="concept-card__rule">(x, y) &rarr; (x, ky)</span> &nbsp; (k &gt; 1)</li>
+  </ul>
+  <p><strong>Example (horizontal stretch, k = 2):</strong> stretch the rectangle with vertices (&minus;2, 1), (&minus;1, 1), (&minus;1, 2), (&minus;2, 2) horizontally by factor 2. Apply <code>(x, y) &rarr; (2x, y)</code>. New vertices: (&minus;4, 1), (&minus;2, 1), (&minus;2, 2), (&minus;4, 2). The rectangle is now twice as wide but the same height &mdash; a different shape.</p>
+  <p><strong>Effect on measurements:</strong></p>
+  <ul>
+    <li>Side lengths change in one direction only (widths or heights).</li>
+    <li>Perimeter changes.</li>
+    <li>Area is multiplied by |<em>k</em>| (the scale factor in the stretched direction).</li>
+    <li>Angles remain the same (no slant is introduced).</li>
+    <li>Shape changes &mdash; the image is <em>not</em> similar to the pre-image.</li>
+  </ul>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Non-rigid transformation #3</div>
+  <h3>Compression &mdash; shrink in one or both directions</h3>
+  <p>A <strong>compression</strong> uses the same coordinate-rule format as a stretch, but with a scale factor <em>k</em> between 0 and 1. Instead of getting bigger, the figure shrinks in the compressed direction.</p>
+  <p><strong>Coordinate rules (0 &lt; <em>k</em> &lt; 1):</strong></p>
+  <ul>
+    <li>Horizontal compression: <span class="concept-card__rule">(x, y) &rarr; (kx, y)</span></li>
+    <li>Vertical compression: <span class="concept-card__rule">(x, y) &rarr; (x, ky)</span></li>
+  </ul>
+  <p><strong>Example (horizontal compression, k = 1/2):</strong> compress the rectangle with vertices (&minus;4, 1), (&minus;2, 1), (&minus;2, 3), (&minus;4, 3) horizontally by factor 1/2. Apply <code>(x, y) &rarr; (0.5x, y)</code>. New vertices: (&minus;2, 1), (&minus;1, 1), (&minus;1, 3), (&minus;2, 3). The rectangle is now half as wide.</p>
+  <p><strong>Effect on measurements:</strong></p>
+  <ul>
+    <li>Side lengths shrink by factor <em>k</em> in the compressed direction.</li>
+    <li>Perimeter decreases.</li>
+    <li>Area is multiplied by <em>k</em> (0 &lt; <em>k</em> &lt; 1), so it decreases.</li>
+    <li>Angles remain the same.</li>
+    <li>Shape changes &mdash; the image is <em>not</em> similar to the pre-image.</li>
+  </ul>
+</div>
+
+<h2>The summary table Regents students memorize</h2>
+
+<p>Every SOMATH Geometry student learns this table &mdash; it collapses the entire chapter into a single grid.</p>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Changes size?</th>
+      <th>Changes shape?</th>
+      <th>Side lengths</th>
+      <th>Perimeter</th>
+      <th>Area</th>
+      <th>Example rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Type"><strong>Dilation</strong></td>
+      <td data-label="Changes size?">Yes</td>
+      <td data-label="Changes shape?">No (similar)</td>
+      <td data-label="Side lengths">Multiplied by |k|</td>
+      <td data-label="Perimeter">Multiplied by |k|</td>
+      <td data-label="Area">Multiplied by k&sup2;</td>
+      <td data-label="Example rule"><code>(x, y) &rarr; (kx, ky)</code></td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Horizontal stretch</strong></td>
+      <td data-label="Changes size?">Yes</td>
+      <td data-label="Changes shape?">Yes (unless k = 1)</td>
+      <td data-label="Side lengths">Width scaled by k</td>
+      <td data-label="Perimeter">Changes</td>
+      <td data-label="Area">Multiplied by |k|</td>
+      <td data-label="Example rule"><code>(x, y) &rarr; (kx, y)</code></td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Vertical stretch</strong></td>
+      <td data-label="Changes size?">Yes</td>
+      <td data-label="Changes shape?">Yes (unless k = 1)</td>
+      <td data-label="Side lengths">Height scaled by k</td>
+      <td data-label="Perimeter">Changes</td>
+      <td data-label="Area">Multiplied by |k|</td>
+      <td data-label="Example rule"><code>(x, y) &rarr; (x, ky)</code></td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Horizontal compression</strong></td>
+      <td data-label="Changes size?">Yes</td>
+      <td data-label="Changes shape?">Yes (unless k = 1)</td>
+      <td data-label="Side lengths">Width scaled by k (0&lt;k&lt;1)</td>
+      <td data-label="Perimeter">Decreases</td>
+      <td data-label="Area">Multiplied by k (0&lt;k&lt;1)</td>
+      <td data-label="Example rule"><code>(x, y) &rarr; (kx, y)</code>, 0&lt;k&lt;1</td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Vertical compression</strong></td>
+      <td data-label="Changes size?">Yes</td>
+      <td data-label="Changes shape?">Yes (unless k = 1)</td>
+      <td data-label="Side lengths">Height scaled by k (0&lt;k&lt;1)</td>
+      <td data-label="Perimeter">Decreases</td>
+      <td data-label="Area">Multiplied by k (0&lt;k&lt;1)</td>
+      <td data-label="Example rule"><code>(x, y) &rarr; (x, ky)</code>, 0&lt;k&lt;1</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>The k&sup2; rule for area under a dilation</h2>
+
+<p>This is the single most tested fact about non-rigid transformations on the Regents Geometry exam: <strong>under a dilation with scale factor <em>k</em>, area is multiplied by <em>k</em>&sup2;.</strong> Not by <em>k</em>. By <em>k</em>-squared.</p>
+
+<p>Why? Area is a two-dimensional measurement. When you scale both the width and the height by <em>k</em>, area &mdash; which is width times height &mdash; becomes <em>k</em> &times; <em>k</em> = <em>k</em>&sup2; times the original area.</p>
+
+<p>Quick reference:</p>
+<ul>
+  <li><em>k</em> = 2 &rarr; area is multiplied by 4</li>
+  <li><em>k</em> = 3 &rarr; area is multiplied by 9</li>
+  <li><em>k</em> = 1/2 &rarr; area is multiplied by 1/4 (area is one-quarter of the original)</li>
+  <li><em>k</em> = 1/3 &rarr; area is multiplied by 1/9</li>
+</ul>
+
+<p>Volume follows the same logic in three dimensions: under a dilation with scale factor <em>k</em>, <strong>volume is multiplied by <em>k</em>&sup3;</strong>. That fact appears on Regents Geometry Part III and Part IV problems involving 3D solids.</p>
+
+<h2>Worked example: a Regents-style dilation question</h2>
+
+<div class="worked-ex">
+<p><strong>Problem.</strong> Triangle ABC has vertices A(1, 2), B(4, 2), C(4, 6). The image of triangle ABC under a dilation centered at the origin with scale factor <em>k</em> = 3 is triangle A'B'C'. (a) Find the coordinates of A', B', and C'. (b) State the ratio of the area of triangle A'B'C' to the area of triangle ABC.</p>
+
+<p><strong>Solution, part (a).</strong> Apply the dilation rule <code>(x, y) &rarr; (3x, 3y)</code>:</p>
+<ul>
+  <li>A(1, 2) &rarr; A'(3, 6)</li>
+  <li>B(4, 2) &rarr; B'(12, 6)</li>
+  <li>C(4, 6) &rarr; C'(12, 18)</li>
+</ul>
+
+<p><strong>Solution, part (b).</strong> Under a dilation with scale factor <em>k</em>, area is multiplied by <em>k</em>&sup2;. Here <em>k</em> = 3, so area is multiplied by 3&sup2; = 9.</p>
+
+<p><strong>Answer:</strong> the ratio of the area of A'B'C' to the area of ABC is <strong>9 to 1</strong>. Since the two triangles are related by a dilation, they are similar (but not congruent).</p>
+</div>
+
+<p>That is a 4-credit question on the Regents Geometry Part III &mdash; but a student who has the coordinate rule and the <em>k</em>&sup2; rule memorized answers it in under two minutes.</p>
+
+<h2>Rigid vs. non-rigid: the full comparison</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Rigid transformations<br>(translation, reflection, rotation)</th>
+      <th>Non-rigid: dilation</th>
+      <th>Non-rigid: stretch / compression</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Property"><strong>Preserves size?</strong></td>
+      <td data-label="Rigid">Yes</td>
+      <td data-label="Dilation">No</td>
+      <td data-label="Stretch/comp">No</td>
+    </tr>
+    <tr>
+      <td data-label="Property"><strong>Preserves shape?</strong></td>
+      <td data-label="Rigid">Yes</td>
+      <td data-label="Dilation">Yes (similar)</td>
+      <td data-label="Stretch/comp">No (unless k = 1)</td>
+    </tr>
+    <tr>
+      <td data-label="Property"><strong>Produces congruent figures?</strong></td>
+      <td data-label="Rigid">Yes</td>
+      <td data-label="Dilation">No</td>
+      <td data-label="Stretch/comp">No</td>
+    </tr>
+    <tr>
+      <td data-label="Property"><strong>Produces similar figures?</strong></td>
+      <td data-label="Rigid">Yes (special case)</td>
+      <td data-label="Dilation">Yes</td>
+      <td data-label="Stretch/comp">No</td>
+    </tr>
+    <tr>
+      <td data-label="Property"><strong>Effect on area</strong></td>
+      <td data-label="Rigid">Unchanged</td>
+      <td data-label="Dilation">Multiplied by k&sup2;</td>
+      <td data-label="Stretch/comp">Multiplied by |k| (stretch direction only)</td>
+    </tr>
+    <tr>
+      <td data-label="Property"><strong>Effect on angles</strong></td>
+      <td data-label="Rigid">Preserved</td>
+      <td data-label="Dilation">Preserved</td>
+      <td data-label="Stretch/comp">Preserved</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>This distinction shows up on the Regents in two big ways: (1) any question that says the word "congruent" is a rigid-transformations problem; (2) any question that says the word "similar" involves a dilation (usually combined with rigid motions). Read the wording carefully &mdash; that single word tells you which toolkit to use.</p>
+
+<h2>How SOMATH teaches non-rigid transformations (K&ndash;12 arc)</h2>
+
+<p>At SOMATH we introduce scaling and proportional reasoning gradually across our <a href="/courses/">grade-level tracks</a>, so by the time a student sees dilations on the Regents Geometry exam, the ideas are second nature.</p>
+
+<ul>
+  <li><strong><a href="/">Little Newtons</a> (grades K&ndash;2):</strong> comparing sizes, doubling and halving shapes made from paper. Intuition first, no coordinate plane yet.</li>
+  <li><strong>Kid Einsteins (grades 3&ndash;5):</strong> ratios, proportional reasoning, scale drawings, coordinate plane basics.</li>
+  <li><strong>Young Fermats (grades 5&ndash;8):</strong> dilations on the coordinate plane, ratio and proportion, similarity, why area scales as <em>k</em>&sup2; and volume as <em>k</em>&sup3;. Students derive these rules themselves before we hand them the summary.</li>
+  <li><strong>High-school Geometry:</strong> full Regents-level treatment. Coordinate rules memorized, similarity proofs, composing a dilation with rigid motions, and applying to 3D volume questions.</li>
+</ul>
+
+<p>Our high-school Geometry teachers hold degrees from Harvard, Northwestern, Columbia, and NYU. If your child is preparing for the January or June Regents Geometry, transformations (both rigid and non-rigid) are among the highest-yield topics to build depth in. Read our <a href="/posts/regents-geometry-rigid-transformations-somath-guide">rigid transformations companion post</a> and our <a href="/posts/nys-regents-math-test-prep-tutoring-nyc">NYS Regents math prep guide</a> for the full arc.</p>
+
+<h2>Quick memory tips for the Regents</h2>
+
+<ol>
+  <li><strong>Non-rigid = size changes.</strong> The word "non-rigid" literally means the figure is no longer rigid &mdash; its size and often its shape change.</li>
+  <li><strong>Dilation preserves shape, everything else does not.</strong> If a Regents question refers to <em>similar</em> figures, it's about a dilation. Stretch and compression change shape and don't produce similar figures.</li>
+  <li><strong>Area scales as <em>k</em>&sup2; under a dilation, not as <em>k</em>.</strong> This is the trap the Regents sets most often. Sides go by <em>k</em>, area goes by <em>k</em>&sup2;, volume goes by <em>k</em>&sup3;.</li>
+  <li><strong>Same coordinate rule for stretch and compression.</strong> The only difference is whether <em>k</em> &gt; 1 (stretch) or 0 &lt; <em>k</em> &lt; 1 (compression). Look at the scale factor first.</li>
+  <li><strong>Similarity is rigid motions + dilation.</strong> To prove two figures are similar on the Regents, describe a sequence of rigid transformations followed by (or preceded by) a single dilation.</li>
+</ol>
+
+<h2>Book a free math enrichment evaluation</h2>
+
+<p>If your child is heading into Regents Geometry &mdash; or into the middle-school Common Core topics that build toward similarity and dilations &mdash; the best move is to see exactly where they are today. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a>. Your child works one-on-one with a SOMATH teacher, and you receive a written diagnostic within 48 hours &mdash; specifically what your child has mastered, where the gaps are, and what to work on next. Yours to keep whether you enroll or not.</p>
+
+<p>SOMATH is at <strong>226 West 79th Street, first floor</strong>, between Broadway and Amsterdam. Phone <a href="tel:+16466686151">(646) 668-6151</a>. See our <a href="/schedule.html">weekly class schedule</a> or browse <a href="/courses/">all courses grades 1&ndash;12</a>.</p>
+
+<p>Related reading: <a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations: SOMATH's UWS Math Enrichment Guide</a> &middot; <a href="/posts/elementary-math-enrichment-upper-west-side">Elementary Math Enrichment on the Upper West Side (K&ndash;5)</a> &middot; <a href="/posts/after-school-math-program-upper-west-side">After School Math Program on the Upper West Side (2026)</a> &middot; <a href="/posts/best-math-enrichment-upper-west-side-parents-guide">Best Math Enrichment on the Upper West Side</a>.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Ready for Regents Geometry? Let&rsquo;s find out.</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We&rsquo;ll diagnose
+            exactly where your child stands on transformations, similarity,
+            dilations, and the rest of the Regents Geometry arc, and send a
+            written summary within 48 hours &mdash; yours to keep whether you enroll or not.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+    
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus, SAT Math, and Regents Geometry / Algebra in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/regents-geometry-rigid-transformations-somath-guide">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Regents Geometry Rigid Transformations: SOMATH's Upper West Side Math Enrichment Guide</h2>
+          <p class="blog-card__dek">The companion post — translation, reflection, and rotation with coordinate rules, a worked Regents-style example, and how they anchor every congruence proof on the exam.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/elementary-math-enrichment-upper-west-side">
+          <span class="blog-card__category">Upper West Side · Elementary K-5</span>
+          <h2 class="blog-card__title">Elementary Math Enrichment on the Upper West Side: What K-5 Parents Need to Know</h2>
+          <p class="blog-card__dek">A grade-by-grade guide to elementary math enrichment on the Upper West Side — what K-5 kids should be learning and how enrichment differs from tutoring or drill.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 9 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/after-school-math-program-upper-west-side">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">After School Math Program on the Upper West Side: 2026 Parent's Guide</h2>
+          <p class="blog-card__dek">A neighborhood-by-neighborhood guide to after school math programs on the UWS — compared honestly on class size, pricing, teachers, and fit.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-enrichment-upper-west-side-parents-guide">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">Best Math Enrichment on the Upper West Side: A Parent's Guide</h2>
+          <p class="blog-card__dek">The full guide to serious math enrichment on the UWS — what to look for, how to compare programs, and the questions most parents forget to ask.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260806-nonrigid"></script>
+  </body>
+</html>
