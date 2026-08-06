@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Sine, Cosine &amp; Tangent: Definitions, Identities &amp; the Unit Circle | SOMATH</title>
+    <meta name="description" content="Sine, cosine, and tangent explained the SOMATH way &mdash; right-triangle definitions (SOH&ndash;CAH&ndash;TOA), the Pythagorean and reciprocal identities, special-triangle values (30&deg;&ndash;45&deg;&ndash;60&deg;), the unit-circle view, and the sign of each function by quadrant. Regents Geometry, Algebra 2/Trig, precalculus, and SAT ready." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/sine-cosine-tangent-definitions-identities-somath-guide" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sine, Cosine &amp; Tangent: Definitions, Identities &amp; the Unit Circle" />
+    <meta property="og:description" content="Right-triangle definitions, Pythagorean and reciprocal identities, special-triangle values, unit-circle coordinates, and the sign of each trig function by quadrant &mdash; the complete SOMATH cheat sheet." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/sine-cosine-tangent-definitions-identities-somath-guide" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/sine-cosine-tangent/cover.jpg" />
+    <meta property="og:image:width" content="1350" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="article:published_time" content="2026-08-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sine, Cosine &amp; Tangent: Definitions, Identities &amp; the Unit Circle" />
+    <meta name="twitter:description" content="The complete SOMATH cheat sheet &mdash; right-triangle ratios, Pythagorean and reciprocal identities, 30&ndash;60&ndash;90 and 45&ndash;45&ndash;90 values, unit circle coordinates, and quadrant signs." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/sine-cosine-tangent/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+
+      .pair-callout { background:#f0ede2; border:1px solid #e6d9b8; border-radius:10px; padding:16px 20px; margin:20px 0; }
+      .pair-callout p { margin:0; }
+
+      .inline-fig { margin:24px 0; }
+      .inline-fig figcaption { font-size:0.85rem; color:#6a6a6a; margin-top:8px; font-style:italic; text-align:center; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Sine, Cosine & Tangent: Definitions, Identities & the Unit Circle",
+  "description": "Right-triangle definitions of sine, cosine, and tangent (SOH-CAH-TOA), the Pythagorean and reciprocal identities, special-triangle values, unit-circle coordinates, and the sign of each function by quadrant. Regents Geometry, Algebra 2/Trig, precalculus, and SAT ready.",
+  "image": "https://www.schoolofmath.us/assets/blog/sine-cosine-tangent/cover.jpg",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/sine-cosine-tangent-definitions-identities-somath-guide"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are sine, cosine, and tangent in a right triangle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For an acute angle in a right triangle, sine equals opposite over hypotenuse, cosine equals adjacent over hypotenuse, and tangent equals opposite over adjacent. This is remembered as SOH-CAH-TOA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Pythagorean identity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Pythagorean identity is sin squared theta plus cos squared theta equals 1. It is true for every angle and is derived directly from the Pythagorean theorem applied to a unit-circle point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the quotient identity for tangent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tangent theta equals sine theta divided by cosine theta, provided cosine theta is not zero. On the unit circle, this equals y divided by x."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remember sine and cosine of 30, 45, and 60 degrees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sine of 30 is 1/2, sine of 45 is root 2 over 2, and sine of 60 is root 3 over 2. Cosine values are the same three numbers in reverse: cos 30 is root 3 over 2, cos 45 is root 2 over 2, and cos 60 is 1/2. Tangent equals sine divided by cosine at each angle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In which quadrants are sine, cosine, and tangent positive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Quadrant I, all three are positive. In Quadrant II, only sine is positive. In Quadrant III, only tangent is positive. In Quadrant IV, only cosine is positive. The mnemonic All Students Take Calculus captures this pattern moving counter-clockwise from Quadrant I."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the reciprocal trigonometric functions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cosecant is the reciprocal of sine (csc theta equals 1 over sin theta), secant is the reciprocal of cosine (sec theta equals 1 over cos theta), and cotangent is the reciprocal of tangent (cot theta equals 1 over tan theta). Each is undefined wherever the denominator equals zero."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Algebra 2/Trig &middot; Precalculus</p>
+      <h1 class="post__title">Sine, Cosine &amp; Tangent: Definitions, Identities &amp; the Unit Circle</h1>
+      <p class="post__dek">The complete SOMATH trigonometry cheat sheet &mdash; right-triangle definitions (SOH&ndash;CAH&ndash;TOA), the Pythagorean and reciprocal identities, exact values for 30&deg;&ndash;45&deg;&ndash;60&deg;, the unit-circle view of every angle, and the sign of each function by quadrant. Everything a New York Regents Geometry, Algebra 2/Trig, precalculus, and SAT student needs on one page.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 6, 2026</span>
+        <span>11 min read</span>
+      </div>
+
+      <figure class="post__cover"><picture><source srcset="/assets/blog/sine-cosine-tangent/cover.webp" type="image/webp"><img src="/assets/blog/sine-cosine-tangent/cover.jpg" alt="SOMATH infographic &mdash; Sine, Cosine, and Tangent: right-triangle definitions, trigonometric identities, unit-circle view, special right triangles, important values, and sign of trig functions by quadrant. School of Math, Upper West Side NYC." width="1350" height="1080" /></picture></figure>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> in a right triangle, for an acute angle &theta;, <strong>sin&nbsp;&theta; = opposite / hypotenuse</strong>, <strong>cos&nbsp;&theta; = adjacent / hypotenuse</strong>, and <strong>tan&nbsp;&theta; = opposite / adjacent</strong> &mdash; that&rsquo;s SOH&ndash;CAH&ndash;TOA. Every other trig fact flows from those three: the Pythagorean identity <code>sin&sup2;&theta; + cos&sup2;&theta; = 1</code>, the quotient identity <code>tan&nbsp;&theta; = sin&nbsp;&theta; / cos&nbsp;&theta;</code>, the reciprocal identities (csc, sec, cot), the exact values at 30&deg;, 45&deg;, and 60&deg;, the unit-circle definition that extends everything past 90&deg;, and the quadrant sign rule (<em>All Students Take Calculus</em>). This SOMATH guide walks through every piece with worked examples.</p>
+
+<p>Trigonometry appears on the <a href="/posts/regents-geometry-june-2026-part-2-answers">NY Regents Geometry exam</a>, the Algebra 2/Trig course, the digital SAT, the ACT, and every AP Precalculus and AP Calculus problem that touches angles or periodic behavior. The definitions on this page never change &mdash; master them once, use them everywhere.</p>
+
+<p>SOMATH &mdash; <a href="/">School of Math on the Upper West Side</a> at <strong>226 West 79th Street, first floor</strong>, phone <a href="tel:+16466686151">(646) 668-6151</a> &mdash; teaches trigonometry across our <a href="/courses/">Young Fermats (grades 5&ndash;8), high-school Geometry, Algebra 2/Trig, and Precalculus tracks</a>. Every family starts with a <a href="/evaluation">free 60-minute in-person evaluation</a> and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+
+<h2>1. Right-triangle definitions (SOH&ndash;CAH&ndash;TOA)</h2>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Definitions &mdash; acute angle in a right triangle</div>
+  <h3>Sine, cosine, and tangent are ratios of the sides of a right triangle.</h3>
+  <p>Fix an acute angle &theta;. Label the three sides <em>relative to that angle</em>:</p>
+  <ul>
+    <li><strong>Opposite</strong> &mdash; the leg across from &theta;.</li>
+    <li><strong>Adjacent</strong> &mdash; the leg next to &theta; (not the hypotenuse).</li>
+    <li><strong>Hypotenuse</strong> &mdash; the longest side, across from the right angle. Same side no matter which acute angle you pick.</li>
+  </ul>
+  <p>Then:</p>
+  <p><span class="concept-card__rule">sin&nbsp;&theta; = opposite / hypotenuse</span></p>
+  <p><span class="concept-card__rule">cos&nbsp;&theta; = adjacent / hypotenuse</span></p>
+  <p><span class="concept-card__rule">tan&nbsp;&theta; = opposite / adjacent</span></p>
+  <p>The classic mnemonic is <strong>SOH&ndash;CAH&ndash;TOA</strong>: <em>Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent.</em> We wrote a full post on the alternative mnemonic <a href="/posts/mnemonic-for-trigonometry-with-all-students-take-calculus">All Students Take Calculus</a>, which we&rsquo;ll return to for quadrant signs below.</p>
+</div>
+
+<div class="worked-ex">
+<p><strong>Worked example.</strong> In a right triangle with legs 3 and 4 and hypotenuse 5, let &theta; be the angle opposite the leg of length 3. Find sin&nbsp;&theta;, cos&nbsp;&theta;, and tan&nbsp;&theta;.</p>
+<p><strong>Solution.</strong> The side opposite &theta; is 3, the side adjacent is 4, and the hypotenuse is 5. So:</p>
+<p><code>sin&nbsp;&theta; = 3/5</code>, &nbsp;<code>cos&nbsp;&theta; = 4/5</code>, &nbsp;<code>tan&nbsp;&theta; = 3/4</code>.</p>
+</div>
+
+<h2>2. The trigonometric identities you actually need</h2>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Identity #1 &mdash; the Pythagorean identity</div>
+  <h3>sin&sup2;&theta; + cos&sup2;&theta; = 1</h3>
+  <p><span class="concept-card__rule">sin&sup2;&theta; + cos&sup2;&theta; = 1</span></p>
+  <p>Where it comes from: take any point on the unit circle at angle &theta;. Its coordinates are (cos&nbsp;&theta;, sin&nbsp;&theta;), and the point is exactly 1 unit from the origin. Apply the Pythagorean theorem to the right triangle formed by dropping a perpendicular: (cos&nbsp;&theta;)&sup2; + (sin&nbsp;&theta;)&sup2; = 1&sup2;. The identity is <em>the Pythagorean theorem applied to the unit circle</em>.</p>
+  <p>How you use it: any time a problem gives you sin&nbsp;&theta; and asks for cos&nbsp;&theta; (or vice versa), rearrange to <code>cos&nbsp;&theta; = &plusmn;&radic;(1 &minus; sin&sup2;&theta;)</code>. The sign is decided by the quadrant &mdash; more on that in section 6.</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Identity #2 &mdash; the quotient identity</div>
+  <h3>tan&nbsp;&theta; = sin&nbsp;&theta; / cos&nbsp;&theta;</h3>
+  <p><span class="concept-card__rule">tan&nbsp;&theta; = sin&nbsp;&theta; / cos&nbsp;&theta; &nbsp;(cos&nbsp;&theta; &ne; 0)</span></p>
+  <p>Derivation: in a right triangle, opposite/adjacent = (opposite/hypotenuse) / (adjacent/hypotenuse) = sin&nbsp;&theta; / cos&nbsp;&theta;. Tangent is a ratio of two ratios. On the unit circle, this is <code>y / x</code>.</p>
+  <p>Tangent is undefined at &theta; = 90&deg; and &theta; = 270&deg; because cos&nbsp;&theta; = 0 there &mdash; you cannot divide by zero.</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Identities #3&ndash;5 &mdash; the reciprocal identities</div>
+  <h3>Each of the other three trig functions is the reciprocal of one of sine, cosine, or tangent.</h3>
+  <p><span class="concept-card__rule">csc&nbsp;&theta; = 1 / sin&nbsp;&theta; &nbsp;(sin&nbsp;&theta; &ne; 0)</span></p>
+  <p><span class="concept-card__rule">sec&nbsp;&theta; = 1 / cos&nbsp;&theta; &nbsp;(cos&nbsp;&theta; &ne; 0)</span></p>
+  <p><span class="concept-card__rule">cot&nbsp;&theta; = 1 / tan&nbsp;&theta; &nbsp;(tan&nbsp;&theta; &ne; 0)</span></p>
+  <ul>
+    <li><strong>Cosecant</strong> is the reciprocal of <em>sine</em> &mdash; note the &ldquo;co&rdquo; is in the reciprocal, not the base function.</li>
+    <li><strong>Secant</strong> is the reciprocal of <em>cosine</em>.</li>
+    <li><strong>Cotangent</strong> is the reciprocal of <em>tangent</em>; equivalently <code>cot&nbsp;&theta; = cos&nbsp;&theta; / sin&nbsp;&theta;</code>.</li>
+  </ul>
+</div>
+
+<h2>3. The unit-circle view (why the definitions extend past 90&deg;)</h2>
+
+<figure class="inline-fig"><picture><source srcset="/assets/blog/sine-cosine-tangent/cheatsheet.webp" type="image/webp"><img src="/assets/blog/sine-cosine-tangent/cheatsheet.jpg" alt="SOMATH cheat sheet &mdash; right-triangle definitions, trig identities, unit circle, special right triangles, exact values, and quadrant signs." width="1350" height="1080" style="width:100%; height:auto; border-radius:8px;" /></picture><figcaption>The full SOMATH sine, cosine, and tangent cheat sheet on one page. Save, print, or keep on your phone.</figcaption></figure>
+
+<div class="concept-card">
+  <div class="concept-card__meta">The unit-circle definition</div>
+  <h3>On the unit circle (radius 1), cosine is the x-coordinate and sine is the y-coordinate.</h3>
+  <p>Let P = (x, y) be a point on the unit circle x&sup2; + y&sup2; = 1, and let &theta; be the angle measured counter-clockwise from the positive x-axis to the ray OP. Then:</p>
+  <p><span class="concept-card__rule">cos&nbsp;&theta; = x</span> &nbsp; <span class="concept-card__rule">sin&nbsp;&theta; = y</span> &nbsp; <span class="concept-card__rule">tan&nbsp;&theta; = y / x = sin&nbsp;&theta; / cos&nbsp;&theta;</span></p>
+  <p>Why this matters: the right-triangle definitions only work for acute angles between 0&deg; and 90&deg;. The unit-circle definition works for <em>every</em> angle &mdash; 0&deg;, 90&deg;, 180&deg;, 270&deg;, angles greater than 360&deg;, and negative angles &mdash; because you can always locate a point on the unit circle. This is how the Regents and AP Precalculus extend trigonometry into periodic functions.</p>
+</div>
+
+<h2>4. Special right triangles &mdash; the values worth memorizing</h2>
+
+<p>Two triangles produce all the exact-value trig quantities you&rsquo;ll ever see on a Regents, SAT, or AP exam. Memorize the side ratios once and every 30&deg;, 45&deg;, 60&deg; question becomes a two-second lookup.</p>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Special right triangle #1</div>
+  <h3>45&deg;&ndash;45&deg;&ndash;90&deg; triangle (isosceles right)</h3>
+  <p>Legs equal, hypotenuse is a leg times &radic;2. In its simplest form:</p>
+  <p><span class="concept-card__rule">legs = 1, 1 &nbsp; hypotenuse = &radic;2</span></p>
+  <p>So the trig values at 45&deg; are:</p>
+  <p><span class="concept-card__rule">sin&nbsp;45&deg; = &radic;2 / 2 &nbsp; cos&nbsp;45&deg; = &radic;2 / 2 &nbsp; tan&nbsp;45&deg; = 1</span></p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Special right triangle #2</div>
+  <h3>30&deg;&ndash;60&deg;&ndash;90&deg; triangle</h3>
+  <p>Short leg opposite 30&deg;, long leg opposite 60&deg;, hypotenuse opposite 90&deg;. Ratio:</p>
+  <p><span class="concept-card__rule">short leg : long leg : hypotenuse = 1 : &radic;3 : 2</span></p>
+  <p>So the trig values are:</p>
+  <p><span class="concept-card__rule">sin&nbsp;30&deg; = 1/2 &nbsp; cos&nbsp;30&deg; = &radic;3 / 2 &nbsp; tan&nbsp;30&deg; = &radic;3 / 3</span></p>
+  <p><span class="concept-card__rule">sin&nbsp;60&deg; = &radic;3 / 2 &nbsp; cos&nbsp;60&deg; = 1/2 &nbsp; tan&nbsp;60&deg; = &radic;3</span></p>
+</div>
+
+<h2>5. Important values table (0&deg; through 90&deg;)</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>0&deg;</th>
+      <th>30&deg;</th>
+      <th>45&deg;</th>
+      <th>60&deg;</th>
+      <th>90&deg;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Function"><strong>sin&nbsp;&theta;</strong></td>
+      <td data-label="0&deg;">0</td>
+      <td data-label="30&deg;">1/2</td>
+      <td data-label="45&deg;">&radic;2 / 2</td>
+      <td data-label="60&deg;">&radic;3 / 2</td>
+      <td data-label="90&deg;">1</td>
+    </tr>
+    <tr>
+      <td data-label="Function"><strong>cos&nbsp;&theta;</strong></td>
+      <td data-label="0&deg;">1</td>
+      <td data-label="30&deg;">&radic;3 / 2</td>
+      <td data-label="45&deg;">&radic;2 / 2</td>
+      <td data-label="60&deg;">1/2</td>
+      <td data-label="90&deg;">0</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Function"><strong>tan&nbsp;&theta;</strong></td>
+      <td data-label="0&deg;">0</td>
+      <td data-label="30&deg;">&radic;3 / 3</td>
+      <td data-label="45&deg;">1</td>
+      <td data-label="60&deg;">&radic;3</td>
+      <td data-label="90&deg;">undefined</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><em>Pattern:</em> sine goes 0, 1/2, &radic;2/2, &radic;3/2, 1 &mdash; think of it as &radic;0/2, &radic;1/2, &radic;2/2, &radic;3/2, &radic;4/2. Cosine is the exact reverse. Tangent is sine divided by cosine at each column.</p>
+
+<h2>6. Sign of the trig functions by quadrant (&ldquo;All Students Take Calculus&rdquo;)</h2>
+
+<p>The unit-circle definition extends every trig function to all four quadrants. The sign depends only on the signs of x and y in that quadrant.</p>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Quadrant</th>
+      <th>Angle &theta;</th>
+      <th>sin&nbsp;&theta;</th>
+      <th>cos&nbsp;&theta;</th>
+      <th>tan&nbsp;&theta;</th>
+      <th>Mnemonic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Quadrant"><strong>I</strong></td>
+      <td data-label="Angle">0&deg; &ndash; 90&deg;</td>
+      <td data-label="sin">+</td>
+      <td data-label="cos">+</td>
+      <td data-label="tan">+</td>
+      <td data-label="Mnemonic"><strong>A</strong>ll positive</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Quadrant"><strong>II</strong></td>
+      <td data-label="Angle">90&deg; &ndash; 180&deg;</td>
+      <td data-label="sin">+</td>
+      <td data-label="cos">&minus;</td>
+      <td data-label="tan">&minus;</td>
+      <td data-label="Mnemonic"><strong>S</strong>ine only</td>
+    </tr>
+    <tr>
+      <td data-label="Quadrant"><strong>III</strong></td>
+      <td data-label="Angle">180&deg; &ndash; 270&deg;</td>
+      <td data-label="sin">&minus;</td>
+      <td data-label="cos">&minus;</td>
+      <td data-label="tan">+</td>
+      <td data-label="Mnemonic"><strong>T</strong>angent only</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Quadrant"><strong>IV</strong></td>
+      <td data-label="Angle">270&deg; &ndash; 360&deg;</td>
+      <td data-label="sin">&minus;</td>
+      <td data-label="cos">+</td>
+      <td data-label="tan">&minus;</td>
+      <td data-label="Mnemonic"><strong>C</strong>osine only</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Read the boldface first letters counter-clockwise from Quadrant I: <strong>A</strong>, <strong>S</strong>, <strong>T</strong>, <strong>C</strong> &mdash; <em>All Students Take Calculus</em>. In each quadrant, the named function (and its reciprocal) is positive; the others are negative.</p>
+
+<p>For a step-by-step Regents-style problem that uses this idea, see our worked example: <a href="/posts/trig-quadrant-ii-cosine-tan-negative-sqrt6">given a Quadrant-II angle with a specific tan value, find cos</a>. It combines the Pythagorean identity, the quotient identity, and the ASTC quadrant rule in a single problem &mdash; exactly the flavor of question that shows up on the New York State Algebra 2/Trigonometry Regents and the AP Precalculus exam.</p>
+
+<h2>Full worked example &mdash; putting all six pieces together</h2>
+
+<div class="worked-ex">
+<p><strong>Problem.</strong> Angle &theta; is in Quadrant II, and sin&nbsp;&theta; = 3/5. Find cos&nbsp;&theta;, tan&nbsp;&theta;, csc&nbsp;&theta;, sec&nbsp;&theta;, and cot&nbsp;&theta;.</p>
+
+<p><strong>Solution.</strong></p>
+
+<ol>
+  <li><strong>Use the Pythagorean identity to get cos&nbsp;&theta;.</strong> sin&sup2;&theta; + cos&sup2;&theta; = 1 &rarr; (3/5)&sup2; + cos&sup2;&theta; = 1 &rarr; cos&sup2;&theta; = 1 &minus; 9/25 = 16/25 &rarr; cos&nbsp;&theta; = &plusmn;4/5.</li>
+  <li><strong>Pick the sign using the quadrant.</strong> In Quadrant II, cosine is negative. So <code>cos&nbsp;&theta; = &minus;4/5</code>.</li>
+  <li><strong>Quotient identity for tan.</strong> tan&nbsp;&theta; = sin&nbsp;&theta; / cos&nbsp;&theta; = (3/5) / (&minus;4/5) = <code>&minus;3/4</code>. Check the sign: tangent is negative in Q II &mdash; matches ASTC.</li>
+  <li><strong>Reciprocals.</strong> csc&nbsp;&theta; = 1 / sin&nbsp;&theta; = <code>5/3</code>. sec&nbsp;&theta; = 1 / cos&nbsp;&theta; = <code>&minus;5/4</code>. cot&nbsp;&theta; = 1 / tan&nbsp;&theta; = <code>&minus;4/3</code>.</li>
+</ol>
+
+<p>Six trig values from one starting fact, using nothing but the identities and the quadrant sign rule. This is exactly the six-step template Regents and AP Precalculus problems reward.</p>
+</div>
+
+<h2>The three families of trig facts, side by side</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Family</th>
+      <th>What it&rsquo;s about</th>
+      <th>Core formula</th>
+      <th>Where you use it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Family"><strong>Right-triangle ratios (SOH&ndash;CAH&ndash;TOA)</strong></td>
+      <td data-label="About">Sine, cosine, tangent as leg ratios for an acute angle</td>
+      <td data-label="Formula"><code>sin&nbsp;&theta; = opp/hyp</code>, <code>cos&nbsp;&theta; = adj/hyp</code>, <code>tan&nbsp;&theta; = opp/adj</code></td>
+      <td data-label="Use">Regents Geometry angle-of-elevation problems, right-triangle applications on the SAT</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Family"><strong>Trigonometric identities</strong></td>
+      <td data-label="About">Algebraic relations true for every angle</td>
+      <td data-label="Formula"><code>sin&sup2;&theta; + cos&sup2;&theta; = 1</code>, <code>tan&nbsp;&theta; = sin/cos</code>, reciprocals</td>
+      <td data-label="Use">Algebra 2/Trig identity proofs, Precalculus, AP Calculus derivative and integral problems</td>
+    </tr>
+    <tr>
+      <td data-label="Family"><strong>Unit-circle &amp; quadrant signs (ASTC)</strong></td>
+      <td data-label="About">Extend trig functions beyond acute angles</td>
+      <td data-label="Formula"><code>cos&nbsp;&theta; = x</code>, <code>sin&nbsp;&theta; = y</code>, sign follows quadrant</td>
+      <td data-label="Use">Any problem beyond 90&deg;: reference angles, periodic functions, graphing sine/cosine</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Where sine, cosine &amp; tangent sit in the SOMATH curriculum</h2>
+
+<p>Trigonometry is not a one-course topic. Students meet the ideas earlier than they realize and reuse them for years:</p>
+
+<ul>
+  <li><strong>Middle school (Young Fermats, grades 6&ndash;8).</strong> The Pythagorean theorem and special right triangles show up in the 8th-grade Common Core standards. Students who understand 45&deg;&ndash;45&deg;&ndash;90&deg; and 30&deg;&ndash;60&deg;&ndash;90&deg; ratios <em>before</em> Geometry have a two-course head start on trig.</li>
+  <li><strong>Geometry.</strong> Right-triangle trig (SOH&ndash;CAH&ndash;TOA), angle-of-elevation/depression word problems, and the trig ratios in similar triangles are Regents Geometry staples. See our <a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines &amp; Midsegment Theorem post</a> for the proportionality that underpins trig identities.</li>
+  <li><strong>Algebra 2 / Trigonometry.</strong> The unit-circle definition, Pythagorean identity, quotient identity, reciprocals, and all four-quadrant ASTC sign work. This is where trigonometry becomes an <em>algebraic</em> subject.</li>
+  <li><strong>Precalculus &amp; AP Precalculus.</strong> Graphs of sine, cosine, and tangent; amplitude, period, phase shift; inverse trig functions; the addition and double-angle identities.</li>
+  <li><strong>AP Calculus AB / BC.</strong> Derivatives and integrals of trig functions; Taylor series of sin and cos; polar coordinates.</li>
+</ul>
+
+<div class="pair-callout">
+  <p><strong>The SOMATH arc:</strong> we introduce the 45&deg;&ndash;45&deg;&ndash;90&deg; and 30&deg;&ndash;60&deg;&ndash;90&deg; ratios in Young Fermats geometry units, teach SOH&ndash;CAH&ndash;TOA in high-school Geometry, and layer on the identities, the unit circle, and ASTC across Algebra 2/Trig and Precalculus. By the time our students reach AP Calculus, the entire cheat sheet above is automatic &mdash; freeing them to focus on the harder ideas of calculus itself.</p>
+</div>
+
+<h2>Common student mistakes we correct at SOMATH</h2>
+
+<ul>
+  <li><strong>Mixing up &ldquo;opposite&rdquo; and &ldquo;adjacent.&rdquo;</strong> Both are relative to the angle you&rsquo;re working with, not fixed to a side of the triangle. Change the angle, and opposite and adjacent swap.</li>
+  <li><strong>Forgetting that the hypotenuse is always the longest side.</strong> The hypotenuse is opposite the right angle, not opposite &theta;. It&rsquo;s the same side no matter which acute angle you name.</li>
+  <li><strong>Writing sin&sup2;&theta; when they mean (sin&nbsp;&theta;)&sup2;.</strong> Standard notation: <code>sin&sup2;&theta;</code> means the sine, then square. It does <em>not</em> mean sin(sin &theta;).</li>
+  <li><strong>Dropping the &plusmn; sign after the Pythagorean identity.</strong> <code>cos&sup2;&theta; = 16/25</code> gives <code>cos&nbsp;&theta; = &plusmn;4/5</code>. Choose the sign using the quadrant &mdash; never assume positive.</li>
+  <li><strong>Confusing reciprocal and inverse.</strong> <code>csc&nbsp;&theta;</code> is 1/sin&nbsp;&theta;, but <code>sin&sup(&minus;1)&theta;</code> is the inverse function &mdash; a different operation entirely.</li>
+</ul>
+
+<h2>Frequently asked questions</h2>
+
+<h3>What is SOH&ndash;CAH&ndash;TOA?</h3>
+<p>A mnemonic for the three primary trig ratios: <em>S</em>ine = <em>O</em>pposite over <em>H</em>ypotenuse, <em>C</em>osine = <em>A</em>djacent over <em>H</em>ypotenuse, <em>T</em>angent = <em>O</em>pposite over <em>A</em>djacent. It applies to any acute angle in a right triangle.</p>
+
+<h3>Why is tan&nbsp;90&deg; undefined?</h3>
+<p>Because tan&nbsp;&theta; = sin&nbsp;&theta; / cos&nbsp;&theta;, and at &theta; = 90&deg;, cos&nbsp;&theta; = 0. Division by zero is undefined, so tangent has vertical asymptotes at 90&deg;, 270&deg;, and every angle of the form 90&deg; + 180&deg;k.</p>
+
+<h3>Does the Pythagorean identity work for every angle?</h3>
+<p>Yes. <code>sin&sup2;&theta; + cos&sup2;&theta; = 1</code> is true for every real number &theta; &mdash; positive, negative, obtuse, or greater than 360&deg;. It follows from the unit-circle definition, which is why it holds beyond the acute range where SOH&ndash;CAH&ndash;TOA is defined.</p>
+
+<h3>What is the difference between csc, sec, cot and sin&#x207B;&sup1;, cos&#x207B;&sup1;, tan&#x207B;&sup1;?</h3>
+<p><em>csc, sec, cot</em> are reciprocals: <code>csc&nbsp;&theta; = 1/sin&nbsp;&theta;</code>. <em>sin&#x207B;&sup1;, cos&#x207B;&sup1;, tan&#x207B;&sup1;</em> are inverse functions that return an angle from a ratio: <code>sin&#x207B;&sup1;(1/2) = 30&deg;</code>. Same &ldquo;&minus;1&rdquo; superscript, completely different operation. Reciprocal and inverse are not the same idea.</p>
+
+<h3>How do I decide which trig ratio to use in a right-triangle word problem?</h3>
+<p>Identify the angle you know or want. Label the three sides relative to that angle (opposite, adjacent, hypotenuse). Look at which two sides the problem gives you or asks about: opposite &amp; hypotenuse &rarr; sine; adjacent &amp; hypotenuse &rarr; cosine; opposite &amp; adjacent &rarr; tangent. Set up the ratio, then solve.</p>
+
+<h3>Does SOMATH tutor high-school trigonometry?</h3>
+<p>Yes. Our high-school track covers Geometry (right-triangle trig, Regents), Algebra 2/Trigonometry (identities, unit circle, graphing), Precalculus, and AP Precalculus &amp; Calculus. Every student starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours. Book at <a href="/evaluation">/evaluation</a> or call <a href="tel:+16466686151">(646) 668-6151</a>.</p>
+
+<h2>The SOMATH bottom line</h2>
+
+<p>The right-triangle definitions, the Pythagorean identity, the quotient identity, the reciprocal identities, the special-triangle values, the unit-circle view, and the quadrant sign rule &mdash; every trigonometry question on the New York Regents Geometry, Algebra 2/Trig, precalculus, and SAT exams is a rearrangement of the seven facts in the cheat sheet at the top of this page.</p>
+
+<p>The students who master these seven facts as an <em>integrated system</em> &mdash; and not as seven unrelated things to memorize &mdash; are the students who finish trigonometry problems in seconds instead of minutes. That&rsquo;s the SOMATH difference.</p>
+
+<div class="course-cta-card" style="background:#faf7ed; border:1px solid #e6d9b8; border-radius:10px; padding:24px 28px; margin:28px 0;">
+  <h3 style="margin-top:0; color:#1f3d2e;">Ready to see how SOMATH teaches trigonometry?</h3>
+  <p>Book a <strong>free 60-minute in-person evaluation</strong> at our Upper West Side classroom, 226 W 79th Street (1st floor). You&rsquo;ll receive a written diagnostic within 48 hours &mdash; yours to keep whether or not you enroll.</p>
+  <p class="course-cta-card__ctas">
+    <a class="course-cta-card__primary" href="/evaluation">Book a free evaluation</a>
+    <a class="course-cta-card__secondary" href="/courses/">See all SOMATH courses</a>
+  </p>
+</div>
+
+<hr />
+
+<p style="font-size:0.9rem; color:#6a6a6a;"><strong>About the author.</strong> <em>School of Math</em> is the educational voice of SOMATH &mdash; a K&ndash;12 math enrichment and test-prep program on the Upper West Side of Manhattan. Our teachers hold degrees from Harvard, Northwestern, Columbia, and NYU, and we specialize in Regents Geometry and Algebra 2/Trigonometry, AP Precalculus, AP Calculus, SHSAT, and SAT preparation.</p>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/js/nav.js"></script>
+  </body>
+</html>
