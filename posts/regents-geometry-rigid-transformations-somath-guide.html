@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Regents Geometry Rigid Transformations: SOMATH's Upper West Side Math Enrichment Guide | SOMATH</title>
+    <meta name="description" content="Rigid transformations for NY Regents Geometry — translation, reflection, rotation — explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master this topic on the Regents." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/regents-geometry-rigid-transformations-somath-guide" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Regents Geometry Rigid Transformations: SOMATH's Upper West Side Math Enrichment Guide" />
+    <meta property="og:description" content="Rigid transformations for NY Regents Geometry — translation, reflection, rotation — explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master this topic on the Regents." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/regents-geometry-rigid-transformations-somath-guide" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/regents-geometry-rigid-transformations/cover.jpg" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="article:published_time" content="2026-08-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Regents Geometry Rigid Transformations: SOMATH's Upper West Side Math Enrichment Guide" />
+    <meta name="twitter:description" content="Rigid transformations for NY Regents Geometry — translation, reflection, rotation — explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master this topic on the Regents." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/regents-geometry-rigid-transformations/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* Comparison / rules table - desktop */
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      /* Mobile: switch to card view */
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      /* Real CTA buttons */
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      /* Concept cards for each transformation */
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      /* Worked-example callout */
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Regents Geometry Rigid Transformations: SOMATH's Upper West Side Math Enrichment Guide",
+  "description": "Rigid transformations for NY Regents Geometry — translation, reflection, rotation — explained with coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students to master this topic on the Regents.",
+  "image": "https://www.schoolofmath.us/assets/blog/regents-geometry-rigid-transformations/cover.jpg",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/regents-geometry-rigid-transformations-somath-guide"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a rigid transformation in Regents Geometry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A rigid transformation (also called an isometry) is a movement of a figure on the coordinate plane that preserves size and shape. The three rigid transformations tested on the NY Regents Geometry exam are translation (a slide), reflection (a flip over a line), and rotation (a turn about a point). All three preserve distance between points, side lengths, angles, perimeter, and area. Translation and rotation preserve orientation; reflection reverses orientation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the coordinate rules for the three rigid transformations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Translation: (x, y) → (x + a, y + b) shifts a figure a units right and b units up. Reflection: over the y-axis is (x, y) → (−x, y); over the x-axis is (x, y) → (x, −y); over the line y = x is (x, y) → (y, x). Rotation about the origin: 90° counterclockwise is (x, y) → (−y, x); 180° is (x, y) → (−x, −y); 270° counterclockwise (or 90° clockwise) is (x, y) → (y, −x)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do rigid transformations show up on the NY Regents Geometry exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rigid transformations appear on the Regents Geometry exam in multiple-choice questions, short-response constructed questions, and full 6-point proofs. Common Regents tasks include: identifying which transformation maps one figure to another, applying a coordinate rule and stating the image coordinates, proving triangles congruent by mapping one onto the other with a sequence of rigid motions (the SSS, SAS, and ASA definitions of congruence on the modern Regents are built on rigid motions), and combining two or three rigid transformations to reach a specified image."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does math enrichment at SOMATH prepare students for the Regents Geometry rigid-transformations questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH's Young Fermats (grades 5–8) and high-school Geometry track cover rigid transformations conceptually before students see them in a Regents review. Kids build the transformations physically on a coordinate plane, derive the coordinate rules themselves, and then apply them to congruence proofs. By the time a SOMATH student sits for the Regents Geometry exam, they can (1) recognize which rigid motion is involved from any pair of figures, (2) apply the coordinate rules from memory, and (3) chain multiple transformations together — the three skills the Regents actually tests. Every SOMATH family starts with a free 60-minute evaluation and a written diagnostic within 48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a rigid transformation and a non-rigid transformation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A rigid transformation preserves both size and shape — translations, reflections, and rotations. A non-rigid transformation changes size or shape. The most common non-rigid transformation on the Regents is a dilation, which changes size but preserves shape (it produces similar figures, not congruent ones). Compositions of rigid motions produce congruent figures; compositions involving a dilation produce similar figures. On the Regents Geometry exam, congruence problems use rigid motions only; similarity problems allow dilation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is SOMATH and how do I book a math enrichment or Regents Geometry evaluation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH is at 226 West 79th Street, first floor, on the Upper West Side of Manhattan, between Broadway and Amsterdam. Phone (646) 668-6151. Every family starts with a free 60-minute in-person evaluation and receives a written diagnostic within 48 hours — yours to keep whether you enroll or not. Book at schoolofmath.us/evaluation."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Math Enrichment</p>
+      <h1 class="post__title">Regents Geometry Rigid Transformations: SOMATH's Upper West Side Math Enrichment Guide</h1>
+      <p class="post__dek">Translation, reflection, rotation — the three isometries that anchor every congruence proof on the NY Regents Geometry exam. Here is what they are, how the coordinate rules work, and how SOMATH's math enrichment on the Upper West Side prepares students to master them.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 6, 2026</span>
+        <span>10 min read</span>
+      </div>
+
+      <figure class="post__cover"><picture><source srcset="/assets/blog/regents-geometry-rigid-transformations/cover.webp" type="image/webp"><img src="/assets/blog/regents-geometry-rigid-transformations/cover.jpg" alt="SOMATH infographic — Rigid Transformations (Isometries): translation, reflection, rotation with coordinate rules and properties. School of Math, Upper West Side NYC." width="1536" height="1024" /></picture></figure>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> a rigid transformation (or isometry) is a movement of a figure on the coordinate plane that preserves size and shape. The NY Regents Geometry exam tests three: <strong>translation</strong> (a slide), <strong>reflection</strong> (a flip), and <strong>rotation</strong> (a turn). All three preserve distance, side lengths, angles, perimeter, and area. Translation and rotation preserve orientation; reflection reverses it. Every Regents congruence proof is built on the idea that two figures are congruent when one can be mapped onto the other by a sequence of rigid motions.</p>
+
+<p>SOMATH &mdash; <a href="/">School of Math on the Upper West Side</a> at <strong>226 West 79th Street, first floor</strong>, phone <a href="tel:+16466686151">(646) 668-6151</a> &mdash; covers rigid transformations across our <a href="/courses/">Young Fermats (grades 5&ndash;8) and Geometry high-school tracks</a>. Kids build the transformations physically before they see the coordinate rules, then chain them together into full congruence arguments. Every family starts with a <a href="/evaluation">free 60-minute in-person evaluation</a> and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+
+<h2>What is a rigid transformation?</h2>
+
+<p>A <strong>rigid transformation</strong> &mdash; the formal Regents word is <em>isometry</em> &mdash; is any movement of a figure on the coordinate plane that keeps the figure the same size and shape. If you cut a triangle out of paper and slide, flip, or turn it, you have performed a rigid transformation. The paper triangle before and after are congruent because you did not stretch or shrink it.</p>
+
+<p>Every rigid transformation preserves the following properties. Memorize this list &mdash; the Regents will ask about it directly, and the same six properties are the building blocks of every congruence proof:</p>
+
+<ul>
+  <li><strong>Shape</strong> &mdash; the figure remains the same type of shape.</li>
+  <li><strong>Size</strong> &mdash; the figure does not get bigger or smaller.</li>
+  <li><strong>Side lengths</strong> &mdash; every side of the figure stays the same length.</li>
+  <li><strong>Angles</strong> &mdash; every angle keeps its measure.</li>
+  <li><strong>Perimeter</strong> &mdash; the total distance around the figure is unchanged.</li>
+  <li><strong>Area</strong> &mdash; the space inside the figure is unchanged.</li>
+</ul>
+
+<p>What can change: <em>location</em> (where the figure is) and, in the case of reflection and sometimes rotation, <em>orientation</em> (which way the figure faces). Everything else stays exactly the same. That is the point of the word "rigid" &mdash; the figure is not deforming, only moving.</p>
+
+<h2>The three rigid transformations, in detail</h2>
+
+<p>The New York Regents Geometry exam tests three specific rigid transformations. Every congruence question on the Regents can be answered by identifying which of these three (or which composition of them) maps one figure onto another.</p>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Rigid transformation #1</div>
+  <h3>Translation &mdash; a slide</h3>
+  <p>A <strong>translation</strong> slides every point of the figure the same distance in the same direction. Think of pushing a book across a desk without turning it.</p>
+  <p><strong>Coordinate rule:</strong> <span class="concept-card__rule">(x, y) &rarr; (x + a, y + b)</span></p>
+  <p>This means: add <em>a</em> to every x-coordinate and add <em>b</em> to every y-coordinate. Positive <em>a</em> shifts right, negative <em>a</em> shifts left. Positive <em>b</em> shifts up, negative <em>b</em> shifts down.</p>
+  <p><strong>Example:</strong> Translate the square with vertices (&minus;3, 2), (&minus;1, 2), (&minus;1, 4), (&minus;3, 4) four units to the right: apply <code>(x, y) &rarr; (x + 4, y)</code>. New vertices: (1, 2), (3, 2), (3, 4), (1, 4). Same square, four units to the right.</p>
+  <p><strong>What is preserved:</strong> distance between points, side lengths, angles, perimeter, area, orientation. <strong>What changes:</strong> location.</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Rigid transformation #2</div>
+  <h3>Reflection &mdash; a flip over a line</h3>
+  <p>A <strong>reflection</strong> flips every point of the figure over a fixed line, called the <em>line of reflection</em>. Think of the line as a mirror. Each point ends up the same distance from the mirror as before, but on the opposite side.</p>
+  <p><strong>Coordinate rules for the most common lines:</strong></p>
+  <ul>
+    <li>Over the y-axis: <span class="concept-card__rule">(x, y) &rarr; (&minus;x, y)</span></li>
+    <li>Over the x-axis: <span class="concept-card__rule">(x, y) &rarr; (x, &minus;y)</span></li>
+    <li>Over the line y = x: <span class="concept-card__rule">(x, y) &rarr; (y, x)</span></li>
+    <li>Over the line y = &minus;x: <span class="concept-card__rule">(x, y) &rarr; (&minus;y, &minus;x)</span></li>
+  </ul>
+  <p><strong>Example:</strong> Reflect the square from the previous example over the y-axis. Apply <code>(x, y) &rarr; (&minus;x, y)</code> to (1, 2), (3, 2), (3, 4), (1, 4). New vertices: (&minus;1, 2), (&minus;3, 2), (&minus;3, 4), (&minus;1, 4). Same square, mirrored on the left of the y-axis.</p>
+  <p><strong>What is preserved:</strong> distance between points, side lengths, angles, perimeter, area. <strong>What changes:</strong> location and orientation &mdash; the reflected figure is a mirror image of the original.</p>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Rigid transformation #3</div>
+  <h3>Rotation &mdash; a turn about a point</h3>
+  <p>A <strong>rotation</strong> turns every point of the figure around a fixed point (the <em>center of rotation</em>) by a specified angle. On the Regents the center is almost always the origin.</p>
+  <p><strong>Coordinate rules for rotations about the origin:</strong></p>
+  <ul>
+    <li>90&deg; counterclockwise: <span class="concept-card__rule">(x, y) &rarr; (&minus;y, x)</span></li>
+    <li>180&deg; (either direction): <span class="concept-card__rule">(x, y) &rarr; (&minus;x, &minus;y)</span></li>
+    <li>270&deg; counterclockwise (or 90&deg; clockwise): <span class="concept-card__rule">(x, y) &rarr; (y, &minus;x)</span></li>
+  </ul>
+  <p><strong>Example:</strong> Rotate the square with vertices (2, 0), (4, 0), (4, 2), (2, 2) by 90&deg; counterclockwise about the origin. Apply <code>(x, y) &rarr; (&minus;y, x)</code>. New vertices: (0, 2), (0, 4), (&minus;2, 4), (&minus;2, 2). Same square, rotated a quarter-turn.</p>
+  <p><strong>What is preserved:</strong> distance from the center, side lengths, angles, perimeter, area. <strong>What may change:</strong> location and orientation (which way the figure faces).</p>
+</div>
+
+<h2>The summary table Regents students memorize</h2>
+
+<p>Every SOMATH Geometry student learns this table by the second week of the transformations unit. If you can reproduce it from memory, most Regents multiple-choice transformation questions become a five-second answer.</p>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Transformation</th>
+      <th>Moves the figure by</th>
+      <th>Coordinate rule (common case)</th>
+      <th>Changes size or shape?</th>
+      <th>Changes orientation?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Transformation"><strong>Translation</strong></td>
+      <td data-label="Moves by">Sliding in a straight line</td>
+      <td data-label="Rule"><code>(x, y) &rarr; (x + a, y + b)</code></td>
+      <td data-label="Changes size?">No</td>
+      <td data-label="Changes orientation?">No</td>
+    </tr>
+    <tr>
+      <td data-label="Transformation"><strong>Reflection</strong></td>
+      <td data-label="Moves by">Flipping over a line</td>
+      <td data-label="Rule"><code>(x, y) &rarr; (&minus;x, y)</code> over y-axis</td>
+      <td data-label="Changes size?">No</td>
+      <td data-label="Changes orientation?">Yes (reverses)</td>
+    </tr>
+    <tr>
+      <td data-label="Transformation"><strong>Rotation</strong></td>
+      <td data-label="Moves by">Turning around a point</td>
+      <td data-label="Rule"><code>(x, y) &rarr; (&minus;y, x)</code> 90&deg; CCW at origin</td>
+      <td data-label="Changes size?">No</td>
+      <td data-label="Changes orientation?">Maybe (depends on angle)</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>All three preserve <strong>shape, size, side lengths, angles, perimeter, and area</strong>. That preservation is what makes them <em>rigid</em>. The word Regents uses for rigid transformations &mdash; <strong>isometry</strong> &mdash; literally means "same measure" in Greek.</p>
+
+<h2>Why rigid transformations are the foundation of Regents Geometry congruence</h2>
+
+<p>Older geometry curricula defined two triangles as congruent when their sides and angles matched (SSS, SAS, ASA). The modern <a href="https://www.nysedregents.org/geometrycc/" target="_blank" rel="noopener">New York State Regents Geometry standards</a> reframe congruence: <strong>two figures are congruent if and only if one can be mapped onto the other by a sequence of rigid transformations.</strong> Every SSS, SAS, and ASA proof is really a rigid-motion proof underneath.</p>
+
+<p>That is why Regents Geometry students who understand rigid transformations deeply outperform students who memorized the shortcuts. The Regents exam frequently asks:</p>
+
+<ul>
+  <li>"Which sequence of rigid motions maps triangle ABC onto triangle A'B'C'?"</li>
+  <li>"State a single rigid motion that maps figure P onto figure Q."</li>
+  <li>"Given the coordinate rule <code>(x, y) &rarr; (y, &minus;x)</code>, identify the transformation and its parameters."</li>
+  <li>"Prove that triangle ABC is congruent to triangle DEF using a sequence of rigid motions." (constructed response, 4&ndash;6 points)</li>
+</ul>
+
+<p>A student who has practiced the three transformations concretely, derived the coordinate rules, and chained them together into congruence arguments handles all of those questions confidently. A student who has only seen the rules once in class often freezes.</p>
+
+<h2>Worked example: a Regents-style problem</h2>
+
+<div class="worked-ex">
+<p><strong>Problem.</strong> Triangle ABC has vertices A(1, 2), B(4, 2), C(4, 6). Triangle A'B'C' has vertices A'(&minus;2, 1), B'(&minus;2, 4), C'(&minus;6, 4). Describe a sequence of rigid transformations that maps triangle ABC onto triangle A'B'C'.</p>
+
+<p><strong>Solution.</strong> First identify what changed. In ABC the right angle is at B(4, 2) with legs of length 3 (horizontal) and 4 (vertical). In A'B'C' the right angle is at B'(&minus;2, 4) with legs of length 3 (vertical) and 4 (horizontal). The horizontal leg became vertical &mdash; a 90&deg; rotation is involved.</p>
+
+<p><strong>Step 1.</strong> Rotate ABC 90&deg; counterclockwise about the origin. Apply <code>(x, y) &rarr; (&minus;y, x)</code>:</p>
+<ul>
+  <li>A(1, 2) &rarr; (&minus;2, 1)</li>
+  <li>B(4, 2) &rarr; (&minus;2, 4)</li>
+  <li>C(4, 6) &rarr; (&minus;6, 4)</li>
+</ul>
+
+<p>The rotated image is exactly A'B'C'. <strong>Answer:</strong> a single rotation of 90&deg; counterclockwise about the origin maps triangle ABC onto triangle A'B'C'. Since a rotation is a rigid transformation, the triangles are congruent.</p>
+</div>
+
+<p>On the actual Regents, that kind of question is worth 4 points on the constructed-response section. A student who owns the coordinate rules for the three rigid transformations answers it in under three minutes and moves on. That is the real payoff of math enrichment: not tricks, but confidence.</p>
+
+<h2>Rigid vs. non-rigid: what about dilations?</h2>
+
+<p>The Regents Geometry exam also tests one non-rigid transformation: the <strong>dilation</strong>. A dilation changes size (bigger or smaller) while preserving shape. It produces similar figures, not congruent ones. The distinction matters:</p>
+
+<ul>
+  <li><strong>Rigid transformations</strong> (translation, reflection, rotation) preserve size and shape &rarr; produce <strong>congruent</strong> figures.</li>
+  <li><strong>Non-rigid transformations</strong> (dilation) preserve shape only &rarr; produce <strong>similar</strong> figures.</li>
+  <li>Compositions of rigid transformations are always rigid. Compositions that include a dilation produce similar (but not necessarily congruent) figures.</li>
+</ul>
+
+<p>If a Regents question asks whether two figures are congruent, look for a sequence of rigid motions. If it asks whether they are similar, dilations are allowed. That single distinction is worth 2&ndash;4 points on almost every Regents Geometry exam.</p>
+
+<h2>How SOMATH teaches rigid transformations (K&ndash;12 arc)</h2>
+
+<p>At SOMATH we introduce transformations gradually across our <a href="/courses/">grade-level tracks</a>, so by the time a student sits for Regents Geometry the ideas are second nature, not something crammed the week before the test.</p>
+
+<ul>
+  <li><strong><a href="/">Little Newtons</a> (grades K&ndash;2):</strong> physical slides, flips, and turns of shapes cut from paper. Kids build intuition before any coordinate plane appears.</li>
+  <li><strong>Kid Einsteins (grades 3&ndash;5):</strong> coordinate plane basics; plotting points; translation as a shift; symmetry (which is really reflection).</li>
+  <li><strong>Young Fermats (grades 5&ndash;8):</strong> all three rigid transformations on the coordinate plane. Students derive the coordinate rules themselves before we hand them the summary. SHSAT students see transformations in geometry problems here.</li>
+  <li><strong>High-school Geometry:</strong> full Regents-level treatment. Coordinate rules memorized, compositions chained together, and the modern rigid-motion definition of congruence used in proofs.</li>
+</ul>
+
+<p>Our high-school teachers hold degrees from Harvard, Northwestern, Columbia, and NYU, and full-time SOMATH teachers write specific written feedback on every student after every unit. If your child is preparing for the January or June Regents Geometry, the transformations unit is one of the first places to build depth. Read our <a href="/posts/regents-geometry-january-2026-preparation">Regents Geometry January 2026 preparation guide</a> for the full unit-by-unit breakdown, or our <a href="/posts/best-math-enrichment-upper-west-side-parents-guide">best math enrichment guide for the Upper West Side</a> for how our program compares to other UWS options.</p>
+
+<h2>Quick memory tips for the Regents</h2>
+
+<ol>
+  <li><strong>Rigid = same size.</strong> Translation, reflection, and rotation only move or turn the figure &mdash; they never change size or shape.</li>
+  <li><strong>Reflection is the odd one out.</strong> It is the only rigid transformation that reverses orientation (mirror image).</li>
+  <li><strong>Memorize the four common reflection rules.</strong> y-axis, x-axis, y = x, y = &minus;x. These four cover 90% of Regents reflection questions.</li>
+  <li><strong>Memorize the three rotation rules about the origin.</strong> 90&deg; counterclockwise, 180&deg;, 270&deg; counterclockwise. Clockwise angles are just the counterclockwise complement.</li>
+  <li><strong>When mapping one figure to another, look for what stayed the same first.</strong> If a horizontal side became vertical, rotation is involved. If the figure "flipped," a reflection is involved. If nothing turned or flipped, it is a translation.</li>
+</ol>
+
+<h2>Book a free math enrichment evaluation</h2>
+
+<p>If your child is heading into Regents Geometry &mdash; or into any of the middle-school Common Core topics that lead there &mdash; the best move is to see exactly where they are today. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a>. Your child works one-on-one with a SOMATH teacher, and you receive a written diagnostic within 48 hours &mdash; specifically what your child has mastered, where the gaps are, and what to work on next. Yours to keep whether you enroll or not.</p>
+
+<p>SOMATH is at <strong>226 West 79th Street, first floor</strong>, between Broadway and Amsterdam. Phone <a href="tel:+16466686151">(646) 668-6151</a>. See our <a href="/schedule.html">weekly class schedule</a> or browse <a href="/courses/">all courses grades 1&ndash;12</a>.</p>
+
+<p>Related reading: <a href="/posts/elementary-math-enrichment-upper-west-side">Elementary Math Enrichment on the Upper West Side (K&ndash;5 parent's guide)</a> &middot; <a href="/posts/after-school-math-program-upper-west-side">After School Math Program on the Upper West Side (2026 Parent's Guide)</a> &middot; <a href="/posts/best-math-enrichment-upper-west-side-parents-guide">Best Math Enrichment on the Upper West Side</a> &middot; <a href="/posts/best-math-tutor-upper-west-side">Best Math Tutor on the Upper West Side</a>.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Ready for Regents Geometry? Let&rsquo;s find out.</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We&rsquo;ll diagnose
+            exactly where your child stands on transformations, congruence,
+            and the rest of the Regents Geometry arc, and send a written
+            summary within 48 hours &mdash; yours to keep whether you enroll or not.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+    
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus, SAT Math, and Regents Geometry / Algebra in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/elementary-math-enrichment-upper-west-side">
+          <span class="blog-card__category">Upper West Side · Elementary K-5</span>
+          <h2 class="blog-card__title">Elementary Math Enrichment on the Upper West Side: What K-5 Parents Need to Know</h2>
+          <p class="blog-card__dek">A grade-by-grade guide to elementary math enrichment on the Upper West Side — what K-5 kids should be learning, what programs actually teach, and how to spot the difference between enrichment, remediation, and drill.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 9 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/after-school-math-program-upper-west-side">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">After School Math Program on the Upper West Side: 2026 Parent's Guide</h2>
+          <p class="blog-card__dek">A neighborhood-by-neighborhood guide to after school math programs on the UWS — compared honestly on class size, pricing, teachers, and fit.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-enrichment-upper-west-side-parents-guide">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">Best Math Enrichment on the Upper West Side: A Parent's Guide</h2>
+          <p class="blog-card__dek">The full guide to serious math enrichment on the UWS — what to look for, how to compare programs, and the questions most parents forget to ask.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-tutor-upper-west-side">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">Best Math Tutor on the Upper West Side: 2026 NYC Guide</h2>
+          <p class="blog-card__dek">The 2026 UWS math tutor guide — pricing, formats, and how to tell a great math tutor from an average one.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 6 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260806-rigid"></script>
+  </body>
+</html>
