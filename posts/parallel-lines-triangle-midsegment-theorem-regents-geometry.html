@@ -96,6 +96,10 @@
 
       .inline-fig { margin:24px 0; }
       .inline-fig figcaption { font-size:0.85rem; color:#6a6a6a; margin-top:8px; font-style:italic; text-align:center; }
+
+      /* Larger, bolder parallel-line glyph for readability. */
+      .par { font-size:1.25em; font-weight:700; line-height:1; vertical-align:-0.02em; letter-spacing:0.02em; color:#1f3d2e; }
+      .concept-card__rule .par { font-size:1.35em; }
     </style>
     <script type="application/ld+json">
 {
@@ -267,7 +271,7 @@
   <div class="concept-card__meta">Theorem #3 &mdash; the midpoint special case</div>
   <h3>In any triangle, the segment connecting the midpoints of two sides is parallel to the third side and half its length.</h3>
   <p>If D and E are the midpoints of two sides of triangle ABC, then:</p>
-  <p><span class="concept-card__rule">DE &parallel; AB &nbsp; and &nbsp; DE = &frac12; AB</span></p>
+  <p><span class="concept-card__rule">DE <span class="par">&parallel;</span> AB &nbsp; and &nbsp; DE = &frac12; AB</span></p>
   <ul>
     <li>The <em>midsegment</em> is any segment that joins the midpoints of two sides of a triangle.</li>
     <li>A triangle has exactly three midsegments &mdash; one parallel to each side, each equal to half the length of the side it is parallel to.</li>
@@ -323,14 +327,14 @@
       <td data-label="Theorem"><strong>Converse of Basic Proportionality</strong></td>
       <td data-label="Given">Two sides divided in equal ratio</td>
       <td data-label="Conclude">The dividing segment is parallel to the third side</td>
-      <td data-label="Proportion"><code>AD/DB = AE/EC &rArr; DE &parallel; BC</code></td>
+      <td data-label="Proportion"><code>AD/DB = AE/EC &rArr; DE <span class="par">&parallel;</span> BC</code></td>
       <td data-label="Special">n/a</td>
     </tr>
     <tr>
       <td data-label="Theorem"><strong>Midsegment Theorem</strong></td>
       <td data-label="Given">Segment connects the midpoints of two sides</td>
       <td data-label="Conclude">That segment is parallel to the third side <em>and</em> half its length</td>
-      <td data-label="Proportion"><code>DE &parallel; AB</code>, <code>DE = &frac12; AB</code></td>
+      <td data-label="Proportion"><code>DE <span class="par">&parallel;</span> AB</code>, <code>DE = &frac12; AB</code></td>
       <td data-label="Special">Yes &mdash; midsegment is always exactly half the third side</td>
     </tr>
   </tbody>
