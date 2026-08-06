@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Parallel Lines in a Triangle & the Midsegment Theorem: SOMATH's Regents Geometry Guide | SOMATH</title>
+    <meta name="description" content="Parallel lines in a triangle (Basic Proportionality / Thales' Theorem) and the Midsegment Theorem &mdash; the two proportionality theorems that anchor NY Regents Geometry similarity and coordinate proofs. Coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Parallel Lines in a Triangle & the Midsegment Theorem: SOMATH's Regents Geometry Guide" />
+    <meta property="og:description" content="Parallel lines in a triangle (Basic Proportionality / Thales' Theorem) and the Midsegment Theorem &mdash; the two proportionality theorems that anchor NY Regents Geometry similarity and coordinate proofs." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/parallel-lines-triangle-midsegment/cover.jpg" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="article:published_time" content="2026-08-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Parallel Lines in a Triangle & the Midsegment Theorem: SOMATH's Regents Geometry Guide" />
+    <meta name="twitter:description" content="Basic Proportionality Theorem, Thales' Theorem, and the Midsegment Theorem &mdash; explained with coordinate rules, worked Regents examples, and the SOMATH math-enrichment arc that builds mastery." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/parallel-lines-triangle-midsegment/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+
+      .pair-callout { background:#f0ede2; border:1px solid #e6d9b8; border-radius:10px; padding:16px 20px; margin:20px 0; }
+      .pair-callout p { margin:0; }
+
+      .inline-fig { margin:24px 0; }
+      .inline-fig figcaption { font-size:0.85rem; color:#6a6a6a; margin-top:8px; font-style:italic; text-align:center; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Parallel Lines in a Triangle & the Midsegment Theorem: SOMATH's Regents Geometry Guide",
+  "description": "Parallel lines in a triangle (Basic Proportionality / Thales' Theorem) and the Midsegment Theorem — the two proportionality theorems that anchor NY Regents Geometry similarity and coordinate proofs. Coordinate rules, worked examples, and how SOMATH's Upper West Side math enrichment prepares students.",
+  "image": "https://www.schoolofmath.us/assets/blog/parallel-lines-triangle-midsegment/cover.jpg",
+  "datePublished": "2026-08-06",
+  "dateModified": "2026-08-06",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Basic Proportionality Theorem (Thales' Theorem)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Basic Proportionality Theorem, also called the Triangle Proportionality Theorem or Thales' Theorem, states that if a line is drawn parallel to one side of a triangle and intersects the other two sides, it divides those two sides proportionally. In triangle ABC, if D is on AB and E is on AC and DE is parallel to BC, then AD/DB = AE/EC. The converse also holds: if a line divides two sides of a triangle proportionally, it must be parallel to the third side. This pair of statements is one of the foundations of similarity and appears on nearly every NY Regents Geometry exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Midsegment Theorem in geometry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Midsegment Theorem states that in any triangle, the segment connecting the midpoints of two sides is (1) parallel to the third side and (2) exactly half the length of the third side. So if D and E are the midpoints of two sides of triangle ABC, then segment DE is parallel to the third side AB and DE = (1/2)AB. The Midsegment Theorem is a special case of the Basic Proportionality Theorem where the ratio of division is 1:1 (the midpoints)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are the Basic Proportionality Theorem and the Midsegment Theorem related?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Midsegment Theorem is the special case of the Basic Proportionality Theorem where D and E are midpoints — that is, AD/DB = 1 and AE/EC = 1. Because the ratios are both 1:1, the converse of the Basic Proportionality Theorem forces the connecting segment DE to be parallel to the third side. Then, since triangle CDE and triangle CBA share angle C and have proportional sides CD/CA = CE/CB = 1/2, they are similar by SAS similarity, which gives DE/AB = 1/2, or DE = (1/2)AB. Both theorems produce parallel segments and proportional sides; the midsegment case just adds the exact 1/2 length ratio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you use these theorems to find an unknown side length?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For the Basic Proportionality Theorem: set up the proportion AD/DB = AE/EC (or AD/AB = AE/AC = DE/BC when comparing to the whole triangle) and cross-multiply to solve for the unknown. For the Midsegment Theorem: if DE is the midsegment parallel to AB, then DE = (1/2)AB — either double the midsegment to get the third side, or halve the third side to get the midsegment. On the Regents exam, questions often combine both: identify the parallel side, apply the correct proportion, solve, and (in Part III or IV) justify each step with the theorem name."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do these theorems appear on the NY Regents Geometry exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — both theorems appear regularly. On the June 2026 NY Regents Geometry exam, the midsegment theorem showed up in Part I question 3, and the converse of the Side-Splitter Theorem (which is the converse of the Basic Proportionality Theorem) was tested as a 2-credit Part II question (Q28 — solving for FD = 48). Coordinate proofs on Part IV often use the midsegment theorem to justify why two segments are parallel or why one is half the other. SOMATH students learn to identify these problems by the wording: any Regents question that mentions midpoints, parallel-to-a-side, or a line intersecting two sides of a triangle is almost always a proportionality-theorem problem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does SOMATH math enrichment prepare Upper West Side students for Regents proportionality questions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH builds proportional reasoning across every grade level. Little Newtons (K–2) work with equal parts. Kid Einsteins (3–5) master ratios and proportional reasoning. Young Fermats (5–8) apply the Basic Proportionality Theorem in coordinate settings and derive the midsegment relationship experimentally before we hand them the theorem. High-school Geometry students earn the full theorem-and-proof treatment, including two-column proofs, coordinate proofs, and Regents Part III–IV applications. Every SOMATH family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Math Enrichment</p>
+      <h1 class="post__title">Parallel Lines in a Triangle &amp; the Midsegment Theorem: SOMATH&rsquo;s Regents Geometry Guide</h1>
+      <p class="post__dek">The Basic Proportionality Theorem (Thales' Theorem), its converse, and the Midsegment Theorem &mdash; three of the most heavily tested proportionality theorems on the NY Regents Geometry exam &mdash; explained with diagrams, worked examples, and the K&ndash;12 SOMATH math-enrichment arc that builds mastery on the Upper West Side.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 6, 2026</span>
+        <span>11 min read</span>
+      </div>
+
+      <figure class="post__cover"><picture><source srcset="/assets/blog/parallel-lines-triangle-midsegment/parallel-lines.webp" type="image/webp"><img src="/assets/blog/parallel-lines-triangle-midsegment/parallel-lines.jpg" alt="SOMATH infographic &mdash; Parallel Lines in a Triangle: the Basic Proportionality Theorem, its converse (Thales' Theorem), similar triangles, a visual example, and key takeaways. School of Math, Upper West Side NYC." width="1536" height="1024" /></picture></figure>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> when a line is drawn <em>parallel</em> to one side of a triangle, it divides the other two sides <em>proportionally</em> and creates a smaller triangle <em>similar</em> to the original. That's the <strong>Basic Proportionality Theorem</strong> (also known as Thales' Theorem or the Side-Splitter Theorem). The <strong>Midsegment Theorem</strong> is the special case where the parallel line connects the two midpoints &mdash; the resulting midsegment is parallel to the third side and exactly <em>half</em> its length. Together, these two theorems anchor the similarity, coordinate-proof, and part-and-whole reasoning that appears on nearly every NY Regents Geometry exam.</p>
+
+<p>This is the third post in our Regents Geometry math-enrichment series. Part one covered <a href="/posts/regents-geometry-rigid-transformations-somath-guide">rigid transformations (translation, reflection, rotation)</a>. Part two covered <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">non-rigid transformations (dilation, stretch, compression)</a>. This post picks up where dilations leave off &mdash; the same proportionality that governs a dilation also governs any parallel line drawn inside a triangle.</p>
+
+<p>SOMATH &mdash; <a href="/">School of Math on the Upper West Side</a> at <strong>226 West 79th Street, first floor</strong>, phone <a href="tel:+16466686151">(646) 668-6151</a> &mdash; teaches these theorems across our <a href="/courses/">Young Fermats (grades 5&ndash;8) and high-school Geometry tracks</a>. Every family starts with a <a href="/evaluation">free 60-minute in-person evaluation</a> and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+
+<h2>The Basic Proportionality Theorem (Thales' Theorem)</h2>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Theorem #1 &mdash; also called the Side-Splitter Theorem</div>
+  <h3>If a line is parallel to one side of a triangle, it divides the other two sides proportionally.</h3>
+  <p>In triangle ABC, suppose D is on side AB and E is on side AC, with segment DE parallel to side BC. Then:</p>
+  <p><span class="concept-card__rule">AD / DB = AE / EC</span></p>
+  <p>Equivalently, comparing each subsegment to the whole side:</p>
+  <p><span class="concept-card__rule">AD / AB = AE / AC = DE / BC</span></p>
+  <p>The second form is what you use when you want to bring the parallel segment DE itself into the proportion &mdash; particularly useful when the Regents asks you to solve for the length of the parallel segment.</p>
+  <ul>
+    <li>The Regents calls this either the <em>Basic Proportionality Theorem</em>, <em>Thales' Theorem</em>, or the <em>Side-Splitter Theorem</em>. Same theorem, three names.</li>
+    <li>The converse also holds &mdash; and it's the more useful direction on Regents constructions and proofs.</li>
+  </ul>
+</div>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Theorem #2 &mdash; the converse of #1</div>
+  <h3>If a line divides two sides of a triangle proportionally, it is parallel to the third side.</h3>
+  <p>In triangle ABC, if D is on AB and E is on AC and AD/DB = AE/EC, then DE is parallel to BC.</p>
+  <p>This converse is exactly how the NY Regents tests the theorem on 2-credit Part II questions. You are given ratios and asked to <em>prove</em> two segments are parallel. On the <a href="/posts/regents-geometry-june-2026-part-2-answers">June 2026 Regents Part II Question 28</a>, students used this converse to solve for FD = 48.</p>
+</div>
+
+<h2>Similar triangles from a parallel line</h2>
+
+<p>When DE is parallel to BC in triangle ABC, the small triangle ADE and the big triangle ABC are <strong>similar</strong>. Here's why: they share angle A, and because DE is parallel to BC, corresponding angles ADE and ABC are congruent (by the corresponding-angles postulate). Two pairs of congruent angles &rarr; AA similarity &rarr; triangle ADE is similar to triangle ABC.</p>
+
+<p>Because the triangles are similar, all three pairs of corresponding sides are proportional:</p>
+<p><span class="concept-card__rule">AD / AB = AE / AC = DE / BC</span></p>
+
+<p>This is the form of the proportion that lets you solve for DE itself &mdash; which is exactly what the SOMATH infographic's Visual Example does: given AD = 6, DB = 4 (so AB = 10), AE = 9, EC = 6 (so AC = 15), and BC = 10, the proportion 6/10 = 9/15 = DE/10 gives <strong>DE = 6</strong>. (Reading the ratios as 3/5 confirms the scale.)</p>
+
+<div class="worked-ex">
+<p><strong>Worked example (Regents-style).</strong> In triangle ABC, D is on AB and E is on AC. DE is parallel to BC. AD = 6, DB = 4, and BC = 10. Find DE.</p>
+<p><strong>Solution.</strong> Because DE is parallel to BC, triangles ADE and ABC are similar. Use the whole-side proportion:</p>
+<p><code>AD / AB = DE / BC</code></p>
+<p>AD = 6, AB = AD + DB = 6 + 4 = 10, BC = 10.</p>
+<p><code>6 / 10 = DE / 10 &rarr; DE = 6</code></p>
+<p><strong>Answer:</strong> DE = 6.</p>
+</div>
+
+<p>The Regents also asks the <em>converse</em> question &mdash; you are given ratios and asked to show DE is parallel to BC. Same theorem, applied backward.</p>
+
+<h2>The Midsegment Theorem</h2>
+
+<figure class="inline-fig"><picture><source srcset="/assets/blog/parallel-lines-triangle-midsegment/midsegment.webp" type="image/webp"><img src="/assets/blog/parallel-lines-triangle-midsegment/midsegment.jpg" alt="SOMATH infographic &mdash; The Midsegment Theorem: in any triangle, the segment connecting the midpoints of two sides is parallel to the third side and half its length. School of Math, Upper West Side NYC." width="1536" height="1024" style="width:100%; height:auto; border-radius:8px;" /></picture><figcaption>The Midsegment Theorem, visualized: DE joins the midpoints of two sides &rarr; DE is parallel to AB and DE = &frac12; AB.</figcaption></figure>
+
+<div class="concept-card">
+  <div class="concept-card__meta">Theorem #3 &mdash; the midpoint special case</div>
+  <h3>In any triangle, the segment connecting the midpoints of two sides is parallel to the third side and half its length.</h3>
+  <p>If D and E are the midpoints of two sides of triangle ABC, then:</p>
+  <p><span class="concept-card__rule">DE &parallel; AB &nbsp; and &nbsp; DE = &frac12; AB</span></p>
+  <ul>
+    <li>The <em>midsegment</em> is any segment that joins the midpoints of two sides of a triangle.</li>
+    <li>A triangle has exactly three midsegments &mdash; one parallel to each side, each equal to half the length of the side it is parallel to.</li>
+    <li>The three midsegments together form a smaller triangle inside the original, called the <em>medial triangle</em>, which is similar to the original with a scale factor of 1/2.</li>
+  </ul>
+</div>
+
+<h3>Why it's true (the two-step proof)</h3>
+
+<p>The Midsegment Theorem follows directly from the two theorems above.</p>
+
+<ol>
+  <li><strong>Show DE is parallel to AB.</strong> Because D is the midpoint of one side and E is the midpoint of another, the ratio of division on each side is 1:1. So the two sides are divided proportionally (both in ratio 1:1). By the <em>converse</em> of the Basic Proportionality Theorem, DE is parallel to AB.</li>
+  <li><strong>Show DE = &frac12; AB.</strong> With DE parallel to AB, triangles CDE and CBA share angle C and have the proportional sides CD/CB = CE/CA = 1/2 (midpoint definition). So triangles CDE and CBA are similar by SAS similarity, and every ratio of corresponding sides equals 1/2 &mdash; including DE/AB. Therefore DE = &frac12; AB.</li>
+</ol>
+
+<p>Read the two theorems together: the Basic Proportionality Theorem gets you <em>parallel</em>; then the similarity it produces gets you the exact <em>1/2 ratio</em>. Both halves are Regents-ready.</p>
+
+<h2>Worked Regents-style midsegment problem</h2>
+
+<div class="worked-ex">
+<p><strong>Problem.</strong> In triangle ABC, D is the midpoint of side AC and E is the midpoint of side BC. If AB = 24 and DE is the midsegment parallel to AB, find DE. If a second midsegment, EF, is parallel to AC and AC = 18, find EF.</p>
+
+<p><strong>Solution, DE.</strong> By the Midsegment Theorem, DE = (1/2)AB = (1/2)(24) = <strong>12</strong>.</p>
+
+<p><strong>Solution, EF.</strong> By the Midsegment Theorem, EF = (1/2)AC = (1/2)(18) = <strong>9</strong>.</p>
+
+<p>One-line answer, one-step calculation. That's the SOMATH difference &mdash; a student who has the theorem memorized answers this Part I 2-credit question in under fifteen seconds. Students who have to reason from first principles spend two minutes.</p>
+</div>
+
+<h2>The two theorems, side by side</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Theorem</th>
+      <th>What you know</th>
+      <th>What you conclude</th>
+      <th>Key proportion</th>
+      <th>Special length rule?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Theorem"><strong>Basic Proportionality Theorem (Thales' / Side-Splitter)</strong></td>
+      <td data-label="Given">A line parallel to one side of a triangle</td>
+      <td data-label="Conclude">The other two sides are divided proportionally &mdash; and the small triangle is similar to the big one</td>
+      <td data-label="Proportion"><code>AD/DB = AE/EC</code> &nbsp;or&nbsp; <code>AD/AB = AE/AC = DE/BC</code></td>
+      <td data-label="Special">Depends on the given ratio</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Theorem"><strong>Converse of Basic Proportionality</strong></td>
+      <td data-label="Given">Two sides divided in equal ratio</td>
+      <td data-label="Conclude">The dividing segment is parallel to the third side</td>
+      <td data-label="Proportion"><code>AD/DB = AE/EC &rArr; DE &parallel; BC</code></td>
+      <td data-label="Special">n/a</td>
+    </tr>
+    <tr>
+      <td data-label="Theorem"><strong>Midsegment Theorem</strong></td>
+      <td data-label="Given">Segment connects the midpoints of two sides</td>
+      <td data-label="Conclude">That segment is parallel to the third side <em>and</em> half its length</td>
+      <td data-label="Proportion"><code>DE &parallel; AB</code>, <code>DE = &frac12; AB</code></td>
+      <td data-label="Special">Yes &mdash; midsegment is always exactly half the third side</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>How this ties to earlier posts in the series</h2>
+
+<p>The Basic Proportionality Theorem is the &ldquo;quiet twin&rdquo; of a dilation:</p>
+<ul>
+  <li>A <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">dilation with scale factor <em>k</em></a> stretches a whole figure by <em>k</em> from a center point &mdash; all points scale.</li>
+  <li>A parallel line inside a triangle stretches (or shrinks) only part of the figure &mdash; but the ratios still hold, by the same underlying similarity.</li>
+</ul>
+<p>That's why the Regents mixes these topics on Part III and IV questions: a coordinate proof might ask you to find the image of a segment under a dilation, then use the midsegment theorem to show two sides of the resulting figure are parallel. Same toolkit, applied twice.</p>
+
+<p>If you have not read the earlier posts, start with <a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> and <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations</a>. Together with this post, they cover the entire transformations-and-similarity core of the exam.</p>
+
+<h2>How SOMATH teaches proportionality (K&ndash;12 arc)</h2>
+
+<ul>
+  <li><strong><a href="/">Little Newtons</a> (grades K&ndash;2):</strong> equal parts, halving and doubling, paper-folding to create midsegments before students know the word.</li>
+  <li><strong>Kid Einsteins (grades 3&ndash;5):</strong> ratios, proportional reasoning, scale drawings, similar figures introduced by intuition &mdash; two shapes that look the same but different sizes.</li>
+  <li><strong>Young Fermats (grades 5&ndash;8):</strong> triangle midsegments experimentally verified with rulers, similar triangles by AA, and the Basic Proportionality Theorem stated and used before it's formally named.</li>
+  <li><strong>High-school Geometry:</strong> full Regents-level treatment &mdash; theorem names, two-column proofs, coordinate proofs of the midsegment theorem, and Regents Part II&ndash;IV applications like the June 2026 side-splitter question.</li>
+</ul>
+
+<p>Our high-school Geometry teachers hold degrees from Harvard, Northwestern, Columbia, and NYU. Every SOMATH student who has taken the January or June Geometry Regents has scored proficient or higher.</p>
+
+<h2>Quick memory tips for the Regents</h2>
+
+<ol>
+  <li><strong>Parallel to a side &rarr; proportional sides.</strong> Whenever you see a line inside a triangle marked parallel to a side, immediately set up the Basic Proportionality Theorem &mdash; you almost always need it.</li>
+  <li><strong>Two names, one theorem.</strong> The Regents sometimes calls it Thales' Theorem, sometimes the Basic Proportionality Theorem, sometimes the Side-Splitter Theorem. All the same theorem.</li>
+  <li><strong>Midpoints &rarr; midsegment &rarr; half.</strong> The word &ldquo;midpoint&rdquo; anywhere in a Regents diagram is a trigger to apply the Midsegment Theorem: the joining segment is parallel to the third side and exactly half as long.</li>
+  <li><strong>Every triangle has three midsegments.</strong> They form the medial triangle &mdash; similar to the original with a scale factor of 1/2 (so its perimeter is 1/2 the perimeter, and its area is 1/4 the area).</li>
+  <li><strong>The converse is a Regents favorite.</strong> If you are given proportional divisions and asked to prove parallelism, you're using the converse of the Basic Proportionality Theorem.</li>
+</ol>
+
+<h2>Book a free math enrichment evaluation</h2>
+
+<p>If your child is preparing for the January or June Regents Geometry &mdash; or building toward Geometry via middle-school Common Core &mdash; the fastest way to know where they stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a>. Your child works one-on-one with a SOMATH teacher, and you receive a written diagnostic within 48 hours &mdash; specifically what your child has mastered, where the gaps are, and what to work on next. Yours to keep whether you enroll or not.</p>
+
+<p>SOMATH is at <strong>226 West 79th Street, first floor</strong>, between Broadway and Amsterdam. Phone <a href="tel:+16466686151">(646) 668-6151</a>. See our <a href="/schedule.html">weekly class schedule</a> or browse <a href="/courses/">all courses grades 1&ndash;12</a>.</p>
+
+<p>Related reading: <a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 Part II Answers</a> &middot; <a href="/posts/best-math-enrichment-upper-west-side-parents-guide">Best Math Enrichment on the Upper West Side</a>.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Ready for Regents Geometry? Let&rsquo;s find out.</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We&rsquo;ll diagnose
+            exactly where your child stands on similarity, proportionality
+            theorems, coordinate proofs, and the rest of the Regents Geometry
+            arc, and send a written summary within 48 hours &mdash; yours to keep
+            whether you enroll or not.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+    
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus, SAT Math, and Regents Geometry / Algebra in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression</h2>
+          <p class="blog-card__dek">Dilation, stretch, and compression &mdash; the non-rigid transformations tested on the NY Regents Geometry exam. Coordinate rules, why area scales as k&sup2;, and a worked Regents-style question.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/regents-geometry-rigid-transformations-somath-guide">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Regents Geometry Rigid Transformations: SOMATH's UWS Math Enrichment Guide</h2>
+          <p class="blog-card__dek">Translation, reflection, rotation &mdash; the three isometries at the heart of every Regents Geometry congruence proof, with coordinate rules and a worked example.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/regents-geometry-june-2026-part-2-answers">
+          <span class="blog-card__category">Regents Geometry June 2026</span>
+          <h2 class="blog-card__title">Regents Geometry June 2026 &mdash; Part II Answers & Explanations</h2>
+          <p class="blog-card__dek">Every 2-credit Part II short-answer question worked step-by-step &mdash; including the Side-Splitter Theorem application on Q28 (FD = 48).</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 12 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-enrichment-upper-west-side-parents-guide">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">Best Math Enrichment on the Upper West Side: A Parent's Guide</h2>
+          <p class="blog-card__dek">The full guide to serious math enrichment on the UWS &mdash; what to look for, how to compare programs, and the questions most parents forget to ask.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260806-midsegment"></script>
+  </body>
+</html>
