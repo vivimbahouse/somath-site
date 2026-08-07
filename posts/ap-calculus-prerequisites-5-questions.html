@@ -68,6 +68,23 @@
       .prereq-table th, .prereq-table td { padding:10px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
       .prereq-table th { background:#0a3a5f; color:#fff; }
       .prereq-table tr:nth-child(even) { background:#fafafa; }
+      .quiz { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:24px 28px; margin:28px 0; box-shadow:0 2px 10px rgba(31,61,46,0.04); }
+      .quiz > h3 { color:#0a3a5f; margin:0 0 6px; font-size:1.3rem; }
+      .quiz > p.quiz__intro { color:#4a4a4a; margin:0 0 18px; font-size:0.98rem; }
+      .quiz details { border:1px solid #e6dfc9; border-left:4px solid #d4a548; border-radius:8px; padding:0; margin:12px 0; background:#fbf8ef; overflow:hidden; }
+      .quiz details[open] { background:#fff; border-left-color:#0a3a5f; }
+      .quiz summary { cursor:pointer; padding:14px 18px 14px 44px; position:relative; font-weight:600; color:#0a3a5f; list-style:none; user-select:none; }
+      .quiz summary::-webkit-details-marker { display:none; }
+      .quiz summary::before { content:"+"; position:absolute; left:16px; top:50%; transform:translateY(-50%); width:22px; height:22px; line-height:20px; text-align:center; border-radius:50%; background:#d4a548; color:#fff; font-weight:700; font-size:1.05rem; }
+      .quiz details[open] summary::before { content:"−"; background:#0a3a5f; }
+      .quiz summary:hover { background:#f5f1e8; }
+      .quiz details[open] summary:hover { background:#f5f1e8; }
+      .quiz summary .q-num { color:#8a6d1f; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:2px; }
+      .quiz details[open] summary .q-num { color:#0a3a5f; }
+      .quiz .answer { padding:4px 22px 20px 44px; border-top:1px dashed #d9cfb7; margin-top:2px; }
+      .quiz .answer p { margin:12px 0; }
+      .quiz .answer .key { color:#123f2b; font-weight:600; }
+      .quiz .answer a { color:#0a3a5f; }
     </style>
     <script type="application/ld+json">
 {
@@ -170,7 +187,7 @@
 
       <div class="post__body">
 
-        <p><strong>Short answer.</strong> Five topics separate the students who thrive in AP Calculus from the students who spend the year fighting the prerequisites: <strong>algebra fluency, trigonometry, functions and logarithms, limits and the derivative, and the differentiation rules plus a light programming primer</strong>. Each one has specific sub-skills that need to be automatic &mdash; not just familiar &mdash; before the calculus content begins. Below is one deep question per topic, with the main points explained, worked examples, and how the SOMATH calculus course teaches it. If you want to know which of the five your child is strongest and weakest in, our <a href="/evaluation">free 60-minute evaluation</a> gives a written answer within 48 hours.</p>
+        <p><strong>Short answer.</strong> Five topics separate the students who thrive in AP Calculus from the students who spend the year fighting the prerequisites: <strong>algebra fluency, trigonometry, functions and logarithms, limits and the derivative, and the differentiation rules plus a light programming primer</strong>. Each one has specific sub-skills that need to be automatic &mdash; not just familiar &mdash; before the calculus content begins. Below is one deep question per topic, with the main points explained, worked examples, and how the SOMATH calculus course teaches it. Prefer to test yourself first? Jump to the <a href="#quick-check">5-question quick check</a> &mdash; one question per topic, with hidden answers. If you want to know which of the five your child is strongest and weakest in, our <a href="/evaluation">free 60-minute evaluation</a> gives a written answer within 48 hours.</p>
 
         <div class="toc">
           <h3>The five prerequisites</h3>
@@ -181,6 +198,59 @@
             <li><a href="#limits">Limits and the derivative</a> &mdash; one-sided limits, continuity, derivative as a limit, power rule</li>
             <li><a href="#rules">Differentiation rules + programming primer</a> &mdash; product, quotient, chain rules, plus Python basics</li>
           </ol>
+        </div>
+
+        <!-- ============================== QUICK CHECK QUIZ ============================== -->
+        <div class="quiz" id="quick-check">
+          <h3>Quick check: 5 questions, one per topic</h3>
+          <p class="quiz__intro">Try each question first &mdash; then tap to reveal the answer. Scroll below for the full explanation of every topic.</p>
+
+          <details>
+            <summary><span class="q-num">Question 1 &middot; Algebra Fluency</span>Factor completely: x&sup3; &minus; 3x&sup2; &minus; 10x. What are the zeros?</summary>
+            <div class="answer">
+              <p><span class="key">Answer:</span> x&sup3; &minus; 3x&sup2; &minus; 10x = x(x&sup2; &minus; 3x &minus; 10) = <strong>x(x &minus; 5)(x + 2)</strong>. Zeros: x = 0, x = 5, x = &minus;2.</p>
+              <p><span class="key">Why it matters:</span> The single most-tested algebra skill in AP Calculus is factoring a cubic to find its roots. If this took you more than 30 seconds, algebra will be the bottleneck of every calculus problem &mdash; not the calculus. <a href="#algebra">Read the full algebra breakdown &rarr;</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Question 2 &middot; Trigonometry</span>Without a calculator: what is sin(7&pi;/6)?</summary>
+            <div class="answer">
+              <p><span class="key">Answer:</span> 7&pi;/6 is in the third quadrant (just past &pi;), where sine is negative. The reference angle is &pi;/6, so sin(&pi;/6) = 1/2. Therefore <strong>sin(7&pi;/6) = &minus;1/2</strong>.</p>
+              <p><span class="key">Why it matters:</span> Calculus is written in radians, and derivatives, integrals, and related-rates problems constantly demand exact values at multiples of &pi;/6 and &pi;/4. If you had to draw the unit circle to answer this, trig will slow you down all year. <a href="#trig">Read the full trig breakdown &rarr;</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Question 3 &middot; Functions, Exponentials, Logarithms</span>If f(x) = x&sup2; and g(x) = x + 3, what is (f &compfn; g)(x)? And what is the domain of h(x) = ln(x &minus; 2)?</summary>
+            <div class="answer">
+              <p><span class="key">Composition:</span> (f &compfn; g)(x) = f(g(x)) = f(x + 3) = <strong>(x + 3)&sup2;</strong>.</p>
+              <p><span class="key">Domain of ln(x &minus; 2):</span> ln is defined only for positive arguments, so we need x &minus; 2 &gt; 0, i.e. <strong>x &gt; 2</strong>.</p>
+              <p><span class="key">Why it matters:</span> The chain rule &mdash; used in almost every calculus problem after week six &mdash; is exactly the derivative of a composition. Ln also appears in every exponential-decay, growth, and integration problem. <a href="#functions">Read the full functions and logs breakdown &rarr;</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Question 4 &middot; Limits and the Derivative</span>Use the definition f&prime;(x) = lim<sub>h&rarr;0</sub> [f(x + h) &minus; f(x)] / h to find the derivative of f(x) = x&sup2;.</summary>
+            <div class="answer">
+              <p><span class="key">Answer:</span> [f(x + h) &minus; f(x)] / h = [(x + h)&sup2; &minus; x&sup2;] / h = [x&sup2; + 2xh + h&sup2; &minus; x&sup2;] / h = [2xh + h&sup2;] / h = 2x + h.</p>
+              <p>Take the limit as h &rarr; 0: <strong>f&prime;(x) = 2x</strong>. (Which matches the power rule, as expected.)</p>
+              <p><span class="key">Why it matters:</span> The AP Calculus exam always includes at least one problem asking you to compute a derivative from the limit definition &mdash; not from the power rule. Students who only memorize shortcuts lose these points every year. <a href="#limits">Read the full limits and derivative breakdown &rarr;</a></p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Question 5 &middot; Differentiation Rules + Programming</span>Differentiate y = (2x + 1)&#8309; using the chain rule. Then: in Python, how would you write a loop that adds up f(x) at x = 1, 2, 3, ..., 100?</summary>
+            <div class="answer">
+              <p><span class="key">Chain rule:</span> Outer: u&#8309;, derivative 5u&#8308;. Inner: u = 2x + 1, derivative 2. So <strong>dy/dx = 5(2x + 1)&#8308; &middot; 2 = 10(2x + 1)&#8308;</strong>.</p>
+              <p><span class="key">Python loop:</span></p>
+              <pre style="background:#0a3a5f; color:#f5f1e8; padding:12px 16px; border-radius:6px; font-size:0.92rem; overflow-x:auto; margin:8px 0;">total = 0
+for x in range(1, 101):
+    total = total + f(x)
+print(total)</pre>
+              <p><span class="key">Why it matters:</span> The chain rule is the most-used derivative rule in all of calculus. And the Python loop above is exactly how a Riemann sum &mdash; the foundation of the integral &mdash; is computed on a computer. Modern applied calculus is done in code. <a href="#rules">Read the full differentiation rules + programming breakdown &rarr;</a></p>
+            </div>
+          </details>
         </div>
 
         <!-- ============================== TOPIC 1 ============================== -->
