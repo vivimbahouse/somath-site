@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Calculus Prep: 33 Linear Equations &amp; Inequalities Problems, Solved (High School Calculus Warm-Up) | SOMATH</title>
+    <meta name="description" content="Every one of the 33 problems from Chapter 1 (Linear Equations and Inequalities) of The Humongous Book of Calculus Problems — the classic pre-calculus warm-up. Read the question, click for the answer, see the full solution. Written by SOMATH (School of Math), 226 W 79th St, Upper West Side, New York." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/calculus-linear-equations-inequalities-33-problems-walkthrough" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Calculus Prep: 33 Linear Equations &amp; Inequalities Problems, Solved | SOMATH" />
+    <meta property="og:description" content="Every one of the 33 pre-calculus problems from Chapter 1 (Linear Equations and Inequalities) of The Humongous Book of Calculus Problems — read the question, click to reveal the answer, see the worked solution. From SOMATH on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/calculus-linear-equations-inequalities-33-problems-walkthrough" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="article:published_time" content="2026-08-07" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Calculus Prep: 33 Linear Equations &amp; Inequalities Problems, Solved | SOMATH" />
+    <meta name="twitter:description" content="Every one of the 33 pre-calculus problems from Chapter 1 of The Humongous Book of Calculus Problems — with click-to-reveal answers and full worked solutions." />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h3 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .download-box { background:#f5f1e8; border:1px solid #e6dfc9; border-left:5px solid #d4a548; border-radius:10px; padding:22px 26px; margin:26px 0; }
+      .download-box h3 { color:#0a3a5f; margin:0 0 8px; font-size:1.15rem; }
+      .download-box p { margin:6px 0; color:#4a4a4a; }
+      .download-box a.btn { display:inline-block; background:#0a3a5f; color:#fff; text-decoration:none; padding:12px 22px; border-radius:6px; margin-top:10px; font-weight:600; }
+      .download-box a.btn:hover { background:#123f2b; }
+      .section-header { color:#0a3a5f; border-bottom:2px solid #d4a548; padding-bottom:8px; margin:38px 0 18px; }
+      .section-lede { color:#4a4a4a; font-style:italic; margin:0 0 20px; font-size:1.02rem; }
+      .quiz { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:20px 24px; margin:22px 0; box-shadow:0 2px 10px rgba(31,61,46,0.04); }
+      .quiz > h3 { color:#0a3a5f; margin:0 0 6px; font-size:1.2rem; }
+      .quiz > p.quiz__intro { color:#4a4a4a; margin:0 0 14px; font-size:0.96rem; }
+      .quiz details { border:1px solid #e6dfc9; border-left:4px solid #d4a548; border-radius:8px; padding:0; margin:10px 0; background:#fbf8ef; overflow:hidden; }
+      .quiz details[open] { background:#fff; border-left-color:#0a3a5f; }
+      .quiz summary { cursor:pointer; padding:14px 18px 14px 44px; position:relative; font-weight:600; color:#0a3a5f; list-style:none; user-select:none; }
+      .quiz summary::-webkit-details-marker { display:none; }
+      .quiz summary::before { content:"+"; position:absolute; left:16px; top:50%; transform:translateY(-50%); width:22px; height:22px; line-height:20px; text-align:center; border-radius:50%; background:#d4a548; color:#fff; font-weight:700; font-size:1.05rem; }
+      .quiz details[open] summary::before { content:"−"; background:#0a3a5f; }
+      .quiz summary:hover { background:#f5f1e8; }
+      .quiz details[open] summary:hover { background:#f5f1e8; }
+      .quiz summary .q-num { color:#8a6d1f; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:2px; }
+      .quiz details[open] summary .q-num { color:#0a3a5f; }
+      .quiz summary .q-text { display:block; font-size:1.02rem; line-height:1.5; }
+      .quiz .answer { padding:4px 22px 20px 44px; border-top:1px dashed #d9cfb7; margin-top:2px; }
+      .quiz .answer p { margin:10px 0; }
+      .quiz .answer .key { color:#123f2b; font-weight:600; }
+      .quiz .answer pre.work { background:#f7f5ef; border-left:3px solid #d4a548; padding:12px 16px; border-radius:6px; overflow-x:auto; font-family:'Courier New', monospace; font-size:0.93rem; line-height:1.55; margin:10px 0; white-space:pre-wrap; }
+      .quiz .answer .fig-note { color:#8a6d1f; font-style:italic; font-size:0.92rem; margin:8px 0; }
+      .theory-box { background:#f5f1e8; border-left:4px solid #d4a548; padding:16px 20px; margin:16px 0; border-radius:6px; }
+      .theory-box strong { color:#0a3a5f; }
+      .faq details { border-bottom:1px solid #e6e6e6; padding:14px 0; }
+      .faq summary { font-weight:600; color:#0a3a5f; cursor:pointer; font-size:1.04rem; }
+      .faq summary:hover { color:#123f2b; }
+      .faq details[open] p { margin-top:10px; color:#4a4a4a; }
+      .related { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 26px; margin:30px 0; }
+      .related h3 { color:#0a3a5f; margin:0 0 12px; }
+      .related ul { margin:0; padding-left:20px; }
+      .related li { margin:6px 0; }
+      .related a { color:#0a3a5f; text-decoration:none; font-weight:500; }
+      .related a:hover { text-decoration:underline; color:#123f2b; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Calculus Prep: 33 Linear Equations & Inequalities Problems, Solved",
+  "description": "Every one of the 33 problems from Chapter 1 (Linear Equations and Inequalities) of The Humongous Book of Calculus Problems — read the question, click for the answer, see the full worked solution. High-school calculus warm-up. Written by SOMATH (School of Math), 226 W 79th Street, Upper West Side.",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/calculus-linear-equations-inequalities-33-problems-walkthrough"
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is a chapter of linear equations and inequalities in a calculus book?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because every calculus problem contains an algebra problem inside it. Slopes are the geometric meaning of the derivative. Solving for a variable is the last step of almost every optimization and related-rates problem. Interval notation is how domains, ranges, and continuity are written. Absolute value shows up in convergence and epsilon-delta arguments. And systems of equations appear in every intersection, tangent, and equilibrium problem. Chapter 1 is short on purpose: it's the algebra a calculus student is expected to already own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is The Humongous Book of Calculus Problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a well-known calculus problem book by W. Michael Kelley — 1000+ worked calculus problems with hand-written margin notes explaining every step. Chapter 1 (Linear Equations and Inequalities) is the pre-calculus warm-up chapter, covering 33 problems on lines, slopes, interval notation, absolute value, and systems. It's a favorite of AP Calculus AB, AP Calculus BC, and Calculus 1 students who want a quick algebra tune-up before starting derivatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I do these problems before or after starting calculus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Before, if you're not certain you can solve every one without a calculator in under three minutes. The algebra in these 33 problems is the same algebra that shows up buried inside limits, derivatives, and integrals — but once you're in the calculus chapter, you don't want to be slowed down by 'wait, how do I write this in slope-intercept form?' or 'how do I solve an absolute value inequality?' Chapter 1 is the tune-up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get help if I'm stuck on any of these problems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At SOMATH on the Upper West Side we run in-person calculus prep and full AP Calculus AB, BC, and Calculus 1 tutoring at 226 W 79th Street, 1st Floor. Book a free 60-minute evaluation at (646) 668-6151 or schoolofmath.us/evaluation — we start by diagnosing exactly which of these 33 topics is the weak link, then build the shortest path to fluency."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these problems representative of what an AP Calculus student sees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The problems themselves are pre-calculus by design (Chapter 1 is the algebra chapter). But the SKILLS tested are the exact algebra skills that show up embedded inside AP Calculus AB and BC free response questions: slope from two points, point-slope and slope-intercept form, parallel and perpendicular lines, interval notation, absolute value, and systems of equations. If any of the 33 problems takes you more than a minute or two, it's a signal to tune that skill up before moving on."
+      }
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <a href="/" class="brand">
+          <img src="/assets/logo.png" alt="School of Math" class="brand-logo" />
+        </a>
+        <nav class="main-nav">
+          <a href="/">Home</a>
+          <a href="/courses">Courses</a>
+          <a href="/blog">Journal</a>
+          <a href="/about">About</a>
+          <a href="/evaluation" class="nav-cta">Free Evaluation</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container article">
+      <article>
+        <p class="eyebrow">Calculus Prep · Linear Equations &amp; Inequalities · Grades 10–12</p>
+        <h1>Calculus Prep: 33 Linear Equations &amp; Inequalities Problems, Solved</h1>
+        <p class="lede">Every one of the 33 problems from Chapter 1 of <em>The Humongous Book of Calculus Problems</em> — the pre-calculus warm-up chapter that every AP Calculus AB, AP Calculus BC, and Calculus 1 student should be able to blow through in under 45 minutes. Read the problem, click the <strong>+</strong> to reveal the answer, and check your reasoning against the full worked solution. Written by the SOMATH team at 226 W 79th Street on the Upper West Side.</p>
+
+        <div class="download-box">
+          <h3>Grab the original PDF (Chapter 1, 12 pages)</h3>
+          <p>The full chapter with all 33 problems, the author's worked solutions, and the classic hand-written margin notes.</p>
+          <p><a class="btn" href="/assets/pdfs/humongous-calculus-chapter-1-linear-equations.pdf" download>Download the Chapter 1 PDF →</a></p>
+          <p style="font-size:0.9rem;color:#8a6d1f;margin-top:12px;">Source: <em>The Humongous Book of Calculus Problems</em> by W. Michael Kelley, Chapter One — Linear Equations and Inequalities (pages 2–13). Shared for study use by SOMATH.</p>
+        </div>
+
+        <div class="toc">
+          <h3>What's in this walkthrough</h3>
+          <ol>
+            <li><a href="#linear-geometry">Linear Geometry (Problems 1.1 – 1.10)</a> — slope, forms of a line, parallelograms, midpoints, distances</li>
+            <li><a href="#linear-inequalities">Linear Inequalities &amp; Interval Notation (Problems 1.11 – 1.20)</a> — interval notation, graphing on a number line and coordinate plane</li>
+            <li><a href="#absolute-value">Absolute Value Equations &amp; Inequalities (Problems 1.21 – 1.27)</a> — solve two things for the price of one</li>
+            <li><a href="#systems">Systems of Equations &amp; Inequalities (Problems 1.28 – 1.33)</a> — substitution, elimination, indeterminate systems, three-variable systems</li>
+            <li><a href="#why">Why this chapter matters for calculus</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <p><strong>How to use this page:</strong> Each problem is exactly as it appears in the book. Click the gold <strong>+</strong> to reveal the answer and the full worked solution. If a problem takes you more than about two minutes without the reveal, that's the skill to drill before starting the calculus chapters. If you want a real diagnostic, come in for a <a href="/evaluation">free 60-minute evaluation</a> at 226 W 79th St or call <strong>(646) 668-6151</strong>.</p>
+        </div>
+
+        <h2 id="linear-geometry" class="section-header">Linear Geometry (Problems 1.1 – 1.10)</h2>
+        <p class="section-lede">Creating, graphing, and measuring lines and line segments.</p>
+
+        <div class="theory-box">
+          <p><strong>Fast-refresh reminders.</strong> Slope-intercept form: <em>y = mx + b</em> (m is slope, b is y-intercept). Standard form: <em>Ax + By = C</em> with slope <em>−A/B</em>. Slope between two points: <em>m = (y₂ − y₁)/(x₂ − x₁)</em>. Point-slope: <em>y − y₁ = m(x − x₁)</em>. Distance: <em>√[(x₂ − x₁)² + (y₂ − y₁)²]</em>. Midpoint: <em>((x₁+x₂)/2, (y₁+y₂)/2)</em>. Parallel lines: equal slopes. Perpendicular lines: slopes are negative reciprocals.</p>
+        </div>
+
+        <div class="quiz">
+          <h3>Click a problem to reveal its solution</h3>
+          <p class="quiz__intro">All 33 problems from Chapter 1 in order, with full worked steps from the book.</p>
+
+          <details>
+            <summary><span class="q-num">Problem 1.1</span><span class="q-text">Solve the equation: 3x − (x − 7) = 4x − 5.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: x = 6.</p>
+              <p>Distribute the −1 through the parentheses and combine like terms.</p>
+              <pre class="work">3x − x + 7 = 4x − 5
+2x + 7 = 4x − 5</pre>
+              <p>Subtract 4x and 7 from both sides to separate the variable and constant terms.</p>
+              <pre class="work">2x + 7 = 4x − 5
+−4x − 7   −4x − 7
+─────────────────
+−2x = −12</pre>
+              <p>Divide both sides by −2: <strong>x = 6</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.2</span><span class="q-text">Calculate the slope, m, of the line 4x − 3y = 9.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: m = 4/3.</p>
+              <p>Solve for y to rewrite it in slope-intercept form (y = mx + b).</p>
+              <pre class="work">4x − 3y = 9
+    −3y = −4x + 9
+      y = (4/3)x − 3</pre>
+              <p>The slope of the line is the coefficient of x: <strong>m = 4/3</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.3</span><span class="q-text">Prove that the slope of a line in standard form, Ax + By = C, is −A/B.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: m = −A/B.</p>
+              <p>Write the equation in slope-intercept form by solving for y.</p>
+              <pre class="work">Ax + By = C
+     By = −Ax + C
+      y = −(A/B) x + C/B</pre>
+              <p>The coefficient of x is the slope of the line: <strong>m = −A/B</strong>. This is the "slope shortcut" used throughout the chapter.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.4</span><span class="q-text">Rewrite the linear equation 3x − 4(x − (2/3)y) = (4/5)x − (7y + 3) in standard form.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: 27x − 145y = 45.</p>
+              <p>Distribute the constants and combine like terms.</p>
+              <pre class="work">3x − 4x + (8/3)y = (4/5)x − 7y − 3
+      −x + (8/3)y = (4/5)x − 7y − 3</pre>
+              <p>Multiply through by 15 (the least common denominator) to clear fractions.</p>
+              <pre class="work">−15x + 40y = 12x − 105y − 45</pre>
+              <p>Separate variables and constants.</p>
+              <pre class="work">−27x + 145y = −45</pre>
+              <p>Multiply the entire equation by −1 so the x-coefficient is positive (required by standard form): <strong>27x − 145y = 45</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.5</span><span class="q-text">Write the equation of the line passing through the points (−3,−8) and (−6,2) in slope-intercept form.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: y = −(10/3)x − 18.</p>
+              <p>Calculate the slope using m = (y₂ − y₁)/(x₂ − x₁).</p>
+              <pre class="work">m = (2 − (−8)) / (−6 − (−3))
+  = 10 / −3
+  = −10/3</pre>
+              <p>Substitute the slope into y = mx + b and use one of the coordinate pairs to solve for b.</p>
+              <pre class="work">−8 = −(10/3)(−3) + b
+−8 = 10 + b
+ b = −18</pre>
+              <p>Final equation: <strong>y = −(10/3)x − 18</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.6</span><span class="q-text">Calculate the x- and y-intercepts of 3x − 4y = −6 and use them to graph the line.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: x-intercept (−2, 0); y-intercept (0, 3/2).</p>
+              <p>For the y-intercept, substitute x = 0 and solve for y.</p>
+              <pre class="work">3(0) − 4y = −6
+       −4y = −6
+         y = 3/2</pre>
+              <p>For the x-intercept, substitute y = 0 and solve for x.</p>
+              <pre class="work">3x − 4(0) = −6
+       3x = −6
+        x = −2</pre>
+              <p>The graph of 3x − 4y = −6 crosses the x-axis at <strong>(−2, 0)</strong> and the y-axis at <strong>(0, 3/2)</strong>.</p>
+              <p class="fig-note">See Figure 1-1 in the original PDF for the graph.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.7</span><span class="q-text">Assume that line p contains the point (−3, 1) and is parallel to x − 4y = 1. Write the equation of p in slope-intercept form.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: y = (1/4)x + 7/4.</p>
+              <p>Calculate the slope of x − 4y = 1 using the shortcut m = −A/B from Problem 1.3.</p>
+              <pre class="work">m = −A/B = −1/(−4) = 1/4</pre>
+              <p>Parallel lines share the same slope, so line p also has slope 1/4. Plug that slope and the point (−3, 1) into point-slope form.</p>
+              <pre class="work">y − y₁ = m(x − x₁)
+y − 1 = (1/4)(x − (−3))
+y − 1 = (1/4)x + 3/4
+    y = (1/4)x + 7/4</pre>
+              <p>Final answer: <strong>y = (1/4)x + 7/4</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.8</span><span class="q-text">According to a basic Euclidean geometry theorem, the diagonals of a parallelogram bisect each other. Demonstrate this theorem for parallelogram ABCD with A = (2,1), B = (7,1), C = (11,4), D = (6,4).</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Both midpoints equal (13/2, 5/2), confirming the theorem.</p>
+              <p>Calculate the midpoints of the two diagonals, AC and BD.</p>
+              <pre class="work">Midpoint of AC = ((2 + 11)/2, (1 + 4)/2) = (13/2, 5/2)
+Midpoint of BD = ((7 + 6)/2, (1 + 4)/2) = (13/2, 5/2)</pre>
+              <p>The midpoints are equal, so the diagonals bisect each other. <strong>Theorem verified.</strong></p>
+              <p class="fig-note">See Figure 1-2 in the original PDF for parallelogram ABCD.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.9</span><span class="q-text">Prove that ABCD is a rhombus by verifying that its sides are congruent.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: AB = BC = CD = AD = 5, so all four sides are congruent. ABCD is a rhombus.</p>
+              <p>Apply the distance formula four times, one for each side.</p>
+              <pre class="work">AB = √[(7−2)² + (1−1)²] = √25 = 5
+BC = √[(11−7)² + (4−1)²] = √(16 + 9) = √25 = 5
+CD = √[(6−11)² + (4−4)²] = √25 = 5
+AD = √[(6−2)² + (4−1)²] = √(16 + 9) = √25 = 5</pre>
+              <p>All four sides equal 5, so <strong>ABCD is a rhombus</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.10</span><span class="q-text">Prove that ABCD is a rhombus by verifying that its diagonals are perpendicular to one another.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Slope of AC = 1/3 and slope of BD = −3. These are negative reciprocals, so the diagonals are perpendicular.</p>
+              <p>Compute the slopes of the two diagonals.</p>
+              <pre class="work">Slope of AC = (4 − 1)/(11 − 2) = 3/9 = 1/3
+Slope of BD = (4 − 1)/(6 − 7) = 3/(−1) = −3</pre>
+              <p>(1/3) · (−3) = −1, so the slopes are negative reciprocals. <strong>The diagonals are perpendicular</strong>, which is a defining property of a rhombus (parallelogram with perpendicular diagonals).</p>
+            </div>
+          </details>
+        </div>
+
+        <h2 id="linear-inequalities" class="section-header">Linear Inequalities &amp; Interval Notation (Problems 1.11 – 1.20)</h2>
+        <p class="section-lede">Goodbye equal sign, hello parentheses and brackets.</p>
+
+        <div class="theory-box">
+          <p><strong>Interval notation quick reference.</strong> A <em>bracket</em> [ or ] means the endpoint is <em>included</em>; a <em>parenthesis</em> ( or ) means it is <em>excluded</em>. Always use parentheses next to ∞ or −∞. When you multiply or divide an inequality by a negative number, <strong>flip the inequality sign</strong>. On a number line, a closed dot = included endpoint, open dot = excluded endpoint.</p>
+        </div>
+
+        <div class="quiz">
+          <h3>Click a problem to reveal its solution</h3>
+          <p class="quiz__intro">Interval notation and graphing linear inequalities.</p>
+
+          <details>
+            <summary><span class="q-num">Problem 1.11</span><span class="q-text">Write the expression x ≥ −4 using interval notation.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: [−4, ∞).</p>
+              <p>The lower bound is −4 and it is included (≥), so use a bracket. The upper bound is infinity, which always takes a parenthesis. Result: <strong>[−4, ∞)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.12</span><span class="q-text">Write the expression x &lt; 10 using interval notation.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (−∞, 10).</p>
+              <p>The upper bound is 10 and it is excluded (strict &lt;), so use a parenthesis. The lower bound is −∞, which always takes a parenthesis. Result: <strong>(−∞, 10)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.13</span><span class="q-text">Write the expression 6 ≥ x &gt; −1 using interval notation.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (−1, 6].</p>
+              <p>The lower bound must always precede the upper bound. Here x is between −1 (excluded, strict &gt;) and 6 (included, ≥). Result: <strong>(−1, 6]</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.14</span><span class="q-text">Write the solution to the inequality using interval notation: 4x − 2 &gt; x + 13.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (5, ∞).</p>
+              <p>Separate variables and constants, then divide by the coefficient of x.</p>
+              <pre class="work">4x − x > 13 + 2
+     3x > 15
+      x > 5</pre>
+              <p>Interval notation: <strong>(5, ∞)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.15</span><span class="q-text">Write the solution to the inequality using interval notation: 3(2x − 1) − 5 ≤ 10x + 19.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: [−27/4, ∞).</p>
+              <p>Distribute, combine like terms, and isolate x on the left.</p>
+              <pre class="work">6x − 3 − 5 ≤ 10x + 19
+     6x − 8 ≤ 10x + 19
+        −4x ≤ 27</pre>
+              <p>Divide by −4. Dividing by a negative reverses the inequality sign.</p>
+              <pre class="work">x ≥ −27/4</pre>
+              <p>Interval notation: <strong>[−27/4, ∞)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.16</span><span class="q-text">Graph the inequality: −2 ≤ x &lt; 3.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Interval [−2, 3). Closed dot at −2, open dot at 3, shaded between.</p>
+              <p>Rewrite the inequality as an interval: <strong>[−2, 3)</strong>. On a number line, place a closed dot at x = −2 (included), an open dot at x = 3 (excluded), and shade the segment between them.</p>
+              <p class="fig-note">See Figure 1-3 in the original PDF for the number-line graph.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.17</span><span class="q-text">Graph the inequality: x &gt; −1.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Interval (−1, ∞). Open dot at −1, shaded to the right with an arrow.</p>
+              <p>All values greater than −1 satisfy the inequality. Place an open dot at −1 (excluded) and shade the number line to the right toward infinity.</p>
+              <p class="fig-note">See Figure 1-4 in the original PDF.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.18</span><span class="q-text">Solve and graph the inequality: −7 ≤ 1 − 2x &lt; 11.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (−5, 4], graphed on the number line with an open dot at −5 and a closed dot at 4.</p>
+              <p>Subtract 1 from each of the three expressions to isolate −2x in the middle.</p>
+              <pre class="work">−7 − 1 ≤ −2x < 11 − 1
+   −8 ≤ −2x < 10</pre>
+              <p>Divide each expression by −2, reversing both inequality signs.</p>
+              <pre class="work">4 ≥ x > −5</pre>
+              <p>Interval notation: <strong>(−5, 4]</strong>.</p>
+              <p class="fig-note">See Figure 1-5 in the original PDF for the number-line graph.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.19</span><span class="q-text">Graph the inequality: y &lt; −(1/3)x + 2.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Dotted (dashed) line with y-intercept (0, 2) and slope −1/3; shade the region below the line.</p>
+              <p>The inequality is already solved for y. Graph the boundary line y = −(1/3)x + 2. Because the inequality uses a strict &lt; (not ≤), draw it <em>dotted</em> to show the line itself is excluded.</p>
+              <p>Starting at the y-intercept (0, 2), go down 1 and right 3 to plot another point. Connect the dots with a dashed line.</p>
+              <p>Since y &lt; ..., shade the region <strong>below</strong> the line.</p>
+              <p class="fig-note">See Figure 1-6 in the original PDF for the graph.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.20</span><span class="q-text">Solve the equation: 2x − y ≤ 4.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Solid line y = 2x − 4; shade the region above the line (y ≥ 2x − 4).</p>
+              <p>Solve the inequality for y.</p>
+              <pre class="work">   2x − y ≤ 4
+       −y ≤ −2x + 4
+        y ≥ 2x − 4       (flip sign when dividing by −1)</pre>
+              <p>Graph the boundary line y = 2x − 4 as a <em>solid</em> line (because ≥ includes the boundary). Shade the region <strong>above</strong> the line (all (x, y) with y ≥ 2x − 4).</p>
+              <p class="fig-note">See Figure 1-7 in the original PDF for the shaded region.</p>
+            </div>
+          </details>
+        </div>
+
+        <h2 id="absolute-value" class="section-header">Absolute Value Equations &amp; Inequalities (Problems 1.21 – 1.27)</h2>
+        <p class="section-lede">Solve two things for the price of one.</p>
+
+        <div class="theory-box">
+          <p><strong>Absolute value rule.</strong> If |A| = b (with b ≥ 0), then A = b or A = −b — two equations for the price of one. If |A| &lt; b, rewrite as the compound inequality −b &lt; A &lt; b. If |A| &gt; b, rewrite as A &gt; b <em>or</em> A &lt; −b. Always <strong>isolate the absolute value first</strong> before splitting. Absolute values are never negative, so |A| = negative has no solution.</p>
+        </div>
+
+        <div class="quiz">
+          <h3>Click a problem to reveal its solution</h3>
+          <p class="quiz__intro">Absolute value equations and inequalities.</p>
+
+          <details>
+            <summary><span class="q-num">Problem 1.21</span><span class="q-text">Solve the equation: |3x − 7| = 8.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: x = 5 or x = −1/3.</p>
+              <p>The expression inside the absolute value must equal either 8 or −8.</p>
+              <pre class="work">3x − 7 = 8              3x − 7 = −8
+   3x = 15                  3x = −1
+    x = 5                    x = −1/3</pre>
+              <p>Solutions: <strong>x = 5 or x = −1/3</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.22</span><span class="q-text">Solve the equation: 1 − 2|x + 6| = −4.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: x = −7/2 or x = −17/2.</p>
+              <p>Isolate the absolute value expression.</p>
+              <pre class="work">1 − 2|x + 6| = −4
+   −2|x + 6| = −5
+    |x + 6| = 5/2</pre>
+              <p>Split into two equations.</p>
+              <pre class="work">x + 6 = 5/2                x + 6 = −5/2
+    x = 5/2 − 12/2            x = −5/2 − 12/2
+    x = −7/2                  x = −17/2</pre>
+              <p>Solutions: <strong>x = −7/2 or x = −17/2</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.23</span><span class="q-text">Solve the equation: 9 − 3|x + 2| = 15.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: No solution.</p>
+              <p>Isolate the absolute value expression.</p>
+              <pre class="work">9 − 3|x + 2| = 15
+   −3|x + 2| = 6
+    |x + 2| = −2</pre>
+              <p>Absolute values always produce a non-negative number, so |x + 2| = −2 is impossible. <strong>No solution.</strong></p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.24</span><span class="q-text">Solve the inequality: |x − 5| &lt; 1.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (4, 6).</p>
+              <p>An absolute value inequality of form |x + a| &lt; b is equivalent to the compound inequality −b &lt; x + a &lt; b.</p>
+              <pre class="work">−1 < x − 5 < 1</pre>
+              <p>Add 5 to each expression.</p>
+              <pre class="work">−1 + 5 < x < 1 + 5
+      4 < x < 6</pre>
+              <p>Interval notation: <strong>(4, 6)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.25</span><span class="q-text">Graph the solution to the inequality: 2|x − 7| − 5 ≤ −1.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: [5, 9]. Closed dots at both endpoints, shaded between.</p>
+              <p>Isolate the absolute value expression.</p>
+              <pre class="work">2|x − 7| − 5 ≤ −1
+     2|x − 7| ≤ 4
+      |x − 7| ≤ 2</pre>
+              <p>Create a compound inequality (as in Problem 1.24) and solve.</p>
+              <pre class="work">−2 ≤ x − 7 ≤ 2
+−2 + 7 ≤ x ≤ 2 + 7
+    5 ≤ x ≤ 9</pre>
+              <p>Interval notation: <strong>[5, 9]</strong>.</p>
+              <p class="fig-note">See Figure 1-8 in the original PDF for the number-line graph (closed interval, both endpoints included).</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.26</span><span class="q-text">Solve the inequality: |2x + 5| ≥ 3.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (−∞, −4] ∪ [−1, ∞).</p>
+              <p>An inequality of form |ax + b| ≥ c splits into two inequalities: ax + b ≥ c OR ax + b ≤ −c.</p>
+              <pre class="work">2x + 5 ≥ 3               2x + 5 ≤ −3
+    2x ≥ −2                   2x ≤ −8
+     x ≥ −1                    x ≤ −4</pre>
+              <p>The union of the two solutions: <strong>(−∞, −4] ∪ [−1, ∞)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.27</span><span class="q-text">Solve the inequality and graph the solution: 2 − 3|x + 1| &lt; −5.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (−∞, −10/3) ∪ (4/3, ∞).</p>
+              <p>Isolate the absolute value expression.</p>
+              <pre class="work">2 − 3|x + 1| < −5
+   −3|x + 1| < −7
+    |x + 1| > 7/3     (dividing by −3 flips the inequality)</pre>
+              <p>Split into two inequalities (as in Problem 1.26).</p>
+              <pre class="work">x + 1 > 7/3               x + 1 < −7/3
+    x > 4/3                    x < −10/3</pre>
+              <p>Interval notation: <strong>(−∞, −10/3) ∪ (4/3, ∞)</strong>.</p>
+              <p class="fig-note">See Figure 1-9 in the original PDF. On the number line, open dots at −10/3 and 4/3, shaded outward.</p>
+            </div>
+          </details>
+        </div>
+
+        <h2 id="systems" class="section-header">Systems of Equations &amp; Inequalities (Problems 1.28 – 1.33)</h2>
+        <p class="section-lede">Find a common solution shared by multiple equations or inequalities.</p>
+
+        <div class="theory-box">
+          <p><strong>Systems methods.</strong> <em>Substitution</em>: solve one equation for a variable and plug it into the other. <em>Elimination</em>: scale the equations so one variable cancels when they're added. A <em>dependent</em> (indeterminate) system reduces to a true statement like 8 = 8 and has infinitely many solutions (the two lines are the same). An <em>inconsistent</em> system reduces to a false statement (e.g. 0 = 5) and has no solution (parallel lines). For three-variable systems: eliminate one variable to reduce to a 2×2 system, then back-substitute.</p>
+        </div>
+
+        <div class="quiz">
+          <h3>Click a problem to reveal its solution</h3>
+          <p class="quiz__intro">Systems of equations and inequalities.</p>
+
+          <details>
+            <summary><span class="q-num">Problem 1.28</span><span class="q-text">Solve the system using substitution: { −8x + 2y = −5 ; 2x − y = 1 }.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (3/4, 1/2).</p>
+              <p>Solve the second equation for y: y = 2x − 1. Substitute into the first equation.</p>
+              <pre class="work">−8x + 2(2x − 1) = −5
+   −8x + 4x − 2 = −5
+             −4x = −3
+               x = 3/4</pre>
+              <p>Substitute x = 3/4 back into y = 2x − 1.</p>
+              <pre class="work">y = 2(3/4) − 1 = 6/4 − 1 = 1/2</pre>
+              <p>Solution: <strong>(3/4, 1/2)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.29</span><span class="q-text">Solve the system using elimination: { 2x − 5y = −11 ; 3x + 13y = 4 }.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (−3, 1).</p>
+              <p>To eliminate x, multiply the first equation by −3 and the second by 2, then add.</p>
+              <pre class="work">−6x + 15y =  33
+ 6x + 26y =   8
+─────────────────
+      41y =  41
+        y =   1</pre>
+              <p>Substitute y = 1 into either original equation.</p>
+              <pre class="work">2x − 5(1) = −11
+       2x = −6
+        x = −3</pre>
+              <p>Solution: <strong>(−3, 1)</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.30</span><span class="q-text">Solve the system: { x − 6y = 24 ; (1/3)x − 2y = 8 }.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: Infinitely many solutions (dependent system).</p>
+              <p>Solve the first equation for x: x = 6y + 24. Substitute into the second equation.</p>
+              <pre class="work">(1/3)(6y + 24) − 2y = 8
+        2y + 8 − 2y = 8
+                  8 = 8</pre>
+              <p>The variables vanish and the result is a true statement (8 = 8). This means the two equations describe the same line (the first equation divided by 3 gives the second), so the system is <strong>dependent</strong> and has <strong>infinitely many solutions</strong>.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.31</span><span class="q-text">Determine the real number value of k in the system below that makes the system indeterminate (no solution): { x − 6y = −13 ; 4x − ky = 1 }.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: k = 24.</p>
+              <p>An "indeterminate" (inconsistent) system has no solution when its two lines are parallel — they must share the same slope but have different intercepts. Compute the slopes with the shortcut from Problem 1.3.</p>
+              <pre class="work">Slope₁ = −(1)/(−6) = 1/6
+Slope₂ = −(4)/(−k) = 4/k</pre>
+              <p>Set the slopes equal and solve for k.</p>
+              <pre class="work">4/k = 1/6
+4·6 = k·1
+ 24 = k</pre>
+              <p>So <strong>k = 24</strong>. (You can check that at k = 24, the two lines are parallel but not identical, so the system has no solution.)</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.32</span><span class="q-text">Graph the solution to the system of inequalities: { y &lt; 3 ; x ≥ −4 ; y &gt; (2/3)x − 1 }.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: The two-dimensional region shaded by all three inequalities simultaneously (below y = 3, right of x = −4, above y = (2/3)x − 1).</p>
+              <p>Graph each inequality on the same coordinate plane. Use a dashed line for strict inequalities (&lt;, &gt;) and a solid line for ≥ or ≤. The <strong>solution to the system</strong> is the region where all three shaded regions overlap.</p>
+              <p>y = 3 is a horizontal line 3 units above the x-axis; shade below it. x = −4 is a vertical line four units left of the y-axis; shade to its right (including the line). y = (2/3)x − 1 is a line with y-intercept (0, −1) and slope 2/3; shade above it (dashed).</p>
+              <p class="fig-note">See Figure 1-10 in the original PDF for the overlapping shaded region.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="q-num">Problem 1.33</span><span class="q-text">Solve the system: { 3x + 2y − z = 0 ; 5x − y − 8z = 9 ; x + 4y − 3z = −22 }.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (x, y, z) = (4, −5, 2).</p>
+              <p>Solve the first equation for z: z = 3x + 2y. Substitute this expression for z into the other two equations to reduce the system to two equations in x and y.</p>
+              <pre class="work">5x − y − 8(3x + 2y) = 9
+5x − y − 24x − 16y = 9
+       −19x − 17y = 9
+
+x + 4y − 3(3x + 2y) = −22
+x + 4y − 9x − 6y = −22
+       −8x − 2y = −22
+         −4x − y = −11</pre>
+              <p>Now solve the reduced 2×2 system by substitution. Solve the second reduced equation for y: y = −4x + 11. Plug into the first reduced equation.</p>
+              <pre class="work">−19x − 17(−4x + 11) = 9
+   −19x + 68x − 187 = 9
+              49x = 196
+                x = 4</pre>
+              <p>Back-substitute x = 4 into y = −4x + 11.</p>
+              <pre class="work">y = −4(4) + 11 = −5</pre>
+              <p>Back-substitute into z = 3x + 2y.</p>
+              <pre class="work">z = 3(4) + 2(−5) = 12 − 10 = 2</pre>
+              <p>Solution: <strong>(x, y, z) = (4, −5, 2)</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <h2 id="why" class="section-header">Why this chapter matters for calculus</h2>
+
+        <p>Chapter 1 is short on purpose. Every problem in this walkthrough is algebra a calculus student is already expected to own — and every problem is a skill that will show up buried inside a limit, derivative, or integral. A short map of where each block reappears:</p>
+
+        <ul>
+          <li><strong>Slopes and forms of a line (1.1 – 1.10)</strong> — The derivative is a slope. Tangent-line problems, linear approximations, and the definition of the derivative all live here. Point-slope form is the tangent-line equation you'll write on every AP Calculus free response.</li>
+          <li><strong>Distance, midpoint, perpendicular (1.8 – 1.10)</strong> — Perpendicular slopes come back as normal lines to curves. Distance shows up in arc length and in Newton's method.</li>
+          <li><strong>Interval notation (1.11 – 1.20)</strong> — This is the language calculus uses to describe domains, ranges, intervals of continuity, intervals of increase/decrease, and intervals of concavity. Every calculus textbook uses interval notation from Chapter 2 onward.</li>
+          <li><strong>Absolute value (1.21 – 1.27)</strong> — The formal definition of a limit uses |x − a| &lt; δ and |f(x) − L| &lt; ε. If absolute value inequalities aren't automatic, epsilon-delta is unnecessarily hard.</li>
+          <li><strong>Systems of equations (1.28 – 1.33)</strong> — Every intersection problem, every "find the tangent line to two curves at their intersection" problem, and every 3-variable optimization problem starts with a system.</li>
+        </ul>
+
+        <p>The point of a good calculus prep is not "did you get the answer" — it's "did you get the answer in 30 seconds without a calculator." If any of the 33 problems above took you more than about two minutes, that's the topic to tune up before opening the derivative chapter.</p>
+
+        <div class="callout">
+          <p><strong>Want a real diagnostic?</strong> Every SOMATH student who signs up for AP Calculus AB, BC, or Calculus 1 tutoring starts with a <a href="/evaluation">free 60-minute evaluation</a> at our Upper West Side classroom (226 W 79th St, 1st Floor). We diagnose which of the 33 topics is the weak link, then build the shortest path to fluency. Call <strong>(646) 668-6151</strong> to book.</p>
+        </div>
+
+        <h2 id="faq" class="section-header">FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Why is a chapter of linear equations and inequalities in a calculus book?</summary>
+            <p>Because every calculus problem contains an algebra problem inside it. Slopes are the geometric meaning of the derivative. Solving for a variable is the last step of almost every optimization and related-rates problem. Interval notation is how domains, ranges, and continuity are written. Absolute value shows up in convergence and epsilon-delta arguments. Systems of equations appear in every intersection, tangent, and equilibrium problem. Chapter 1 is short on purpose: it is the algebra a calculus student is expected to already own.</p>
+          </details>
+          <details>
+            <summary>What is <em>The Humongous Book of Calculus Problems</em>?</summary>
+            <p>It is a well-known calculus problem book by W. Michael Kelley — over 1000 worked calculus problems with hand-written margin notes explaining every step. Chapter 1 (Linear Equations and Inequalities) is the pre-calculus warm-up chapter — 33 problems on lines, slopes, interval notation, absolute value, and systems. It's a favorite of AP Calculus AB, AP Calculus BC, and Calculus 1 students who want a quick algebra tune-up before starting derivatives.</p>
+          </details>
+          <details>
+            <summary>Should I do these problems before or after starting calculus?</summary>
+            <p>Before, if you're not certain you can solve every one without a calculator in under three minutes. The algebra in these 33 problems is the same algebra that shows up buried inside limits, derivatives, and integrals — but once you're inside a derivative chapter, you don't want to be slowed down by "wait, how do I write this in slope-intercept form?" or "how do I solve an absolute value inequality?" Chapter 1 is the tune-up.</p>
+          </details>
+          <details>
+            <summary>How does this connect to SOMATH's calculus prep courses?</summary>
+            <p>SOMATH runs in-person calculus prep and full AP Calculus AB, BC, and Calculus 1 tutoring on the Upper West Side. Every calculus student starts by demonstrating fluency on exactly the skills in this chapter — slopes, forms of a line, interval notation, absolute value, and systems — before we start derivatives. If a student is not fluent, we spend a session or two here first. The classroom is at 226 W 79th Street, 1st Floor. Book a free 60-minute evaluation at (646) 668-6151.</p>
+          </details>
+          <details>
+            <summary>Are these problems representative of what an AP Calculus student sees on the exam?</summary>
+            <p>The problems themselves are pre-calculus by design (Chapter 1 is the algebra chapter). But the SKILLS tested are the exact algebra skills that show up embedded inside AP Calculus AB and BC free response questions: slope from two points, point-slope and slope-intercept form, parallel and perpendicular lines, interval notation, absolute value, and systems of equations. If any of the 33 problems takes you more than a minute or two, it's a signal to tune that skill up before moving on.</p>
+          </details>
+          <details>
+            <summary>Where can I get the full book?</summary>
+            <p><em>The Humongous Book of Calculus Problems</em> is widely available at bookstores and online retailers. The chapter shared here is the first chapter of the book. If you like the format — question in a gray box, hand-written margin notes, and a full worked solution — the full book has 1000+ more calculus problems in the same style.</p>
+          </details>
+        </div>
+
+        <div class="related">
+          <h3>Related SOMATH reads</h3>
+          <ul>
+            <li><a href="/posts/ap-calculus-prerequisites-5-questions">The 5 Topics You Must Know Before Calculus (SOMATH Course Guide, 2026)</a></li>
+            <li><a href="/posts/sat-math-vs-school-math">Why Your Straight-A Student Is Bombing SAT Math (And the Fix)</a></li>
+            <li><a href="/posts/digital-sat-tutoring-nyc-2026-structure-dates-scores">SAT Tutoring NYC: Digital SAT Structure &amp; 2026 Dates</a></li>
+            <li><a href="/courses">SOMATH Courses — from 1st Grade Math through AP Calculus BC</a></li>
+            <li><a href="/evaluation">Book a Free 60-Minute Evaluation</a></li>
+          </ul>
+        </div>
+
+        <p class="post-footer">
+          <strong>School of Math (SOMATH)</strong> · 226 W 79th St, 1st Floor · New York, NY 10024 · <a href="tel:+16466686151">(646) 668-6151</a> · <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a>
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 School of Math. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
