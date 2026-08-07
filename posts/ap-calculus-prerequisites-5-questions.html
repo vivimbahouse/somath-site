@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>The 5 Topics You Must Know Before Calculus (SOMATH Course Guide, 2026) | SOMATH</title>
+    <meta name="description" content="The five prerequisite topics every student needs before AP Calculus AB or Calculus 1: algebra fluency, trigonometry, functions and logarithms, limits and the derivative, and the differentiation rules plus a light programming primer. Written by SOMATH (School of Math), 226 W 79th Street, Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/ap-calculus-prerequisites-5-questions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="The 5 Topics You Must Know Before Calculus (SOMATH Course Guide, 2026) | SOMATH" />
+    <meta property="og:description" content="The five prerequisite topics every student needs before AP Calculus AB or Calculus 1 — with the main sub-skills, worked examples, and why each one matters. From SOMATH (School of Math), 226 W 79th Street, Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/ap-calculus-prerequisites-5-questions" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/ap-calculus-prerequisites-5-questions/cover.jpg" />
+    <meta property="article:published_time" content="2026-08-07" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The 5 Topics You Must Know Before Calculus (SOMATH Course Guide, 2026) | SOMATH" />
+    <meta name="twitter:description" content="The five prerequisite topics every student needs before AP Calculus AB or Calculus 1 — sub-skills, examples, and why each matters." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/ap-calculus-prerequisites-5-questions/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h3 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .topic-card { background:#fff; border:1px solid #e6e6e6; border-left:5px solid #d4a548; border-radius:10px; padding:26px 30px; margin:26px 0; box-shadow:0 2px 10px rgba(31,61,46,0.04); }
+      .topic-card .eyebrow { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .topic-card h2 { color:#0a3a5f; margin:0 0 6px; font-size:1.55rem; }
+      .topic-card .question { color:#123f2b; font-style:italic; font-size:1.05rem; margin:0 0 18px; padding-bottom:14px; border-bottom:1px dashed #d9cfb7; }
+      .topic-card h3 { color:#0a3a5f; margin:18px 0 6px; font-size:1.08rem; }
+      .topic-card ul { margin:8px 0 12px 22px; }
+      .topic-card li { margin:4px 0; }
+      .example { background:#f5f1e8; border-radius:6px; padding:14px 18px; margin:14px 0; font-family:'Cormorant Garamond', Georgia, serif; }
+      .example strong { color:#0a3a5f; }
+      .prereq-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; }
+      .prereq-table th, .prereq-table td { padding:10px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .prereq-table th { background:#0a3a5f; color:#fff; }
+      .prereq-table tr:nth-child(even) { background:#fafafa; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "The 5 Topics You Must Know Before Calculus: A SOMATH Course Guide (2026)",
+  "description": "The five prerequisite topics every student needs before AP Calculus AB or Calculus 1 — algebra fluency, trigonometry, functions and logarithms, limits and the derivative, and the differentiation rules plus a light programming primer. Written by SOMATH (School of Math), 226 W 79th Street, Upper West Side.",
+  "image": "https://www.schoolofmath.us/assets/blog/ap-calculus-prerequisites-5-questions/cover.jpg",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/ap-calculus-prerequisites-5-questions"
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fluent do I need to be in algebra before starting calculus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fluent enough that algebra never becomes the bottleneck of a calculus problem. Concretely: you can factor cubics and quadratics quickly, simplify rational expressions and cancel common factors correctly, apply exponent and radical laws without hesitation, and solve for a variable inside a nested or messy expression. Most students who struggle in AP Calculus AB or Calculus 1 do not fail on limits or derivatives — they fail on the algebra step buried inside the calculus problem. At SOMATH we require automaticity on factoring, exponents, radicals, and solving-for-a-variable before starting the calculus content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much trigonometry do I need for calculus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enough that the unit circle is a mental picture, not a lookup table. You need to know the exact values of sine and cosine at every multiple of pi/6 and pi/4 without a chart; work fluently in radians (not degrees); apply the sine and cosine rules to solve triangles; resolve a vector into horizontal and vertical components; and use inverse trig (arcsin, arccos, arctan) with correct range awareness. In calculus, trig shows up in derivatives, integrals, related-rates problems, physics applications, and every parametric or polar problem. Weak trig is the second most common reason strong algebra students still struggle in AP Calculus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to know about functions, exponentials, and logarithms before calculus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Five specific skills. (1) Domain and range — identifying where a function is defined and what values it can take. (2) Composition — reading f(g(x)) correctly and computing it. (3) Transformations — recognizing shifts, stretches, and reflections from an equation. (4) The exponential function e^x and the natural logarithm ln(x), including the log laws (product, quotient, power) and change of base. (5) Sketching a function from its equation without a calculator — spotting intercepts, asymptotes, and end behavior. Calculus is the study of how functions change, so a student who cannot read a function fluently cannot do calculus fluently. The chain rule alone (which every calculus student learns by week six) is impossible without confident function composition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are limits and the derivative, and why do calculus courses spend so much time on them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A limit is what a function is heading toward as the input gets close to a value — even if the function is not defined at that exact value. Limits are the mathematical machinery that lets us define instantaneous rate of change, which is the derivative. The derivative of a function f(x) is itself defined as a limit: f'(x) = lim as h → 0 of [f(x+h) - f(x)] / h. Every calculus course spends 3-5 weeks on limits because they are conceptually the hardest idea in the course, and because they are the foundation for the derivative, the integral, and every application. The specific skills you need before moving on: what a limit is, one-sided limits (limit from the left vs. from the right), continuity, the derivative as a limit, the power rule (d/dx of x^n = n·x^(n-1)), and basic differentiation of polynomials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the differentiation rules and why is programming included in the calculus course?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The differentiation rules are the three algebraic shortcuts that make calculus practical: the product rule (derivative of f·g), the quotient rule (derivative of f/g), and the chain rule (derivative of a composition f(g(x))). Together with the power rule, these four rules let you differentiate essentially any function built from polynomials, trig, exponentials, and logarithms. The programming primer at SOMATH (3-4 hours on variables, loops, conditionals, and functions) is included because modern calculus applications — in physics, economics, biology, and machine learning — are computed on a computer, not by hand. A student who can code even a simple numerical derivative or Riemann sum gains a much deeper understanding of what calculus is actually computing. It is not a replacement for the algebra and the theorems; it is a way to make them concrete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my child take AP Calculus AB without one of these five topics locked in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if they are willing to backfill it while the class moves forward — which almost always means falling behind. AP Calculus AB covers all five of these prerequisites as assumed knowledge in the first week or two. A student who is shaky on any one of them will spend the rest of the course fighting the prerequisite instead of learning calculus. The right move is to diagnose which of the five is weak before the school year starts and fix it with focused summer work. A free 60-minute SOMATH evaluation identifies which topics are strong and which need reinforcement, with a written report delivered within 48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the SOMATH calculus course sequence these five topics?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the exact order shown: algebra fluency first, then trigonometry, then functions and logarithms, then limits and the derivative, then the differentiation rules plus a programming primer. Each topic assumes the previous ones are automatic. The first two weeks are a rapid algebra and trig review; weeks three and four cover functions, exponentials, and logarithms; weeks five through seven cover limits and the definition of the derivative; weeks eight and nine cover product, quotient, and chain rules; and weeks nine and ten include a 3-4 hour programming primer using Python. Students who complete the sequence enter AP Calculus AB or Calculus 1 with every prerequisite verified through weekly written diagnostics."
+      }
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Course Guide &middot; AP Calculus Prep &middot; Upper West Side</p>
+      <h1 class="post__title">The 5 Topics You Must Know Before Calculus: A SOMATH Course Guide (2026)</h1>
+      <p class="post__dek">The five prerequisite topics every student needs before AP Calculus AB, AP Calculus BC, or a first college Calculus 1 course &mdash; with the main sub-skills inside each, worked examples, and honest guidance on why each one matters. Written by SOMATH (School of Math), 226 W 79th Street, Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-08-07">2026-08-07</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p><strong>Short answer.</strong> Five topics separate the students who thrive in AP Calculus from the students who spend the year fighting the prerequisites: <strong>algebra fluency, trigonometry, functions and logarithms, limits and the derivative, and the differentiation rules plus a light programming primer</strong>. Each one has specific sub-skills that need to be automatic &mdash; not just familiar &mdash; before the calculus content begins. Below is one deep question per topic, with the main points explained, worked examples, and how the SOMATH calculus course teaches it. If you want to know which of the five your child is strongest and weakest in, our <a href="/evaluation">free 60-minute evaluation</a> gives a written answer within 48 hours.</p>
+
+        <div class="toc">
+          <h3>The five prerequisites</h3>
+          <ol>
+            <li><a href="#algebra">Algebra fluency</a> &mdash; factoring, rational expressions, quadratics, exponents, radicals</li>
+            <li><a href="#trig">Trigonometry</a> &mdash; unit circle, radians, sine and cosine rules, vectors, inverse trig</li>
+            <li><a href="#functions">Functions, exponentials, logarithms</a> &mdash; domain, range, composition, e^x, ln, log laws</li>
+            <li><a href="#limits">Limits and the derivative</a> &mdash; one-sided limits, continuity, derivative as a limit, power rule</li>
+            <li><a href="#rules">Differentiation rules + programming primer</a> &mdash; product, quotient, chain rules, plus Python basics</li>
+          </ol>
+        </div>
+
+        <!-- ============================== TOPIC 1 ============================== -->
+        <div class="topic-card" id="algebra">
+          <p class="eyebrow">Topic 1 of 5</p>
+          <h2>Algebra Fluency</h2>
+          <p class="question">Question 1: How fluent do I really need to be in algebra before starting calculus?</p>
+
+          <p><strong>The honest answer.</strong> Fluent enough that algebra never becomes the bottleneck of a calculus problem. Most students who struggle in AP Calculus AB or Calculus 1 do not fail on limits or derivatives &mdash; they fail on the algebra step buried inside a calculus problem. A student who takes 40 seconds to factor a quadratic will run out of time on the AP exam, even if they understand every calculus concept perfectly.</p>
+
+          <h3>The sub-skills that must be automatic</h3>
+          <ul>
+            <li><strong>Factoring.</strong> Quadratics (including with leading coefficient not equal to 1), difference of squares, sum and difference of cubes, and grouping. You should factor x&sup2; + 5x + 6 or 2x&sup2; + 7x + 3 in under five seconds.</li>
+            <li><strong>Rational expressions.</strong> Adding, subtracting, multiplying, dividing, and simplifying fractions with variables in the numerator and denominator. Recognizing when a common factor cancels.</li>
+            <li><strong>Quadratics.</strong> Solving by factoring, by the quadratic formula, and by completing the square &mdash; all three, comfortably. Recognizing the discriminant.</li>
+            <li><strong>Exponents.</strong> Product, quotient, and power rules. Negative exponents. Fractional exponents (x^(1/2) is the same as the square root of x).</li>
+            <li><strong>Radicals.</strong> Simplifying, rationalizing denominators, combining like radicals, and moving between radical and fractional-exponent form.</li>
+            <li><strong>Solving for a variable inside a mess.</strong> Isolating a variable that is trapped inside a fraction, a radical, or a nested parenthesis. This is the most-tested algebraic skill in AP Calculus, and it is what the image on our syllabus meant by "solving for a variable inside a mess."</li>
+          </ul>
+
+          <div class="example">
+            <strong>Why it matters in calculus:</strong> To find the derivative of f(x) = (x&sup2; &minus; 4) / (x &minus; 2), you must first factor the numerator as (x + 2)(x &minus; 2), cancel with the denominator, and recognize that f(x) simplifies to x + 2 for all x &ne; 2. The calculus is trivial; the algebra is the whole problem.
+          </div>
+
+          <p><strong>How SOMATH teaches it.</strong> The first two weeks of our calculus course are a rapid algebra review with weekly written diagnostics on each sub-skill. Students who do not clear the diagnostic on factoring, rational expressions, and solving-for-a-variable are held back until they do &mdash; because everything that follows depends on it. See our <a href="/posts/precalc-diagnostic-factor-each-expression-stewart-problem-4">precalc factoring diagnostic</a> and <a href="/posts/precalc-diagnostic-exponent-rules-evaluate-without-calculator">exponent-rules diagnostic</a> for the exact level of automaticity we require.</p>
+        </div>
+
+        <!-- ============================== TOPIC 2 ============================== -->
+        <div class="topic-card" id="trig">
+          <p class="eyebrow">Topic 2 of 5</p>
+          <h2>Trigonometry</h2>
+          <p class="question">Question 2: How much trigonometry do I really need for calculus?</p>
+
+          <p><strong>The honest answer.</strong> Enough that the unit circle is a mental picture, not a lookup table. In calculus, trig shows up in derivatives (d/dx of sin x = cos x, d/dx of cos x = &minus;sin x), integrals, related-rates problems, physics applications, and every parametric or polar problem. Weak trig is the second most common reason strong-algebra students still struggle in AP Calculus.</p>
+
+          <h3>The sub-skills that must be automatic</h3>
+          <ul>
+            <li><strong>The unit circle.</strong> You know sin, cos, and tan at every multiple of &pi;/6 and &pi;/4 without a chart. You can picture the unit circle and read off exact values.</li>
+            <li><strong>Exact values.</strong> sin(&pi;/6) = 1/2, cos(&pi;/6) = &radic;3/2, sin(&pi;/4) = cos(&pi;/4) = &radic;2/2, sin(&pi;/3) = &radic;3/2, cos(&pi;/3) = 1/2. Not memorized once and forgotten; automatic.</li>
+            <li><strong>Radians.</strong> You work in radians by default, not degrees. Calculus is written in radians because the derivative of sin x equals cos x only when x is measured in radians.</li>
+            <li><strong>Sine and cosine rules.</strong> The Law of Sines (a/sin A = b/sin B = c/sin C) and the Law of Cosines (c&sup2; = a&sup2; + b&sup2; &minus; 2ab&middot;cos C) for solving non-right triangles.</li>
+            <li><strong>Resolving a vector into components.</strong> Given a vector of magnitude v at angle &theta;, its horizontal component is v&middot;cos &theta; and its vertical component is v&middot;sin &theta;. Essential for physics-applied calculus.</li>
+            <li><strong>Inverse trig.</strong> arcsin, arccos, arctan &mdash; and knowing the range of each (arcsin returns values in [&minus;&pi;/2, &pi;/2], arccos in [0, &pi;], arctan in (&minus;&pi;/2, &pi;/2)).</li>
+          </ul>
+
+          <div class="example">
+            <strong>Why it matters in calculus:</strong> A related-rates problem asks: "A 10-foot ladder slides down a wall. When the bottom is 6 feet from the wall, how fast is the top falling?" The setup uses the Pythagorean theorem; the solution uses implicit differentiation. But the trig comes in for problems involving angles &mdash; e.g., "A camera tracks a rocket rising vertically. How fast is the angle changing?" No trig fluency, no answer.
+          </div>
+
+          <p><strong>How SOMATH teaches it.</strong> After the two-week algebra review, we spend the next week on trig with a specific focus on radians and the unit circle. See our <a href="/posts/mnemonic-for-trigonometry-with-all-students-take-calculus">All Students Take Calculus mnemonic</a> and <a href="/posts/analytic-geometry-diagnostic-stewart-calculus">Stewart analytic geometry diagnostic</a> for the level we require.</p>
+        </div>
+
+        <!-- ============================== TOPIC 3 ============================== -->
+        <div class="topic-card" id="functions">
+          <p class="eyebrow">Topic 3 of 5</p>
+          <h2>Functions, Exponentials, Logarithms</h2>
+          <p class="question">Question 3: What do I need to know about functions, exponentials, and logarithms before calculus?</p>
+
+          <p><strong>The honest answer.</strong> Calculus is the study of how functions change. A student who cannot read a function fluently cannot do calculus fluently. The chain rule &mdash; which every calculus student learns by week six &mdash; is impossible without confident function composition.</p>
+
+          <h3>The sub-skills that must be automatic</h3>
+          <ul>
+            <li><strong>Domain and range.</strong> Given f(x) = &radic;(x &minus; 3), the domain is x &ge; 3 and the range is y &ge; 0. Given g(x) = 1/(x &minus; 2), the domain excludes x = 2 and the range excludes y = 0. Automatic.</li>
+            <li><strong>Composition.</strong> If f(x) = x&sup2; and g(x) = x + 1, then (f &compfn; g)(x) = f(g(x)) = (x + 1)&sup2;. Composition is what the chain rule differentiates.</li>
+            <li><strong>Transformations.</strong> Given the graph of f(x), you can sketch f(x &minus; 3) + 2 (shift right 3, up 2), &minus;f(x) (reflect over x-axis), and 2f(x) (vertical stretch by 2).</li>
+            <li><strong>The exponential function e<sup>x</sup>.</strong> Its graph, its unique property (it is its own derivative), and its inverse relationship with ln(x).</li>
+            <li><strong>The natural logarithm ln(x).</strong> Domain (x &gt; 0), range (all real numbers), and the fact that ln(e) = 1 and ln(1) = 0.</li>
+            <li><strong>The log laws.</strong> ln(ab) = ln a + ln b, ln(a/b) = ln a &minus; ln b, ln(a<sup>n</sup>) = n&middot;ln a, and change of base (log&#8342; x = ln x / ln b).</li>
+            <li><strong>Graph sketching.</strong> Given a function equation, you can sketch it without a calculator &mdash; identifying intercepts, asymptotes, and end behavior.</li>
+          </ul>
+
+          <div class="example">
+            <strong>Why it matters in calculus:</strong> The chain rule says: d/dx of f(g(x)) = f'(g(x)) &middot; g'(x). To differentiate y = sin(x&sup2;), you must recognize this as a composition &mdash; the outer function is sin, the inner function is x&sup2; &mdash; and apply the rule: dy/dx = cos(x&sup2;) &middot; 2x. A student who cannot see the composition cannot do the derivative.
+          </div>
+
+          <p><strong>How SOMATH teaches it.</strong> Weeks three and four of the calculus course are dedicated to functions, exponentials, and logarithms &mdash; with an emphasis on composition and graph sketching, since these are the two places students most often fall behind. See our <a href="/posts/functions-and-their-domains-in-ap-pre-calculus">functions and their domains</a> and <a href="/posts/logarithms-in-ap-pre-calculus-a-comprehensive-guide">logarithms comprehensive guide</a> for the level we require.</p>
+        </div>
+
+        <!-- ============================== TOPIC 4 ============================== -->
+        <div class="topic-card" id="limits">
+          <p class="eyebrow">Topic 4 of 5</p>
+          <h2>Limits and the Derivative</h2>
+          <p class="question">Question 4: What are limits and the derivative, and why do calculus courses spend so much time on them?</p>
+
+          <p><strong>The honest answer.</strong> A limit is what a function is heading toward as the input gets close to a value &mdash; even if the function is not defined at that exact value. Limits are the mathematical machinery that lets us define instantaneous rate of change, which is the derivative. Every calculus course spends 3&ndash;5 weeks on limits because they are conceptually the hardest idea in the course.</p>
+
+          <h3>The sub-skills that must be automatic</h3>
+          <ul>
+            <li><strong>What a limit is.</strong> Informally: the value the function approaches. Formally: lim<sub>x&rarr;a</sub> f(x) = L means f(x) can be made arbitrarily close to L by taking x close enough to a. The formal definition uses &epsilon; and &delta;, but the informal picture is what you use in practice.</li>
+            <li><strong>One-sided limits.</strong> The limit from the left (lim<sub>x&rarr;a<sup>&minus;</sup></sub>) and from the right (lim<sub>x&rarr;a<sup>+</sup></sub>). The two-sided limit exists only when the one-sided limits agree.</li>
+            <li><strong>Continuity.</strong> A function is continuous at x = a when three things are true: f(a) is defined, the limit as x approaches a exists, and the limit equals f(a). Continuous functions are the well-behaved ones you can differentiate.</li>
+            <li><strong>The derivative as a limit.</strong> The formal definition: f'(x) = lim<sub>h&rarr;0</sub> [f(x + h) &minus; f(x)] / h. This is what a derivative <em>is</em> &mdash; the instantaneous rate of change, computed as the limit of the average rate of change over shorter and shorter intervals.</li>
+            <li><strong>The power rule.</strong> d/dx of x<sup>n</sup> = n&middot;x<sup>n&minus;1</sup>. This is the single most-used derivative rule in calculus. It gives you every polynomial derivative instantly.</li>
+            <li><strong>Basic differentiation.</strong> Applying the power rule to polynomials, using the constant rule (d/dx of c = 0) and the sum rule (d/dx of f + g = f' + g').</li>
+          </ul>
+
+          <div class="example">
+            <strong>Worked example:</strong> Find f'(x) for f(x) = 3x<sup>4</sup> &minus; 5x&sup2; + 7x &minus; 2.
+            <br />Apply the power rule to each term: 4&middot;3x<sup>3</sup> = 12x<sup>3</sup>; 2&middot;5x = 10x; 7&middot;1 = 7; the constant &minus;2 has derivative 0.
+            <br /><strong>Answer:</strong> f'(x) = 12x<sup>3</sup> &minus; 10x + 7.
+          </div>
+
+          <p><strong>How SOMATH teaches it.</strong> Weeks five through seven are dedicated entirely to limits and the derivative. We build up slowly: intuitive limits with tables of values, then one-sided limits, then continuity, then the formal definition of the derivative, then the power rule. See our <a href="/posts/mastering-limits-in-ap-pre-calculus-limits-key-strategies-for-exam-success">mastering limits in AP Pre-Calculus</a> guide for the specific strategies we teach.</p>
+        </div>
+
+        <!-- ============================== TOPIC 5 ============================== -->
+        <div class="topic-card" id="rules">
+          <p class="eyebrow">Topic 5 of 5</p>
+          <h2>Differentiation Rules + A Light Programming Primer</h2>
+          <p class="question">Question 5: What are the differentiation rules, and why is programming included in the calculus course?</p>
+
+          <p><strong>The honest answer.</strong> The differentiation rules are the three algebraic shortcuts that make calculus practical. Together with the power rule from Topic 4, they let you differentiate essentially any function you will meet in the course. The programming primer is included because modern calculus applications &mdash; in physics, economics, biology, and machine learning &mdash; are computed on a computer, not by hand.</p>
+
+          <h3>The three rules that must be automatic</h3>
+          <ul>
+            <li><strong>The product rule.</strong> d/dx of f(x)&middot;g(x) = f'(x)&middot;g(x) + f(x)&middot;g'(x). Used whenever a function is a product of two things &mdash; e.g., x&sup2; &middot; sin x.</li>
+            <li><strong>The quotient rule.</strong> d/dx of f(x)/g(x) = [f'(x)&middot;g(x) &minus; f(x)&middot;g'(x)] / [g(x)]&sup2;. Used whenever a function is one thing divided by another &mdash; e.g., (x&sup2; + 1) / (x &minus; 3).</li>
+            <li><strong>The chain rule.</strong> d/dx of f(g(x)) = f'(g(x)) &middot; g'(x). Used whenever a function is a composition &mdash; e.g., sin(x&sup2;) or e<sup>3x</sup> or (2x + 1)<sup>5</sup>. This is the most-used rule in all of calculus.</li>
+          </ul>
+
+          <div class="example">
+            <strong>Worked example (chain rule):</strong> Differentiate y = (2x + 1)<sup>5</sup>.
+            <br />Outer function: u<sup>5</sup>. Its derivative: 5u<sup>4</sup>. Inner function: u = 2x + 1. Its derivative: 2.
+            <br />By the chain rule: dy/dx = 5(2x + 1)<sup>4</sup> &middot; 2 = 10(2x + 1)<sup>4</sup>.
+          </div>
+
+          <h3>The programming primer (3&ndash;4 hours, Python)</h3>
+          <ul>
+            <li><strong>Variables.</strong> Storing numbers and expressions in named boxes. x = 5; y = 2*x + 3.</li>
+            <li><strong>Loops.</strong> Repeating a computation many times &mdash; useful for computing a Riemann sum with 1,000 rectangles.</li>
+            <li><strong>Conditionals.</strong> Making a decision inside a program (if x &gt; 0 then...).</li>
+            <li><strong>Functions.</strong> Defining a mathematical function in code (def f(x): return x**2 + 3) &mdash; the direct programming analog of a mathematical function.</li>
+          </ul>
+
+          <div class="example">
+            <strong>Why programming belongs in a calculus course:</strong> Once a student can code a function in Python, they can compute a numerical derivative in three lines (df ≈ (f(x + h) &minus; f(x)) / h with h = 0.0001) and see the definition of the derivative come alive. They can compute a Riemann sum in a loop and watch it converge to a definite integral as the rectangles get thinner. It is not a replacement for the algebra and the theorems; it is a way to make them concrete &mdash; and it is what every STEM career from physics to machine learning actually uses.
+          </div>
+
+          <p><strong>How SOMATH teaches it.</strong> Weeks eight and nine cover the product, quotient, and chain rules with extensive practice. Weeks nine and ten include a 3&ndash;4 hour programming primer using Python &mdash; enough for students to write a numerical-derivative script and a Riemann-sum script by the end of the course.</p>
+        </div>
+
+        <!-- ============================== SUMMARY TABLE ============================== -->
+        <h2 id="summary">The five topics at a glance</h2>
+        <table class="prereq-table">
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Main points</th>
+              <th>Weeks in SOMATH course</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Algebra fluency</strong></td>
+              <td>Factoring, rational expressions, quadratics, exponents, radicals, solving for a variable inside a mess</td>
+              <td>Weeks 1&ndash;2</td>
+            </tr>
+            <tr>
+              <td><strong>2. Trigonometry</strong></td>
+              <td>Unit circle, exact values, radians, sine and cosine rules, vector components, inverse trig</td>
+              <td>Week 3</td>
+            </tr>
+            <tr>
+              <td><strong>3. Functions, exponentials, logarithms</strong></td>
+              <td>Domain and range, composition, transformations, e<sup>x</sup>, ln, log laws, graph sketching</td>
+              <td>Weeks 3&ndash;4</td>
+            </tr>
+            <tr>
+              <td><strong>4. Limits and the derivative</strong></td>
+              <td>What a limit is, one-sided limits, continuity, derivative as a limit, power rule, basic differentiation</td>
+              <td>Weeks 5&ndash;7</td>
+            </tr>
+            <tr>
+              <td><strong>5. Differentiation rules + programming primer</strong></td>
+              <td>Product, quotient, chain rules; then 3&ndash;4 hours on variables, loops, conditionals, functions in Python</td>
+              <td>Weeks 8&ndash;10</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ============================== FAQ ============================== -->
+        <h2 id="faq">FAQ</h2>
+
+        <h3>How fluent do I need to be in algebra before starting calculus?</h3>
+        <p>Fluent enough that algebra never becomes the bottleneck of a calculus problem. Automatic factoring, rational expressions, exponent laws, radical simplification, and solving for a variable inside a nested expression. Verified through a written diagnostic, not by a report card grade.</p>
+
+        <h3>How much trigonometry do I really need?</h3>
+        <p>Enough that the unit circle is a mental picture, not a lookup table. Exact values at every multiple of &pi;/6 and &pi;/4, fluent work in radians, the sine and cosine rules, vector components, and inverse trig with correct range awareness.</p>
+
+        <h3>What do I need to know about functions and logarithms?</h3>
+        <p>Domain and range, composition (f(g(x))), transformations, e<sup>x</sup> and ln(x), the log laws, and graph sketching without a calculator. Composition especially, because the chain rule &mdash; the most-used rule in calculus &mdash; is impossible without it.</p>
+
+        <h3>Can my child take AP Calculus AB without one of these five topics locked in?</h3>
+        <p>Only if they are willing to backfill it while the class moves forward &mdash; which almost always means falling behind. AP Calculus AB assumes all five as background knowledge in the first two weeks. Diagnose which of the five is weak before the school year starts and fix it with focused summer work. A <a href="/evaluation">free 60-minute SOMATH evaluation</a> identifies which topics are strong and which need reinforcement, with a written report delivered within 48 hours.</p>
+
+        <h3>How does the SOMATH calculus course sequence these five topics?</h3>
+        <p>In the exact order shown: algebra fluency (weeks 1&ndash;2), trigonometry (week 3), functions and logarithms (weeks 3&ndash;4), limits and the derivative (weeks 5&ndash;7), differentiation rules and programming primer (weeks 8&ndash;10). Each topic assumes the previous ones are automatic, verified through weekly written diagnostics.</p>
+
+        <h3>Is this course AP Calculus AB, AP Calculus BC, or Calculus 1?</h3>
+        <p>This is the prerequisite bridge course &mdash; the 10-week program that ensures every one of the five topics above is locked in before a student starts AP Calculus AB, AP Calculus BC, or a first college Calculus 1 course. Students who complete it enter their calculus course with every prerequisite verified.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Diagnose the five in 90 minutes</h2>
+          <p style="margin:0 0 14px;">Not sure which of the five prerequisite topics your child is strongest and weakest in? Every new SOMATH family starts with a free 60-minute evaluation in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The report identifies exact strength and weakness across the five topics above and recommends whether the student is ready for AP Calculus AB now, ready in 4&ndash;8 weeks with focused summer prep, or better served by a full prerequisite course first. Yours to keep whether you enroll or not.</p>
+          <p style="margin:0;"><a href="https://www.schoolofmath.us/evaluation" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">Book your evaluation &rarr;</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/ap-calculus-ab-vs-bc-which-should-my-child-take">AP Calculus AB vs. BC: Which Should My Child Take?</a></li>
+          <li><a href="/posts/mastering-limits-in-ap-pre-calculus-limits-key-strategies-for-exam-success">Mastering Limits in AP Pre-Calculus</a></li>
+          <li><a href="/posts/logarithms-in-ap-pre-calculus-a-comprehensive-guide">Logarithms in AP Pre-Calculus: A Comprehensive Guide</a></li>
+          <li><a href="/posts/functions-and-their-domains-in-ap-pre-calculus">Functions and Their Domains in AP Pre-Calculus</a></li>
+          <li><a href="/posts/mnemonic-for-trigonometry-with-all-students-take-calculus">The "All Students Take Calculus" Trig Mnemonic</a></li>
+          <li><a href="/posts/best-ap-precalculus-tutoring-nyc">Best AP Pre-Calculus Tutoring in NYC</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
