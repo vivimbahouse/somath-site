@@ -377,37 +377,58 @@
 
 <p>On the actual Regents, that kind of question is worth 4 points on the constructed-response section. A student who owns the coordinate rules for the three rigid transformations answers it in under three minutes and moves on. That is the real payoff of math enrichment: not tricks, but confidence.</p>
 
-<h2>Practice question: which transformation changes area?</h2>
+<h2>Practice question: identifying a sequence of rigid transformations</h2>
 
-<p>This is a classic Regents Geometry multiple-choice question that tests exactly one idea: <em>which transformations are rigid and which are not?</em> Rigid transformations preserve area; non-rigid ones do not. Try it before revealing the answer.</p>
+<p>This is a classic Regents Geometry multiple-choice question. You are shown three congruent triangles on a coordinate plane and asked to name the two rigid transformations that connect them, in order. Try it before revealing the answer &mdash; the trick is to check <strong>orientation</strong> and <strong>position</strong> at each step.</p>
 
 <div class="qbox">
   <h3>Question &mdash; Regents Geometry, multiple choice</h3>
-  <p class="prompt">Which transformation would result in the area of a rectangle&rsquo;s image being different from the area of its pre-image?</p>
+  <p class="prompt">Triangles <em>ABC</em>, <em>A&prime;B&prime;C&prime;</em>, and <em>A&Prime;B&Prime;C&Prime;</em> are graphed on the set of axes below.</p>
+  <p><img src="/assets/regents-geometry-q11-triangles.png" alt="Three congruent right triangles on a coordinate plane: triangle ABC in the third quadrant, triangle A'B'C' in the fourth quadrant, and triangle A''B''C'' in the second quadrant." style="max-width:100%; height:auto; border:1px solid #e6e6e6; border-radius:4px; display:block; margin:8px auto;"></p>
+  <p class="prompt">Which sequence of transformations maps &triangle;<em>ABC</em> onto &triangle;<em>A&prime;B&prime;C&prime;</em>, and then maps &triangle;<em>A&prime;B&prime;C&prime;</em> onto &triangle;<em>A&Prime;B&Prime;C&Prime;</em>?</p>
   <ol class="choices" type="1">
-    <li>a reflection over the <em>y</em>-axis</li>
-    <li>a translation 4 units to the right</li>
-    <li>a rotation of 90&deg; counterclockwise about the origin</li>
-    <li>a vertical stretch of scale factor 3 with respect to <em>y</em> = 0</li>
+    <li>a translation followed by a rotation</li>
+    <li>a rotation followed by a translation</li>
+    <li>a line reflection followed by a rotation</li>
+    <li>a translation followed by a line reflection</li>
   </ol>
   <details class="reveal"><summary></summary><div class="reveal-body">
-    <p class="answer">Answer: (4) a vertical stretch of scale factor 3 with respect to <em>y</em> = 0.</p>
-    <p class="explain"><strong>Why.</strong> The question is really asking: <em>&ldquo;Which of these four transformations is <u>not</u> rigid?&rdquo;</em> A rigid transformation preserves all lengths, so it must also preserve area &mdash; only a non-rigid transformation can change the area of the image.</p>
-    <p class="explain">Check each option against the three rigid transformations (translation, reflection, rotation):</p>
+    <p class="answer">Answer: (1) a translation followed by a rotation.</p>
+    <p class="explain"><strong>Strategy.</strong> With any &ldquo;which sequence of transformations&rdquo; question, ask two questions at each step:</p>
+    <ol>
+      <li><strong>Did the orientation change?</strong> A reflection <em>flips</em> orientation (turns a clockwise triangle into a counterclockwise one). Translations and rotations do <em>not</em> flip orientation.</li>
+      <li><strong>Did the shape turn?</strong> If the triangle&rsquo;s tilt is the same, it&rsquo;s a translation. If the tilt changed, a rotation happened.</li>
+    </ol>
+    <p class="explain"><strong>Read the coordinates.</strong> From the graph:</p>
     <ul>
-      <li><strong>(1) Reflection over the <em>y</em>-axis</strong> &mdash; <strong>rigid</strong>. A reflection is one of the three rigid transformations. It flips the rectangle across the <em>y</em>-axis without stretching it. Every side length stays the same, so the area is preserved. <em>Not the answer.</em></li>
-      <li><strong>(2) Translation 4 units to the right</strong> &mdash; <strong>rigid</strong>. A translation is one of the three rigid transformations. It slides the rectangle 4 units to the right without changing its size or shape. Area is preserved. <em>Not the answer.</em></li>
-      <li><strong>(3) Rotation of 90&deg; counterclockwise about the origin</strong> &mdash; <strong>rigid</strong>. A rotation is one of the three rigid transformations. The rectangle turns 90&deg; about the origin but every side length is preserved (the length and the width just swap orientation from horizontal to vertical). Area is preserved. <em>Not the answer.</em></li>
-      <li><strong>(4) Vertical stretch of scale factor 3 with respect to <em>y</em> = 0</strong> &mdash; <strong>NOT rigid</strong>. A vertical stretch multiplies every point&rsquo;s <em>y</em>-coordinate by 3 (mapping <span class="eq">(x, y) &rarr; (x, 3y)</span>). Horizontal side lengths do not change, but every vertical side is 3 times longer. The rectangle&rsquo;s area is multiplied by 3. This is a non-rigid transformation &mdash; area is <em>not</em> preserved. <strong>This is the answer.</strong></li>
+      <li>&triangle;<em>ABC</em>: <em>A</em>(&minus;7, &minus;1), <em>B</em>(&minus;4, &minus;5), <em>C</em>(&minus;7, &minus;5). Right angle at <em>C</em>. Vertical leg <em>CA</em> = 4, horizontal leg <em>CB</em> = 3.</li>
+      <li>&triangle;<em>A&prime;B&prime;C&prime;</em>: <em>A&prime;</em>(2, &minus;1), <em>B&prime;</em>(5, &minus;5), <em>C&prime;</em>(2, &minus;5). Right angle at <em>C&prime;</em>. Same shape as &triangle;<em>ABC</em>.</li>
+      <li>&triangle;<em>A&Prime;B&Prime;C&Prime;</em>: <em>A&Prime;</em>(&minus;2, 2), <em>B&Prime;</em>(&minus;5, 6), <em>C&Prime;</em>(&minus;2, 6). Right angle at <em>C&Prime;</em>.</li>
     </ul>
-    <p class="explain"><strong>Concrete check.</strong> Take a rectangle with vertices (0, 0), (2, 0), (2, 4), (0, 4). Its dimensions are 2 by 4, so area = 8.</p>
+    <p class="explain"><strong>Step 1: &triangle;ABC &rarr; &triangle;A&prime;B&prime;C&prime;.</strong> Compare corresponding vertices:</p>
     <ul>
-      <li>Under choice (4), the image has vertices (0, 0), (2, 0), (2, 12), (0, 12). Dimensions are 2 by 12, so area = 24 &mdash; three times the original. Area changed.</li>
-      <li>Under choice (1), the image has vertices (0, 0), (&minus;2, 0), (&minus;2, 4), (0, 4). Dimensions are still 2 by 4, area still = 8. Area preserved.</li>
-      <li>Under choice (2), the image has vertices (4, 0), (6, 0), (6, 4), (4, 4). Dimensions still 2 by 4, area still = 8. Area preserved.</li>
-      <li>Under choice (3), applying <span class="eq">(x, y) &rarr; (&minus;y, x)</span> gives vertices (0, 0), (0, 2), (&minus;4, 2), (&minus;4, 0). Dimensions are now 4 by 2, area still = 8. Area preserved.</li>
+      <li><em>A</em>(&minus;7, &minus;1) &rarr; <em>A&prime;</em>(2, &minus;1)</li>
+      <li><em>B</em>(&minus;4, &minus;5) &rarr; <em>B&prime;</em>(5, &minus;5)</li>
+      <li><em>C</em>(&minus;7, &minus;5) &rarr; <em>C&prime;</em>(2, &minus;5)</li>
     </ul>
-    <p class="explain"><strong>The takeaway.</strong> Vertical and horizontal <em>stretches</em> are a form of dilation &mdash; they scale one direction (or both) by a non-unit factor. They belong to the same family as dilations: non-rigid transformations that preserve shape properties like parallel lines but not size. Any time a Regents question mentions a &ldquo;stretch,&rdquo; a &ldquo;scale factor,&rdquo; or a &ldquo;dilation,&rdquo; area will change (unless the scale factor is 1 or &minus;1). Any time it mentions a translation, reflection, or rotation, area is preserved.</p>
+    <p class="explain">Every point moved <strong>+9 in <em>x</em></strong> and <strong>0 in <em>y</em></strong>. The rule is <span class="eq">(x, y) &rarr; (x + 9, y)</span>. That is a <strong>translation 9 units to the right</strong>. The triangle&rsquo;s tilt did not change, and its orientation did not flip. Step 1 is a <strong>translation</strong>. &#10004;</p>
+    <p class="explain"><strong>Step 2: &triangle;A&prime;B&prime;C&prime; &rarr; &triangle;A&Prime;B&Prime;C&Prime;.</strong> Compare corresponding vertices:</p>
+    <ul>
+      <li><em>A&prime;</em>(2, &minus;1) &rarr; <em>A&Prime;</em>(&minus;2, 2)</li>
+      <li><em>B&prime;</em>(5, &minus;5) &rarr; <em>B&Prime;</em>(&minus;5, 6)</li>
+      <li><em>C&prime;</em>(2, &minus;5) &rarr; <em>C&Prime;</em>(&minus;2, 6)</li>
+    </ul>
+    <p class="explain">Now the triangle has rotated: in &triangle;<em>A&prime;B&prime;C&prime;</em>, the right-angle vertex <em>C&prime;</em> is at the <em>bottom-left</em>; in &triangle;<em>A&Prime;B&Prime;C&Prime;</em>, the right-angle vertex <em>C&Prime;</em> is at the <em>top-right</em>. The triangle has been flipped upside down.</p>
+    <p class="explain">Look for a rotation center. The midpoint of each pair of corresponding points should be the same fixed center. Compute midpoints:</p>
+    <ul>
+      <li>midpoint of <em>A&prime;</em> and <em>A&Prime;</em>: ((2 + (&minus;2))/2, (&minus;1 + 2)/2) = (0, 0.5)</li>
+      <li>midpoint of <em>B&prime;</em> and <em>B&Prime;</em>: ((5 + (&minus;5))/2, (&minus;5 + 6)/2) = (0, 0.5)</li>
+      <li>midpoint of <em>C&prime;</em> and <em>C&Prime;</em>: ((2 + (&minus;2))/2, (&minus;5 + 6)/2) = (0, 0.5)</li>
+    </ul>
+    <p class="explain">All three midpoints are the same point, (0, 0.5). That means every point and its image are the same distance from (0, 0.5) but on opposite sides &mdash; a <strong>180&deg; rotation about the point (0, 0.5)</strong>. Step 2 is a <strong>rotation</strong>. &#10004;</p>
+    <p class="explain"><strong>Check orientation to rule out reflection.</strong> In &triangle;<em>ABC</em>, going <em>A</em> &rarr; <em>B</em> &rarr; <em>C</em> traces the triangle <em>clockwise</em>. In &triangle;<em>A&Prime;B&Prime;C&Prime;</em>, going <em>A&Prime;</em> &rarr; <em>B&Prime;</em> &rarr; <em>C&Prime;</em> also traces <em>clockwise</em>. Orientation was preserved throughout, so no reflection was involved. That eliminates choices (3) and (4).</p>
+    <p class="explain"><strong>The answer.</strong> Step 1 was a translation and Step 2 was a rotation, so the sequence is <strong>a translation followed by a rotation</strong> &mdash; choice (1).</p>
+    <p class="explain"><strong>The takeaway.</strong> Two habits will save you time on every &ldquo;sequence of rigid transformations&rdquo; question: (a) check orientation first &mdash; if orientation flipped, a reflection is in the sequence; if not, only translations and rotations are; (b) if any corresponding pair has the same <em>y</em>-value (or same <em>x</em>-value) and the triangles look identically oriented, that step is almost always a translation. If the triangle has rotated between two images, compute midpoints of corresponding vertices to find the rotation center.</p>
   </div></details>
 </div>
 
