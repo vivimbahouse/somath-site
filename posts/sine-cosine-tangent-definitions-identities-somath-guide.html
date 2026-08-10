@@ -91,6 +91,35 @@
       .worked-ex strong { color:#1f3d2e; }
       .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
 
+      /* Practice-question box */
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .qbox .prompt { margin:6px 0 10px; }
+      .qbox ol.choices { margin:6px 0 12px 22px; padding:0; }
+      .qbox ol.choices li { margin:4px 0; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:6px 0; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; display:inline; position:static; }
+
       .pair-callout { background:#f0ede2; border:1px solid #e6d9b8; border-radius:10px; padding:16px 20px; margin:20px 0; }
       .pair-callout p { margin:0; }
 
@@ -421,6 +450,54 @@
 </ol>
 
 <p>Six trig values from one starting fact, using nothing but the identities and the quadrant sign rule. This is exactly the six-step template Regents and AP Precalculus problems reward.</p>
+</div>
+
+<h2>Practice question: SOH&ndash;CAH&ndash;TOA on a right triangle</h2>
+
+<p>Here is a textbook Regents-style multiple-choice question that tests whether you can pick the right ratio (sin, cos, or tan) for the information you are given. The trap is choosing the wrong ratio &mdash; even one letter off (sine instead of cosine) and the answer becomes one of the distractors below. Work it out before revealing the solution.</p>
+
+<div class="qbox">
+  <h3>Question &mdash; Regents Geometry, multiple choice</h3>
+  <p class="prompt">In triangle <em>RJM</em> below, m&ang;<em>R</em> = 90&deg; and <em>MR</em> = 7.25 inches.</p>
+  <p><img src="/assets/regents-geometry-rjm-trig-q3.svg" alt="Right triangle RJM with the right angle at R, M and R on the horizontal base, J above R. Side MR is labeled 7.25 in." style="max-width:100%; height:auto; border:1px solid #e6e6e6; border-radius:4px; display:block; margin:8px auto;"></p>
+  <p class="prompt">If the measure of angle <em>M</em> is 35&deg;, what is the length of <span style="text-decoration:overline;"><em>MJ</em></span>, to the <em>nearest hundredth of an inch</em>?</p>
+  <ol class="choices" type="1">
+    <li>4.16</li>
+    <li>5.94</li>
+    <li>8.85</li>
+    <li>12.64</li>
+  </ol>
+  <details class="reveal"><summary></summary><div class="reveal-body">
+    <p class="answer">Answer: (3) 8.85 inches.</p>
+    <p class="explain"><strong>Step 1 &mdash; Identify the sides relative to angle M.</strong> Angle <em>M</em> is the reference angle. The right angle is at <em>R</em>, so <em>MJ</em> (the side opposite the right angle) is the hypotenuse. Relative to angle <em>M</em>:</p>
+    <ul>
+      <li><em>MR</em> = 7.25 is the side <strong>next to</strong> angle <em>M</em> and not the hypotenuse &rarr; <strong>adjacent</strong>.</li>
+      <li><em>RJ</em> is the side <strong>across from</strong> angle <em>M</em> &rarr; <strong>opposite</strong>.</li>
+      <li><em>MJ</em> is the side <strong>across from</strong> the right angle &rarr; <strong>hypotenuse</strong>.</li>
+    </ul>
+    <p class="explain"><strong>Step 2 &mdash; Pick the trig ratio that connects what you know to what you want.</strong> You know the adjacent side (7.25) and want the hypotenuse (<em>MJ</em>). The ratio that connects adjacent and hypotenuse is <strong>cosine</strong> (the &ldquo;CAH&rdquo; in SOH&ndash;CAH&ndash;TOA):</p>
+    <p class="explain" style="text-align:center;"><span class="eq">cos(M) = adjacent / hypotenuse = MR / MJ</span></p>
+    <p class="explain"><strong>Step 3 &mdash; Substitute and solve.</strong> Plug in m&ang;<em>M</em> = 35&deg; and <em>MR</em> = 7.25:</p>
+    <p class="explain" style="text-align:center;"><span class="eq">cos(35&deg;) = 7.25 / MJ</span></p>
+    <p class="explain">Solve for <em>MJ</em> by multiplying both sides by <em>MJ</em> and then dividing by cos(35&deg;):</p>
+    <p class="explain" style="text-align:center;"><span class="eq">MJ = 7.25 / cos(35&deg;)</span></p>
+    <p class="explain">On the calculator (in <strong>degree mode</strong>): cos(35&deg;) &asymp; 0.81915. So <em>MJ</em> &asymp; 7.25 / 0.81915 &asymp; 8.8506, which rounds to <strong>8.85 inches</strong>. That is choice (3). &#10004;</p>
+    <p class="explain"><strong>Sanity check.</strong> In a right triangle, the hypotenuse is always the longest side. <em>MJ</em> = 8.85 is longer than <em>MR</em> = 7.25 &mdash; the answer passes the &ldquo;is my hypotenuse the biggest?&rdquo; check. If you had gotten <em>MJ</em> = 5.94 or 4.16 (both shorter than 7.25), you would immediately know you picked the wrong ratio.</p>
+    <p class="explain"><strong>Why the other choices fail &mdash; each is the wrong ratio.</strong></p>
+    <ul>
+      <li><strong>(1) 4.16.</strong> This comes from <span class="eq">7.25 &middot; sin(35&deg;) &asymp; 4.16</span>. It is what you get if you use the wrong ratio <em>and</em> solve for the wrong side &mdash; mistakenly writing sin(35&deg;) = <em>RJ</em>/7.25 as if 7.25 were the hypotenuse (it is not) and then reporting <em>RJ</em> instead of <em>MJ</em>. Note also that 4.16 is <em>shorter</em> than the given side 7.25, so it cannot be the hypotenuse.</li>
+      <li><strong>(2) 5.94.</strong> This comes from mixing up adjacent and opposite: <span class="eq">7.25 &middot; cos(35&deg;) &asymp; 5.94</span>. It is what you get if you write cos(35&deg;) = <em>MJ</em>/7.25 (flipping the ratio upside down) and solve.</li>
+      <li><strong>(4) 12.64.</strong> This comes from using <em>sine</em> instead of cosine: <span class="eq">MJ = 7.25 / sin(35&deg;) &asymp; 12.64</span>. Cosine goes with adjacent; sine goes with opposite. Swapping them gives this too-large hypotenuse.</li>
+    </ul>
+    <p class="explain"><strong>The 15-second template.</strong> On any right-triangle trig question:</p>
+    <ol>
+      <li>Label each side <strong>opp</strong>, <strong>adj</strong>, or <strong>hyp</strong> relative to the given angle.</li>
+      <li>Cross off the side you do not use; the remaining two labels tell you which ratio to pick (opp+adj &rarr; tan, opp+hyp &rarr; sin, adj+hyp &rarr; cos).</li>
+      <li>Write the ratio as an equation, put the unknown on top or bottom as needed, and solve in one step.</li>
+      <li>Make sure your calculator is in <strong>degree mode</strong>.</li>
+    </ol>
+    <p class="explain">Two rows of SOH&ndash;CAH&ndash;TOA and one calculator button &mdash; that is what a 2-credit Regents Part I trig question is worth in seconds, not minutes.</p>
+  </div></details>
 </div>
 
 <h2>The three families of trig facts, side by side</h2>

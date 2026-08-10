@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360" role="img" aria-label="Right triangle RJM with right angle at R, MR horizontal, and J above R">
+  <style>
+    .tri  { fill: none; stroke: #1a1a1a; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
+    .sq   { fill: none; stroke: #1a1a1a; stroke-width: 2.0; }
+    .pt   { fill: #1a1a1a; }
+    .lbl  { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 22px; fill: #1a1a1a; }
+    .len  { font-family: Georgia, "Times New Roman", serif; font-size: 18px; fill: #1a1a1a; }
+  </style>
+  <!-- Coordinates: M(90, 280), R(560, 280), J(560, 80). Horizontal MR = 470 px; vertical RJ = 200 px. -->
+  <polygon class="tri" points="90,280 560,280 560,80" />
+  <!-- Right-angle marker at R -->
+  <polyline class="sq" points="540,280 540,260 560,260" />
+  <!-- Vertex dots -->
+  <circle class="pt" cx="90"  cy="280" r="3.5"/>
+  <circle class="pt" cx="560" cy="280" r="3.5"/>
+  <circle class="pt" cx="560" cy="80"  r="3.5"/>
+  <!-- Vertex labels -->
+  <text class="lbl" x="66"  y="298">M</text>
+  <text class="lbl" x="572" y="298">R</text>
+  <text class="lbl" x="572" y="72">J</text>
+  <!-- Side length label -->
+  <text class="len" x="278" y="308" text-anchor="middle">7.25 in</text>
+</svg>
