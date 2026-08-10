@@ -91,6 +91,35 @@
       .worked-ex strong { color:#1f3d2e; }
       .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
 
+      /* Practice-question box */
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .qbox .prompt { margin:6px 0 10px; }
+      .qbox ol.choices { margin:6px 0 12px 22px; padding:0; }
+      .qbox ol.choices li { margin:4px 0; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:6px 0; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; display:inline; position:static; }
+
       .pair-callout { background:#f0ede2; border:1px solid #e6d9b8; border-radius:10px; padding:16px 20px; margin:20px 0; }
       .pair-callout p { margin:0; }
 
@@ -302,6 +331,49 @@
 <p><strong>Solution, EF.</strong> By the Midsegment Theorem, EF = (1/2)AC = (1/2)(18) = <strong>9</strong>.</p>
 
 <p>One-line answer, one-step calculation. That's the SOMATH difference &mdash; a student who has the theorem memorized answers this Part I 2-credit question in under fifteen seconds. Students who have to reason from first principles spend two minutes.</p>
+</div>
+
+<h2>Practice question: the Midsegment Theorem in action</h2>
+
+<p>This is a classic Regents Geometry multiple-choice question that tests the Midsegment Theorem in its purest form. The setup: a triangle with midpoints marked on two of the three sides. Only <em>one</em> of the four options is guaranteed to be true no matter what the triangle looks like &mdash; that is what the words &ldquo;must always be true&rdquo; are asking. Try it before revealing the answer.</p>
+
+<div class="qbox">
+  <h3>Question &mdash; Regents Geometry, multiple choice</h3>
+  <p class="prompt">In the diagram below of &triangle;<em>ABC</em>, points <em>D</em> and <em>E</em> are the midpoints of <span style="text-decoration:overline;"><em>CA</em></span> and <span style="text-decoration:overline;"><em>CB</em></span>, respectively.</p>
+  <p><img src="/assets/regents-geometry-midsegment-q2.svg" alt="Triangle ABC with C at top, A at bottom-left, and B at bottom-right. Point D is on side CA and point E is on side CB. Segment DE is drawn parallel to AB." style="max-width:100%; height:auto; border:1px solid #e6e6e6; border-radius:4px; display:block; margin:8px auto;"></p>
+  <p class="prompt">Which statement must always be true?</p>
+  <ol class="choices" type="1">
+    <li><em>DE</em> = &frac12;<em>AB</em></li>
+    <li><em>DE</em> = &frac12;<em>AC</em></li>
+    <li><em>AD</em> = &frac12;<em>AB</em></li>
+    <li><em>AB</em> = &frac12;<em>DE</em></li>
+  </ol>
+  <details class="reveal"><summary></summary><div class="reveal-body">
+    <p class="answer">Answer: (1) <em>DE</em> = &frac12;<em>AB</em>.</p>
+    <p class="explain"><strong>Why.</strong> The segment <em>DE</em> connects the midpoints of two sides of the triangle &mdash; the midpoint of <em>CA</em> and the midpoint of <em>CB</em>. A segment connecting the midpoints of two sides of a triangle is called a <strong>midsegment</strong>, and the Midsegment Theorem says exactly two things about it:</p>
+    <ol>
+      <li>The midsegment is <strong>parallel</strong> to the third side. So <span class="eq">DE &parallel; AB</span>.</li>
+      <li>The midsegment is <strong>half the length</strong> of the third side. So <span class="eq">DE = &frac12; AB</span>.</li>
+    </ol>
+    <p class="explain">The third side here is <em>AB</em> (the side <em>D</em> and <em>E</em> do not touch), so <em>DE</em> = &frac12;<em>AB</em> is guaranteed. That is choice (1). &#10004;</p>
+    <p class="explain"><strong>Concrete check.</strong> Put the triangle on the coordinate plane: <em>A</em>(0, 0), <em>B</em>(10, 0), <em>C</em>(2, 6). Then:</p>
+    <ul>
+      <li><em>D</em> = midpoint of <em>CA</em> = ((2 + 0)/2, (6 + 0)/2) = (1, 3)</li>
+      <li><em>E</em> = midpoint of <em>CB</em> = ((2 + 10)/2, (6 + 0)/2) = (6, 3)</li>
+      <li><em>DE</em> length = |6 &minus; 1| = 5</li>
+      <li><em>AB</em> length = |10 &minus; 0| = 10</li>
+      <li>Check: <em>DE</em> = 5 = &frac12;(10) = &frac12;<em>AB</em>. &#10004;</li>
+    </ul>
+    <p class="explain">Notice that both <em>D</em> and <em>E</em> have the same <em>y</em>-coordinate (3), so <em>DE</em> is horizontal &mdash; and <em>AB</em> is horizontal too, since both <em>A</em> and <em>B</em> have <em>y</em> = 0. That confirms <em>DE</em> is parallel to <em>AB</em>. The theorem checks out on both counts.</p>
+    <p class="explain"><strong>Why the other choices fail.</strong></p>
+    <ul>
+      <li><strong>(2) <em>DE</em> = &frac12;<em>AC</em>.</strong> Wrong side. The Midsegment Theorem relates <em>DE</em> to the third side <em>AB</em>, not to <em>AC</em>. In the coordinate example, <em>AC</em> = &radic;(2&sup2; + 6&sup2;) = &radic;40 &asymp; 6.32, so &frac12;<em>AC</em> &asymp; 3.16 &mdash; nowhere near <em>DE</em> = 5. A common trap: students sometimes match <em>DE</em> to a side whose midpoint <em>D</em> happens to lie on. But the theorem always points to the <em>opposite</em> side.</li>
+      <li><strong>(3) <em>AD</em> = &frac12;<em>AB</em>.</strong> Wrong segment. <em>AD</em> is <em>half of</em> <em>CA</em> (since <em>D</em> is the midpoint of <em>CA</em>), not half of <em>AB</em>. In the coordinate example, <em>AD</em> = distance from (0, 0) to (1, 3) = &radic;10 &asymp; 3.16, while &frac12;<em>AB</em> = 5. Not equal. This choice mixes up which two sides the midpoint relates.</li>
+      <li><strong>(4) <em>AB</em> = &frac12;<em>DE</em>.</strong> Right idea, flipped ratio. The Midsegment Theorem does relate <em>AB</em> and <em>DE</em>, but the midsegment (<em>DE</em>) is the <em>shorter</em> one, not the longer one. This choice would make the third side <em>AB</em> the shorter one, which is backwards. Any time a triangle midsegment is drawn, remember: <strong>the midsegment is the shorter piece &mdash; half the length of the third side.</strong></li>
+    </ul>
+    <p class="explain"><strong>The Regents shortcut.</strong> Whenever a Regents question shows a triangle with two midpoints marked and asks &ldquo;which must be true?&rdquo; scan the answer choices for the pattern &ldquo;(midsegment) = &frac12;(third side)&rdquo; &mdash; identifying the third side as the one whose endpoints are the two <em>non-midpoint</em> vertices. That single pattern-match wins the question in under 30 seconds.</p>
+    <p class="explain"><strong>The connection to Basic Proportionality.</strong> This is also a special case of the Basic Proportionality Theorem (Thales&rsquo; Theorem): if <em>D</em> and <em>E</em> are midpoints, then <em>CD</em>/<em>DA</em> = <em>CE</em>/<em>EB</em> = 1, so <em>DE</em> is parallel to <em>AB</em>. Combined with the fact that &triangle;<em>CDE</em> is similar to &triangle;<em>CAB</em> at ratio 1:2, every corresponding side must also be at ratio 1:2 &mdash; including <em>DE</em>:<em>AB</em>. The Midsegment Theorem is Basic Proportionality plus the extra fact that the ratio equals &frac12;.</p>
+  </div></details>
 </div>
 
 <h2>The two theorems, side by side</h2>
