@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Perpendicular Bisector &amp; the Isosceles Triangle &mdash; SOMATH&rsquo;s NY Regents Geometry Guide | SOMATH</title>
+    <meta name="description" content="Perpendicular bisector of a segment, the Perpendicular Bisector Theorem, the Isosceles Triangle Theorem, and the Triangle Angle Sum &mdash; the complete NY Regents Geometry topic, with a worked Regents Part I Q8 problem and the SOMATH K&ndash;12 math-enrichment arc." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/perpendicular-bisector-isosceles-triangle-regents-geometry" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Perpendicular Bisector &amp; the Isosceles Triangle &mdash; SOMATH's NY Regents Geometry Guide" />
+    <meta property="og:description" content="Perpendicular Bisector Theorem, Isosceles Triangle Theorem, and Triangle Angle Sum &mdash; the complete NY Regents Geometry topic with a worked Regents Part I Q8." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/perpendicular-bisector-isosceles-triangle-regents-geometry" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/perpendicular-bisector/cover.jpg" />
+    <meta property="og:image:width" content="1350" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="article:published_time" content="2026-08-10" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Perpendicular Bisector &amp; the Isosceles Triangle &mdash; SOMATH's NY Regents Geometry Guide" />
+    <meta name="twitter:description" content="Perpendicular Bisector Theorem, Isosceles Triangle Theorem, and Triangle Angle Sum &mdash; the complete Regents Geometry topic with a worked Regents Part I Q8." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/perpendicular-bisector/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+
+      /* Practice-question box */
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .qbox .prompt { margin:6px 0 10px; }
+      .qbox ol.choices { margin:6px 0 12px 22px; padding:0; }
+      .qbox ol.choices li { margin:4px 0; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:6px 0; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; display:inline; position:static; }
+
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Perpendicular Bisector & the Isosceles Triangle — SOMATH's NY Regents Geometry Guide",
+  "description": "Perpendicular bisector of a segment, the Perpendicular Bisector Theorem, the Isosceles Triangle Theorem, and the Triangle Angle Sum — the complete NY Regents Geometry topic with a worked Regents Part I Q8 problem and the SOMATH K–12 math-enrichment arc.",
+  "image": "https://www.schoolofmath.us/assets/blog/perpendicular-bisector/cover.jpg",
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/perpendicular-bisector-isosceles-triangle-regents-geometry"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a perpendicular bisector in NY Regents Geometry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A perpendicular bisector of a segment is a line (or segment or ray) that satisfies two properties at once: it is perpendicular to the segment (crosses it at 90°) and it passes through the segment's midpoint (cuts it into two equal parts). If line ℓ is the perpendicular bisector of segment AB, then ℓ ⊥ AB and ℓ crosses AB at the midpoint M, so AM ≅ MB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Perpendicular Bisector Theorem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Perpendicular Bisector Theorem states that any point on the perpendicular bisector of a segment is equidistant from the two endpoints of that segment. In symbols: if P lies on the perpendicular bisector of AB, then PA = PB. The converse is also true: if PA = PB, then P lies on the perpendicular bisector of AB. Together the two statements are an if-and-only-if characterization of the perpendicular bisector."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Isosceles Triangle Theorem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Isosceles Triangle Theorem states that if two sides of a triangle are congruent, then the angles opposite those sides are also congruent (the base angles are equal). The converse is also true: if two angles of a triangle are congruent, then the sides opposite those angles are congruent. Every Regents Geometry proof involving isosceles triangles rests on this theorem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know a triangle is isosceles from a perpendicular bisector?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the perpendicular bisector of one side of a triangle passes through the opposite vertex, that triangle is isosceles. The vertex lies on the perpendicular bisector of the opposite side, so by the Perpendicular Bisector Theorem it is equidistant from the two endpoints, which are the other two vertices — that is exactly the condition that the two sides meeting at the vertex are congruent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the Triangle Angle Sum Theorem say?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Triangle Angle Sum Theorem states that the three interior angles of any triangle add to 180°: m∠A + m∠B + m∠C = 180°. The statement m∠A + m∠B = 90° is only true when ∠C is a right angle — that is, only for right triangles — and is not always true for every triangle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the perpendicular bisector appear on the NY Regents Geometry exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — perpendicular bisectors are a core Regents Geometry topic, tested in Part I multiple choice and in Part II–IV proofs. A canonical Part I example is Question 8: in △ABC, if line CE is the perpendicular bisector of segment AEB, which statement is always true? The correct answer is AC ≅ BC — because C lies on the perpendicular bisector of AB, so C is equidistant from A and B by the Perpendicular Bisector Theorem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the perpendicular bisector connect to compass-and-straightedge constructions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The perpendicular bisector of a segment is the very first classical construction taught in Regents Geometry: set the compass to more than half the segment length, swing arcs from each endpoint above and below the segment, and connect the two intersection points. That line is the perpendicular bisector — perpendicular to the segment and passing through its midpoint. Every point on it is equidistant from the two endpoints."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Triangles &middot; Math Enrichment</p>
+      <h1 class="post__title">Perpendicular Bisector &amp; the Isosceles Triangle &mdash; SOMATH&rsquo;s NY Regents Geometry Guide</h1>
+      <p class="post__dek">The perpendicular bisector of a segment, the Perpendicular Bisector Theorem (any point on the bisector is equidistant from the endpoints), the Isosceles Triangle Theorem, and the Triangle Angle Sum &mdash; the complete NY Regents Geometry topic, explained with a worked Regents Part I question and the SOMATH K&ndash;12 math-enrichment arc.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 10, 2026</span>
+        <span>12 min read</span>
+      </div>
+
+      <figure class="post__cover"><picture><source srcset="/assets/blog/perpendicular-bisector/cover.webp" type="image/webp"><img src="/assets/blog/perpendicular-bisector/cover.jpg" alt="SOMATH Theory Guide: Perpendicular Bisector &mdash; a Regents Geometry reference explaining the two-property definition (perpendicular to the segment and passing through the midpoint), the Perpendicular Bisector Theorem (any point on the bisector is equidistant from the endpoints, so CA is congruent to CB), the perpendicular-lines property (right angles at the midpoint), angle relationships including the Isosceles Triangle Theorem and the Triangle Angle Sum Theorem (mA + mB + mC = 180 degrees), and a worked triangle ABC with C on the perpendicular bisector CE of segment AEB. School of Math, Upper West Side NYC." width="1350" height="1080" /></picture></figure>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> a <strong>perpendicular bisector</strong> of a segment is a line that is <em>perpendicular</em> to the segment and passes through its <em>midpoint</em>. The <strong>Perpendicular Bisector Theorem</strong> says every point on that line is <em>equidistant</em> from the two endpoints. So if a segment is drawn from a point on the perpendicular bisector to each endpoint, those two segments are congruent. The consequence on the Regents Geometry exam is enormous: when the perpendicular bisector of a triangle&rsquo;s side passes through the opposite vertex, that triangle is automatically <em>isosceles</em> &mdash; and every base-angle, angle-sum, and coordinate-proof question flows from that one fact.</p>
+
+<p>This post is the SOMATH Regents Geometry reference for perpendicular bisectors and their consequences for isosceles triangles. If your student is preparing for the January or June Geometry Regents, the fastest way to know where they stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a> on the <strong>Upper West Side (226 W 79th Street, 1st floor)</strong>. Call <a href="tel:+16466686151">(646) 668-6151</a> or see the <a href="/schedule.html">weekly class schedule</a>.</p>
+
+<h2>What is a perpendicular bisector?</h2>
+
+<p>A <strong>perpendicular bisector</strong> is a line (or segment or ray) that satisfies <em>two</em> properties at once about a given segment.</p>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Definition &mdash; Perpendicular bisector</p>
+  <h3>Perpendicular to the segment <em>and</em> through its midpoint</h3>
+  <p class="concept-card__rule">&ell; &perp; AB &nbsp;&amp;&nbsp; &ell; passes through the midpoint M of AB</p>
+  <ul>
+    <li><strong>Perpendicular:</strong> the two lines meet at a 90&deg; angle.</li>
+    <li><strong>Bisector:</strong> it cuts the segment into two congruent halves &mdash; so <span class="eq">AM &cong; MB</span>.</li>
+    <li>The two conditions are independent &mdash; a perpendicular line that misses the midpoint is <em>not</em> a perpendicular bisector, and a line through the midpoint that isn&rsquo;t perpendicular is <em>not</em> a perpendicular bisector either.</li>
+  </ul>
+</div>
+
+<p>The classical compass-and-straightedge construction of a perpendicular bisector &mdash; swing equal arcs from each endpoint, then connect the two intersection points &mdash; is the first construction the Regents Geometry curriculum expects every student to know.</p>
+
+<h2>The Perpendicular Bisector Theorem</h2>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Theorem &mdash; Perpendicular Bisector</p>
+  <h3>Any point on the perpendicular bisector of a segment is equidistant from the two endpoints.</h3>
+  <p class="concept-card__rule">If P lies on &ell;, and &ell; is the perpendicular bisector of AB, then PA = PB.</p>
+  <ul>
+    <li><strong>Converse (also true):</strong> if <span class="eq">PA = PB</span>, then P lies on the perpendicular bisector of <span class="eq">AB</span>.</li>
+    <li>Together, the theorem and its converse give an <strong>if-and-only-if</strong> characterization: <em>P is on the perpendicular bisector of AB &hArr; PA = PB</em>.</li>
+    <li><strong>Why it&rsquo;s true (one-line sketch):</strong> triangles <span class="eq">&#9651;PMA</span> and <span class="eq">&#9651;PMB</span> are congruent by <em>SAS</em> &mdash; <span class="eq">AM &cong; MB</span> (midpoint), <span class="eq">&ang;PMA &cong; &ang;PMB = 90&deg;</span> (perpendicular), and <span class="eq">PM &cong; PM</span> (shared side). So <span class="eq">PA &cong; PB</span>.</li>
+  </ul>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> Point P lies on the perpendicular bisector of <span class="eq">AB</span>. If <span class="eq">PA = 3x + 2</span> and <span class="eq">PB = 5x &minus; 6</span>, find x.</p>
+  <p>By the Perpendicular Bisector Theorem, <span class="eq">PA = PB</span>, so <span class="eq">3x + 2 = 5x &minus; 6</span>.</p>
+  <p><span class="eq">8 = 2x</span>, so <strong>x = 4</strong>. (Then <span class="eq">PA = PB = 14</span>.)</p>
+</div>
+
+<h2>How a perpendicular bisector produces an isosceles triangle</h2>
+
+<p>The most-tested consequence of the Perpendicular Bisector Theorem on the Regents Geometry exam is the way it forces a triangle to be <em>isosceles</em>.</p>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Key consequence</p>
+  <h3>If the perpendicular bisector of one side of a triangle passes through the opposite vertex, the triangle is isosceles.</h3>
+  <p>Suppose the perpendicular bisector of <span class="eq">AB</span> is a line <span class="eq">&ell;</span>, and the vertex <span class="eq">C</span> of <span class="eq">&#9651;ABC</span> lies on <span class="eq">&ell;</span>. Then by the Perpendicular Bisector Theorem, <span class="eq">CA = CB</span>, so <span class="eq">&#9651;ABC</span> is isosceles with legs <span class="eq">CA</span> and <span class="eq">CB</span>.</p>
+</div>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Theorem &mdash; Isosceles Triangle</p>
+  <h3>If two sides of a triangle are congruent, then the angles opposite those sides are congruent.</h3>
+  <p class="concept-card__rule">If CA &cong; CB, then &ang;A &cong; &ang;B (the base angles).</p>
+  <ul>
+    <li><strong>Converse:</strong> if two angles of a triangle are congruent, then the sides opposite those angles are congruent. So <em>equal base angles &rArr; isosceles</em>.</li>
+    <li>Combined with the perpendicular-bisector consequence above, this means that when vertex <span class="eq">C</span> lies on the perpendicular bisector of the opposite side <span class="eq">AB</span>, the two <em>base angles</em> at A and B are equal.</li>
+  </ul>
+</div>
+
+<h2>The Triangle Angle Sum Theorem</h2>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Theorem &mdash; Triangle Angle Sum</p>
+  <h3>The three interior angles of any triangle sum to 180&deg;.</h3>
+  <p class="concept-card__rule">m&ang;A + m&ang;B + m&ang;C = 180&deg;</p>
+  <ul>
+    <li><strong>Always true</strong> &mdash; for every triangle, right or oblique, acute or obtuse.</li>
+    <li>The statement <span class="eq">m&ang;A + m&ang;B = 90&deg;</span> is <strong>only</strong> true when <span class="eq">m&ang;C = 90&deg;</span> &mdash; a common Regents distractor.</li>
+    <li>In an isosceles triangle with apex <span class="eq">C</span> and base <span class="eq">AB</span>, the base angles are equal: <span class="eq">m&ang;A = m&ang;B</span>, so <span class="eq">2 &middot; m&ang;A + m&ang;C = 180&deg;</span>.</li>
+  </ul>
+</div>
+
+<h2>Perpendicular bisector vs. angle bisector vs. median vs. altitude</h2>
+
+<p>Regents Geometry tests four special segments in a triangle. They are related but not the same &mdash; and mixing them up is one of the most common Part I mistakes.</p>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>What it bisects</th>
+      <th>At what angle</th>
+      <th>Does it always pass through a vertex?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Segment"><strong>Perpendicular bisector</strong></td>
+      <td data-label="Bisects">A side (at its midpoint)</td>
+      <td data-label="Angle">90&deg; (perpendicular)</td>
+      <td data-label="Vertex">No &mdash; it may or may not</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Segment"><strong>Angle bisector</strong></td>
+      <td data-label="Bisects">An angle (into two equal angles)</td>
+      <td data-label="Angle">Not necessarily 90&deg;</td>
+      <td data-label="Vertex">Yes &mdash; from the vertex</td>
+    </tr>
+    <tr>
+      <td data-label="Segment"><strong>Median</strong></td>
+      <td data-label="Bisects">A side (at its midpoint)</td>
+      <td data-label="Angle">Not necessarily 90&deg;</td>
+      <td data-label="Vertex">Yes &mdash; from the opposite vertex</td>
+    </tr>
+    <tr>
+      <td data-label="Segment"><strong>Altitude</strong></td>
+      <td data-label="Bisects">Nothing in general</td>
+      <td data-label="Angle">90&deg; (perpendicular to the opposite side)</td>
+      <td data-label="Vertex">Yes &mdash; from the opposite vertex</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>The special case.</strong> In an <em>isosceles</em> triangle, the perpendicular bisector of the base, the angle bisector of the apex angle, the median from the apex, and the altitude from the apex are <strong>all the same segment</strong>. That is exactly the coincidence that Regents Q8 (below) is testing.</p>
+
+<h2>The Regents question everyone gets wrong</h2>
+
+<p>Here is a Part I multiple-choice question that appears almost exactly like this on recent NY Regents Geometry releases. It is a textbook test of the workflow above: recognize the perpendicular bisector, apply the theorem to conclude equal distances from the endpoints, and rule out distractors that misuse the Isosceles Triangle Theorem or the Angle Sum Theorem.</p>
+
+<div class="qbox">
+  <h3>Practice &mdash; Perpendicular bisector in a triangle (Regents Geometry, Part I &sect; 8)</h3>
+  <p class="prompt">In <span class="eq">&#9651;ABC</span>, <span class="eq">CE</span><span aria-hidden="true">&harr;</span> is the perpendicular bisector of <span class="eq">AEB</span>. Which statement is always true?</p>
+  <ol class="choices">
+    <li><span class="eq">AC &cong; BC</span></li>
+    <li><span class="eq">AE &cong; CE</span></li>
+    <li><span class="eq">&ang;EAC &cong; &ang;BCE</span></li>
+    <li><span class="eq">m&ang;A + m&ang;B = 90&deg;</span></li>
+  </ol>
+  <details class="reveal">
+    <summary></summary>
+    <div class="reveal-body">
+      <p class="answer">Answer: (1) <span class="eq">AC &cong; BC</span>.</p>
+
+      <p class="explain"><strong>Step 1 &mdash; Unpack what &ldquo;perpendicular bisector of AEB&rdquo; means.</strong> The problem tells us that line <span class="eq">CE</span> is the perpendicular bisector of segment <span class="eq">AB</span> (with <span class="eq">E</span> the midpoint). So <em>two</em> facts are true at once: <span class="eq">CE &perp; AB</span> at <span class="eq">E</span>, and <span class="eq">AE &cong; EB</span> (E is the midpoint of AB).</p>
+
+      <p class="explain"><strong>Step 2 &mdash; Locate the vertex C on the perpendicular bisector.</strong> The vertex <span class="eq">C</span> of the triangle lies on line <span class="eq">CE</span>, which is the perpendicular bisector of <span class="eq">AB</span>.</p>
+
+      <p class="explain"><strong>Step 3 &mdash; Apply the Perpendicular Bisector Theorem.</strong> Every point on the perpendicular bisector of <span class="eq">AB</span> is equidistant from <span class="eq">A</span> and <span class="eq">B</span>. Since <span class="eq">C</span> lies on that line, <span class="eq">CA = CB</span>. In segment notation: <span class="eq">AC &cong; BC</span>.</p>
+
+      <p class="explain"><strong>Step 4 &mdash; Confirm this is always true.</strong> The Perpendicular Bisector Theorem holds for any point on the bisector, so no matter where <span class="eq">C</span> sits on line <span class="eq">CE</span> above or below the segment, we always get <span class="eq">AC &cong; BC</span>. The correct answer is <strong>(1)</strong>.</p>
+
+      <p class="explain"><strong>Why the distractors trap real students:</strong></p>
+      <ul>
+        <li><strong>(2) <span class="eq">AE &cong; CE</span></strong> &mdash; the &ldquo;confused which segments are equal&rdquo; trap. It is true that <span class="eq">AE &cong; EB</span> (both halves of the base), but there is <em>no</em> reason for <span class="eq">AE</span> to equal <span class="eq">CE</span>. <span class="eq">AE</span> is half of the base; <span class="eq">CE</span> is the segment from the apex down to the midpoint (the altitude / median of the isosceles triangle). Those two are only equal in a very special case, not always.</li>
+        <li><strong>(3) <span class="eq">&ang;EAC &cong; &ang;BCE</span></strong> &mdash; the &ldquo;wrong angle pair&rdquo; trap. In an isosceles triangle, the base angles are equal: <span class="eq">&ang;EAC &cong; &ang;EBC</span>. And the apex angle is bisected: <span class="eq">&ang;ACE &cong; &ang;BCE</span>. But <span class="eq">&ang;EAC</span> (a base angle at A) and <span class="eq">&ang;BCE</span> (half of the apex angle at C) are <em>different pairs</em> and are not equal in general.</li>
+        <li><strong>(4) <span class="eq">m&ang;A + m&ang;B = 90&deg;</span></strong> &mdash; the &ldquo;confused angle sum with right triangle&rdquo; trap. The only universally true angle-sum fact is <span class="eq">m&ang;A + m&ang;B + m&ang;C = 180&deg;</span>. The reduction to <span class="eq">m&ang;A + m&ang;B = 90&deg;</span> is only valid when <span class="eq">&ang;C = 90&deg;</span>. Nothing in the problem forces <span class="eq">&ang;C</span> to be a right angle.</li>
+      </ul>
+
+      <p class="explain"><strong>The SOMATH 4-step Regents template for perpendicular-bisector questions:</strong></p>
+      <ol>
+        <li>Identify which segment is being bisected and mark the midpoint and the right angle in the figure.</li>
+        <li>Note every point that lies on the perpendicular bisector &mdash; each one is equidistant from the two endpoints of the bisected segment.</li>
+        <li>Translate each &ldquo;equidistant&rdquo; conclusion into congruent segments, and combine with the Isosceles Triangle Theorem to get base-angle equalities.</li>
+        <li>Use the Triangle Angle Sum Theorem <span class="eq">m&ang;A + m&ang;B + m&ang;C = 180&deg;</span> for any numerical angle-chasing, and never reduce it to <span class="eq">m&ang;A + m&ang;B = 90&deg;</span> unless the problem hands you a right angle at C.</li>
+      </ol>
+    </div>
+  </details>
+</div>
+
+<h2>More worked examples</h2>
+
+<div class="worked-ex">
+  <p><strong>Example 1 &mdash; Equidistance to endpoints.</strong> Point Q is on the perpendicular bisector of <span class="eq">RS</span>. If <span class="eq">QR = 2x + 5</span> and <span class="eq">QS = 4x &minus; 9</span>, find <span class="eq">QR</span>.</p>
+  <p>By the Perpendicular Bisector Theorem, <span class="eq">QR = QS</span>: <span class="eq">2x + 5 = 4x &minus; 9</span>, so <span class="eq">14 = 2x</span> and <span class="eq">x = 7</span>. Therefore <span class="eq">QR = 2(7) + 5 = 19</span>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Example 2 &mdash; Isosceles from a perpendicular bisector.</strong> In <span class="eq">&#9651;ABC</span>, the perpendicular bisector of <span class="eq">AB</span> passes through <span class="eq">C</span>. If <span class="eq">m&ang;A = 68&deg;</span>, find <span class="eq">m&ang;B</span> and <span class="eq">m&ang;C</span>.</p>
+  <p>Because <span class="eq">C</span> is on the perpendicular bisector of <span class="eq">AB</span>, we have <span class="eq">CA &cong; CB</span>, so <span class="eq">&#9651;ABC</span> is isosceles with base <span class="eq">AB</span>. By the Isosceles Triangle Theorem, <span class="eq">m&ang;A = m&ang;B = 68&deg;</span>.</p>
+  <p>By the Triangle Angle Sum, <span class="eq">m&ang;C = 180&deg; &minus; 68&deg; &minus; 68&deg; = 44&deg;</span>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Example 3 &mdash; Converse of the theorem.</strong> Point P satisfies <span class="eq">PA = PB</span>. What conclusion can you draw about P?</p>
+  <p>By the <em>converse</em> of the Perpendicular Bisector Theorem, <span class="eq">P</span> lies on the perpendicular bisector of <span class="eq">AB</span>. So <span class="eq">P</span> is on the unique line through the midpoint of <span class="eq">AB</span> perpendicular to <span class="eq">AB</span>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Example 4 &mdash; Circumcenter.</strong> In any triangle, the three perpendicular bisectors of the three sides meet at a single point called the <em>circumcenter</em>. Why?</p>
+  <p>Because a point on the perpendicular bisector of one side is equidistant from those two endpoints. A point on <em>all three</em> perpendicular bisectors is equidistant from all three vertices &mdash; call that common distance <span class="eq">R</span>. That common distance <span class="eq">R</span> is the radius of the unique circle that passes through all three vertices (the circumscribed circle). The circumcenter is the center of that circle.</p>
+</div>
+
+<h2>Common mistakes on perpendicular-bisector questions</h2>
+
+<ol>
+  <li><strong>Assuming the perpendicular bisector passes through a vertex.</strong> It only does when the triangle is <em>isosceles</em> with that vertex as apex. In a general triangle, the perpendicular bisector of a side misses the opposite vertex.</li>
+  <li><strong>Confusing the perpendicular bisector with the angle bisector.</strong> The perpendicular bisector is about a <em>side</em> (bisects it at 90&deg;); the angle bisector is about an <em>angle</em> (cuts it into two equal angles from a vertex). They are only the same line in special triangles.</li>
+  <li><strong>Confusing the perpendicular bisector with the median or altitude.</strong> A median goes from a vertex to the midpoint of the opposite side (bisects the side but not perpendicularly). An altitude is perpendicular to a side (but doesn&rsquo;t necessarily hit its midpoint). Only the perpendicular bisector does both.</li>
+  <li><strong>Forgetting the theorem&rsquo;s converse.</strong> The perpendicular bisector is characterized by equidistance &mdash; both directions. If a point is equidistant from two endpoints, it <em>must</em> lie on their perpendicular bisector.</li>
+  <li><strong>Reducing the angle sum to 90&deg;.</strong> The Triangle Angle Sum is always <span class="eq">180&deg;</span>, not <span class="eq">90&deg;</span>. Only a right triangle satisfies <span class="eq">m&ang;A + m&ang;B = 90&deg;</span>, and the problem must say so.</li>
+  <li><strong>Confusing the two halves of the base with the two legs of the triangle.</strong> If <span class="eq">CE</span> is the perpendicular bisector of <span class="eq">AB</span> at <span class="eq">E</span>, then <span class="eq">AE &cong; EB</span> (halves of the base). This does <em>not</em> mean <span class="eq">AE &cong; CE</span> &mdash; CE is a completely different segment.</li>
+  <li><strong>Applying the Isosceles Triangle Theorem to the wrong angle pair.</strong> In isosceles <span class="eq">&#9651;ABC</span> with <span class="eq">CA &cong; CB</span>, the equal <em>base</em> angles are <span class="eq">&ang;A</span> and <span class="eq">&ang;B</span>. The apex is <span class="eq">&ang;C</span>. Mixing up which pair is equal is a Regents Part I trap.</li>
+  <li><strong>Assuming the perpendicular bisector bisects the opposite angle.</strong> This is only true in an isosceles triangle with that vertex as apex. In a scalene triangle, the perpendicular bisector of a side doesn&rsquo;t interact with the opposite angle at all.</li>
+  <li><strong>Missing the shared-side congruence in the SAS proof.</strong> The one-line proof of the theorem uses <span class="eq">&#9651;PMA &cong; &#9651;PMB</span> by SAS: two halves of the base, the shared segment <span class="eq">PM</span>, and the two right angles at <span class="eq">M</span>. Students often forget that the shared side <span class="eq">PM</span> is the third piece.</li>
+</ol>
+
+<h2>The perpendicular-bisector topic at a glance</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Fact</th>
+      <th>Statement</th>
+      <th>Regents cue words</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Fact"><strong>Definition of perpendicular bisector</strong></td>
+      <td data-label="Statement"><code>&ell; &perp; AB</code> and passes through midpoint of <span class="eq">AB</span></td>
+      <td data-label="Cue">&ldquo;perpendicular bisector of <em>AB</em>,&rdquo; construction problems</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Fact"><strong>Perpendicular Bisector Theorem</strong></td>
+      <td data-label="Statement">P on &ell; &rArr; <code>PA = PB</code></td>
+      <td data-label="Cue">&ldquo;equidistant from,&rdquo; &ldquo;which is always true&rdquo;</td>
+    </tr>
+    <tr>
+      <td data-label="Fact"><strong>Converse</strong></td>
+      <td data-label="Statement"><code>PA = PB</code> &rArr; P lies on the perpendicular bisector of <span class="eq">AB</span></td>
+      <td data-label="Cue">&ldquo;prove P lies on the perpendicular bisector&rdquo;</td>
+    </tr>
+    <tr>
+      <td data-label="Fact"><strong>Isosceles Triangle Theorem</strong></td>
+      <td data-label="Statement"><code>CA &cong; CB &rArr; &ang;A &cong; &ang;B</code> (base angles)</td>
+      <td data-label="Cue">&ldquo;base angles,&rdquo; &ldquo;isosceles triangle&rdquo;</td>
+    </tr>
+    <tr>
+      <td data-label="Fact"><strong>Triangle Angle Sum</strong></td>
+      <td data-label="Statement"><code>m&ang;A + m&ang;B + m&ang;C = 180&deg;</code></td>
+      <td data-label="Cue">angle-chase, missing-angle problems</td>
+    </tr>
+    <tr>
+      <td data-label="Fact"><strong>Circumcenter</strong></td>
+      <td data-label="Statement">Three perpendicular bisectors of a triangle meet at one point equidistant from the three vertices</td>
+      <td data-label="Cue">&ldquo;circumscribed circle,&rdquo; &ldquo;center of the circle through A, B, C&rdquo;</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>How this ties to earlier posts in the SOMATH Regents series</h2>
+
+<ul>
+  <li><a href="/posts/slope-parallel-perpendicular-lines-regents-geometry">Slope, Parallel &amp; Perpendicular Lines</a> &mdash; the algebraic side of perpendicularity: two lines are perpendicular when the product of their slopes is <span class="eq">&minus;1</span>. On the coordinate plane, that is how you <em>verify</em> that a candidate line is the perpendicular bisector of a segment.</li>
+  <li><a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines in a Triangle &amp; the Midsegment Theorem</a> &mdash; the sister theorem about midpoints and parallelism in a triangle. The midsegment joins two midpoints, and the perpendicular bisector <em>starts</em> at a single midpoint at a right angle.</li>
+  <li><a href="/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry">Rectangular Prisms &mdash; Volume, Surface Area, Diagonals &amp; Scale Factors</a> &mdash; sister post in the Regents Geometry reference series.</li>
+  <li><a href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">Sine, Cosine &amp; Tangent for NY Regents Geometry</a> &mdash; in an isosceles triangle produced by a perpendicular bisector, the apex angle splits into two congruent halves, and those halves are the right-triangle building blocks for SOH-CAH-TOA.</li>
+  <li><a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &mdash; reflection across the perpendicular bisector of <span class="eq">AB</span> is the rigid motion that sends <span class="eq">A</span> to <span class="eq">B</span>. Every isosceles triangle has a line of symmetry: its base&rsquo;s perpendicular bisector.</li>
+  <li><a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations</a> &mdash; dilation preserves perpendicularity and midpoints, so the image of a perpendicular bisector under a dilation is another perpendicular bisector.</li>
+  <li><a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 &mdash; Part II Answers &amp; Explanations</a> &mdash; the full worked June 2026 exam, including proofs that use perpendicular bisectors and the Isosceles Triangle Theorem.</li>
+</ul>
+
+<h2>How SOMATH teaches perpendicular bisectors and isosceles triangles (K&ndash;12 arc)</h2>
+
+<ul>
+  <li><strong><a href="/">Little Newtons</a> (grades 1&ndash;2):</strong> visual symmetry &mdash; folding a paper triangle and seeing that the crease is a line of symmetry &mdash; the intuitive origin of every perpendicular bisector.</li>
+  <li><strong>Kid Einsteins (grades 3&ndash;5):</strong> introduction to midpoint, right angle, and congruent segments; the compass-and-straightedge construction as a tactile puzzle.</li>
+  <li><strong>Young Fermats (grades 5&ndash;8):</strong> proof-of-congruence groundwork &mdash; SAS, SSS, ASA &mdash; and the first algebraic use of &ldquo;equidistant&rdquo; and &ldquo;midpoint&rdquo; from Common Core 8.G.</li>
+  <li><strong>High-school Geometry:</strong> full theorem-and-proof treatment &mdash; Perpendicular Bisector Theorem and its converse, Isosceles Triangle Theorem and its converse, Triangle Angle Sum, and Regents Part I&ndash;IV applications like Q8 above.</li>
+</ul>
+
+<p>Our high-school Geometry teachers hold degrees from Harvard, Northwestern, Columbia, and NYU. Every SOMATH student who has taken the January or June Geometry Regents has scored proficient or higher.</p>
+
+<h2>Quick memory tips for the Regents</h2>
+
+<ol>
+  <li><strong>Two properties, not one.</strong> A perpendicular bisector must be <em>both</em> perpendicular <em>and</em> through the midpoint. Missing either one disqualifies the line.</li>
+  <li><strong>Equidistant &lArr;&rArr; on the bisector.</strong> The theorem and its converse are an if-and-only-if. Use whichever direction the problem hands you.</li>
+  <li><strong>Vertex on the bisector &rArr; isosceles.</strong> If any vertex of a triangle lies on the perpendicular bisector of the opposite side, the two sides from that vertex are congruent &mdash; the triangle is isosceles.</li>
+  <li><strong>Base angles are opposite the equal sides.</strong> In isosceles <span class="eq">&#9651;ABC</span> with <span class="eq">CA &cong; CB</span>, the equal angles are <span class="eq">&ang;A</span> and <span class="eq">&ang;B</span> &mdash; opposite the legs, not the apex.</li>
+  <li><strong>Angle sum is 180&deg;, not 90&deg;.</strong> Always use <span class="eq">m&ang;A + m&ang;B + m&ang;C = 180&deg;</span>. The 90&deg; version applies only to right triangles.</li>
+</ol>
+
+<h2>Book a free math enrichment evaluation</h2>
+
+<p>If your child is preparing for the January or June Regents Geometry &mdash; or building toward Geometry through middle-school Common Core &mdash; the fastest way to know where they stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a>. Your child works one-on-one with a SOMATH teacher, and you receive a written diagnostic within 48 hours &mdash; specifically what your child has mastered, where the gaps are, and what to work on next. Yours to keep whether you enroll or not.</p>
+
+<p>SOMATH is at <strong>226 West 79th Street, first floor</strong>, between Broadway and Amsterdam. Phone <a href="tel:+16466686151">(646) 668-6151</a>. See our <a href="/schedule.html">weekly class schedule</a> or browse <a href="/courses/">all courses grades 1&ndash;12</a>.</p>
+
+<p>Related reading: <a href="/posts/slope-parallel-perpendicular-lines-regents-geometry">Slope, Parallel &amp; Perpendicular Lines</a> &middot; <a href="/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry">Rectangular Prisms &mdash; Volume, Surface Area, Diagonals &amp; Scale Factors</a> &middot; <a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines in a Triangle &amp; the Midsegment Theorem</a> &middot; <a href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">Sine, Cosine &amp; Tangent for NY Regents Geometry</a> &middot; <a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 Part II Answers</a>.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Ready for Regents Geometry? Let&rsquo;s find out.</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We&rsquo;ll diagnose
+            exactly where your child stands on perpendicular bisectors,
+            isosceles triangles, angle chasing, coordinate proofs, and the
+            rest of the Regents Geometry arc, and send a written summary
+            within 48 hours &mdash; yours to keep whether you enroll or not.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus, SAT Math, and Regents Geometry / Algebra in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/slope-parallel-perpendicular-lines-regents-geometry">
+          <span class="blog-card__category">Regents Geometry &middot; Coordinate Geometry</span>
+          <h2 class="blog-card__title">Slope, Parallel &amp; Perpendicular Lines &mdash; SOMATH&rsquo;s NY Regents Geometry Guide</h2>
+          <p class="blog-card__dek">Slope from two points, slope-intercept form, the parallel-lines test m&#8321; = m&#8322;, and the perpendicular-lines test m&#8321; &middot; m&#8322; = &minus;1 &mdash; with a worked Regents Part I Q6.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 12 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Rectangular Prisms: Volume, Surface Area, Diagonals &amp; Scale Factors</h2>
+          <p class="blog-card__dek">V = lwh, SA = 2(lw + lh + wh), space diagonal, and the k / k&sup2; / k&sup3; scale-factor rule &mdash; the complete NY Regents topic with a worked fish-tank Q.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 12 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Parallel Lines in a Triangle &amp; the Midsegment Theorem</h2>
+          <p class="blog-card__dek">The Basic Proportionality Theorem, its converse, and the Midsegment Theorem &mdash; explained with worked Regents examples.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 11 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">
+          <span class="blog-card__category">Regents Geometry &middot; Trig</span>
+          <h2 class="blog-card__title">Sine, Cosine &amp; Tangent for NY Regents Geometry: Definitions, Identities &amp; the Unit Circle</h2>
+          <p class="blog-card__dek">SOH-CAH-TOA, Pythagorean and reciprocal identities, exact values, and the unit-circle view.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 11 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260810-perpbisector"></script>
+  </body>
+</html>
