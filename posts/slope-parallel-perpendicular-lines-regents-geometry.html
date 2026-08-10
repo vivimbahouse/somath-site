@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Slope, Parallel &amp; Perpendicular Lines &mdash; SOMATH&rsquo;s NY Regents Geometry Guide | SOMATH</title>
+    <meta name="description" content="Slope, parallel lines, and perpendicular lines &mdash; slope from two points, slope-intercept form, the five types of slope, the parallel test (m&#8321; = m&#8322;), and the perpendicular test (m&#8321; &middot; m&#8322; = &minus;1). The complete NY Regents Geometry topic with a worked Regents Q6 problem and the SOMATH K&ndash;12 math-enrichment arc." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/slope-parallel-perpendicular-lines-regents-geometry" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Slope, Parallel &amp; Perpendicular Lines &mdash; SOMATH's NY Regents Geometry Guide" />
+    <meta property="og:description" content="Slope from two points, slope-intercept form, the parallel test (m&#8321; = m&#8322;), and the perpendicular test (m&#8321; &middot; m&#8322; = &minus;1) &mdash; the complete NY Regents Geometry topic with a worked Regents Q6 problem." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/slope-parallel-perpendicular-lines-regents-geometry" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/slope-parallel-perpendicular/cover.jpg" />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="1235" />
+    <meta property="article:published_time" content="2026-08-10" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Slope, Parallel &amp; Perpendicular Lines &mdash; SOMATH's NY Regents Geometry Guide" />
+    <meta name="twitter:description" content="Slope from two points, slope-intercept form, parallel lines (m&#8321; = m&#8322;), and perpendicular lines (m&#8321; &middot; m&#8322; = &minus;1) &mdash; the complete Regents Geometry topic with a worked Regents Q6." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/slope-parallel-perpendicular/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+
+      /* Practice-question box */
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .qbox .prompt { margin:6px 0 10px; }
+      .qbox ol.choices { margin:6px 0 12px 22px; padding:0; }
+      .qbox ol.choices li { margin:4px 0; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:6px 0; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; display:inline; position:static; }
+
+      .inline-fig { margin:24px 0; }
+      .inline-fig figcaption { font-size:0.85rem; color:#6a6a6a; margin-top:8px; font-style:italic; text-align:center; }
+      .qbox figure { margin:8px 0 12px; }
+      .qbox figure img { max-width:100%; height:auto; border:1px solid #e6e6e6; border-radius:6px; background:#fff; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Slope, Parallel & Perpendicular Lines — SOMATH's NY Regents Geometry Guide",
+  "description": "Slope from two points, slope-intercept form, the five types of slope, the parallel-lines test (m₁ = m₂), and the perpendicular-lines test (m₁ · m₂ = −1) — the complete NY Regents Geometry topic with a worked Regents Q6 problem and the SOMATH K–12 math-enrichment arc.",
+  "image": "https://www.schoolofmath.us/assets/blog/slope-parallel-perpendicular/cover.jpg",
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/slope-parallel-perpendicular-lines-regents-geometry"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is slope in NY Regents Geometry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Slope (m) is a number that measures how steep a line is and in which direction it tilts. It is defined as the ratio of vertical change to horizontal change: m = rise/run = Δy/Δx = (y₂ − y₁)/(x₂ − x₁). Slope has no units — it is a pure ratio — and it is the same at every point on a straight line. On the NY Regents Geometry exam, slope is the foundation for parallel-lines questions, perpendicular-lines questions, coordinate proofs, and equations of lines through a given point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you find the slope of a line from two points?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Given two points (x₁, y₁) and (x₂, y₂), the slope is m = (y₂ − y₁)/(x₂ − x₁). Example: for (2, 1) and (6, 5), m = (5 − 1)/(6 − 2) = 4/4 = 1. Subtract the y-coordinates in one order and the x-coordinates in the same order — never mix them. Reduce the fraction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you find the slope from an equation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the equation is in slope-intercept form y = mx + b, the slope is m (the coefficient of x) and the y-intercept is b. If the equation is in standard form Ax + By = C, solve for y to rewrite it as y = mx + b: y = (−A/B)x + (C/B), so the slope is −A/B. Example: x + 2y = 8 → 2y = −x + 8 → y = −½x + 4, so m = −½ and b = 4."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the five types of slope?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Positive slope (m > 0): the line rises from left to right. Negative slope (m < 0): the line falls from left to right. Zero slope (m = 0): a horizontal line, y = constant. Undefined slope: a vertical line, x = constant (the run is 0, so the ratio is undefined). Same slope (equal m values): the lines are parallel (or the same line if they share a y-intercept)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you test whether two lines are parallel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two non-vertical lines are parallel if and only if their slopes are equal: m₁ = m₂. If the two equations also share the same y-intercept, they represent the same line rather than a pair of distinct parallel lines. Two vertical lines (both with undefined slope) are also parallel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you test whether two lines are perpendicular?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two non-vertical lines are perpendicular if and only if the product of their slopes is −1: m₁ · m₂ = −1. Equivalently, each slope is the negative reciprocal of the other: m₂ = −1/m₁. A horizontal line (slope 0) and a vertical line (undefined slope) are also perpendicular by convention."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does slope appear on the NY Regents Geometry exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — slope, parallel-lines tests, and perpendicular-lines tests are core Regents Geometry topics, tested in Part I multiple choice and Part II–IV coordinate proofs. A canonical Part I example is the Q6 problem 'The lines whose equations are y = −½x + 2 and x + 2y = 8 are:' — after rewriting the second line as y = −½x + 4, both slopes are −½ but the y-intercepts differ (2 vs. 4), so the answer is (1) parallel."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Coordinate Geometry &middot; Math Enrichment</p>
+      <h1 class="post__title">Slope, Parallel &amp; Perpendicular Lines &mdash; SOMATH&rsquo;s NY Regents Geometry Guide</h1>
+      <p class="post__dek">Slope from two points, slope-intercept form, the five types of slope, the parallel-lines test <span class="eq">m&#8321; = m&#8322;</span>, and the perpendicular-lines test <span class="eq">m&#8321; &middot; m&#8322; = &minus;1</span> &mdash; the complete NY Regents Geometry topic, explained with a worked Regents Part I question and the SOMATH K&ndash;12 math-enrichment arc.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 10, 2026</span>
+        <span>12 min read</span>
+      </div>
+
+      <figure class="post__cover"><picture><source srcset="/assets/blog/slope-parallel-perpendicular/cover.webp" type="image/webp"><img src="/assets/blog/slope-parallel-perpendicular/cover.jpg" alt="SOMATH infographic &mdash; Slope &amp; Line Relationships Regents Geometry reference: definition of slope, slope from two points using m = (y2 &minus; y1) / (x2 &minus; x1), slope from an equation in slope-intercept form y = mx + b, the five types of slope (positive, negative, zero, undefined), the parallel-lines test m1 = m2, the perpendicular-lines test m1 &middot; m2 = &minus;1, a quick-reference relationship table, and Regents-style worked examples. School of Math, Upper West Side NYC." width="1080" height="1235" /></picture></figure>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> the <strong>slope</strong> of a line is a number that measures how steep the line is and in which direction it tilts. From two points, <span class="eq">m = (y&#8322; &minus; y&#8321;) / (x&#8322; &minus; x&#8321;)</span>. From an equation in slope-intercept form <span class="eq">y = mx + b</span>, the slope is <em>m</em> (the coefficient of <em>x</em>) and the y-intercept is <em>b</em>. Two non-vertical lines are <strong>parallel</strong> if and only if <span class="eq">m&#8321; = m&#8322;</span>. Two non-vertical lines are <strong>perpendicular</strong> if and only if <span class="eq">m&#8321; &middot; m&#8322; = &minus;1</span> &mdash; each slope is the negative reciprocal of the other. Those three facts, plus the five types of slope (positive, negative, zero, undefined, and equal), are the whole toolkit the NY Regents Geometry exam uses on Part I slope questions and Part II&ndash;IV coordinate proofs.</p>
+
+<p>This post is the SOMATH Regents Geometry reference for slope and line relationships. If your student is preparing for the January or June Regents &mdash; or working through coordinate geometry in Common Core Geometry &mdash; the fastest way to know where they stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a> on the <strong>Upper West Side (226 W 79th Street, 1st floor)</strong>. Call <a href="tel:+16466686151">(646) 668-6151</a> or see the <a href="/schedule.html">weekly class schedule</a>.</p>
+
+<h2>What is slope?</h2>
+
+<p>The <strong>slope</strong> of a line measures how steep the line is and in which direction it goes. It is defined as the ratio of vertical change (the <em>rise</em>) to horizontal change (the <em>run</em>).</p>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Definition &mdash; Slope</p>
+  <h3>Rise over run</h3>
+  <p class="concept-card__rule">m = rise / run = &Delta;y / &Delta;x = (y&#8322; &minus; y&#8321;) / (x&#8322; &minus; x&#8321;)</p>
+  <ul>
+    <li><strong>Slope is a ratio</strong> &mdash; it has no units.</li>
+    <li><strong>Slope is constant on a straight line</strong> &mdash; pick any two points on the line, you get the same slope.</li>
+    <li><strong>Interpretation:</strong> a slope of 2 means "up 2 for every 1 right." A slope of &minus;&frac12; means "down 1 for every 2 right."</li>
+  </ul>
+</div>
+
+<h2>How to find slope, two ways</h2>
+
+<h3>A. From two points</h3>
+
+<p>Given two points <span class="eq">(x&#8321;, y&#8321;)</span> and <span class="eq">(x&#8322;, y&#8322;)</span>, apply the slope formula:</p>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> Find the slope of the line through <span class="eq">(2, 1)</span> and <span class="eq">(6, 5)</span>.</p>
+  <p><span class="eq">m = (5 &minus; 1) / (6 &minus; 2) = 4 / 4 = 1</span>.</p>
+  <p>The slope is <strong>1</strong> &mdash; the line rises exactly as fast as it runs, a 45&deg; angle.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example (negative slope).</strong> Find the slope of the line through <span class="eq">(&minus;3, 4)</span> and <span class="eq">(1, &minus;2)</span>.</p>
+  <p><span class="eq">m = (&minus;2 &minus; 4) / (1 &minus; (&minus;3)) = &minus;6 / 4 = &minus;3/2</span>.</p>
+  <p>The slope is <strong>&minus;3/2</strong> &mdash; the line falls left to right.</p>
+</div>
+
+<p><strong>Key rule:</strong> subtract the y-coordinates in one order (e.g. point 2 minus point 1) and the x-coordinates in the <em>same</em> order. Mixing the order flips the sign of the slope and gives the wrong answer.</p>
+
+<h3>B. From an equation (slope-intercept form)</h3>
+
+<p>If the equation of a line is in the form <span class="eq">y = mx + b</span>, then the slope is <em>m</em> (the coefficient of <em>x</em>) and the y-intercept is <em>b</em>.</p>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> The equation is <span class="eq">y = 3x &minus; 7</span>. The slope is <strong>m = 3</strong> and the y-intercept is <strong>b = &minus;7</strong>.</p>
+</div>
+
+<p>If the equation is in <em>standard form</em> <span class="eq">Ax + By = C</span>, solve for <em>y</em> to rewrite it as <span class="eq">y = mx + b</span>:</p>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> <span class="eq">x + 2y = 8</span>.</p>
+  <p><span class="eq">2y = &minus;x + 8</span></p>
+  <p><span class="eq">y = &minus;&frac12; x + 4</span></p>
+  <p>Slope <strong>m = &minus;&frac12;</strong>, y-intercept <strong>b = 4</strong>.</p>
+</div>
+
+<p>This step &mdash; converting to slope-intercept form &mdash; is the single most important move on Regents slope questions. Every equation you can read the slope from must be in the form <span class="eq">y = mx + b</span>.</p>
+
+<h2>The five types of slope</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Slope value</th>
+      <th>What the line looks like</th>
+      <th>Example equation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Type"><strong>Positive slope</strong></td>
+      <td data-label="Value"><em>m</em> &gt; 0</td>
+      <td data-label="Line">Rises from left to right</td>
+      <td data-label="Example"><span class="eq">y = 2x + 1</span></td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Type"><strong>Negative slope</strong></td>
+      <td data-label="Value"><em>m</em> &lt; 0</td>
+      <td data-label="Line">Falls from left to right</td>
+      <td data-label="Example"><span class="eq">y = &minus;&frac12;x + 3</span></td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Zero slope</strong></td>
+      <td data-label="Value"><em>m</em> = 0</td>
+      <td data-label="Line">Horizontal (flat)</td>
+      <td data-label="Example"><span class="eq">y = 4</span></td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Undefined slope</strong></td>
+      <td data-label="Value"><em>m</em> undefined</td>
+      <td data-label="Line">Vertical &mdash; run is 0, ratio undefined</td>
+      <td data-label="Example"><span class="eq">x = &minus;2</span></td>
+    </tr>
+    <tr>
+      <td data-label="Type"><strong>Equal slopes</strong></td>
+      <td data-label="Value"><em>m&#8321;</em> = <em>m&#8322;</em></td>
+      <td data-label="Line">Two lines are parallel (or the same line)</td>
+      <td data-label="Example"><span class="eq">y = 2x + 1</span> and <span class="eq">y = 2x &minus; 5</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Zero vs. undefined is a favorite Regents trap.</strong> A horizontal line has slope <em>zero</em>, not "undefined." A vertical line has <em>undefined</em> slope, not zero. Memorize the pair as "HOZY, VUX" &mdash; <em>H</em>orizontal, slope <em>ZerO</em>; <em>V</em>ertical, <em>U</em>ndefined slope, <em>X</em> = constant.</p>
+
+<h2>Parallel lines</h2>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Theorem &mdash; Parallel lines</p>
+  <h3>Two non-vertical lines are parallel if and only if their slopes are equal.</h3>
+  <p class="concept-card__rule">m&#8321; = m&#8322;</p>
+  <ul>
+    <li><strong>If the two equations also share the same y-intercept</strong> (same <em>b</em>), they represent the <em>same line</em>, not a pair of distinct parallel lines.</li>
+    <li><strong>Two vertical lines</strong> (both with undefined slope, of the form <span class="eq">x = a</span>) are parallel too &mdash; this case is not covered by the slope rule but is true by inspection.</li>
+  </ul>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> Are the lines <span class="eq">y = 2x + 1</span> and <span class="eq">y = 2x &minus; 5</span> parallel?</p>
+  <p>Slope of line 1: <span class="eq">m&#8321; = 2</span>. Slope of line 2: <span class="eq">m&#8322; = 2</span>.</p>
+  <p>Since <span class="eq">m&#8321; = m&#8322; = 2</span> and the y-intercepts differ (1 vs. &minus;5), the two lines are <strong>parallel</strong>.</p>
+</div>
+
+<h2>Perpendicular lines</h2>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Theorem &mdash; Perpendicular lines</p>
+  <h3>Two non-vertical lines are perpendicular if and only if the product of their slopes is &minus;1.</h3>
+  <p class="concept-card__rule">m&#8321; &middot; m&#8322; = &minus;1</p>
+  <ul>
+    <li>Equivalently, each slope is the <strong>negative reciprocal</strong> of the other: <span class="eq">m&#8322; = &minus;1 / m&#8321;</span>.</li>
+    <li>To find the negative reciprocal of a slope: <strong>flip the fraction and change the sign</strong>. Example: the negative reciprocal of <span class="eq">2</span> is <span class="eq">&minus;&frac12;</span>. The negative reciprocal of <span class="eq">&minus;2/3</span> is <span class="eq">3/2</span>.</li>
+    <li><strong>Horizontal &perp; vertical:</strong> a horizontal line (slope 0) and a vertical line (undefined slope) are perpendicular by convention, even though the product rule technically doesn't apply.</li>
+  </ul>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> Is the line <span class="eq">y = 2x + 3</span> perpendicular to the line <span class="eq">y = &minus;&frac12; x + 5</span>?</p>
+  <p>Slope of line 1: <span class="eq">m&#8321; = 2</span>. Slope of line 2: <span class="eq">m&#8322; = &minus;&frac12;</span>.</p>
+  <p>Product: <span class="eq">2 &middot; (&minus;&frac12;) = &minus;1</span>. Since <span class="eq">m&#8321; &middot; m&#8322; = &minus;1</span>, the two lines are <strong>perpendicular</strong>.</p>
+</div>
+
+<h2>Slope, parallel, perpendicular &mdash; quick reference</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Situation</th>
+      <th>Relationship between slopes</th>
+      <th>Regents cue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Situation"><strong>Parallel lines</strong></td>
+      <td data-label="Slopes"><code>m&#8321; = m&#8322;</code>, different y-intercepts</td>
+      <td data-label="Cue">"parallel," "never intersect," coordinate proof of parallelogram</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Situation"><strong>Perpendicular lines</strong></td>
+      <td data-label="Slopes"><code>m&#8321; &middot; m&#8322; = &minus;1</code></td>
+      <td data-label="Cue">"perpendicular," "right angle," coordinate proof of rectangle / right triangle</td>
+    </tr>
+    <tr>
+      <td data-label="Situation"><strong>Same line</strong></td>
+      <td data-label="Slopes">Same slope <em>and</em> same y-intercept</td>
+      <td data-label="Cue">Same equation once you rewrite both in <span class="eq">y = mx + b</span></td>
+    </tr>
+    <tr>
+      <td data-label="Situation"><strong>Horizontal line</strong></td>
+      <td data-label="Slopes"><code>m = 0</code></td>
+      <td data-label="Cue"><span class="eq">y = c</span></td>
+    </tr>
+    <tr>
+      <td data-label="Situation"><strong>Vertical line</strong></td>
+      <td data-label="Slopes">Slope undefined</td>
+      <td data-label="Cue"><span class="eq">x = c</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>The Regents question everyone gets wrong</h2>
+
+<p>Here is a Part I multiple-choice question that appears on almost every recent NY Regents Geometry release &mdash; and that a majority of students still get wrong the first time. It is a textbook test of the workflow above: rewrite each equation into slope-intercept form, compare slopes, then check the y-intercepts.</p>
+
+<figure class="inline-fig">
+  <picture><source srcset="/assets/blog/slope-parallel-perpendicular/regents-q6.webp" type="image/webp"><img src="/assets/blog/slope-parallel-perpendicular/regents-q6.jpg" alt="NY Regents Geometry Q6 &mdash; The lines whose equations are represented by y = -1/2 x + 2 and x + 2y = 8 are (1) parallel (2) perpendicular (3) the same line (4) neither parallel nor perpendicular." width="1629" height="544" /></picture>
+  <figcaption>The Regents Q6 as it appears on the exam: two equations, one already in slope-intercept form and one in standard form.</figcaption>
+</figure>
+
+<div class="qbox">
+  <h3>Practice &mdash; Slope, parallel &amp; perpendicular (Regents Geometry, Part I &sect; 6)</h3>
+  <p class="prompt">The lines whose equations are represented by <span class="eq">y = &minus;&frac12; x + 2</span> and <span class="eq">x + 2y = 8</span> are:</p>
+  <ol class="choices">
+    <li>parallel</li>
+    <li>perpendicular</li>
+    <li>the same line</li>
+    <li>neither parallel nor perpendicular</li>
+  </ol>
+  <details class="reveal">
+    <summary></summary>
+    <div class="reveal-body">
+      <p class="answer">Answer: (1) parallel.</p>
+
+      <p class="explain"><strong>Step 1 &mdash; Read the slope of the first line directly.</strong> The first equation is already in slope-intercept form: <span class="eq">y = &minus;&frac12; x + 2</span>. So <em>m</em>&#8321; = <span class="eq">&minus;&frac12;</span> and <em>b</em>&#8321; = 2.</p>
+
+      <p class="explain"><strong>Step 2 &mdash; Rewrite the second line in slope-intercept form.</strong> Start from <span class="eq">x + 2y = 8</span>.</p>
+      <p class="explain"><span class="eq">2y = &minus;x + 8</span></p>
+      <p class="explain"><span class="eq">y = &minus;&frac12; x + 4</span></p>
+      <p class="explain">So <em>m</em>&#8322; = <span class="eq">&minus;&frac12;</span> and <em>b</em>&#8322; = 4.</p>
+
+      <p class="explain"><strong>Step 3 &mdash; Compare the slopes.</strong> <span class="eq">m&#8321; = m&#8322; = &minus;&frac12;</span>. Equal slopes mean the lines are <em>either</em> parallel <em>or</em> the same line.</p>
+
+      <p class="explain"><strong>Step 4 &mdash; Compare the y-intercepts.</strong> <em>b</em>&#8321; = 2 but <em>b</em>&#8322; = 4. The intercepts are different, so the two lines are distinct.</p>
+
+      <p class="explain">The correct answer is <strong>(1) parallel</strong>.</p>
+
+      <p class="explain"><strong>Why the distractors trap real students:</strong></p>
+      <ul>
+        <li><strong>(2) perpendicular</strong> &mdash; the classic negative-reciprocal panic. A student who confuses "same slope" with "perpendicular slope" &mdash; or who computes the negative reciprocal of <span class="eq">&minus;&frac12;</span> (which is <span class="eq">2</span>, not <span class="eq">&minus;&frac12;</span>) &mdash; picks this. Perpendicular requires <span class="eq">m&#8321; &middot; m&#8322; = &minus;1</span>. Here the product is <span class="eq">(&minus;&frac12;)(&minus;&frac12;) = &frac14;</span>, not <span class="eq">&minus;1</span>.</li>
+        <li><strong>(3) the same line</strong> &mdash; the "forgot to check the y-intercepts" trap. A student who stops at Step 3, sees equal slopes, and doesn't finish Step 4 picks this. The y-intercepts (2 and 4) are different, so the lines are parallel, not identical.</li>
+        <li><strong>(4) neither</strong> &mdash; the "didn't convert to slope-intercept form" trap. A student who never rewrites <span class="eq">x + 2y = 8</span> can't compare slopes and defaults to "neither." The whole question depends on that one algebra step.</li>
+      </ul>
+
+      <p class="explain"><strong>The SOMATH 4-step Regents template for slope-relationship questions:</strong></p>
+      <ol>
+        <li>Rewrite every equation in slope-intercept form <span class="eq">y = mx + b</span>.</li>
+        <li>Read off the slopes and y-intercepts.</li>
+        <li>Test parallel: is <span class="eq">m&#8321; = m&#8322;</span>? If yes, check y-intercepts &mdash; different means parallel, same means same line.</li>
+        <li>Test perpendicular: is <span class="eq">m&#8321; &middot; m&#8322; = &minus;1</span>? If yes, perpendicular. If neither, answer "neither."</li>
+      </ol>
+    </div>
+  </details>
+</div>
+
+<h2>More worked examples</h2>
+
+<div class="worked-ex">
+  <p><strong>Example 1 &mdash; Slope from two points.</strong> Find the slope of the line through <span class="eq">(&minus;3, 4)</span> and <span class="eq">(1, &minus;2)</span>.</p>
+  <p><span class="eq">m = (&minus;2 &minus; 4) / (1 &minus; (&minus;3)) = &minus;6 / 4 = &minus;3/2</span>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Example 2 &mdash; Parallel test.</strong> Are the lines <span class="eq">y = &minus;3x + 4</span> and <span class="eq">y = &minus;3x &minus; 7</span> parallel, perpendicular, or neither?</p>
+  <p>Both slopes are <span class="eq">&minus;3</span>. Since <span class="eq">m&#8321; = m&#8322; = &minus;3</span> and the y-intercepts differ (4 vs. &minus;7), the lines are <strong>parallel</strong>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Example 3 &mdash; Perpendicular test.</strong> Is the line <span class="eq">y = (2/3)x + 1</span> perpendicular to the line <span class="eq">y = &minus;(3/2)x &minus; 4</span>?</p>
+  <p>Product of slopes: <span class="eq">(2/3) &middot; (&minus;3/2) = &minus;1</span>. Yes &mdash; the lines are <strong>perpendicular</strong>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Example 4 &mdash; Write the equation of a parallel line.</strong> Find the equation of the line parallel to <span class="eq">y = 4x &minus; 2</span> and passing through <span class="eq">(3, 5)</span>.</p>
+  <p>Parallel means same slope, so <em>m</em> = 4. Use point-slope form: <span class="eq">y &minus; 5 = 4(x &minus; 3)</span>, which simplifies to <span class="eq">y = 4x &minus; 7</span>.</p>
+</div>
+
+<h2>Common mistakes on slope questions</h2>
+
+<ol>
+  <li><strong>Mixing up the numerator and denominator.</strong> Slope is <em>rise over run</em>, i.e. <em>&Delta;y / &Delta;x</em>. Some students write <em>&Delta;x / &Delta;y</em> and get the reciprocal &mdash; a completely different answer.</li>
+  <li><strong>Subtracting in different orders.</strong> If you do <span class="eq">y&#8322; &minus; y&#8321;</span> in the numerator, you must do <span class="eq">x&#8322; &minus; x&#8321;</span> in the denominator. Mixing the order flips the sign.</li>
+  <li><strong>Confusing zero slope with undefined slope.</strong> Horizontal &rarr; slope 0. Vertical &rarr; slope undefined. Memorize the pair.</li>
+  <li><strong>Forgetting to rewrite standard form.</strong> You cannot read the slope off <span class="eq">Ax + By = C</span> directly &mdash; you must solve for <em>y</em> first.</li>
+  <li><strong>Confusing "same slope" with "perpendicular."</strong> Same slope means parallel. Perpendicular means the <em>product</em> of the slopes is <span class="eq">&minus;1</span>.</li>
+  <li><strong>Skipping the y-intercept check.</strong> Two lines with equal slopes might be the same line, not parallel. Always compare y-intercepts once slopes match.</li>
+  <li><strong>Wrong negative reciprocal.</strong> The negative reciprocal of <span class="eq">2</span> is <span class="eq">&minus;&frac12;</span>, not <span class="eq">&frac12;</span> or <span class="eq">&minus;2</span>. Flip <em>and</em> change sign.</li>
+  <li><strong>Using slope-intercept form when the line is vertical.</strong> A vertical line <span class="eq">x = c</span> cannot be written as <span class="eq">y = mx + b</span> because the slope is undefined.</li>
+  <li><strong>Point-slope errors.</strong> When writing a parallel or perpendicular line through a given point, use <span class="eq">y &minus; y&#8321; = m(x &minus; x&#8321;)</span> &mdash; subtract, not add.</li>
+</ol>
+
+<h2>The slope topic at a glance</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Formula</th>
+      <th>Regents cue words</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Quantity"><strong>Slope from two points</strong></td>
+      <td data-label="Formula"><code>m = (y&#8322; &minus; y&#8321;) / (x&#8322; &minus; x&#8321;)</code></td>
+      <td data-label="Cue">"line through (x&#8321;, y&#8321;) and (x&#8322;, y&#8322;)," "rate of change"</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Quantity"><strong>Slope-intercept form</strong></td>
+      <td data-label="Formula"><code>y = mx + b</code></td>
+      <td data-label="Cue">"in the form y = mx + b," "y-intercept," "slope of the line"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Standard form &rarr; slope</strong></td>
+      <td data-label="Formula"><code>Ax + By = C</code> &rarr; <code>m = &minus;A/B</code></td>
+      <td data-label="Cue">Equation with x and y on the same side</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Parallel test</strong></td>
+      <td data-label="Formula"><code>m&#8321; = m&#8322;</code></td>
+      <td data-label="Cue">"parallel," "never intersect," "prove a parallelogram"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Perpendicular test</strong></td>
+      <td data-label="Formula"><code>m&#8321; &middot; m&#8322; = &minus;1</code></td>
+      <td data-label="Cue">"perpendicular," "right angle," "prove a rectangle / right triangle"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Point-slope form</strong></td>
+      <td data-label="Formula"><code>y &minus; y&#8321; = m(x &minus; x&#8321;)</code></td>
+      <td data-label="Cue">"write the equation through the point (x&#8321;, y&#8321;)"</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>How this ties to earlier posts in the SOMATH Regents series</h2>
+
+<ul>
+  <li><a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &mdash; translation, reflection, rotation. Every rigid transformation of a line preserves its slope (translation and rotation by 180&deg;) or reflects it in a predictable way &mdash; the coordinate proofs behind that use exactly this slope machinery.</li>
+  <li><a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations (Dilation)</a> &mdash; a dilation centered at the origin sends a line to a parallel line (same slope, new y-intercept). This post is the algebra behind that fact.</li>
+  <li><a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines in a Triangle &amp; the Midsegment Theorem</a> &mdash; the geometric parallelism that this post captures algebraically through slope.</li>
+  <li><a href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">Sine, Cosine &amp; Tangent for NY Regents Geometry</a> &mdash; the slope of a line equals <span class="eq">tan &theta;</span>, where <em>&theta;</em> is the angle the line makes with the positive x-axis. Slope and trig are the same topic in two disguises.</li>
+  <li><a href="/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry">Rectangular Prisms &mdash; Volume, Surface Area, Diagonals &amp; Scale Factors</a> &mdash; sister post in the Regents Geometry reference series.</li>
+  <li><a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 &mdash; Part II Answers &amp; Explanations</a> &mdash; the full worked June 2026 exam, including slope and coordinate-proof applications.</li>
+</ul>
+
+<h2>How SOMATH teaches slope and line relationships (K&ndash;12 arc)</h2>
+
+<ul>
+  <li><strong><a href="/">Little Newtons</a> (grades 1&ndash;2):</strong> qualitative intuition &mdash; "which line is steeper?" and "which line goes up vs. down?" &mdash; using unit squares on grid paper.</li>
+  <li><strong>Kid Einsteins (grades 3&ndash;5):</strong> ratios and proportional reasoning (Grade 6 Common Core 6.RP), the "unit rate" framing of slope, and the coordinate plane in Grade 5.</li>
+  <li><strong>Young Fermats (grades 5&ndash;8):</strong> formal slope in Grade 8 (Common Core 8.EE.5&ndash;8.EE.6), the <span class="eq">y = mx + b</span> form, and linear equations from two points &mdash; the exact substrate the Regents Geometry exam draws from.</li>
+  <li><strong>High-school Geometry &amp; Algebra:</strong> full theorem-and-proof treatment &mdash; the parallel-slope theorem, the perpendicular-slope theorem, coordinate proofs of parallelograms, rectangles, and right triangles, and Regents Part I&ndash;IV applications like the Q6 above.</li>
+</ul>
+
+<p>Our high-school Geometry teachers hold degrees from Harvard, Northwestern, Columbia, and NYU. Every SOMATH student who has taken the January or June Geometry Regents has scored proficient or higher.</p>
+
+<h2>Quick memory tips for the Regents</h2>
+
+<ol>
+  <li><strong>Always rewrite standard form first.</strong> If you see <span class="eq">Ax + By = C</span>, solve for <em>y</em> before doing anything else. You cannot read slope off standard form.</li>
+  <li><strong>Parallel = equal slopes. Perpendicular = product is &minus;1.</strong> Memorize the pair together &mdash; they are almost always tested side by side.</li>
+  <li><strong>Same slope alone doesn't finish the question.</strong> Check the y-intercepts to decide between "parallel" and "same line."</li>
+  <li><strong>Flip and change sign for perpendicular.</strong> The negative reciprocal of <em>a/b</em> is <span class="eq">&minus;b/a</span>. Flip the fraction, then swap the sign.</li>
+  <li><strong>HOZY / VUX.</strong> <em>H</em>orizontal &rarr; slope <em>ZerO</em>; <em>V</em>ertical &rarr; <em>U</em>ndefined slope &rarr; <em>X</em> = constant. Never confuse the two.</li>
+</ol>
+
+<h2>Book a free math enrichment evaluation</h2>
+
+<p>If your child is preparing for the January or June Regents Geometry &mdash; or building toward Geometry through middle-school Common Core &mdash; the fastest way to know where they stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a>. Your child works one-on-one with a SOMATH teacher, and you receive a written diagnostic within 48 hours &mdash; specifically what your child has mastered, where the gaps are, and what to work on next. Yours to keep whether you enroll or not.</p>
+
+<p>SOMATH is at <strong>226 West 79th Street, first floor</strong>, between Broadway and Amsterdam. Phone <a href="tel:+16466686151">(646) 668-6151</a>. See our <a href="/schedule.html">weekly class schedule</a> or browse <a href="/courses/">all courses grades 1&ndash;12</a>.</p>
+
+<p>Related reading: <a href="/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry">Rectangular Prisms &mdash; Volume, Surface Area, Diagonals &amp; Scale Factors</a> &middot; <a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines in a Triangle &amp; the Midsegment Theorem</a> &middot; <a href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">Sine, Cosine &amp; Tangent for NY Regents Geometry</a> &middot; <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 Part II Answers</a>.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Ready for Regents Geometry? Let&rsquo;s find out.</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We&rsquo;ll diagnose
+            exactly where your child stands on slope, parallel and perpendicular
+            lines, coordinate proofs, and the rest of the Regents Geometry arc,
+            and send a written summary within 48 hours &mdash; yours to keep
+            whether you enroll or not.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus, SAT Math, and Regents Geometry / Algebra in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Rectangular Prisms: Volume, Surface Area, Diagonals &amp; Scale Factors</h2>
+          <p class="blog-card__dek">V = lwh, SA = 2(lw + lh + wh), space diagonal, and the k / k&sup2; / k&sup3; scale-factor rule &mdash; the complete NY Regents topic with a worked fish-tank Q.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 12 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Parallel Lines in a Triangle &amp; the Midsegment Theorem</h2>
+          <p class="blog-card__dek">The Basic Proportionality Theorem, its converse, and the Midsegment Theorem &mdash; explained with worked Regents examples.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 11 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">
+          <span class="blog-card__category">Regents Geometry &middot; Trig</span>
+          <h2 class="blog-card__title">Sine, Cosine &amp; Tangent for NY Regents Geometry: Definitions, Identities &amp; the Unit Circle</h2>
+          <p class="blog-card__dek">SOH-CAH-TOA, Pythagorean and reciprocal identities, exact values, and the unit-circle view.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 11 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-enrichment-upper-west-side-parents-guide">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">Best Math Enrichment on the Upper West Side: A Parent's Guide</h2>
+          <p class="blog-card__dek">The full guide to serious math enrichment on the UWS &mdash; what to look for and how to compare programs.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260810-slope"></script>
+  </body>
+</html>
