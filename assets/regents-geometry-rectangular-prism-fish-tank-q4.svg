@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 380" role="img" aria-labelledby="title desc">
+  <title id="title">Rectangular fish tank 35 cm long, 17 cm wide, 25 cm high, water 3 cm from top</title>
+  <desc id="desc">A rectangular prism representing a fish tank. Length 35 cm across the front, height 25 cm, depth 17 cm going back at an angle. A water line is drawn 3 cm below the top rim, leaving a water column of height 22 cm.</desc>
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bfe1f1" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#5fa7cc" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <!-- back top edge -->
+  <polygon points="110,80 470,80 500,50 140,50" fill="#f5f1e8" stroke="#1f3d2e" stroke-width="2"/>
+  <!-- water block (front face rectangle from just below top to bottom, then side + top) -->
+  <!-- top of water on front face at y = 80 + (3/25)*280 = 80 + 33.6 = 113.6 -->
+  <rect x="110" y="113.6" width="360" height="246.4" fill="url(#water)" stroke="none"/>
+  <!-- water top: parallelogram showing surface at 3 cm from top -->
+  <polygon points="110,113.6 470,113.6 500,83.6 140,83.6" fill="#a4cbe0" stroke="#3a7fa4" stroke-width="1.2"/>
+  <!-- back-right vertical (water side) -->
+  <polygon points="470,113.6 500,83.6 500,330 470,360" fill="#5fa7cc" fill-opacity="0.55" stroke="#3a7fa4" stroke-width="1"/>
+  <!-- prism outline (front) -->
+  <rect x="110" y="80" width="360" height="280" fill="none" stroke="#1f3d2e" stroke-width="2.4"/>
+  <!-- back-right vertical -->
+  <line x1="470" y1="80" x2="500" y2="50" stroke="#1f3d2e" stroke-width="2"/>
+  <line x1="470" y1="360" x2="500" y2="330" stroke="#1f3d2e" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="500" y1="50" x2="500" y2="330" stroke="#1f3d2e" stroke-width="2"/>
+  <!-- back-left hidden -->
+  <line x1="110" y1="80" x2="140" y2="50" stroke="#1f3d2e" stroke-width="2"/>
+  <line x1="110" y1="360" x2="140" y2="330" stroke="#1f3d2e" stroke-width="1.6" stroke-dasharray="4 4"/>
+  <line x1="140" y1="50" x2="140" y2="330" stroke="#1f3d2e" stroke-width="1.6" stroke-dasharray="4 4"/>
+  <!-- back-bottom hidden -->
+  <line x1="140" y1="330" x2="500" y2="330" stroke="#1f3d2e" stroke-width="1.6" stroke-dasharray="4 4"/>
+
+  <!-- dimension labels -->
+  <!-- length 35 cm along front bottom -->
+  <line x1="110" y1="378" x2="470" y2="378" stroke="#8a6d1f" stroke-width="1.2"/>
+  <line x1="110" y1="373" x2="110" y2="383" stroke="#8a6d1f" stroke-width="1.2"/>
+  <line x1="470" y1="373" x2="470" y2="383" stroke="#8a6d1f" stroke-width="1.2"/>
+  <text x="290" y="373" fill="#8a6d1f" font-size="15" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700">length = 35 cm</text>
+
+  <!-- height 25 cm on left front -->
+  <line x1="98" y1="80" x2="98" y2="360" stroke="#8a6d1f" stroke-width="1.2"/>
+  <line x1="93" y1="80" x2="103" y2="80" stroke="#8a6d1f" stroke-width="1.2"/>
+  <line x1="93" y1="360" x2="103" y2="360" stroke="#8a6d1f" stroke-width="1.2"/>
+  <text x="60" y="225" fill="#8a6d1f" font-size="15" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700" transform="rotate(-90 60 225)">height = 25 cm</text>
+
+  <!-- width 17 cm on right, along the receding edge -->
+  <line x1="482" y1="374" x2="512" y2="344" stroke="#8a6d1f" stroke-width="1.2"/>
+  <line x1="478" y1="370" x2="486" y2="378" stroke="#8a6d1f" stroke-width="1.2"/>
+  <line x1="508" y1="340" x2="516" y2="348" stroke="#8a6d1f" stroke-width="1.2"/>
+  <text x="512" y="368" fill="#8a6d1f" font-size="15" font-family="Arial,Helvetica,sans-serif" font-weight="700">width = 17 cm</text>
+
+  <!-- water depth callout: 3 cm empty on top -->
+  <line x1="88" y1="80" x2="88" y2="113.6" stroke="#a12c7b" stroke-width="1.4"/>
+  <line x1="83" y1="80" x2="93" y2="80" stroke="#a12c7b" stroke-width="1.4"/>
+  <line x1="83" y1="113.6" x2="93" y2="113.6" stroke="#a12c7b" stroke-width="1.4"/>
+  <text x="12" y="102" fill="#a12c7b" font-size="14" font-family="Arial,Helvetica,sans-serif" font-weight="700">3 cm empty</text>
+
+  <!-- water column height 22 cm -->
+  <line x1="80" y1="115" x2="80" y2="358" stroke="#20808D" stroke-width="1.6"/>
+  <line x1="75" y1="115" x2="85" y2="115" stroke="#20808D" stroke-width="1.6"/>
+  <line x1="75" y1="358" x2="85" y2="358" stroke="#20808D" stroke-width="1.6"/>
+  <text x="30" y="240" fill="#20808D" font-size="15" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700" transform="rotate(-90 30 240)">water = 22 cm</text>
+
+  <!-- water surface label -->
+  <text x="290" y="105" fill="#0a3a5f" font-size="14" font-family="Arial,Helvetica,sans-serif" text-anchor="middle" font-weight="700">water surface (3 cm below rim)</text>
+</svg>

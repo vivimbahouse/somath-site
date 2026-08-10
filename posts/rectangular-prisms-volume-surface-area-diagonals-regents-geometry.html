@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Rectangular Prisms: Volume, Surface Area, Diagonals &amp; Scale Factors &mdash; SOMATH&rsquo;s Regents Geometry Guide | SOMATH</title>
+    <meta name="description" content="Rectangular prisms &mdash; volume V = lwh, surface area SA = 2(lw + lh + wh), face and space diagonals, and the k / k&sup2; / k&sup3; scale-factor rule &mdash; the full NY Regents Geometry topic explained with a worked fish-tank Regents question and the SOMATH K&ndash;12 math-enrichment arc." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Rectangular Prisms: Volume, Surface Area, Diagonals &amp; Scale Factors &mdash; SOMATH's Regents Geometry Guide" />
+    <meta property="og:description" content="Volume, surface area, lateral area, face and space diagonals, nets, and scale factors of a rectangular prism &mdash; the complete NY Regents Geometry topic, with a worked fish-tank problem." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/rectangular-prisms/cover.jpg" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="article:published_time" content="2026-08-10" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Rectangular Prisms: Volume, Surface Area, Diagonals &amp; Scale Factors &mdash; SOMATH's Regents Geometry Guide" />
+    <meta name="twitter:description" content="V = lwh, SA = 2(lw + lh + wh), face diagonal &radic;(a&sup2;+b&sup2;), space diagonal &radic;(l&sup2;+w&sup2;+h&sup2;), and the k / k&sup2; / k&sup3; scale-factor rule &mdash; the complete Regents Geometry topic with a worked fish-tank problem." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/rectangular-prisms/cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .cmp-table-wrap { margin:20px 0 28px; }
+      .cmp-table { width:100%; border-collapse:collapse; font-size:0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(31,61,46,0.05); }
+      .cmp-table th, .cmp-table td { padding:12px 14px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; line-height:1.4; }
+      .cmp-table th { background:#1f3d2e; color:#fff; font-weight:700; font-size:0.86rem; letter-spacing:0.02em; text-transform:uppercase; }
+      .cmp-table tr:last-child td { border-bottom:none; }
+      .cmp-table tr:nth-child(even) td { background:#faf8f2; }
+      .cmp-table tr.is-featured td { background:#f0ede2; font-weight:500; }
+      .cmp-table code { background:#f4efe0; padding:1px 6px; border-radius:4px; font-size:0.9em; color:#1f3d2e; }
+
+      @media (max-width: 720px) {
+        .cmp-table { border-radius:0; box-shadow:none; background:transparent; }
+        .cmp-table thead { display:none; }
+        .cmp-table, .cmp-table tbody, .cmp-table tr, .cmp-table td { display:block; width:100%; }
+        .cmp-table tr { background:#fff; border:1px solid #e6e6e6; border-radius:8px; padding:14px 16px; margin:0 0 14px; box-shadow:0 1px 3px rgba(31,61,46,0.05); }
+        .cmp-table tr:nth-child(even) td { background:transparent; }
+        .cmp-table tr.is-featured { background:#faf7ed; }
+        .cmp-table tr.is-featured td { background:transparent; border-left:none; }
+        .cmp-table td { border:none; padding:5px 0; display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+        .cmp-table td:first-child { padding:0 0 10px; margin:0 0 10px; border-bottom:1px solid #e6d9b8; font-size:1.15rem; font-weight:700; color:#1f3d2e; display:block; letter-spacing:0.01em; }
+        .cmp-table td:first-child strong { font-weight:700; }
+        .cmp-table td:not(:first-child)::before { content:attr(data-label); font-size:0.78rem; font-weight:600; color:#8a6d1f; text-transform:uppercase; letter-spacing:0.04em; flex-shrink:0; }
+        .cmp-table td:not(:first-child) { text-align:right; }
+      }
+
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:12px 24px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s; }
+      .course-cta-card__primary:hover { background:#152a20; color:#fff; }
+      .course-cta-card__secondary { background:#fff; color:#1f3d2e; border:2px solid #1f3d2e; padding:10px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; transition:background 0.15s, color 0.15s; }
+      .course-cta-card__secondary:hover { background:#1f3d2e; color:#fff; }
+
+      .concept-card { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 24px; margin:16px 0; box-shadow:0 1px 3px rgba(31,61,46,0.04); }
+      .concept-card h3 { margin-top:0; color:#1f3d2e; }
+      .concept-card__meta { font-size:0.85rem; color:#8a6d1f; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; }
+      .concept-card__rule { background:#f4efe0; padding:10px 14px; border-radius:6px; font-family: 'Courier New', monospace; font-size:1.02rem; color:#1f3d2e; display:inline-block; margin:6px 0; }
+      .concept-card ul { margin:8px 0 0; padding-left:20px; }
+      .concept-card ul li { margin:4px 0; }
+
+      .worked-ex { background:#faf7ed; border-left:4px solid #c89a3a; padding:14px 18px; margin:16px 0; border-radius:0 8px 8px 0; }
+      .worked-ex strong { color:#1f3d2e; }
+      .worked-ex code { background:#fff; padding:1px 6px; border-radius:4px; font-size:0.95em; }
+
+      /* Practice-question box */
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .qbox .prompt { margin:6px 0 10px; }
+      .qbox ol.choices { margin:6px 0 12px 22px; padding:0; }
+      .qbox ol.choices li { margin:4px 0; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:6px 0; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; display:inline; position:static; }
+
+      .inline-fig { margin:24px 0; }
+      .inline-fig figcaption { font-size:0.85rem; color:#6a6a6a; margin-top:8px; font-style:italic; text-align:center; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Rectangular Prisms: Volume, Surface Area, Diagonals & Scale Factors — SOMATH's Regents Geometry Guide",
+  "description": "Rectangular prisms — volume V = lwh, surface area SA = 2(lw + lh + wh), face diagonal d = √(a² + b²), space diagonal D = √(l² + w² + h²), lateral area, nets, and the k / k² / k³ scale-factor rule — the complete NY Regents Geometry topic with a worked fish-tank problem and the SOMATH K–12 math-enrichment arc.",
+  "image": "https://www.schoolofmath.us/assets/blog/rectangular-prisms/cover.jpg",
+  "datePublished": "2026-08-10",
+  "dateModified": "2026-08-10",
+  "author": {
+    "@type": "Person",
+    "name": "School of Math",
+    "jobTitle": "Head of Education, Co-Founder",
+    "url": "https://www.schoolofmath.us/about"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "SOMATH",
+    "url": "https://www.schoolofmath.us",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/favicon-192.png"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "226 W 79th St, 1st Floor",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10024",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-646-668-6151"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/rectangular-prisms-volume-surface-area-diagonals-regents-geometry"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a rectangular prism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A rectangular prism is a three-dimensional solid bounded by six rectangular faces, where opposite faces are congruent and parallel. It has three dimensions — length (l), width (w), and height (h) — and every corner is a right angle. Everyday examples include cereal boxes, bricks, fish tanks, shipping boxes, and most rooms. A cube is the special case where l = w = h."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the formula for the volume of a rectangular prism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Volume equals length times width times height: V = l × w × h. Volume is measured in cubic units (cm³, in³, ft³, m³). If any dimension is in a different unit, convert to a common unit before multiplying. Order does not matter — multiplication is commutative — so 8 × 4 × 10 gives the same result as 10 × 4 × 8."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the surface area formula for a rectangular prism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Surface area sums the areas of the six rectangular faces. Because opposite faces are congruent, SA = 2(lw + lh + wh). Surface area is measured in square units (cm², in², ft², m²). Lateral area — the four side faces only, excluding top and bottom — is LA = 2h(l + w)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you find the diagonals of a rectangular prism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A face diagonal cuts across one rectangular face; by the Pythagorean Theorem, d = √(a² + b²), where a and b are the two edges of that face. A space diagonal (also called a body diagonal) connects two opposite vertices through the interior of the solid; by the 3-D Pythagorean Theorem, D = √(l² + w² + h²)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to volume and surface area when you scale a rectangular prism?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under a similarity transformation with scale factor k: every length multiplies by k, every area (including surface area) multiplies by k², and volume multiplies by k³. For example, tripling every edge (k = 3) multiplies surface area by 9 and volume by 27. This is the same k / k² / k³ scale-factor rule the NY Regents Geometry exam tests under similarity and dilations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does volume translate to liquid capacity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 cubic centimeter of liquid equals 1 milliliter (1 cm³ = 1 mL), and 1000 mL = 1 liter, so 1000 cm³ = 1 L. To convert cubic centimeters to liters, divide the volume by 1000. This is the standard SI conversion the Regents Geometry exam uses whenever a real-world container question asks for liters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the topic appear on the NY Regents Geometry exam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — rectangular prism volume and surface area are core Regents Geometry topics. On the June 2026 exam, Part I question 4 tested rectangular prism volume in a fish-tank word problem: given a 35 × 17 × 25 cm tank filled with water to 3 cm from the top, students had to compute V = 35 × 17 × 22 = 13,090 cm³ ≈ 13 liters. SOMATH students learn to identify the effective height, multiply, then convert cm³ to liters by dividing by 1000."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body data-page="blog">
+    <div id="nav-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Math Enrichment</p>
+      <h1 class="post__title">Rectangular Prisms: Volume, Surface Area, Diagonals &amp; Scale Factors &mdash; SOMATH&rsquo;s Regents Geometry Guide</h1>
+      <p class="post__dek">Volume <span class="eq">V = lwh</span>, surface area <span class="eq">SA = 2(lw + lh + wh)</span>, lateral area, face and space diagonals, nets, and the <span class="eq">k / k&sup2; / k&sup3;</span> scale-factor rule &mdash; the complete NY Regents Geometry topic, explained with a worked fish-tank Regents question and the SOMATH K&ndash;12 math-enrichment arc.</p>
+      <div class="post__meta">
+        <span><strong>School of Math</strong></span>
+        <span>August 10, 2026</span>
+        <span>12 min read</span>
+      </div>
+
+      <div class="post__body">
+
+<p><strong>The short answer:</strong> a <strong>rectangular prism</strong> is a 3-D solid with six rectangular faces &mdash; three dimensions <em>length</em>, <em>width</em>, and <em>height</em>. Its <strong>volume</strong> is <span class="eq">V = lwh</span> (cubic units). Its <strong>surface area</strong> is <span class="eq">SA = 2(lw + lh + wh)</span> (square units). Its <strong>space diagonal</strong> &mdash; the longest straight line that fits inside &mdash; is <span class="eq">D = &radic;(l&sup2; + w&sup2; + h&sup2;)</span>. And under a similarity with scale factor <em>k</em>, edges multiply by <em>k</em>, surface area by <em>k</em><sup>2</sup>, and volume by <em>k</em><sup>3</sup>. That's the whole toolkit the NY Regents Geometry exam uses when it tests boxes, tanks, and rooms.</p>
+
+<p>This post is the SOMATH Regents Geometry reference for rectangular prisms. If you're preparing for the January or June exam &mdash; or working through solids and mensuration in Common Core Geometry &mdash; the fastest way to know where you stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a> on the <strong>Upper West Side (226 W 79th Street, 1st floor)</strong>. Call <a href="tel:+16466686151">(646) 668-6151</a> or see the <a href="/schedule.html">weekly class schedule</a>.</p>
+
+<h2>What is a rectangular prism?</h2>
+
+<p>A <strong>rectangular prism</strong> (also called a cuboid, or a rectangular box) is a three-dimensional solid whose six faces are all rectangles. Opposite faces are congruent and parallel, and every corner is a right angle.</p>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Definition &mdash; Rectangular prism</p>
+  <h3>Six rectangular faces, three dimensions</h3>
+  <p>A rectangular prism has three edge lengths: <strong>length <em>l</em></strong>, <strong>width <em>w</em></strong>, and <strong>height <em>h</em></strong>. The three pairs of opposite faces have areas <span class="eq">lw</span>, <span class="eq">lh</span>, and <span class="eq">wh</span>.</p>
+  <ul>
+    <li><strong>Faces:</strong> 6 (three pairs of congruent rectangles)</li>
+    <li><strong>Edges:</strong> 12 (four of each length &mdash; 4 length edges, 4 width edges, 4 height edges)</li>
+    <li><strong>Vertices:</strong> 8 (every corner is a right angle)</li>
+  </ul>
+  <p>A <strong>cube</strong> is the special rectangular prism where <span class="eq">l = w = h</span>. All the formulas below still apply &mdash; they just collapse: <span class="eq">V = s&sup3;</span>, <span class="eq">SA = 6s&sup2;</span>, <span class="eq">D = s&radic;3</span>.</p>
+</div>
+
+<p>Boxes, bricks, cereal boxes, shipping containers, rooms, and aquariums are all rectangular prisms. The Regents likes real-world containers precisely because the same three edge lengths give you volume, surface area, and diagonals &mdash; three questions from one solid.</p>
+
+<h2>Volume: <span class="eq">V = lwh</span></h2>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Formula &mdash; Volume of a rectangular prism</p>
+  <h3>Multiply the three edge lengths</h3>
+  <p class="concept-card__rule">V = l &times; w &times; h</p>
+  <p>Volume measures how much space the solid occupies, in <strong>cubic units</strong> (cm<sup>3</sup>, in<sup>3</sup>, ft<sup>3</sup>, m<sup>3</sup>). Multiplication is commutative, so order does not matter &mdash; <span class="eq">8 &times; 4 &times; 10 = 10 &times; 4 &times; 8 = 320</span>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> A rectangular prism has <em>l</em> = 9 cm, <em>w</em> = 6 cm, and <em>h</em> = 5 cm.</p>
+  <p><span class="eq">V = 9 &times; 6 &times; 5 = 270 cm&sup3;</span></p>
+  <p>The prism holds 270 cubic centimeters of space. If it were a water tank, that would be 270 mL, or 0.27 L (since 1000 cm<sup>3</sup> = 1 L).</p>
+</div>
+
+<h3>Volume-to-liquid conversion (the Regents shortcut)</h3>
+
+<p>The Regents loves fish tanks and buckets, so memorize the conversion:</p>
+
+<ul>
+  <li><span class="eq">1 cm&sup3; = 1 mL</span></li>
+  <li><span class="eq">1000 cm&sup3; = 1 L</span></li>
+  <li><span class="eq">1 m&sup3; = 1000 L</span></li>
+</ul>
+
+<p>To go from cubic centimeters to liters, divide by 1000. To go from cubic meters to liters, multiply by 1000. Get this conversion wrong and you'll miss a Regents Part I question by a factor of a thousand.</p>
+
+<h2>Surface Area: <span class="eq">SA = 2(lw + lh + wh)</span></h2>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Formula &mdash; Total surface area</p>
+  <h3>Sum the six faces (in pairs)</h3>
+  <p class="concept-card__rule">SA = 2(lw + lh + wh)</p>
+  <p>Because opposite faces are congruent, the six-face sum <span class="eq">lw + lw + lh + lh + wh + wh</span> collapses to <span class="eq">2(lw + lh + wh)</span>. Surface area is measured in <strong>square units</strong>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> A rectangular prism has <em>l</em> = 8, <em>w</em> = 4, <em>h</em> = 10 (units in cm).</p>
+  <p><span class="eq">SA = 2(8 &times; 4 + 8 &times; 10 + 4 &times; 10)</span></p>
+  <p><span class="eq">SA = 2(32 + 80 + 40) = 2(152) = 304 cm&sup2;</span></p>
+  <p>You would need 304 square centimeters of wrapping paper to cover this box, ignoring overlap.</p>
+</div>
+
+<h3>Lateral surface area: the four side faces only</h3>
+
+<p>Sometimes a Regents word problem asks for the four vertical faces only &mdash; the paint on the walls of a room, not the ceiling and floor; or the label around a box, not the top and bottom.</p>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Formula &mdash; Lateral (side) surface area</p>
+  <h3>Perimeter of the base times height</h3>
+  <p class="concept-card__rule">LA = 2h(l + w)</p>
+  <p>The base perimeter is <span class="eq">2l + 2w = 2(l + w)</span>. Multiply by the height to get the four side faces. Total <span class="eq">SA = LA + 2lw</span> (add the top and bottom back in).</p>
+</div>
+
+<h2>Nets: the six-rectangle unfolding</h2>
+
+<p>A <strong>net</strong> of a rectangular prism is a 2-D flattening of its six faces into a single sheet that folds back into the solid. Every rectangular prism has multiple valid nets, but they always contain <strong>six rectangles</strong> arranged so opposite faces are matched.</p>
+
+<p>Regents Part I questions sometimes show a net and ask which prism it folds into, or the other way around. The check is always the same: identify the three pairs of congruent rectangles (<span class="eq">lw</span>, <span class="eq">lh</span>, <span class="eq">wh</span>) and make sure the net has exactly two of each. Then confirm the fold lines connect a length edge to a length edge, a width edge to a width edge, and so on. Nets are also the fastest way to <em>see</em> why surface area is <span class="eq">2(lw + lh + wh)</span> &mdash; you're literally adding the areas of the six rectangles on the page.</p>
+
+<h2>Diagonals: face diagonal <em>d</em> and space diagonal <em>D</em></h2>
+
+<p>Rectangular prisms have two kinds of diagonals: those that lie in one face, and those that cut through the interior of the solid.</p>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Formula &mdash; Face diagonal</p>
+  <h3>Pythagorean Theorem in one face</h3>
+  <p class="concept-card__rule">d = &radic;(a&sup2; + b&sup2;)</p>
+  <p>A face diagonal is the diagonal of a single rectangular face with edge lengths <em>a</em> and <em>b</em>. It is the hypotenuse of the right triangle formed by those two edges. Each rectangular prism has three distinct face-diagonal lengths &mdash; one for each pair of opposite faces.</p>
+</div>
+
+<div class="concept-card">
+  <p class="concept-card__meta">Formula &mdash; Space diagonal (body diagonal)</p>
+  <h3>3-D Pythagorean Theorem</h3>
+  <p class="concept-card__rule">D = &radic;(l&sup2; + w&sup2; + h&sup2;)</p>
+  <p>The <strong>space diagonal</strong> connects two opposite vertices through the interior of the solid &mdash; it's the longest straight line that fits inside the prism. Apply the Pythagorean Theorem twice: once on the base to get a face diagonal <span class="eq">&radic;(l&sup2; + w&sup2;)</span>, then again with the height to get <span class="eq">&radic;((&radic;(l&sup2;+w&sup2;))&sup2; + h&sup2;) = &radic;(l&sup2; + w&sup2; + h&sup2;)</span>.</p>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> A rectangular prism has <em>l</em> = 12, <em>w</em> = 5, and space diagonal <em>D</em> = 13. Find <em>h</em>.</p>
+  <p><span class="eq">D&sup2; = l&sup2; + w&sup2; + h&sup2;</span></p>
+  <p><span class="eq">169 = 144 + 25 + h&sup2;</span></p>
+  <p><span class="eq">h&sup2; = 0 &rArr; h = 0</span></p>
+  <p>The "prism" collapses to a rectangle in this edge case &mdash; a useful reminder that (5, 12, 13) is already a Pythagorean triple, so the space diagonal was really just a face diagonal. Regents problems typically substitute in a positive <em>h</em>, but this shows the algebra: <em>always solve for the missing edge with the Pythagorean form.</em></p>
+</div>
+
+<h2>Scale factors: the <em>k</em> / <em>k</em><sup>2</sup> / <em>k</em><sup>3</sup> rule</h2>
+
+<p>If you dilate a rectangular prism by scale factor <em>k</em>, every edge multiplies by <em>k</em>. Because area is length squared and volume is length cubed:</p>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Multiplies by</th>
+      <th>Because</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Quantity"><strong>Every edge length</strong></td>
+      <td data-label="Factor"><code>k</code></td>
+      <td data-label="Why">A dilation stretches every length by <em>k</em>.</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Quantity"><strong>Any area (including surface area)</strong></td>
+      <td data-label="Factor"><code>k&sup2;</code></td>
+      <td data-label="Why">Area = length &times; length &rarr; <span class="eq">(kl)(kw) = k&sup2;(lw)</span>.</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Volume</strong></td>
+      <td data-label="Factor"><code>k&sup3;</code></td>
+      <td data-label="Why">Volume = length &times; length &times; length &rarr; <span class="eq">(kl)(kw)(kh) = k&sup3;(lwh)</span>.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="worked-ex">
+  <p><strong>Worked example.</strong> Triple every edge of a rectangular prism (<em>k</em> = 3).</p>
+  <ul>
+    <li>Edges <span class="eq">&times; 3</span></li>
+    <li>Surface area <span class="eq">&times; 9</span> &nbsp;(since 3<sup>2</sup> = 9)</li>
+    <li>Volume <span class="eq">&times; 27</span> &nbsp;(since 3<sup>3</sup> = 27)</li>
+  </ul>
+  <p>This is the identical rule tested on <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations (dilations)</a> &mdash; the same theorem, applied to a solid.</p>
+</div>
+
+<h2>Regents Geometry practice question &mdash; fish tank volume (June 2026, Q4)</h2>
+
+<figure class="inline-fig">
+  <img src="/assets/regents-geometry-rectangular-prism-fish-tank-q4.svg" alt="Rectangular fish tank 35 cm long, 17 cm wide, 25 cm high, with a water line 3 cm below the top rim &mdash; water column of 22 cm." width="520" height="380" />
+  <figcaption>The fish tank in the Regents Q4: length 35 cm, width 17 cm, height 25 cm, water 3 cm from the top &mdash; so the effective water height is 22 cm.</figcaption>
+</figure>
+
+<div class="qbox">
+  <h3>Practice &mdash; Fish tank volume (Regents Geometry, June 2026, Part I &sect; 4)</h3>
+  <p class="prompt">A fish tank in the shape of a rectangular prism has dimensions 35 cm by 17 cm by 25 cm. It is filled with water to a level of 3 cm from the top. Approximately how many liters of water are in the tank?</p>
+  <p class="prompt">(Note: 1000 cm<sup>3</sup> = 1 liter)</p>
+  <ol class="choices">
+    <li>10</li>
+    <li>13</li>
+    <li>15</li>
+    <li>17</li>
+  </ol>
+  <details class="reveal">
+    <summary></summary>
+    <div class="reveal-body">
+      <p class="answer">Answer: (2) 13 liters.</p>
+
+      <p class="explain"><strong>Step 1 &mdash; Identify the three edge lengths.</strong> The tank has length <em>l</em> = 35 cm, width <em>w</em> = 17 cm, total height <em>h</em><sub>total</sub> = 25 cm.</p>
+
+      <p class="explain"><strong>Step 2 &mdash; Find the effective water height.</strong> The water level is 3 cm <em>from the top</em>, so the water column reaches from the bottom up to <span class="eq">25 &minus; 3 = 22 cm</span>. Use <em>h</em><sub>water</sub> = 22 cm for the volume calculation. Every Regents "fills to X from the top" phrasing is a signal to subtract from the total height first.</p>
+
+      <p class="explain"><strong>Step 3 &mdash; Apply <span class="eq">V = lwh</span>.</strong></p>
+      <p class="explain"><span class="eq">V = 35 &times; 17 &times; 22</span></p>
+      <p class="explain"><span class="eq">V = 35 &times; 17 = 595</span></p>
+      <p class="explain"><span class="eq">V = 595 &times; 22 = 13{,}090 cm&sup3;</span></p>
+
+      <p class="explain"><strong>Step 4 &mdash; Convert cubic centimeters to liters.</strong> Since <span class="eq">1000 cm&sup3; = 1 L</span>, divide by 1000:</p>
+      <p class="explain"><span class="eq">V = 13{,}090 &divide; 1000 = 13.09 L &asymp; 13 L</span>.</p>
+
+      <p class="explain">The correct answer is <strong>(2) 13 liters</strong>.</p>
+
+      <p class="explain"><strong>Why the distractors trap real students:</strong></p>
+      <ul>
+        <li><strong>(1) 10</strong> &mdash; a student who reads the problem too fast and uses <em>h</em> = 15 (subtracting 10 instead of 3, or dividing wrong), or who slips a factor of 10 somewhere in the arithmetic, lands around 10.</li>
+        <li><strong>(3) 15</strong> &mdash; the classic "used the full height" trap. <span class="eq">35 &times; 17 &times; 25 = 14{,}875 cm&sup3; &asymp; 15 L</span>. Any student who forgets to subtract the 3 cm of empty space picks this answer. This is why <em>reading carefully for "from the top" / "from the bottom"</em> is a Regents survival skill.</li>
+        <li><strong>(4) 17</strong> &mdash; the width itself, sold as an answer. It's the face-value trap: a student who panics and doesn't do the multiplication may grab a number from the problem statement.</li>
+      </ul>
+
+      <p class="explain"><strong>The SOMATH 4-second Regents template for prism-container questions:</strong></p>
+      <ol>
+        <li>Read the problem twice &mdash; identify total dimensions vs. "filled to" or "empty" measurements.</li>
+        <li>Draw the box, label <em>l</em>, <em>w</em>, and the <em>effective</em> <em>h</em> (subtract any empty layer).</li>
+        <li>Multiply the three: <span class="eq">V = lwh</span>. Do the arithmetic left to right.</li>
+        <li>Convert cm<sup>3</sup> &rarr; L by dividing by 1000, and check the answer is in the right order of magnitude.</li>
+      </ol>
+    </div>
+  </details>
+</div>
+
+<h2>Common mistakes on rectangular prism questions</h2>
+
+<ol>
+  <li><strong>Using the wrong formula.</strong> <span class="eq">V = lwh</span> is volume; <span class="eq">SA = 2(lw + lh + wh)</span> is surface area. Read the question carefully &mdash; "how much water fits" is volume, "how much paint / wrapping paper" is surface area.</li>
+  <li><strong>Forgetting to square in surface area.</strong> Some students write <span class="eq">SA = 2(l + w + h)</span> &mdash; that's the perimeter of nothing. Surface area needs products of edges (<em>lw</em>, <em>lh</em>, <em>wh</em>), not sums.</li>
+  <li><strong>Mixing up cubic and square units.</strong> Volume is <em>always</em> cubic units (cm<sup>3</sup>, in<sup>3</sup>, ft<sup>3</sup>). Surface area is <em>always</em> square units (cm<sup>2</sup>, in<sup>2</sup>, ft<sup>2</sup>). A Regents answer choice with the wrong units is usually a distractor.</li>
+  <li><strong>Confusing which edge is <em>l</em>, <em>w</em>, or <em>h</em>.</strong> It doesn't matter for volume (multiplication is commutative), but it does matter for lateral area (which uses only <em>l</em>, <em>w</em>, and <em>h</em> in a specific pattern) and for identifying which face is a base.</li>
+  <li><strong>Forgetting to subtract for "filled to X from the top."</strong> This is the exact trap in the June 2026 fish-tank question. Always compute the <em>effective</em> water height first.</li>
+  <li><strong>Confusing face diagonal with space diagonal.</strong> The face diagonal uses two edges. The space diagonal uses all three. If the question says "the longest line that fits inside the box," that's the space diagonal.</li>
+  <li><strong>Applying the wrong power in scale-factor questions.</strong> Under <em>k</em>: edges <em>k</em>, area <em>k</em><sup>2</sup>, volume <em>k</em><sup>3</sup>. A student who uses <em>k</em><sup>2</sup> for volume will pick the wrong Regents answer.</li>
+  <li><strong>Rounding too early.</strong> Do the full multiplication, then convert, then round. Rounding after the first step introduces error and shifts an answer between two Regents choices.</li>
+  <li><strong>Ignoring the unit conversion.</strong> The Regents will give the answer in liters or gallons even though the dimensions are in centimeters or inches. Convert cm<sup>3</sup> &rarr; L by dividing by 1000, or in<sup>3</sup> &rarr; gal by dividing by 231.</li>
+</ol>
+
+<h2>The rectangular prism topic at a glance</h2>
+
+<div class="cmp-table-wrap">
+<table class="cmp-table">
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Formula</th>
+      <th>Units</th>
+      <th>Regents cue words</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Quantity"><strong>Volume</strong></td>
+      <td data-label="Formula"><code>V = lwh</code></td>
+      <td data-label="Units">cubic (cm<sup>3</sup>, in<sup>3</sup>, m<sup>3</sup>, L, gal)</td>
+      <td data-label="Cue">"how much fits," "capacity," "how many liters," "how many cubic feet"</td>
+    </tr>
+    <tr class="is-featured">
+      <td data-label="Quantity"><strong>Surface area (total)</strong></td>
+      <td data-label="Formula"><code>SA = 2(lw + lh + wh)</code></td>
+      <td data-label="Units">square (cm<sup>2</sup>, in<sup>2</sup>, m<sup>2</sup>, ft<sup>2</sup>)</td>
+      <td data-label="Cue">"wrapping paper," "cover the outside," "paint all six faces"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Lateral area</strong></td>
+      <td data-label="Formula"><code>LA = 2h(l + w)</code></td>
+      <td data-label="Units">square</td>
+      <td data-label="Cue">"paint the walls," "label around the box," "sides only"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Face diagonal</strong></td>
+      <td data-label="Formula"><code>d = &radic;(a&sup2; + b&sup2;)</code></td>
+      <td data-label="Units">length</td>
+      <td data-label="Cue">"diagonal of one face," "across the top"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Space diagonal</strong></td>
+      <td data-label="Formula"><code>D = &radic;(l&sup2; + w&sup2; + h&sup2;)</code></td>
+      <td data-label="Units">length</td>
+      <td data-label="Cue">"longest line inside," "corner to opposite corner"</td>
+    </tr>
+    <tr>
+      <td data-label="Quantity"><strong>Scale factor <em>k</em></strong></td>
+      <td data-label="Formula">edges <code>&times; k</code>, area <code>&times; k&sup2;</code>, volume <code>&times; k&sup3;</code></td>
+      <td data-label="Units">&mdash;</td>
+      <td data-label="Cue">"dilate," "scale by," "each edge doubled/tripled"</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>How this ties to earlier posts in the SOMATH Regents series</h2>
+
+<ul>
+  <li><a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &mdash; the isometries (translation, reflection, rotation). Rigid transformations preserve volume and surface area exactly &mdash; they only move the prism, not resize it.</li>
+  <li><a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations (Dilation)</a> &mdash; the same <em>k</em> / <em>k</em><sup>2</sup> / <em>k</em><sup>3</sup> scale-factor rule, worked in the 2-D setting. This post extends it to solids.</li>
+  <li><a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines in a Triangle &amp; the Midsegment Theorem</a> &mdash; the proportionality theorems the Regents combines with prism questions on Part III and IV coordinate proofs.</li>
+  <li><a href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">Sine, Cosine &amp; Tangent &mdash; SOH-CAH-TOA</a> &mdash; when a Regents problem asks for the angle between a space diagonal and a base, you'll combine <span class="eq">D = &radic;(l&sup2;+w&sup2;+h&sup2;)</span> with trig.</li>
+  <li><a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 &mdash; Part II Answers &amp; Explanations</a> &mdash; the full worked June 2026 exam, including prism-related applications.</li>
+</ul>
+
+<h2>How SOMATH teaches rectangular prisms (K&ndash;12 arc)</h2>
+
+<ul>
+  <li><strong><a href="/">Little Newtons</a> (grades 1&ndash;2):</strong> physical unit cubes, counting cubes to find volume, sorting real boxes by which is "bigger" &mdash; the intuitive foundation for volume.</li>
+  <li><strong>Kid Einsteins (grades 3&ndash;5):</strong> introduction to <span class="eq">V = lwh</span> in Grade 5 (Common Core 5.MD), area of composite figures, and the difference between area (square units) and volume (cubic units).</li>
+  <li><strong>Young Fermats (grades 5&ndash;8):</strong> surface area of prisms and cylinders, unit conversions (cm<sup>3</sup> to mL to L), nets, and multi-step word problems &mdash; the exact substrate the Regents Geometry exam draws from.</li>
+  <li><strong>High-school Geometry:</strong> full theorem-and-proof treatment &mdash; space diagonal derived from the Pythagorean Theorem in three dimensions, the <em>k</em> / <em>k</em><sup>2</sup> / <em>k</em><sup>3</sup> scale-factor rule under similarity, and Regents Part I&ndash;IV applications like the June 2026 fish-tank question.</li>
+</ul>
+
+<p>Our high-school Geometry teachers hold degrees from Harvard, Northwestern, Columbia, and NYU. Every SOMATH student who has taken the January or June Geometry Regents has scored proficient or higher.</p>
+
+<h2>Quick memory tips for the Regents</h2>
+
+<ol>
+  <li><strong>Volume is cubic. Surface area is square.</strong> If the Regents answer choices are in cm<sup>3</sup>, you're finding volume; if they're in cm<sup>2</sup>, surface area. Match units first, then compute.</li>
+  <li><strong>"From the top" means subtract.</strong> Whenever a tank problem says "filled to X from the top" or "empty for X at the top," subtract from the total height to get the effective water height.</li>
+  <li><strong>Diagonals = Pythagoras.</strong> Face diagonal uses two edges; space diagonal uses all three. Both are just the Pythagorean Theorem, applied once or twice.</li>
+  <li><strong>Scale factor rule: <em>k</em>, <em>k</em><sup>2</sup>, <em>k</em><sup>3</sup>.</strong> Edges scale by <em>k</em>, areas by <em>k</em><sup>2</sup>, volumes by <em>k</em><sup>3</sup>. When the Regents says "each dimension is doubled," volume multiplies by 8, not 2.</li>
+  <li><strong>Convert last.</strong> Do the multiplication in the given units (usually cm<sup>3</sup>), then convert to the answer's units (usually L or gal) as the final step. Divide by 1000 for cm<sup>3</sup> &rarr; L; divide by 231 for in<sup>3</sup> &rarr; gal.</li>
+</ol>
+
+<h2>Book a free math enrichment evaluation</h2>
+
+<p>If your child is preparing for the January or June Regents Geometry &mdash; or building toward Geometry through middle-school Common Core &mdash; the fastest way to know where they stand is a real diagnostic. Book a <a href="/evaluation">free 60-minute in-person evaluation at SOMATH</a>. Your child works one-on-one with a SOMATH teacher, and you receive a written diagnostic within 48 hours &mdash; specifically what your child has mastered, where the gaps are, and what to work on next. Yours to keep whether you enroll or not.</p>
+
+<p>SOMATH is at <strong>226 West 79th Street, first floor</strong>, between Broadway and Amsterdam. Phone <a href="tel:+16466686151">(646) 668-6151</a>. See our <a href="/schedule.html">weekly class schedule</a> or browse <a href="/courses/">all courses grades 1&ndash;12</a>.</p>
+
+<p>Related reading: <a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel Lines in a Triangle &amp; the Midsegment Theorem</a> &middot; <a href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">Sine, Cosine &amp; Tangent &mdash; SOH-CAH-TOA</a> &middot; <a href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">Regents Geometry Non-Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-rigid-transformations-somath-guide">Regents Geometry Rigid Transformations</a> &middot; <a href="/posts/regents-geometry-june-2026-part-2-answers">Regents Geometry June 2026 Part II Answers</a> &middot; <a href="/posts/best-math-enrichment-upper-west-side-parents-guide">Best Math Enrichment on the Upper West Side</a>.</p>
+
+        <div class="post__cta">
+          <p class="post__cta-eyebrow">Free 60-minute evaluation</p>
+          <h3>Ready for Regents Geometry? Let&rsquo;s find out.</h3>
+          <p>
+            Book a free 60-minute one-on-one evaluation. We&rsquo;ll diagnose
+            exactly where your child stands on volume, surface area, diagonals,
+            scale factors, and the rest of the Regents Geometry arc, and send a
+            written summary within 48 hours &mdash; yours to keep whether you
+            enroll or not.
+          </p>
+          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
+        </div>
+      </div>
+
+        <div class="course-cta-card">
+          <div class="course-cta-card__grade">SOMATH courses &middot; Grades 1&ndash;12</div>
+          <h2 class="course-cta-card__h">See if a SOMATH class is a fit for your child</h2>
+          <p class="course-cta-card__lede">We run in-person small-group classes on the Upper West Side, K&ndash;12, from Little Newtons in Grade 1 through AP Calculus, SAT Math, and Regents Geometry / Algebra in high school. Every family starts with a free 60-minute in-person evaluation and a written diagnostic within 48 hours &mdash; yours to keep whether you enroll or not.</p>
+          <p class="course-cta-card__ctas">
+            <a href="/courses/" class="course-cta-card__primary">Browse all courses &rarr;</a>
+            <a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a>
+          </p>
+        </div>
+
+</article>
+
+    <section class="post__related">
+      <h3 class="post__related-title">More from the SOMATH Journal</h3>
+      <div class="post__related-grid">
+        <a class="blog-card" href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Parallel Lines in a Triangle &amp; the Midsegment Theorem</h2>
+          <p class="blog-card__dek">The Basic Proportionality Theorem, its converse, and the Midsegment Theorem &mdash; explained with worked Regents examples.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 11 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/sine-cosine-tangent-definitions-identities-somath-guide">
+          <span class="blog-card__category">Regents Geometry &middot; Trig</span>
+          <h2 class="blog-card__title">Sine, Cosine &amp; Tangent: Definitions, Identities &amp; the Unit Circle</h2>
+          <p class="blog-card__dek">SOH-CAH-TOA, Pythagorean and reciprocal identities, exact values, and the unit-circle view.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 11 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/regents-geometry-non-rigid-transformations-dilation-stretch-compression">
+          <span class="blog-card__category">Regents Geometry &middot; Math Enrichment</span>
+          <h2 class="blog-card__title">Regents Geometry Non-Rigid Transformations: Dilation, Stretch, and Compression</h2>
+          <p class="blog-card__dek">Dilation, stretch, and compression &mdash; why area scales as <em>k</em><sup>2</sup> and volume as <em>k</em><sup>3</sup>.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 10 min read</div>
+        </a>
+        <a class="blog-card" href="/posts/best-math-enrichment-upper-west-side-parents-guide">
+          <span class="blog-card__category">Upper West Side</span>
+          <h2 class="blog-card__title">Best Math Enrichment on the Upper West Side: A Parent's Guide</h2>
+          <p class="blog-card__dek">The full guide to serious math enrichment on the UWS &mdash; what to look for and how to compare programs.</p>
+          <div class="blog-card__meta"><strong>School of Math</strong> · 7 min read</div>
+        </a>
+      </div>
+    </section>
+
+    <div id="footer-mount"></div>
+    <div id="sticky-mount"></div>
+    <script src="/partials.js?v=v20260810-rectprism"></script>
+  </body>
+</html>
