@@ -432,65 +432,9 @@
 
 <p>That is a 4-credit question on the Regents Geometry Part III &mdash; but a student who has the coordinate rule and the <em>k</em>&sup2; rule memorized answers it in under two minutes.</p>
 
-<h2>Practice question: rigid or non-rigid?</h2>
-
-<p>Here is a classic Regents Geometry multiple-choice question. The three triangles below are all <em>congruent</em> to each other &mdash; nothing has been stretched, compressed, or dilated. That is a strong clue for how to solve it. Try it before revealing the answer.</p>
-
-<div class="qbox">
-  <h3>Question &mdash; Regents Geometry, multiple choice</h3>
-  <p class="prompt">Triangles <em>ABC</em>, <em>A&prime;B&prime;C&prime;</em>, and <em>A&Prime;B&Prime;C&Prime;</em> are graphed on the set of axes below.</p>
-  <p><img src="/assets/regents-geometry-q11-triangles.png" alt="Three congruent right triangles on a coordinate plane: triangle ABC in the third quadrant, triangle A'B'C' in the fourth quadrant, and triangle A''B''C'' in the second quadrant." style="max-width:100%; height:auto; border:1px solid #e6e6e6; border-radius:4px; display:block; margin:8px auto;"></p>
-  <p class="prompt">Which sequence of transformations maps &triangle;<em>ABC</em> onto &triangle;<em>A&prime;B&prime;C&prime;</em>, and then maps &triangle;<em>A&prime;B&prime;C&prime;</em> onto &triangle;<em>A&Prime;B&Prime;C&Prime;</em>?</p>
-  <ol class="choices" type="1">
-    <li>a translation followed by a rotation</li>
-    <li>a rotation followed by a translation</li>
-    <li>a line reflection followed by a rotation</li>
-    <li>a translation followed by a line reflection</li>
-  </ol>
-  <details class="reveal"><summary></summary><div class="reveal-body">
-    <p class="answer">Answer: (1) a translation followed by a rotation.</p>
-    <p class="explain"><strong>The rigid-vs-non-rigid clue.</strong> Every answer choice lists only <em>rigid</em> transformations &mdash; translation, rotation, and line reflection. That is the examiner&rsquo;s way of confirming what the picture already shows: the three triangles are <strong>congruent</strong> (same size <em>and</em> same shape). No dilation, stretch, or compression is involved. If any triangle had been resized, this would be a non-rigid problem and the answer choices would mention a dilation or a scale factor. So this question is really a rigid-transformations problem embedded inside a chapter about congruence.</p>
-    <p class="explain"><strong>Strategy.</strong> With any &ldquo;which sequence of transformations&rdquo; question, ask two questions at each step:</p>
-    <ol>
-      <li><strong>Did the orientation change?</strong> A reflection <em>flips</em> orientation (turns a clockwise triangle into a counterclockwise one). Translations and rotations do <em>not</em> flip orientation.</li>
-      <li><strong>Did the shape turn?</strong> If the triangle&rsquo;s tilt is the same, it&rsquo;s a translation. If the tilt changed, a rotation happened.</li>
-    </ol>
-    <p class="explain"><strong>Read the coordinates.</strong> From the graph:</p>
-    <ul>
-      <li>&triangle;<em>ABC</em>: <em>A</em>(&minus;7, &minus;1), <em>B</em>(&minus;4, &minus;5), <em>C</em>(&minus;7, &minus;5). Right angle at <em>C</em>. Vertical leg <em>CA</em> = 4, horizontal leg <em>CB</em> = 3.</li>
-      <li>&triangle;<em>A&prime;B&prime;C&prime;</em>: <em>A&prime;</em>(2, &minus;1), <em>B&prime;</em>(5, &minus;5), <em>C&prime;</em>(2, &minus;5). Right angle at <em>C&prime;</em>. Same 3&#8209;4 right triangle as &triangle;<em>ABC</em>.</li>
-      <li>&triangle;<em>A&Prime;B&Prime;C&Prime;</em>: <em>A&Prime;</em>(&minus;2, 2), <em>B&Prime;</em>(&minus;5, 6), <em>C&Prime;</em>(&minus;2, 6). Right angle at <em>C&Prime;</em>. Same 3&#8209;4 right triangle again &mdash; confirming that no dilation happened.</li>
-    </ul>
-    <p class="explain"><strong>Step 1: &triangle;ABC &rarr; &triangle;A&prime;B&prime;C&prime;.</strong> Compare corresponding vertices:</p>
-    <ul>
-      <li><em>A</em>(&minus;7, &minus;1) &rarr; <em>A&prime;</em>(2, &minus;1)</li>
-      <li><em>B</em>(&minus;4, &minus;5) &rarr; <em>B&prime;</em>(5, &minus;5)</li>
-      <li><em>C</em>(&minus;7, &minus;5) &rarr; <em>C&prime;</em>(2, &minus;5)</li>
-    </ul>
-    <p class="explain">Every point moved <strong>+9 in <em>x</em></strong> and <strong>0 in <em>y</em></strong>. The rule is <span class="eq">(x, y) &rarr; (x + 9, y)</span>. That is a <strong>translation 9 units to the right</strong>. The triangle&rsquo;s tilt did not change, and its orientation did not flip. Step 1 is a <strong>translation</strong>. &#10004;</p>
-    <p class="explain"><strong>Step 2: &triangle;A&prime;B&prime;C&prime; &rarr; &triangle;A&Prime;B&Prime;C&Prime;.</strong> Compare corresponding vertices:</p>
-    <ul>
-      <li><em>A&prime;</em>(2, &minus;1) &rarr; <em>A&Prime;</em>(&minus;2, 2)</li>
-      <li><em>B&prime;</em>(5, &minus;5) &rarr; <em>B&Prime;</em>(&minus;5, 6)</li>
-      <li><em>C&prime;</em>(2, &minus;5) &rarr; <em>C&Prime;</em>(&minus;2, 6)</li>
-    </ul>
-    <p class="explain">Now the triangle has turned: in &triangle;<em>A&prime;B&prime;C&prime;</em>, the right-angle vertex <em>C&prime;</em> is at the <em>bottom-left</em>; in &triangle;<em>A&Prime;B&Prime;C&Prime;</em>, the right-angle vertex <em>C&Prime;</em> is at the <em>top-right</em>. The triangle has been flipped upside down.</p>
-    <p class="explain">Look for a rotation center. The midpoint of each pair of corresponding points should be the same fixed center. Compute midpoints:</p>
-    <ul>
-      <li>midpoint of <em>A&prime;</em> and <em>A&Prime;</em>: ((2 + (&minus;2))/2, (&minus;1 + 2)/2) = (0, 0.5)</li>
-      <li>midpoint of <em>B&prime;</em> and <em>B&Prime;</em>: ((5 + (&minus;5))/2, (&minus;5 + 6)/2) = (0, 0.5)</li>
-      <li>midpoint of <em>C&prime;</em> and <em>C&Prime;</em>: ((2 + (&minus;2))/2, (&minus;5 + 6)/2) = (0, 0.5)</li>
-    </ul>
-    <p class="explain">All three midpoints are the same point, (0, 0.5). That means every point and its image are the same distance from (0, 0.5) but on opposite sides &mdash; a <strong>180&deg; rotation about the point (0, 0.5)</strong>. Step 2 is a <strong>rotation</strong>. &#10004;</p>
-    <p class="explain"><strong>Check orientation to rule out reflection.</strong> In &triangle;<em>ABC</em>, going <em>A</em> &rarr; <em>B</em> &rarr; <em>C</em> traces the triangle <em>clockwise</em>. In &triangle;<em>A&Prime;B&Prime;C&Prime;</em>, going <em>A&Prime;</em> &rarr; <em>B&Prime;</em> &rarr; <em>C&Prime;</em> also traces <em>clockwise</em>. Orientation was preserved throughout, so no reflection was involved. That eliminates choices (3) and (4).</p>
-    <p class="explain"><strong>The answer.</strong> Step 1 was a translation and Step 2 was a rotation, so the sequence is <strong>a translation followed by a rotation</strong> &mdash; choice (1).</p>
-    <p class="explain"><strong>Why this matters in a non-rigid transformations chapter.</strong> Every side length in this problem is preserved, every angle is preserved, and the area of every triangle is the same (&frac12; &middot; 3 &middot; 4 = 6). That is the definition of a <em>rigid</em> sequence. If any step had been a dilation or a stretch, the side lengths would have changed &mdash; and the answer choices would tell you so by mentioning a scale factor. Learning to spot this difference on sight is one of the highest-leverage skills for the Regents Geometry exam: <strong>congruent figures &rarr; rigid transformations only; similar-but-not-congruent figures &rarr; a dilation is involved.</strong></p>
-  </div></details>
-</div>
-
 <h2>Practice question: which transformation changes area?</h2>
 
-<p>This second Regents Geometry multiple-choice question tests exactly one idea: <em>which transformation is not rigid?</em> Rigid transformations (translations, reflections, rotations) preserve area; non-rigid transformations (dilations, vertical and horizontal stretches, compressions) change area. Try it before revealing the answer.</p>
+<p>This Regents Geometry multiple-choice question tests exactly one idea: <em>which transformation is not rigid?</em> Rigid transformations (translations, reflections, rotations) preserve area; non-rigid transformations (dilations, vertical and horizontal stretches, compressions) change area. Try it before revealing the answer.</p>
 
 <div class="qbox">
   <h3>Question &mdash; Regents Geometry, multiple choice</h3>
