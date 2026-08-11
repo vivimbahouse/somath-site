@@ -128,6 +128,17 @@
         font-size: 1.02rem;
         color: #1a1a1a;
       }
+      .practice-parts {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .practice-parts li {
+        padding: 2px 0;
+      }
       .practice-question details {
         border-top: 1px solid #eee;
         padding-top: 10px;
@@ -413,9 +424,9 @@
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q1</span></div>
-          <div class="practice-question__prompt">Add or subtract (same denominator):<br>(a) 3/7 + 2/7&nbsp;&nbsp;(b) 5/9 &minus; 2/9&nbsp;&nbsp;(c) 7/10 + 1/10&nbsp;&nbsp;(d) 11/12 &minus; 5/12</div>
+          <div class="practice-question__prompt">Add or subtract (same denominator):<ul class="practice-parts"><li>(a) 3/7 + 2/7</li><li>(b) 5/9 &minus; 2/9</li><li>(c) 7/10 + 1/10</li><li>(d) 11/12 &minus; 5/12</li></ul></div>
           <details><summary>Show answer &amp; explanation</summary>
-            <div class="answer">(a) 5/7&nbsp;&nbsp;&nbsp;(b) 3/9 = 1/3&nbsp;&nbsp;&nbsp;(c) 8/10 = 4/5&nbsp;&nbsp;&nbsp;(d) 6/12 = 1/2</div>
+            <div class="answer"><ul class="practice-parts"><li>(a) 5/7</li><li>(b) 3/9 = 1/3</li><li>(c) 8/10 = 4/5</li><li>(d) 6/12 = 1/2</li></ul></div>
             <div class="why"><strong>Why.</strong> With the SAME denominator, add or subtract the numerators and keep the denominator. Always simplify to lowest terms at the end: 3/9 &divide; 3/3 = 1/3, 8/10 &divide; 2/2 = 4/5, 6/12 &divide; 6/6 = 1/2.</div>
           </details>
         </div>
@@ -469,9 +480,9 @@
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q7</span></div>
-          <div class="practice-question__prompt">Multiply straight across, then simplify:<br>(a) 2/3 &times; 4/5&nbsp;&nbsp;(b) 3/8 &times; 2/9&nbsp;&nbsp;(c) 5/6 &times; 3/10&nbsp;&nbsp;(d) 7/12 &times; 4/21</div>
+          <div class="practice-question__prompt">Multiply straight across, then simplify:<ul class="practice-parts"><li>(a) 2/3 &times; 4/5</li><li>(b) 3/8 &times; 2/9</li><li>(c) 5/6 &times; 3/10</li><li>(d) 7/12 &times; 4/21</li></ul></div>
           <details><summary>Show answer &amp; explanation</summary>
-            <div class="answer">(a) 8/15&nbsp;&nbsp;&nbsp;(b) 1/12&nbsp;&nbsp;&nbsp;(c) 1/4&nbsp;&nbsp;&nbsp;(d) 1/9</div>
+            <div class="answer"><ul class="practice-parts"><li>(a) 8/15</li><li>(b) 1/12</li><li>(c) 1/4</li><li>(d) 1/9</li></ul></div>
             <div class="why"><strong>Why.</strong> Multiply numerator&times;numerator over denominator&times;denominator, then simplify. (a) 2&times;4 / 3&times;5 = 8/15 (already lowest terms). (b) 3&times;2 / 8&times;9 = 6/72 = 1/12 (&divide;6). (c) 5&times;3 / 6&times;10 = 15/60 = 1/4 (&divide;15). (d) 7&times;4 / 12&times;21 = 28/252 = 1/9 (&divide;28). Cross-canceling before multiplying (e.g. (c) 5/10 = 1/2 and 3/6 = 1/2, so 1/2 &times; 1/2 = 1/4) saves the simplification step.</div>
           </details>
         </div>
@@ -516,9 +527,9 @@
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q12</span></div>
-          <div class="practice-question__prompt">Divide using keep-change-flip:<br>(a) 2/3 &divide; 4/5&nbsp;&nbsp;(b) 3/8 &divide; 9/16&nbsp;&nbsp;(c) 5/6 &divide; 5/12&nbsp;&nbsp;(d) 7/10 &divide; 7/20</div>
+          <div class="practice-question__prompt">Divide using keep-change-flip:<ul class="practice-parts"><li>(a) 2/3 &divide; 4/5</li><li>(b) 3/8 &divide; 9/16</li><li>(c) 5/6 &divide; 5/12</li><li>(d) 7/10 &divide; 7/20</li></ul></div>
           <details><summary>Show answer &amp; explanation</summary>
-            <div class="answer">(a) 5/6&nbsp;&nbsp;&nbsp;(b) 2/3&nbsp;&nbsp;&nbsp;(c) 2&nbsp;&nbsp;&nbsp;(d) 2</div>
+            <div class="answer"><ul class="practice-parts"><li>(a) 5/6</li><li>(b) 2/3</li><li>(c) 2</li><li>(d) 2</li></ul></div>
             <div class="why"><strong>Why.</strong> Keep the first, change &divide; to &times;, flip the second. (a) 2/3 &divide; 4/5 = 2/3 &times; 5/4 = 10/12 = 5/6. (b) 3/8 &divide; 9/16 = 3/8 &times; 16/9 = 48/72 = 2/3 (or cross-cancel: 3/9 = 1/3 and 16/8 = 2/1 &rarr; 1/3 &times; 2/1 = 2/3). (c) 5/6 &divide; 5/12 = 5/6 &times; 12/5 = 60/30 = 2. (d) 7/10 &divide; 7/20 = 7/10 &times; 20/7 = 140/70 = 2.</div>
           </details>
         </div>
@@ -563,18 +574,18 @@
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q17</span></div>
-          <div class="practice-question__prompt">Convert each mixed number to an improper fraction:<br>(a) 2&nbsp;3/4&nbsp;&nbsp;(b) 5&nbsp;1/2&nbsp;&nbsp;(c) 3&nbsp;5/8&nbsp;&nbsp;(d) 7&nbsp;2/3</div>
+          <div class="practice-question__prompt">Convert each mixed number to an improper fraction:<ul class="practice-parts"><li>(a) 2&nbsp;3/4</li><li>(b) 5&nbsp;1/2</li><li>(c) 3&nbsp;5/8</li><li>(d) 7&nbsp;2/3</li></ul></div>
           <details><summary>Show answer &amp; explanation</summary>
-            <div class="answer">(a) 11/4&nbsp;&nbsp;&nbsp;(b) 11/2&nbsp;&nbsp;&nbsp;(c) 29/8&nbsp;&nbsp;&nbsp;(d) 23/3</div>
+            <div class="answer"><ul class="practice-parts"><li>(a) 11/4</li><li>(b) 11/2</li><li>(c) 29/8</li><li>(d) 23/3</li></ul></div>
             <div class="why"><strong>Why.</strong> W&nbsp;<em>a/b</em> = (W&times;<em>b</em> + <em>a</em>) / <em>b</em>. (a) 2&nbsp;3/4 = (2&times;4 + 3)/4 = 11/4. (b) 5&nbsp;1/2 = (5&times;2 + 1)/2 = 11/2. (c) 3&nbsp;5/8 = (3&times;8 + 5)/8 = 29/8. (d) 7&nbsp;2/3 = (7&times;3 + 2)/3 = 23/3.</div>
           </details>
         </div>
 
         <div class="practice-question">
           <div><span class="practice-question__num">Q18</span></div>
-          <div class="practice-question__prompt">Convert each improper fraction to a mixed number in lowest terms:<br>(a) 17/5&nbsp;&nbsp;(b) 22/6&nbsp;&nbsp;(c) 43/12&nbsp;&nbsp;(d) 27/9</div>
+          <div class="practice-question__prompt">Convert each improper fraction to a mixed number in lowest terms:<ul class="practice-parts"><li>(a) 17/5</li><li>(b) 22/6</li><li>(c) 43/12</li><li>(d) 27/9</li></ul></div>
           <details><summary>Show answer &amp; explanation</summary>
-            <div class="answer">(a) 3&nbsp;2/5&nbsp;&nbsp;&nbsp;(b) 3&nbsp;2/3&nbsp;&nbsp;&nbsp;(c) 3&nbsp;7/12&nbsp;&nbsp;&nbsp;(d) 3</div>
+            <div class="answer"><ul class="practice-parts"><li>(a) 3&nbsp;2/5</li><li>(b) 3&nbsp;2/3</li><li>(c) 3&nbsp;7/12</li><li>(d) 3 (no fraction part)</li></ul></div>
             <div class="why"><strong>Why.</strong> Divide the numerator by the denominator. The quotient is the whole part; the remainder over the original denominator is the fraction part; simplify at the end. (a) 17&divide;5 = 3 R 2 &rarr; 3&nbsp;2/5. (b) 22&divide;6 = 3 R 4 &rarr; 3&nbsp;4/6 = 3&nbsp;2/3. (c) 43&divide;12 = 3 R 7 &rarr; 3&nbsp;7/12. (d) 27&divide;9 = 3 R 0 &rarr; exactly 3 (no fraction part).</div>
           </details>
         </div>
