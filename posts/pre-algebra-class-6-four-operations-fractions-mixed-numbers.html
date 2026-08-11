@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 6: Add, Subtract, Multiply &amp; Divide Fractions and Mixed Numbers (25 Practice Questions with Answers) | SOMATH</title>
+    <meta name="description" content="A free 25-question pre-algebra practice set from Class 6 of the SOMATH Young Fermats course — the four operations on fractions and mixed numbers: adding and subtracting with a common denominator, multiplying straight across, dividing by the reciprocal (keep-change-flip), and converting between mixed numbers and improper fractions. Includes hidden step-by-step answer explanations. From School of Math, 226 W 79th St, Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 6: Four Operations on Fractions &amp; Mixed Numbers (25 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Free 25 pre-algebra practice questions from Class 6 of the SOMATH Young Fermats course — adding, subtracting, multiplying, and dividing fractions and mixed numbers with hidden step-by-step explanations." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-08-11" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 6: Four Operations on Fractions &amp; Mixed Numbers (25 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Fraction operations cheat sheet + 25 practice questions with hidden step-by-step explanations. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      .shortcuts {
+        margin: 8px 0 26px;
+        border: 1px solid #d4d1ca;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shortcuts__row {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.98rem;
+      }
+      .shortcuts__row:last-child { border-bottom: 0; }
+      .shortcuts__row strong { color: #0a3a5f; }
+      .shortcuts__row .plus  { color: #0a7a3d; font-weight: 700; }
+      .shortcuts__row .minus { color: #a13544; font-weight: 700; }
+      @media (max-width: 600px) {
+        .shortcuts__row { grid-template-columns: 1fr; gap: 4px; }
+      }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #0a3a5f;
+        font-weight: 600;
+        font-size: 0.9rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 140ms;
+        color: #d4a548;
+      }
+      .practice-question details[open] summary::before { transform: rotate(90deg); }
+      .practice-question summary:hover { color: #d4a548; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 6: Add, Subtract, Multiply & Divide Fractions and Mixed Numbers (25 Practice Questions)",
+  "description": "Free 25-question pre-algebra practice set from Class 6 of the SOMATH Young Fermats course — the four operations on fractions and mixed numbers, with a common-denominator cheat sheet, keep-change-flip explanation, and mixed-number arithmetic.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Adding fractions" },
+    { "@type": "Thing", "name": "Subtracting fractions" },
+    { "@type": "Thing", "name": "Multiplying fractions" },
+    { "@type": "Thing", "name": "Dividing fractions" },
+    { "@type": "Thing", "name": "Mixed numbers" },
+    { "@type": "Thing", "name": "Improper fractions" }
+  ],
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you add or subtract two fractions with different denominators?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rewrite each fraction with a common denominator (the LCM of the two denominators is the least common denominator, LCD). Then add or subtract the numerators and keep the denominator. Example: 2/3 + 1/4 = 8/12 + 3/12 = 11/12. Always simplify the result and, if the answer is improper, convert to a mixed number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you multiply fractions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the numerators together and the denominators together — no common denominator required. Example: 2/3 × 4/5 = (2×4) / (3×5) = 8/15. Cross-cancel any common factor between a numerator and a denominator BEFORE multiplying to keep the numbers small: 4/9 × 3/8 = (4/8) × (3/9) = 1/2 × 1/3 = 1/6."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you divide fractions? What is keep-change-flip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividing by a fraction is the same as multiplying by its reciprocal (its 'flip'). Keep the first fraction, change ÷ to ×, and flip the second fraction. Example: 2/3 ÷ 4/5 = 2/3 × 5/4 = 10/12 = 5/6. This works because dividing by 4/5 asks 'how many groups of 4/5?' — and multiplying by 5/4 answers exactly that question."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you add or subtract mixed numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The cleanest way is to convert each mixed number to an improper fraction first, then add or subtract with a common denominator, then convert back to a mixed number and simplify. Example: 2 1/3 + 1 1/4 = 7/3 + 5/4 = 28/12 + 15/12 = 43/12 = 3 7/12. This avoids the borrowing traps that come from adding whole parts and fractional parts separately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you multiply or divide mixed numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ALWAYS convert mixed numbers to improper fractions first — you cannot multiply or divide mixed numbers directly. Example: 2 1/2 × 1 3/5 = 5/2 × 8/5 = 40/10 = 4. Never try 'multiply the whole parts and the fraction parts separately' — that gives the wrong answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5–6 students, ages 10–12. It takes students from integers on the number line through systems of equations — the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 6</p>
+      <h1 class="post__title">Pre-Algebra Class 6: Add, Subtract, Multiply &amp; Divide Fractions and Mixed Numbers</h1>
+      <p class="post__dek">A quick fraction-operations cheat sheet from Class 6 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 25 practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-08-11">August 11, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>Class 6 is the payoff for everything students learned in <a href="/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals">Class 5</a>. Once a student can build equivalent fractions and simplify to lowest terms, they can attack the four operations &mdash; addition, subtraction, multiplication, and division &mdash; on <em>any</em> fractions and mixed numbers. Every SHSAT and SAT fraction question, every Regents rational-expression problem, and every Algebra 1 equation with fractions on both sides depends on the four moves in this class.</p>
+
+        <h2>The two golden rules of fraction operations</h2>
+        <div class="callout">
+          <p><strong>Rule 1 &mdash; Addition and subtraction NEED a common denominator.</strong> You cannot add pieces of different sizes. 1/2 + 1/3 is not 2/5 &mdash; you have to rewrite both fractions so their pieces are the same size (sixths) first.</p>
+          <p style="margin-top:10px;"><strong>Rule 2 &mdash; Multiplication and division do NOT need a common denominator.</strong> They have their own rules (straight across for &times;, keep-change-flip for &divide;). Never waste time finding a common denominator when you are multiplying or dividing.</p>
+        </div>
+
+        <h2>The four moves you must know cold</h2>
+        <p>Each operation has one clean rule. Master these four and every fraction problem &mdash; from Pre-Algebra to Algebra 2 &mdash; becomes an exercise in careful arithmetic.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">ADD / SUBTRACT</p>
+            <p class="rule-card__sub">common denominator, then add or subtract numerators</p>
+            <p class="rule-card__result">a/d &plusmn; b/d <span class="plus">= (a &plusmn; b) / d</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">MULTIPLY</p>
+            <p class="rule-card__sub">straight across &mdash; no common denominator</p>
+            <p class="rule-card__result">a/b &middot; c/d <span class="plus">= (a&middot;c) / (b&middot;d)</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">DIVIDE</p>
+            <p class="rule-card__sub">keep, change, flip &mdash; multiply by the reciprocal</p>
+            <p class="rule-card__result">a/b &divide; c/d <span class="plus">= a/b &middot; d/c</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">MIXED NUMBERS</p>
+            <p class="rule-card__sub">convert to improper first, then use the rules above</p>
+            <p class="rule-card__result">W&nbsp;a/b <span class="plus">= (W&middot;b + a) / b</span></p>
+          </div>
+        </div>
+
+        <h3>Move 1 &mdash; Adding and subtracting fractions</h3>
+        <p>The rule is one sentence: <strong>rewrite both fractions with a common denominator, then add or subtract the numerators and keep the denominator.</strong> The cleanest common denominator is the <strong>Least Common Denominator (LCD)</strong> &mdash; the LCM of the two denominators.</p>
+        <p><strong>Why a common denominator?</strong> Fractions with different denominators have <em>different-sized pieces</em>. You cannot add 3 fifths to 2 thirds any more than you can add 3 apples to 2 oranges &mdash; until you rename them into the same unit. Fifteenths work for both: 3/5 = 9/15 (each fifth is 3 fifteenths), and 2/3 = 10/15 (each third is 5 fifteenths). Now the units match, and 9/15 + 10/15 = 19/15 = 1&nbsp;4/15.</p>
+
+        <p><strong>Finding the LCD in two steps:</strong></p>
+        <ol>
+          <li><strong>Small denominators.</strong> Just list multiples until you find a match. Denominators 4 and 6: multiples of 4 are 4, 8, 12, 16&hellip; multiples of 6 are 6, 12, 18&hellip; LCD = 12.</li>
+          <li><strong>Bigger denominators.</strong> Use prime factorization. Take the highest power of each prime that appears in either denominator. Denominators 12 and 18: 12 = 2&sup2;&thinsp;&middot;&thinsp;3, 18 = 2&thinsp;&middot;&thinsp;3&sup2;. Take 2&sup2; and 3&sup2; &rarr; LCD = 4&thinsp;&middot;&thinsp;9 = 36.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 5/6 + 3/8:</strong></p>
+        <ol>
+          <li>LCD: 6 = 2&thinsp;&middot;&thinsp;3, 8 = 2&sup3; &rarr; LCD = 2&sup3;&thinsp;&middot;&thinsp;3 = 24.</li>
+          <li>Rewrite: 5/6 = 20/24 (&times;4/4) and 3/8 = 9/24 (&times;3/3).</li>
+          <li>Add numerators: 20/24 + 9/24 = 29/24.</li>
+          <li>Simplify or convert if needed: 29/24 = 1&nbsp;5/24 (already in lowest terms).</li>
+        </ol>
+
+        <h3>Move 2 &mdash; Multiplying fractions (the friendliest of the four)</h3>
+        <p>Multiplying is the easiest of the four operations: <strong>multiply the numerators together, multiply the denominators together, simplify.</strong> No common denominator, no conversion, no reciprocal. Straight across.</p>
+        <p style="text-align:center;font-size:1.08rem;"><em>a/b</em>&thinsp;&middot;&thinsp;<em>c/d</em> = (<em>a</em>&thinsp;&middot;&thinsp;<em>c</em>) / (<em>b</em>&thinsp;&middot;&thinsp;<em>d</em>)</p>
+        <p><strong>Why.</strong> "Two-thirds of four-fifths" means: take the whole, cut it into fifths, take 4 of them, then cut each of those into thirds and take 2 of every 3. The whole is now cut into 3&thinsp;&middot;&thinsp;5 = 15 equal little rectangles, and you have taken 2&thinsp;&middot;&thinsp;4 = 8 of them. That is 8/15.</p>
+
+        <p><strong>Cross-canceling &mdash; the pro shortcut.</strong> Before you multiply, cancel any common factor between a numerator and a denominator (even across fractions). This keeps the numbers small and often eliminates the need to simplify at the end.</p>
+        <p><strong>Example.</strong> 4/9 &times; 3/8. The 4 in the top and 8 in the bottom share a 4 &rarr; 4/8 = 1/2. The 3 in the top and 9 in the bottom share a 3 &rarr; 3/9 = 1/3. So 4/9 &times; 3/8 = 1/3 &times; 1/2 = 1/6. Compare that to multiplying first (12/72) and simplifying at the end &mdash; same answer, more work.</p>
+
+        <p><strong>"Of" means multiply.</strong> In word problems, "1/2 of 3/4" and "1/2 &times; 3/4" mean the same thing. The word "of" applied to fractions always translates to multiplication.</p>
+
+        <h3>Move 3 &mdash; Dividing fractions with keep-change-flip</h3>
+        <p>Dividing by a fraction is the same as multiplying by its <strong>reciprocal</strong> (its "flip" &mdash; swap numerator and denominator). The three-word chant is:</p>
+        <p style="text-align:center;font-size:1.08rem;"><strong>KEEP</strong> the first fraction &nbsp;&middot;&nbsp; <strong>CHANGE</strong> &divide; to &times; &nbsp;&middot;&nbsp; <strong>FLIP</strong> the second fraction</p>
+        <p style="text-align:center;font-size:1.05rem;"><em>a/b</em> &divide; <em>c/d</em> = <em>a/b</em>&thinsp;&middot;&thinsp;<em>d/c</em></p>
+        <p><strong>Why keep-change-flip works.</strong> "How many groups of 4/5 fit into 2/3?" is exactly what 2/3 &divide; 4/5 asks. To answer, multiply by how much of a whole one group is (that's 5/4 of a whole, since 4/5 is four of five equal pieces). Multiplying by 5/4 counts the number of 4/5-sized groups in the original 2/3. That's why "divide by a fraction = multiply by its reciprocal" is not just a trick &mdash; it is what division literally means when the divisor is smaller than 1.</p>
+
+        <p><strong>Full example &mdash; 3/8 &divide; 9/16:</strong></p>
+        <ol>
+          <li>Keep 3/8, change &divide; to &times;, flip 9/16 to 16/9. So 3/8 &divide; 9/16 = 3/8 &times; 16/9.</li>
+          <li>Cross-cancel. 3 and 9 share a 3 &rarr; 3/9 = 1/3. 16 and 8 share an 8 &rarr; 16/8 = 2/1.</li>
+          <li>Multiply the leftovers: 1/1 &times; 2/3 = 2/3.</li>
+        </ol>
+
+        <p><strong>Dividing by a whole number.</strong> A whole number <em>n</em> is really <em>n</em>/1. So 3/5 &divide; 2 = 3/5 &divide; 2/1 = 3/5 &times; 1/2 = 3/10. Dividing a fraction by a whole number always <em>shrinks</em> the fraction. Dividing a fraction by a fraction smaller than 1 always <em>grows</em> it &mdash; a fact that catches students off guard until they see the "how many groups fit" picture.</p>
+
+        <h3>Move 4 &mdash; Working with mixed numbers</h3>
+        <p>A mixed number like 2&nbsp;3/4 is really two pieces glued together: a whole part (2) and a fraction part (3/4). Mixed numbers are lovely for reading (2&nbsp;3/4 cups of flour) and terrible for arithmetic. The one rule that saves you every time:</p>
+        <div class="callout">
+          <p><strong>Convert every mixed number to an improper fraction BEFORE you calculate.</strong> Then use the ordinary fraction rules. Convert back to a mixed number only at the very end.</p>
+        </div>
+
+        <p><strong>Mixed &rarr; Improper.</strong> W&nbsp;<em>a/b</em> = (W&thinsp;&middot;&thinsp;<em>b</em> + <em>a</em>) / <em>b</em>. Multiply the whole part by the denominator, add the numerator, put the result over the original denominator. Example: 2&nbsp;3/4 = (2&thinsp;&middot;&thinsp;4 + 3) / 4 = 11/4.</p>
+
+        <p><strong>Improper &rarr; Mixed.</strong> Divide the numerator by the denominator. The quotient is the whole part; the remainder over the original denominator is the fraction part. Example: 23/6. 23 &divide; 6 = 3 with remainder 5, so 23/6 = 3&nbsp;5/6. If the remainder is 0, the improper fraction is actually a whole number (24/6 = 4).</p>
+
+        <p><strong>Do not multiply mixed numbers directly.</strong> Students sometimes try "1&nbsp;1/2 &times; 2&nbsp;1/3 = 2&nbsp;1/6" by multiplying the whole parts and the fraction parts separately. This is <em>wrong</em>. Convert first: 1&nbsp;1/2 = 3/2 and 2&nbsp;1/3 = 7/3. Now 3/2 &times; 7/3 = 21/6 = 7/2 = 3&nbsp;1/2. Very different from 2&nbsp;1/6.</p>
+
+        <h2>Order of operations still rules</h2>
+        <p>When a problem mixes several fraction operations, PEMDAS still applies: parentheses first, then multiplication/division left to right, then addition/subtraction left to right. Never rearrange the operations because "fractions are hard." Example: 1/2 + 1/3 &times; 3/4 evaluates the multiplication first (1/3 &times; 3/4 = 1/4), then the addition (1/2 + 1/4 = 3/4). Not (1/2 + 1/3) &times; 3/4.</p>
+
+        <h2>Fast benchmarks and sanity checks</h2>
+        <div class="shortcuts">
+          <div class="shortcuts__row"><span>Adding two fractions less than 1</span><span>&rarr; answer is less than 2 (usually less than 1)</span></div>
+          <div class="shortcuts__row"><span>Multiplying two fractions less than 1</span><span>&rarr; answer is <span class="minus">SMALLER</span> than both</span></div>
+          <div class="shortcuts__row"><span>Dividing by a fraction less than 1</span><span>&rarr; answer is <span class="plus">BIGGER</span> than the dividend</span></div>
+          <div class="shortcuts__row"><span>Multiplying anything by 1/2</span><span>&rarr; the answer is half of it</span></div>
+          <div class="shortcuts__row"><span>Dividing anything by 1/2</span><span>&rarr; the answer is <em>double</em> it</span></div>
+        </div>
+        <p>These are not just tricks &mdash; they are how careful students catch arithmetic mistakes. If you get 4/15 for 2/3 + 1/4, the benchmark ("sum of two fractions less than 1 is close to 1") tells you the answer is way too small. That flag alone catches most common denominator errors.</p>
+
+        <h2>Two mistakes students always make</h2>
+        <div class="callout">
+          <p><strong>1. Adding across the tops AND the bottoms.</strong> The single most common fraction mistake is writing 1/2 + 1/3 = 2/5. Wrong &mdash; you cannot add pieces of different sizes. The correct move is a common denominator: 1/2 + 1/3 = 3/6 + 2/6 = 5/6.</p>
+          <p style="margin-top:10px;"><strong>2. Flipping the wrong fraction (or both).</strong> In keep-change-flip, you flip only the <em>second</em> fraction &mdash; the divisor. Never flip the first, and never flip both. 2/3 &divide; 4/5 = 2/3 &times; 5/4 (correct). Not 3/2 &times; 4/5. Not 3/2 &times; 5/4.</p>
+        </div>
+
+        <h2>Where this class shows up later</h2>
+        <ul>
+          <li><strong>Class 7&ndash;10 (ratios, proportions, percent).</strong> Every percent-change problem uses fraction multiplication, and every proportion (<em>a/b</em> = <em>c/d</em>) is solved by the multiplication and division rules from this class.</li>
+          <li><strong>Algebra 1.</strong> Solving equations with fractions on both sides depends on multiplying by a common denominator to clear them &mdash; and that only makes sense if you know how fraction operations work.</li>
+          <li><strong>Algebra 2 (rational expressions).</strong> Adding, subtracting, multiplying, and dividing rational expressions like (<em>x</em>+2)/(<em>x</em>&minus;1) uses the <em>exact</em> four moves from Class 6 &mdash; only the numerators and denominators are polynomials instead of integers.</li>
+          <li><strong>SHSAT and SAT.</strong> Both tests love word problems where fractions and mixed numbers mix with percentages, ratios, or unit conversions. Students who cannot compute 2&nbsp;1/2 &divide; 3/4 in under 30 seconds lose the time budget elsewhere.</li>
+        </ul>
+
+        <p>The 25 questions below march from pure addition and subtraction through multiplication and division, then work through mixed numbers, and finish with real-life word problems that put all four operations together.</p>
+
+        <h2>25 practice questions with hidden answers</h2>
+
+        <div class="section-band">Adding &amp; subtracting fractions (Q1&ndash;Q6)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span></div>
+          <div class="practice-question__prompt">Add or subtract (same denominator):<br>(a) 3/7 + 2/7&nbsp;&nbsp;(b) 5/9 &minus; 2/9&nbsp;&nbsp;(c) 7/10 + 1/10&nbsp;&nbsp;(d) 11/12 &minus; 5/12</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 5/7&nbsp;&nbsp;&nbsp;(b) 3/9 = 1/3&nbsp;&nbsp;&nbsp;(c) 8/10 = 4/5&nbsp;&nbsp;&nbsp;(d) 6/12 = 1/2</div>
+            <div class="why"><strong>Why.</strong> With the SAME denominator, add or subtract the numerators and keep the denominator. Always simplify to lowest terms at the end: 3/9 &divide; 3/3 = 1/3, 8/10 &divide; 2/2 = 4/5, 6/12 &divide; 6/6 = 1/2.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span></div>
+          <div class="practice-question__prompt">Add 1/2 + 1/3.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">1/2 + 1/3 = 5/6</div>
+            <div class="why"><strong>Why.</strong> Different denominators &rarr; need a common denominator. LCD(2, 3) = 6. Rewrite: 1/2 = 3/6 (&times;3/3) and 1/3 = 2/6 (&times;2/2). Now the denominators match: 3/6 + 2/6 = 5/6. GCF(5, 6) = 1, so already in lowest terms. Common wrong answer: 2/5 (adding across tops and bottoms) &mdash; do not do that.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span></div>
+          <div class="practice-question__prompt">Compute 5/6 &minus; 3/8.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">5/6 &minus; 3/8 = 11/24</div>
+            <div class="why"><strong>Why.</strong> LCD(6, 8): 6 = 2&times;3, 8 = 2&sup3; &rarr; LCD = 2&sup3;&times;3 = 24. Rewrite: 5/6 = 20/24 (&times;4/4) and 3/8 = 9/24 (&times;3/3). Subtract: 20/24 &minus; 9/24 = 11/24. GCF(11, 24) = 1 &rarr; already in lowest terms.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span></div>
+          <div class="practice-question__prompt">Add 3/4 + 5/6 + 1/12.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3/4 + 5/6 + 1/12 = 1&nbsp;2/3</div>
+            <div class="why"><strong>Why.</strong> LCD(4, 6, 12) = 12. Rewrite: 3/4 = 9/12, 5/6 = 10/12, 1/12 = 1/12. Add: 9/12 + 10/12 + 1/12 = 20/12. Simplify: 20/12 = 5/3 (&divide;4). Convert to mixed: 5 &divide; 3 = 1 R 2 &rarr; 1&nbsp;2/3.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span></div>
+          <div class="practice-question__prompt">Compute 7/10 &minus; 1/4.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">7/10 &minus; 1/4 = 9/20</div>
+            <div class="why"><strong>Why.</strong> LCD(10, 4): 10 = 2&times;5, 4 = 2&sup2; &rarr; LCD = 2&sup2;&times;5 = 20. Rewrite: 7/10 = 14/20 (&times;2/2) and 1/4 = 5/20 (&times;5/5). Subtract: 14/20 &minus; 5/20 = 9/20. GCF(9, 20) = 1 &rarr; already in lowest terms.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span></div>
+          <div class="practice-question__prompt">A student writes 3/5 + 2/7 = 5/12. Explain the mistake and give the correct answer.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Mistake: the student added across the tops AND the bottoms. Correct answer: 3/5 + 2/7 = 31/35.</div>
+            <div class="why"><strong>Why.</strong> You never add denominators when adding fractions &mdash; the denominator names the piece size, and you cannot combine pieces of different sizes. Rewrite with a common denominator instead: LCD(5, 7) = 35. 3/5 = 21/35 (&times;7/7) and 2/7 = 10/35 (&times;5/5). Add: 21/35 + 10/35 = 31/35.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Multiplying fractions (Q7&ndash;Q11)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span></div>
+          <div class="practice-question__prompt">Multiply straight across, then simplify:<br>(a) 2/3 &times; 4/5&nbsp;&nbsp;(b) 3/8 &times; 2/9&nbsp;&nbsp;(c) 5/6 &times; 3/10&nbsp;&nbsp;(d) 7/12 &times; 4/21</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 8/15&nbsp;&nbsp;&nbsp;(b) 1/12&nbsp;&nbsp;&nbsp;(c) 1/4&nbsp;&nbsp;&nbsp;(d) 1/9</div>
+            <div class="why"><strong>Why.</strong> Multiply numerator&times;numerator over denominator&times;denominator, then simplify. (a) 2&times;4 / 3&times;5 = 8/15 (already lowest terms). (b) 3&times;2 / 8&times;9 = 6/72 = 1/12 (&divide;6). (c) 5&times;3 / 6&times;10 = 15/60 = 1/4 (&divide;15). (d) 7&times;4 / 12&times;21 = 28/252 = 1/9 (&divide;28). Cross-canceling before multiplying (e.g. (c) 5/10 = 1/2 and 3/6 = 1/2, so 1/2 &times; 1/2 = 1/4) saves the simplification step.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span></div>
+          <div class="practice-question__prompt">Compute 4/9 &times; 3/8 by cross-canceling first.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">4/9 &times; 3/8 = 1/6</div>
+            <div class="why"><strong>Why.</strong> Cross-cancel any common factor between a top and a bottom BEFORE multiplying. The 4 in the top and the 8 in the bottom share a 4 &rarr; 4/8 = 1/2. The 3 in the top and the 9 in the bottom share a 3 &rarr; 3/9 = 1/3. Now multiply the leftovers: 1/3 &times; 1/2 = 1/6. Faster than 12/72 &divide; 12 = 1/6, and much less error-prone.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span></div>
+          <div class="practice-question__prompt">Compute 2/3 of 9/10.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">2/3 of 9/10 = 3/5</div>
+            <div class="why"><strong>Why.</strong> "Of" between fractions means multiply. 2/3 &times; 9/10. Cross-cancel: 9/3 = 3 and 2/10 = 1/5. So 2/3 &times; 9/10 = 1/5 &times; 3/1 = 3/5. Sanity check: 2/3 is less than 1, so the answer should be less than 9/10 &mdash; 3/5 = 0.6 &lt; 0.9. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span></div>
+          <div class="practice-question__prompt">Compute 5/8 &times; 4.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">5/8 &times; 4 = 5/2 = 2&nbsp;1/2</div>
+            <div class="why"><strong>Why.</strong> A whole number <em>n</em> is really <em>n</em>/1. So 5/8 &times; 4 = 5/8 &times; 4/1. Cross-cancel: 4/8 = 1/2. Multiply: 5/2 &times; 1/1 = 5/2. Convert to a mixed number: 5 &divide; 2 = 2 R 1 &rarr; 2&nbsp;1/2. Or think of it as "five eighths, four times" &rarr; 20/8 = 5/2.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span></div>
+          <div class="practice-question__prompt">A cookie recipe calls for 3/4 cup of sugar. If you make 2/3 of a batch, how much sugar do you need?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">1/2 cup of sugar</div>
+            <div class="why"><strong>Why.</strong> "2/3 of a batch" means multiply the recipe amount by 2/3. So 2/3 &times; 3/4. Cross-cancel the 3s: 3/3 = 1. Multiply: 2/1 &times; 1/4 = 2/4 = 1/2. You need 1/2 cup of sugar &mdash; exactly half a cup.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Dividing fractions (Q12&ndash;Q16)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span></div>
+          <div class="practice-question__prompt">Divide using keep-change-flip:<br>(a) 2/3 &divide; 4/5&nbsp;&nbsp;(b) 3/8 &divide; 9/16&nbsp;&nbsp;(c) 5/6 &divide; 5/12&nbsp;&nbsp;(d) 7/10 &divide; 7/20</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 5/6&nbsp;&nbsp;&nbsp;(b) 2/3&nbsp;&nbsp;&nbsp;(c) 2&nbsp;&nbsp;&nbsp;(d) 2</div>
+            <div class="why"><strong>Why.</strong> Keep the first, change &divide; to &times;, flip the second. (a) 2/3 &divide; 4/5 = 2/3 &times; 5/4 = 10/12 = 5/6. (b) 3/8 &divide; 9/16 = 3/8 &times; 16/9 = 48/72 = 2/3 (or cross-cancel: 3/9 = 1/3 and 16/8 = 2/1 &rarr; 1/3 &times; 2/1 = 2/3). (c) 5/6 &divide; 5/12 = 5/6 &times; 12/5 = 60/30 = 2. (d) 7/10 &divide; 7/20 = 7/10 &times; 20/7 = 140/70 = 2.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span></div>
+          <div class="practice-question__prompt">Divide 3/5 by 2.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3/5 &divide; 2 = 3/10</div>
+            <div class="why"><strong>Why.</strong> Write the whole number as a fraction: 2 = 2/1. Keep, change, flip: 3/5 &divide; 2/1 = 3/5 &times; 1/2 = 3/10. Sanity check: dividing 3/5 (which is 0.6) by 2 should give half of it &rarr; 0.3 = 3/10. ✓ Dividing by a whole number always shrinks the fraction.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span></div>
+          <div class="practice-question__prompt">Divide 6 by 3/4.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">6 &divide; 3/4 = 8</div>
+            <div class="why"><strong>Why.</strong> Write 6 as 6/1. Keep, change, flip: 6/1 &divide; 3/4 = 6/1 &times; 4/3 = 24/3 = 8. Sanity check with the "how many groups fit" picture: how many 3/4-sized pieces fit into 6 whole units? Each whole holds 4/3 of them, so 6 wholes hold 6 &times; 4/3 = 8 pieces. ✓ Dividing by a fraction less than 1 always makes the answer BIGGER than the dividend.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span></div>
+          <div class="practice-question__prompt">A student writes 2/3 &divide; 4/5 = 8/15 (multiplied straight across). Explain the mistake and give the correct answer.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Mistake: the student did not flip the second fraction. Correct answer: 2/3 &divide; 4/5 = 5/6.</div>
+            <div class="why"><strong>Why.</strong> Division of fractions is NOT the same as multiplication &mdash; you must flip (take the reciprocal of) the divisor. The correct move is 2/3 &divide; 4/5 = 2/3 &times; 5/4 = 10/12 = 5/6. Notice the answer (5/6 &asymp; 0.83) is BIGGER than the original 2/3 (&asymp; 0.67) &mdash; dividing by a fraction less than 1 grows the number.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span></div>
+          <div class="practice-question__prompt">A ribbon is 5/6 yard long. Each bookmark uses 1/12 yard of ribbon. How many bookmarks can be made from the ribbon?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">10 bookmarks</div>
+            <div class="why"><strong>Why.</strong> "How many pieces of size 1/12 fit into 5/6?" is a division problem: 5/6 &divide; 1/12. Keep, change, flip: 5/6 &times; 12/1. Cross-cancel 12/6 = 2/1. So 5/1 &times; 2/1 = 10. You can make 10 bookmarks with no ribbon left over.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Mixed numbers &amp; improper fractions (Q17&ndash;Q22)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span></div>
+          <div class="practice-question__prompt">Convert each mixed number to an improper fraction:<br>(a) 2&nbsp;3/4&nbsp;&nbsp;(b) 5&nbsp;1/2&nbsp;&nbsp;(c) 3&nbsp;5/8&nbsp;&nbsp;(d) 7&nbsp;2/3</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 11/4&nbsp;&nbsp;&nbsp;(b) 11/2&nbsp;&nbsp;&nbsp;(c) 29/8&nbsp;&nbsp;&nbsp;(d) 23/3</div>
+            <div class="why"><strong>Why.</strong> W&nbsp;<em>a/b</em> = (W&times;<em>b</em> + <em>a</em>) / <em>b</em>. (a) 2&nbsp;3/4 = (2&times;4 + 3)/4 = 11/4. (b) 5&nbsp;1/2 = (5&times;2 + 1)/2 = 11/2. (c) 3&nbsp;5/8 = (3&times;8 + 5)/8 = 29/8. (d) 7&nbsp;2/3 = (7&times;3 + 2)/3 = 23/3.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span></div>
+          <div class="practice-question__prompt">Convert each improper fraction to a mixed number in lowest terms:<br>(a) 17/5&nbsp;&nbsp;(b) 22/6&nbsp;&nbsp;(c) 43/12&nbsp;&nbsp;(d) 27/9</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(a) 3&nbsp;2/5&nbsp;&nbsp;&nbsp;(b) 3&nbsp;2/3&nbsp;&nbsp;&nbsp;(c) 3&nbsp;7/12&nbsp;&nbsp;&nbsp;(d) 3</div>
+            <div class="why"><strong>Why.</strong> Divide the numerator by the denominator. The quotient is the whole part; the remainder over the original denominator is the fraction part; simplify at the end. (a) 17&divide;5 = 3 R 2 &rarr; 3&nbsp;2/5. (b) 22&divide;6 = 3 R 4 &rarr; 3&nbsp;4/6 = 3&nbsp;2/3. (c) 43&divide;12 = 3 R 7 &rarr; 3&nbsp;7/12. (d) 27&divide;9 = 3 R 0 &rarr; exactly 3 (no fraction part).</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span></div>
+          <div class="practice-question__prompt">Add 2&nbsp;1/3 + 1&nbsp;1/4.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">2&nbsp;1/3 + 1&nbsp;1/4 = 3&nbsp;7/12</div>
+            <div class="why"><strong>Why.</strong> Convert both to improper fractions first: 2&nbsp;1/3 = 7/3 and 1&nbsp;1/4 = 5/4. LCD(3, 4) = 12. Rewrite: 7/3 = 28/12 and 5/4 = 15/12. Add: 28/12 + 15/12 = 43/12. Convert back: 43 &divide; 12 = 3 R 7 &rarr; 3&nbsp;7/12. GCF(7, 12) = 1 &rarr; already in lowest terms.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span></div>
+          <div class="practice-question__prompt">Subtract 4&nbsp;1/6 &minus; 1&nbsp;3/4.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">4&nbsp;1/6 &minus; 1&nbsp;3/4 = 2&nbsp;5/12</div>
+            <div class="why"><strong>Why.</strong> Convert both to improper fractions: 4&nbsp;1/6 = 25/6 and 1&nbsp;3/4 = 7/4. LCD(6, 4) = 12. Rewrite: 25/6 = 50/12 and 7/4 = 21/12. Subtract: 50/12 &minus; 21/12 = 29/12. Convert back: 29 &divide; 12 = 2 R 5 &rarr; 2&nbsp;5/12. Converting first avoids "borrowing" traps (e.g. trying to compute 1/6 &minus; 3/4 as a separate step and getting a negative fraction).</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span></div>
+          <div class="practice-question__prompt">Multiply 2&nbsp;1/2 &times; 1&nbsp;3/5.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">2&nbsp;1/2 &times; 1&nbsp;3/5 = 4</div>
+            <div class="why"><strong>Why.</strong> Convert both to improper fractions FIRST &mdash; you cannot multiply mixed numbers directly. 2&nbsp;1/2 = 5/2 and 1&nbsp;3/5 = 8/5. Multiply: 5/2 &times; 8/5. Cross-cancel the 5s: 5/5 = 1. And 8/2 = 4. So 1/1 &times; 4/1 = 4. Common wrong answer (2 &times; 1 + 1/2 &times; 3/5 = 2&nbsp;3/10) is what you get by multiplying whole and fraction parts separately &mdash; do not do that.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span></div>
+          <div class="practice-question__prompt">Divide 3&nbsp;3/4 &divide; 1&nbsp;1/2.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3&nbsp;3/4 &divide; 1&nbsp;1/2 = 2&nbsp;1/2</div>
+            <div class="why"><strong>Why.</strong> Convert both to improper fractions: 3&nbsp;3/4 = 15/4 and 1&nbsp;1/2 = 3/2. Keep-change-flip: 15/4 &divide; 3/2 = 15/4 &times; 2/3. Cross-cancel: 15/3 = 5 and 2/4 = 1/2. So 5/1 &times; 1/2 = 5/2. Convert back: 5 &divide; 2 = 2 R 1 &rarr; 2&nbsp;1/2.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Real-life word problems (Q23&ndash;Q25)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span></div>
+          <div class="practice-question__prompt">A pitcher holds 2&nbsp;1/4 quarts of lemonade. If a glass holds 3/8 quart, how many full glasses can be poured?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">6 full glasses</div>
+            <div class="why"><strong>Why.</strong> "How many 3/8-quart glasses fit in 2&nbsp;1/4 quarts?" is a division problem: 2&nbsp;1/4 &divide; 3/8. Convert first: 2&nbsp;1/4 = 9/4. Keep-change-flip: 9/4 &divide; 3/8 = 9/4 &times; 8/3. Cross-cancel: 9/3 = 3 and 8/4 = 2. So 3/1 &times; 2/1 = 6. Exactly 6 full glasses, with no lemonade left over.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span></div>
+          <div class="practice-question__prompt">A recipe calls for 1&nbsp;2/3 cups of flour and 3/4 cup of sugar. How many total cups of dry ingredients does the recipe use? Give the answer as a mixed number.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">2&nbsp;5/12 cups of dry ingredients</div>
+            <div class="why"><strong>Why.</strong> Convert 1&nbsp;2/3 to improper: 1&nbsp;2/3 = 5/3. Add to 3/4. LCD(3, 4) = 12. Rewrite: 5/3 = 20/12 and 3/4 = 9/12. Add: 20/12 + 9/12 = 29/12. Convert back: 29 &divide; 12 = 2 R 5 &rarr; 2&nbsp;5/12 cups. Sanity check: 1&nbsp;2/3 &asymp; 1.67 and 3/4 = 0.75, so sum &asymp; 2.42. And 2&nbsp;5/12 = 2 + 5/12 &asymp; 2.42. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span></div>
+          <div class="practice-question__prompt">Maria walks 5/6 mile to school every morning and the same distance home in the afternoon. If she goes to school 5 days a week, how many total miles does she walk each week? Give the answer as a mixed number.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">8&nbsp;1/3 miles per week</div>
+            <div class="why"><strong>Why.</strong> One round trip is 5/6 + 5/6 = 10/6 = 5/3 miles. Over 5 days: 5 &times; 5/3 = 25/3 miles. Convert: 25 &divide; 3 = 8 R 1 &rarr; 8&nbsp;1/3 miles. Alternative order: 5 round trips is 10 one-way trips, so 10 &times; 5/6 = 50/6 = 25/3 = 8&nbsp;1/3 miles. Same answer.</div>
+          </details>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 6 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5&ndash;6 students (ages 10&ndash;12). The full arc runs from integers on the number line through systems of linear equations and probability &mdash; the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 60-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child's current level against the readiness signals for Pre-Algebra and Algebra 1 &mdash; and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 6 is a taste &mdash; Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days' notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course &rarr;</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals">Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1: Integers on the Number Line &amp; Absolute Value (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-2-multiplying-dividing-integers">Pre-Algebra Class 2: Multiplying &amp; Dividing Integers (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms">Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (25 Practice Questions)</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260811-prealg-class6"></script>
+  </body>
+</html>
