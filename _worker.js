@@ -348,7 +348,7 @@ ${pacingBlock}
   // Parent-facing version: warm intro, no "full answer detail" table at the bottom
   const parentIntro = `<p style="margin:0 0 14px;">Hi there,</p>
 <p style="margin:0 0 14px;">Thank you for using the free School of Math diagnostic for ${escapeHtml(studentName)}. Below is the full report \u2014 overall score, per-strand breakdown, and a written performance summary based on the New York State Common Core standards for ${escapeHtml(gradeLabel)}.</p>
-<p style="margin:0 0 14px;">If you'd like one of our teachers to walk through this report with you in person, you can book a free 60-minute evaluation at <a href="https://www.schoolofmath.us/evaluation">schoolofmath.us/evaluation</a> or reply to this email and we'll set it up.</p>
+<p style="margin:0 0 14px;">If you'd like one of our teachers to walk through this report with you in person, you can book a free 30-minute evaluation at <a href="https://www.schoolofmath.us/evaluation">schoolofmath.us/evaluation</a> or reply to this email and we'll set it up.</p>
 <p style="margin:0 0 18px;">\u2014 The School of Math team<br/>226 W 79th St, Upper West Side, NYC<br/>(646) 668-6151</p>`;
 
   const parentHtml = `<div style="font-family:system-ui,-apple-system,sans-serif;color:#1f3d2e;max-width:680px;">${parentIntro}<hr style="border:none;border-top:1px solid #e5e0d4;margin:14px 0 18px;"/>
@@ -366,7 +366,7 @@ ${pacingBlock}
 <h3 style="color:#c89a3a;">Performance summary</h3>
 <div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:6px;"><p style="margin:0 0 8px;font-weight:600;">${escapeHtml(performanceBand)}</p><p style="margin:0;">${escapeHtml(performanceSummary)}</p></div>
 ${missedRows ? `<h3 style="color:#c89a3a;">Questions to revisit</h3><ul style="padding-left:20px;">${missedRows}</ul>` : ""}
-<p style="margin-top:22px;"><a href="https://www.schoolofmath.us/evaluation" style="display:inline-block;background:#1f3d2e;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;">Book a Free 60-Minute Evaluation</a></p>
+<p style="margin-top:22px;"><a href="https://www.schoolofmath.us/evaluation" style="display:inline-block;background:#1f3d2e;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600;">Book a Free 30-Minute Evaluation</a></p>
 <p style="color:#888;font-size:12px;margin-top:24px;">School of Math \u2014 226 W 79th St, New York, NY 10024 \u2014 hello@schoolofmath.us</p>
 </div>`;
 
@@ -770,7 +770,7 @@ async function handleMembershipReservation(request, env) {
       </table>
       ${message ? `<div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:14px 18px;border-radius:4px;margin:16px 0"><p style="margin:0 0 6px;color:#666;font-size:12px;text-transform:uppercase;letter-spacing:1.5px">Note from parent</p><p style="margin:0;line-height:1.55">${escapeHtml(message).replace(/\n/g, "<br/>")}</p></div>` : ""}
       <div style="margin-top:24px;padding-top:18px;border-top:1px solid #e6dfd0">
-        <p style="margin:0 0 12px;color:#666;font-size:13px"><strong>Next step:</strong> Reply within 24 hours to schedule the free 60-min evaluation and set up monthly Stripe billing manually in Dashboard.</p>
+        <p style="margin:0 0 12px;color:#666;font-size:13px"><strong>Next step:</strong> Reply within 24 hours to schedule the free 30-min evaluation and set up monthly Stripe billing manually in Dashboard.</p>
         <p style="margin:0;color:#999;font-size:12px">Referrer: ${escapeHtml(referrer || "(direct)")}<br/>Submitted: ${new Date().toISOString()}</p>
       </div>
     </div>
@@ -782,7 +782,7 @@ async function handleMembershipReservation(request, env) {
       <h2 style="color:#1f3d2e;font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;margin:0 0 18px">Hi ${escapeHtml(parentName.split(" ")[0] || parentName)},</h2>
       <p style="line-height:1.6;font-size:16px;margin:0 0 14px">Thanks for reserving your spot for <strong>${escapeHtml(tierLabel)}</strong>. We've got your details and a SOMATH lead instructor will reach out within 24 hours to:</p>
       <ul style="line-height:1.7;font-size:16px;padding-left:22px;margin:0 0 20px">
-        <li>Schedule the free 60-minute placement evaluation</li>
+        <li>Schedule the free 30-minute placement evaluation</li>
         <li>Confirm the right cohort and start week for ${escapeHtml(studentName || "your child")}</li>
         <li>Set up your monthly subscription (you'll get a Stripe checkout link by email)</li>
       </ul>

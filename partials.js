@@ -131,7 +131,7 @@
 
   const stickyHTML = `
     <a class="stickycta btn btn--primary btn--lg btn--block" href="/evaluation">
-      Book a Free 60-Min Evaluation
+      Book a Free 30-Min Evaluation
     </a>
   `;
 
