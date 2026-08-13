@@ -310,16 +310,65 @@
     <!-- Calendly widget script -->
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-    <!-- Listen for Calendly event_scheduled and redirect to our own confirmation page -->
+    <!-- Calendly booking funnel instrumentation (GA4 + Ads) -->
+    <!-- Emits: eval_page_view (auto), eval_widget_viewed, eval_widget_interacted,
+         eval_calendly_time_selected, eval_calendly_booking_completed -->
     <script>
       (function () {
+        function fire(name, params) {
+          try {
+            if (typeof gtag === "function") {
+              gtag('event', name, Object.assign({
+                page_path: '/evaluation',
+                referrer_channel: (document.referrer || '').indexOf('google.') > -1 ? 'organic_search'
+                                : (document.referrer ? 'referral' : 'direct')
+              }, params || {}));
+            }
+            (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name }, params || {}));
+          } catch (err) { /* swallow */ }
+        }
+
+        // 1) Widget viewed (>=50% of embed in viewport for 1s)
+        var widget = document.querySelector('.calendly-inline-widget');
+        var widgetViewed = false;
+        if (widget && 'IntersectionObserver' in window) {
+          var seenAt = 0;
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                if (!seenAt) seenAt = Date.now();
+                if (!widgetViewed && Date.now() - seenAt >= 1000) {
+                  widgetViewed = true;
+                  fire('eval_widget_viewed');
+                  io.disconnect();
+                }
+              } else {
+                seenAt = 0;
+              }
+            });
+          }, { threshold: [0, 0.5, 1] });
+          io.observe(widget);
+          // Fallback: emit after 6s regardless of scroll (many parents land already scrolled)
+          setTimeout(function () {
+            if (!widgetViewed) { widgetViewed = true; fire('eval_widget_viewed', { fallback: true }); }
+          }, 6000);
+        }
+
+        // 2) Calendly postMessage lifecycle: view/select/schedule
         function isCalendlyEvent(e) {
           return e && e.data && typeof e.data === "object" && e.data.event && e.data.event.indexOf("calendly.") === 0;
         }
+        var interacted = false;
         window.addEventListener("message", function (e) {
           if (!isCalendlyEvent(e)) return;
-          if (e.data.event === "calendly.event_scheduled") {
-            // Fire Google Ads conversion before redirect (uses generic 'conversion' event also fired on confirmation page).
+          var ev = e.data.event;
+          if (ev === 'calendly.profile_page_viewed' || ev === 'calendly.event_type_viewed') {
+            fire('eval_widget_interacted', { calendly_event: ev });
+          } else if (ev === 'calendly.date_and_time_selected') {
+            if (!interacted) { interacted = true; fire('eval_calendly_time_selected'); }
+          } else if (ev === 'calendly.event_scheduled') {
+            fire('eval_calendly_booking_completed');
+            // Fire Google Ads conversion before redirect
             try {
               if (typeof gtag === "function") {
                 gtag('event', 'conversion', {'send_to': 'AW-18149423892/evaluation_booked'});
