@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Barron's NY Regents Geometry &mdash; Practice Exercises 1&ndash;11 Fully Solved (Points, Lines, Angles, Polygons) | SOMATH</title>
+    <meta name="description" content="All 11 opening practice exercises from Barron's Regents Exams and Answers: Geometry (6th Edition) &mdash; the points, lines, angles, parallel lines, polygons, and vertical-angle problems. Read the question, click for the answer, see the full worked solution and the theory behind it. Written by SOMATH (School of Math), 226 W 79th Street, Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/barrons-regents-geometry-practice-exercises-1-11-walkthrough" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Barron's Regents Geometry &mdash; Practice Exercises 1&ndash;11 Fully Solved | SOMATH" />
+    <meta property="og:description" content="All 11 opening practice exercises from Barron's Regents Exams and Answers: Geometry (6th Edition) &mdash; points, lines, angles, parallel lines, polygons, and vertical angles. Click for the answer, see the full worked solution and the theory. From SOMATH on the Upper West Side." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/barrons-regents-geometry-practice-exercises-1-11-walkthrough" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="article:published_time" content="2026-08-13" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Barron's Regents Geometry &mdash; Practice Exercises 1&ndash;11 Fully Solved | SOMATH" />
+    <meta name="twitter:description" content="All 11 opening Barron's Regents Geometry (6th Ed.) practice problems with click-to-reveal answers and worked solutions." />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h3 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .section-header { color:#0a3a5f; border-bottom:2px solid #d4a548; padding-bottom:8px; margin:38px 0 18px; }
+      .section-lede { color:#4a4a4a; font-style:italic; margin:0 0 20px; font-size:1.02rem; }
+      .quiz { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:20px 24px; margin:22px 0; box-shadow:0 2px 10px rgba(31,61,46,0.04); }
+      .quiz > h3 { color:#0a3a5f; margin:0 0 6px; font-size:1.2rem; }
+      .quiz > p.quiz__intro { color:#4a4a4a; margin:0 0 14px; font-size:0.96rem; }
+      .quiz details { border:1px solid #e6dfc9; border-left:4px solid #d4a548; border-radius:8px; padding:0; margin:10px 0; background:#fbf8ef; overflow:hidden; }
+      .quiz details[open] { background:#fff; border-left-color:#0a3a5f; }
+      .quiz summary { cursor:pointer; padding:14px 18px 14px 44px; position:relative; font-weight:600; color:#0a3a5f; list-style:none; user-select:none; }
+      .quiz summary::-webkit-details-marker { display:none; }
+      .quiz summary::before { content:"+"; position:absolute; left:16px; top:50%; transform:translateY(-50%); width:22px; height:22px; line-height:20px; text-align:center; border-radius:50%; background:#d4a548; color:#fff; font-weight:700; font-size:1.05rem; }
+      .quiz details[open] summary::before { content:"\2212"; background:#0a3a5f; }
+      .quiz summary:hover { background:#f5f1e8; }
+      .quiz details[open] summary:hover { background:#f5f1e8; }
+      .quiz summary .q-num { color:#8a6d1f; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:2px; }
+      .quiz details[open] summary .q-num { color:#0a3a5f; }
+      .quiz summary .q-text { display:block; font-size:1.02rem; line-height:1.5; }
+      .quiz .answer { padding:4px 22px 20px 44px; border-top:1px dashed #d9cfb7; margin-top:2px; }
+      .quiz .answer p { margin:10px 0; }
+      .quiz .answer .key { color:#123f2b; font-weight:600; }
+      .quiz .answer pre.work { background:#f7f5ef; border-left:3px solid #d4a548; padding:12px 16px; border-radius:6px; overflow-x:auto; font-family:'Courier New', monospace; font-size:0.93rem; line-height:1.55; margin:10px 0; white-space:pre-wrap; }
+      .quiz .answer .fig-note { color:#8a6d1f; font-style:italic; font-size:0.92rem; margin:8px 0; }
+      .theory-box { background:#f5f1e8; border-left:4px solid #d4a548; padding:16px 20px; margin:16px 0; border-radius:6px; }
+      .theory-box strong { color:#0a3a5f; }
+      .cta-box { background:#0a3a5f; color:#fff; border-radius:10px; padding:28px 30px; margin:32px 0; }
+      .cta-box h3 { color:#fff; margin:0 0 8px; font-size:1.3rem; }
+      .cta-box p { margin:8px 0; color:#e6e6e6; }
+      .cta-box a.btn { display:inline-block; background:#d4a548; color:#0a3a5f; text-decoration:none; padding:12px 22px; border-radius:6px; margin-top:10px; font-weight:700; }
+      .cta-box a.btn:hover { background:#e6b95e; }
+      .faq details { border-bottom:1px solid #e6e6e6; padding:14px 0; }
+      .faq summary { font-weight:600; color:#0a3a5f; cursor:pointer; font-size:1.04rem; }
+      .faq summary:hover { color:#123f2b; }
+      .faq details[open] p { margin-top:10px; color:#4a4a4a; }
+      .related { background:#fff; border:1px solid #e6e6e6; border-radius:10px; padding:22px 26px; margin:30px 0; }
+      .related h3 { color:#0a3a5f; margin:0 0 12px; }
+      .related ul { margin:0; padding-left:20px; }
+      .related li { margin:6px 0; }
+      .related a { color:#0a3a5f; text-decoration:none; font-weight:500; }
+      .related a:hover { text-decoration:underline; color:#123f2b; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Barron's Regents Geometry \u2014 Practice Exercises 1\u201311 Fully Solved (Points, Lines, Angles, Polygons)",
+  "description": "All 11 opening practice exercises from Barron's Regents Exams and Answers: Geometry (6th Edition). Full worked solutions and the theory behind each problem, written by SOMATH (School of Math), 226 W 79th Street, Upper West Side.",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/barrons-regents-geometry-practice-exercises-1-11-walkthrough"
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What book are these problems from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Barron's Regents Exams and Answers: Geometry, Sixth Edition. These 11 questions open the Practice Exercises section that follows the first block of instruction (points, lines, planes, angles, parallel lines, polygons, and vertical angles). It's the standard NYC classroom study guide for the NY Regents Geometry exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are these problems representative of the NY Geometry Regents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Questions 1\u201311 hit the exact building blocks the multiple-choice section of the Regents leans on: 3D relationships (parallel, perpendicular, skew), definitions of angle, angle bisectors, complementary angles, parallel lines cut by a transversal, midpoint segment addition, interior angles of a regular polygon, and the vertical angles theorem. If you can do all 11 without a calculator in under 20 minutes, the opening block of the Regents is a green light."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "The NY Geometry Regents is being phased out in 2027 \u2014 do these still matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Regents phase-out changes what the June exam looks like, but not the content. Every one of the 11 topics on this page \u2014 skew vs. parallel lines, angle bisectors, parallel lines cut by a transversal, interior angles of regular polygons, vertical angles \u2014 is still on the NY Next Generation Learning Standards and still on the SAT, ACT, and every future replacement assessment. Master these once and they carry through high school."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How should my student use this page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cover the answer, try the problem on paper, then click the + to check the answer and read the worked solution. If it's wrong, read the short theory box for that problem so you fix the concept, not just the arithmetic. Then re-do the problem 24 hours later from scratch \u2014 that's the retrieval-practice loop that makes geometry stick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I get help if my child is stuck on Regents Geometry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH (School of Math) at 226 W 79th Street on the Upper West Side runs in-person Regents Geometry prep in small groups of 6 students, plus 1:1 targeted tutoring for anyone with specific gap areas. Book a free 30-minute evaluation at (646) 668-6151 or schoolofmath.us/evaluation \u2014 we'll diagnose which of the 11 topics on this page is the weakest link and build the shortest path to Regents fluency."
+      }
+    }
+  ]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "School of Math (SOMATH)",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "(646) 668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Regents Geometry &middot; Barron's 6th Ed. &middot; Practice Exercises 1&ndash;11</p>
+      <h1 class="post__title">Barron's Regents Geometry &mdash; Practice Exercises 1&ndash;11, Fully Solved</h1>
+      <p class="post__dek">All 11 opening practice problems from Barron's <em>Regents Exams and Answers: Geometry</em> (Sixth Edition) &mdash; the block that covers points, lines, planes, angles, parallel lines cut by a transversal, midpoints, polygons, and vertical angles. Read the problem, click the <strong>+</strong> to reveal the answer, and check your reasoning against the worked solution plus a short theory box for each concept. Written by the SOMATH team at 226 W 79th Street on the Upper West Side.</p>
+      <p class="post__meta"><time datetime="2026-08-13">2026-08-13</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <div class="toc">
+          <h3>What's on this page</h3>
+          <ol>
+            <li><a href="#q1">Rectangular prism &mdash; parallel, perpendicular, and skew edges</a></li>
+            <li><a href="#q2">The definition of an angle</a></li>
+            <li><a href="#q3">Perpendicular rays &mdash; find m&ang;BFD</a></li>
+            <li><a href="#q4">Angle bisector with algebra &mdash; find m&ang;ABD</a></li>
+            <li><a href="#q5">Parallel lines cut by a transversal &mdash; solve for x</a></li>
+            <li><a href="#q6">Collinear midpoints with a quadratic &mdash; find FG</a></li>
+            <li><a href="#q7">Parallel lines and a zigzag &mdash; find &ang;3</a></li>
+            <li><a href="#q8">Reverse polygon problem &mdash; how many sides?</a></li>
+            <li><a href="#q9">Regular octagon &mdash; sides extended to a point</a></li>
+            <li><a href="#q10">Regular hexagon diagonals &mdash; find &ang;AOF</a></li>
+            <li><a href="#q11">Prove vertical angles are congruent</a></li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <p><strong>Why these 11 problems in particular.</strong> They are the opening block of Barron's <em>Regents Exams and Answers: Geometry</em>, 6th Edition. Barron's put them first for a reason: every one of them tests a foundational fact that will be reused a hundred times in triangles, quadrilaterals, similarity, circles, and coordinate geometry. If any of the 11 feels shaky, that concept becomes the weak link for the rest of the course.</p>
+        </div>
+
+        <h2 class="section-header" id="q1">Question 1 &mdash; Rectangular prism relationships</h2>
+        <p class="section-lede">Points, lines, planes in 3D: parallel, perpendicular, skew, coplanar, collinear.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 1 &middot; 3D relationships</span><span class="q-text">In the figure of the rectangular prism (bottom face ABCD, top face EFGH with E above A, F above B, G above C, H above D), which of the following is true? <br>(1) Points E, H, D, A are coplanar and collinear. &nbsp; (2) $\overline{HD}$ is skew to $\overline{CD}$, and $\overline{CD}\perp\overline{CG}$. &nbsp; (3) $\overline{EA}\parallel\overline{CG}$, and $\overline{EH}$ is skew to $\overline{FB}$. &nbsp; (4) $\overline{EA}\perp\overline{BC}$, and $\overline{AB}\parallel\overline{CD}$.</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (3) $\overline{EA}\parallel\overline{CG}$, and $\overline{EH}$ is skew to $\overline{FB}$.</p>
+              <p><strong>Why (3) works.</strong> $\overline{EA}$ and $\overline{CG}$ are both vertical edges of the prism, so they are parallel. $\overline{EH}$ lies in the top face and $\overline{FB}$ is a vertical edge from F (top) to B (bottom); they do not share a point and are not parallel, so by definition they are skew.</p>
+              <p><strong>Why the others fail.</strong> (1) E, H, D, A are coplanar (they form one side face), but four points on a face are not collinear. (2) $\overline{HD}$ and $\overline{CD}$ share point D, so they cannot be skew. (4) $\overline{EA}$ is vertical and $\overline{BC}$ is a horizontal bottom edge; they never meet, so they are skew, not perpendicular. Perpendicular requires intersection.</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> In 3D there are three ways two distinct lines can relate: parallel (same direction, never meet), intersecting (share exactly one point &mdash; and if the angle is 90&deg;, perpendicular), or skew (not parallel and never meet). Two lines that never meet are only parallel if they lie in the same plane; if they don't lie in any common plane, they are skew.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q2">Question 2 &mdash; The definition of an angle</h2>
+        <p class="section-lede">One of those definitions Regents graders love because students often paraphrase it badly.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 2 &middot; Definitions</span><span class="q-text">Which of the following would be the best definition of an angle? <br>(1) the union of two rays with a common endpoint &nbsp; (2) a geometric figure measured in degrees &nbsp; (3) one-third of a triangle &nbsp; (4) a line that bends</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (1) the union of two rays with a common endpoint.</p>
+              <p><strong>Why (1) is the definition.</strong> Every angle is built from exactly two rays that share a common endpoint (the vertex). "Union" means the angle is those two rays taken together as one figure.</p>
+              <p><strong>Why the others fail.</strong> (2) confuses measurement with definition &mdash; degrees are how we measure an angle, not what it is. (3) is a colloquialism at best; a triangle has three angles but an angle exists independently. (4) is not a defined term in geometry &mdash; lines are straight by definition.</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> The three foundational definitions the Regents will assume without warning: a <strong>line</strong> is straight and extends forever in both directions; a <strong>ray</strong> has one endpoint and extends forever in one direction; an <strong>angle</strong> is the union of two rays sharing a common endpoint (the vertex).
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q3">Question 3 &mdash; Perpendicular rays and vertical angles</h2>
+        <p class="section-lede">Angle chasing at a single point: perpendicular, complementary, and vertical angles all in one figure.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 3 &middot; Angle chase</span><span class="q-text">$\overrightarrow{BFA}\perp\overrightarrow{CF}$ and $m\angle CFE = 42^\circ$. Find $m\angle BFD$. <br>(1) 42&deg; &nbsp; (2) 45&deg; &nbsp; (3) 48&deg; &nbsp; (4) 52&deg;</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (3) 48&deg;.</p>
+              <p class="fig-note">Figure: BFA is a horizontal line through F. CF is perpendicular to it, pointing straight up. E is in the upper-right region between C and A, with $\angle CFE = 42^\circ$. D is in the lower-left region, on the ray opposite $\overrightarrow{FE}$ &mdash; so E, F, D are collinear.</p>
+              <p><strong>Step 1 &mdash; use the perpendicular.</strong> Since $\overrightarrow{CF}\perp\overrightarrow{BFA}$, we know $\angle CFA = 90^\circ$.</p>
+              <p><strong>Step 2 &mdash; split $\angle CFA$.</strong> $\angle CFA$ is split by ray FE into $\angle CFE$ and $\angle EFA$: $$\angle EFA = 90^\circ - 42^\circ = 48^\circ.$$</p>
+              <p><strong>Step 3 &mdash; vertical angles.</strong> Since E, F, D are collinear and B, F, A are collinear, $\angle EFA$ and $\angle DFB$ are vertical angles. Vertical angles are congruent, so $m\angle BFD = 48^\circ.$</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> When two lines cross at a point, four angles are formed. The pairs across from each other (sharing only the vertex) are <strong>vertical angles</strong> and are always congruent. Adjacent pairs are <strong>linear pairs</strong> and always sum to 180&deg;. Complementary angles sum to 90&deg;; supplementary angles sum to 180&deg;.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q4">Question 4 &mdash; Angle bisector with algebra</h2>
+        <p class="section-lede">A bisector cuts an angle exactly in half. That's the equation.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 4 &middot; Bisector + algebra</span><span class="q-text">$\overrightarrow{BC}$ bisects $\angle ABD$. If $m\angle ABD = (8x-12)^\circ$ and $m\angle ABC = (3x+4)^\circ$, find $m\angle ABD$. <br>(1) 10&deg; &nbsp; (2) 20&deg; &nbsp; (3) 34&deg; &nbsp; (4) 68&deg;</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (4) 68&deg;.</p>
+              <p><strong>Step 1 &mdash; write the bisector equation.</strong> A bisector cuts the whole angle in half, so the whole equals twice the half: $$m\angle ABD = 2 \cdot m\angle ABC.$$ Substitute: $$8x - 12 = 2(3x + 4).$$</p>
+              <p><strong>Step 2 &mdash; solve for x.</strong></p>
+              <pre class="work">8x - 12 = 6x + 8
+2x = 20
+x = 10</pre>
+              <p><strong>Step 3 &mdash; find $m\angle ABD$.</strong> $$m\angle ABD = 8(10) - 12 = 80 - 12 = 68^\circ.$$</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> An <strong>angle bisector</strong> is a ray that divides an angle into two congruent halves. Two equivalent equations you can always write: <em>half = half</em> ($m\angle ABC = m\angle CBD$), or <em>whole = 2 &times; half</em> ($m\angle ABD = 2\cdot m\angle ABC$). Pick whichever gives cleaner algebra.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q5">Question 5 &mdash; Parallel lines and a transversal</h2>
+        <p class="section-lede">The single most-used theorem in Regents Geometry after Pythagoras.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 5 &middot; Parallel lines</span><span class="q-text">Line $p$ intersects lines $m$ and $n$. Line $p$ makes an angle of $(x+28)^\circ$ with line $m$ (upper-left of the intersection) and an angle of $(4x-23)^\circ$ with line $n$ (upper-left of the intersection). For what value of $x$ could you conclude that $m \parallel n$? <br>(1) 12&deg; &nbsp; (2) 17&deg; &nbsp; (3) 35&deg; &nbsp; (4) 62&deg;</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (2) 17&deg;.</p>
+              <p><strong>Step 1 &mdash; identify the angle pair.</strong> The two marked angles sit in the same relative position at their respective intersections (both on the upper-left of transversal $p$). Those are <strong>corresponding angles</strong>.</p>
+              <p><strong>Step 2 &mdash; use the parallel test.</strong> Two lines cut by a transversal are parallel <em>if and only if</em> a pair of corresponding angles are congruent. Set them equal:</p>
+              <pre class="work">x + 28 = 4x - 23
+28 + 23 = 4x - x
+51 = 3x
+x = 17</pre>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> Two lines cut by a transversal are parallel if and only if any one of the following holds: (a) a pair of <strong>corresponding angles</strong> is congruent, (b) a pair of <strong>alternate interior angles</strong> is congruent, (c) a pair of <strong>alternate exterior angles</strong> is congruent, or (d) a pair of <strong>co-interior (same-side interior) angles</strong> is supplementary. Choose (a), (b), or (c) if the angles look equal in the figure; choose (d) if they look like they add to a straight line.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q6">Question 6 &mdash; Collinear midpoints (with a quadratic)</h2>
+        <p class="section-lede">Midpoints turn a segment picture into equal-length algebra.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 6 &middot; Midpoints + quadratic</span><span class="q-text">Points F, G, H, and I are collinear (in that order). G is the midpoint of $\overline{FH}$, and H is the midpoint of $\overline{GI}$. If $FG = x^2 + 5x$ and $HI = 3x + 8$, what is the length of $\overline{FG}$?</span></summary>
+            <div class="answer">
+              <p class="key">Answer: $FG = 14$.</p>
+              <p><strong>Step 1 &mdash; translate each midpoint into an equal-length equation.</strong></p>
+              <ul>
+                <li>G is the midpoint of $\overline{FH}$, so $FG = GH$. Therefore $GH = x^2 + 5x$.</li>
+                <li>H is the midpoint of $\overline{GI}$, so $GH = HI$. Therefore $x^2 + 5x = 3x + 8$.</li>
+              </ul>
+              <p><strong>Step 2 &mdash; solve the quadratic.</strong></p>
+              <pre class="work">x&#178; + 5x = 3x + 8
+x&#178; + 2x - 8 = 0
+(x + 4)(x - 2) = 0
+x = -4  or  x = 2</pre>
+              <p>A length can't be negative, so we test both. If $x = -4$: $FG = (-4)^2 + 5(-4) = 16 - 20 = -4$ &mdash; reject. If $x = 2$: $FG = 4 + 10 = 14$ &mdash; keep.</p>
+              <p><strong>Step 3 &mdash; final answer.</strong> $FG = 14.$</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> A <strong>midpoint</strong> of a segment splits it into two congruent pieces &mdash; that's the equation you always write. When solving gives two candidate values of $x$, always plug both back into the original lengths and reject any that produce a negative or zero length.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q7">Question 7 &mdash; Parallel lines with a zigzag</h2>
+        <p class="section-lede">The trick: draw an auxiliary parallel through the middle vertex.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 7 &middot; Zigzag between parallels</span><span class="q-text">Lines $m$ and $n$ are parallel. A "Z" shape between them touches $m$ at a bottom vertex (interior angle $\angle 1 = 32^\circ$), bends at a middle vertex (angle $\angle 2 = 78^\circ$), and touches $n$ at a top vertex (angle $\angle 3$). What is the measure of $\angle 3$? <br>(1) 102&deg; &nbsp; (2) 110&deg; &nbsp; (3) 134&deg; &nbsp; (4) 148&deg;</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (3) 134&deg;.</p>
+              <p><strong>Step 1 &mdash; draw an auxiliary line.</strong> Through the middle vertex, draw a line parallel to both $m$ and $n$. This slices $\angle 2$ into two smaller angles, one above the auxiliary line and one below.</p>
+              <p><strong>Step 2 &mdash; use alternate interior angles.</strong> The lower piece of $\angle 2$ and $\angle 1$ are alternate interior angles between line $m$ and the auxiliary line, so the lower piece $= 32^\circ$. The upper piece of $\angle 2$ is then $78^\circ - 32^\circ = 46^\circ$.</p>
+              <p><strong>Step 3 &mdash; identify $\angle 3$.</strong> The upper piece of $\angle 2$ and the angle above line $n$ (on the same side of the ray) are alternate interior angles between the auxiliary line and $n$, so that angle above the ray at the top vertex is also $46^\circ$. The angle $\angle 3$ marked in the figure is the <em>supplement</em> to the $46^\circ$ angle (they form a linear pair along line $n$): $$m\angle 3 = 180^\circ - 46^\circ = 134^\circ.$$</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> When a "zigzag" ray crosses two parallel lines, drawing an <strong>auxiliary parallel line</strong> through each bend turns every bend into two alternate-interior angle pairs. The angle at each bend equals the sum of the angles that ray makes with the two parallel lines on the "inside" of the zigzag. Once you see this trick, every zigzag Regents problem takes about 30 seconds.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q8">Question 8 &mdash; How many sides has that polygon?</h2>
+        <p class="section-lede">Interior angle given; the exterior angle formula is faster than the interior angle formula.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 8 &middot; Reverse polygon</span><span class="q-text">A regular polygon has interior angles that each measure $156^\circ$. How many sides does the polygon have?</span></summary>
+            <div class="answer">
+              <p class="key">Answer: 15 sides.</p>
+              <p><strong>Fast method &mdash; use exterior angles.</strong> Each exterior angle of a regular polygon is $180^\circ$ minus the interior angle: $$180^\circ - 156^\circ = 24^\circ.$$ The exterior angles of any convex polygon sum to $360^\circ$, so for a regular polygon: $$n = \frac{360^\circ}{\text{each exterior angle}} = \frac{360^\circ}{24^\circ} = 15.$$</p>
+              <p><strong>Slow method &mdash; use interior angle formula.</strong> The formula $\dfrac{(n-2)\cdot 180^\circ}{n} = 156$ gives $180n - 360 = 156n$, so $24n = 360$ and $n = 15$. Same answer, more arithmetic.</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> Two facts that solve every regular-polygon question: (1) The sum of interior angles of an $n$-gon is $(n-2)\cdot 180^\circ$, so each interior angle of a <em>regular</em> $n$-gon is $\dfrac{(n-2)\cdot 180^\circ}{n}$. (2) The sum of exterior angles of ANY convex polygon is always $360^\circ$, so each exterior angle of a regular $n$-gon is $\dfrac{360^\circ}{n}$. When the problem gives you an interior angle, always try the exterior-angle route first &mdash; it's usually one line of arithmetic.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q9">Question 9 &mdash; Regular octagon with two sides extended</h2>
+        <p class="section-lede">A classic Regents problem: extend two sides of a regular polygon and find the angle where they meet.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 9 &middot; Extended sides of octagon</span><span class="q-text">Regular octagon ABCDEFGH is shown with sides $\overline{AB}$ and $\overline{FG}$ both extended to meet at point Q outside the octagon. What is the measure of $\angle Q$? <br>(1) 22.5&deg; &nbsp; (2) 30&deg; &nbsp; (3) 45&deg; &nbsp; (4) 60&deg;</span></summary>
+            <div class="answer">
+              <p class="key">Answer: (3) 45&deg;.</p>
+              <p><strong>Step 1 &mdash; find the interior angle of the regular octagon.</strong> Each interior angle: $\dfrac{(8-2)\cdot 180^\circ}{8} = \dfrac{1080^\circ}{8} = 135^\circ.$</p>
+              <p><strong>Step 2 &mdash; find the angles at A and G that face Q.</strong> Q lies outside the octagon on the H-side. At vertex A, the ray $\overrightarrow{AQ}$ is opposite to $\overrightarrow{AB}$ (because $\overline{AB}$ was extended past A). So $\angle QAH$ and $\angle BAH$ form a linear pair: $$\angle QAH = 180^\circ - 135^\circ = 45^\circ.$$ Similarly at G, $\overrightarrow{GQ}$ is opposite $\overrightarrow{GF}$: $$\angle QGH = 180^\circ - 135^\circ = 45^\circ.$$</p>
+              <p><strong>Step 3 &mdash; use the quadrilateral Q-A-H-G.</strong> The four vertices Q, A, H, G form a quadrilateral. Vertex H is on the boundary of the octagon between A and G, and the quadrilateral wraps around H on the <em>outside</em> of the octagon &mdash; so its interior angle at H is the <em>reflex</em> of the octagon's interior angle: $$\text{interior angle of quad at H} = 360^\circ - 135^\circ = 225^\circ.$$</p>
+              <p><strong>Step 4 &mdash; sum the quadrilateral to 360&deg;.</strong></p>
+              <pre class="work">&ang;Q + &ang;QAH + &ang;AHG (reflex) + &ang;HGQ = 360&deg;
+&ang;Q + 45&deg; + 225&deg; + 45&deg; = 360&deg;
+&ang;Q + 315&deg; = 360&deg;
+&ang;Q = 45&deg;</pre>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> When two sides of a regular polygon are extended to meet at an exterior point, the figure formed by the two extensions and the "short way" arc along the polygon is a polygon of its own. Sum its interior angles using $(n-2)\cdot 180^\circ$ and solve for the unknown vertex angle. Watch for reflex angles when the polygon's own vertex points "inward" relative to the new figure &mdash; that was the trick in this problem.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q10">Question 10 &mdash; Regular hexagon diagonals</h2>
+        <p class="section-lede">Both diagonals pass through the center &mdash; that's the whole problem.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 10 &middot; Hexagon diagonals</span><span class="q-text">In regular hexagon ABCDEF, $\overline{AD}$ and $\overline{FC}$ intersect at point O. What is the measure of $\angle AOF$?</span></summary>
+            <div class="answer">
+              <p class="key">Answer: 60&deg;.</p>
+              <p><strong>Step 1 &mdash; place the hexagon on a circle.</strong> A regular hexagon has its six vertices equally spaced on a circle centered at O. Label the vertices at $0^\circ, 60^\circ, 120^\circ, 180^\circ, 240^\circ, 300^\circ$ around the center: A at $0^\circ$, B at $60^\circ$, C at $120^\circ$, D at $180^\circ$, E at $240^\circ$, F at $300^\circ$.</p>
+              <p><strong>Step 2 &mdash; recognize both segments as diameters.</strong> $\overline{AD}$ connects A ($0^\circ$) and D ($180^\circ$) &mdash; opposite vertices, so it passes through the center. $\overline{FC}$ connects F ($300^\circ$) and C ($120^\circ$) &mdash; opposite vertices, so it also passes through the center. Therefore O is the <em>center</em> of the hexagon.</p>
+              <p><strong>Step 3 &mdash; compute the central angle.</strong> $\angle AOF$ is the central angle between vertex A ($0^\circ$) and vertex F ($300^\circ$), measured the short way: $$\angle AOF = 360^\circ - 300^\circ = 60^\circ.$$</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> In a regular $n$-gon, the "long diagonals" that connect opposite vertices (only when $n$ is even) all pass through the center. Every two adjacent vertices of a regular $n$-gon subtend a central angle of $\dfrac{360^\circ}{n}$. For the hexagon: $\dfrac{360^\circ}{6} = 60^\circ.$ That's why the equilateral triangle keeps showing up inside every regular hexagon.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <h2 class="section-header" id="q11">Question 11 &mdash; Prove vertical angles are congruent</h2>
+        <p class="section-lede">The proof every Regents Geometry student is expected to reproduce cold.</p>
+
+        <div class="quiz">
+          <details>
+            <summary><span class="q-num">Question 11 &middot; Vertical angles proof</span><span class="q-text">In the accompanying figure, $\overleftrightarrow{WPX}$ intersects $\overleftrightarrow{YPZ}$ at P. Prove the theorem that the opposite angles formed by intersecting lines are congruent: $\angle WPY \cong \angle ZPX$.</span></summary>
+            <div class="answer">
+              <p class="key">Answer &mdash; two-column proof:</p>
+              <pre class="work">Statements                                Reasons
+--------------------------------------    -----------------------------------
+1. WPX and YPZ are lines that            1. Given.
+   intersect at P.
+2. &ang;WPY and &ang;YPX form a linear pair    2. If two angles form a linear pair,
+   (both share ray PY, and rays PW           they are supplementary.
+   and PX form a straight line). So
+   m&ang;WPY + m&ang;YPX = 180&deg;.
+3. &ang;YPX and &ang;XPZ form a linear pair    3. Same reason (rays PY and PZ form a
+   (both share ray PX, and rays PY           straight line).
+   and PZ form a straight line). So
+   m&ang;YPX + m&ang;XPZ = 180&deg;.
+4. m&ang;WPY + m&ang;YPX =                    4. Transitive property of equality
+   m&ang;YPX + m&ang;XPZ.                        (both equal 180&deg;).
+5. m&ang;WPY = m&ang;XPZ.                      5. Subtraction property of equality
+                                              (subtract m&ang;YPX from both sides).
+6. &ang;WPY &cong; &ang;ZPX.                       6. Definition of congruent angles.</pre>
+              <p><strong>Paragraph version.</strong> Because W, P, X are collinear, angles $\angle WPY$ and $\angle YPX$ form a linear pair and sum to $180^\circ$. Because Y, P, Z are collinear, angles $\angle YPX$ and $\angle XPZ$ also sum to $180^\circ$. Setting the two sums equal and subtracting the shared angle $\angle YPX$ from both sides gives $m\angle WPY = m\angle XPZ$, so $\angle WPY \cong \angle ZPX$. $\blacksquare$</p>
+              <div class="theory-box">
+                <strong>Theory recap.</strong> The <strong>Vertical Angles Theorem</strong> is proved from three simpler facts: the definition of a linear pair, the linear pair postulate (a linear pair sums to $180^\circ$), and the subtraction property of equality. This same "two supplements to the same angle are equal" trick appears in dozens of Regents proofs &mdash; memorize the pattern, not just the result.
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <div class="cta-box">
+          <h3>Stuck on Regents Geometry? Book a free evaluation at SOMATH.</h3>
+          <p>We run in-person Regents Geometry prep in small groups of 6 on the Upper West Side at 226 W 79th Street. The free 30-minute evaluation diagnoses exactly which of these 11 foundations is the weakest link and builds the shortest path to Regents fluency.</p>
+          <p><a class="btn" href="/evaluation">Book a free evaluation</a></p>
+        </div>
+
+        <h2 class="section-header" id="faq">FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>What book are these problems from?</summary>
+            <p>Barron's <em>Regents Exams and Answers: Geometry</em>, Sixth Edition. These 11 questions open the Practice Exercises section that follows the first block of instruction (points, lines, planes, angles, parallel lines, polygons, and vertical angles). It's the standard NYC classroom study guide for the NY Regents Geometry exam.</p>
+          </details>
+          <details>
+            <summary>Are these problems representative of the NY Geometry Regents?</summary>
+            <p>Yes. Questions 1&ndash;11 hit the exact building blocks the multiple-choice section of the Regents leans on: 3D relationships (parallel, perpendicular, skew), definitions of angle, angle bisectors, complementary angles, parallel lines cut by a transversal, midpoint segment addition, interior angles of a regular polygon, and the vertical angles theorem. If your student can do all 11 without a calculator in under 20 minutes, the opening block of the Regents is a green light.</p>
+          </details>
+          <details>
+            <summary>The NY Geometry Regents is being phased out in 2027 &mdash; do these still matter?</summary>
+            <p>Yes. The phase-out changes what the June exam looks like, but not the content. Every one of the 11 topics on this page &mdash; skew vs. parallel lines, angle bisectors, parallel lines cut by a transversal, interior angles of regular polygons, vertical angles &mdash; is still on the NY Next Generation Learning Standards and still on the SAT, ACT, and every future replacement assessment. Master these once and they carry through high school. See our <a href="/posts/ny-regents-phaseout-2027-uws-parent-guide">2027 Regents phase-out parent guide</a> for the full timeline.</p>
+          </details>
+          <details>
+            <summary>How should my student use this page?</summary>
+            <p>Cover the answer, try the problem on paper, then click the <strong>+</strong> to check the answer and read the worked solution. If it's wrong, read the short theory box for that problem so the concept gets fixed, not just the arithmetic. Then re-do the problem 24 hours later from scratch &mdash; that's the retrieval-practice loop that makes geometry stick.</p>
+          </details>
+          <details>
+            <summary>Where can I get help if my child is stuck on Regents Geometry?</summary>
+            <p><a href="/">SOMATH (School of Math)</a> at 226 W 79th Street on the Upper West Side runs in-person Regents Geometry prep in small groups of 6 students, plus 1:1 targeted tutoring for anyone with specific gap areas. Book a free 30-minute evaluation at (646) 668-6151 or <a href="/evaluation">schoolofmath.us/evaluation</a> &mdash; we'll diagnose which of the 11 topics on this page is the weakest link and build the shortest path to Regents fluency.</p>
+          </details>
+        </div>
+
+        <div class="related">
+          <h3>Keep going</h3>
+          <ul>
+            <li><a href="/posts/parallel-lines-triangle-midsegment-theorem-regents-geometry">Parallel lines and the triangle midsegment theorem (Regents Geometry)</a></li>
+            <li><a href="/posts/perpendicular-bisector-isosceles-triangle-regents-geometry">Perpendicular bisector of an isosceles triangle (Regents Geometry)</a></li>
+            <li><a href="/posts/nys-regents-math-test-prep-tutoring-nyc">NYS Regents math test prep tutoring in NYC &mdash; the full guide</a></li>
+            <li><a href="/posts/ny-regents-phaseout-2027-uws-parent-guide">NY Regents phase-out 2027 &mdash; the UWS parent guide</a></li>
+            <li><a href="/programs">All SOMATH programs (Grades 1&ndash;12, test prep, AP)</a></li>
+            <li><a href="/schedule">Fall class schedule and enrollment</a></li>
+            <li><a href="/evaluation">Book a free 30-minute in-person evaluation</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </article>
+
+    <p style="margin-top:32px;"><strong>School of Math (SOMATH)</strong> &middot; 226 W 79th St, 1st Floor &middot; New York, NY 10024 &middot; <a href="tel:+16466686151">(646) 668-6151</a> &middot; <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a></p>
+
+    <div id="footer-mount"></div>
+
+    <!-- KaTeX for math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+            onload="renderMathInElement(document.body, {delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]});"></script>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
