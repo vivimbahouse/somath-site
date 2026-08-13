@@ -1902,6 +1902,48 @@ var worker_default = {
       if (target.pathname === "/index") target.pathname = "/";
       return Response.redirect(target.toString(), 301);
     }
+
+    // A/B intent gate on /evaluation: cold organic-search first-touch visitors go
+    // to /student-evaluation (the free 10-question quiz) first. Warm traffic
+    // (Direct, Referral, internal navigation, returning cookied visitors) hits
+    // the Calendly widget directly. Bypass with ?nogate=1 or if cookie is set.
+    // Observed effect being remediated: /evaluation conversion collapsed from
+    // 58.6% (Jun) to 13.3% (Jul) as Organic Search sessions grew +166%.
+    if (url.pathname === "/evaluation" && request.method === "GET") {
+      const bypass = url.searchParams.get("nogate") === "1" || url.searchParams.has("utm_source");
+      const cookieHeader = request.headers.get("Cookie") || "";
+      const alreadyGated = cookieHeader.includes("somath_intent=");
+      const referer = request.headers.get("Referer") || "";
+      let refHost = "";
+      try { refHost = referer ? new URL(referer).hostname.toLowerCase() : ""; } catch (_) { refHost = ""; }
+      const sameSite = refHost.endsWith("schoolofmath.us");
+      const isSearchEngine = /(^|\.)(google|bing|duckduckgo|yahoo|ecosia|brave|kagi|startpage)\./.test(refHost);
+      const shouldGate = !bypass && !alreadyGated && !sameSite && isSearchEngine;
+      if (shouldGate) {
+        const target = new URL("https://www.schoolofmath.us/student-evaluation");
+        target.searchParams.set("src", "eval_gate");
+        target.searchParams.set("from", refHost);
+        // Set a 30-day cookie so a returning visitor who typed the URL or came
+        // back via search does not get bounced twice.
+        return new Response(null, {
+          status: 302,
+          headers: {
+            "Location": target.toString(),
+            "Set-Cookie": "somath_intent=gated; Path=/; Max-Age=2592000; SameSite=Lax; Secure",
+            "Cache-Control": "no-store",
+            "X-Intent-Gate": "organic-search"
+          }
+        });
+      }
+      // Non-gated hit — still set the cookie so we don't re-evaluate on every request.
+      if (!alreadyGated) {
+        const assetResp = await env.ASSETS.fetch(request);
+        const headers = new Headers(assetResp.headers);
+        headers.append("Set-Cookie", "somath_intent=direct; Path=/; Max-Age=2592000; SameSite=Lax; Secure");
+        headers.set("X-Intent-Gate", "pass");
+        return new Response(assetResp.body, { status: assetResp.status, statusText: assetResp.statusText, headers });
+      }
+    }
     if (url.pathname === "/api/request-pdf") return handleRequestPdf(request, env);
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);
