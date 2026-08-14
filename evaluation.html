@@ -359,6 +359,21 @@
           return e && e.data && typeof e.data === "object" && e.data.event && e.data.event.indexOf("calendly.") === 0;
         }
         var interacted = false;
+        var timeSelectedAt = 0;      // ms when parent picked a slot
+        var abandonTimer = null;      // 90s abandon timer
+        var abandonFired = false;     // fire once per session
+        var bookingCompleted = false;
+
+        function fireAbandonment(reason) {
+          if (abandonFired || bookingCompleted) return;
+          abandonFired = true;
+          fire('eval_form_abandoned', {
+            reason: reason,
+            time_on_form_ms: timeSelectedAt ? (Date.now() - timeSelectedAt) : 0,
+            visibility: document.visibilityState
+          });
+        }
+
         window.addEventListener("message", function (e) {
           if (!isCalendlyEvent(e)) return;
           var ev = e.data.event;
@@ -366,7 +381,16 @@
             fire('eval_widget_interacted', { calendly_event: ev });
           } else if (ev === 'calendly.date_and_time_selected') {
             if (!interacted) { interacted = true; fire('eval_calendly_time_selected'); }
+            // Start the abandonment timer: if event_scheduled hasn't fired in 90s,
+            // parent is likely stuck on the 6-question form.
+            timeSelectedAt = Date.now();
+            if (abandonTimer) clearTimeout(abandonTimer);
+            abandonTimer = setTimeout(function () {
+              fireAbandonment('timeout_90s');
+            }, 90000);
           } else if (ev === 'calendly.event_scheduled') {
+            bookingCompleted = true;
+            if (abandonTimer) { clearTimeout(abandonTimer); abandonTimer = null; }
             fire('eval_calendly_booking_completed');
             // Fire Google Ads conversion before redirect
             try {
@@ -377,6 +401,17 @@
             // Redirect to SOMATH-hosted confirmation page
             window.location.href = "/evaluation-confirmed";
           }
+        });
+
+        // If parent has selected a time and then leaves the tab or unloads before
+        // scheduling, treat as an abandonment (only if the 90s timer hasn't fired yet).
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'hidden' && timeSelectedAt && !bookingCompleted) {
+            fireAbandonment('tab_hidden');
+          }
+        });
+        window.addEventListener('pagehide', function () {
+          if (timeSelectedAt && !bookingCompleted) fireAbandonment('page_hide');
         });
       })();
     </script>
