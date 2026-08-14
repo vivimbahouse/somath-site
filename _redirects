@@ -41,3 +41,8 @@
 # Retired pre-enroll flow — anyone hitting old links lands on Membership
 /pre-enroll          /membership 301
 /pre-enroll-success  /membership 301
+
+# Stripe product URLs that don't match live page slugs — 301 to real pages
+# so Stripe Dashboard links, product feeds, and any external mentions resolve.
+/courses/sat-math-prep   /courses/sat-math 301
+
