@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Long Division with Three-Digit Dividends &mdash; 25 Practice Questions with Theory &amp; Hidden Answers (Kid Einsteins Class 7, Grades 3&ndash;4) | SOMATH NYC</title>
+    <meta name="description" content="Long division for grades 3&ndash;4: dividends up to three digits, one-digit divisors, and clean remainders. Step-by-step DMSB (Divide, Multiply, Subtract, Bring down), 25 practice questions with click-to-reveal answers, and word problems. From SOMATH&rsquo;s Kid Einsteins Class 7 on the Upper West Side of NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/long-division-3-digit-dividends-kid-einsteins" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Long Division with Three-Digit Dividends &mdash; 25 Practice Questions with Hidden Answers (Kid Einsteins Class 7)" />
+    <meta property="og:description" content="Long division for grades 3&ndash;4 with dividends up to three digits. DMSB step-by-step, 25 practice questions, word problems, and hidden answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/long-division-3-digit-dividends-kid-einsteins" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-08-14" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Long Division with Three-Digit Dividends &mdash; 25 Questions with Hidden Answers" />
+    <meta name="twitter:description" content="Grade 3&ndash;4 long division with 3-digit dividends. Theory + 25 questions with hidden answers. From SOMATH, Upper West Side NYC." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .work { font-family:"Courier New", monospace; background:#f5f1e8; padding:12px 16px; border-radius:6px; white-space:pre; display:block; margin:10px 0; line-height:1.55; overflow-x:auto; font-size:0.98rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .qmeta { font-size:0.85rem; color:#666; margin:0 0 8px; text-transform:uppercase; letter-spacing:0.05em; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary { cursor:pointer; background:#0a3a5f; color:#fff; padding:8px 14px; border-radius:4px; font-weight:600; display:inline-block; user-select:none; list-style:none; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary:hover { background:#0c4a75; }
+      .qbox details.reveal[open] > summary { background:#0c4a75; margin-bottom:10px; }
+      .qbox .answer-block { background:#f5f1e8; padding:14px 18px; border-radius:6px; margin-top:8px; }
+      .qbox .answer-block p { margin:6px 0; }
+      .qbox .answer-block .work { background:#fff; }
+      .answer-key { width:100%; border-collapse:collapse; margin:14px 0; font-size:0.96rem; }
+      .answer-key th, .answer-key td { padding:6px 10px; text-align:left; border-bottom:1px solid #e6e6e6; }
+      .answer-key th { background:#0a3a5f; color:#fff; font-family:inherit; }
+      .answer-key tr:nth-child(even) { background:#fafafa; }
+      .answer-key td:first-child { font-weight:700; color:#0a3a5f; white-space:nowrap; }
+      .related { background:#f5f1e8; border-radius:8px; padding:18px 24px; margin:28px 0; }
+      .related h3 { margin:0 0 10px; color:#0a3a5f; }
+      .related ul { margin:0; padding-left:22px; }
+      .related li { margin:4px 0; }
+      .related a { color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Long Division with Three-Digit Dividends — 25 Practice Questions with Theory & Hidden Answers (Kid Einsteins Class 7)",
+  "description": "Long division for grades 3–4 with dividends up to three digits and one-digit divisors. Step-by-step DMSB (Divide, Multiply, Subtract, Bring down), remainders, checking with multiplication, and 25 practice questions with click-to-reveal answers.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/long-division-3-digit-dividends-kid-einsteins" },
+  "keywords": "long division, three-digit dividends, grade 3 long division, grade 4 long division, DMSB, division with remainder, Kid Einsteins, SOMATH NYC, Upper West Side math tutoring"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#somath",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": "New York City"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is long division?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Long division is a step-by-step procedure for dividing a large number (the dividend) by a smaller number (the divisor). You work digit by digit from left to right using a four-step cycle — Divide, Multiply, Subtract, Bring down — until every digit of the dividend has been used. The final result is a quotient (how many groups) and, sometimes, a remainder (what is left over)." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is DMSB?",
+      "acceptedAnswer": { "@type": "Answer", "text": "DMSB is the four-step long-division cycle: Divide, Multiply, Subtract, Bring down. Some teachers use a mnemonic like 'Dad, Mom, Sister, Brother' or 'Does McDonald's Sell Burgers?' to help students remember the order. In each round you divide the current chunk by the divisor, multiply the answer digit by the divisor, subtract, and bring down the next digit of the dividend." }
+    },
+    {
+      "@type": "Question",
+      "name": "In what grade do students learn long division with three-digit dividends?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In most US curricula students first meet long division in grade 3 (short dividends, division facts through 10), and become fluent with long division of two- and three-digit dividends by a one-digit divisor in grade 4. Long division with two-digit divisors comes in grade 5. At SOMATH we teach long division with three-digit dividends in Class 7 of the Kid Einsteins program (grades 3–4)." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you check a long-division answer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Multiply the quotient by the divisor and add the remainder — that should equal the dividend. In symbols: dividend = divisor × quotient + remainder. If a student divides 754 by 6 and writes 125 remainder 4, the check is 6 × 125 + 4 = 750 + 4 = 754. Every long-division answer at SOMATH is checked this way." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can my child learn long division in NYC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH — School of Math on the Upper West Side of Manhattan (226 W 79th Street) teaches long division in Class 7 of the Kid Einsteins program (grades 3–4). Small groups of 6–8 students, taught by Harvard- and Kellogg-trained instructors. Book a free 30-minute evaluation at schoolofmath.us/evaluation or call (646) 668-6151." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Kid Einsteins &middot; Class 7 &middot; Long Division &middot; Grades 3&ndash;4 &middot; NYC Math Class</p>
+      <h1 class="post__title">Long Division with Three-Digit Dividends &mdash; 25 Practice Questions with Theory &amp; Hidden Answers (Kid Einsteins Class 7)</h1>
+      <p class="post__dek">This is <strong>Class 7</strong> of the SOMATH <a href="/courses/kid-einsteins">Kid Einsteins</a> multiplication &amp; division arc &mdash; the class where students go from &ldquo;I know my division facts&rdquo; (that was <a href="/posts/division-facts-inverse-multiplication-kid-einsteins">Class 6</a>) to &ldquo;I can divide any three-digit number by a one-digit divisor.&rdquo; This is the class where <em>long division</em> becomes real. We introduce the four-step DMSB cycle (Divide, Multiply, Subtract, Bring down), work through three fully solved examples together, then hand students <strong>25 practice questions with hidden step-by-step answers</strong> and 5 challenge word problems.</p>
+      <p class="post__meta"><time datetime="2026-08-14">2026-08-14</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS NYC &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <div class="toc">
+          <h2>What&rsquo;s in this class</h2>
+          <ol>
+            <li><a href="#what-is-long-division">What is long division?</a></li>
+            <li><a href="#dmsb">The DMSB cycle &mdash; the four-step long-division loop</a></li>
+            <li><a href="#example-1">Example 1 &mdash; 672 &divide; 4 (no remainder)</a></li>
+            <li><a href="#example-2">Example 2 &mdash; 754 &divide; 6 (with a remainder)</a></li>
+            <li><a href="#example-3">Example 3 &mdash; 305 &divide; 5 (zero in the middle of the quotient)</a></li>
+            <li><a href="#checking">How to check every division answer</a></li>
+            <li><a href="#practice">25 practice questions with hidden answers</a></li>
+            <li><a href="#challenge">5 challenge word problems</a></li>
+            <li><a href="#answer-key">Answer key table</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </div>
+
+        <h2 id="what-is-long-division">1. What is long division?</h2>
+        <p>In <a href="/posts/division-facts-inverse-multiplication-kid-einsteins">Class 6</a> we learned that division is the inverse of multiplication &mdash; if you know <span class="eq">6 &times; 7 = 42</span>, then you also know <span class="eq">42 &divide; 6 = 7</span> and <span class="eq">42 &divide; 7 = 6</span>. But division facts alone only get you so far. What happens when the number you&rsquo;re dividing is <em>bigger</em> than any fact you memorized &mdash; something like <span class="eq">672 &divide; 4</span> or <span class="eq">856 &divide; 7</span>?</p>
+        <p>That&rsquo;s what long division is for. Long division is a step-by-step procedure that lets you divide <strong>any</strong> number by another number, digit by digit, using only the multiplication facts you already know.</p>
+
+        <div class="theory-box">
+          <h3>The parts of a division problem</h3>
+          <p>Every division problem has three parts (and often a fourth):</p>
+          <ul>
+            <li><strong>Dividend</strong> &mdash; the number being divided (goes <em>inside</em> the long-division bracket)</li>
+            <li><strong>Divisor</strong> &mdash; the number you&rsquo;re dividing by (goes <em>outside</em>, to the left of the bracket)</li>
+            <li><strong>Quotient</strong> &mdash; the answer (goes <em>on top</em> of the bracket)</li>
+            <li><strong>Remainder</strong> &mdash; what&rsquo;s left over when the divisor doesn&rsquo;t divide evenly (written as <em>R</em> next to the quotient)</li>
+          </ul>
+          <p>Example: in <span class="eq">754 &divide; 6 = 125 R 4</span>, the dividend is 754, the divisor is 6, the quotient is 125, and the remainder is 4.</p>
+        </div>
+
+        <h2 id="dmsb">2. The DMSB cycle</h2>
+        <div class="theory-box">
+          <h3>Divide, Multiply, Subtract, Bring down</h3>
+          <p>Long division is a <strong>loop</strong> of four steps that you repeat, digit by digit, from left to right across the dividend:</p>
+          <ol>
+            <li><strong>D &mdash; Divide.</strong> Look at the current chunk of the dividend. How many times does the divisor fit into it? Write that answer above the dividend.</li>
+            <li><strong>M &mdash; Multiply.</strong> Multiply your answer digit by the divisor. Write the product under the chunk.</li>
+            <li><strong>S &mdash; Subtract.</strong> Subtract the product from the chunk above it.</li>
+            <li><strong>B &mdash; Bring down.</strong> Bring down the next digit of the dividend next to what&rsquo;s left. This is the new chunk. Go back to step 1.</li>
+          </ol>
+          <p>Repeat until every digit of the dividend has been used. Whatever is left after the last subtraction is the <strong>remainder</strong> (or zero if it divides evenly).</p>
+          <p>Some teachers use a memory phrase for the order: &ldquo;<strong>D</strong>ad, <strong>M</strong>om, <strong>S</strong>ister, <strong>B</strong>rother&rdquo; or &ldquo;<strong>D</strong>oes <strong>M</strong>c<strong>D</strong>onald&rsquo;s <strong>S</strong>ell <strong>B</strong>urgers?&rdquo; Whatever helps students remember: <em>divide, multiply, subtract, bring down</em>.</p>
+        </div>
+
+        <h2 id="example-1">3. Example 1 &mdash; 672 &divide; 4 (no remainder)</h2>
+        <p>Set it up. The dividend 672 goes inside the bracket, the divisor 4 outside:</p>
+        <div class="work">    ______
+  4 ) 672</div>
+
+        <p><strong>Round 1 &mdash; look at the 6 (hundreds digit).</strong></p>
+        <ul>
+          <li>D: <em>How many times does 4 go into 6?</em> Answer: 1 (since <span class="eq">4 &times; 1 = 4</span> and <span class="eq">4 &times; 2 = 8</span> is too big). Write 1 above the 6.</li>
+          <li>M: <span class="eq">1 &times; 4 = 4</span>. Write 4 under the 6.</li>
+          <li>S: <span class="eq">6 &minus; 4 = 2</span>. Write 2.</li>
+          <li>B: Bring down the next digit (7). New chunk: 27.</li>
+        </ul>
+        <div class="work">    1____
+  4 ) 672
+     -4
+      2 7</div>
+
+        <p><strong>Round 2 &mdash; look at 27.</strong></p>
+        <ul>
+          <li>D: <em>How many times does 4 go into 27?</em> <span class="eq">4 &times; 6 = 24</span>. <span class="eq">4 &times; 7 = 28</span> (too big). Answer: 6. Write 6 above the 7.</li>
+          <li>M: <span class="eq">6 &times; 4 = 24</span>.</li>
+          <li>S: <span class="eq">27 &minus; 24 = 3</span>.</li>
+          <li>B: Bring down the 2. New chunk: 32.</li>
+        </ul>
+        <div class="work">    1 6__
+  4 ) 672
+     -4
+      2 7
+     -2 4
+        3 2</div>
+
+        <p><strong>Round 3 &mdash; look at 32.</strong></p>
+        <ul>
+          <li>D: <em>How many times does 4 go into 32?</em> Exactly 8 (<span class="eq">4 &times; 8 = 32</span>). Write 8.</li>
+          <li>M: <span class="eq">8 &times; 4 = 32</span>.</li>
+          <li>S: <span class="eq">32 &minus; 32 = 0</span>.</li>
+          <li>B: Nothing left to bring down. Done.</li>
+        </ul>
+        <div class="work">    1 6 8
+  4 ) 672
+     -4
+      2 7
+     -2 4
+        3 2
+       -3 2
+          0</div>
+
+        <p><strong>Answer: <span class="eq">672 &divide; 4 = 168</span></strong> with no remainder.</p>
+        <p><em>Check:</em> <span class="eq">168 &times; 4 = 672</span> ✓</p>
+
+        <h2 id="example-2">4. Example 2 &mdash; 754 &divide; 6 (with a remainder)</h2>
+        <div class="work">    ______
+  6 ) 754</div>
+        <p><strong>Round 1 &mdash; 7 &divide; 6.</strong> <span class="eq">6 &times; 1 = 6</span>. Write 1. <span class="eq">7 &minus; 6 = 1</span>. Bring down 5. New chunk: 15.</p>
+        <p><strong>Round 2 &mdash; 15 &divide; 6.</strong> <span class="eq">6 &times; 2 = 12</span>. Write 2. <span class="eq">15 &minus; 12 = 3</span>. Bring down 4. New chunk: 34.</p>
+        <p><strong>Round 3 &mdash; 34 &divide; 6.</strong> <span class="eq">6 &times; 5 = 30</span>. Write 5. <span class="eq">34 &minus; 30 = 4</span>. Nothing left to bring down.</p>
+        <div class="work">    1 2 5
+  6 ) 754
+     -6
+      1 5
+     -1 2
+        3 4
+       -3 0
+          4</div>
+        <p><strong>Answer: <span class="eq">754 &divide; 6 = 125 R 4</span></strong>.</p>
+        <p><em>Check:</em> <span class="eq">125 &times; 6 = 750</span>, and <span class="eq">750 + 4 = 754</span> ✓</p>
+
+        <h2 id="example-3">5. Example 3 &mdash; 305 &divide; 5 (zero in the middle of the quotient)</h2>
+        <p>This example teaches an important habit: when the divisor doesn&rsquo;t fit into the chunk, write a <strong>zero in the quotient</strong> and bring down the next digit. Don&rsquo;t skip.</p>
+        <div class="work">    ______
+  5 ) 305</div>
+        <p><strong>Round 1 &mdash; 3 &divide; 5.</strong> 5 does not fit into 3 (<span class="eq">5 &times; 0 = 0</span>). Write 0 above the 3. <span class="eq">3 &minus; 0 = 3</span>. Bring down 0. New chunk: 30.</p>
+        <p><strong>Round 2 &mdash; 30 &divide; 5.</strong> <span class="eq">5 &times; 6 = 30</span>. Write 6. <span class="eq">30 &minus; 30 = 0</span>. Bring down 5. New chunk: 5.</p>
+        <p><strong>Round 3 &mdash; 5 &divide; 5.</strong> <span class="eq">5 &times; 1 = 5</span>. Write 1. <span class="eq">5 &minus; 5 = 0</span>. Done.</p>
+        <div class="work">    0 6 1
+  5 ) 305
+     -0
+      3 0
+     -3 0
+        0 5
+       -   5
+          0</div>
+        <p><strong>Answer: <span class="eq">305 &divide; 5 = 61</span></strong>. (The leading 0 is silent when we write the final answer, but writing it during long division keeps the digits lined up.)</p>
+
+        <div class="callout">
+          <strong>SOMATH shortcut &mdash; three questions to ask before you start:</strong>
+          <ol>
+            <li><em>Does the divisor fit into the first digit of the dividend?</em> If not, group the first two digits together and start there.</li>
+            <li><em>What multiplication fact is closest but not over?</em> That gives you the next digit of the quotient.</li>
+            <li><em>Is my subtraction result smaller than the divisor?</em> If not, my quotient digit was too small &mdash; try one higher.</li>
+          </ol>
+        </div>
+
+        <h2 id="checking">6. How to check every division answer</h2>
+        <div class="theory-box">
+          <h3>The division-check identity</h3>
+          <p><span class="eq">dividend = divisor &times; quotient + remainder</span></p>
+          <p>This is just division re-expressed as multiplication and addition. It works for every long-division problem, whether or not there&rsquo;s a remainder.</p>
+          <p>Example: <span class="eq">754 &divide; 6 = 125 R 4</span> &rArr; <span class="eq">6 &times; 125 + 4 = 750 + 4 = 754</span> ✓</p>
+          <p>Kid Einsteins students at SOMATH check <strong>every</strong> long-division answer using this identity. It catches almost every mistake.</p>
+        </div>
+
+        <h2 id="practice">7. Twenty-five practice questions &mdash; click to reveal each answer</h2>
+        <p>All 25 problems are three-digit dividends divided by a one-digit divisor. Some divide evenly, some have remainders. Try them on paper first, then click <em>Show answer</em> to see the step-by-step solution and the check.</p>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="qmeta">Warm-up &middot; no remainder</p>
+          <p class="prompt">Divide: <span class="eq">248 &divide; 2</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">124</span></strong></p>
+            <p>Round 1: <span class="eq">2 &divide; 2 = 1</span>, remainder 0. Bring down 4.</p>
+            <p>Round 2: <span class="eq">4 &divide; 2 = 2</span>, remainder 0. Bring down 8.</p>
+            <p>Round 3: <span class="eq">8 &divide; 2 = 4</span>, remainder 0.</p>
+            <p><em>Check:</em> <span class="eq">124 &times; 2 = 248</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="qmeta">Warm-up &middot; no remainder</p>
+          <p class="prompt">Divide: <span class="eq">369 &divide; 3</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">123</span></strong></p>
+            <p>Each digit of 369 is divisible by 3 cleanly: <span class="eq">3&divide;3=1, 6&divide;3=2, 9&divide;3=3</span>.</p>
+            <p><em>Check:</em> <span class="eq">123 &times; 3 = 369</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">672 &divide; 4</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">168</span></strong></p>
+            <p>Same as Example 1 above. Round 1: <span class="eq">6&divide;4=1 r2</span>. Round 2: <span class="eq">27&divide;4=6 r3</span>. Round 3: <span class="eq">32&divide;4=8 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">168 &times; 4 = 672</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">525 &divide; 5</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">105</span></strong></p>
+            <p>Round 1: <span class="eq">5&divide;5=1</span>. Round 2: <span class="eq">2&divide;5=0</span> (write 0, bring down 5). Round 3: <span class="eq">25&divide;5=5</span>.</p>
+            <p><em>Check:</em> <span class="eq">105 &times; 5 = 525</span> ✓ &mdash; note the zero in the middle.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">431 &divide; 3</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">143 R 2</span></strong></p>
+            <p>Round 1: <span class="eq">4&divide;3=1 r1</span>, bring down 3 &rarr; 13.</p>
+            <p>Round 2: <span class="eq">13&divide;3=4 r1</span>, bring down 1 &rarr; 11.</p>
+            <p>Round 3: <span class="eq">11&divide;3=3 r2</span>.</p>
+            <p><em>Check:</em> <span class="eq">143 &times; 3 + 2 = 429 + 2 = 431</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q6</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">754 &divide; 6</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">125 R 4</span></strong></p>
+            <p>Same as Example 2 above.</p>
+            <p><em>Check:</em> <span class="eq">125 &times; 6 + 4 = 750 + 4 = 754</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q7</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">816 &divide; 8</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">102</span></strong></p>
+            <p>Round 1: <span class="eq">8&divide;8=1</span>. Round 2: <span class="eq">1&divide;8=0</span> (write 0, bring down 6). Round 3: <span class="eq">16&divide;8=2</span>.</p>
+            <p><em>Check:</em> <span class="eq">102 &times; 8 = 816</span> ✓ &mdash; zero in the tens place.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q8</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">589 &divide; 7</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">84 R 1</span></strong></p>
+            <p>Round 1: <span class="eq">5&divide;7=0</span> &mdash; 7 doesn&rsquo;t fit into 5. Group with the next digit &rarr; 58.</p>
+            <p>Round 2: <span class="eq">58&divide;7=8 r2</span> (<span class="eq">7&times;8=56</span>). Bring down 9 &rarr; 29.</p>
+            <p>Round 3: <span class="eq">29&divide;7=4 r1</span> (<span class="eq">7&times;4=28</span>).</p>
+            <p>Quotient is <span class="eq">84</span>, remainder <span class="eq">1</span>. (When the divisor doesn&rsquo;t fit into the leading digit, the quotient has one fewer digit than the dividend.)</p>
+            <p><em>Check:</em> <span class="eq">84 &times; 7 + 1 = 588 + 1 = 589</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q9</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">936 &divide; 9</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">104</span></strong></p>
+            <p>Round 1: <span class="eq">9&divide;9=1</span>. Round 2: <span class="eq">3&divide;9=0</span> (write 0, bring down 6). Round 3: <span class="eq">36&divide;9=4</span>.</p>
+            <p><em>Check:</em> <span class="eq">104 &times; 9 = 936</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q10</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">467 &divide; 5</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">93 R 2</span></strong></p>
+            <p>Round 1: 5 doesn&rsquo;t fit into 4 &rarr; group with 6 &rarr; 46.</p>
+            <p>Round 2: <span class="eq">46&divide;5=9 r1</span> (<span class="eq">5&times;9=45</span>). Bring down 7 &rarr; 17.</p>
+            <p>Round 3: <span class="eq">17&divide;5=3 r2</span> (<span class="eq">5&times;3=15</span>).</p>
+            <p><em>Check:</em> <span class="eq">93 &times; 5 + 2 = 465 + 2 = 467</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q11</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">378 &divide; 6</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">63</span></strong></p>
+            <p>Round 1: 6 doesn&rsquo;t fit into 3 &rarr; group with 7 &rarr; 37.</p>
+            <p>Round 2: <span class="eq">37&divide;6=6 r1</span> (<span class="eq">6&times;6=36</span>). Bring down 8 &rarr; 18.</p>
+            <p>Round 3: <span class="eq">18&divide;6=3 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">63 &times; 6 = 378</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q12</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">823 &divide; 4</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">205 R 3</span></strong></p>
+            <p>Round 1: <span class="eq">8&divide;4=2 r0</span>. Bring down 2 &rarr; 2.</p>
+            <p>Round 2: <span class="eq">2&divide;4=0</span> (write 0, bring down 3) &rarr; 23.</p>
+            <p>Round 3: <span class="eq">23&divide;4=5 r3</span>.</p>
+            <p><em>Check:</em> <span class="eq">205 &times; 4 + 3 = 820 + 3 = 823</span> ✓ &mdash; zero in the middle of the quotient.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q13</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">648 &divide; 8</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">81</span></strong></p>
+            <p>Round 1: 8 doesn&rsquo;t fit into 6 &rarr; group with 4 &rarr; 64.</p>
+            <p>Round 2: <span class="eq">64&divide;8=8 r0</span>. Bring down 8 &rarr; 8.</p>
+            <p>Round 3: <span class="eq">8&divide;8=1 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">81 &times; 8 = 648</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q14</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">500 &divide; 7</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">71 R 3</span></strong></p>
+            <p>Round 1: 7 doesn&rsquo;t fit into 5 &rarr; group with 0 &rarr; 50.</p>
+            <p>Round 2: <span class="eq">50&divide;7=7 r1</span> (<span class="eq">7&times;7=49</span>). Bring down 0 &rarr; 10.</p>
+            <p>Round 3: <span class="eq">10&divide;7=1 r3</span>.</p>
+            <p><em>Check:</em> <span class="eq">71 &times; 7 + 3 = 497 + 3 = 500</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q15</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">999 &divide; 4</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">249 R 3</span></strong></p>
+            <p>Round 1: <span class="eq">9&divide;4=2 r1</span>. Bring down 9 &rarr; 19.</p>
+            <p>Round 2: <span class="eq">19&divide;4=4 r3</span> (<span class="eq">4&times;4=16</span>). Bring down 9 &rarr; 39.</p>
+            <p>Round 3: <span class="eq">39&divide;4=9 r3</span> (<span class="eq">4&times;9=36</span>).</p>
+            <p><em>Check:</em> <span class="eq">249 &times; 4 + 3 = 996 + 3 = 999</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q16</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">720 &divide; 6</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">120</span></strong></p>
+            <p>Round 1: <span class="eq">7&divide;6=1 r1</span>. Bring down 2 &rarr; 12.</p>
+            <p>Round 2: <span class="eq">12&divide;6=2 r0</span>. Bring down 0 &rarr; 0.</p>
+            <p>Round 3: <span class="eq">0&divide;6=0 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">120 &times; 6 = 720</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q17</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">614 &divide; 9</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">68 R 2</span></strong></p>
+            <p>Round 1: 9 doesn&rsquo;t fit into 6 &rarr; group with 1 &rarr; 61.</p>
+            <p>Round 2: <span class="eq">61&divide;9=6 r7</span> (<span class="eq">9&times;6=54</span>). Bring down 4 &rarr; 74.</p>
+            <p>Round 3: <span class="eq">74&divide;9=8 r2</span> (<span class="eq">9&times;8=72</span>).</p>
+            <p><em>Check:</em> <span class="eq">68 &times; 9 + 2 = 612 + 2 = 614</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q18</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">896 &divide; 7</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">128</span></strong></p>
+            <p>Round 1: <span class="eq">8&divide;7=1 r1</span>. Bring down 9 &rarr; 19.</p>
+            <p>Round 2: <span class="eq">19&divide;7=2 r5</span> (<span class="eq">7&times;2=14</span>). Bring down 6 &rarr; 56.</p>
+            <p>Round 3: <span class="eq">56&divide;7=8 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">128 &times; 7 = 896</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q19</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">305 &divide; 4</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">76 R 1</span></strong></p>
+            <p>Round 1: 4 doesn&rsquo;t fit into 3 &rarr; group with 0 &rarr; 30.</p>
+            <p>Round 2: <span class="eq">30&divide;4=7 r2</span> (<span class="eq">4&times;7=28</span>). Bring down 5 &rarr; 25.</p>
+            <p>Round 3: <span class="eq">25&divide;4=6 r1</span> (<span class="eq">4&times;6=24</span>).</p>
+            <p><em>Check:</em> <span class="eq">76 &times; 4 + 1 = 304 + 1 = 305</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q20</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">450 &divide; 5</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">90</span></strong></p>
+            <p>Round 1: 5 doesn&rsquo;t fit into 4 &rarr; group with 5 &rarr; 45.</p>
+            <p>Round 2: <span class="eq">45&divide;5=9 r0</span>. Bring down 0.</p>
+            <p>Round 3: <span class="eq">0&divide;5=0 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">90 &times; 5 = 450</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q21</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">777 &divide; 6</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">129 R 3</span></strong></p>
+            <p>Round 1: <span class="eq">7&divide;6=1 r1</span>. Bring down 7 &rarr; 17.</p>
+            <p>Round 2: <span class="eq">17&divide;6=2 r5</span> (<span class="eq">6&times;2=12</span>). Bring down 7 &rarr; 57.</p>
+            <p>Round 3: <span class="eq">57&divide;6=9 r3</span> (<span class="eq">6&times;9=54</span>).</p>
+            <p><em>Check:</em> <span class="eq">129 &times; 6 + 3 = 774 + 3 = 777</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q22</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">862 &divide; 3</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">287 R 1</span></strong></p>
+            <p>Round 1: <span class="eq">8&divide;3=2 r2</span>. Bring down 6 &rarr; 26.</p>
+            <p>Round 2: <span class="eq">26&divide;3=8 r2</span> (<span class="eq">3&times;8=24</span>). Bring down 2 &rarr; 22.</p>
+            <p>Round 3: <span class="eq">22&divide;3=7 r1</span> (<span class="eq">3&times;7=21</span>).</p>
+            <p><em>Check:</em> <span class="eq">287 &times; 3 + 1 = 861 + 1 = 862</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q23</h3>
+          <p class="qmeta">No remainder</p>
+          <p class="prompt">Divide: <span class="eq">504 &divide; 8</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">63</span></strong></p>
+            <p>Round 1: 8 doesn&rsquo;t fit into 5 &rarr; group with 0 &rarr; 50.</p>
+            <p>Round 2: <span class="eq">50&divide;8=6 r2</span> (<span class="eq">8&times;6=48</span>). Bring down 4 &rarr; 24.</p>
+            <p>Round 3: <span class="eq">24&divide;8=3 r0</span>.</p>
+            <p><em>Check:</em> <span class="eq">63 &times; 8 = 504</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q24</h3>
+          <p class="qmeta">Remainder</p>
+          <p class="prompt">Divide: <span class="eq">201 &divide; 7</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">28 R 5</span></strong></p>
+            <p>Round 1: 7 doesn&rsquo;t fit into 2 &rarr; group with 0 &rarr; 20.</p>
+            <p>Round 2: <span class="eq">20&divide;7=2 r6</span> (<span class="eq">7&times;2=14</span>). Bring down 1 &rarr; 61.</p>
+            <p>Round 3: <span class="eq">61&divide;7=8 r5</span> (<span class="eq">7&times;8=56</span>).</p>
+            <p><em>Check:</em> <span class="eq">28 &times; 7 + 5 = 196 + 5 = 201</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q25</h3>
+          <p class="qmeta">Remainder &middot; both zeros</p>
+          <p class="prompt">Divide: <span class="eq">908 &divide; 9</span></p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: <span class="eq">100 R 8</span></strong></p>
+            <p>Round 1: <span class="eq">9&divide;9=1 r0</span>. Bring down 0 &rarr; 0.</p>
+            <p>Round 2: <span class="eq">0&divide;9=0 r0</span> (write 0). Bring down 8 &rarr; 8.</p>
+            <p>Round 3: <span class="eq">8&divide;9=0 r8</span> (9 doesn&rsquo;t fit into 8, write 0).</p>
+            <p><em>Check:</em> <span class="eq">100 &times; 9 + 8 = 900 + 8 = 908</span> ✓ &mdash; two zeros in the quotient.</p>
+          </div></details>
+        </div>
+
+        <h2 id="challenge">8. Five challenge word problems</h2>
+        <p>Real division problems from Kid Einsteins classes. Read carefully, decide what&rsquo;s being asked, and try each on paper before revealing.</p>
+
+        <div class="qbox">
+          <h3>Q26 &mdash; Field trip buses</h3>
+          <p class="qmeta">Sharing model &middot; equal groups</p>
+          <p class="prompt">A school is taking 328 students on a field trip. Each bus can carry 6 students per row and has 8 rows. How many buses does the school need?</p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: 7 buses</strong></p>
+            <p>Each bus holds <span class="eq">6 &times; 8 = 48</span> students.</p>
+            <p>Divide: <span class="eq">328 &divide; 48</span> &mdash; but we don&rsquo;t know two-digit divisors yet. Instead: <em>how many groups of 48 fit into 328?</em> <span class="eq">48 &times; 6 = 288</span>. <span class="eq">48 &times; 7 = 336</span> (too many). So 6 buses hold 288 students, leaving <span class="eq">328 &minus; 288 = 40</span> students still standing at school. Those 40 students need <strong>one more bus</strong>, so the school needs <strong>7 buses total</strong>.</p>
+            <p><em>Key idea:</em> when a division problem asks &ldquo;how many groups do you need?&rdquo; and there&rsquo;s a remainder, always <strong>round up</strong>. You can&rsquo;t leave 40 students behind.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q27 &mdash; Sharing candies</h3>
+          <p class="qmeta">Sharing model &middot; leftover</p>
+          <p class="prompt">Ms. Chen has 435 candies to share equally among her 5 grandchildren. How many does each grandchild get, and how many candies are left over?</p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: 87 candies each, 0 left over</strong></p>
+            <p>Divide <span class="eq">435 &divide; 5</span>.</p>
+            <p>Round 1: 5 doesn&rsquo;t fit into 4 &rarr; group with 3 &rarr; 43. <span class="eq">43&divide;5=8 r3</span>. Bring down 5 &rarr; 35.</p>
+            <p>Round 2: <span class="eq">35&divide;5=7 r0</span>.</p>
+            <p>Each grandchild gets <strong>87 candies</strong>, and <strong>0 are left over</strong>.</p>
+            <p><em>Check:</em> <span class="eq">87 &times; 5 = 435</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q28 &mdash; Class supplies</h3>
+          <p class="qmeta">Grouping model &middot; remainder matters</p>
+          <p class="prompt">A teacher has 250 pencils to put into boxes. Each box holds 8 pencils. How many full boxes can she fill, and how many pencils will be left over?</p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: 31 full boxes, 2 pencils left over</strong></p>
+            <p>Divide <span class="eq">250 &divide; 8</span>.</p>
+            <p>Round 1: 8 doesn&rsquo;t fit into 2 &rarr; group with 5 &rarr; 25. <span class="eq">25&divide;8=3 r1</span> (<span class="eq">8&times;3=24</span>). Bring down 0 &rarr; 10.</p>
+            <p>Round 2: <span class="eq">10&divide;8=1 r2</span> (<span class="eq">8&times;1=8</span>).</p>
+            <p>Quotient <span class="eq">31 R 2</span> &mdash; so <strong>31 full boxes</strong> and <strong>2 pencils left over</strong>.</p>
+            <p><em>Check:</em> <span class="eq">31 &times; 8 + 2 = 248 + 2 = 250</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q29 &mdash; Weekly savings</h3>
+          <p class="qmeta">Multi-step &middot; division as fair share</p>
+          <p class="prompt">Sophia saved the same amount of money every week for 9 weeks and had $684 at the end. How much did she save each week?</p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: $76 per week</strong></p>
+            <p>Divide <span class="eq">684 &divide; 9</span>.</p>
+            <p>Round 1: 9 doesn&rsquo;t fit into 6 &rarr; group with 8 &rarr; 68. <span class="eq">68&divide;9=7 r5</span> (<span class="eq">9&times;7=63</span>). Bring down 4 &rarr; 54.</p>
+            <p>Round 2: <span class="eq">54&divide;9=6 r0</span>.</p>
+            <p>Sophia saved <strong>$76 each week</strong>.</p>
+            <p><em>Check:</em> <span class="eq">76 &times; 9 = 684</span> ✓</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q30 &mdash; Bake sale trays</h3>
+          <p class="qmeta">Grouping &middot; remainder interpretation</p>
+          <p class="prompt">The PTA baked 815 cookies for a bake sale. They want to arrange them on trays with 7 cookies per tray. How many trays will be completely full, and how many extra cookies will be left over for the volunteers to eat?</p>
+          <details class="reveal"><summary>Show answer</summary><div class="answer-block">
+            <p><strong>Answer: 116 full trays, 3 cookies for the volunteers</strong></p>
+            <p>Divide <span class="eq">815 &divide; 7</span>.</p>
+            <p>Round 1: <span class="eq">8&divide;7=1 r1</span>. Bring down 1 &rarr; 11.</p>
+            <p>Round 2: <span class="eq">11&divide;7=1 r4</span>. Bring down 5 &rarr; 45.</p>
+            <p>Round 3: <span class="eq">45&divide;7=6 r3</span> (<span class="eq">7&times;6=42</span>).</p>
+            <p>Quotient <span class="eq">116 R 3</span> &mdash; <strong>116 full trays</strong> and <strong>3 cookies</strong> left over.</p>
+            <p><em>Check:</em> <span class="eq">116 &times; 7 + 3 = 812 + 3 = 815</span> ✓</p>
+          </div></details>
+        </div>
+
+        <h2 id="answer-key">9. Answer key</h2>
+        <table class="answer-key">
+          <thead><tr><th>#</th><th>Problem</th><th>Answer</th></tr></thead>
+          <tbody>
+            <tr><td>Q1</td><td>248 &divide; 2</td><td>124</td></tr>
+            <tr><td>Q2</td><td>369 &divide; 3</td><td>123</td></tr>
+            <tr><td>Q3</td><td>672 &divide; 4</td><td>168</td></tr>
+            <tr><td>Q4</td><td>525 &divide; 5</td><td>105</td></tr>
+            <tr><td>Q5</td><td>431 &divide; 3</td><td>143 R 2</td></tr>
+            <tr><td>Q6</td><td>754 &divide; 6</td><td>125 R 4</td></tr>
+            <tr><td>Q7</td><td>816 &divide; 8</td><td>102</td></tr>
+            <tr><td>Q8</td><td>589 &divide; 7</td><td>84 R 1</td></tr>
+            <tr><td>Q9</td><td>936 &divide; 9</td><td>104</td></tr>
+            <tr><td>Q10</td><td>467 &divide; 5</td><td>93 R 2</td></tr>
+            <tr><td>Q11</td><td>378 &divide; 6</td><td>63</td></tr>
+            <tr><td>Q12</td><td>823 &divide; 4</td><td>205 R 3</td></tr>
+            <tr><td>Q13</td><td>648 &divide; 8</td><td>81</td></tr>
+            <tr><td>Q14</td><td>500 &divide; 7</td><td>71 R 3</td></tr>
+            <tr><td>Q15</td><td>999 &divide; 4</td><td>249 R 3</td></tr>
+            <tr><td>Q16</td><td>720 &divide; 6</td><td>120</td></tr>
+            <tr><td>Q17</td><td>614 &divide; 9</td><td>68 R 2</td></tr>
+            <tr><td>Q18</td><td>896 &divide; 7</td><td>128</td></tr>
+            <tr><td>Q19</td><td>305 &divide; 4</td><td>76 R 1</td></tr>
+            <tr><td>Q20</td><td>450 &divide; 5</td><td>90</td></tr>
+            <tr><td>Q21</td><td>777 &divide; 6</td><td>129 R 3</td></tr>
+            <tr><td>Q22</td><td>862 &divide; 3</td><td>287 R 1</td></tr>
+            <tr><td>Q23</td><td>504 &divide; 8</td><td>63</td></tr>
+            <tr><td>Q24</td><td>201 &divide; 7</td><td>28 R 5</td></tr>
+            <tr><td>Q25</td><td>908 &divide; 9</td><td>100 R 8</td></tr>
+            <tr><td>Q26</td><td>Field trip &mdash; 328 students, 48 per bus</td><td>7 buses (round up)</td></tr>
+            <tr><td>Q27</td><td>435 candies &divide; 5 grandchildren</td><td>87 each, 0 left</td></tr>
+            <tr><td>Q28</td><td>250 pencils &divide; 8 per box</td><td>31 full boxes, 2 left</td></tr>
+            <tr><td>Q29</td><td>$684 &divide; 9 weeks</td><td>$76 per week</td></tr>
+            <tr><td>Q30</td><td>815 cookies &divide; 7 per tray</td><td>116 trays, 3 left</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="faq">10. FAQ</h2>
+
+        <div class="theory-box">
+          <h3>What if the divisor doesn&rsquo;t fit into the first digit of the dividend?</h3>
+          <p>Group the first two digits together and start there. For example, <span class="eq">378 &divide; 6</span> starts by asking &ldquo;how many times does 6 fit into 37?&rdquo; because 6 doesn&rsquo;t fit into 3 alone. The quotient will have one fewer digit than the dividend.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>What if the subtraction gives a number bigger than the divisor?</h3>
+          <p>Your quotient digit was too small. Erase and try one higher. For example, if you&rsquo;re dividing 27 by 4 and you write 5 as the quotient digit, <span class="eq">4 &times; 5 = 20</span> and <span class="eq">27 &minus; 20 = 7</span> &mdash; but 7 is bigger than 4, so 4 fits again. The correct quotient digit is 6, not 5. The subtraction result must always be <em>smaller</em> than the divisor.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>What does the remainder mean in a word problem?</h3>
+          <p>It depends on the question. If you&rsquo;re sharing candy and one candy is left over, you leave 1 as the remainder. If you&rsquo;re asking &ldquo;how many buses do we need?&rdquo; and the remainder means students left standing, you must <strong>round up</strong> (rent one more bus). If you&rsquo;re asking &ldquo;how many full trays?&rdquo; and the remainder is 3 cookies, those 3 don&rsquo;t make a full tray &mdash; the answer is the quotient only. Always re-read the question after you get the numerical answer.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Do we ever divide by a two-digit divisor in Class 7?</h3>
+          <p>Not yet. In Class 7 the divisor is always a single digit (2 through 9), and the dividend is up to three digits. Two-digit divisors come next year in the Young Fermats Pre-Algebra program (grades 5&ndash;6), where students meet larger multiplication estimates and long division with dividends up to five digits.</p>
+        </div>
+
+        <div class="callout">
+          <strong>SOMATH teaches long division in Class 7 of Kid Einsteins (grades 3&ndash;4)</strong> and reinforces it every week through Class 12 with word problems, remainders, and multi-step problems. Small groups of 6&ndash;8. <a href="/evaluation">Book a free 30-minute evaluation &rarr;</a> or call <a href="tel:+16466686151">(646) 668-6151</a>.
+        </div>
+
+        <div class="related">
+          <h3>Related SOMATH reads</h3>
+          <ul>
+            <li><a href="/posts/division-facts-inverse-multiplication-kid-einsteins">Class 6 &mdash; Division Facts &amp; the Inverse of Multiplication</a></li>
+            <li><a href="/posts/multi-digit-multiplication-2x1-2x2-carrying-not-carrying-kid-einsteins">Multi-Digit Multiplication (2&times;1 &amp; 2&times;2) &mdash; Kid Einsteins</a></li>
+            <li><a href="/posts/distributive-thinking-partial-products-kid-einsteins">Distributive Thinking &amp; Partial Products &mdash; Kid Einsteins</a></li>
+            <li><a href="/posts/multiplication-facts-7-8-9-area-models-kid-einsteins">Multiplication Facts &times;7, &times;8, &times;9 with Area Models</a></li>
+            <li><a href="/posts/multiples-and-divisors-6th-grade-class">Multiples &amp; Divisors &mdash; 6th Grade</a></li>
+            <li><a href="/courses/kid-einsteins">SOMATH Kid Einsteins Course (Grades 3&ndash;4)</a></li>
+            <li><a href="/evaluation">Book a Free 30-Minute Evaluation</a></li>
+          </ul>
+        </div>
+
+        <p style="margin-top:32px;"><strong>School of Math (SOMATH)</strong> &middot; 226 W 79th St, 1st Floor &middot; New York, NY 10024 &middot; <a href="tel:+16466686151">(646) 668-6151</a> &middot; <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a></p>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
