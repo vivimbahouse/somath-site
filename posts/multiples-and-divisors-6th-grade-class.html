@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Multiples &amp; Divisors &mdash; 6th Grade Math Class with 25 Practice Questions, Divisibility Rules &amp; Hidden Answers (Young Fermats, Pre-Algebra) | SOMATH NYC</title>
+    <meta name="description" content="Free 6th-grade math class on multiples and divisors: what a multiple is, what a divisor (factor) is, divisibility rules for 2, 3, 4, 5, 6, 8, 9, and 10, prime vs. composite, GCF and LCM the honest way, and 25 practice questions with click-to-reveal step-by-step answers. From SOMATH's Young Fermats Pre-Algebra program on the Upper West Side of NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/multiples-and-divisors-6th-grade-class" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Multiples &amp; Divisors &mdash; 6th Grade Math Class with 25 Practice Questions &amp; Hidden Answers" />
+    <meta property="og:description" content="A complete 6th-grade class on multiples, divisors, divisibility rules, prime vs. composite, GCF and LCM &mdash; with 25 practice questions and hidden answers. From SOMATH, Upper West Side NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/multiples-and-divisors-6th-grade-class" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-08-13" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Multiples &amp; Divisors &mdash; 6th Grade Math Class with 25 Questions" />
+    <meta name="twitter:description" content="Grade-6 pre-algebra: multiples, divisors, divisibility rules, primes, GCF &amp; LCM. Theory + 25 questions with hidden answers. From SOMATH, Upper West Side NYC." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .theory-box ul, .theory-box ol { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li, .theory-box ol li { margin:4px 0; }
+      .rule-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:720px; }
+      .rule-table th, .rule-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .rule-table th { background:#0a3a5f; color:#fff; font-family:inherit; }
+      .rule-table tr:nth-child(even) { background:#fafafa; }
+      .rule-table code { font-family:"Courier New", monospace; background:#f5f1e8; padding:1px 6px; border-radius:3px; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.55; overflow-x:auto; font-size:0.95rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:720px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:center; border-bottom:1px solid #e6e6e6; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & solution"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & solution"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .related { background:#f5f1e8; border-radius:8px; padding:18px 24px; margin:28px 0; }
+      .related h3 { margin:0 0 10px; color:#0a3a5f; }
+      .related ul { margin:0; padding-left:22px; }
+      .related li { margin:4px 0; }
+      .related a { color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Multiples & Divisors — 6th Grade Math Class with 25 Practice Questions, Divisibility Rules & Hidden Answers (Young Fermats, Pre-Algebra)",
+  "description": "A complete 6th-grade math class on multiples and divisors: what a multiple is, what a divisor (factor) is, divisibility rules for 2, 3, 4, 5, 6, 8, 9, and 10, prime vs. composite, GCF and LCM, and 25 practice questions with hidden step-by-step answers. From SOMATH, the Upper West Side math school in NYC.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-08-13",
+  "dateModified": "2026-08-13",
+  "author": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/multiples-and-divisors-6th-grade-class" },
+  "keywords": "multiples, divisors, factors, divisibility rules, prime numbers, composite numbers, GCF, LCM, 6th grade math, grade 6 math, pre-algebra, young fermats, math class NYC, Upper West Side math"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#somath",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": "New York City"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a multiple and a divisor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A multiple of a number is what you get by multiplying it by whole numbers: the multiples of 6 are 6, 12, 18, 24, 30, and so on — they go on forever. A divisor (also called a factor) of a number is a whole number that divides it evenly with no remainder: the divisors of 24 are 1, 2, 3, 4, 6, 8, 12, and 24 — a finite list. Multiples go up and never end. Divisors are a small, complete list. If 6 is a divisor of 24, then 24 is a multiple of 6 — the two ideas are two sides of the same fact." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the words 'divisor' and 'factor' the same thing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In 6th grade, yes — divisor and factor mean the same thing: a whole number that divides another whole number evenly. 4 is a divisor of 20 and a factor of 20 — the same statement in two words. The word 'divisor' is preferred when you're focused on the division (20 ÷ 4 = 5, so 4 is the divisor); the word 'factor' is preferred when you're focused on the multiplication (4 × 5 = 20, so 4 is a factor). Same numbers, same list, two names." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the divisibility rules for 6th grade?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The seven rules a 6th grader should own: a number is divisible by 2 if its last digit is 0, 2, 4, 6, or 8; by 3 if the sum of its digits is divisible by 3; by 4 if its last two digits form a number divisible by 4; by 5 if its last digit is 0 or 5; by 6 if it is divisible by both 2 and 3; by 9 if the sum of its digits is divisible by 9; by 10 if its last digit is 0. The rule for 8 (last three digits divisible by 8) is nice to know but rarely tested at the 6th grade level." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between GCF and LCM?",
+      "acceptedAnswer": { "@type": "Answer", "text": "GCF (Greatest Common Factor) is the biggest divisor two numbers share — you look at the divisor lists of both numbers and pick the largest one that appears in both. LCM (Least Common Multiple) is the smallest multiple two numbers share — you list multiples of each and find the smallest one that appears in both lists. Rule of thumb: GCF is small (a divisor of both), LCM is big (a multiple of both). For 12 and 18: GCF is 6, LCM is 36." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a prime number in 6th grade?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A prime number is a whole number greater than 1 that has exactly two divisors: 1 and itself. The primes under 30 are 2, 3, 5, 7, 11, 13, 17, 19, 23, and 29. Every other whole number bigger than 1 is composite — meaning it has at least one divisor besides 1 and itself. The number 1 is special: it has only one divisor (itself), so it is neither prime nor composite." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I find a 6th-grade pre-algebra class in NYC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH's Young Fermats Pre-Algebra program is for grades 5–6 and meets at 226 W 79th St on the Upper West Side of NYC. Classes are small groups taught by cofounder Marcelo Ambrozio (Northwestern-trained). Call (646) 668-6151 or email hello@schoolofmath.us to book a free evaluation." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Young Fermats &middot; Pre-Algebra &middot; Multiples &amp; Divisors &middot; 6th Grade &middot; NYC Math Class</p>
+      <h1 class="post__title">Multiples &amp; Divisors &mdash; 6th Grade Math Class with 25 Practice Questions, Divisibility Rules &amp; Hidden Answers</h1>
+      <p class="post__dek">A complete class-ready lesson on <strong>multiples</strong> and <strong>divisors</strong> (also called <strong>factors</strong>) for <strong>6th grade math</strong>: the seven <strong>divisibility rules</strong> every middle-schooler should own, <strong>prime vs. composite</strong> numbers, an honest introduction to <strong>GCF and LCM</strong>, and <strong>25 practice questions</strong> with click-to-reveal step-by-step answers. Built for the <a href="/">SOMATH</a> <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra</a> program (grades 5&ndash;6) on the Upper West Side of Manhattan.</p>
+      <p class="post__meta"><time datetime="2026-08-13">2026-08-13</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>This is the class where two words that sound almost identical &mdash; <em>multiple</em> and <em>divisor</em> &mdash; finally get separated in a 6th grader&rsquo;s head. It&rsquo;s a small vocabulary fix with a huge downstream payoff: <strong>fractions, ratios, and pre-algebra all sit on top of it</strong>. If a student can look at 24 and instantly say &ldquo;its divisors are 1, 2, 3, 4, 6, 8, 12, 24 and 24 is a multiple of each of them,&rdquo; they are ready for equivalent fractions, simplifying, common denominators, and GCF/LCM word problems.</p>
+
+        <p>Every question below has a hidden button that reveals the answer <em>and</em> the reasoning, so a student can practice honestly and then check their thinking. Written by the same team that teaches the <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra</a> class at <a href="/">SOMATH</a>, a math-focused school on the Upper West Side of NYC run by cofounder Marcelo Ambrozio (Northwestern) and cofounder Vivianne Wright (Harvard).</p>
+
+        <div class="callout">
+          <strong>How to use this in a class (45&ndash;55 min):</strong>
+          <ol style="margin:8px 0 0 20px;">
+            <li>Warm-up: read the &ldquo;multiple vs. divisor&rdquo; theory box aloud and drill 5 quick fact checks (8 min).</li>
+            <li>Chant multiples of 3, 4, 6, 7, 8, 9 out loud (5 min).</li>
+            <li>Teach the divisibility rules table with a specific number for each rule (12 min).</li>
+            <li>Students attempt the 25 questions with the answers hidden (20 min).</li>
+            <li>Reveal answers as a group and re-teach any rule that missed 3+ students (10 min).</li>
+          </ol>
+        </div>
+
+        <div class="toc">
+          <h2>What&rsquo;s in this lesson</h2>
+          <ol>
+            <li><a href="#multiple-vs-divisor">Multiples vs. divisors &mdash; the vocabulary fix</a></li>
+            <li><a href="#divisor-list">Finding every divisor of a number</a></li>
+            <li><a href="#divisibility">The seven divisibility rules for 6th grade</a></li>
+            <li><a href="#prime-composite">Prime vs. composite &mdash; and why 1 is neither</a></li>
+            <li><a href="#prime-factorization">Prime factorization &mdash; the factor tree</a></li>
+            <li><a href="#gcf-lcm">GCF and LCM the honest way</a></li>
+            <li><a href="#questions">25 practice questions</a></li>
+            <li><a href="#challenge">5 challenge word problems for early 7th graders (Q26&ndash;30)</a></li>
+            <li><a href="#answer-key">Answer key summary</a></li>
+            <li><a href="#somath">About SOMATH &amp; Young Fermats</a></li>
+          </ol>
+        </div>
+
+        <h2 id="multiple-vs-divisor">1. Multiples vs. divisors &mdash; the vocabulary fix</h2>
+        <div class="theory-box">
+          <h3>Two words, two directions</h3>
+          <p>The confusion between <em>multiple</em> and <em>divisor</em> is the single biggest reason 6th graders get GCF/LCM problems wrong. Fix the vocabulary and half the errors disappear.</p>
+
+          <p><strong>A multiple of a number</strong> is what you get when you multiply it by a whole number. Multiples <em>go up</em>. The multiples of 6 are:</p>
+          <p><span class="eq">6, 12, 18, 24, 30, 36, 42, &hellip;</span> (infinite &mdash; they never stop)</p>
+
+          <p><strong>A divisor of a number</strong> is a whole number that divides it evenly, with no remainder. Divisors are the <em>small</em> numbers that fit inside a bigger number. The divisors of 24 are:</p>
+          <p><span class="eq">1, 2, 3, 4, 6, 8, 12, 24</span> (finite &mdash; there are only 8 of them)</p>
+
+          <p>The rule that ties them together: <strong>if <em>a</em> is a divisor of <em>b</em>, then <em>b</em> is a multiple of <em>a</em>.</strong> These are the same fact told from two directions.</p>
+          <ul>
+            <li>6 is a <strong>divisor</strong> of 24 &nbsp;&harr;&nbsp; 24 is a <strong>multiple</strong> of 6</li>
+            <li>3 is a <strong>divisor</strong> of 30 &nbsp;&harr;&nbsp; 30 is a <strong>multiple</strong> of 3</li>
+            <li>7 is a <strong>divisor</strong> of 49 &nbsp;&harr;&nbsp; 49 is a <strong>multiple</strong> of 7</li>
+          </ul>
+
+          <p><strong>Divisor = factor.</strong> In 6th grade, the two words mean the same thing. Textbooks sometimes prefer &ldquo;factor&rdquo; when they&rsquo;re talking about multiplication (<span class="eq">4 &times; 5 = 20</span>, so 4 is a factor of 20) and &ldquo;divisor&rdquo; when they&rsquo;re talking about division (<span class="eq">20 &divide; 4 = 5</span>, so 4 is a divisor of 20). Same list, same numbers.</p>
+        </div>
+
+        <h2 id="divisor-list">2. Finding every divisor of a number</h2>
+        <div class="theory-box">
+          <h3>The pairs method</h3>
+          <p>To find every divisor of a number, list divisors in <strong>pairs</strong> that multiply to that number. Start at 1, walk up, and stop when the pair crosses itself.</p>
+          <p><strong>Example: divisors of 36.</strong></p>
+          <span class="work">1 &times; 36 = 36    &rarr; pair: (1, 36)
+2 &times; 18 = 36    &rarr; pair: (2, 18)
+3 &times; 12 = 36    &rarr; pair: (3, 12)
+4 &times; 9  = 36    &rarr; pair: (4, 9)
+5              &rarr; not a divisor (36 &divide; 5 has a remainder)
+6 &times; 6  = 36    &rarr; pair: (6, 6)   &larr; STOP: pair crossed
+</span>
+          <p>Read every number that appeared: <strong>1, 2, 3, 4, 6, 9, 12, 18, 36</strong>. That&rsquo;s 9 divisors. This is the same list you&rsquo;d get by testing each number 1&ndash;36 individually, but the pairs method is much faster because you only go up to about &radic;36 = 6.</p>
+          <p><strong>Why it works.</strong> Every divisor <em>d</em> of <em>n</em> has a partner: <em>n</em> &divide; <em>d</em> is also a divisor. So divisors come in pairs. Once you pass &radic;<em>n</em>, you&rsquo;re just seeing the same pairs from the other side.</p>
+        </div>
+
+        <h2 id="divisibility">3. The seven divisibility rules for 6th grade</h2>
+        <div class="theory-box">
+          <h3>Fast tests that don&rsquo;t require long division</h3>
+          <p>Divisibility rules let a student <em>see</em> a divisor without dividing. These seven cover almost every 6th grade problem.</p>
+          <table class="rule-table">
+            <thead>
+              <tr><th>Divisor</th><th>Rule</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>2</strong></td><td>Last digit is 0, 2, 4, 6, or 8 (even)</td><td><code>1,472</code> ends in 2 &rarr; &divide; 2</td></tr>
+              <tr><td><strong>3</strong></td><td>Sum of the digits is divisible by 3</td><td><code>2,145</code>: 2+1+4+5 = 12 &rarr; &divide; 3</td></tr>
+              <tr><td><strong>4</strong></td><td>The number formed by the last two digits is divisible by 4</td><td><code>3,724</code>: last two = 24 &rarr; &divide; 4</td></tr>
+              <tr><td><strong>5</strong></td><td>Last digit is 0 or 5</td><td><code>8,435</code> ends in 5 &rarr; &divide; 5</td></tr>
+              <tr><td><strong>6</strong></td><td>Divisible by <em>both</em> 2 <em>and</em> 3</td><td><code>2,148</code>: even AND digit sum 15 &rarr; &divide; 6</td></tr>
+              <tr><td><strong>9</strong></td><td>Sum of the digits is divisible by 9</td><td><code>3,258</code>: 3+2+5+8 = 18 &rarr; &divide; 9</td></tr>
+              <tr><td><strong>10</strong></td><td>Last digit is 0</td><td><code>7,290</code> ends in 0 &rarr; &divide; 10</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Bonus rule for 8:</strong> the last three digits form a number divisible by 8. Useful but not required at the 6th grade level.</p>
+          <p><strong>Watch out.</strong> There is no clean divisibility rule for 7 that&rsquo;s worth memorizing in 6th grade &mdash; just divide.</p>
+        </div>
+
+        <h2 id="prime-composite">4. Prime vs. composite &mdash; and why 1 is neither</h2>
+        <div class="theory-box">
+          <h3>Counting the divisors</h3>
+          <p>Every whole number bigger than 1 falls into one of two buckets, based on how many divisors it has.</p>
+          <ul>
+            <li><strong>Prime:</strong> exactly <strong>two</strong> divisors, which must be 1 and the number itself. Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29.</li>
+            <li><strong>Composite:</strong> <strong>more than two</strong> divisors. Examples: 4 (divisors 1, 2, 4), 6 (divisors 1, 2, 3, 6), 9 (divisors 1, 3, 9).</li>
+          </ul>
+          <p><strong>The number 1 is special.</strong> It has only one divisor (itself), so it doesn&rsquo;t fit either bucket. In 6th grade we simply say <em>1 is neither prime nor composite.</em></p>
+          <p><strong>2 is the only even prime.</strong> Every other even number has 2 as a divisor besides 1 and itself, so every other even number is composite. This is a favorite test question.</p>
+          <p><strong>The 10 primes under 30:</strong> <span class="eq">2, 3, 5, 7, 11, 13, 17, 19, 23, 29</span>. Every 6th grader should be able to write these from memory.</p>
+        </div>
+
+        <h2 id="prime-factorization">5. Prime factorization &mdash; the factor tree</h2>
+        <div class="theory-box">
+          <h3>Every composite number is a unique product of primes</h3>
+          <p><strong>Prime factorization</strong> means writing a number as a product of prime numbers only. Every composite number has one and only one prime factorization (this fact is called the Fundamental Theorem of Arithmetic &mdash; a big name for a 6th grade truth).</p>
+          <p><strong>Example: factor tree for 60.</strong> Split 60 into any pair of divisors, keep splitting until every branch ends in a prime.</p>
+          <span class="work">        60
+       /  \
+      6    10
+     / \   / \
+    2   3 2   5
+</span>
+          <p>Reading the leaves left to right: <span class="eq">60 = 2 &times; 3 &times; 2 &times; 5 = 2&sup2; &times; 3 &times; 5</span>. Written with exponents (Young Fermats style): <span class="eq">60 = 2&sup2; &middot; 3 &middot; 5</span>.</p>
+          <p><strong>Try starting differently &mdash; you get the same answer.</strong> Start 60 = 4 &times; 15, then 4 = 2&times;2 and 15 = 3&times;5. Same primes, same exponents. Order can look different, but the factorization is unique.</p>
+          <p><strong>Why it matters.</strong> Prime factorization is how you find GCF and LCM the honest way when the numbers get too big to list all divisors and multiples.</p>
+        </div>
+
+        <h2 id="gcf-lcm">6. GCF and LCM the honest way</h2>
+        <div class="theory-box">
+          <h3>Greatest Common Factor (GCF)</h3>
+          <p><strong>GCF</strong> is the <em>largest</em> divisor that two (or more) numbers share.</p>
+          <p><strong>Method 1 (list divisors).</strong> Works for small numbers.</p>
+          <span class="work">Divisors of 18: 1, 2, 3, 6, 9, 18
+Divisors of 24: 1, 2, 3, 4, 6, 8, 12, 24
+Common divisors: 1, 2, 3, 6
+Greatest common divisor: 6           &rarr;   GCF(18, 24) = 6</span>
+          <p><strong>Method 2 (prime factorization).</strong> Works for any size number.</p>
+          <span class="work">18 = 2 &middot; 3&sup2;
+24 = 2&sup3; &middot; 3
+GCF = product of primes to the LOWEST power that appears in BOTH
+    = 2&sup1; &middot; 3&sup1;
+    = 6                              &rarr;   GCF(18, 24) = 6</span>
+
+          <h3 style="margin-top:22px;">Least Common Multiple (LCM)</h3>
+          <p><strong>LCM</strong> is the <em>smallest</em> multiple that two (or more) numbers share.</p>
+          <p><strong>Method 1 (list multiples).</strong></p>
+          <span class="work">Multiples of 6:  6, 12, 18, 24, 30, 36, 42, 48, &hellip;
+Multiples of 8:  8, 16, 24, 32, 40, 48, &hellip;
+Smallest common multiple: 24         &rarr;   LCM(6, 8) = 24</span>
+          <p><strong>Method 2 (prime factorization).</strong></p>
+          <span class="work">6 = 2 &middot; 3
+8 = 2&sup3;
+LCM = product of primes to the HIGHEST power that appears in EITHER
+    = 2&sup3; &middot; 3&sup1;
+    = 24                             &rarr;   LCM(6, 8) = 24</span>
+
+          <p><strong>Quick check:</strong> for any two positive whole numbers <em>a</em> and <em>b</em>, <span class="eq">GCF(a, b) &times; LCM(a, b) = a &times; b</span>. Test with 6 and 8: <span class="eq">2 &times; 24 = 48 = 6 &times; 8</span>. &check;</p>
+        </div>
+
+        <div class="callout">
+          <strong>SOMATH shortcut for GCF/LCM word problems (6th grade):</strong>
+          <ul style="margin:8px 0 0 20px;">
+            <li>&ldquo;How many small groups of the <em>same</em> size?&rdquo; &rarr; <strong>GCF</strong>. (Splitting apart evenly.)</li>
+            <li>&ldquo;When will two events line up again?&rdquo; &rarr; <strong>LCM</strong>. (Cycles catching up.)</li>
+          </ul>
+        </div>
+
+        <div class="part-header">
+          <h2 id="questions">25 practice questions &mdash; multiples, divisors, divisibility, primes, GCF &amp; LCM</h2>
+          <p>Answers are hidden by default. Click <em>Show answer &amp; solution</em> to check.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1. Multiple check</h3>
+          <p class="prompt">Is 84 a multiple of 7?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Yes.</p>
+              <p class="explain"><span class="eq">7 &times; 12 = 84</span>, so 84 is a multiple of 7. (Equivalently, 7 is a divisor of 84.)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2. Divisor check</h3>
+          <p class="prompt">Is 6 a divisor of 90?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Yes.</p>
+              <p class="explain">Rule for 6: divisible by 2 AND by 3. 90 is even (last digit 0) &check;. Digit sum 9+0 = 9, divisible by 3 &check;. So 90 &divide; 6 = 15 with no remainder.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3. First five multiples</h3>
+          <p class="prompt">List the first five multiples of 9.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">9, 18, 27, 36, 45.</p>
+              <p class="explain">Multiply 9 by 1, 2, 3, 4, 5. (Note: 0 &times; 9 = 0 is technically the very first multiple, but 6th grade textbooks usually start counting multiples at 1&times;.)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4. All divisors of 36</h3>
+          <p class="prompt">List every divisor of 36.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">1, 2, 3, 4, 6, 9, 12, 18, 36 (9 divisors).</p>
+              <p class="explain">Pairs method: <span class="eq">1&times;36, 2&times;18, 3&times;12, 4&times;9, 6&times;6</span>. Stop when the pair crosses itself at 6.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5. Divisibility by 3</h3>
+          <p class="prompt">Is 4,281 divisible by 3?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Yes.</p>
+              <p class="explain">Sum the digits: 4 + 2 + 8 + 1 = 15. 15 is divisible by 3 (5 &times; 3), so 4,281 is divisible by 3. Check: 4,281 &divide; 3 = 1,427.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q6. Divisibility by 4</h3>
+          <p class="prompt">Is 5,318 divisible by 4?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">No.</p>
+              <p class="explain">Rule for 4: the last two digits must form a number divisible by 4. Last two digits are 18, and 18 &divide; 4 = 4 remainder 2. So 5,318 is <em>not</em> divisible by 4.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q7. Divisibility by 9</h3>
+          <p class="prompt">Is 60,732 divisible by 9?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">Yes.</p>
+              <p class="explain">Digit sum: 6 + 0 + 7 + 3 + 2 = 18. 18 is divisible by 9, so 60,732 is divisible by 9. (Check: 60,732 &divide; 9 = 6,748.)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q8. Divisibility by 6</h3>
+          <p class="prompt">Which of these are divisible by 6? &nbsp; 522, &nbsp; 1,050, &nbsp; 4,215, &nbsp; 8,124</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">522, 1,050, and 8,124 are divisible by 6. 4,215 is not.</p>
+              <p class="explain">Rule: divisible by 2 AND by 3.<br>
+                &bull; 522: even &check;, digit sum 9 &check; &rarr; &divide; 6.<br>
+                &bull; 1,050: even &check;, digit sum 6 &check; &rarr; &divide; 6.<br>
+                &bull; 4,215: odd (last digit 5) &cross; &rarr; not &divide; 6.<br>
+                &bull; 8,124: even &check;, digit sum 15 &check; &rarr; &divide; 6.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q9. Fill in the divisor</h3>
+          <p class="prompt">What single digit could go in the blank to make 3,4_5 divisible by 3?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">0, 3, 6, or 9.</p>
+              <p class="explain">Digit sum without the blank: 3 + 4 + 5 = 12, which is already divisible by 3. So the blank digit itself must be divisible by 3 to keep the total divisible by 3. Single digits divisible by 3 are <strong>0, 3, 6, and 9</strong>. Verify: 3,405 &divide; 3 = 1,135 &check;, 3,435 &divide; 3 = 1,145 &check;, 3,465 &divide; 3 = 1,155 &check;, 3,495 &divide; 3 = 1,165 &check;.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q10. Prime or composite?</h3>
+          <p class="prompt">Classify each: 21, 29, 51, 57, 91.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">29 is prime. 21, 51, 57, and 91 are composite.</p>
+              <p class="explain">
+                &bull; 21 = 3 &times; 7 &rarr; composite.<br>
+                &bull; 29: no divisor between 2 and &radic;29 (&asymp; 5.4) &mdash; not divisible by 2, 3, or 5 &rarr; <strong>prime</strong>.<br>
+                &bull; 51 = 3 &times; 17 (digit sum 6) &rarr; composite.<br>
+                &bull; 57 = 3 &times; 19 (digit sum 12) &rarr; composite.<br>
+                &bull; 91 = 7 &times; 13 &rarr; composite. (This is the &ldquo;trick&rdquo; number &mdash; it <em>looks</em> prime because it&rsquo;s not divisible by 2, 3, or 5, but 7 &times; 13 gets it.)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q11. Primes under 20</h3>
+          <p class="prompt">List every prime number less than 20.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">2, 3, 5, 7, 11, 13, 17, 19 (eight primes).</p>
+              <p class="explain">1 is not prime (only one divisor). All the other numbers under 20 have a divisor besides 1 and themselves: 4 (2), 6 (2, 3), 8 (2), 9 (3), 10 (2, 5), 12 (2, 3), 14 (2, 7), 15 (3, 5), 16 (2), 18 (2, 3).</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q12. Prime factorization of 84</h3>
+          <p class="prompt">Write 84 as a product of primes.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer"><span class="eq">84 = 2&sup2; &middot; 3 &middot; 7</span>.</p>
+              <p class="explain">Factor tree: 84 = 2 &times; 42 = 2 &times; 2 &times; 21 = 2 &times; 2 &times; 3 &times; 7. Group the twos: 2&sup2; &middot; 3 &middot; 7. Check: 4 &middot; 3 &middot; 7 = 84 &check;.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q13. Prime factorization of 120</h3>
+          <p class="prompt">Write 120 as a product of primes.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer"><span class="eq">120 = 2&sup3; &middot; 3 &middot; 5</span>.</p>
+              <p class="explain">120 = 2 &times; 60 = 2 &times; 2 &times; 30 = 2 &times; 2 &times; 2 &times; 15 = 2 &times; 2 &times; 2 &times; 3 &times; 5. Group the twos: 2&sup3; &middot; 3 &middot; 5. Check: 8 &middot; 3 &middot; 5 = 120 &check;.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q14. Count the divisors</h3>
+          <p class="prompt">How many divisors does 100 have? List them.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">9 divisors: 1, 2, 4, 5, 10, 20, 25, 50, 100.</p>
+              <p class="explain">Pairs: 1&times;100, 2&times;50, 4&times;25, 5&times;20, 10&times;10. Stop when the pair repeats.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q15. Common divisors</h3>
+          <p class="prompt">List the common divisors of 24 and 36.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">1, 2, 3, 4, 6, 12.</p>
+              <p class="explain">Divisors of 24: 1, 2, 3, 4, 6, 8, 12, 24. Divisors of 36: 1, 2, 3, 4, 6, 9, 12, 18, 36. The divisors that appear in both lists are 1, 2, 3, 4, 6, 12. (Note: the largest one, 12, is the GCF.)</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q16. GCF by listing</h3>
+          <p class="prompt">Find GCF(18, 30).</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">GCF(18, 30) = 6.</p>
+              <p class="explain">Divisors of 18: 1, 2, 3, 6, 9, 18. Divisors of 30: 1, 2, 3, 5, 6, 10, 15, 30. Common: 1, 2, 3, 6. Greatest = <strong>6</strong>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q17. GCF by prime factorization</h3>
+          <p class="prompt">Find GCF(48, 60) using prime factorization.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">GCF(48, 60) = 12.</p>
+              <span class="work">48 = 2&#8308; &middot; 3
+60 = 2&sup2; &middot; 3 &middot; 5
+GCF = 2&sup2; &middot; 3 = 12       (lowest power of each shared prime)</span>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q18. LCM by listing</h3>
+          <p class="prompt">Find LCM(4, 6).</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">LCM(4, 6) = 12.</p>
+              <p class="explain">Multiples of 4: 4, 8, <strong>12</strong>, 16, 20, 24, &hellip; &nbsp; Multiples of 6: 6, <strong>12</strong>, 18, 24, &hellip; &nbsp; First common one: 12.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q19. LCM by prime factorization</h3>
+          <p class="prompt">Find LCM(12, 18).</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">LCM(12, 18) = 36.</p>
+              <span class="work">12 = 2&sup2; &middot; 3
+18 = 2  &middot; 3&sup2;
+LCM = 2&sup2; &middot; 3&sup2; = 4 &middot; 9 = 36    (highest power of each prime)</span>
+              <p class="explain">Cross-check with GCF: GCF(12, 18) = 6. GCF &times; LCM = 6 &times; 36 = 216 = 12 &times; 18 &check;.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q20. GCF word problem</h3>
+          <p class="prompt">A teacher has 24 pencils and 36 erasers. She wants to make identical goody bags with no leftovers. What is the greatest number of bags she can make, and what goes in each bag?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">12 bags &mdash; each with 2 pencils and 3 erasers.</p>
+              <p class="explain">&ldquo;Split into identical groups with no leftovers&rdquo; is a <strong>GCF</strong> problem. GCF(24, 36) = 12. Each bag gets 24 &divide; 12 = 2 pencils and 36 &divide; 12 = 3 erasers.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q21. LCM word problem</h3>
+          <p class="prompt">Bus A leaves the depot every 15 minutes. Bus B leaves every 20 minutes. They both just left at 8:00 AM. When is the next time they leave together?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">9:00 AM (60 minutes after 8:00).</p>
+              <p class="explain">&ldquo;When will two cycles line up again?&rdquo; is an <strong>LCM</strong> problem. LCM(15, 20): 15 = 3 &middot; 5, 20 = 2&sup2; &middot; 5, LCM = 2&sup2; &middot; 3 &middot; 5 = 60 minutes. 8:00 + 60 min = 9:00 AM.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q22. GCF used to simplify a fraction</h3>
+          <p class="prompt">Simplify <span class="eq">42 / 56</span> to lowest terms.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer"><span class="eq">42 / 56 = 3 / 4</span>.</p>
+              <p class="explain">GCF(42, 56): 42 = 2 &middot; 3 &middot; 7, 56 = 2&sup3; &middot; 7. GCF = 2 &middot; 7 = 14. Divide top and bottom by 14: 42 &divide; 14 = 3, 56 &divide; 14 = 4. Answer: 3/4. This is why GCF matters &mdash; it&rsquo;s how you simplify fractions in one step.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q23. LCM used to add fractions</h3>
+          <p class="prompt">Add <span class="eq">1/6 + 1/8</span>. Give the answer in lowest terms.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer"><span class="eq">1/6 + 1/8 = 7/24</span>.</p>
+              <p class="explain">Common denominator = LCM(6, 8) = 24. Rewrite: 1/6 = 4/24, 1/8 = 3/24. Add: 4/24 + 3/24 = 7/24. GCF(7, 24) = 1, so 7/24 is already in lowest terms.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q24. Missing divisor</h3>
+          <p class="prompt">A number has exactly these divisors: 1, 2, 3, 4, 6, 8, 12, 24. What is the number?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">24.</p>
+              <p class="explain">The largest divisor of a number is always the number itself.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q25. Common multiples on a list</h3>
+          <p class="prompt">List the first three positive multiples that 4 and 5 have in common.</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">20, 40, 60.</p>
+              <p class="explain">LCM(4, 5) = 20. Every common multiple of 4 and 5 is a multiple of the LCM. So the common multiples are 20, 40, 60, 80, &hellip; The first three are 20, 40, 60.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="part-header">
+          <h2 id="challenge">5 challenge word problems for early 7th graders (Q26&ndash;30)</h2>
+          <p>Same tools, longer problems. Great warmups for the SHSAT and for pre-algebra placement.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q26. Bake sale bags</h3>
+          <p class="prompt">A bake sale has 72 brownies, 96 cookies, and 120 cupcakes. Each treat bag must have the same number of brownies, cookies, and cupcakes, with no treats left over. What is the greatest number of bags possible, and how many of each treat go in a bag?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">24 bags &mdash; each with 3 brownies, 4 cookies, and 5 cupcakes.</p>
+              <p class="explain">GCF(72, 96, 120). Prime factor each: 72 = 2&sup3; &middot; 3&sup2;, 96 = 2&#8309; &middot; 3, 120 = 2&sup3; &middot; 3 &middot; 5. GCF = 2&sup3; &middot; 3 = 24. Divide each: 72&divide;24 = 3 brownies, 96&divide;24 = 4 cookies, 120&divide;24 = 5 cupcakes.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q27. Blinking lights</h3>
+          <p class="prompt">A red light blinks every 8 seconds. A blue light blinks every 12 seconds. A green light blinks every 20 seconds. All three just blinked together. How many seconds until they all blink together again?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">120 seconds (2 minutes).</p>
+              <p class="explain">LCM(8, 12, 20). Prime factor: 8 = 2&sup3;, 12 = 2&sup2; &middot; 3, 20 = 2&sup2; &middot; 5. LCM = 2&sup3; &middot; 3 &middot; 5 = 120 seconds.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q28. Rectangle tile problem</h3>
+          <p class="prompt">A rectangle measures 48 cm by 60 cm. What is the largest square tile (in cm) that can tile the rectangle exactly with no cutting?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">12 cm by 12 cm tiles.</p>
+              <p class="explain">The tile&rsquo;s side length must be a divisor of both 48 and 60. The largest such divisor is GCF(48, 60) = 12. Check: 48/12 = 4 tiles across, 60/12 = 5 tiles down, so 20 tiles total fill the rectangle.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q29. Prime factorization from a clue</h3>
+          <p class="prompt">A whole number has prime factorization <span class="eq">2&sup3; &middot; 3 &middot; 5&sup2;</span>. How many positive divisors does it have?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">24 divisors.</p>
+              <p class="explain">Rule from 7th-grade pre-algebra: if <em>n</em> = p<sup>a</sup> &middot; q<sup>b</sup> &middot; r<sup>c</sup>, the number of positive divisors is (a+1)(b+1)(c+1). Here: (3+1)(1+1)(2+1) = 4 &middot; 2 &middot; 3 = 24. Check: the number is 8 &middot; 3 &middot; 25 = 600, and yes, 600 has 24 divisors.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q30. Divisibility puzzle</h3>
+          <p class="prompt">What is the smallest positive whole number that is divisible by every number from 1 to 6?</p>
+          <details class="reveal"><summary></summary>
+            <div class="reveal-body">
+              <p class="answer">60.</p>
+              <p class="explain">This is LCM(1, 2, 3, 4, 5, 6). Prime factor each: 1 = 1, 2 = 2, 3 = 3, 4 = 2&sup2;, 5 = 5, 6 = 2 &middot; 3. LCM = highest power of each prime = 2&sup2; &middot; 3 &middot; 5 = 4 &middot; 3 &middot; 5 = 60. Check: 60 &divide; 1, 2, 3, 4, 5, 6 all give whole numbers.</p>
+            </div>
+          </details>
+        </div>
+
+        <h2 id="answer-key">Answer key summary</h2>
+        <table class="answer-key-table">
+          <thead><tr><th>#</th><th>Answer</th><th>#</th><th>Answer</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Yes (7&times;12=84)</td><td>16</td><td>GCF = 6</td></tr>
+            <tr><td>2</td><td>Yes</td><td>17</td><td>GCF = 12</td></tr>
+            <tr><td>3</td><td>9, 18, 27, 36, 45</td><td>18</td><td>LCM = 12</td></tr>
+            <tr><td>4</td><td>1, 2, 3, 4, 6, 9, 12, 18, 36</td><td>19</td><td>LCM = 36</td></tr>
+            <tr><td>5</td><td>Yes</td><td>20</td><td>12 bags (2 pencils, 3 erasers)</td></tr>
+            <tr><td>6</td><td>No</td><td>21</td><td>9:00 AM</td></tr>
+            <tr><td>7</td><td>Yes</td><td>22</td><td>3/4</td></tr>
+            <tr><td>8</td><td>522, 1050, 8124</td><td>23</td><td>7/24</td></tr>
+            <tr><td>9</td><td>0, 3, 6, or 9</td><td>24</td><td>24</td></tr>
+            <tr><td>10</td><td>29 prime; rest composite</td><td>25</td><td>20, 40, 60</td></tr>
+            <tr><td>11</td><td>2, 3, 5, 7, 11, 13, 17, 19</td><td>26</td><td>24 bags (3/4/5)</td></tr>
+            <tr><td>12</td><td>2&sup2; &middot; 3 &middot; 7</td><td>27</td><td>120 seconds</td></tr>
+            <tr><td>13</td><td>2&sup3; &middot; 3 &middot; 5</td><td>28</td><td>12 cm tile</td></tr>
+            <tr><td>14</td><td>9 divisors</td><td>29</td><td>24 divisors</td></tr>
+            <tr><td>15</td><td>1, 2, 3, 4, 6, 12</td><td>30</td><td>60</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="somath">About SOMATH &amp; Young Fermats</h2>
+        <p><strong>SOMATH &mdash; School of Math</strong> is a math-focused school on the Upper West Side of Manhattan. <a href="/courses/young-fermats-prealgebra">Young Fermats &mdash; Pre-Algebra</a> is our program for grades 5&ndash;6 (typically ages 10&ndash;12). Classes are small groups taught by cofounder Marcelo Ambrozio (Northwestern) &mdash; the same teacher who wrote the lesson above.</p>
+        <p>Multiples, divisors, divisibility, primes, and GCF/LCM are the first big vocabulary the class installs. The next several classes then use these ideas to attack fractions, ratios, and equivalent forms &mdash; the topics that decide whether a 6th grader glides into Algebra 1 or gets stuck in middle school arithmetic.</p>
+        <p><strong>Free evaluation.</strong> Every new SOMATH family gets a free 30-minute placement session &mdash; we look at the arithmetic, the vocabulary, and the working memory, and place the student in the right level. <a href="/evaluation">Book a free evaluation &rarr;</a> or call <a href="tel:+16466686151">(646) 668-6151</a>.</p>
+
+        <div class="related">
+          <h3>Related SOMATH reads</h3>
+          <ul>
+            <li><a href="/posts/ny-6th-grade-math-parent-guide">The 6th Grade Math Parent Guide (NY State Curriculum)</a></li>
+            <li><a href="/posts/ny-5th-grade-math-parent-guide">The 5th Grade Math Parent Guide (NY State Curriculum)</a></li>
+            <li><a href="/posts/division-facts-inverse-multiplication-kid-einsteins">Division Facts &amp; the Inverse of Multiplication &mdash; Kid Einsteins Class 6</a></li>
+            <li><a href="/posts/heschel-school-rising-8th-grade-summer-math-packet-solved">Heschel Rising-8th Summer Math Packet, Solved</a></li>
+            <li><a href="/courses/young-fermats-prealgebra">Young Fermats &mdash; Pre-Algebra (Grades 5&ndash;6)</a></li>
+            <li><a href="/schedule">SOMATH Class Schedule</a></li>
+            <li><a href="/evaluation">Book a Free 30-Minute Evaluation</a></li>
+          </ul>
+        </div>
+
+        <p style="margin-top:32px;"><strong>School of Math (SOMATH)</strong> &middot; 226 W 79th St, 1st Floor &middot; New York, NY 10024 &middot; <a href="tel:+16466686151">(646) 668-6151</a> &middot; <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a></p>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
