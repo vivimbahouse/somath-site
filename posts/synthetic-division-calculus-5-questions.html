@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <!-- Perf: preconnect to third-party origins -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Synthetic Division in Calculus &mdash; What It Is, Why It Matters, and 5 Practice Questions (with Hidden Answers) | SOMATH NYC</title>
+    <meta name="description" content="A clear pre-calculus and AP Calculus class on synthetic division: what it is, when to use it (and when NOT to), the step-by-step algorithm, why the remainder equals p(c), and how to divide by (ax + b) with the divide-then-scale trick. Then 5 practice questions with click-to-reveal step-by-step answers. Written for NYC high school families by SOMATH on the Upper West Side." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/synthetic-division-calculus-5-questions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Synthetic Division in Calculus &mdash; What It Is, Why It Matters, and 5 Practice Questions" />
+    <meta property="og:description" content="Pre-calculus and AP Calculus synthetic division: the algorithm, the Remainder Theorem, the (ax+b) trick, and 5 fully worked problems with hidden answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/synthetic-division-calculus-5-questions" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-08-14" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Synthetic Division in Calculus &mdash; 5 Practice Questions with Hidden Answers" />
+    <meta name="twitter:description" content="Pre-calculus / AP Calculus synthetic division walk-through, plus 5 practice problems with click-to-reveal solutions." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.1rem; }
+      .theory-box p { margin:8px 0; }
+      .synth-table { font-family:"Courier New", monospace; background:#f5f1e8; padding:14px 18px; border-radius:6px; overflow-x:auto; margin:12px 0; white-space:pre; font-size:0.98rem; line-height:1.55; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:16px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 8px; color:#0a3a5f; font-size:1.06rem; }
+      .qbox .qmeta { font-size:0.85rem; color:#666; margin:0 0 8px; text-transform:uppercase; letter-spacing:0.05em; }
+      .qbox details { margin-top:10px; }
+      .qbox details summary { cursor:pointer; background:#0a3a5f; color:#fff; padding:8px 14px; border-radius:4px; font-weight:600; display:inline-block; user-select:none; }
+      .qbox details summary:hover { background:#0c4a75; }
+      .qbox details[open] summary { background:#0c4a75; margin-bottom:10px; }
+      .qbox .answer { background:#f5f1e8; padding:14px 18px; border-radius:6px; margin-top:8px; }
+      .qbox .answer p { margin:6px 0; }
+      .related { background:#f5f1e8; border-radius:8px; padding:18px 24px; margin:28px 0; }
+      .related h3 { margin:0 0 10px; color:#0a3a5f; }
+      .related ul { margin:0; padding-left:22px; }
+      .related li { margin:4px 0; }
+      .related a { color:#0a3a5f; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Synthetic Division in Calculus — What It Is, Why It Matters, and 5 Practice Questions with Hidden Answers",
+  "description": "A pre-calculus and AP Calculus class on synthetic division: the step-by-step algorithm, the Remainder Theorem, dividing by (ax + b), and 5 practice questions with click-to-reveal step-by-step solutions.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-08-14",
+  "dateModified": "2026-08-14",
+  "author": { "@type": "Organization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/synthetic-division-calculus-5-questions" },
+  "keywords": "synthetic division, polynomial long division, Remainder Theorem, Factor Theorem, AP Calculus, AP Pre-Calculus, algebra II, SOMATH NYC, Upper West Side math tutoring"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#somath",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": "New York City"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is synthetic division?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Synthetic division is a fast shortcut for dividing a polynomial p(x) by a linear divisor of the form (x − c). Instead of writing out every variable in long division, you write only the coefficients of p(x) and the number c, then bring down, multiply, and add in a compact table. The final row gives the coefficients of the quotient plus the remainder." }
+    },
+    {
+      "@type": "Question",
+      "name": "When can you use synthetic division and when can't you?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Synthetic division only works when the divisor is linear. It works directly for divisors of the form (x − c). For divisors of the form (ax + b) with a ≠ 1, first rewrite as a(x − (−b/a)), do synthetic division by c = −b/a, and then divide the quotient coefficients by a — the remainder stays the same. For any divisor of degree 2 or higher (like x² − 4 or x² + x + 1) you must use polynomial long division." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does synthetic division connect to the Remainder Theorem?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Remainder Theorem says that when you divide a polynomial p(x) by (x − c), the remainder equals p(c). Synthetic division makes this immediate: the last number in the bottom row of the synthetic table IS p(c). So synthetic division doubles as the fastest way to evaluate a polynomial at a number — often faster than plugging in and using order of operations." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does synthetic division show up in AP Calculus?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In AP Calculus AB and BC, synthetic division shows up when factoring polynomials to find zeros, simplifying limits with indeterminate 0/0 form, computing horizontal asymptotes of rational functions, decomposing improper rational functions before integration or partial fractions, and testing possible rational roots from the Rational Root Theorem. It's rare that a problem asks 'divide these two polynomials' directly — instead, synthetic division is the tool you reach for inside a bigger problem." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can my student learn synthetic division in NYC?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH — School of Math on the Upper West Side of Manhattan (226 W 79th Street) teaches synthetic division as part of the Young Fermats Algebra II course (grades 9–11) and reinforces it in AP Pre-Calculus and AP Calculus. Small-group classes and 1-on-1 tutoring. Book a free 30-minute evaluation at schoolofmath.us/evaluation or call (646) 668-6151." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Calculus &middot; AP Pre-Calculus &middot; Algebra II &middot; NYC High School</p>
+      <h1 class="post__title">Synthetic Division in Calculus &mdash; What It Is, Why It Matters, and 5 Practice Questions with Hidden Answers</h1>
+      <p class="post__dek">Synthetic division is a small piece of pre-calculus that shows up over and over again in AP Calculus &mdash; when you factor a polynomial to find zeros, simplify a <span class="eq">0/0</span> limit, find a horizontal asymptote, or decompose an improper rational function before integration. This is the SOMATH class on it: what synthetic division actually is, when you can use it (and when you can&rsquo;t), the four-step algorithm, why the last number equals <span class="eq">p(c)</span> (the Remainder Theorem), the trick for dividing by <span class="eq">(ax + b)</span>, and then 5 practice questions with click-to-reveal step-by-step answers.</p>
+      <p class="post__meta"><time datetime="2026-08-14">2026-08-14</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS NYC &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <div class="toc">
+          <h2>What&rsquo;s in this class</h2>
+          <ol>
+            <li><a href="#what-is-it">What is synthetic division (and when can you use it)?</a></li>
+            <li><a href="#algorithm">The 4-step algorithm</a></li>
+            <li><a href="#remainder-theorem">Why the last number is <span class="eq">p(c)</span> &mdash; the Remainder Theorem</a></li>
+            <li><a href="#ax-plus-b">Dividing by <span class="eq">(ax + b)</span> when <span class="eq">a &ne; 1</span></a></li>
+            <li><a href="#calculus-uses">Where synthetic division shows up in Calculus</a></li>
+            <li><a href="#practice">5 practice questions with hidden answers</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ol>
+        </div>
+
+        <h2 id="what-is-it">1. What is synthetic division (and when can you use it)?</h2>
+        <p>Suppose you want to divide a polynomial like <span class="eq">p(x) = 2x&sup3; &minus; 5x&sup2; + 3x &minus; 4</span> by a linear factor like <span class="eq">(x &minus; 2)</span>. You could set up polynomial long division and grind through it. That works, but it&rsquo;s slow and easy to make sign errors. Synthetic division is a much faster shortcut that gives you the same answer &mdash; the same quotient and the same remainder &mdash; using only the <em>coefficients</em>, not the variables.</p>
+
+        <div class="theory-box">
+          <h3>The rule for when synthetic division works</h3>
+          <p>Synthetic division works when the divisor is <strong>linear</strong> &mdash; that is, when it has the form <span class="eq">(x &minus; c)</span> for some number <span class="eq">c</span>. If the divisor looks like <span class="eq">(ax + b)</span> with <span class="eq">a &ne; 1</span>, you can still do synthetic division with a small extra step (see section 4).</p>
+          <p>If the divisor has degree 2 or higher &mdash; something like <span class="eq">x&sup2; &minus; 4</span> or <span class="eq">x&sup2; + x + 1</span> &mdash; you <strong>cannot</strong> use synthetic division. You must use polynomial long division instead.</p>
+          <p><strong>Sign warning.</strong> When you write the divisor as <span class="eq">(x &minus; c)</span>, the number you put outside the synthetic-division bracket is <span class="eq">c</span>, <em>not</em> the number that appears after the minus sign inside the parenthesis. Dividing by <span class="eq">(x &minus; 2)</span> uses <span class="eq">c = 2</span>. Dividing by <span class="eq">(x + 3)</span> means <span class="eq">(x &minus; (&minus;3))</span>, so <span class="eq">c = &minus;3</span>.</p>
+        </div>
+
+        <h2 id="algorithm">2. The 4-step algorithm</h2>
+        <p>Let&rsquo;s divide <span class="eq">p(x) = 2x&sup3; &minus; 5x&sup2; + 3x &minus; 4</span> by <span class="eq">(x &minus; 2)</span>. So <span class="eq">c = 2</span>.</p>
+
+        <div class="theory-box">
+          <h3>Step 1 &mdash; Write the coefficients of <span class="eq">p(x)</span> in order</h3>
+          <p>Write the coefficients including any zeros for missing terms. Here <span class="eq">p(x)</span> is already in order:</p>
+          <div class="synth-table">     2 | 2   -5    3   -4
+       |
+       |________________________</div>
+          <p>Put <span class="eq">c = 2</span> to the left of the bar.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 2 &mdash; Bring the first coefficient straight down</h3>
+          <div class="synth-table">     2 | 2   -5    3   -4
+       |
+       |________________________
+         2</div>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 3 &mdash; Multiply and add across the row</h3>
+          <p>Multiply the number you just brought down by <span class="eq">c</span>, write the product under the next coefficient, then add the column. Repeat all the way across.</p>
+          <p><span class="eq">2 &times; 2 = 4</span>. Write 4 under &minus;5. Add: <span class="eq">&minus;5 + 4 = &minus;1</span>.</p>
+          <p><span class="eq">&minus;1 &times; 2 = &minus;2</span>. Write &minus;2 under 3. Add: <span class="eq">3 + (&minus;2) = 1</span>.</p>
+          <p><span class="eq">1 &times; 2 = 2</span>. Write 2 under &minus;4. Add: <span class="eq">&minus;4 + 2 = &minus;2</span>.</p>
+          <div class="synth-table">     2 | 2   -5    3   -4
+       |     4   -2    2
+       |________________________
+         2  -1    1   -2</div>
+        </div>
+
+        <div class="theory-box">
+          <h3>Step 4 &mdash; Read the quotient and the remainder</h3>
+          <p>The last row is the answer. The last number is the <strong>remainder</strong>; the numbers before it are the <strong>coefficients of the quotient</strong>, in decreasing degree, and the quotient has degree one less than <span class="eq">p(x)</span>.</p>
+          <p>So the quotient is <span class="eq">2x&sup2; &minus; x + 1</span> and the remainder is <span class="eq">&minus;2</span>. In equation form:</p>
+          <p><span class="eq">(2x&sup3; &minus; 5x&sup2; + 3x &minus; 4) &divide; (x &minus; 2) = 2x&sup2; &minus; x + 1 + (&minus;2)/(x &minus; 2)</span></p>
+          <p>Or equivalently:</p>
+          <p><span class="eq">2x&sup3; &minus; 5x&sup2; + 3x &minus; 4 = (x &minus; 2)(2x&sup2; &minus; x + 1) &minus; 2</span></p>
+        </div>
+
+        <h2 id="remainder-theorem">3. Why the last number is <span class="eq">p(c)</span> &mdash; the Remainder Theorem</h2>
+        <div class="theory-box">
+          <h3>The Remainder Theorem</h3>
+          <p>When you divide a polynomial <span class="eq">p(x)</span> by <span class="eq">(x &minus; c)</span>, the remainder equals <span class="eq">p(c)</span>.</p>
+          <p><em>Quick proof.</em> Polynomial division says <span class="eq">p(x) = (x &minus; c) &middot; q(x) + r</span> where <span class="eq">r</span> is a constant (because the divisor has degree 1). Plug in <span class="eq">x = c</span>: <span class="eq">p(c) = 0 &middot; q(c) + r = r</span>. Done.</p>
+        </div>
+        <p>Check the example: <span class="eq">p(2) = 2(8) &minus; 5(4) + 3(2) &minus; 4 = 16 &minus; 20 + 6 &minus; 4 = &minus;2</span>. That matches the last row of our synthetic-division table.</p>
+        <p>This is a huge shortcut. If a Regents, SAT, or AP question asks you to evaluate a polynomial at a number, synthetic division is often faster than plugging in.</p>
+
+        <div class="callout">
+          <strong>Factor Theorem (a corollary).</strong> <span class="eq">(x &minus; c)</span> is a factor of <span class="eq">p(x)</span> if and only if <span class="eq">p(c) = 0</span>. In synthetic-division language: <span class="eq">(x &minus; c)</span> divides <span class="eq">p(x)</span> cleanly (remainder 0) exactly when the last number in the synthetic table is 0.
+        </div>
+
+        <h2 id="ax-plus-b">4. Dividing by <span class="eq">(ax + b)</span> when <span class="eq">a &ne; 1</span></h2>
+        <p>Suppose the divisor is <span class="eq">(2x + 3)</span> instead of a monic linear divisor. Rewrite:</p>
+        <p><span class="eq">2x + 3 = 2(x + 3/2) = 2(x &minus; (&minus;3/2))</span></p>
+        <p>So <span class="eq">c = &minus;3/2</span>. Do synthetic division with <span class="eq">c = &minus;3/2</span>. Whatever quotient you get, divide every coefficient of the quotient by <span class="eq">a = 2</span>. The <em>remainder does not change</em>.</p>
+        <div class="theory-box">
+          <h3>Why the remainder is unchanged</h3>
+          <p><span class="eq">p(x) = (x &minus; c) q(x) + r = (1/a)(ax + b) q(x) + r</span>, so <span class="eq">p(x) = (ax + b) &middot; (q(x)/a) + r</span>. The quotient scales down by <span class="eq">a</span>, but the constant remainder is unchanged.</p>
+        </div>
+
+        <h2 id="calculus-uses">5. Where synthetic division shows up in Calculus</h2>
+        <ol>
+          <li><strong>Factoring polynomials to find zeros.</strong> Once you find one rational root (usually via the Rational Root Theorem: possible rational roots are &plusmn;(factor of constant) / (factor of leading coefficient)), synthetic division reduces the polynomial by one degree so you can factor what remains. This shows up in curve-sketching and in finding critical points of higher-degree polynomials.</li>
+          <li><strong>Simplifying 0/0 limits.</strong> If <span class="eq">lim (x&rarr;a) f(x)/g(x)</span> gives <span class="eq">0/0</span>, then <span class="eq">(x &minus; a)</span> divides both <span class="eq">f</span> and <span class="eq">g</span>. Synthetic-divide each polynomial by <span class="eq">(x &minus; a)</span> and evaluate the reduced expression at <span class="eq">a</span>.</li>
+          <li><strong>Horizontal asymptotes and slant asymptotes of rational functions.</strong> When the degree of the numerator equals the degree of the denominator (or is one greater), polynomial division tells you the horizontal or slant asymptote. Synthetic division is the fastest form of that division when the denominator is linear.</li>
+          <li><strong>Setting up partial fractions.</strong> Partial-fraction decomposition requires a proper rational function (degree of numerator &lt; degree of denominator). If the numerator has larger degree, do the division first &mdash; synthetic division if the denominator is linear.</li>
+          <li><strong>Testing rational roots on the AP exam.</strong> When a free-response question hands you a polynomial with a known integer root, synthetic division reduces it to a quadratic you can solve with the quadratic formula.</li>
+        </ol>
+
+        <h2 id="practice">6. Five practice questions &mdash; click to reveal each answer</h2>
+
+        <div class="qbox">
+          <h3>Question 1 &mdash; A clean quadratic reduction</h3>
+          <p class="qmeta">Topic: Basic synthetic division &middot; Difficulty: warm-up</p>
+          <p>Divide <span class="eq">p(x) = x&sup3; &minus; 6x&sup2; + 11x &minus; 6</span> by <span class="eq">(x &minus; 1)</span>. Write the quotient and remainder. Then use the Factor Theorem to fully factor <span class="eq">p(x)</span>.</p>
+          <details>
+            <summary>Show answer</summary>
+            <div class="answer">
+              <p><strong>Set up.</strong> <span class="eq">c = 1</span>. Coefficients: <span class="eq">1, &minus;6, 11, &minus;6</span>.</p>
+              <div class="synth-table">     1 | 1   -6   11   -6
+       |     1   -5    6
+       |________________________
+         1  -5    6    0</div>
+              <p><strong>Read the answer.</strong> Quotient <span class="eq">x&sup2; &minus; 5x + 6</span>, remainder <span class="eq">0</span>.</p>
+              <p>Since the remainder is 0, <span class="eq">(x &minus; 1)</span> is a factor of <span class="eq">p(x)</span> (Factor Theorem). The quotient factors as <span class="eq">(x &minus; 2)(x &minus; 3)</span>, so:</p>
+              <p><span class="eq">p(x) = (x &minus; 1)(x &minus; 2)(x &minus; 3)</span></p>
+              <p><strong>Sanity check.</strong> <span class="eq">p(1) = 1 &minus; 6 + 11 &minus; 6 = 0</span>. Matches the remainder.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 2 &mdash; Missing terms (careful with zeros)</h3>
+          <p class="qmeta">Topic: Synthetic division with a missing coefficient &middot; Difficulty: medium</p>
+          <p>Divide <span class="eq">p(x) = 2x&#8308; &minus; 3x&sup2; + 5</span> by <span class="eq">(x + 1)</span>. What is the quotient and remainder? What is <span class="eq">p(&minus;1)</span>?</p>
+          <details>
+            <summary>Show answer</summary>
+            <div class="answer">
+              <p><strong>Set up.</strong> <span class="eq">(x + 1) = (x &minus; (&minus;1))</span>, so <span class="eq">c = &minus;1</span>. <em>Write every coefficient, including zeros for missing degrees.</em> The polynomial is degree 4, so we need coefficients for <span class="eq">x&#8308;, x&sup3;, x&sup2;, x, 1</span>. Missing terms are <span class="eq">x&sup3;</span> and <span class="eq">x</span>. Coefficients: <span class="eq">2, 0, &minus;3, 0, 5</span>.</p>
+              <div class="synth-table">    -1 | 2    0   -3    0    5
+       |    -2    2    1   -1
+       |________________________________
+         2   -2   -1    1    4</div>
+              <p><strong>Read the answer.</strong> Quotient <span class="eq">2x&sup3; &minus; 2x&sup2; &minus; x + 1</span>, remainder <span class="eq">4</span>. So <span class="eq">p(&minus;1) = 4</span> by the Remainder Theorem.</p>
+              <p><strong>Sanity check.</strong> Plug in: <span class="eq">p(&minus;1) = 2(1) &minus; 3(1) + 5 = 2 &minus; 3 + 5 = 4</span>. ✓</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 3 &mdash; A 0/0 limit</h3>
+          <p class="qmeta">Topic: Calculus &mdash; simplifying a limit &middot; Difficulty: medium</p>
+          <p>Evaluate <span class="eq">lim (x&rarr;2) &nbsp;(x&sup3; &minus; 7x + 6) / (x &minus; 2)</span>.</p>
+          <details>
+            <summary>Show answer</summary>
+            <div class="answer">
+              <p><strong>Check the form.</strong> Numerator at <span class="eq">x = 2</span>: <span class="eq">8 &minus; 14 + 6 = 0</span>. Denominator at <span class="eq">x = 2</span>: <span class="eq">0</span>. Good &mdash; 0/0 form. So <span class="eq">(x &minus; 2)</span> divides the numerator, and we can simplify by synthetic division.</p>
+              <p>Synthetic-divide <span class="eq">x&sup3; + 0x&sup2; &minus; 7x + 6</span> by <span class="eq">(x &minus; 2)</span>. <span class="eq">c = 2</span>:</p>
+              <div class="synth-table">     2 | 1    0   -7    6
+       |     2    4   -6
+       |__________________________
+         1    2   -3    0</div>
+              <p>Quotient: <span class="eq">x&sup2; + 2x &minus; 3</span>, remainder 0 ✓. So for <span class="eq">x &ne; 2</span>:</p>
+              <p><span class="eq">(x&sup3; &minus; 7x + 6) / (x &minus; 2) = x&sup2; + 2x &minus; 3</span></p>
+              <p>The limit equals the value of <span class="eq">x&sup2; + 2x &minus; 3</span> at <span class="eq">x = 2</span>: <span class="eq">4 + 4 &minus; 3 = 5</span>.</p>
+              <p><strong>Answer:</strong> <span class="eq">lim (x&rarr;2) &nbsp;(x&sup3; &minus; 7x + 6) / (x &minus; 2) = 5</span>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 4 &mdash; Rational Root Theorem + synthetic division</h3>
+          <p class="qmeta">Topic: Factoring a cubic &middot; Difficulty: medium/hard</p>
+          <p>Fully factor <span class="eq">p(x) = 2x&sup3; &minus; 3x&sup2; &minus; 11x + 6</span> over the real numbers, then list all real zeros.</p>
+          <details>
+            <summary>Show answer</summary>
+            <div class="answer">
+              <p><strong>Rational Root Theorem.</strong> Possible rational roots are <span class="eq">&plusmn;(factor of 6) / (factor of 2)</span> = <span class="eq">&plusmn;1, &plusmn;2, &plusmn;3, &plusmn;6, &plusmn;1/2, &plusmn;3/2</span>.</p>
+              <p><strong>Test candidates.</strong> Try <span class="eq">x = 3</span>: <span class="eq">2(27) &minus; 3(9) &minus; 11(3) + 6 = 54 &minus; 27 &minus; 33 + 6 = 0</span>. ✓ So <span class="eq">(x &minus; 3)</span> is a factor.</p>
+              <p><strong>Divide.</strong> Synthetic-divide by <span class="eq">c = 3</span>:</p>
+              <div class="synth-table">     3 | 2   -3  -11    6
+       |     6    9   -6
+       |__________________________
+         2    3   -2    0</div>
+              <p>Quotient: <span class="eq">2x&sup2; + 3x &minus; 2</span>. Factor: <span class="eq">2x&sup2; + 3x &minus; 2 = (2x &minus; 1)(x + 2)</span>.</p>
+              <p><strong>Fully factored:</strong> <span class="eq">p(x) = (x &minus; 3)(2x &minus; 1)(x + 2)</span></p>
+              <p><strong>Real zeros:</strong> <span class="eq">x = 3, &nbsp;x = 1/2, &nbsp;x = &minus;2</span>.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="qbox">
+          <h3>Question 5 &mdash; Non-monic linear divisor</h3>
+          <p class="qmeta">Topic: Dividing by <span class="eq">(ax + b)</span> &middot; Difficulty: hard</p>
+          <p>Divide <span class="eq">p(x) = 6x&sup3; + x&sup2; &minus; 5x + 2</span> by <span class="eq">(2x &minus; 1)</span>. Give the quotient and the remainder.</p>
+          <details>
+            <summary>Show answer</summary>
+            <div class="answer">
+              <p><strong>Rewrite the divisor.</strong> <span class="eq">2x &minus; 1 = 2(x &minus; 1/2)</span>, so use <span class="eq">c = 1/2</span> for the synthetic step, then divide the quotient coefficients by <span class="eq">a = 2</span>. The remainder is unchanged.</p>
+              <p>Synthetic-divide by <span class="eq">c = 1/2</span> with coefficients <span class="eq">6, 1, &minus;5, 2</span>:</p>
+              <div class="synth-table">   1/2 | 6    1   -5    2
+       |     3    2  -3/2
+       |__________________________
+         6    4   -3   1/2</div>
+              <p>Intermediate quotient (from the row before scaling): <span class="eq">6x&sup2; + 4x &minus; 3</span> with remainder <span class="eq">1/2</span>.</p>
+              <p><strong>Scale the quotient by 1/a = 1/2.</strong> Divide each quotient coefficient by 2: <span class="eq">6/2 = 3</span>, <span class="eq">4/2 = 2</span>, <span class="eq">&minus;3/2</span>.</p>
+              <p><strong>Final quotient:</strong> <span class="eq">3x&sup2; + 2x &minus; 3/2</span>. <strong>Remainder:</strong> <span class="eq">1/2</span> (unchanged).</p>
+              <p><strong>Check.</strong> Multiply: <span class="eq">(2x &minus; 1)(3x&sup2; + 2x &minus; 3/2) + 1/2</span></p>
+              <p><span class="eq">= 6x&sup3; + 4x&sup2; &minus; 3x &minus; 3x&sup2; &minus; 2x + 3/2 + 1/2</span></p>
+              <p><span class="eq">= 6x&sup3; + x&sup2; &minus; 5x + 2</span> ✓</p>
+              <p>Also, by the Remainder Theorem applied at <span class="eq">c = 1/2</span>: <span class="eq">p(1/2) = 6(1/8) + 1/4 &minus; 5/2 + 2 = 3/4 + 1/4 &minus; 5/2 + 2 = 1 &minus; 5/2 + 2 = 1/2</span> ✓</p>
+            </div>
+          </details>
+        </div>
+
+        <h2 id="faq">FAQ</h2>
+
+        <div class="theory-box">
+          <h3>Can synthetic division give a fractional quotient?</h3>
+          <p>Yes. Nothing in the algorithm requires integer coefficients. If <span class="eq">c</span> is a fraction, or if the polynomial has fractional coefficients, you&rsquo;ll get fractional numbers in the quotient row. That&rsquo;s fine.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>What if the polynomial has a missing term?</h3>
+          <p>You must include a <strong>zero</strong> as the coefficient for every missing degree. If you skip a missing term, the columns don&rsquo;t line up and every subsequent multiply-and-add is wrong. Question 2 above shows this: <span class="eq">2x&#8308; &minus; 3x&sup2; + 5</span> becomes <span class="eq">2, 0, &minus;3, 0, 5</span>.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>Is synthetic division on the AP Calculus exam?</h3>
+          <p>Not as a stand-alone skill (no question asks &ldquo;divide these two polynomials&rdquo; on the AP), but as a <em>tool</em> it&rsquo;s essential. Free-response questions regularly hand you a polynomial with a known root and expect you to factor it, or give you a 0/0 limit that has a polynomial numerator. Synthetic division is the fastest way through both.</p>
+        </div>
+
+        <div class="theory-box">
+          <h3>When should I use polynomial long division instead?</h3>
+          <p>Whenever the divisor is not linear. Anything of degree 2 or higher &mdash; like <span class="eq">x&sup2; &minus; 4</span>, <span class="eq">x&sup2; + 1</span>, or <span class="eq">x&sup3; &minus; 8</span> &mdash; requires polynomial long division. Synthetic division has no version for higher-degree divisors.</p>
+        </div>
+
+        <div class="callout">
+          <strong>SOMATH teaches synthetic division in Young Fermats Algebra II (grades 9&ndash;11)</strong> and reinforces it in AP Pre-Calculus and AP Calculus. Small groups of 6 or 1-on-1. <a href="/evaluation">Book a free 30-minute evaluation &rarr;</a> or call <a href="tel:+16466686151">(646) 668-6151</a>.
+        </div>
+
+        <div class="related">
+          <h3>Related SOMATH reads</h3>
+          <ul>
+            <li><a href="/posts/ap-calculus-prerequisites-5-questions">The 5 Topics You Must Know Before Calculus</a></li>
+            <li><a href="/courses/ap-calculus">SOMATH AP Calculus Course</a></li>
+            <li><a href="/courses/pre-calculus">SOMATH AP Pre-Calculus Course</a></li>
+            <li><a href="/courses/young-fermats-algebra-ii">Young Fermats &mdash; Algebra II (Grades 9&ndash;11)</a></li>
+            <li><a href="/posts/top-20-best-universities-usa-2026">Top 20 Best US Universities 2026</a></li>
+            <li><a href="/evaluation">Book a Free 30-Minute Evaluation</a></li>
+          </ul>
+        </div>
+
+        <p style="margin-top:32px;"><strong>School of Math (SOMATH)</strong> &middot; 226 W 79th St, 1st Floor &middot; New York, NY 10024 &middot; <a href="tel:+16466686151">(646) 668-6151</a> &middot; <a href="mailto:hello@schoolofmath.us">hello@schoolofmath.us</a></p>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
