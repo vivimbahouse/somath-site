@@ -7,6 +7,8 @@ For the curated overview, see [llms.txt](https://www.schoolofmath.us/llms.txt).
 ## Core pages
 
 - [Home](https://www.schoolofmath.us/): NYC math school for grades 1–12. Small groups of 6, Harvard- & Kellogg-trained teachers, free 60-min evaluation. Upper West Side · 226 W 79th St.
+- [Math Enrichment Programs NYC](https://www.schoolofmath.us/math-enrichment-nyc): SOMATH's Upper West Side math enrichment programs for grades 1–12. Small in-person classes of 6, teacher-led, on a proprietary 24-class syllabus at every level. Includes a full comparison of enrichment vs. tutoring vs. Kumon vs. math apps.
+- [Math Tutor NYC](https://www.schoolofmath.us/math-tutor-nyc): SOMATH's small-group math tutoring in NYC for grades 1–12. Upper West Side classroom, 6-student cap, real teachers, in-person only. Better than a private 1:1 math tutor for most students, at 30–50% of the cost. Compares SOMATH vs. private tutors vs. Kumon vs. Mathnasium vs. RSM vs. apps.
 - [About SOMATH](https://www.schoolofmath.us/about): Meet Vivianne Wright (Harvard) and Marcelo Ambrozio (Northwestern) — the educators behind School of Math on the Upper West Side. 20 years preparing GMAT/GRE candidates for top business schools. Now teaching grades 1–12.
 - [All courses](https://www.schoolofmath.us/courses): Browse every SOMATH course — Little Newtons, Kid Einsteins, Young Fermats Pre-Algebra, Algebra Ignite, Geometry, Algebra II, SHSAT Prep, SAT Math, and AP Prep. Pick a day and enroll.
 - [Contact](https://www.schoolofmath.us/contact): Visit School of Math at 226 West 79th Street, Upper West Side, NYC. Steps from the 1, B, C trains. Open Mon–Fri 3–10pm, Sat 10am–6pm. Call (646) 668-6151.

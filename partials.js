@@ -59,7 +59,8 @@
           <ul>
             <li><a href="/membership"><strong>Membership — monthly</strong></a></li>
             <li><a href="/courses/">All courses</a></li>
-            <li><a href="/math-enrichment-nyc">Math enrichment (grades 1–12)</a></li>
+            <li><a href="/math-enrichment-nyc">Math Enrichment Programs NYC (grades 1–12)</a></li>
+            <li><a href="/math-tutor-nyc">Math Tutor NYC — small-group tutoring</a></li>
             <li><a href="/posts/what-is-math-enrichment-parent-guide">Math enrichment — parent's guide</a></li>
             <li><a href="/programs">Programs (all levels)</a></li>
             <li><a href="/schedule">Year-round schedule</a></li>
