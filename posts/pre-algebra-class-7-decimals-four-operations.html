@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 7: Add, Subtract, Multiply &amp; Divide Decimals (Including Dividing by a Decimal) — 25 Practice Questions with Answers | SOMATH</title>
+    <meta name="description" content="A free 25-question pre-algebra practice set from Class 7 of the SOMATH Young Fermats course — the four operations on decimals, including how to divide by a decimal. Line up the decimal point for addition and subtraction, count total decimal places for multiplication, and shift both numbers to a whole-number divisor for division. Includes hidden step-by-step answer explanations. From School of Math, 226 W 79th St, Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-7-decimals-four-operations" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 7: Four Operations on Decimals — Including Dividing by a Decimal (25 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Free 25 pre-algebra practice questions from Class 7 of the SOMATH Young Fermats course — adding, subtracting, multiplying, and dividing decimals, including how to divide by a decimal, with hidden step-by-step explanations." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-7-decimals-four-operations" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-08-18" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 7: Four Operations on Decimals — Including Dividing by a Decimal (25 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Decimal-operations cheat sheet + 25 practice questions with hidden step-by-step explanations. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      .shortcuts {
+        margin: 8px 0 26px;
+        border: 1px solid #d4d1ca;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shortcuts__row {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.98rem;
+      }
+      .shortcuts__row:last-child { border-bottom: 0; }
+      .shortcuts__row strong { color: #0a3a5f; }
+      .shortcuts__row .plus  { color: #0a7a3d; font-weight: 700; }
+      .shortcuts__row .minus { color: #a13544; font-weight: 700; }
+      @media (max-width: 600px) {
+        .shortcuts__row { grid-template-columns: 1fr; gap: 4px; }
+      }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-parts {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .practice-parts li {
+        padding: 2px 0;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #0a3a5f;
+        font-weight: 600;
+        font-size: 0.9rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 140ms;
+        color: #d4a548;
+      }
+      .practice-question details[open] summary::before { transform: rotate(90deg); }
+      .practice-question summary:hover { color: #d4a548; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 7: Add, Subtract, Multiply & Divide Decimals — Including Dividing by a Decimal (25 Practice Questions)",
+  "description": "Free 25-question pre-algebra practice set from Class 7 of the SOMATH Young Fermats course — the four operations on decimals, including how to divide by a decimal, with a place-value cheat sheet, decimal-alignment rules, and count-total-decimal-places rule for multiplication.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-08-18",
+  "dateModified": "2026-08-18",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Adding decimals" },
+    { "@type": "Thing", "name": "Subtracting decimals" },
+    { "@type": "Thing", "name": "Multiplying decimals" },
+    { "@type": "Thing", "name": "Dividing decimals" },
+    { "@type": "Thing", "name": "Dividing by a decimal" },
+    { "@type": "Thing", "name": "Place value" }
+  ],
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-7-decimals-four-operations"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you add or subtract decimals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Line up the decimal points vertically — that automatically lines up ones with ones, tenths with tenths, hundredths with hundredths, and so on. Fill any missing places on the right with zeros so both numbers have the same number of decimal places, then add or subtract like whole numbers and bring the decimal point straight down. Example: 3.4 + 12.75 = 3.40 + 12.75 = 16.15."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you multiply decimals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ignore the decimal points and multiply as if they were whole numbers. Then count the TOTAL number of decimal places in both factors and place the decimal point in the answer so it has that many decimal places, counting from the right. Example: 0.6 × 0.4 = 6 × 4 = 24 with 1 + 1 = 2 decimal places → 0.24. Do NOT line up the decimal points when multiplying."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you divide a decimal by a whole number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Set up long division with the whole-number divisor as usual, and place the decimal point in the quotient directly above the decimal point in the dividend before you start dividing. Then divide as if both numbers were whole numbers. Example: 7.8 ÷ 3 = 2.6, because the decimal point in the quotient sits above the one in 7.8."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you divide by a decimal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You cannot divide by a decimal directly — first turn the divisor into a whole number. Count the decimal places in the divisor, then move the decimal point that many places to the right in BOTH the divisor and the dividend (add zeros to the dividend if needed). This does not change the answer because you multiplied both numbers by the same power of 10. Then divide normally, placing the decimal in the quotient above the new decimal position in the dividend. Example: 4.5 ÷ 0.9 becomes 45 ÷ 9 = 5."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does moving the decimal point in both numbers give the same answer when dividing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividing is the same as writing a fraction. 4.5 ÷ 0.9 = 4.5 / 0.9. Multiplying the top AND the bottom of a fraction by the same nonzero number (here 10) gives an equivalent fraction: 4.5 / 0.9 = 45 / 9 = 5. That is exactly what shifting the decimal one place to the right in both numbers does — it multiplies both by 10."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5–6 students, ages 10–12. It takes students from integers on the number line through systems of equations — the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 7</p>
+      <h1 class="post__title">Pre-Algebra Class 7: Add, Subtract, Multiply &amp; Divide Decimals — Including Dividing by a Decimal</h1>
+      <p class="post__dek">A quick decimal-operations cheat sheet from Class 7 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> course, followed by 25 practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-08-18">August 18, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p><strong>Short answer up top.</strong> Decimals follow one rule per operation: <strong>line up the decimal points to add or subtract</strong>, <strong>count total decimal places to multiply</strong>, and <strong>shift the decimal point in BOTH numbers to divide by a decimal</strong> — because that turns the divisor into a whole number without changing the quotient. Class 7 is where students stop treating decimals as \"scary fractions\" and start operating on them as fluently as whole numbers. Every Regents money problem, every SAT unit-conversion problem, and every science lab calculation depends on the four moves in this class. Book a free 30-minute evaluation at <a href="/evaluation">/evaluation</a> or call (646) 668-6151, and any 5th- or 6th-grader can join <a href="/courses/young-fermats-prealgebra">Young Fermats — Pre-Algebra</a> on the next Monday at our 226 W 79th Street classroom on the Upper West Side.</p>
+
+        <h2>What a decimal actually is</h2>
+        <p>A decimal is just a fraction whose denominator is a power of 10, written with a decimal point instead of a fraction bar. 0.7 is 7/10. 0.23 is 23/100. 0.045 is 45/1000. Reading a decimal out loud is the fastest way to \"see\" its fraction: 0.23 is \"twenty-three hundredths,\" which is 23/100. That single move — reading the decimal as a fraction — resolves almost every confused decimal question, especially the placement of the decimal point in the final answer.</p>
+
+        <div class="callout">
+          <p><strong>Place-value grid to memorize:</strong></p>
+          <p style="margin-top:8px;">&hellip; hundreds &middot; tens &middot; ones <strong>.</strong> tenths &middot; hundredths &middot; thousandths &middot; ten-thousandths &hellip;</p>
+          <p style="margin-top:8px;">The tenths column (right after the decimal point) is 1/10. Each column to the RIGHT of the decimal point is worth 1/10 of the column before it. Each column to the LEFT is worth 10 times the column before it. Same rule, both directions.</p>
+        </div>
+
+        <p>Two facts that follow from place value alone:</p>
+        <ul>
+          <li><strong>Trailing zeros after the last nonzero decimal digit do not change the value.</strong> 0.5 = 0.50 = 0.500. Useful when you want to line up the decimal points before adding or subtracting.</li>
+          <li><strong>Multiplying by 10 shifts the decimal point one place to the RIGHT.</strong> Dividing by 10 shifts it one place to the LEFT. Multiplying by 100 shifts it two places right, and so on. This is the single fact that makes \"dividing by a decimal\" work.</li>
+        </ul>
+
+        <h2>The four moves you must know cold</h2>
+        <p>Each operation on decimals has one clean rule. Master these four and every decimal problem — from Pre-Algebra through SAT and beyond — becomes an exercise in careful arithmetic.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">ADD / SUBTRACT</p>
+            <p class="rule-card__sub">line up the decimal points, fill with zeros, add or subtract</p>
+            <p class="rule-card__result">3.4 + 12.75 <span class="plus">= 16.15</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">MULTIPLY</p>
+            <p class="rule-card__sub">ignore decimals, multiply, then count TOTAL decimal places</p>
+            <p class="rule-card__result">0.6 &times; 0.4 <span class="plus">= 0.24 (2 places)</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">DIVIDE BY WHOLE</p>
+            <p class="rule-card__sub">decimal in the quotient sits directly above the decimal in the dividend</p>
+            <p class="rule-card__result">7.8 &divide; 3 <span class="plus">= 2.6</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">DIVIDE BY DECIMAL</p>
+            <p class="rule-card__sub">shift decimal RIGHT in BOTH numbers to make divisor whole</p>
+            <p class="rule-card__result">4.5 &divide; 0.9 <span class="plus">= 45 &divide; 9 = 5</span></p>
+          </div>
+        </div>
+
+        <h3>Move 1 &mdash; Adding and subtracting decimals</h3>
+        <p>The rule is one sentence: <strong>line up the decimal points, fill any missing places on the right with zeros, then add or subtract like whole numbers and bring the decimal point straight down.</strong></p>
+        <p><strong>Why it works.</strong> Lining up the decimal points automatically lines up matching place values: ones with ones, tenths with tenths, hundredths with hundredths. You cannot add \"three tenths\" to \"four hundredths\" without renaming them to the same size unit — 0.3 has to become 0.30 first. That is exactly the fraction rule from <a href="/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers">Class 6</a> (common denominator for addition and subtraction), only now the common denominator is built into the place-value grid.</p>
+
+        <p><strong>Full example &mdash; 3.4 + 12.75:</strong></p>
+        <ol>
+          <li>Line up the decimal points and pad with zeros so both numbers have the same number of decimal places: 3.40 and 12.75.</li>
+          <li>Add column by column, right to left: 0 + 5 = 5, 4 + 7 = 11 (write 1, carry 1), 3 + 2 + 1 = 6, 0 + 1 = 1.</li>
+          <li>Bring the decimal point straight down: <strong>16.15</strong>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 20 &minus; 3.47:</strong></p>
+        <ol>
+          <li>Rewrite 20 as 20.00 so both numbers have two decimal places.</li>
+          <li>Subtract with borrowing: 20.00 &minus; 3.47 = <strong>16.53</strong>.</li>
+        </ol>
+
+        <p><strong>Common mistake.</strong> Lining up the right edge of the digits (as with whole numbers) instead of the decimal point. 3.4 + 12.75 is NOT 3.4 + 12.75 aligned as \"34 + 1275.\" Line up the decimal points first, always.</p>
+
+        <h3>Move 2 &mdash; Multiplying decimals (count total decimal places)</h3>
+        <p>The rule is one sentence: <strong>ignore the decimal points, multiply as whole numbers, then count the total number of decimal places in both factors and put that many decimal places in the answer, counting from the right.</strong></p>
+        <p style="text-align:center;font-size:1.08rem;"><em>decimal places in answer</em> = <em>decimal places in factor 1</em> + <em>decimal places in factor 2</em></p>
+        <p><strong>Why it works.</strong> Read the factors as fractions. 0.6 &times; 0.4 = (6/10) &times; (4/10) = 24/100 = 0.24. Every decimal place is one power of 10 in the denominator, and denominators multiply when fractions multiply. Two decimal places on top of two decimal places gives two decimal places (10 &times; 10 = 100) in the answer.</p>
+
+        <p><strong>Full example &mdash; 3.2 &times; 1.5:</strong></p>
+        <ol>
+          <li>Ignore decimals: 32 &times; 15 = 480.</li>
+          <li>Count decimal places: 1 (in 3.2) + 1 (in 1.5) = 2.</li>
+          <li>Place the decimal so the answer has 2 decimal places, counting from the right: <strong>4.80 = 4.8</strong>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 0.04 &times; 0.6:</strong></p>
+        <ol>
+          <li>Ignore decimals: 4 &times; 6 = 24.</li>
+          <li>Count decimal places: 2 + 1 = 3.</li>
+          <li>Place the decimal so the answer has 3 decimal places: 0.024. That means <strong>writing a leading zero</strong> because 24 only has 2 digits — you need to pad the left with a 0 to make 3 decimal places.</li>
+        </ol>
+
+        <p><strong>Do NOT line up the decimals when multiplying.</strong> Only addition and subtraction need decimals lined up. Multiplication uses the count-total-decimal-places rule.</p>
+
+        <p><strong>Multiplying by 10, 100, 1000.</strong> Just shift the decimal point right by the number of zeros. 3.47 &times; 100 = 347. 0.06 &times; 1000 = 60. This is not a trick — it is the same count-total-decimal-places rule (10 has 0 decimal places, so the count is preserved but the whole factor is 10 times bigger).</p>
+
+        <h3>Move 3 &mdash; Dividing a decimal by a whole number</h3>
+        <p>The rule is one sentence: <strong>set up long division with the whole-number divisor as usual, place the decimal point in the quotient directly above the decimal point in the dividend BEFORE you start, then divide as if both numbers were whole numbers.</strong></p>
+        <p><strong>Why place it first.</strong> Placing the decimal point in the quotient before dividing prevents the single most common decimal-division mistake: forgetting the decimal and getting an answer 10 or 100 times too big or too small. If the decimal is where it belongs the moment you start, every digit you write goes into the right place value automatically.</p>
+
+        <p><strong>Full example &mdash; 7.8 &divide; 3:</strong></p>
+        <ol>
+          <li>Draw the long-division bracket. Divisor 3, dividend 7.8.</li>
+          <li>Place a decimal point in the quotient directly above the decimal point in 7.8.</li>
+          <li>Divide the whole part: 7 &divide; 3 = 2 with remainder 1. Write 2 above the 7.</li>
+          <li>Bring down the 8 to make 18. 18 &divide; 3 = 6, remainder 0. Write 6 above the 8.</li>
+          <li>Read the quotient: <strong>2.6</strong>.</li>
+        </ol>
+
+        <p><strong>When the division does not end &mdash; add zeros.</strong> If the last remainder is not zero, append a 0 to the dividend (that is legal because 7.8 = 7.80 = 7.800), bring it down, and keep dividing until you either hit zero remainder or reach a pattern that repeats.</p>
+
+        <p><strong>Full example &mdash; 1 &divide; 4:</strong></p>
+        <ol>
+          <li>Rewrite as 1.00 &divide; 4 so you have decimal places to use.</li>
+          <li>Place the decimal in the quotient above the decimal in 1.00.</li>
+          <li>1 &divide; 4 = 0 remainder 1. Write 0 above the 1.</li>
+          <li>Bring down the first 0 to make 10. 10 &divide; 4 = 2 remainder 2. Write 2.</li>
+          <li>Bring down the next 0 to make 20. 20 &divide; 4 = 5 remainder 0. Write 5.</li>
+          <li>Read the quotient: <strong>0.25</strong>. (Which is exactly 1/4 &mdash; every fraction is a hidden division problem.)</li>
+        </ol>
+
+        <h3>Move 4 &mdash; Dividing BY a decimal (the class-7 headliner)</h3>
+        <p>You cannot divide by a decimal directly with the long-division algorithm — you have to turn the divisor into a whole number first. The rule is one sentence: <strong>count the decimal places in the divisor, then shift the decimal point THAT MANY places to the RIGHT in BOTH the divisor and the dividend (add zeros to the dividend if needed).</strong> Now you have a whole-number divisor, and you use Move 3.</p>
+
+        <div class="callout">
+          <p><strong>Why moving the decimal point in BOTH numbers does not change the answer.</strong> A division problem is a fraction. 4.5 &divide; 0.9 is the same as 4.5 / 0.9. Multiplying the top AND the bottom of a fraction by the same nonzero number gives an equivalent fraction: 4.5 / 0.9 = (4.5 &times; 10) / (0.9 &times; 10) = 45 / 9 = 5. That is exactly what shifting the decimal one place to the right does &mdash; it multiplies both by 10. Same fraction, same value, but the divisor is now the whole number 9.</p>
+        </div>
+
+        <p><strong>Full example &mdash; 4.5 &divide; 0.9:</strong></p>
+        <ol>
+          <li>Count decimal places in the divisor 0.9: one place.</li>
+          <li>Shift the decimal one place to the right in BOTH numbers: 0.9 &rarr; 9 and 4.5 &rarr; 45.</li>
+          <li>Now divide the equivalent whole numbers: 45 &divide; 9 = <strong>5</strong>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 7.44 &divide; 0.6:</strong></p>
+        <ol>
+          <li>Divisor 0.6 has one decimal place. Shift one place right in BOTH: 0.6 &rarr; 6 and 7.44 &rarr; 74.4.</li>
+          <li>Now this is a Move 3 problem (divide a decimal by a whole number): 74.4 &divide; 6.</li>
+          <li>Place the decimal in the quotient above the decimal in 74.4. 7 &divide; 6 = 1 R 1. Bring down 4 &rarr; 14. 14 &divide; 6 = 2 R 2. Bring down 4 &rarr; 24. 24 &divide; 6 = 4 R 0.</li>
+          <li>Read the quotient: <strong>12.4</strong>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 3 &divide; 0.25:</strong></p>
+        <ol>
+          <li>Divisor 0.25 has two decimal places. Shift two places right in BOTH: 0.25 &rarr; 25 and 3 &rarr; 300. (Yes, you add zeros to the dividend when you run out of decimal places to shift into.)</li>
+          <li>Divide: 300 &divide; 25 = <strong>12</strong>.</li>
+        </ol>
+
+        <p><strong>Sanity check.</strong> Dividing by a number LESS than 1 always makes the answer BIGGER than the dividend &mdash; because you are asking \"how many small pieces fit?\" and small pieces fit many times. 3 &divide; 0.25 = 12 (twelve quarters in three wholes). If your answer to a divide-by-decimal problem is smaller than the dividend, something is wrong.</p>
+
+        <h2>Order of operations still rules</h2>
+        <p>When a problem mixes several decimal operations, PEMDAS still applies: parentheses first, then exponents, then multiplication/division left to right, then addition/subtraction left to right. Example: 2.5 + 0.4 &times; 1.5 evaluates the multiplication first (0.4 &times; 1.5 = 0.60), then the addition (2.5 + 0.60 = 3.10 = 3.1). Not (2.5 + 0.4) &times; 1.5.</p>
+
+        <h2>Fast benchmarks and sanity checks</h2>
+        <div class="shortcuts">
+          <div class="shortcuts__row"><span>Adding two decimals less than 1</span><span>&rarr; answer is less than 2</span></div>
+          <div class="shortcuts__row"><span>Multiplying two decimals less than 1</span><span>&rarr; answer is <span class="minus">SMALLER</span> than both</span></div>
+          <div class="shortcuts__row"><span>Dividing by a decimal less than 1</span><span>&rarr; answer is <span class="plus">BIGGER</span> than the dividend</span></div>
+          <div class="shortcuts__row"><span>Multiplying anything by 0.5</span><span>&rarr; the answer is half of it</span></div>
+          <div class="shortcuts__row"><span>Dividing anything by 0.5</span><span>&rarr; the answer is <em>double</em> it</span></div>
+        </div>
+        <p>These are not just tricks &mdash; they are how careful students catch arithmetic mistakes. If you get 24 for 0.6 &times; 0.4, the benchmark (\"product of two numbers less than 1 is smaller than both\") tells you the answer must be less than 0.4. That flag alone catches most decimal-placement errors.</p>
+
+        <h2>Three mistakes students always make</h2>
+        <div class="callout">
+          <p><strong>1. Lining up the right edge instead of the decimal point.</strong> Adding 3.4 + 12.75 as \"34 + 1275\" is the single most common decimal mistake. Line up the DECIMAL POINTS, and pad any missing places on the right with zeros: 3.40 + 12.75 = 16.15.</p>
+          <p style="margin-top:10px;"><strong>2. Trying to line up decimals when multiplying.</strong> Multiplication does not care about lining anything up. Ignore the decimals, multiply as whole numbers, then count the total decimal places to place the decimal in the answer.</p>
+          <p style="margin-top:10px;"><strong>3. Shifting the decimal in only one number when dividing by a decimal.</strong> If you shift the divisor to make it whole, you MUST shift the dividend by the same number of places — otherwise you are dividing a different problem. Same shift on both sides preserves the answer.</p>
+        </div>
+
+        <h2>Where this class shows up later</h2>
+        <ul>
+          <li><strong>Class 8&ndash;10 (ratios, proportions, percent).</strong> Every percent-change problem is decimal multiplication and division, and unit rates are one decimal divided by another.</li>
+          <li><strong>Algebra 1.</strong> Solving equations with decimal coefficients (0.25x + 1.5 = 4) uses the exact four decimal moves from Class 7.</li>
+          <li><strong>SAT and Regents.</strong> Money problems, unit conversion, tax and tip, and rate problems live and die by fluent decimal arithmetic. Students who cannot compute 4.5 &divide; 0.9 in five seconds lose the time budget elsewhere.</li>
+          <li><strong>Science and finance.</strong> Every lab measurement and every interest-rate calculation is a decimal computation. The rules do not change.</li>
+        </ul>
+
+        <p>The 25 questions below march from pure addition and subtraction of decimals through multiplication and division by a whole number, then work through dividing by a decimal, and finish with real-life word problems that put all four operations together.</p>
+
+        <h2>25 practice questions with hidden answers</h2>
+
+        <div class="section-band">Adding &amp; subtracting decimals (Q1&ndash;Q6)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span></div>
+          <div class="practice-question__prompt">Add or subtract:<ul class="practice-parts"><li>(a) 0.3 + 0.5</li><li>(b) 0.9 &minus; 0.4</li><li>(c) 0.25 + 0.6</li><li>(d) 1.7 &minus; 0.8</li></ul></div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer"><ul class="practice-parts"><li>(a) 0.8</li><li>(b) 0.5</li><li>(c) 0.85</li><li>(d) 0.9</li></ul></div>
+            <div class="why"><strong>Why.</strong> Line up the decimal points. (a) 0.3 + 0.5: three tenths + five tenths = 8 tenths = 0.8. (b) 0.9 &minus; 0.4 = 0.5. (c) Pad 0.6 to 0.60 to match hundredths: 0.25 + 0.60 = 0.85. (d) 1.7 &minus; 0.8 = 0.9 (borrow one whole = ten tenths: 17 tenths &minus; 8 tenths = 9 tenths).</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span></div>
+          <div class="practice-question__prompt">Compute 3.4 + 12.75.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3.4 + 12.75 = 16.15</div>
+            <div class="why"><strong>Why.</strong> Line up the decimal points; pad 3.4 to 3.40 so both numbers have two decimal places. Add column by column: 0+5=5, 4+7=11 (write 1, carry 1), 3+2+1=6, 0+1=1. Bring the decimal straight down: 16.15. Common wrong answer 4.15 comes from lining up the right edges of the digits &mdash; do not do that.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span></div>
+          <div class="practice-question__prompt">Compute 20 &minus; 3.47.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">20 &minus; 3.47 = 16.53</div>
+            <div class="why"><strong>Why.</strong> Rewrite 20 as 20.00 so both numbers have two decimal places. Subtract with borrowing across the decimal point: 20.00 &minus; 3.47 = 16.53. Sanity check: 20 &minus; 3.47 is a little more than 20 &minus; 3.5 = 16.5. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span></div>
+          <div class="practice-question__prompt">Add 0.6 + 0.25 + 1.075.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">0.6 + 0.25 + 1.075 = 1.925</div>
+            <div class="why"><strong>Why.</strong> Pad every number to three decimal places: 0.600 + 0.250 + 1.075. Add column by column: 0+0+5=5, 0+5+7=12 (write 2, carry 1), 6+2+0+1=9, 0+0+1=1. Bring the decimal down: 1.925.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span></div>
+          <div class="practice-question__prompt">Compute 5.03 &minus; 1.78.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">5.03 &minus; 1.78 = 3.25</div>
+            <div class="why"><strong>Why.</strong> Line up the decimals; both numbers already have two decimal places. Subtract with borrowing: 5.03 &minus; 1.78 = 3.25. Sanity check: 5.03 &minus; 1.78 is close to 5 &minus; 1.75 = 3.25. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span></div>
+          <div class="practice-question__prompt">A student writes 3.4 + 12.75 = 4.15. Explain the mistake and give the correct answer.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Mistake: the student lined up the right edge of the digits instead of the decimal points. Correct answer: 3.4 + 12.75 = 16.15.</div>
+            <div class="why"><strong>Why.</strong> Lining up right edges works for whole numbers because their \"decimal point\" is invisibly at the far right. For decimals, you must line up the decimal points so tenths add to tenths and hundredths add to hundredths. Pad 3.4 to 3.40, then add: 3.40 + 12.75 = 16.15.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Multiplying decimals (Q7&ndash;Q12)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span></div>
+          <div class="practice-question__prompt">Multiply, then place the decimal:<ul class="practice-parts"><li>(a) 0.6 &times; 0.4</li><li>(b) 0.3 &times; 0.7</li><li>(c) 0.9 &times; 0.5</li><li>(d) 0.2 &times; 0.8</li></ul></div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer"><ul class="practice-parts"><li>(a) 0.24</li><li>(b) 0.21</li><li>(c) 0.45</li><li>(d) 0.16</li></ul></div>
+            <div class="why"><strong>Why.</strong> Ignore decimals, multiply, then count 1 + 1 = 2 decimal places in each answer. (a) 6&times;4 = 24 &rarr; 0.24. (b) 3&times;7 = 21 &rarr; 0.21. (c) 9&times;5 = 45 &rarr; 0.45. (d) 2&times;8 = 16 &rarr; 0.16. Sanity check: two numbers less than 1 &rarr; product should be smaller than either. All four answers pass.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span></div>
+          <div class="practice-question__prompt">Compute 3.2 &times; 1.5.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3.2 &times; 1.5 = 4.8</div>
+            <div class="why"><strong>Why.</strong> Ignore decimals: 32 &times; 15 = 480. Count decimal places: 1 + 1 = 2. Place the decimal so the answer has 2 places: 4.80 = 4.8 (trailing zero after the last nonzero digit drops off). Sanity check: 3.2 &times; 1.5 is close to 3 &times; 1.5 = 4.5. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span></div>
+          <div class="practice-question__prompt">Compute 0.04 &times; 0.6.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">0.04 &times; 0.6 = 0.024</div>
+            <div class="why"><strong>Why.</strong> Ignore decimals: 4 &times; 6 = 24. Count decimal places: 2 + 1 = 3. Place the decimal so the answer has 3 decimal places: 24 only has 2 digits, so pad the left with a zero to make .024, then place the leading zero &rarr; 0.024. Read as \"twenty-four thousandths.\"</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span></div>
+          <div class="practice-question__prompt">Compute 2.5 &times; 0.06.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">2.5 &times; 0.06 = 0.15</div>
+            <div class="why"><strong>Why.</strong> Ignore decimals: 25 &times; 6 = 150. Count decimal places: 1 + 2 = 3. Place the decimal so the answer has 3 decimal places: 0.150 = 0.15 (trailing zero drops off). Sanity check: 2.5 &times; 0.06 is close to 2.5 &times; 0.1 &divide; something &mdash; roughly 0.15. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span></div>
+          <div class="practice-question__prompt">Compute 3.47 &times; 100.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3.47 &times; 100 = 347</div>
+            <div class="why"><strong>Why.</strong> Multiplying by 100 shifts the decimal point 2 places to the RIGHT (100 has two zeros). 3.47 &rarr; 34.7 (one shift) &rarr; 347 (two shifts). This is the count-total-decimal-places rule in action: 100 has 0 decimal places, so all the decimal places come from 3.47, and the digits of 3.47&times;100 are the same as 347&times;100&divide;100 = 347.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span></div>
+          <div class="practice-question__prompt">A student writes 0.6 &times; 0.4 = 2.4 (by lining up the decimals and multiplying). Explain the mistake and give the correct answer.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Mistake: the student lined up the decimals (a rule for addition/subtraction, not multiplication) and forgot to count decimal places. Correct answer: 0.6 &times; 0.4 = 0.24.</div>
+            <div class="why"><strong>Why.</strong> Multiplication does not care about lining anything up. Ignore the decimals, multiply as whole numbers (6 &times; 4 = 24), then count 1 + 1 = 2 decimal places in the answer: 0.24. Sanity check: both factors are less than 1, so the product must be less than both &mdash; 0.24 is smaller than 0.4 and smaller than 0.6. ✓ 2.4 fails that check immediately.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Dividing a decimal by a whole number (Q13&ndash;Q16)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span></div>
+          <div class="practice-question__prompt">Compute 7.8 &divide; 3.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">7.8 &divide; 3 = 2.6</div>
+            <div class="why"><strong>Why.</strong> Set up long division. Place the decimal in the quotient directly above the decimal in 7.8. 7 &divide; 3 = 2 R 1. Bring down 8 &rarr; 18. 18 &divide; 3 = 6 R 0. Read the quotient: 2.6. Sanity check: 7.8 &divide; 3 is close to 7.5 &divide; 3 = 2.5, and slightly bigger. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span></div>
+          <div class="practice-question__prompt">Compute 1 &divide; 4 as a decimal.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">1 &divide; 4 = 0.25</div>
+            <div class="why"><strong>Why.</strong> Rewrite 1 as 1.00 so you have decimal places to bring down. Place the decimal in the quotient above the decimal in 1.00. 1 &divide; 4 = 0 R 1. Bring down first 0 &rarr; 10. 10 &divide; 4 = 2 R 2. Bring down next 0 &rarr; 20. 20 &divide; 4 = 5 R 0. Read the quotient: 0.25. That is exactly 1/4 &mdash; every fraction is a hidden division.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span></div>
+          <div class="practice-question__prompt">Compute 12.6 &divide; 4.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">12.6 &divide; 4 = 3.15</div>
+            <div class="why"><strong>Why.</strong> Set up long division. Place the decimal in the quotient above the decimal in 12.6. 12 &divide; 4 = 3 R 0. Bring down 6 &rarr; 6. 6 &divide; 4 = 1 R 2. The division has not ended, so append a 0 to the dividend (12.6 = 12.60) and bring it down &rarr; 20. 20 &divide; 4 = 5 R 0. Read the quotient: 3.15.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span></div>
+          <div class="practice-question__prompt">Compute 3 &divide; 8 as a decimal.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3 &divide; 8 = 0.375</div>
+            <div class="why"><strong>Why.</strong> Rewrite 3 as 3.000. Place the decimal in the quotient above the decimal in 3.000. 3 &divide; 8 = 0 R 3. Bring down 0 &rarr; 30. 30 &divide; 8 = 3 R 6. Bring down 0 &rarr; 60. 60 &divide; 8 = 7 R 4. Bring down 0 &rarr; 40. 40 &divide; 8 = 5 R 0. Read the quotient: 0.375. That is exactly 3/8.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Dividing BY a decimal (Q17&ndash;Q22)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span></div>
+          <div class="practice-question__prompt">Compute 4.5 &divide; 0.9.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">4.5 &divide; 0.9 = 5</div>
+            <div class="why"><strong>Why.</strong> The divisor 0.9 has 1 decimal place, so shift the decimal 1 place RIGHT in BOTH numbers: 0.9 &rarr; 9 and 4.5 &rarr; 45. Now divide the equivalent whole-number problem: 45 &divide; 9 = 5. Sanity check: dividing by 0.9 (less than 1) should make the answer BIGGER than 4.5, and it does: 5 &gt; 4.5. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span></div>
+          <div class="practice-question__prompt">Compute 7.44 &divide; 0.6.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">7.44 &divide; 0.6 = 12.4</div>
+            <div class="why"><strong>Why.</strong> Divisor 0.6 has 1 decimal place. Shift 1 place right in BOTH: 0.6 &rarr; 6 and 7.44 &rarr; 74.4. Now this is Move 3 (divide a decimal by a whole number): 74.4 &divide; 6. Place the decimal in the quotient above the decimal in 74.4. 7&divide;6=1 R 1, bring down 4 &rarr; 14, 14&divide;6=2 R 2, bring down 4 &rarr; 24, 24&divide;6=4 R 0. Read: 12.4.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span></div>
+          <div class="practice-question__prompt">Compute 3 &divide; 0.25.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">3 &divide; 0.25 = 12</div>
+            <div class="why"><strong>Why.</strong> Divisor 0.25 has 2 decimal places. Shift 2 places right in BOTH: 0.25 &rarr; 25 and 3 &rarr; 300 (you add zeros to the dividend when you run out of decimal places to shift). Now divide the whole numbers: 300 &divide; 25 = 12. Sanity check with the \"how many pieces fit\" picture: how many quarters (0.25) fit into 3 whole units? Each whole holds 4 quarters, so 3 wholes hold 12 quarters. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span></div>
+          <div class="practice-question__prompt">Compute 0.36 &divide; 0.04.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">0.36 &divide; 0.04 = 9</div>
+            <div class="why"><strong>Why.</strong> Divisor 0.04 has 2 decimal places. Shift 2 places right in BOTH: 0.04 &rarr; 4 and 0.36 &rarr; 36. Divide the whole-number problem: 36 &divide; 4 = 9. Sanity check: dividing by 0.04 (much less than 1) makes the answer much BIGGER than 0.36 &mdash; and 9 is much bigger than 0.36. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span></div>
+          <div class="practice-question__prompt">Compute 8.5 &divide; 0.5.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">8.5 &divide; 0.5 = 17</div>
+            <div class="why"><strong>Why.</strong> Divisor 0.5 has 1 decimal place. Shift 1 place right in BOTH: 0.5 &rarr; 5 and 8.5 &rarr; 85. Divide: 85 &divide; 5 = 17. Sanity check: dividing anything by 0.5 doubles it &mdash; and 8.5 &times; 2 = 17. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span></div>
+          <div class="practice-question__prompt">A student writes 4.5 &divide; 0.9 = 0.5 by \"shifting the decimal only in the divisor.\" Explain the mistake and give the correct answer.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Mistake: the student shifted the decimal in 0.9 but not in 4.5, changing the problem to 4.5 &divide; 9. You must shift BOTH numbers by the same number of places. Correct answer: 4.5 &divide; 0.9 = 5.</div>
+            <div class="why"><strong>Why.</strong> A division problem is a fraction. Multiplying the top and the bottom of a fraction by the same nonzero number preserves the value. Shifting the decimal one place right multiplies by 10 &mdash; you must do it on BOTH the divisor and the dividend, giving 45 / 9 = 5. Shifting only one side actually divides the fraction by 10 and gives an answer 10 times too small. The sanity check catches it: dividing by 0.9 must make the answer BIGGER than 4.5, not smaller.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Real-life word problems (Q23&ndash;Q25)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span></div>
+          <div class="practice-question__prompt">A pack of pencils costs $2.35. If you buy 6 packs, how much do you spend in total?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">$14.10</div>
+            <div class="why"><strong>Why.</strong> 2.35 &times; 6. Ignore decimals: 235 &times; 6 = 1410. Count decimal places: 2 + 0 = 2. Place the decimal so the answer has 2 places: 14.10 &rarr; $14.10. Sanity check: 6 packs at about $2.35 each is a little more than 6 &times; $2 = $12 and a little less than 6 &times; $2.50 = $15. ✓</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span></div>
+          <div class="practice-question__prompt">A ribbon is 4.5 meters long. Each bow uses 0.75 meter of ribbon. How many complete bows can you make?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">6 bows</div>
+            <div class="why"><strong>Why.</strong> \"How many 0.75-meter pieces fit in 4.5 meters?\" is a division problem: 4.5 &divide; 0.75. Divisor 0.75 has 2 decimal places. Shift 2 places right in BOTH: 0.75 &rarr; 75 and 4.5 &rarr; 450. Divide: 450 &divide; 75 = 6. Exactly 6 bows, with no ribbon left over.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span></div>
+          <div class="practice-question__prompt">A cyclist rides 32.4 miles in 3 hours at a steady pace. What is her average speed in miles per hour? If she keeps going at that pace for another 1.5 hours, how many total miles will she have ridden?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Average speed: 10.8 mph. Total miles: 48.6 miles.</div>
+            <div class="why"><strong>Why.</strong> Speed = distance &divide; time = 32.4 &divide; 3. Place the decimal in the quotient above the decimal in 32.4. 32&divide;3=10 R 2, bring down 4 &rarr; 24, 24&divide;3=8 R 0 &rarr; 10.8 mph. Additional distance at that pace for 1.5 more hours = 10.8 &times; 1.5. Ignore decimals: 108 &times; 15 = 1620. Count places: 1 + 1 = 2 &rarr; 16.20 = 16.2 miles. Total: 32.4 + 16.2 = 48.6 miles. Sanity check: 4.5 total hours &times; 10.8 mph = 48.6 miles. ✓</div>
+          </details>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 7 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5&ndash;6 students (ages 10&ndash;12). The full arc runs from integers on the number line through systems of linear equations and probability &mdash; the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 30-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child's current level against the readiness signals for Pre-Algebra and Algebra 1 &mdash; and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 7 is a taste &mdash; Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days' notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course &rarr;</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers">Pre-Algebra Class 6: Add, Subtract, Multiply &amp; Divide Fractions and Mixed Numbers (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals">Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-1-integers-number-line-absolute-value">Pre-Algebra Class 1: Integers on the Number Line &amp; Absolute Value (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms">Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (25 Practice Questions)</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260818-prealg-class7"></script>
+  </body>
+</html>
