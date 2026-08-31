@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 9: Proportional Reasoning — Solving Simple Proportions (25 Practice Questions with Answers) | SOMATH</title>
+    <meta name="description" content="Class 9 of the SOMATH Young Fermats Pre-Algebra course — proportional reasoning and solving simple proportions. Learn what a proportion actually is, when two ratios are proportional (equivalent fractions or the cross-product test), the two clean methods to solve for a missing value (scale factor and cross-multiplication), and 25 practice questions with hidden step-by-step answer explanations. From School of Math, 226 W 79th St, Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-9-proportional-reasoning-simple-proportions" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 9: Proportional Reasoning — Solving Simple Proportions (25 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Class 9 of the SOMATH Young Fermats course — proportional reasoning and solving simple proportions with the scale-factor method and cross-multiplication. 25 practice questions with hidden step-by-step answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-9-proportional-reasoning-simple-proportions" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-08-31" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 9: Proportional Reasoning — Solving Simple Proportions (25 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Proportions cheat sheet + 25 practice questions with hidden step-by-step explanations. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      .shortcuts {
+        margin: 8px 0 26px;
+        border: 1px solid #d4d1ca;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .shortcuts__row {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        padding: 12px 16px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.98rem;
+      }
+      .shortcuts__row:last-child { border-bottom: 0; }
+      .shortcuts__row strong { color: #0a3a5f; }
+      .shortcuts__row .plus  { color: #0a7a3d; font-weight: 700; }
+      .shortcuts__row .minus { color: #a13544; font-weight: 700; }
+      @media (max-width: 600px) {
+        .shortcuts__row { grid-template-columns: 1fr; gap: 4px; }
+      }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-parts {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .practice-parts li {
+        padding: 2px 0;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #0a3a5f;
+        font-weight: 600;
+        font-size: 0.9rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::before {
+        content: "▶";
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 140ms;
+        color: #d4a548;
+      }
+      .practice-question details[open] summary::before { transform: rotate(90deg); }
+      .practice-question summary:hover { color: #d4a548; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 9: Proportional Reasoning — Solving Simple Proportions (25 Practice Questions)",
+  "description": "Class 9 of the SOMATH Young Fermats Pre-Algebra course — what a proportion is, the cross-product test for whether two ratios are proportional, the scale-factor and cross-multiplication methods for solving for a missing value, and 25 practice questions with hidden step-by-step answers.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-08-31",
+  "dateModified": "2026-08-31",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Proportion" },
+    { "@type": "Thing", "name": "Ratio" },
+    { "@type": "Thing", "name": "Cross-multiplication" },
+    { "@type": "Thing", "name": "Scale factor" },
+    { "@type": "Thing", "name": "Proportional reasoning" }
+  ],
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-9-proportional-reasoning-simple-proportions"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a proportion in pre-algebra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A proportion is an equation that says two ratios are equal. Written as a/b = c/d, it means the ratio a to b is the same as the ratio c to d — the two fractions are equivalent. Example: 2/3 = 4/6 is a true proportion because 2/3 and 4/6 name the same amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you check whether two ratios form a proportion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the cross-product test. For a/b = c/d, multiply diagonally: a × d and b × c. If the two products are equal, the ratios are proportional. If they are not equal, the ratios are not proportional. Example: 2/3 and 4/6 → 2 × 6 = 12 and 3 × 4 = 12, so 2/3 = 4/6 is true."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you solve a proportion for a missing value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are two clean methods. (1) Scale factor: figure out what number the known ratio is multiplied by, and multiply the other side by the same number. Example: 3/5 = x/20 → 20 is 5 × 4, so x is 3 × 4 = 12. (2) Cross-multiplication: for a/b = c/d, use a × d = b × c and solve the resulting one-step equation. Example: 3/5 = x/20 → 3 × 20 = 5 × x → 60 = 5x → x = 12."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is cross-multiplication allowed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cross-multiplication is allowed only when you have TWO fractions set equal to each other — that is, a real proportion of the form a/b = c/d. It is not a general fraction rule, and you cannot use it on addition or subtraction of fractions. Also, no denominator may be zero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a ratio and a proportion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A ratio is a comparison of two quantities (3 to 5, 3:5, or 3/5). A proportion is a statement that two ratios are equal (3/5 = 6/10). Ratios stand alone; a proportion is always an equation with an equals sign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5–6 students, ages 10–12. It takes students from integers on the number line through systems of equations — the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set · Pre-Algebra · Young Fermats · Class 9</p>
+      <h1 class="post__title">Pre-Algebra Class 9: Proportional Reasoning &mdash; Solving Simple Proportions</h1>
+      <p class="post__dek">A quick proportions cheat sheet from Class 9 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats &mdash; Pre-Algebra</a> course, followed by 25 practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-08-31">August 31, 2026</time> · By the SOMATH team · 226 W 79th St, UWS · (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p><strong>Short answer up top.</strong> A <strong>proportion</strong> is an equation that says two ratios are equal, written <span class="eq">a/b = c/d</span>. Two ratios form a proportion when they simplify to the same fraction &mdash; or, equivalently, when their <strong>cross products are equal</strong>: <span class="eq">a &times; d = b &times; c</span>. To solve for a missing value, use the <strong>scale-factor method</strong> when one side scales cleanly (e.g., 5 &rarr; 20 by &times;4) or <strong>cross-multiplication</strong> otherwise, which always works. Class 9 is the class that turns the ratios and unit rates from <a href="/courses/young-fermats-prealgebra">Class 8</a> into a real solving tool &mdash; and it is the exact machinery behind every scaling problem in <a href="/courses/young-fermats-prealgebra">Class 10 percent</a>, every similar-triangle problem in <a href="/courses/regents-geometry">Regents Geometry</a>, and every unit-conversion or word problem on the <a href="/courses/sat-math">SAT</a>. Book a free 30-minute evaluation at <a href="/evaluation">/evaluation</a> or call (646) 668-6151, and any 5th- or 6th-grader can join <a href="/courses/young-fermats-prealgebra">Young Fermats &mdash; Pre-Algebra</a> on the next Monday at our 226 W 79th Street classroom on the Upper West Side.</p>
+
+        <h2>What a proportion actually is</h2>
+        <p>A <strong>ratio</strong> compares two quantities &mdash; 3 apples for every 5 oranges is a ratio, written 3:5 or 3/5. A <strong>proportion</strong> is a statement that <em>two</em> ratios are equal: 3/5 = 6/10. The equals sign is the whole point. A ratio stands alone; a proportion is an equation.</p>
+
+        <div class="callout">
+          <p><strong>Definition.</strong> A proportion is an equation of the form <span class="eq">a/b = c/d</span>, where <span class="eq">b</span> and <span class="eq">d</span> are nonzero. It says the ratio <span class="eq">a</span> to <span class="eq">b</span> is the same as the ratio <span class="eq">c</span> to <span class="eq">d</span>.</p>
+          <p style="margin-top:8px;">You read <span class="eq">a/b = c/d</span> as &ldquo;<em>a</em> is to <em>b</em> as <em>c</em> is to <em>d</em>.&rdquo;</p>
+        </div>
+
+        <p>Two ratios are proportional exactly when they name the <strong>same amount</strong> &mdash; that is, when they are <strong>equivalent fractions</strong>. 3/5 = 6/10 because both simplify to 3/5. 3/5 = 9/15 because both simplify to 3/5. 3/5 &ne; 4/6 because 4/6 simplifies to 2/3, not 3/5.</p>
+
+        <h2>Two tests: are these ratios proportional?</h2>
+        <p>You will get two clean tools in this class. Both answer the same question &mdash; &ldquo;is <span class="eq">a/b = c/d</span> a true equation?&rdquo; &mdash; and each is faster in different situations.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">METHOD 1 &mdash; SIMPLIFY BOTH</p>
+            <p class="rule-card__sub">reduce each fraction and compare</p>
+            <p class="rule-card__result">4/6 vs 6/9 &rarr; both = 2/3 <span class="plus">&#10003;</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">METHOD 2 &mdash; CROSS PRODUCTS</p>
+            <p class="rule-card__sub">multiply diagonally; equal &rarr; proportional</p>
+            <p class="rule-card__result">2/3 = 4/6 &rarr; 2&times;6 = 12, 3&times;4 = 12 <span class="plus">&#10003;</span></p>
+          </div>
+        </div>
+
+        <p><strong>Cross-product test.</strong> For any proportion <span class="eq">a/b = c/d</span>, multiplying diagonally gives <span class="eq">a &times; d</span> and <span class="eq">b &times; c</span>. If those two products are equal, the ratios are proportional. If they are not equal, the ratios are not proportional. That is it.</p>
+
+        <div class="callout">
+          <p><strong>Why the cross-product test works.</strong> Start with <span class="eq">a/b = c/d</span>. Multiply BOTH sides by <span class="eq">b</span>: <span class="eq">a = (bc)/d</span>. Now multiply both sides by <span class="eq">d</span>: <span class="eq">a &times; d = b &times; c</span>. The cross-product equation is what you get when you clear the fractions from a proportion. Two moves. That is why the shortcut is safe.</p>
+        </div>
+
+        <p><strong>Example.</strong> Is 15/20 = 9/12? Cross products: 15 &times; 12 = 180 and 20 &times; 9 = 180. Yes &mdash; both ratios simplify to 3/4.</p>
+        <p><strong>Example.</strong> Is 3/8 = 5/12? Cross products: 3 &times; 12 = 36 and 8 &times; 5 = 40. 36 &ne; 40, so no.</p>
+
+        <h2>The two clean methods to solve for a missing value</h2>
+        <p>The heart of Class 9. You are given a proportion with one unknown &mdash; usually <span class="eq">x</span> &mdash; and you have to find its value. Two methods, both bulletproof.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">METHOD A &mdash; SCALE FACTOR</p>
+            <p class="rule-card__sub">find what the known side is multiplied (or divided) by; apply the same to the other side</p>
+            <p class="rule-card__result">3/5 = x/20 &rarr; &times;4 &rarr; <span class="plus">x = 12</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">METHOD B &mdash; CROSS-MULTIPLY</p>
+            <p class="rule-card__sub">for a/b = c/d, use a&times;d = b&times;c and solve the one-step equation</p>
+            <p class="rule-card__result">3/5 = x/20 &rarr; 60 = 5x &rarr; <span class="plus">x = 12</span></p>
+          </div>
+        </div>
+
+        <h3>Method A &mdash; Scale factor (fastest when the numbers cooperate)</h3>
+        <p>The rule is one sentence: <strong>look at the two known matching parts (the two numerators or the two denominators). Figure out what you multiply the known one by to get the other one &mdash; that is the scale factor. Multiply the third known number by the same scale factor to find the missing value.</strong></p>
+
+        <p><strong>Full example &mdash; 3/5 = x/20:</strong></p>
+        <ol>
+          <li>Look at the two denominators (both known): 5 and 20.</li>
+          <li>What number times 5 gives 20? 20 &divide; 5 = 4. The scale factor is 4.</li>
+          <li>Multiply the numerator on the known side by that same 4: <span class="eq">x = 3 &times; 4 = <strong>12</strong></span>.</li>
+        </ol>
+        <p><strong>Sanity check:</strong> 12/20 simplifies to 3/5. &#10003;</p>
+
+        <p><strong>Full example &mdash; 21/x = 7/2:</strong></p>
+        <ol>
+          <li>Look at the two numerators: 21 and 7. What times 7 gives 21? 21 &divide; 7 = 3. Scale factor 3, going from the right side to the left side.</li>
+          <li>Multiply the denominator 2 by 3: <span class="eq">x = 2 &times; 3 = <strong>6</strong></span>.</li>
+        </ol>
+        <p><strong>Sanity check:</strong> 21/6 simplifies to 7/2. &#10003;</p>
+
+        <p><strong>When to use scale factor.</strong> Use it whenever one pair of matching parts has a clean whole-number scale factor (2, 3, 4, 5, 10&hellip;). It is fast, mental, and it keeps proportional reasoning &ldquo;visible&rdquo; instead of hidden inside an algebra step. It is also the method that shows up most on the SHSAT and SAT no-calculator math.</p>
+
+        <h3>Method B &mdash; Cross-multiplication (always works)</h3>
+        <p>The rule is one sentence: <strong>for a proportion <span class="eq">a/b = c/d</span>, replace it with the equivalent equation <span class="eq">a &times; d = b &times; c</span>, then solve the resulting one-step equation.</strong></p>
+
+        <p><strong>Full example &mdash; 3/5 = x/20:</strong></p>
+        <ol>
+          <li>Cross-multiply: <span class="eq">3 &times; 20 = 5 &times; x</span>.</li>
+          <li>Simplify: <span class="eq">60 = 5x</span>.</li>
+          <li>Divide both sides by 5: <span class="eq">x = <strong>12</strong></span>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 4/9 = 12/x:</strong></p>
+        <ol>
+          <li>Cross-multiply: <span class="eq">4 &times; x = 9 &times; 12</span>.</li>
+          <li>Simplify: <span class="eq">4x = 108</span>.</li>
+          <li>Divide both sides by 4: <span class="eq">x = <strong>27</strong></span>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; 2.5/1 = x/6 (decimals):</strong></p>
+        <ol>
+          <li>Cross-multiply: <span class="eq">2.5 &times; 6 = 1 &times; x</span>.</li>
+          <li>Simplify: <span class="eq">15 = x</span>. So <span class="eq">x = <strong>15</strong></span>.</li>
+        </ol>
+
+        <p><strong>When to use cross-multiplication.</strong> When the scale factor is not a clean whole number, or when you have decimals or fractions in the ratios, cross-multiplication is more reliable. It always works. The trade-off is that it hides the proportional-reasoning intuition inside an algebra step, so use scale factor first when you can.</p>
+
+        <div class="callout">
+          <p><strong>Cross-multiplication rule of thumb.</strong> Cross-multiply ONLY when you have two fractions set equal to each other &mdash; a real proportion. It is not a general fraction rule. You cannot cross-multiply across a plus sign. And no denominator may be zero.</p>
+        </div>
+
+        <h2>Setting up a proportion from a word problem</h2>
+        <p>Almost every real-world proportion problem is the same recipe: <strong>identify the two quantities that are related, set up two ratios that compare them the same way, put the unknown in the right spot, and solve.</strong> The one rule that matters is <em>consistency of units and order</em>.</p>
+
+        <div class="callout">
+          <p><strong>The setup rule &mdash; match units on top and bottom.</strong> If the left side is <span class="eq">apples/oranges</span>, the right side must ALSO be <span class="eq">apples/oranges</span>. If the left side puts miles on top, the right side must put miles on top. Match the units on top with the units on top, and the units on bottom with the units on bottom. Getting the setup right is 80% of proportion word problems.</p>
+        </div>
+
+        <p><strong>Example &mdash; recipe scaling.</strong> A recipe uses 2 cups of flour for every 3 cookies. How much flour for 12 cookies?</p>
+        <ol>
+          <li>Set up matching units: <span class="eq">flour/cookies = flour/cookies</span>.</li>
+          <li>Fill in: <span class="eq">2/3 = x/12</span>.</li>
+          <li>Scale factor: 3 &rarr; 12 is &times;4. So <span class="eq">x = 2 &times; 4 = <strong>8 cups</strong></span>.</li>
+        </ol>
+
+        <p><strong>Example &mdash; unit rate as a proportion.</strong> A car drives 90 miles in 2 hours at a steady speed. How far in 5 hours?</p>
+        <ol>
+          <li>Set up matching units: <span class="eq">miles/hours = miles/hours</span>.</li>
+          <li>Fill in: <span class="eq">90/2 = x/5</span>.</li>
+          <li>Cross-multiply: <span class="eq">90 &times; 5 = 2 &times; x</span> &rarr; <span class="eq">450 = 2x</span> &rarr; <span class="eq">x = <strong>225 miles</strong></span>.</li>
+        </ol>
+        <p><strong>Sanity check:</strong> unit rate is 90 miles &divide; 2 hours = 45 mph. 45 &times; 5 = 225 miles. &#10003; (The proportion is just the unit-rate equation in a different costume.)</p>
+
+        <h2>Where proportions show up later</h2>
+        <ul>
+          <li><strong>Class 10 (percent).</strong> Every percent problem is a proportion: <span class="eq">part/whole = percent/100</span>. Tip, tax, discount, percent-of-a-number, and percent-change all live in this single template.</li>
+          <li><strong>Regents Geometry &mdash; similar figures.</strong> Corresponding side lengths of similar triangles are always in proportion. Every scale-factor and similar-triangle question is a Class-9 proportion in disguise.</li>
+          <li><strong>SAT and SHSAT.</strong> Unit conversion, rate problems, mixtures, maps and scale drawings, and geometry with similar figures all reduce to setting up and solving one proportion.</li>
+          <li><strong>Science.</strong> Density = mass/volume, speed = distance/time, and every dilution problem in chemistry are proportions.</li>
+        </ul>
+
+        <h2>Three mistakes students always make</h2>
+        <div class="callout">
+          <p><strong>1. Mixing up the units on the two sides.</strong> Writing <span class="eq">flour/cookies = cookies/flour</span> instead of matching top-to-top and bottom-to-bottom. Same numbers, wrong setup &mdash; and the answer will be inverted. Fix: label the units before you write the ratio.</p>
+          <p style="margin-top:10px;"><strong>2. Cross-multiplying across a plus sign.</strong> Cross-multiplication is ONLY for a proportion &mdash; two single fractions set equal. It is not a general rule. <span class="eq">1/2 + 1/3</span> is <em>not</em> <span class="eq">(1 &times; 3 + 2 &times; 1)/(2 &times; 3)</span> because of cross-multiplication &mdash; it is that because you rewrote each fraction over the common denominator 6. Do not overreach the tool.</p>
+          <p style="margin-top:10px;"><strong>3. Forgetting the scale factor moves in BOTH directions.</strong> If <span class="eq">3/5 = x/20</span>, the scale factor is &times;4 going left-to-right on the denominators. But if <span class="eq">3/5 = 12/x</span>, the scale factor is &times;4 going left-to-right on the numerators (3 &rarr; 12), which you apply to the denominator: <span class="eq">x = 5 &times; 4 = 20</span>. Same tool, different pair of matching parts.</p>
+        </div>
+
+        <h2>Fast benchmarks and sanity checks</h2>
+        <div class="shortcuts">
+          <div class="shortcuts__row"><span>Two equivalent fractions</span><span>&rarr; cross products are <strong>equal</strong></span></div>
+          <div class="shortcuts__row"><span>Larger numerator on one side</span><span>&rarr; larger numerator on the OTHER side (if denominators match up)</span></div>
+          <div class="shortcuts__row"><span>Both numerator and denominator doubled</span><span>&rarr; same ratio (equivalent fractions)</span></div>
+          <div class="shortcuts__row"><span>Only ONE of top or bottom scaled</span><span>&rarr; <span class="minus">different</span> ratio</span></div>
+          <div class="shortcuts__row"><span>x in a denominator</span><span>&rarr; expect answer with the OPPOSITE scaling direction</span></div>
+        </div>
+        <p>These are the sanity checks that catch most proportion mistakes. If your setup gives an answer that scales the wrong direction (bigger when it should be smaller), the units on your two sides are almost certainly flipped. Rewrite the ratio.</p>
+
+        <p>The 25 questions below march from checking whether ratios are proportional, through the scale-factor and cross-multiplication methods, and finish with the classic real-life word problems that put the tool to work.</p>
+
+        <h2>25 practice questions with hidden answers</h2>
+
+        <div class="section-band">Is it a proportion? (Q1&ndash;Q5)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span></div>
+          <div class="practice-question__prompt">For each pair, decide whether the two ratios form a proportion (yes or no):<ul class="practice-parts"><li>(a) 2/3 and 4/6</li><li>(b) 3/5 and 4/6</li><li>(c) 6/9 and 8/12</li><li>(d) 5/8 and 15/24</li></ul></div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer"><ul class="practice-parts"><li>(a) YES</li><li>(b) NO</li><li>(c) YES</li><li>(d) YES</li></ul></div>
+            <div class="why"><strong>Why.</strong> Cross-product test each pair. (a) 2&times;6 = 12, 3&times;4 = 12 &rarr; equal, proportional. (b) 3&times;6 = 18, 5&times;4 = 20 &rarr; not equal, not proportional. (c) 6&times;12 = 72, 9&times;8 = 72 &rarr; equal (both = 2/3). (d) 5&times;24 = 120, 8&times;15 = 120 &rarr; equal (both = 5/8).</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span></div>
+          <div class="practice-question__prompt">Is 15/20 = 9/12 a proportion? Show the cross-product check.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">YES &mdash; both ratios simplify to 3/4.</div>
+            <div class="why"><strong>Why.</strong> Cross products: 15 &times; 12 = 180 and 20 &times; 9 = 180. Equal, so the ratios are proportional. Simplifying confirms it: 15/20 = 3/4 and 9/12 = 3/4.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span></div>
+          <div class="practice-question__prompt">Is 3/8 = 5/12 a proportion?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">NO.</div>
+            <div class="why"><strong>Why.</strong> Cross products: 3 &times; 12 = 36 and 8 &times; 5 = 40. 36 &ne; 40, so the two ratios are not proportional. Simplifying: 3/8 is already lowest terms, 5/12 is already lowest terms &mdash; different fractions.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span></div>
+          <div class="practice-question__prompt">Two students disagree. Alex says 4/10 = 6/15 is a proportion. Jamie says it is not. Who is right, and why?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Alex is right. It IS a proportion &mdash; both simplify to 2/5.</div>
+            <div class="why"><strong>Why.</strong> Cross products: 4 &times; 15 = 60 and 10 &times; 6 = 60. Equal, proportional. Simplify to confirm: 4/10 = 2/5 (divide top and bottom by 2) and 6/15 = 2/5 (divide top and bottom by 3). Same fraction &rarr; proportion.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span></div>
+          <div class="practice-question__prompt">Which of the following ratios is proportional to 5/8?<ul class="practice-parts"><li>(A) 10/15</li><li>(B) 15/24</li><li>(C) 20/30</li><li>(D) 25/32</li></ul></div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">(B) 15/24.</div>
+            <div class="why"><strong>Why.</strong> Multiply top and bottom of 5/8 by 3: 15/24. Check with cross products: 5 &times; 24 = 120 and 8 &times; 15 = 120. Equal &mdash; proportional. The others fail: 5&times;15 = 75, 8&times;10 = 80 (A no); 5&times;30 = 150, 8&times;20 = 160 (C no); 5&times;32 = 160, 8&times;25 = 200 (D no).</div>
+          </details>
+        </div>
+
+        <div class="section-band">Solving with the scale-factor method (Q6&ndash;Q11)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span></div>
+          <div class="practice-question__prompt">Solve for x: 3/5 = x/20.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 12.</div>
+            <div class="why"><strong>Why.</strong> Denominators: 5 &rarr; 20 is &times;4. Apply the same scale factor to the numerator: x = 3 &times; 4 = 12. Sanity check: 12/20 = 3/5. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span></div>
+          <div class="practice-question__prompt">Solve for x: 4/7 = 12/x.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 21.</div>
+            <div class="why"><strong>Why.</strong> Numerators: 4 &rarr; 12 is &times;3. Apply the same scale factor to the denominator: x = 7 &times; 3 = 21. Sanity check: 12/21 = 4/7. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span></div>
+          <div class="practice-question__prompt">Solve for x: 21/x = 7/2.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 6.</div>
+            <div class="why"><strong>Why.</strong> Numerators: 7 &rarr; 21 is &times;3 (going right-to-left). Apply the same scale factor to the denominator: x = 2 &times; 3 = 6. Sanity check: 21/6 = 7/2 &mdash; divide top and bottom by 3. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span></div>
+          <div class="practice-question__prompt">Solve for x: x/9 = 20/45.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 4.</div>
+            <div class="why"><strong>Why.</strong> Denominators: 9 &rarr; 45 is &times;5. So the numerator ratio also scales by 5: x &times; 5 = 20, giving x = 4. Or, simplify the right side first: 20/45 = 4/9, so x = 4 directly.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span></div>
+          <div class="practice-question__prompt">Solve for x: 6/x = 24/40.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 10.</div>
+            <div class="why"><strong>Why.</strong> Simplify the right side first: 24/40 = 3/5. So 6/x = 3/5. Numerator: 3 &rarr; 6 is &times;2. Denominator: x = 5 &times; 2 = 10. Sanity check: 6/10 = 3/5. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span></div>
+          <div class="practice-question__prompt">Solve for x: 2/3 = 10/x. Then verify by simplifying your answer.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 15.</div>
+            <div class="why"><strong>Why.</strong> Numerators: 2 &rarr; 10 is &times;5. Denominator: x = 3 &times; 5 = 15. Verify by simplifying 10/15 &mdash; divide top and bottom by 5 to get 2/3. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="section-band">Solving with cross-multiplication (Q12&ndash;Q17)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span></div>
+          <div class="practice-question__prompt">Solve for x using cross-multiplication: 4/9 = 12/x.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 27.</div>
+            <div class="why"><strong>Why.</strong> Cross-multiply: 4 &times; x = 9 &times; 12, giving 4x = 108. Divide both sides by 4: x = 27. Sanity check: 12/27 &mdash; divide top and bottom by 3 to get 4/9. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span></div>
+          <div class="practice-question__prompt">Solve for x: 5/8 = x/24.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 15.</div>
+            <div class="why"><strong>Why.</strong> Cross-multiply: 5 &times; 24 = 8 &times; x &rarr; 120 = 8x &rarr; x = 15. (Scale factor works too: 8 &rarr; 24 is &times;3, so x = 5 &times; 3 = 15.) Sanity check: 15/24 simplifies to 5/8. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span></div>
+          <div class="practice-question__prompt">Solve for x: 7/x = 3/12.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 28.</div>
+            <div class="why"><strong>Why.</strong> Cross-multiply: 7 &times; 12 = 3 &times; x &rarr; 84 = 3x &rarr; x = 28. Or simplify the right side first: 3/12 = 1/4, so 7/x = 1/4 &rarr; x = 28 by scale factor &times;7.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span></div>
+          <div class="practice-question__prompt">Solve for x: 2.5/1 = x/6.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 15.</div>
+            <div class="why"><strong>Why.</strong> Cross-multiply: 2.5 &times; 6 = 1 &times; x &rarr; 15 = x. Sanity check: 15/6 = 2.5. &#10003; This is a unit-rate proportion &mdash; 2.5 per one, scaled up to per six.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span></div>
+          <div class="practice-question__prompt">Solve for x: (x + 1)/6 = 4/3.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">x = 7.</div>
+            <div class="why"><strong>Why.</strong> Cross-multiply: 3(x + 1) = 6 &times; 4 &rarr; 3x + 3 = 24 &rarr; 3x = 21 &rarr; x = 7. Sanity check: (7 + 1)/6 = 8/6 = 4/3. &#10003; This is the algebra version of a proportion &mdash; it lives on the SHSAT.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span></div>
+          <div class="practice-question__prompt">A student writes 3/5 = 6/x and cross-multiplies to get x = 10. Another student says the answer should be 10 checked another way. Verify the answer and give both methods.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Both methods give x = 10.</div>
+            <div class="why"><strong>Why.</strong> Cross-multiplication: 3 &times; x = 5 &times; 6 &rarr; 3x = 30 &rarr; x = 10. Scale factor: 3 &rarr; 6 is &times;2, so x = 5 &times; 2 = 10. Both methods answer the same question, so they give the same value. Learning both gives you a built-in check.</div>
+          </details>
+        </div>
+
+        <div class="section-band">Proportion word problems (Q18&ndash;Q25)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span></div>
+          <div class="practice-question__prompt">A recipe uses 2 cups of flour for every 3 cookies. How many cups of flour are needed for 12 cookies?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">8 cups of flour.</div>
+            <div class="why"><strong>Why.</strong> Match units: flour/cookies = flour/cookies &rarr; 2/3 = x/12. Denominators: 3 &rarr; 12 is &times;4. So x = 2 &times; 4 = 8 cups. Sanity check: 8 cups for 12 cookies &mdash; twice the flour for four times the cookies? No, four times the flour (2 &rarr; 8) for four times the cookies (3 &rarr; 12). &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span></div>
+          <div class="practice-question__prompt">A car drives 90 miles in 2 hours at a steady speed. At the same rate, how far does the car go in 5 hours?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">225 miles.</div>
+            <div class="why"><strong>Why.</strong> Match units: miles/hours = miles/hours &rarr; 90/2 = x/5. Cross-multiply: 90 &times; 5 = 2 &times; x &rarr; 450 = 2x &rarr; x = 225 miles. Unit-rate check: 90 &divide; 2 = 45 mph. 45 &times; 5 = 225. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span></div>
+          <div class="practice-question__prompt">On a map, 1 inch represents 25 miles. How many miles apart are two cities that are 4.5 inches apart on the map?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">112.5 miles.</div>
+            <div class="why"><strong>Why.</strong> Match units: inches/miles = inches/miles &rarr; 1/25 = 4.5/x. Cross-multiply: 1 &times; x = 25 &times; 4.5 &rarr; x = 112.5 miles. Sanity check: 4.5 &times; 25 mph-equivalent = 112.5, which is between 4 &times; 25 = 100 and 5 &times; 25 = 125. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span></div>
+          <div class="practice-question__prompt">If 3 T-shirts cost $24, how much do 8 T-shirts cost at the same unit price?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">$64.</div>
+            <div class="why"><strong>Why.</strong> Match units: shirts/dollars = shirts/dollars &rarr; 3/24 = 8/x. Cross-multiply: 3x = 24 &times; 8 = 192 &rarr; x = 64. Unit-rate check: $24 &divide; 3 = $8 per shirt. 8 &times; $8 = $64. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span></div>
+          <div class="practice-question__prompt">A photocopier prints 45 pages in 3 minutes at a steady rate. How many pages does it print in 8 minutes?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">120 pages.</div>
+            <div class="why"><strong>Why.</strong> Match units: pages/minutes = pages/minutes &rarr; 45/3 = x/8. Simplify the left side first: 45/3 = 15 pages per minute. Then 15 &times; 8 = 120 pages. Or cross-multiply the original: 45 &times; 8 = 3x &rarr; 360 = 3x &rarr; x = 120.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span></div>
+          <div class="practice-question__prompt">A recipe for 6 servings calls for 2/3 cup of sugar. How much sugar for 9 servings?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">1 cup of sugar.</div>
+            <div class="why"><strong>Why.</strong> Match units: sugar/servings = sugar/servings &rarr; (2/3) / 6 = x/9. Cross-multiply: (2/3) &times; 9 = 6 &times; x &rarr; 6 = 6x &rarr; x = 1 cup. Sanity check: 9 servings is 1.5 times 6 servings, so you need 1.5 times as much sugar: 1.5 &times; 2/3 = 1 cup. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span></div>
+          <div class="practice-question__prompt">Two triangles are similar. The smaller one has sides 3, 4, and 5. The larger triangle&rsquo;s shortest side is 9. Find the lengths of the other two sides of the larger triangle.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Sides of 12 and 15.</div>
+            <div class="why"><strong>Why.</strong> Corresponding sides of similar figures are always in proportion. Set up: 3/9 = 4/x = 5/y. Scale factor is 3 &rarr; 9 = &times;3. Apply to the other sides: 4 &times; 3 = 12 and 5 &times; 3 = 15. This is exactly the proportion machinery that runs every Regents Geometry similar-triangle problem.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span></div>
+          <div class="practice-question__prompt">A worker earns $54 for 4 hours of work at a fixed hourly rate. How long must she work to earn $189? (Round to the nearest hour if needed.)</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">14 hours.</div>
+            <div class="why"><strong>Why.</strong> Match units: dollars/hours = dollars/hours &rarr; 54/4 = 189/x. Cross-multiply: 54x = 4 &times; 189 = 756 &rarr; x = 14 hours. Unit-rate check: $54 &divide; 4 = $13.50 per hour. $189 &divide; $13.50 = 14 hours. &#10003; Notice how the two methods agree &mdash; proportions and unit rates are the same tool.</div>
+          </details>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 9 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5&ndash;6 students (ages 10&ndash;12). The full arc runs from integers on the number line through systems of linear equations and probability &mdash; the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 30-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child&rsquo;s current level against the readiness signals for Pre-Algebra and Algebra 1 &mdash; and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 9 is a taste &mdash; Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days&rsquo; notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course &rarr;</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-7-decimals-four-operations">Pre-Algebra Class 7: Add, Subtract, Multiply &amp; Divide Decimals &mdash; Including Dividing by a Decimal (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers">Pre-Algebra Class 6: Add, Subtract, Multiply &amp; Divide Fractions and Mixed Numbers (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-5-equivalent-fractions-comparing-converting-decimals">Pre-Algebra Class 5: Equivalent Fractions, Comparing &amp; Converting to Decimals (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms">Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (25 Practice Questions)</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260831-prealg-class9"></script>
+  </body>
+</html>
