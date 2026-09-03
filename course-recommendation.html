@@ -327,7 +327,7 @@
       // Rolling 6-month membership FAQs
       const FALL_FAQ = [
         ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 30-minute evaluation first so we can confirm the right level. After that, you can start any week."],
-        ["How is tuition calculated?", "All courses are billed at our standard $60/hr rate. Little Newtons (60-min classes) is $246/month, Kid Einsteins (90-min classes) is $367/month, and Young Fermats (120-min classes) is $489/month — all Membership, 1×/week."],
+        ["How is tuition structured?", "Every course is billed as a monthly Membership plus a one-time $99 registration fee. Little Newtons (60-min classes, 1×/week) is $246/month, Kid Einsteins (90-min, 1×/week) is $367/month, Young Fermats — Pre-Algebra / Algebra Ignite / Geometry / Algebra II (120-min, 1×/week) and Regents Algebra 1 / Regents Geometry (120-min, 1×/week) are $489/month, SHSAT Prep (120-min, 1×/week) is $587/month, SAT Math (120-min, 1×/week) is $640/month, and AP Pre-Calculus, AP Calculus AB/BC, and AP Statistics (120-min, 1×/week) are $800/month. See each course page for the current tuition of record."],
         ["How long is the membership?", "6-month rolling membership. Start any week, monthly billing, cancel anytime with 15 days notice. Up to 4 weeks of free pause per year and one free make-up per month."],
         ["What if my child misses a session?", "We provide a written catch-up note plus worked solutions and, when scheduling allows, a 30-minute office-hour. One free make-up per month is included in every membership."],
         ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
@@ -339,6 +339,8 @@
         "little-newtons": {
           title: "Little Newtons",
           grade: "Grades 1–2 · Ages 6–8",
+          price: "$246/month",
+          duration: "60 min weekly",
           quick: "Number sense, addition/subtraction fluency, fractions first-look, word-problem language.",
           description: "Little Newtons is the foundational level of our K–3 program, built for 1st and 2nd graders. First and second grade are the years that decide whether a child grows up confident with numbers or quietly convinced that math isn't for them. We focus on number sense up to 100, addition and subtraction fluency, an honest first look at fractions and measurement, and the language of word problems. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 1–2 (ages 6–8)",
@@ -367,11 +369,13 @@
             ["Class 15", "Shapes — squares, rectangles, triangles, circles, attributes."],
             ["Class 16", "Patterns and sorting with numbers and shapes."]
           ],
-          link: "/programs#little-newtons"
+          link: "/courses/little-newtons"
         },
         "kid-einsteins": {
           title: "Kid Einsteins",
           grade: "Grades 3–4 · Ages 8–10",
+          price: "$367/month",
+          duration: "90 min weekly",
           quick: "Multiplication & division fluency, fractions, decimals, intro word problems — the upper-elementary core.",
           description: "Kid Einsteins is the upper-elementary program, built for 3rd and 4th graders. We focus on multiplication and division fluency, a careful first pass at fractions and decimals, and the structured word-problem work that pays off later on the SHSAT, SAT, and every standardized test that follows. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 3–4 (ages 8–10)",
@@ -400,11 +404,13 @@
             ["Class 15", "Multiplying decimals by whole numbers."],
             ["Class 16", "Two-step word problems with the four operations."]
           ],
-          link: "/programs#kid-einsteins"
+          link: "/courses/kid-einsteins"
         },
         "young-fermats-prealgebra": {
           title: "Young Fermats — Pre-Algebra",
           grade: "Grades 5–6 · Ages 10–12",
+          price: "$489/month",
+          duration: "120 min weekly",
           quick: "Integers, fractions, ratios, intro algebraic thinking — the foundation for everything that follows.",
           description: "Young Fermats Pre-Algebra is the entry track of our middle-school program. We close the arithmetic gaps that quietly hold middle schoolers back — signed numbers, fractions, ratios, percent — and start the transition to algebraic thinking: variables, expressions, and one-step equations. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 5–6 (ages 10–12)",
@@ -433,11 +439,13 @@
             ["Class 15", "Coordinate plane — plotting, slope intuition."],
             ["Class 16", "Inequalities on a number line."]
           ],
-          link: "/programs#young-fermats"
+          link: "/courses/young-fermats-prealgebra"
         },
         "young-fermats-algebra-ignite": {
           title: "Young Fermats — Algebra Ignite",
           grade: "Grades 7–8 · Ages 12–14",
+          price: "$489/month",
+          duration: "120 min weekly",
           quick: "Linear equations, systems, exponents, factoring — a real Algebra I track.",
           description: "Algebra Ignite is the algebra track of our middle-school program. We move past procedural \"plug and chug\" into the real reasoning Algebra I demands — multi-variable equations, systems, exponent rules, and an honest first pass at factoring quadratics. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 7–8 (ages 12–14)",
@@ -466,11 +474,13 @@
             ["Class 15", "Factoring quadratics with leading coefficient ≠ 1."],
             ["Class 16", "Function notation and evaluating functions."]
           ],
-          link: "/programs#young-fermats"
+          link: "/courses/young-fermats-algebra-ignite"
         },
         "young-fermats-geometry": {
           title: "Young Fermats — Geometry and Trigonometry",
           grade: "Grades 7–8 · Ages 12–14",
+          price: "$489/month",
+          duration: "120 min weekly",
           quick: "Angles, triangles, Pythagorean, coordinate geometry, area & volume — a real intro to proof-style thinking.",
           description: "Young Fermats Geometry runs alongside Algebra Ignite for middle-school students who are ready for a full intro geometry term. We cover angle relationships, triangle congruence, Pythagorean reasoning, coordinate geometry, area and volume — and introduce the proof-style thinking that pays off in high-school honors geometry. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 7–8 (ages 12–14)",
@@ -499,11 +509,13 @@
             ["Class 15", "Volume of pyramids, cones, and spheres."],
             ["Class 16", "Coordinate geometry — slope, lines, and shapes on the plane."]
           ],
-          link: "/programs#young-fermats"
+          link: "/courses/young-fermats-geometry"
         },
         "young-fermats-algebra-ii": {
           title: "Young Fermats — Algebra II",
           grade: "Grades 9–11 · Ages 14–17",
+          price: "$489/month",
+          duration: "120 min weekly",
           quick: "Quadratics, polynomials, radicals, exponentials, logarithms and functions — the honors-track high school course.",
           description: "Young Fermats Algebra II is the honors-track high school course in our upper-school program. We cover quadratics and polynomials, rational and radical expressions, exponential and logarithmic functions, sequences and series, and an introduction to trigonometry — the full New York Algebra II arc plus the reasoning skills needed for pre-calculus. Courses are rolling — a student can join at any meeting and continue into the next term without losing the thread.",
           level: "Grades 9–11 (ages 14–17)",
@@ -532,11 +544,13 @@
             ["Class 15", "Sequences and series — arithmetic and geometric."],
             ["Class 16", "Intro trigonometry — the unit circle and right triangles."]
           ],
-          link: "/programs#young-fermats"
+          link: "/courses/young-fermats-algebra-ii"
         },
         "shsat-prep": {
           title: "SHSAT Prep",
           grade: "Grades 7–8 · Middle School",
+          price: "$587/month",
+          duration: "120 min weekly",
           quick: "Specialized HS Admissions math — question families, timing, scratch-paper strategy.",
           description: "Focused SHSAT math prep for 7th and 8th graders aiming at Stuyvesant, Bronx Science, Brooklyn Tech and the other specialized high schools. We teach the four question families, timing discipline, and the scratch-paper strategy needed to score competitively — built on the same diagnostic reasoning we used for twenty years preparing GMAT and GRE candidates.",
           level: "Students entering 7th or 8th grade planning to sit the SHSAT",
@@ -547,7 +561,7 @@
             ["Week 4", "Probability, counting, data interpretation, and the trick patterns SHSAT loves."],
             ["Week 5", "Timed full sections + review. Scratch-paper strategy and pacing rehearsal."]
           ],
-          link: "/programs#shsat-prep",
+          link: "/courses/shsat-prep",
           fallSyllabusOverride: [
             ["Class 1", "Arithmetic foundations — fractions and decimals under SHSAT timing."],
             ["Class 2", "Percent reasoning and percent change."],
@@ -570,6 +584,8 @@
         "sat-math": {
           title: "SAT Math",
           grade: "Grades 9–11 · High School",
+          price: "$640/month",
+          duration: "120 min weekly",
           quick: "Heart of Algebra · Problem Solving & Data · Passport to Advanced Math · Additional Topics.",
           description: "SAT math prep for 9th–11th graders. We cover Heart of Algebra, Problem Solving and Data Analysis, Passport to Advanced Math, and Additional Topics — with the calculator and no-calculator strategy that actually moves the score. The goal is to raise SAT math from where the student is today to a defensible target score, using technique, not just content review.",
           level: "9th–11th graders preparing for the digital SAT",
@@ -580,7 +596,7 @@
             ["Week 4", "Additional Topics: geometry, trig basics, complex numbers, circles."],
             ["Week 5", "Full timed section + error-pattern review. Calculator vs no-calc pacing strategy."]
           ],
-          link: "/programs#sat-prep",
+          link: "/courses/sat-math",
           fallSyllabusOverride: [
             ['Mtg 1', 'Linear equations in one variable — multi-step, fractions, distribution.'],
             ['Mtg 2', 'Linear equations in two variables — slope, intercepts, parallel and perpendicular.'],
@@ -601,8 +617,10 @@
           ]
         },
         "pre-calculus": {
-          title: "Pre-Calculus",
+          title: "AP Pre-Calculus",
           grade: "Grades 10–12 · High School",
+          price: "$800/month",
+          duration: "120 min weekly",
           quick: "Functions, trig, sequences/series — the calculus foundations that actually matter.",
           description: "Pre-Calculus for high schoolers heading into AP Calc, honors precalc, or a strong Algebra II finish. We cover functions and their graphs, trigonometry, sequences and series, and the foundations calculus actually depends on. The goal is to build the function fluency — algebraic, graphical, and trigonometric — that AP Calc and honors precalc demand on day one.",
           level: "High schoolers heading into AP Calc, honors precalc, or finishing Algebra II",
@@ -613,7 +631,7 @@
             ["Week 4", "Trigonometry: unit circle, identities, equations, graphs."],
             ["Week 5", "Sequences, series, intro limits — bridge to AP Calc."]
           ],
-          link: "/programs#ap-courses",
+          link: "/courses/pre-calculus",
           fallSyllabusOverride: [
             ['Mtg 1', 'Function basics — domain, range, function notation, piecewise.'],
             ['Mtg 2', 'Function transformations — shifts, stretches, reflections.'],
@@ -632,6 +650,146 @@
             ['Mtg 15', 'Sequences, series, and summation notation.'],
             ['Mtg 16', 'Conic sections plus an intro to limits and polar coordinates.']
           ]
+        },
+        "regents-algebra-1": {
+          title: "Regents Algebra 1 Prep",
+          grade: "Grades 8–10 · High School",
+          price: "$489/month",
+          duration: "120 min weekly",
+          quick: "Full New York State Algebra 1 arc — solving, functions, systems, quadratics, statistics — aimed at the June Regents exam.",
+          description: "Regents Algebra 1 Prep is a targeted class for students sitting the New York State Algebra 1 Regents exam. We cover the full state syllabus — linear equations and inequalities, functions and their graphs, systems, exponents and polynomials, factoring, quadratics, statistics, and sequences — with steady practice on real Regents free-response and multiple-choice items. Courses are rolling; students can join any week and continue continuously into the exam window.",
+          level: "8th–10th graders preparing for the NY Regents Algebra 1 exam",
+          syllabus: [
+            ["Week 1", "Linear equations and inequalities in one variable."],
+            ["Week 2", "Linear functions — slope, forms, systems."],
+            ["Week 3", "Exponents, polynomials, and factoring."],
+            ["Week 4", "Quadratic functions and equations."],
+            ["Week 5", "Statistics, sequences, and Regents-style free response."]
+          ],
+          fallSyllabusOverride: [
+            ["Class 1", "Linear equations in one variable — multi-step."],
+            ["Class 2", "Linear inequalities and compound inequalities."],
+            ["Class 3", "Word-to-equation translation — linear."],
+            ["Class 4", "Slope, intercepts, and line forms."],
+            ["Class 5", "Systems by substitution and elimination."],
+            ["Class 6", "Systems graphically and word problems."],
+            ["Class 7", "Exponent rules and scientific notation."],
+            ["Class 8", "Polynomial operations — add, subtract, multiply."],
+            ["Class 9", "Factoring — GCF and difference of squares."],
+            ["Class 10", "Factoring quadratics (a = 1 and a ≠ 1)."],
+            ["Class 11", "Solving quadratics — factoring and square roots."],
+            ["Class 12", "Quadratic formula and the discriminant."],
+            ["Class 13", "Function notation and evaluating functions."],
+            ["Class 14", "Sequences — arithmetic and geometric."],
+            ["Class 15", "Statistics — mean, median, standard deviation, box plots."],
+            ["Class 16", "Regents free-response strategy — timed practice."]
+          ],
+          link: "/courses/regents-algebra-1"
+        },
+        "regents-geometry": {
+          title: "Regents Geometry &amp; Trigonometry Prep",
+          grade: "Grades 9–11 · High School",
+          price: "$489/month",
+          duration: "120 min weekly",
+          quick: "Full NYS Geometry arc — proofs, similarity, right-triangle trig, circles, coordinate geometry, transformations — built for the Regents exam.",
+          description: "Regents Geometry Prep covers the full New York State Geometry syllabus for students sitting the June Regents. We build proof-style reasoning, similarity and congruence, right-triangle trigonometry, circle theorems, coordinate geometry, and rigid-motion transformations — all with steady practice on real Regents items. Courses are rolling; students can join any week and continue continuously.",
+          level: "9th–11th graders preparing for the NY Regents Geometry exam",
+          syllabus: [
+            ["Week 1", "Points, lines, angles, and parallel-line theorems."],
+            ["Week 2", "Triangle congruence and similarity — two-column proofs."],
+            ["Week 3", "Right-triangle trigonometry and special right triangles."],
+            ["Week 4", "Quadrilaterals, polygons, and area."],
+            ["Week 5", "Circles, coordinate geometry, and rigid-motion transformations."]
+          ],
+          fallSyllabusOverride: [
+            ["Class 1", "Points, lines, planes, and angle vocabulary."],
+            ["Class 2", "Angle pairs and parallel-line theorems."],
+            ["Class 3", "Triangle angle sum and exterior angles."],
+            ["Class 4", "Triangle congruence — SSS, SAS, ASA, AAS."],
+            ["Class 5", "Two-column proofs — introduction."],
+            ["Class 6", "Similar triangles and proportional sides."],
+            ["Class 7", "Special right triangles — 45–45–90 and 30–60–90."],
+            ["Class 8", "Right-triangle trigonometry — sin, cos, tan."],
+            ["Class 9", "Law of sines and law of cosines."],
+            ["Class 10", "Quadrilaterals and their properties."],
+            ["Class 11", "Polygon interior and exterior angles."],
+            ["Class 12", "Area and perimeter of composite figures."],
+            ["Class 13", "Circles — arcs, chords, tangents, and inscribed angles."],
+            ["Class 14", "Volume and surface area of solids."],
+            ["Class 15", "Coordinate geometry — distance, midpoint, slope."],
+            ["Class 16", "Rigid motions and Regents free-response strategy."]
+          ],
+          link: "/courses/regents-geometry"
+        },
+        "ap-calculus": {
+          title: "AP Calculus AB/BC",
+          grade: "Grades 11–12 · High School",
+          price: "$800/month",
+          duration: "120 min weekly",
+          quick: "Limits, derivatives, integrals — the full AP Calc AB arc with a bridge into BC topics.",
+          description: "AP Calculus AB/BC for high schoolers sitting the AP exam. We cover the full AB syllabus — limits, derivatives, applications of derivatives, integrals, and differential equations — with a bridge into BC topics (parametric, polar, series). Every unit is built for the AP scoring criteria: setup, notation, and the units that graders actually credit.",
+          level: "11th–12th graders preparing for AP Calculus AB or BC",
+          syllabus: [
+            ["Week 1", "Limits and continuity."],
+            ["Week 2", "Derivatives — rules and applications."],
+            ["Week 3", "Related rates, optimization, and curve sketching."],
+            ["Week 4", "Definite and indefinite integrals — FTC."],
+            ["Week 5", "Applications of integrals + BC bridge (parametric, polar, series)."]
+          ],
+          fallSyllabusOverride: [
+            ["Class 1", "Limits — graphical, numerical, and algebraic."],
+            ["Class 2", "Continuity and the Intermediate Value Theorem."],
+            ["Class 3", "Definition of the derivative and derivative rules."],
+            ["Class 4", "Product, quotient, and chain rules."],
+            ["Class 5", "Implicit differentiation and inverse functions."],
+            ["Class 6", "Related rates."],
+            ["Class 7", "Extreme values, MVT, and curve sketching."],
+            ["Class 8", "Optimization word problems."],
+            ["Class 9", "Antiderivatives and indefinite integrals."],
+            ["Class 10", "Riemann sums and definite integrals."],
+            ["Class 11", "Fundamental Theorem of Calculus — both parts."],
+            ["Class 12", "u-substitution."],
+            ["Class 13", "Area between curves and volumes of revolution."],
+            ["Class 14", "Differential equations and slope fields."],
+            ["Class 15", "BC bridge — parametric and polar."],
+            ["Class 16", "BC bridge — sequences and series (intro)."]
+          ],
+          link: "/courses/ap-calculus"
+        },
+        "ap-statistics": {
+          title: "AP Statistics",
+          grade: "Grades 10–12 · High School",
+          price: "$800/month",
+          duration: "120 min weekly",
+          quick: "Exploratory data, sampling & experiments, probability & sampling distributions, inference — the four AP Stats units.",
+          description: "AP Statistics for high schoolers taking the AP exam. We cover all four AP units — exploratory data analysis, sampling and experimental design, probability and sampling distributions, and inference — with steady practice on AP free-response and calculator technique. Every unit is graded against the AP scoring rubric so students learn to write answers the way readers score them.",
+          level: "10th–12th graders preparing for AP Statistics",
+          syllabus: [
+            ["Week 1", "Exploring one-variable data — distributions, summary statistics."],
+            ["Week 2", "Exploring two-variable data — regression and correlation."],
+            ["Week 3", "Sampling and experimental design."],
+            ["Week 4", "Probability and sampling distributions."],
+            ["Week 5", "Inference — confidence intervals and hypothesis tests."]
+          ],
+          fallSyllabusOverride: [
+            ["Class 1", "One-variable data — shape, center, spread."],
+            ["Class 2", "Boxplots, outliers, and comparing distributions."],
+            ["Class 3", "Two-variable data — scatterplots and correlation."],
+            ["Class 4", "Least-squares regression and residuals."],
+            ["Class 5", "Sampling methods and bias."],
+            ["Class 6", "Experimental design — randomization and blocking."],
+            ["Class 7", "Probability — addition, multiplication, conditional."],
+            ["Class 8", "Random variables — discrete and continuous."],
+            ["Class 9", "Binomial and geometric distributions."],
+            ["Class 10", "Sampling distributions — proportions and means."],
+            ["Class 11", "Confidence intervals for proportions."],
+            ["Class 12", "Confidence intervals for means."],
+            ["Class 13", "Hypothesis tests for proportions."],
+            ["Class 14", "Hypothesis tests for means — one and two samples."],
+            ["Class 15", "Chi-square tests — goodness of fit and independence."],
+            ["Class 16", "AP FRQ strategy — timed practice."]
+          ],
+          link: "/courses/ap-statistics"
         }
       };
 
@@ -641,7 +799,7 @@
           label: "Weekday Membership",
           dateRange: "Rolling 6-month enrollment · start any week",
           cadence: "1 class/week · length varies by course",
-          tuition: "$60/hr standard rate · Membership from $246/month",
+          tuition: "Monthly membership · $246–$800/month (varies by course) + $99 one-time registration",
           summary: "Rolling 6-month membership paced to the NYC school calendar. Students can join any week and stay enrolled continuously — monthly billing, cancel anytime with 15 days notice.",
           link: "/fall-schedule",
           faq: FALL_FAQ,
@@ -652,16 +810,20 @@
             "young-fermats-algebra-ignite":{ days: "Mon or Thu", time: "5:00 – 7:00 PM", perWeek: 1 },
             "young-fermats-geometry":      { days: "Monday",     time: "7:00 – 9:00 PM", perWeek: 1 },
             "young-fermats-algebra-ii":    { days: "Tuesday",    time: "6:15 – 8:15 PM", perWeek: 1 },
+            "regents-algebra-1":            { days: "Friday",     time: "5:00 – 7:00 PM", perWeek: 1 },
+            "regents-geometry":             { days: "Friday",     time: "3:00 – 5:00 PM", perWeek: 1 },
             "shsat-prep":                  { days: "Wednesday",  time: "6:15 – 8:15 PM", perWeek: 1 },
             "sat-math":                    { days: "Thursday",   time: "7:00 – 9:00 PM", perWeek: 1 },
-            "pre-calculus":                { days: "Friday",     time: "7:00 – 9:00 PM", perWeek: 1 }
+            "pre-calculus":                { days: "Friday",     time: "7:00 – 9:00 PM", perWeek: 1 },
+            "ap-calculus":                 { days: "Thursday",   time: "5:00 – 7:00 PM", perWeek: 1 },
+            "ap-statistics":               { days: "Thursday",   time: "3:00 – 5:00 PM", perWeek: 1 }
           }
         },
         "weekends": {
           label: "Weekend Membership",
           dateRange: "Rolling 6-month enrollment · start any week",
           cadence: "1 class/week · Saturdays or Sundays",
-          tuition: "$60/hr standard rate · Membership from $246/month",
+          tuition: "Monthly membership · $246–$800/month (varies by course) + $99 one-time registration",
           summary: "Weekend track for families whose weekdays are too packed. Same rolling syllabus as weekday — a student can join any week and continue continuously.",
           link: "/weekends-schedule",
           faq: FALL_FAQ,
@@ -670,6 +832,8 @@
             "kid-einsteins":               { days: "Sat or Sun", time: "11:00 AM – 12:30 PM", perWeek: 1 },
             "young-fermats-prealgebra":    { days: "Saturdays", time: "1:00 – 3:00 PM",   perWeek: 1 },
             "young-fermats-algebra-ignite":{ days: "Sundays",   time: "1:00 – 3:00 PM",   perWeek: 1 },
+            "sat-math":                    { days: "Saturdays", time: "11:00 AM – 1:00 PM", perWeek: 1 },
+            "pre-calculus":                { days: "Sundays",   time: "11:00 AM – 1:00 PM", perWeek: 1 },
             "ap-calculus":                 { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },
             "ap-statistics":               { days: "Sundays",   time: "3:00 – 5:00 PM",   perWeek: 1 }
           }
@@ -772,11 +936,10 @@
           if (end < start) end += 12*60;
           return end - start;
         })();
-        const weeks = (activeTerm === "fall" || activeTerm === "weekends") ? 16 : 5;
-        const totalSessions = perWeek * weeks;
-        const totalHours = (totalSessions * sessionMin) / 60;
-        const sessionCount = `${totalSessions} sessions · ${sessionMin} min each · ${perWeek}×/week`;
-        const tuition = `$${(totalHours * 60).toLocaleString("en-US")} (${totalHours} h × $60/hr)`;
+        const sessionCount = `${perWeek} class/week · ${sessionMin} min per class · rolling monthly`;
+        const tuition = c.price
+          ? `${c.price} membership · $99 one-time registration`
+          : "Monthly membership · see course page for current tuition";
 
         detailEl.innerHTML = `
           <div class="crec-detail-head">
@@ -791,7 +954,7 @@
             <div class="crec-fact"><span class="crec-fact-label">Dates</span><span class="crec-fact-value">${term.dateRange}</span></div>
             <div class="crec-fact"><span class="crec-fact-label">Days</span><span class="crec-fact-value">${sched.days}</span></div>
             <div class="crec-fact"><span class="crec-fact-label">Time</span><span class="crec-fact-value">${sched.time}</span></div>
-            <div class="crec-fact"><span class="crec-fact-label">Sessions</span><span class="crec-fact-value">${sessionCount}</span></div>
+            <div class="crec-fact"><span class="crec-fact-label">Class format</span><span class="crec-fact-value">${sessionCount}</span></div>
             <div class="crec-fact"><span class="crec-fact-label">Tuition</span><span class="crec-fact-value">${tuition}</span></div>
             <div class="crec-fact"><span class="crec-fact-label">Level</span><span class="crec-fact-value">${c.level}</span></div>
             <div class="crec-fact"><span class="crec-fact-label">Cadence</span><span class="crec-fact-value">${term.cadence}</span></div>
