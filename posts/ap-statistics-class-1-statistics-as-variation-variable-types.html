@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AP Statistics Class 1 — Statistics as the Study of Variation &amp; Variable Types (Unit 1) | SOMATH NYC</title>
+    <meta name="description" content="Free AP Statistics Class 1 practice: statistics as the study of variation, population vs. sample, parameter vs. statistic, and categorical vs. quantitative (discrete vs. continuous) variables. Theory + 20 original SOMATH practice questions with click-to-reveal answers." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/ap-statistics-class-1-statistics-as-variation-variable-types" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AP Statistics Class 1 — Statistics as the Study of Variation &amp; Variable Types" />
+    <meta property="og:description" content="AP Statistics Class 1: statistics as the study of variation, population vs. sample, parameter vs. statistic, and classifying variables as categorical or quantitative. Theory + 20 original practice questions with hidden answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/ap-statistics-class-1-statistics-as-variation-variable-types" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-09-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AP Statistics Class 1 — Statistics as the Study of Variation &amp; Variable Types" />
+    <meta name="twitter:description" content="AP Stats Class 1: variation, population vs. sample, parameter vs. statistic, categorical vs. quantitative. Theory + 20 practice questions." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/og/blog.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .fact-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:820px; }
+      .fact-table th, .fact-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .fact-table th { background:#0a3a5f; color:#fff; }
+      .fact-table tr:nth-child(even) { background:#fafafa; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.5; overflow-x:auto; font-size:0.96rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:760px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & work"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & work"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+    </style>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AP Statistics Class 1 — Statistics as the Study of Variation & Variable Types (Unit 1)",
+  "description": "The first 2-hour class of SOMATH's AP Statistics arc: why statistics is the language of variation, population vs. sample, parameter vs. statistic, and how to classify any variable as categorical or quantitative. Full theory + 20 original practice questions with click-to-reveal answers.",
+  "image": "https://www.schoolofmath.us/assets/og/blog.jpg",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/ap-statistics-class-1-statistics-as-variation-variable-types"
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#school",
+  "name": "School of Math (SOMATH)",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th Street, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Upper West Side, Manhattan" },
+    { "@type": "Place", "name": "Manhattan" },
+    { "@type": "Place", "name": "New York City" }
+  ]
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does AP Statistics Class 1 cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class 1 introduces the whole discipline of statistics as the study of variation, defines the difference between a population and a sample, distinguishes a parameter (population) from a statistic (sample), and teaches how to classify any variable as categorical (nominal or ordinal) or quantitative (discrete or continuous)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I tell if a variable is categorical or quantitative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ask whether arithmetic on the values has real-world meaning. If you can compute a meaningful mean (like average height in cm), the variable is quantitative. If the values only label groups (like blood type or ZIP code), the variable is categorical, even when the labels look like numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between discrete and continuous quantitative variables?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Discrete variables come from counting in whole units (number of siblings, number of pepperoni slices). Continuous variables come from measuring on a scale where fractional values are possible (height in cm, time in seconds, mass in grams)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a parameter and a statistic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A parameter is a number that describes an entire population (often unknown and denoted with Greek letters like mu or p). A statistic is a number computed from a sample (denoted x-bar for a sample mean or p-hat for a sample proportion). The whole point of statistical inference is to use statistics to estimate parameters."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does AP Statistics start with the idea of variation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because if repeated measurements were always identical there would be no need for statistics — one number would answer every question. Statistics exists to describe, summarize, and reason about the variation that shows up in real data, and every later unit (distributions, sampling, inference) is a different tool for handling variation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is SOMATH's AP Statistics course structured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SOMATH teaches AP Statistics in 2-hour classes on the Upper West Side of Manhattan. Unit 1 (Exploring One-Variable Data) is split into 8 classes: Class 1 (this page) covers variation and variable types, followed by displaying categorical data, displaying quantitative data, describing distributions with SOCS, summary statistics for center, summary statistics for spread and boxplots, the normal distribution and z-scores, and a review + assessment class."
+      }
+    }
+  ]
+}</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Statistics &middot; Unit 1 &middot; Class 1 of 8 &middot; Grades 10&ndash;12</p>
+      <h1 class="post__title">AP Statistics Class 1 &mdash; Statistics as the Study of Variation &amp; Variable Types</h1>
+      <p class="post__dek">The first 2-hour class of SOMATH&rsquo;s AP Statistics arc: why statistics is the language of variation, the difference between a population and a sample, and how to classify any variable as categorical or quantitative (and quantitative as discrete or continuous). Full theory, worked examples, and <strong>20 original practice questions</strong> with click-to-reveal step-by-step answers. Built by SOMATH on the Upper West Side of NYC.</p>
+      <p class="post__meta"><time datetime="2026-09-06">2026-09-06</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+        <p>Welcome to the first class of SOMATH&rsquo;s AP Statistics arc. If AP Calculus is the study of continuous change, AP Statistics is the study of <em>variation</em> &mdash; the fact that repeated measurements are almost never identical, and the discipline of describing and reasoning about that variation. Class 1 lays down the vocabulary the entire course rests on: <strong>population vs. sample</strong>, <strong>parameter vs. statistic</strong>, and how to classify any variable as <strong>categorical or quantitative</strong> (and quantitative as <strong>discrete or continuous</strong>).</p>
+        <p>This post covers every idea from Class 1 with the same detail we teach in the classroom at 226 W 79th Street, plus <strong>20 original practice questions</strong> with click-to-reveal step-by-step answers. Attempt each question first, then reveal to compare your reasoning to ours. When you finish, you should be able to look at any dataset column and say &mdash; without hesitation &mdash; which family of variable it is and which displays and summaries are legal for it.</p>
+        <p>SOMATH&rsquo;s AP Statistics course runs in 2-hour small-group classes on the Upper West Side. If your student wants a structured, in-person path through the AP exam, <a href="/evaluation">book a free 30-minute in-person diagnostic evaluation</a> or call <strong>(646) 668-6151</strong>.</p>
+
+        <nav class="toc" aria-label="Table of contents"><h2>On this page</h2><ol>
+          <li><a href="#big-idea">The big idea: statistics is the study of variation</a></li>
+          <li><a href="#pop-sample">Population vs. sample, parameter vs. statistic</a></li>
+          <li><a href="#var-types">Classifying variables: categorical vs. quantitative</a></li>
+          <li><a href="#discrete-continuous">Discrete vs. continuous quantitative variables</a></li>
+          <li><a href="#recap">Class 1 recap &mdash; the vocabulary in one table</a></li>
+          <li><a href="#answer-key">Answer key for all 20 practice questions</a></li>
+          <li><a href="#part-1">Practice: Questions 1&ndash;8 (categorical vs. quantitative)</a></li>
+          <li><a href="#part-2">Practice: Questions 9&ndash;12 (discrete vs. continuous)</a></li>
+          <li><a href="#part-3">Practice: Questions 13&ndash;15 (population, sample, parameter, statistic)</a></li>
+          <li><a href="#part-4">Practice: Questions 16&ndash;18 (variation and why statistics)</a></li>
+          <li><a href="#part-5">Practice: Questions 19&ndash;20 (mixed applied)</a></li>
+          <li><a href="#faq">AP Statistics FAQ</a></li>
+        </ol></nav>
+
+        <h2 id="big-idea">The big idea: statistics is the study of variation</h2>
+        <p>Ask a barista to pull twenty 30 mL espresso shots in a row. Weigh each one. You will get twenty different numbers &mdash; 29.6 mL, 30.2 mL, 29.4 mL, 30.1 mL, and so on &mdash; all clustered around 30 mL but none of them exactly equal to it. That spread is called <strong>variation</strong>, and it is the fundamental fact that motivates the entire discipline of statistics.</p>
+        <div class="theory-box"><h3>The one-sentence definition</h3><p><strong>Statistics is the science of collecting, describing, and drawing conclusions from data that varies.</strong> If every measurement were identical there would be no statistics course &mdash; one number would answer every question. The whole subject exists because repeated measurements are not identical.</p></div>
+        <p>Every unit of the AP Statistics course is a different lens on variation. Unit 1 (this unit) describes the variation in a single variable. Unit 2 describes how two variables vary together. Units 4 and 5 build a probability model for variation. Units 6, 7, 8, and 9 use that model to decide when observed variation is a real signal and when it&rsquo;s just noise. If you keep &ldquo;variation&rdquo; as your north star, every unit will connect back to Class 1.</p>
+
+        <h2 id="pop-sample">Population vs. sample, parameter vs. statistic</h2>
+        <p>Almost every question in statistics has the same structure: <em>there is a group I care about, and I want to know a number about that group, but I cannot measure the whole group so I measure a subset instead.</em> The four words that name the pieces of that sentence appear in every AP Statistics free-response question you will ever solve.</p>
+        <div class="theory-box"><h3>The four-word vocabulary</h3>
+          <ul>
+            <li><strong>Population</strong> &mdash; the entire group you want to describe. Example: all 12-year-old girls in New York City.</li>
+            <li><strong>Sample</strong> &mdash; the subset of the population you actually measured. Example: 200 randomly chosen 12-year-old girls.</li>
+            <li><strong>Parameter</strong> &mdash; a true number describing the population. Usually <em>unknown</em>, denoted with Greek letters (&mu; for mean, &sigma; for standard deviation, p for proportion).</li>
+            <li><strong>Statistic</strong> &mdash; a number computed from the sample. Usually <em>known</em> (you just measured it), denoted with Roman letters or hats (x&#772; for sample mean, s for sample standard deviation, p&#770; for sample proportion).</li>
+          </ul>
+          <p>Every statistic estimates a parameter. The whole rest of the course &mdash; especially Units 6 through 9 &mdash; is a set of tools for saying <em>how close</em> the statistic is to the parameter.</p>
+        </div>
+        <div class="callout"><strong>Notation habit to build now:</strong> whenever you see a Greek letter (&mu;, &sigma;, p) you are looking at a parameter. Whenever you see a Roman letter or a hat (x&#772;, s, p&#770;) you are looking at a statistic. This one habit prevents about a third of the mistakes AP students make on Units 6&ndash;9 free-response questions.</div>
+
+        <h2 id="var-types">Classifying variables: categorical vs. quantitative</h2>
+        <p>Before you draw a single graph or compute a single number, you have to classify every column of your dataset. The classification determines which displays are legal (bar charts vs. histograms) and which summaries are legal (mode vs. mean).</p>
+        <div class="theory-box"><h3>Categorical variables</h3>
+          <p>A <strong>categorical</strong> variable takes values that are labels of groups, not amounts of anything. Examples: blood type (A / B / AB / O), preferred workout (cardio / weights / classes), whether a student takes AP Statistics (yes / no).</p>
+          <p>Categorical variables split into two sub-families:</p>
+          <ul>
+            <li><strong>Nominal</strong> &mdash; the labels have no natural order. Blood type. ZIP code. Subway line.</li>
+            <li><strong>Ordinal</strong> &mdash; the labels have a natural order but not a numeric distance. T-shirt size (S &lt; M &lt; L &lt; XL). Fitzpatrick skin scale (I through VI). Likert-scale survey ratings (1&ndash;5 satisfaction).</li>
+          </ul>
+        </div>
+        <div class="theory-box"><h3>Quantitative variables</h3>
+          <p>A <strong>quantitative</strong> variable takes numeric values on which arithmetic (adding, averaging, subtracting) has real-world meaning. Examples: height in cm, weekly income in dollars, number of siblings, time to run a mile.</p>
+          <p>Quantitative variables also split into two sub-families:</p>
+          <ul>
+            <li><strong>Discrete</strong> &mdash; comes from counting in whole units. Number of siblings. Number of pepperoni slices. Goals scored.</li>
+            <li><strong>Continuous</strong> &mdash; comes from measuring on a scale where fractional values are possible. Height in cm. Time in seconds. Mass in grams. Temperature in &deg;F.</li>
+          </ul>
+        </div>
+        <div class="callout"><strong>The one-question test:</strong> ask, &ldquo;does arithmetic on the raw values have real-world meaning?&rdquo; If yes, the variable is <em>quantitative</em>. If no, it&rsquo;s <em>categorical</em>, even if the values look like numbers (ZIP code, jersey number, phone number, satisfaction rating).</div>
+
+        <h2 id="discrete-continuous">Discrete vs. continuous quantitative variables</h2>
+        <p>Once you know a variable is quantitative, the next question is which sub-family. The short version: <em>counting is discrete, measuring is continuous</em>.</p>
+        <div class="theory-box"><h3>The counting-vs-measuring test</h3>
+          <p><strong>Discrete</strong> quantitative variables are those you count in whole units. The set of possible values is a fixed grid (0, 1, 2, 3, ... or possibly negative integers) with no fractional values between grid points. Number of siblings, number of eggs in a carton, number of AP courses taken.</p>
+          <p><strong>Continuous</strong> quantitative variables are those you measure on a scale where fractional values are always possible. Between any two heights (say 170.4 cm and 170.5 cm) there is another possible height (170.44 cm). With a better instrument you can always add more decimal places. Height, weight, time, mass, temperature, distance.</p>
+        </div>
+        <div class="callout"><strong>The classic trap:</strong> classify the <em>recorded variable</em>, not the underlying phenomenon. Shoe size <em>encodes</em> a continuous measurement (foot length) but the recorded values are locked to a half-size grid (6, 6.5, 7, 7.5) &mdash; so shoe size is discrete. Mass to the nearest 0.01 g is <em>continuous</em> because the 0.01 g precision is an instrument limitation, not part of the variable&rsquo;s definition.</div>
+
+        <h2 id="recap">Class 1 recap &mdash; the vocabulary in one table</h2>
+        <table class="fact-table">
+          <thead><tr><th>Term</th><th>Meaning</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Population</td><td>The entire group you want to describe</td><td>All 12-year-old girls in NYC</td></tr>
+            <tr><td>Sample</td><td>The subset you actually measured</td><td>200 randomly chosen 12-year-old girls in NYC</td></tr>
+            <tr><td>Parameter</td><td>A true number describing the population (usually unknown; Greek letters)</td><td>&mu; = true mean height of the population</td></tr>
+            <tr><td>Statistic</td><td>A number computed from the sample (Roman letters or hats)</td><td>x&#772; = 152.4 cm sample mean</td></tr>
+            <tr><td>Categorical, nominal</td><td>Labels of groups, no order</td><td>Blood type, ZIP code, subway line</td></tr>
+            <tr><td>Categorical, ordinal</td><td>Labels with an order but no numeric distance</td><td>T-shirt size, Likert 1&ndash;5 rating</td></tr>
+            <tr><td>Quantitative, discrete</td><td>Counted in whole units</td><td>Number of siblings, goals scored</td></tr>
+            <tr><td>Quantitative, continuous</td><td>Measured on a scale allowing fractions</td><td>Height in cm, mile time in seconds</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="answer-key">Answer key for all 20 practice questions</h2>
+        <table class="answer-key-table"><thead><tr><th>Q #</th><th>Answer</th></tr></thead><tbody>
+<tr><td>1</td><td>Categorical</td></tr>
+<tr><td>2</td><td>Quantitative (continuous)</td></tr>
+<tr><td>3</td><td>Quantitative (discrete)</td></tr>
+<tr><td>4</td><td>Categorical (ordinal)</td></tr>
+<tr><td>5</td><td>Categorical</td></tr>
+<tr><td>6</td><td>Quantitative (continuous)</td></tr>
+<tr><td>7</td><td>Categorical</td></tr>
+<tr><td>8</td><td>Quantitative (continuous)</td></tr>
+<tr><td>9</td><td>(a) D, (b) C, (c) C, (d) D</td></tr>
+<tr><td>10</td><td>Discrete</td></tr>
+<tr><td>11</td><td>Continuous</td></tr>
+<tr><td>12</td><td>Discrete</td></tr>
+<tr><td>13</td><td>(a) All 12-year-old girls in NYC. (b) The 200 measured girls. (c) The true mean height of the population (usually written &mu;). (d) The sample mean 152.4 cm (usually written x&#772;).</td></tr>
+<tr><td>14</td><td>Parameter</td></tr>
+<tr><td>15</td><td>(a) All U.S. adults (or all U.S. adult voters, depending on the survey&rsquo;s stated scope). (b) The 1,022 adults who were surveyed. (c) The true proportion p of all U.S. adults who approve of the mayor. (d) The sample proportion p&#770; = 0.54.</td></tr>
+<tr><td>16</td><td>No two shots are exactly 30 mL &mdash; the values vary around the target &mdash; and statistics is the discipline that describes and reasons about that variation.</td></tr>
+<tr><td>17</td><td>Doctor B&rsquo;s measurements show more variability. That suggests Doctor B&rsquo;s measuring technique (or ruler) is less consistent than Doctor A&rsquo;s.</td></tr>
+<tr><td>18</td><td>The student is missing information about the <em>variability</em> (spread) of the scores. Two students with the same 89.2 average could have very different consistency &mdash; one might range from 85 to 93 (like this student), another from 60 to 100.</td></tr>
+<tr><td>19</td><td>(a) Quantitative discrete (age in whole years) &mdash; also acceptable: quantitative continuous if age is recorded to fractions of a year. (b) Categorical ordinal (I &lt; II &lt; III &lt; IV &lt; V &lt; VI). (c) Categorical nominal (yes / no). (d) Quantitative discrete (count). (e) Quantitative discrete (SPF values are labeled 15, 30, 50, 70, 100 &mdash; a step grid).</td></tr>
+<tr><td>20</td><td>(a) Population = all people who live within 10 blocks of the new gym. (b) Sample = the 500 people the gym surveys. (c) Any variable like: preferred workout type (cardio / weights / classes / mixed), yes/no already a gym member, membership tier interest. (d) Any variable like: age in years, weekly hours currently spent exercising, monthly amount currently spent on fitness. (e) A parameter describes the population (unknown, e.g., the true mean age); a statistic describes the sample (computed from the 500 responses).</td></tr>
+        </tbody></table>
+
+<div class="part-header" id="part-1"><h2>Questions 1&ndash;8: Classify variables as categorical or quantitative</h2><p>Eight short warm-ups on the single most important skill of Class 1: labeling every column in a dataset before you do anything else.</p></div>
+<div class="qbox">
+<h3>Question 1 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A biology teacher records each student&rsquo;s <strong>blood type</strong> (A, B, AB, or O). Is this variable categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Categorical</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A variable is <em>quantitative</em> only if arithmetic (adding, averaging) on its values makes sense. Blood type labels a group; you cannot compute a &ldquo;mean blood type.&rdquo;</p>
+<span class="work">Values: A, B, AB, O
+Can you add A + B? No.
+Can you compute an average? No.
+&rarr; Categorical (specifically, nominal &mdash; no natural order).</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The blood-type labels are names of groups, not amounts of anything. Whenever the values are words (or codes standing in for words), start by suspecting <em>categorical</em>.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 2 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A pediatrician records each child&rsquo;s <strong>height in centimeters</strong> at the 5-year checkup. Is this variable categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Quantitative (continuous)</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A measurement in real units where arithmetic makes sense is quantitative. Height comes from a measuring device on a continuous scale.</p>
+<span class="work">Values: 108.4 cm, 112.1 cm, 105.7 cm, ...
+Mean height? Yes &mdash; adds and divides.
+Between any two heights there is another height &rarr; continuous.
+&rarr; Quantitative, continuous.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Anything you <em>measure</em> (length, weight, time, temperature) is quantitative continuous. Anything you <em>count</em> in whole units is quantitative discrete (Q3 next).</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 3 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A pizzeria records the <strong>number of pepperoni slices on each pie</strong> that leaves the oven. Is this categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Quantitative (discrete)</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> You count pepperoni slices with whole numbers &mdash; you cannot have 12.7 slices. Counts are quantitative discrete.</p>
+<span class="work">Values: 12, 15, 14, 13, 16, 12, ...
+Mean = (12+15+14+13+16+12)/6 = 82/6 &asymp; 13.67 slices per pie.
+The mean is not an integer, but the raw values are &mdash; that&rsquo;s the discrete signature.
+&rarr; Quantitative, discrete.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The variable takes only integer values, but the summary statistics (mean, median) can be any real number. Discrete quantitative variables come from counting.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 4 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A survey asks respondents: &ldquo;On a scale of 1 to 5, how satisfied are you with your job?&rdquo; The recorded value is <strong>the satisfaction rating</strong>. Categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Categorical (ordinal)</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Rating-scale answers look numeric but the numbers only label ordered categories. The gap between 1 and 2 is not guaranteed to equal the gap between 4 and 5. On the AP exam, treat these as <em>categorical ordinal</em>.</p>
+<span class="work">Values: 1, 2, 3, 4, 5
+Is the &ldquo;distance&rdquo; between 1 and 2 the same as between 4 and 5? Not really &mdash; it depends on how each respondent felt.
+The values encode <em>order</em>, but not <em>amount</em>.
+&rarr; Categorical, ordinal.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Categorical variables split into <em>nominal</em> (blood type, no order) and <em>ordinal</em> (rating, T-shirt size &mdash; order but no true numeric distance). Ordinal variables are the classic AP trap.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 5 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A middle school records each student&rsquo;s <strong>ZIP code</strong> for the emergency contact form. Is ZIP code categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Categorical</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Even though ZIP codes look like numbers, arithmetic on them is meaningless &mdash; the average of 10024 and 10025 is not a real ZIP code you can mail to.</p>
+<span class="work">Values: 10024, 10025, 10023, ...
+Mean ZIP = (10024 + 10025 + 10023)/3 &asymp; 10024. That number labels a neighborhood, not a &ldquo;typical amount.&rdquo;
+ZIP codes label geographic groups.
+&rarr; Categorical.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Ask: <em>does arithmetic have real-world meaning?</em> If no, it is categorical, even when the values are digits. Same idea for phone numbers, student ID numbers, and jersey numbers.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 6 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A weather station records the <strong>daily high temperature in Fahrenheit</strong> at Central Park for each day of September. Categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Quantitative (continuous)</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Temperature is measured on a continuous scale; arithmetic (mean daily high, differences) is meaningful and standard.</p>
+<span class="work">Values: 78.4&deg;F, 81.2&deg;F, 76.9&deg;F, ...
+Mean high for September = sum &divide; 30.
+Between 78.4 and 78.5 there are infinitely many possible values &rarr; continuous.
+&rarr; Quantitative, continuous.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Any physical measurement with a fractional scale is continuous quantitative. Temperature, height, weight, time, and distance all fall in this family.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 7 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A subway operator records the <strong>train line letter</strong> (1, 2, 3, A, C, E, ...) for each trip. Categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Categorical</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> The 1 train and the 2 train are labels for different subway lines. The &ldquo;average&rdquo; of the 1 line and the 3 line is not the 2 line in any meaningful sense.</p>
+<span class="work">Values: 1, 2, 3, A, C, E, ...
+Mixing digits and letters is a strong hint you are labeling groups, not measuring amounts.
+Mean line? No.
+&rarr; Categorical, nominal.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The digit-vs-letter mix is a give-away, but even the &ldquo;pure number&rdquo; version (Q5&rsquo;s ZIP code) is still categorical. Focus on whether arithmetic makes sense, not on whether the raw value looks like a number.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 8 &middot; <span style="color:#c89a3a;">Categorical vs. Quantitative</span></h3>
+<p class="prompt">A researcher records each participant&rsquo;s <strong>reaction time in milliseconds</strong> on a computer task. Categorical or quantitative?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Quantitative (continuous)</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Reaction time is a measurement on a continuous scale &mdash; you can always measure to more decimal places with a better clock.</p>
+<span class="work">Values: 312.4 ms, 287.1 ms, 405.6 ms, ...
+Mean, median, standard deviation all make sense.
+Any two reaction times have infinitely many possible values in between.
+&rarr; Quantitative, continuous.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Time-to-do-something is the canonical continuous quantitative variable in psychology and biology. The recording device&rsquo;s precision is the only limit on the decimal places.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-2"><h2>Questions 9&ndash;12: Discrete vs. continuous</h2><p>Zoom in on quantitative variables and sort them into the two families: counts (discrete) and measurements (continuous).</p></div>
+<div class="qbox">
+<h3>Question 9 &middot; <span style="color:#c89a3a;">Discrete vs. Continuous</span></h3>
+<p class="prompt">For each of the following <strong>quantitative</strong> variables, mark it as discrete (D) or continuous (C): (a) number of siblings, (b) length of a car in meters, (c) exact time (in seconds) to run a mile, (d) number of goals scored in a soccer game.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (a) D, (b) C, (c) C, (d) D</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Discrete variables come from <em>counting</em> in whole units. Continuous variables come from <em>measuring</em> on a scale where fractional values are possible.</p>
+<span class="work">(a) Siblings: 0, 1, 2, 3, ... whole counts &rarr; Discrete.
+(b) Car length in meters: 4.32 m, 4.34 m, ... measured on a ruler &rarr; Continuous.
+(c) Mile time in seconds: 312.7 s, 312.71 s, ... measured on a stopwatch &rarr; Continuous.
+(d) Goals scored: 0, 1, 2, 3, ... whole counts &rarr; Discrete.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The one-word test: <em>&ldquo;Am I counting or am I measuring?&rdquo;</em> Counting &rarr; discrete. Measuring &rarr; continuous.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 10 &middot; <span style="color:#c89a3a;">Discrete vs. Continuous</span></h3>
+<p class="prompt">A survey asks each student for their <strong>shoe size</strong> (US women&rsquo;s sizes: 6, 6.5, 7, 7.5, 8, ...). Discrete or continuous?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Discrete</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> US shoe size is not a physical measurement in inches &mdash; it is a rounded label that only takes values on a fixed grid (every half-size). Between 7 and 7.5 there is no legal shoe size 7.2.</p>
+<span class="work">Legal values: 6, 6.5, 7, 7.5, 8, ...
+Between 7 and 7.5 there is no allowed value in this scheme.
+That gap-free requirement is the definition of continuous &mdash; and it fails.
+&rarr; Discrete.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Shoe size <em>encodes</em> a continuous measurement (foot length) but the recorded variable itself is discrete because it&rsquo;s locked to a step grid. On the AP exam, always classify the <em>recorded</em> variable, not the underlying phenomenon.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 11 &middot; <span style="color:#c89a3a;">Discrete vs. Continuous</span></h3>
+<p class="prompt">A physics lab records the <strong>mass of a chemical sample</strong> to the nearest 0.01 gram. Discrete or continuous?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Continuous</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Mass is a continuous quantity in the real world, and rounding at the point of recording does not change the classification. The variable is still measured on a continuous scale.</p>
+<span class="work">Underlying quantity: mass (continuous).
+Recording precision: 0.01 g (a display limitation, not a hard grid of allowed values).
+With a better balance you would record 3.427 g, 3.4271 g, ...
+&rarr; Continuous.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Rounding is a property of the <em>instrument</em>, not of the variable itself. Contrast this with shoe size (Q10), where the grid is baked into the definition. Mass, length, and time are always continuous.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 12 &middot; <span style="color:#c89a3a;">Discrete vs. Continuous</span></h3>
+<p class="prompt">An ice-cream shop records the <strong>number of scoops sold each day</strong>. Discrete or continuous?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Discrete</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Counts of physical items are always discrete quantitative variables.</p>
+<span class="work">Values: 412, 508, 377, ...
+Can the count take fractional values? No &mdash; you cannot sell 412.7 scoops.
+Mean per day could be 432.15, but that&rsquo;s a summary statistic, not a raw value.
+&rarr; Discrete.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The <em>mean of a discrete variable can be non-integer</em>, and that&rsquo;s fine. The classification is based on what values the raw variable can take, not what the mean looks like.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-3"><h2>Questions 13&ndash;15: Population vs. sample, parameter vs. statistic</h2><p>The four-part vocabulary that carries you through the entire AP Statistics course &mdash; know it cold.</p></div>
+<div class="qbox">
+<h3>Question 13 &middot; <span style="color:#c89a3a;">Population vs. Sample &middot; Parameter vs. Statistic</span></h3>
+<p class="prompt">A researcher wants to know the true average height of all 12-year-old girls in New York City. She measures 200 randomly chosen 12-year-old girls and computes their mean height to be 152.4 cm. Identify (a) the population, (b) the sample, (c) the parameter of interest, and (d) the statistic she computed.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (a) All 12-year-old girls in NYC. (b) The 200 measured girls. (c) The true mean height of the population (usually written &mu;). (d) The sample mean 152.4 cm (usually written x&#772;).</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> The <em>population</em> is the full group you want to know about. The <em>sample</em> is what you actually measured. The <em>parameter</em> is the true (usually unknown) number describing the population; the <em>statistic</em> is the number you computed from the sample.</p>
+<span class="work">Question of interest: mean height of ALL 12-year-old NYC girls.
+(a) Population = all 12-year-old girls in NYC.
+(b) Sample = the 200 girls whose height was measured.
+(c) Parameter = &mu; = true mean height of the population (unknown).
+(d) Statistic = x&#772; = 152.4 cm (computed from the sample).
+Statistic estimates parameter.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> This four-part label is the vocabulary that carries you through the entire AP course. Every inference procedure in later units answers the question: <em>how close is my statistic to the parameter?</em></p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 14 &middot; <span style="color:#c89a3a;">Population vs. Sample &middot; Parameter vs. Statistic</span></h3>
+<p class="prompt">The US Census Bureau announces that <strong>18.6% of Americans over 65 live alone</strong>, based on the complete 2020 census. Is 18.6% a parameter or a statistic?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Parameter</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> The census measures the entire population, not a sample &mdash; so the resulting number describes the population directly and is a parameter.</p>
+<span class="work">The 2020 census attempts to reach every American, not a subset.
+When the count covers the entire population, the resulting summary is a parameter (denoted with Greek letters like &mu;, &sigma;, p).
+&rarr; 18.6% is a parameter (specifically, the population proportion p).</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The parameter/statistic label depends on <em>who was measured</em>, not on the size of the number. If it came from the whole population, it&rsquo;s a parameter. If it came from a sample, it&rsquo;s a statistic. In practice, true censuses are rare, so most numbers you meet are statistics.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 15 &middot; <span style="color:#c89a3a;">Population vs. Sample &middot; Parameter vs. Statistic</span></h3>
+<p class="prompt">A Gallup poll of 1,022 randomly selected U.S. adults finds that <strong>54% approve of the current mayor</strong>. Identify (a) the population, (b) the sample, (c) the parameter of interest, and (d) the statistic reported.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (a) All U.S. adults (or all U.S. adult voters, depending on the survey&rsquo;s stated scope). (b) The 1,022 adults who were surveyed. (c) The true proportion p of all U.S. adults who approve of the mayor. (d) The sample proportion p&#770; = 0.54.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Same four-part decomposition as Q13, but for a proportion instead of a mean. The parameter is <em>p</em>; the statistic is <em>p&#770;</em> (&ldquo;p-hat&rdquo;).</p>
+<span class="work">(a) Population = all U.S. adults (the group Gallup wants to describe).
+(b) Sample = the 1,022 randomly selected respondents.
+(c) Parameter = p = true proportion of U.S. adults who approve.
+(d) Statistic = p&#770; = 0.54 = sample proportion.
+The headline &ldquo;54%&rdquo; is the sample statistic, not the true value.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> In the news, sample statistics are almost always reported without their margins of error. Unit 6 comes back to this exact scenario to build a confidence interval that says how close p&#770; is likely to be to p.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-4"><h2>Questions 16&ndash;18: Variation, and why statistics exists</h2><p>Three short conceptual questions on the deep &ldquo;why&rdquo; of the course: repeated measurements vary, and statistics is the language for that variation.</p></div>
+<div class="qbox">
+<h3>Question 16 &middot; <span style="color:#c89a3a;">Variation &amp; Why Statistics</span></h3>
+<p class="prompt">A coffee shop&rsquo;s espresso machine is <em>supposed</em> to pull a 30 mL shot. The barista pulls 20 shots in a row and gets: 29.6, 30.2, 29.4, 30.1, 30.5, 29.8, 29.9, 30.3, 29.7, 30.0, 30.4, 29.5, 30.1, 30.2, 29.8, 30.0, 29.6, 30.3, 29.9, 30.1 mL. Explain, in one sentence, why <em>this is the reason statistics exists</em>.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: No two shots are exactly 30 mL &mdash; the values vary around the target &mdash; and statistics is the discipline that describes and reasons about that variation.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> If every measurement were identical, we would not need statistics. Statistics is the toolkit for describing, summarizing, and reasoning about the <em>variation</em> we see in repeated measurements.</p>
+<span class="work">Target: 30 mL.
+Observed values: 29.6, 30.2, 29.4, ... range from 29.4 to 30.5.
+Even though the machine is calibrated, no two shots match.
+That spread &mdash; the fact that repeated measurements are not identical &mdash; is what statistics studies.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The AP Statistics course opens with this idea because every unit that follows (distributions, sampling, inference) is a different lens on variation. If nothing varied, one measurement would answer every question.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 17 &middot; <span style="color:#c89a3a;">Variation &amp; Why Statistics</span></h3>
+<p class="prompt">Two Manhattan pediatricians each measure the height of the same 6-year-old girl three times, five minutes apart. Doctor A gets 118.4, 118.7, 118.5 cm. Doctor B gets 118.2, 119.1, 118.6 cm. Which doctor&rsquo;s measurements show more variability, and what does that tell you?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Doctor B&rsquo;s measurements show more variability. That suggests Doctor B&rsquo;s measuring technique (or ruler) is less consistent than Doctor A&rsquo;s.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> For a fixed true height, the spread of repeated measurements reflects <em>measurement variability</em>. Less spread &rarr; more consistent (more precise) measurement.</p>
+<span class="work">Doctor A: 118.4, 118.7, 118.5 &rarr; range = 118.7 &minus; 118.4 = 0.3 cm.
+Doctor B: 118.2, 119.1, 118.6 &rarr; range = 119.1 &minus; 118.2 = 0.9 cm.
+Doctor B&rsquo;s range is 3&times; larger.
+&rarr; Doctor B&rsquo;s technique is less consistent.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> This is the first appearance of a theme repeated all year: <em>a summary is not complete without a spread</em>. You never report just the center &mdash; you always report the variability with it.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 18 &middot; <span style="color:#c89a3a;">Variation &amp; Why Statistics</span></h3>
+<p class="prompt">A student says: &ldquo;My chemistry test scores this semester are 88, 92, 85, 90, 91, 87, 89, 93, 86, 91. The average is 89.2, so my typical score is 89.2 out of 100.&rdquo; What is the student missing by reporting only the average?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: The student is missing information about the <em>variability</em> (spread) of the scores. Two students with the same 89.2 average could have very different consistency &mdash; one might range from 85 to 93 (like this student), another from 60 to 100.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> The mean tells you the center of the data, but it does not tell you how spread out the data is. A full summary of a distribution requires both center and spread (and later, shape and outliers).</p>
+<span class="work">Data: 88, 92, 85, 90, 91, 87, 89, 93, 86, 91.
+Mean = 892 / 10 = 89.2.
+Range = 93 &minus; 85 = 8.
+One student: 85 to 93 (range = 8) &rarr; consistent.
+Another student with the same 89.2 mean could score 60, 100, 70, 100, ... &rarr; very inconsistent.
+Same mean, very different stories.
+&rarr; Report center AND spread.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> In Class 4 SOMATH students learn the SOCS framework (Shape, Outliers, Center, Spread) &mdash; the mandatory four-part description the AP exam requires. This question is the &ldquo;why&rdquo; for that habit.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-5"><h2>Questions 19&ndash;20: Mixed applied practice</h2><p>Two multi-part questions that combine everything in Class 1 and preview the survey-and-inference reasoning that shows up all year.</p></div>
+<div class="qbox">
+<h3>Question 19 &middot; <span style="color:#c89a3a;">Mixed Applied</span></h3>
+<p class="prompt">A dermatology clinic collects the following information for each patient: (a) age in years, (b) skin tone (Fitzpatrick scale I through VI), (c) whether they use sunscreen daily (yes / no), (d) number of moles on the left forearm, (e) SPF value of the sunscreen they use most often. Classify each variable as either <strong>categorical</strong> (nominal or ordinal) or <strong>quantitative</strong> (discrete or continuous).</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (a) Quantitative discrete (age in whole years) &mdash; also acceptable: quantitative continuous if age is recorded to fractions of a year. (b) Categorical ordinal (I &lt; II &lt; III &lt; IV &lt; V &lt; VI). (c) Categorical nominal (yes / no). (d) Quantitative discrete (count). (e) Quantitative discrete (SPF values are labeled 15, 30, 50, 70, 100 &mdash; a step grid).</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Real datasets mix all four variable types. Practice classifying every column before you touch a graph or a statistic &mdash; the classification determines which display and summary are legal.</p>
+<span class="work">(a) Age in years: whole-number count of years &rarr; Quantitative, discrete (or continuous if fractional).
+(b) Fitzpatrick scale: labels I&ndash;VI have order but not equal spacing &rarr; Categorical, ordinal.
+(c) Yes / No: two categories, no order &rarr; Categorical, nominal.
+(d) Number of moles: whole-number count &rarr; Quantitative, discrete.
+(e) SPF label: 15, 30, 50, 70, 100 (fixed grid) &rarr; Quantitative, discrete (some AP graders accept categorical ordinal &mdash; either is defensible).</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Once you can label all the columns, you can pick displays: bar charts for (b) and (c), histograms for (a) and (d), and either display works for (e). Classification is the first step in every AP FRQ that gives you a dataset.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 20 &middot; <span style="color:#c89a3a;">Mixed Applied</span></h3>
+<p class="prompt">A gym is opening a new location on the Upper West Side and wants to describe its potential customer base. It has budget to survey 500 people who live within 10 blocks. Identify (a) the population, (b) the sample, (c) one categorical variable it might collect, (d) one quantitative variable it might collect, and (e) the difference between a parameter and a statistic in this context.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (a) Population = all people who live within 10 blocks of the new gym. (b) Sample = the 500 people the gym surveys. (c) Any variable like: preferred workout type (cardio / weights / classes / mixed), yes/no already a gym member, membership tier interest. (d) Any variable like: age in years, weekly hours currently spent exercising, monthly amount currently spent on fitness. (e) A parameter describes the population (unknown, e.g., the true mean age); a statistic describes the sample (computed from the 500 responses).</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Full walk-through of Class 1 vocabulary applied to a business decision. Every survey a real business runs is exactly this problem: use a sample to estimate a parameter of a population you cannot measure entirely.</p>
+<span class="work">(a) Population = all people within 10 blocks &mdash; the group the gym cares about but cannot survey in full.
+(b) Sample = the 500 people surveyed &mdash; the subset actually measured.
+(c) Categorical example: preferred workout type &rarr; values are labels (cardio, weights, classes).
+(d) Quantitative example: age in years &rarr; whole-number counts.
+(e) Parameter = true mean age of ALL 500-block residents (unknown). Statistic = mean age of the 500 surveyed respondents (computed).
+Business uses the statistic as its best guess for the parameter.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The reason SOMATH teaches AP Statistics as a life skill: this exact reasoning is what marketing teams, product managers, doctors, and journalists do every day. Learn the vocabulary in Class 1 and the rest of the course is a series of increasingly powerful tools built on it.</p>
+</div></details>
+</div>
+
+
+        <h2 id="somath-apstats">How SOMATH prepares NYC students for AP Statistics</h2>
+        <p><a href="/">SOMATH (School of Math)</a> is a math-focused school on the Upper West Side of Manhattan, cofounded by <strong>Marcelo Ambrozio</strong> (Northwestern-trained lead math teacher) and <strong>Vivianne Wright</strong> (Harvard-trained). Our AP Statistics course is a full two-semester arc built for a 5 on the AP exam and for the analytical thinking students will use in every quantitative college class that follows.</p>
+        <p><strong>Our AP Statistics track:</strong></p>
+        <ul>
+          <li><strong>Small-group in-person classes (6&ndash;8 students max)</strong> at 226 W 79th Street on the Upper West Side. Same room, same teacher, same students, week after week.</li>
+          <li><strong>Structured curriculum</strong> covering all 9 units of the AP Statistics Course and Exam Description across 30 two-hour classes, with dedicated review classes and full-length mock exams in the final weeks.</li>
+          <li><strong>Calculator and Desmos fluency.</strong> Every student learns the TI-84 and Desmos statistics workflows: 1-Var Stats, LinReg, normalcdf, invNorm, tcdf, invT, and every inference procedure the exam expects.</li>
+          <li><strong>FRQ drilling with written feedback.</strong> Free-response questions from every released exam, graded on the actual AP rubric, with returned annotated rubrics.</li>
+          <li><strong>Free 30-minute in-person diagnostic evaluation</strong> before enrollment. A $99 one-time enrollment fee applies for new students who continue into a course.</li>
+        </ul>
+        <div class="callout"><strong>Manhattan families:</strong> If your student is preparing for the AP Statistics exam or wants a math-first companion class to a school AP Stats course, book a <a href="/evaluation">free diagnostic evaluation</a> or call <strong>(646) 668-6151</strong>. We are two blocks from the 79th Street 1 train and three blocks from the B/C at the American Museum of Natural History.</div>
+        <div style="background:#1f3d2e;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#c89a3a;margin:0 0 10px;">Ready to build a 5 on AP Statistics?</h2>
+          <p style="margin:0 0 14px;">Start with a free 30-minute in-person diagnostic at our Upper West Side classroom. Includes a written diagnostic report within 48 hours &mdash; yours to keep whether you enroll or not. A one-time $99 enrollment fee applies if you join a course.</p>
+          <p style="margin:0;"><a href="/evaluation" style="background:#c89a3a;color:#1f3d2e;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">Book Free Evaluation &rarr;</a> &nbsp; <span style="color:#f5f0e6;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+        <div class="course-cta-card"><div class="course-cta-card__grade">SOMATH course &middot; Grades 10&ndash;12</div><h2 class="course-cta-card__h">Want your child in an AP Statistics class at SOMATH?</h2><p class="course-cta-card__lede">Small-group AP Statistics prep on the Upper West Side. Full coverage of all 9 units, calculator and Desmos fluency, FRQ drilling with written feedback, and a free 30-minute in-person diagnostic before enrollment.</p><p class="course-cta-card__ctas"><a href="/courses/ap-prep" class="course-cta-card__primary">See the AP course &rarr;</a><a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a></p></div>
+
+        <h2 id="faq">AP Statistics Class 1 FAQ</h2>
+<h3>What does AP Statistics Class 1 cover?</h3>
+<p>Class 1 introduces the whole discipline of statistics as the study of variation, defines the difference between a population and a sample, distinguishes a parameter (population) from a statistic (sample), and teaches how to classify any variable as categorical (nominal or ordinal) or quantitative (discrete or continuous).</p>
+<h3>How do I tell if a variable is categorical or quantitative?</h3>
+<p>Ask whether arithmetic on the values has real-world meaning. If you can compute a meaningful mean (like average height in cm), the variable is quantitative. If the values only label groups (like blood type or ZIP code), the variable is categorical, even when the labels look like numbers.</p>
+<h3>What is the difference between discrete and continuous quantitative variables?</h3>
+<p>Discrete variables come from counting in whole units (number of siblings, number of pepperoni slices). Continuous variables come from measuring on a scale where fractional values are possible (height in cm, time in seconds, mass in grams).</p>
+<h3>What is the difference between a parameter and a statistic?</h3>
+<p>A parameter is a number that describes an entire population (often unknown and denoted with Greek letters like &mu; or p). A statistic is a number computed from a sample (denoted x&#772; for a sample mean or p&#770; for a sample proportion). The whole point of statistical inference is to use statistics to estimate parameters.</p>
+<h3>Why does AP Statistics start with the idea of variation?</h3>
+<p>Because if repeated measurements were always identical there would be no need for statistics &mdash; one number would answer every question. Statistics exists to describe, summarize, and reason about the variation that shows up in real data, and every later unit (distributions, sampling, inference) is a different tool for handling variation.</p>
+<h3>How is SOMATH&rsquo;s AP Statistics course structured?</h3>
+<p>SOMATH teaches AP Statistics in 2-hour classes on the Upper West Side of Manhattan. Unit 1 (Exploring One-Variable Data) is split into 8 classes: Class 1 (this page) covers variation and variable types, followed by displaying categorical data, displaying quantitative data, describing distributions with SOCS, summary statistics for center, summary statistics for spread and boxplots, the normal distribution and z-scores, and a review + assessment class.</p>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li>SOMATH SAT Math prep: <a href="/posts/digital-sat-tutoring-nyc-2026-structure-dates-scores">Digital SAT Tutoring NYC 2026 &mdash; Structure, Dates &amp; Scores</a></li>
+          <li>Companion SAT walkthrough: <a href="/posts/digital-sat-practice-test-9-math-module-1-walkthrough">Digital SAT Practice Test 9 &mdash; Math Module 1 Walkthrough</a></li>
+          <li>SOMATH AP Prep course page: <a href="/courses/ap-prep">See the AP course &rarr;</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260906-apstats-c1"></script>
+  </body>
+</html>
