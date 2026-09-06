@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AP Calculus AB Class 1 — Can Change Occur at an Instant? Introducing Limits (Unit 1) | SOMATH NYC</title>
+    <meta name="description" content="Free AP Calculus AB Class 1 practice: the tangent-line problem, the area problem, average vs. instantaneous rate of change, and why calculus needs limits. Theory + 20 original SOMATH practice questions with click-to-reveal answers." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/ap-calculus-ab-class-1-can-change-occur-at-an-instant" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AP Calculus AB Class 1 — Can Change Occur at an Instant? Introducing Limits (Unit 1)" />
+    <meta property="og:description" content="AP Calculus AB Class 1: the tangent-line problem, the area problem, average vs. instantaneous rate of change, and why calculus needs limits. Theory + 20 original practice questions with hidden answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/ap-calculus-ab-class-1-can-change-occur-at-an-instant" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/01-secant-to-tangent.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-09-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AP Calculus AB Class 1 — Can Change Occur at an Instant? Introducing Limits" />
+    <meta name="twitter:description" content="AP Calc AB Class 1: tangent problem, area problem, average vs. instantaneous rate, and the need for limits. Theory + 20 practice questions with click-to-reveal answers." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/01-secant-to-tangent.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .fact-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:820px; }
+      .fact-table th, .fact-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .fact-table th { background:#0a3a5f; color:#fff; }
+      .fact-table tr:nth-child(even) { background:#fafafa; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.5; overflow-x:auto; font-size:0.96rem; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & work"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & work"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+    </style>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AP Calculus AB Class 1 — Can Change Occur at an Instant? Introducing Limits (Unit 1)",
+  "description": "The first 2-hour class of SOMATH's AP Calculus AB arc: the tangent-line problem, the area problem, average vs. instantaneous rate of change, and why calculus needs limits. Full theory + 20 original practice questions with click-to-reveal answers.",
+  "image": "https://www.schoolofmath.us/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/01-secant-to-tangent.png",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/ap-calculus-ab-class-1-can-change-occur-at-an-instant"
+  }
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can change really occur at an instant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — that's the whole point of calculus. Classically, a rate of change like slope or velocity needs TWO points. At a single instant there is only one point, so the classical idea breaks down. Calculus solves this by defining the instantaneous rate of change as the LIMIT of average rates over intervals that shrink toward zero. As the interval shrinks, the average rate settles on a single number — that number IS the instantaneous rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the two central problems that calculus solves?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tangent-line problem (finding the exact slope of a curve at one point — the instantaneous rate of change) and the area problem (finding the exact area under a curve — the total accumulated change). Both problems require limits: the tangent slope is the limit of secant slopes as the interval shrinks to zero, and the area is the limit of rectangle-sum approximations as the number of rectangles grows to infinity. These two problems become the two halves of calculus: differential calculus and integral calculus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a secant line and how is it different from a tangent line?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A secant line passes through TWO points on a curve. Its slope is the average rate of change of the function between those two points. A tangent line touches the curve at ONE point and captures the instantaneous rate of change at that point. In calculus we get the tangent by taking the LIMIT of secant slopes as the two points move closer and closer together."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is average velocity different from instantaneous velocity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Average velocity over an interval is total change in position divided by change in time: (s(t2) − s(t1)) / (t2 − t1). Instantaneous velocity at a moment t is the LIMIT of that average as the interval shrinks to zero around t. Instantaneous velocity is exactly the reading on a speedometer at one instant; average velocity is the reading you would compute from a start point and end point."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does 'local linearity' mean and why does it matter for AP Calculus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Local linearity means: if you zoom in far enough on a smooth curve at a point, the curve looks straight — indistinguishable from its tangent line. This is the intuition behind why the tangent line is a good linear approximation of a function near that point, and it powers linearization, differentials, and Newton's method later in Unit 4."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to memorize any calculus formulas for the first class?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Class 1 is about ideas, not formulas. You should be comfortable with: (1) the average-rate-of-change formula (f(b) − f(a)) / (b − a) from precalculus, (2) reading a position/time graph, and (3) the idea of a limit as a value we get arbitrarily close to. The derivative formula and integral formula come in the classes that follow."
+      }
+    }
+  ]
+}</script>
+  </head>
+  <body>
+    <div class="site-page">
+      <header class="site-header">
+        <div class="site-header__brand">
+          <a href="/" class="site-header__logo">SOMATH</a>
+          <p class="site-header__tag">School of Math &middot; New York</p>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/courses">Courses</a>
+          <a href="/schedule">Schedule</a>
+          <a href="/evaluation">Free Evaluation</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <article class="post">
+          <header class="post__header">
+            <p class="post__meta">AP Calculus AB &middot; Unit 1 &middot; Class 1 of the arc &middot; 2-hour class</p>
+            <h1>AP Calculus AB Class 1 &mdash; Can Change Occur at an Instant? Introducing Limits</h1>
+            <p class="post__lede">The core intuition behind ALL of AP Calculus in one class: slope classically needs two points, but calculus lets us find the slope at a single instant using a <strong>limit</strong>. We&rsquo;ll build the tangent-line problem, the area problem, and the average-versus-instantaneous rate of change &mdash; the three ideas Unit 1 (10&ndash;12% of the AB exam) rests on. Includes 20 original SOMATH practice questions with click-to-reveal answers.</p>
+          </header>
+
+          <div class="post__body">
+
+            <div class="callout">
+              <p style="margin:0;"><strong>Short answer up top.</strong> Yes, change can occur at an instant &mdash; that&rsquo;s the whole point of calculus. Classically a slope needs two points, but calculus defines the <strong>instantaneous rate of change</strong> as the LIMIT of average rates over intervals that shrink toward zero. As the interval shrinks, the average rate settles on a single number, and that number IS the instantaneous rate. That single idea powers derivatives, tangent lines, related rates, and every physics problem you&rsquo;ll ever solve.</p>
+            </div>
+
+            <nav class="toc" aria-label="On this page">
+              <h2>On this page</h2>
+              <ol>
+                <li><a href="#big-idea">The big idea: why we need calculus</a></li>
+                <li><a href="#tangent-problem">The tangent-line problem (differential calculus)</a></li>
+                <li><a href="#area-problem">The area problem (integral calculus)</a></li>
+                <li><a href="#avg-vs-inst">Average vs. instantaneous rate of change</a></li>
+                <li><a href="#local-linearity">Local linearity: zooming makes curves straight</a></li>
+                <li><a href="#practice">20 practice questions with click-to-reveal answers</a></li>
+                <li><a href="#next">What&rsquo;s next in Unit 1</a></li>
+              </ol>
+            </nav>
+
+            <h2 id="big-idea">The big idea: why we need calculus</h2>
+
+            <p>Algebra and precalculus give you tools for <em>constant</em> or <em>average</em> behavior. Slope of a line, average speed over an hour, total distance from a formula. Calculus asks a harder question: <strong>what if the rate is changing every single moment, and you want to know the rate right NOW?</strong></p>
+
+            <p>Think about a car speedometer. It reads &ldquo;38 mph&rdquo; at 2:07:14 PM. That&rsquo;s not an average over any interval &mdash; it&rsquo;s the speed <em>at that instant</em>. Or think about a Ferris wheel: your height changes continuously, and your rate of change (how fast you&rsquo;re rising) also changes continuously. Precalculus can&rsquo;t tell you either of those exactly. Calculus can.</p>
+
+            <div class="theory-box">
+              <h3>The paradox that started calculus</h3>
+              <p>Slope classically needs TWO points: <span class="eq">slope = (y&#8322; &minus; y&#8321;) / (x&#8322; &minus; x&#8321;)</span>. But an &ldquo;instant&rdquo; is one moment &mdash; ONE point. So how can there be a rate of change at a single instant when the very definition of rate requires two points?</p>
+              <p>Newton and Leibniz&rsquo;s answer, in the 1670s: don&rsquo;t compute the slope AT the point. Compute the average slope over an interval NEAR the point, then let the interval shrink to zero. If those average slopes settle on one number, call that number the instantaneous slope. That number-settling process is called a <strong>limit</strong>. Every idea in AP Calculus is built on top of it.</p>
+            </div>
+
+            <figure>
+              <img src="/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/05-instant-paradox.png" alt="A single point on a smooth curve with a callout: 'One point. But slope needs TWO.' A dashed tangent line passes through the point, and a note reads: calculus's answer is to define instantaneous rate as the limit of average rates over shrinking intervals." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+              <figcaption style="text-align:center;color:#5a5f57;font-size:0.94rem;margin-top:8px;">The paradox: slope needs two points, an instant gives you one. Calculus resolves it with a limit.</figcaption>
+            </figure>
+
+            <h2 id="tangent-problem">The tangent-line problem (differential calculus)</h2>
+
+            <p>The <strong>tangent-line problem</strong> is: given a curve <span class="eq">y = f(x)</span> and a point on it, find the exact slope of the curve at that point. That slope is the instantaneous rate of change of <em>f</em>. It&rsquo;s also called the <strong>derivative</strong> of <em>f</em> at that point &mdash; but we won&rsquo;t define derivatives formally until Class 3. Right now the point is just to see WHY we need limits.</p>
+
+            <p>The strategy: pick a nearby point on the curve, draw the line through both points (a <strong>secant line</strong>), and compute its slope. That secant slope is the AVERAGE rate of change of <em>f</em> over the interval. Then let the nearby point slide toward the point of interest. As the two points get closer, the secant line rotates and lines up with the true tangent at the point.</p>
+
+            <div class="theory-box">
+              <h3>Secant slope formula</h3>
+              <p>Given a function <em>f</em> and two <em>x</em>-values <em>a</em> and <em>a</em> + <em>h</em>, the secant slope through <span class="eq">(a, f(a))</span> and <span class="eq">(a+h, f(a+h))</span> is:</p>
+              <p style="text-align:center;margin:12px 0;"><span class="eq">m<sub>sec</sub> = [ f(a + h) &minus; f(a) ] / h</span></p>
+              <p>This is called the <strong>difference quotient</strong>. The instantaneous slope (the tangent slope) is what you get when <em>h</em> shrinks to zero:</p>
+              <p style="text-align:center;margin:12px 0;"><span class="eq">m<sub>tan</sub> = lim<sub>h&rarr;0</sub> [ f(a + h) &minus; f(a) ] / h</span></p>
+              <p>Read: &ldquo;the limit, as <em>h</em> approaches zero, of the difference quotient.&rdquo; When you learn the derivative in Unit 2, this exact expression will be its formal definition.</p>
+            </div>
+
+            <figure>
+              <img src="/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/01-secant-to-tangent.png" alt="Graph of f(x) = x squared with four secant lines drawn from x = 1 to x = 1+h for h = 1, 0.5, 0.25, and 0.1. As h shrinks the secant lines rotate toward the dashed tangent line at x = 1, whose slope is 2." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+              <figcaption style="text-align:center;color:#5a5f57;font-size:0.94rem;margin-top:8px;">For <em>f</em>(<em>x</em>) = <em>x</em>², the secant slopes are 3, 2.5, 2.25, 2.1&hellip; they visibly settle on <strong>2</strong>. That&rsquo;s the tangent slope at <em>x</em> = 1.</figcaption>
+            </figure>
+
+            <div class="callout">
+              <p style="margin:0;"><strong>Try it in your head.</strong> For <em>f</em>(<em>x</em>) = <em>x</em>² at <em>x</em> = 1, the secant slope is <span class="eq">[(1+h)² &minus; 1²] / h = (2h + h²) / h = 2 + h</span>. As <em>h</em> shrinks to zero, 2 + <em>h</em> shrinks to 2. So the tangent slope at <em>x</em> = 1 is exactly 2. No calculator, no formula &mdash; just a limit.</p>
+            </div>
+
+            <h2 id="area-problem">The area problem (integral calculus)</h2>
+
+            <p>The <strong>area problem</strong> is the tangent problem&rsquo;s partner: given a curve <span class="eq">y = f(x)</span> and an interval <span class="eq">[a, b]</span>, find the exact area of the region between the curve and the <em>x</em>-axis. For rectangles and triangles you already know the formulas. For an arbitrary curve, geometry doesn&rsquo;t help &mdash; but calculus does.</p>
+
+            <p>The strategy mirrors the tangent problem: <em>approximate</em>, then <em>take a limit</em>. Slice the region into <em>n</em> thin rectangles whose heights come from the function, add up their areas, and let <em>n</em> grow to infinity. The rectangle sums settle on a single number, and that number is the exact area. This will become the <strong>definite integral</strong> in Unit 6.</p>
+
+            <figure>
+              <img src="/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/03-area-riemann.png" alt="Two panels showing right-endpoint rectangle approximations for the area under f(x) = x squared from 0 to 2. Left panel uses 6 coarse rectangles and gives an approximation of 3.370. Right panel uses 30 fine rectangles and gives 2.801. The true area is 8/3 which is approximately 2.667." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+              <figcaption style="text-align:center;color:#5a5f57;font-size:0.94rem;margin-top:8px;">More rectangles = better approximation. In the limit as <em>n</em> &rarr; &infin;, the rectangle sum equals the exact area, 8/3 &approx; 2.667.</figcaption>
+            </figure>
+
+            <div class="theory-box">
+              <h3>Why the tangent problem and the area problem are connected</h3>
+              <p>They look like completely different questions &mdash; one is about slope, the other is about area &mdash; but they turn out to be two sides of the same coin. The <strong>Fundamental Theorem of Calculus</strong> (Unit 6) says: if you can find a function whose derivative is <em>f</em>, you can compute the area under <em>f</em> exactly. That&rsquo;s the punchline of the entire course. But we have to build up to it.</p>
+            </div>
+
+            <h2 id="avg-vs-inst">Average vs. instantaneous rate of change</h2>
+
+            <p>The single most useful skill to master in Class 1 is telling <strong>average</strong> rate of change apart from <strong>instantaneous</strong> rate of change. AP graders test this on nearly every free-response problem in Unit 1 and Unit 4.</p>
+
+            <div class="theory-box">
+              <h3>Two definitions to memorize</h3>
+              <p><strong>Average rate of change</strong> of <em>f</em> on <span class="eq">[a, b]</span>:</p>
+              <p style="text-align:center;margin:8px 0;"><span class="eq">AROC = [ f(b) &minus; f(a) ] / (b &minus; a)</span></p>
+              <p>Units: (units of <em>f</em>) per (units of <em>x</em>). Geometrically, this is the slope of the SECANT line through the two endpoints.</p>
+              <p><strong>Instantaneous rate of change</strong> of <em>f</em> at <em>a</em>:</p>
+              <p style="text-align:center;margin:8px 0;"><span class="eq">IROC(a) = lim<sub>h&rarr;0</sub> [ f(a + h) &minus; f(a) ] / h</span></p>
+              <p>Same units. Geometrically, this is the slope of the TANGENT line at <em>x</em> = <em>a</em>.</p>
+            </div>
+
+            <p>The physics version of the same distinction is <strong>average velocity vs. instantaneous velocity</strong>. If <em>s</em>(<em>t</em>) is the position of an object at time <em>t</em>:</p>
+
+            <ul>
+              <li><strong>Average velocity</strong> on <span class="eq">[t&#8321;, t&#8322;]</span> = <span class="eq">[ s(t&#8322;) &minus; s(t&#8321;) ] / (t&#8322; &minus; t&#8321;)</span></li>
+              <li><strong>Instantaneous velocity</strong> at time <em>t</em> = <span class="eq">lim<sub>h&rarr;0</sub> [ s(t + h) &minus; s(t) ] / h</span> &mdash; the speedometer reading</li>
+            </ul>
+
+            <figure>
+              <img src="/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/04-position-velocity.png" alt="Left: a position curve s(t) = 5 t squared for a car accelerating from rest. Secant lines from t = 2 out to 2.25, 2.5, and 3 are shown, along with the dashed tangent line at t = 2. Right: a table of average velocities over shrinking intervals starting at t = 2, converging to 20 feet per second." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+              <figcaption style="text-align:center;color:#5a5f57;font-size:0.94rem;margin-top:8px;">A car accelerating from rest: average velocities over <span class="eq">[2, 2+h]</span> shrink onto exactly <strong>20 ft/s</strong>. That&rsquo;s the instantaneous velocity at <em>t</em> = 2.</figcaption>
+            </figure>
+
+            <div class="callout">
+              <p style="margin:0;"><strong>The one-question test.</strong> If a problem says &ldquo;over the interval <span class="eq">[a, b]</span>&rdquo; or gives you two moments in time, it wants an AVERAGE rate. If it says &ldquo;at time <em>t</em> =&rdquo; or &ldquo;at the instant when&rdquo; or &ldquo;at the moment,&rdquo; it wants INSTANTANEOUS. Writing the wrong one loses the point on the AP.</p>
+            </div>
+
+            <h2 id="local-linearity">Local linearity: zooming makes curves straight</h2>
+
+            <p>Here&rsquo;s a visual argument for why the tangent-line idea even makes sense. Take any smooth curve, pick a point, and zoom in on the graph around that point. Zoom again. And again. What you&rsquo;ll see is that the curve becomes indistinguishable from a straight line &mdash; specifically, from its tangent line at that point.</p>
+
+            <figure>
+              <img src="/assets/blog/ap-calculus-ab-class-1-can-change-occur-at-an-instant/02-local-linearity.png" alt="Three side-by-side panels of f(x) = x squared, all showing the point (1,1) with its tangent line. The first panel is zoomed out from x = 0 to 2 and the curve is clearly parabolic. The second panel zooms in three times and the curve looks slightly bent. The third panel zooms in twenty times and the curve is visually identical to the tangent line." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+              <figcaption style="text-align:center;color:#5a5f57;font-size:0.94rem;margin-top:8px;">Zoom hard enough and every smooth curve looks like its tangent line. This is <strong>local linearity</strong>.</figcaption>
+            </figure>
+
+            <p>This is why the tangent line is such a good approximation of the function near the point: near enough, the curve IS the tangent line, up to a tiny error. Local linearity powers <strong>linear approximation</strong>, <strong>differentials</strong>, and <strong>Newton&rsquo;s method</strong>, all coming in Unit 4.</p>
+
+            <p>Not every function has this property. Functions with sharp corners (like <span class="eq">|x|</span> at <em>x</em> = 0) or vertical tangents (like <span class="eq">&#8731;x</span> at <em>x</em> = 0) don&rsquo;t look linear no matter how far you zoom. Those are exactly the points where the derivative fails to exist &mdash; a topic we&rsquo;ll return to in Unit 2 (differentiability).</p>
+
+            <div class="course-cta-card">
+              <p class="course-cta-card__grade">AP Calculus AB &amp; BC at SOMATH</p>
+              <h3 class="course-cta-card__h">Prep for the AP Calculus exam on the Upper West Side</h3>
+              <p class="course-cta-card__lede">Our AP Calculus courses run 2-hour weekly classes covering all of Unit 1&ndash;8 for AB (or 1&ndash;10 for BC), with original SOMATH problem sets, full free-response practice, and AB/BC exam simulations. AP tuition is <strong>$800/month</strong> plus a one-time $99 registration fee. Book a free evaluation at our 226 W 79th Street classroom to get started.</p>
+              <p class="course-cta-card__ctas">
+                <a class="course-cta-card__primary" href="/evaluation">Book a free evaluation</a>
+                <a class="course-cta-card__secondary" href="/courses">See all SOMATH courses &rarr;</a>
+              </p>
+            </div>
+
+            <div class="part-header">
+              <h2 id="practice">20 practice questions with click-to-reveal answers</h2>
+              <p>The 20 questions below cover the core Class 1 skills: reading secant/tangent slopes off graphs, computing average rate of change, recognizing when a problem is asking for average vs. instantaneous, and using a shrinking-interval table to estimate an instantaneous rate. Each question hides its answer until you click. Try the question first, then check.</p>
+            </div>
+
+            <!-- =============== 20 QUESTIONS =============== -->
+
+            <div class="qbox">
+              <h3>Question 1 &middot; Average rate of change from a formula</h3>
+              <p class="prompt">Let <span class="eq">f(x) = x&sup2; + 3x</span>. Find the average rate of change of <em>f</em> on the interval <span class="eq">[1, 4]</span>.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 8</p>
+                <p class="explain"><strong>Key idea.</strong> Average rate of change is <span class="eq">[ f(b) &minus; f(a) ] / (b &minus; a)</span> &mdash; the slope of the secant line through the two endpoints.</p>
+                <span class="work">f(1) = 1 + 3    = 4
+f(4) = 16 + 12  = 28
+AROC = (28 - 4) / (4 - 1)
+     = 24 / 3
+     = 8</span>
+                <p><em>Why this works.</em> The formula is just the slope formula from algebra applied to the two points on the graph.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 2 &middot; Interpreting average rate in context</h3>
+              <p class="prompt">A car&rsquo;s position (in feet) at time <em>t</em> (in seconds) is <span class="eq">s(t) = 5t&sup2;</span>. Find and interpret the average velocity of the car over the interval <span class="eq">[0, 4]</span>.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 20 ft/s. The car traveled at an average speed of 20 feet per second during those 4 seconds.</p>
+                <p class="explain"><strong>Key idea.</strong> Average velocity over <span class="eq">[t&#8321;, t&#8322;]</span> is total displacement divided by elapsed time.</p>
+                <span class="work">s(0) = 0
+s(4) = 5 * 16 = 80
+avg velocity = (80 - 0) / (4 - 0)
+             = 80 / 4
+             = 20 ft/s</span>
+                <p><em>Why this works.</em> This is exactly the average rate of change formula applied to a position function. Notice we don&rsquo;t need to know how fast the car was going at any particular instant &mdash; just the start and end positions.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 3 &middot; Recognizing which rate is asked for</h3>
+              <p class="prompt">A skier&rsquo;s height above the base lodge is <em>H</em>(<em>t</em>). For each phrase, say whether it describes an AVERAGE or an INSTANTANEOUS rate of change: (a) &ldquo;the skier&rsquo;s speed at the moment she crosses the finish line,&rdquo; (b) &ldquo;the skier&rsquo;s average speed over the last 20 seconds,&rdquo; (c) &ldquo;the reading on her GPS watch at <em>t</em> = 12,&rdquo; (d) &ldquo;how fast she was dropping between <em>t</em> = 5 and <em>t</em> = 15.&rdquo;</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: (a) instantaneous &middot; (b) average &middot; (c) instantaneous &middot; (d) average</p>
+                <p class="explain"><strong>Key idea.</strong> Words like &ldquo;at the moment,&rdquo; &ldquo;at <em>t</em> =,&rdquo; and &ldquo;now&rdquo; signal INSTANTANEOUS. Words like &ldquo;over the interval,&rdquo; &ldquo;between,&rdquo; and &ldquo;average&rdquo; signal AVERAGE.</p>
+                <p><em>Why this works.</em> An instantaneous rate is defined at a single time; an average rate is defined between two times.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 4 &middot; Secant slope with the difference quotient</h3>
+              <p class="prompt">Let <span class="eq">f(x) = x&sup2;</span>. Compute the secant slope from <em>x</em> = 3 to <em>x</em> = 3 + <em>h</em>, and simplify.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 6 + <em>h</em></p>
+                <p class="explain"><strong>Key idea.</strong> Plug into the difference quotient and simplify the numerator BEFORE dividing by <em>h</em>.</p>
+                <span class="work">f(3 + h) = (3 + h)^2 = 9 + 6h + h^2
+f(3)     = 9
+
+m_sec = [ f(3 + h) - f(3) ] / h
+      = (9 + 6h + h^2 - 9) / h
+      = (6h + h^2) / h
+      = 6 + h</span>
+                <p><em>Why this works.</em> The <span class="eq">&minus; 9</span> in the numerator cancels the <span class="eq">+ 9</span>, and every remaining term has a factor of <em>h</em> we can divide out.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 5 &middot; From secant slope to tangent slope</h3>
+              <p class="prompt">Using the result of Question 4, what is the slope of the tangent line to <span class="eq">f(x) = x&sup2;</span> at <em>x</em> = 3?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 6</p>
+                <p class="explain"><strong>Key idea.</strong> The tangent slope is the LIMIT of the secant slope as <em>h</em> shrinks to zero.</p>
+                <span class="work">m_tan = lim_{h -> 0} (6 + h)
+      = 6 + 0
+      = 6</span>
+                <p><em>Why this works.</em> Once the difference quotient is simplified (no <em>h</em> in the denominator), just substitute <em>h</em> = 0. The tangent slope at <em>x</em> = <em>a</em> for <em>x</em>² is <span class="eq">2a</span>, so at <em>a</em> = 3 it&rsquo;s 6. You&rsquo;ll prove this in general in Unit 2.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 6 &middot; Shrinking-interval table for instantaneous velocity</h3>
+              <p class="prompt">A ball&rsquo;s position is <span class="eq">s(t) = 5t&sup2;</span>. Complete the table of average velocities on the interval <span class="eq">[2, 2 + h]</span> for <em>h</em> = 1, 0.5, 0.1, 0.01, 0.001. What is the instantaneous velocity at <em>t</em> = 2?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 20 ft/s</p>
+                <p class="explain"><strong>Key idea.</strong> Build the average velocity over each interval, then look at what the numbers approach.</p>
+                <span class="work">h        avg velocity = [s(2+h) - s(2)] / h
+1        25         ft/s
+0.5      22.5       ft/s
+0.1      20.5       ft/s
+0.01     20.05      ft/s
+0.001    20.005     ft/s
+h -> 0   20         ft/s   <- instantaneous</span>
+                <p><em>Why this works.</em> The pattern is <em>10 + 5h</em>, which shrinks to 10 &middot; 2 = 20 as <em>h</em> &rarr; 0. The instantaneous velocity at <em>t</em> = 2 is exactly 20 ft/s.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 7 &middot; Secant slope from a graph</h3>
+              <p class="prompt">The point <span class="eq">(1, 1)</span> is on the graph of <span class="eq">f(x) = x&sup3;</span>, and so is <span class="eq">(2, 8)</span>. Find the slope of the secant line connecting them.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 7</p>
+                <p class="explain"><strong>Key idea.</strong> Two points, one slope formula.</p>
+                <span class="work">m_sec = (8 - 1) / (2 - 1)
+      = 7 / 1
+      = 7</span>
+                <p><em>Why this works.</em> Nothing calculus-specific here yet &mdash; it&rsquo;s just the algebra slope of the line through two known points on the curve. That secant slope IS the average rate of change of <em>x</em>³ on <span class="eq">[1, 2]</span>.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 8 &middot; Interpret an instantaneous rate</h3>
+              <p class="prompt">The number of active students at SOMATH is <em>N</em>(<em>t</em>) at time <em>t</em> (weeks after January 1). If the instantaneous rate of change of <em>N</em> at <em>t</em> = 10 is <strong>3.5 students/week</strong>, what does that mean in plain English?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: At exactly 10 weeks after January 1, the number of active SOMATH students is growing at a rate of 3.5 students per week.</p>
+                <p class="explain"><strong>Key idea.</strong> An instantaneous rate of change is always given with units of (units of output) per (units of input), and it tells you the momentary trend at that instant.</p>
+                <p><em>Why this works.</em> The number 3.5 students/week does NOT mean 3.5 students actually enrolled that week. It means the enrollment trend, right at that moment, is 3.5 per week. If that rate continued unchanged for 2 weeks, we&rsquo;d expect roughly 7 more students. AP graders LOVE this kind of interpretation question &mdash; state the number, the units, and the moment.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 9 &middot; Negative rate of change</h3>
+              <p class="prompt">A cup of coffee cools according to <em>T</em>(<em>t</em>) in degrees Fahrenheit, where <em>t</em> is in minutes. The average rate of change of <em>T</em> on <span class="eq">[0, 15]</span> is <strong>&minus;3.2 &deg;F/min</strong>. What does the negative sign tell us?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: The coffee is cooling &mdash; its temperature dropped, on average, by 3.2 &deg;F every minute during those 15 minutes.</p>
+                <p class="explain"><strong>Key idea.</strong> The sign of a rate of change tells you the direction: positive means the quantity is increasing, negative means it&rsquo;s decreasing.</p>
+                <p><em>Why this works.</em> A negative slope on a temperature-vs-time graph is a downward tilt, which visually means the value is falling. AP problems will always ask you to interpret the sign in context, not just report the number.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 10 &middot; Building a difference quotient</h3>
+              <p class="prompt">Write (but don&rsquo;t simplify yet) the difference quotient for <span class="eq">g(x) = &radic;x</span> at <em>x</em> = 4.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: <span class="eq">(&radic;(4 + h) &minus; 2) / h</span></p>
+                <p class="explain"><strong>Key idea.</strong> The difference quotient at <em>x</em> = <em>a</em> is <span class="eq">[ g(a + h) &minus; g(a) ] / h</span>. Just substitute.</p>
+                <span class="work">g(4)       = sqrt(4) = 2
+g(4 + h)   = sqrt(4 + h)
+
+diff quotient = [ sqrt(4 + h) - 2 ] / h</span>
+                <p><em>Why this works.</em> Difference quotients for square-root functions look scary because you can&rsquo;t just cancel <em>h</em>. You&rsquo;ll simplify these in Unit 1 lessons on limits using the conjugate trick &mdash; multiply top and bottom by <span class="eq">(&radic;(4 + h) + 2)</span>.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 11 &middot; Average velocity of a dropped object</h3>
+              <p class="prompt">An object is dropped from rest and falls freely. Its position (measured downward from the release point in meters) is <span class="eq">s(t) = 4.9 t&sup2;</span>, where <em>t</em> is in seconds. Find the average velocity on the interval <span class="eq">[1, 3]</span>.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 19.6 m/s</p>
+                <p class="explain"><strong>Key idea.</strong> Average velocity is <span class="eq">[ s(t&#8322;) &minus; s(t&#8321;) ] / (t&#8322; &minus; t&#8321;)</span>.</p>
+                <span class="work">s(1) = 4.9 * 1  = 4.9   m
+s(3) = 4.9 * 9  = 44.1  m
+avg velocity = (44.1 - 4.9) / (3 - 1)
+             = 39.2 / 2
+             = 19.6 m/s</span>
+                <p><em>Why this works.</em> The object went from 4.9 m below the release point to 44.1 m below in 2 seconds &mdash; that&rsquo;s 39.2 m of drop, or 19.6 m/s on average. Notice this is BIGGER than the average of the instantaneous velocities at <em>t</em> = 1 (9.8 m/s) and <em>t</em> = 3 (29.4 m/s), which averages to 19.6 &mdash; that&rsquo;s a coincidence for constant-acceleration motion, not a general rule.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 12 &middot; Estimating instantaneous velocity from a shrinking table</h3>
+              <p class="prompt">Using <span class="eq">s(t) = 4.9 t&sup2;</span> from Question 11, compute the average velocity over <span class="eq">[3, 3 + h]</span> for <em>h</em> = 0.1, 0.01, and 0.001. What is the instantaneous velocity at <em>t</em> = 3?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 29.4 m/s</p>
+                <p class="explain"><strong>Key idea.</strong> Average velocity approaches instantaneous velocity as <em>h</em> shrinks to 0.</p>
+                <span class="work">h        s(3+h)              avg v = [s(3+h) - s(3)] / h
+0.1      4.9 * 9.61 = 47.089 (47.089 - 44.1) / 0.1   = 29.89 m/s
+0.01     4.9 * 9.0601 = 44.394 (44.394 - 44.1) / 0.01 = 29.449 m/s
+0.001    4.9 * 9.006001 = 44.129 (44.129 - 44.1) / 0.001 = 29.4049 m/s
+
+h -> 0   ->                      29.4 m/s   <- instantaneous</span>
+                <p><em>Why this works.</em> The pattern is <em>9.8 &middot; 3 + 4.9h = 29.4 + 4.9h</em>, which shrinks to 29.4 as <em>h</em> &rarr; 0. Physically, this is the free-fall velocity 3 seconds in: <em>v</em> = <em>gt</em> = 9.8 &middot; 3 = 29.4 m/s. Calculus will let you derive this without a table.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 13 &middot; Area under a constant function</h3>
+              <p class="prompt">A car cruises at a constant speed of 60 mph for 2 hours. Sketch the velocity-vs-time graph. What is the area under the graph between <em>t</em> = 0 and <em>t</em> = 2? What does that area represent?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: The area is 120, and it represents the total distance the car traveled &mdash; 120 miles.</p>
+                <p class="explain"><strong>Key idea.</strong> When the graph is velocity vs. time, area under the curve = distance traveled. For a constant speed, the region is a rectangle: <em>base &times; height</em>.</p>
+                <span class="work">area = base * height
+     = 2 hours * 60 mph
+     = 120 miles</span>
+                <p><em>Why this works.</em> Because the speed is constant, no calculus is needed &mdash; just a rectangle area. This is the simplest possible &ldquo;area problem.&rdquo; The whole point of integral calculus is to handle the case where the speed (or any rate) is NOT constant, so you can&rsquo;t just use base &times; height.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 14 &middot; Rectangle approximation of area</h3>
+              <p class="prompt">Estimate the area under <span class="eq">f(x) = x&sup2;</span> on <span class="eq">[0, 2]</span> using 4 right-endpoint rectangles of equal width.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: 3.75</p>
+                <p class="explain"><strong>Key idea.</strong> Split <span class="eq">[0, 2]</span> into 4 equal subintervals of width <em>&Delta;x</em> = 0.5, and use the right endpoint of each subinterval as the rectangle&rsquo;s height.</p>
+                <span class="work">right endpoints: 0.5, 1.0, 1.5, 2.0
+heights f(x) = x^2:  0.25, 1.00, 2.25, 4.00
+widths (delta x):    0.5 each
+
+approx area = 0.5 * (0.25 + 1.00 + 2.25 + 4.00)
+            = 0.5 * 7.50
+            = 3.75</span>
+                <p><em>Why this works.</em> Each rectangle has area <em>height &times; width</em>. Summing them approximates the area under the curve. The true area is 8/3 &approx; 2.667, so 4 right rectangles OVER-estimate. That&rsquo;s because <em>x</em>² is increasing on <span class="eq">[0, 2]</span> &mdash; right endpoints give the tallest possible heights.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 15 &middot; True area with more rectangles</h3>
+              <p class="prompt">In Question 14, we got 3.75 with 4 rectangles. The true area under <em>x</em>² on <span class="eq">[0, 2]</span> is 8/3 &approx; 2.667. Which of these choices would bring us CLOSEST to the true area? (a) 2 rectangles, (b) 8 rectangles, (c) 100 rectangles, (d) 1 rectangle.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: (c) 100 rectangles</p>
+                <p class="explain"><strong>Key idea.</strong> More rectangles &rArr; each is narrower &rArr; less of the curve is missed &rArr; the sum approaches the true area.</p>
+                <p><em>Why this works.</em> This is exactly the limit idea for integrals: <span class="eq">area = lim<sub>n&rarr;&infin;</sub> (sum of n rectangle areas)</span>. As <em>n</em> grows, the approximation converges to the exact area. You&rsquo;ll formalize this as a Riemann sum in Unit 6.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 16 &middot; Local linearity intuition</h3>
+              <p class="prompt">A calculator&rsquo;s screen shows <span class="eq">f(x) = &radic;x</span> zoomed WAY in near <em>x</em> = 4, and the curve looks perfectly straight on screen. What is that straight line the calculator is showing, in calculus language?</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: It&rsquo;s (visually) the tangent line to <em>f</em>(<em>x</em>) = &radic;<em>x</em> at <em>x</em> = 4.</p>
+                <p class="explain"><strong>Key idea.</strong> When you zoom hard enough on a smooth curve at a point, the curve becomes indistinguishable from its tangent line at that point. That&rsquo;s local linearity.</p>
+                <p><em>Why this works.</em> For &radic;<em>x</em> at <em>x</em> = 4, the tangent line has slope <span class="eq">1 / (2&radic;4) = 1/4</span> and passes through <span class="eq">(4, 2)</span>. So the zoomed-in line the calculator shows has slope about 0.25 &mdash; and if you zoom out again, it separates from the curve as you move away from <em>x</em> = 4.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 17 &middot; When local linearity FAILS</h3>
+              <p class="prompt">Which of the following functions FAILS to be locally linear at <em>x</em> = 0? (a) <span class="eq">f(x) = x&sup2;</span>, (b) <span class="eq">g(x) = sin&nbsp;x</span>, (c) <span class="eq">h(x) = |x|</span>, (d) <span class="eq">p(x) = e<sup>x</sup></span>.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: (c) <em>h</em>(<em>x</em>) = |<em>x</em>|</p>
+                <p class="explain"><strong>Key idea.</strong> Local linearity requires the curve to look like a single straight line when you zoom. A sharp corner never looks like a single line, no matter how much you zoom.</p>
+                <p><em>Why this works.</em> The absolute value function has a corner at <em>x</em> = 0 &mdash; the left side has slope &minus;1, the right side has slope +1. No single tangent line fits both sides. That&rsquo;s why <em>h</em>(<em>x</em>) = |<em>x</em>| is NOT differentiable at <em>x</em> = 0 &mdash; a fact you&rsquo;ll prove in Unit 2. The other three functions are smooth everywhere and locally linear at every point.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 18 &middot; Average vs. instantaneous on a graph</h3>
+              <p class="prompt">A function <em>f</em> is graphed on <span class="eq">[0, 6]</span>. Which of the following is represented by the SLOPE of the SECANT line through <span class="eq">(1, f(1))</span> and <span class="eq">(5, f(5))</span>? (a) instantaneous rate of change at <em>x</em> = 3, (b) average rate of change on <span class="eq">[1, 5]</span>, (c) tangent slope at <em>x</em> = 1, (d) tangent slope at <em>x</em> = 5.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: (b) average rate of change on <span class="eq">[1, 5]</span></p>
+                <p class="explain"><strong>Key idea.</strong> The slope of a secant line through the endpoints of an interval IS the average rate of change on that interval, by definition.</p>
+                <p><em>Why this works.</em> Secant slope = <span class="eq">[ f(5) &minus; f(1) ] / (5 &minus; 1)</span>, and that formula is average rate of change on <span class="eq">[1, 5]</span>. Options (a), (c), and (d) are instantaneous rates at specific points, which correspond to TANGENT slopes, not secant slopes. Only in special cases (constant slope, or by the Mean Value Theorem) will the secant slope equal an instantaneous slope somewhere.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 19 &middot; Writing an instantaneous rate as a limit</h3>
+              <p class="prompt">Let <span class="eq">f(x) = 1/x</span>. Write (but don&rsquo;t evaluate) an expression involving a limit that represents the instantaneous rate of change of <em>f</em> at <em>x</em> = 2.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: <span class="eq">lim<sub>h&rarr;0</sub> [ 1/(2 + h) &minus; 1/2 ] / h</span></p>
+                <p class="explain"><strong>Key idea.</strong> The instantaneous rate of change at <em>x</em> = <em>a</em> is <span class="eq">lim<sub>h&rarr;0</sub> [ f(a + h) &minus; f(a) ] / h</span>. Just plug in <em>a</em> = 2 and <em>f</em>(<em>x</em>) = 1/<em>x</em>.</p>
+                <span class="work">IROC(2) = lim_{h -> 0} [ f(2 + h) - f(2) ] / h
+        = lim_{h -> 0} [ 1/(2 + h) - 1/2 ] / h</span>
+                <p><em>Why this works.</em> This is just careful substitution. You&rsquo;ll simplify complex fractions like this using a common denominator in your Unit 1 limit computations. The eventual answer, using Unit 2 rules, is &minus;1/4.</p>
+              </div></details>
+            </div>
+
+            <div class="qbox">
+              <h3>Question 20 &middot; Reasoning about signs and steepness</h3>
+              <p class="prompt">A snowboarder&rsquo;s elevation <em>E</em>(<em>t</em>) in feet is shown on a smooth graph. At the moment she is going down the steepest part of the run, which of these is TRUE about the instantaneous rate of change of <em>E</em>? (a) It&rsquo;s a large positive number. (b) It&rsquo;s zero. (c) It&rsquo;s a large negative number. (d) It&rsquo;s a small negative number close to zero.</p>
+              <details class="reveal"><summary></summary><div class="reveal-body">
+                <p class="answer">Answer: (c) a large negative number</p>
+                <p class="explain"><strong>Key idea.</strong> The instantaneous rate of change corresponds to the SLOPE of the tangent line, which is the tilt of the curve at that moment.</p>
+                <p><em>Why this works.</em> &ldquo;Going down&rdquo; means elevation is decreasing &mdash; so the tangent slope is NEGATIVE. &ldquo;Steepest&rdquo; means the magnitude of the tilt is as big as it gets &mdash; so the slope is a LARGE (in absolute value) negative number. The answer must be (c). This kind of graphical, sign-and-magnitude reasoning is how AP graders test whether you understand rate of change on a conceptual level, not just as an algebra exercise.</p>
+              </div></details>
+            </div>
+
+            <h2 id="next">What&rsquo;s next in Unit 1</h2>
+
+            <p>Class 1 gave you the WHY: rate of change at an instant, area under a curve, and the need for limits to define both. The rest of Unit 1 gives you the HOW:</p>
+
+            <ul>
+              <li><strong>Class 2 &mdash; Defining and estimating limits.</strong> Graphs, tables, one-sided limits, limit notation, and why <span class="eq">lim<sub>x&rarr;a</sub> f(x)</span> is a question about <em>x</em>-values NEAR <em>a</em>, not <em>x</em> = <em>a</em> itself.</li>
+              <li><strong>Class 3 &mdash; Computing limits algebraically.</strong> Direct substitution, factor-and-cancel, the conjugate trick, and limit laws.</li>
+              <li><strong>Class 4 &mdash; Continuity, IVT, and infinite limits.</strong> When you CAN plug in, when discontinuities happen, and how asymptotes show up as limits.</li>
+            </ul>
+
+            <p>By the end of Unit 1 you&rsquo;ll be ready for Unit 2: derivatives &mdash; a formal, general-purpose machine for instantaneous rates of change.</p>
+
+            <div class="course-cta-card">
+              <p class="course-cta-card__grade">Ready to prep for AP Calculus AB or BC?</p>
+              <h3 class="course-cta-card__h">Join SOMATH&rsquo;s AP Calculus track this fall</h3>
+              <p class="course-cta-card__lede">2-hour weekly classes on the Upper West Side or online. Original SOMATH problem sets, full AP-style free-response practice, and mock exams timed to the real May AP schedule. Tuition <strong>$800/month</strong> plus a one-time $99 registration fee.</p>
+              <p class="course-cta-card__ctas">
+                <a class="course-cta-card__primary" href="/evaluation">Book a free evaluation</a>
+                <a class="course-cta-card__secondary" href="/schedule">See class schedule &rarr;</a>
+              </p>
+            </div>
+
+            <p style="color:#5a5f57;font-size:0.94rem;margin-top:32px;">Written by the SOMATH team at 226 W 79th Street, New York, NY 10024. Call <a href="tel:+16466686151">(646) 668-6151</a> to talk to a teacher or book a free 60-minute evaluation.</p>
+
+          </div>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 School of Math &middot; 226 W 79th Street, New York, NY 10024 &middot; (646) 668-6151</p>
+        <p><a href="/">Home</a> &middot; <a href="/courses">Courses</a> &middot; <a href="/schedule">Schedule</a> &middot; <a href="/evaluation">Evaluation</a> &middot; <a href="/blog">Blog</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
