@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AP Statistics Class 2 — Displaying Categorical Data: Bar Charts, Two-Way Tables &amp; Segmented Bars (Unit 1) | SOMATH NYC</title>
+    <meta name="description" content="Free AP Statistics Class 2 practice: bar charts, frequency and relative-frequency tables, pie charts, two-way tables, marginal and conditional distributions, segmented bar charts, and an intro to Simpson's paradox. Full theory + 20 original SOMATH practice questions with click-to-reveal answers." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/ap-statistics-class-2-displaying-categorical-data" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AP Statistics Class 2 — Displaying Categorical Data: Bar Charts, Two-Way Tables &amp; Segmented Bars" />
+    <meta property="og:description" content="AP Statistics Class 2: bar charts, two-way tables, marginal and conditional distributions, segmented bar charts, and an intro to Simpson's paradox. Theory + 20 original SOMATH practice questions with hidden answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/ap-statistics-class-2-displaying-categorical-data" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/ap-statistics-class-2-displaying-categorical-data/01-bar-favorite-topic.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:published_time" content="2026-09-06" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AP Statistics Class 2 — Displaying Categorical Data" />
+    <meta name="twitter:description" content="AP Stats Class 2: bar charts, two-way tables, conditional distributions, segmented bars, and Simpson's paradox. Theory + 20 practice questions." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/ap-statistics-class-2-displaying-categorical-data/01-bar-favorite-topic.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box ul { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li { margin:4px 0; }
+      .fact-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:820px; }
+      .fact-table th, .fact-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .fact-table th { background:#0a3a5f; color:#fff; }
+      .fact-table tr:nth-child(even) { background:#fafafa; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.5; overflow-x:auto; font-size:0.96rem; }
+      .answer-key-table { width:100%; border-collapse:collapse; margin:14px 0 24px; font-size:0.95rem; max-width:760px; }
+      .answer-key-table th, .answer-key-table td { padding:6px 10px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .answer-key-table th { background:#0a3a5f; color:#fff; }
+      .answer-key-table tr:nth-child(even) { background:#fafafa; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & work"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & work"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .course-cta-card { background:#f5f0e6; border:1px solid #d9cfb7; border-left:6px solid #c89a3a; border-radius:10px; padding:26px 30px; margin:36px 0 30px; box-shadow:0 2px 10px rgba(31,61,46,0.06); }
+      .course-cta-card__grade { color:#8a6d1f; font-size:0.82rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 6px; }
+      .course-cta-card__h { color:#1f3d2e; font-family:'Cormorant Garamond', Georgia, serif; font-size:1.55rem; font-weight:600; margin:0 0 10px; line-height:1.25; }
+      .course-cta-card__lede { color:#3a3a34; margin:0 0 18px; line-height:1.55; }
+      .course-cta-card__ctas { margin:0; display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .course-cta-card__primary { background:#1f3d2e; color:#fff; padding:11px 22px; border-radius:6px; text-decoration:none; font-weight:700; display:inline-block; }
+      .course-cta-card__primary:hover { background:#152a20; }
+      .course-cta-card__secondary { color:#1f3d2e; text-decoration:underline; font-weight:600; font-size:0.95rem; }
+      .course-cta-card__secondary:hover { color:#c89a3a; }
+      .two-way { font-family:"Courier New", monospace; background:#fafafa; padding:12px 16px; border-radius:6px; white-space:pre; display:block; margin:12px 0; overflow-x:auto; font-size:0.96rem; line-height:1.55; }
+    </style>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AP Statistics Class 2 — Displaying Categorical Data: Bar Charts, Two-Way Tables & Segmented Bars (Unit 1)",
+  "description": "The second 2-hour class of SOMATH's AP Statistics arc: bar charts, two-way tables, marginal and conditional distributions, segmented bar charts, and an intro to Simpson's paradox. Includes 20 original SOMATH practice questions with click-to-reveal answers.",
+  "image": "https://www.schoolofmath.us/assets/blog/ap-statistics-class-2-displaying-categorical-data/01-bar-favorite-topic.png",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/ap-statistics-class-2-displaying-categorical-data"
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#school",
+  "name": "School of Math (SOMATH)",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th Street, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "Upper West Side, Manhattan" },
+    { "@type": "Place", "name": "Manhattan" },
+    { "@type": "Place", "name": "New York City" }
+  ]
+}</script>
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does AP Statistics Class 2 cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Class 2 covers how to display categorical data. You learn to build and read frequency tables, relative-frequency tables, and bar charts for a single categorical variable, and two-way tables and segmented bar charts for two categorical variables. It also introduces marginal, joint, and conditional distributions and gives a first look at Simpson's paradox."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a frequency and a relative frequency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A frequency is a raw count of how many observations fall in a category (for example, 11 students named Geometry). A relative frequency is that count expressed as a fraction, decimal, or percent of the total (11 out of 34 = 32.4%). Relative frequencies of a single categorical variable always sum to 100%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a two-way table?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A two-way table (also called a contingency table) crosses two categorical variables. Rows show the categories of one variable, columns show the categories of the other, cells show the counts for each combination, and the margins show the row totals, column totals, and grand total. Two-way tables are the starting point for computing joint, marginal, and conditional distributions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between marginal and conditional distributions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A marginal distribution describes ONE variable while ignoring the other — divide each row (or column) total by the grand total. A conditional distribution describes one variable within a specific value of the other — divide each cell in the chosen row (or column) by that row (or column) total. Marginal answers 'what fraction of the whole?'; conditional answers 'what fraction of the subgroup?'"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are bar charts usually preferred over pie charts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Human eyes read length very accurately and angle very poorly. For nearly any question about a categorical variable — ranking, comparison, tracking change — a bar chart lets the reader answer the question in one glance while a pie chart forces them to compare angles. AP graders and professional communicators prefer bar charts unless the entire message is 'these pieces make up a whole' and there are only two or three slices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Simpson's paradox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simpson's paradox is a situation where a relationship holds inside every subgroup but reverses direction when the subgroups are pooled together. It happens because the subgroups differ both in size and in baseline rate. It is the reason experiments in later units randomly assign subjects to treatments: random assignment prevents the enrollment imbalance that causes the reversal."
+      }
+    }
+  ]
+}</script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">AP Statistics &middot; Unit 1 &middot; Class 2 of 8 &middot; Grades 10&ndash;12</p>
+      <h1 class="post__title">AP Statistics Class 2 &mdash; Displaying Categorical Data</h1>
+      <p class="post__dek">The second 2-hour class of SOMATH&rsquo;s AP Statistics arc: how to summarize a single categorical variable with a frequency (or relative-frequency) table and a bar chart, why pie charts almost always lose to bar charts, how to build a two-way table for two categorical variables, and how to read marginal, joint, and conditional distributions. Full theory with worked-through SOMATH charts, plus <strong>20 original practice questions</strong> with click-to-reveal step-by-step answers, ending with an intro to Simpson&rsquo;s paradox.</p>
+      <p class="post__meta"><time datetime="2026-09-06">2026-09-06</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+        <p>In Class 1 we defined the vocabulary of AP Statistics: population vs. sample, parameter vs. statistic, categorical vs. quantitative. Class 2 picks up where Class 1 left off and answers the natural next question: <em>once you have data on one or two categorical variables, how do you summarize and display them so a reader can actually see what&rsquo;s going on?</em></p>
+        <p>That&rsquo;s all of Class 2. For a single categorical variable, you make a <strong>frequency table</strong> (and its cousin, the <strong>relative-frequency table</strong>) and display it with a <strong>bar chart</strong>. For two categorical variables at once, you make a <strong>two-way table</strong> and display it with a <strong>side-by-side bar chart</strong> or a <strong>segmented (100%-stacked) bar chart</strong>. Then you learn three ways to slice the two-way table &mdash; <strong>marginal</strong>, <strong>joint</strong>, and <strong>conditional</strong> distributions &mdash; and use them to decide whether the two variables are <strong>associated</strong>. At the very end we peek at <strong>Simpson&rsquo;s paradox</strong>, the classic warning that pooling two subgroups can flip the answer.</p>
+        <p>All charts on this page are original SOMATH visuals built from small classroom-style datasets we invented for teaching. Every practice question is 100% written by SOMATH teachers. If your student wants a structured in-person path through the AP Statistics exam, <a href="/evaluation">book a free 30-minute in-person diagnostic evaluation</a> or call <strong>(646) 668-6151</strong>.</p>
+
+        <nav class="toc" aria-label="Table of contents"><h2>On this page</h2><ol>
+          <li><a href="#recap">Class 1 recap &mdash; the vocabulary in one sentence</a></li>
+          <li><a href="#single-var">Displaying one categorical variable &mdash; frequency tables and bar charts</a></li>
+          <li><a href="#pie">Bar charts vs. pie charts</a></li>
+          <li><a href="#misleading">Reading bar charts critically (truncated axes)</a></li>
+          <li><a href="#two-way">Two categorical variables at once &mdash; the two-way table</a></li>
+          <li><a href="#marginal-joint-conditional">Marginal, joint, and conditional distributions</a></li>
+          <li><a href="#segmented">Segmented bar charts and association</a></li>
+          <li><a href="#simpson">Simpson&rsquo;s paradox &mdash; when the pooled bar flips the story</a></li>
+          <li><a href="#class2-recap">Class 2 recap &mdash; the workflow in one table</a></li>
+          <li><a href="#answer-key">Answer key for all 20 practice questions</a></li>
+          <li><a href="#part-1">Practice: Questions 1&ndash;6 (single-variable displays)</a></li>
+          <li><a href="#part-2">Practice: Questions 7&ndash;10 (build a two-way table)</a></li>
+          <li><a href="#part-3">Practice: Questions 11&ndash;14 (marginal vs. conditional)</a></li>
+          <li><a href="#part-4">Practice: Questions 15&ndash;17 (choose &amp; critique displays)</a></li>
+          <li><a href="#part-5">Practice: Questions 18&ndash;20 (Simpson &amp; mixed applied)</a></li>
+          <li><a href="#faq">AP Statistics Class 2 FAQ</a></li>
+        </ol></nav>
+
+        <h2 id="recap">Class 1 recap &mdash; the vocabulary in one sentence</h2>
+        <p>Before we dive in, one-sentence recap of <a href="/posts/ap-statistics-class-1-statistics-as-variation-variable-types">Class 1</a>: a <strong>population</strong> is the whole group you want to describe; a <strong>sample</strong> is the subset you actually measured; a <strong>parameter</strong> (Greek letters) is the true number about the population; a <strong>statistic</strong> (Roman letters, hats) is the number you compute from the sample. Categorical variables label groups; quantitative variables measure amounts. Class 2 is entirely about summarizing and displaying <em>categorical</em> variables.</p>
+
+        <h2 id="single-var">Displaying one categorical variable &mdash; frequency tables and bar charts</h2>
+        <p>Say a SOMATH classroom surveys 34 students on their favorite math topic. The raw data are 34 category labels: Geometry, Algebra, Word problems, and so on. The first summary is the <strong>frequency table</strong> &mdash; a two-column table listing each category and its count:</p>
+        <table class="fact-table"><thead><tr><th>Favorite topic</th><th>Frequency (count)</th></tr></thead><tbody>
+          <tr><td>Geometry</td><td>11</td></tr>
+          <tr><td>Algebra</td><td>9</td></tr>
+          <tr><td>Word problems</td><td>6</td></tr>
+          <tr><td>Statistics</td><td>5</td></tr>
+          <tr><td>Number theory</td><td>3</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>34</strong></td></tr>
+        </tbody></table>
+        <p>The <strong>relative-frequency table</strong> is the same table with each count divided by the total (and typically expressed as a percent):</p>
+        <table class="fact-table"><thead><tr><th>Favorite topic</th><th>Frequency</th><th>Relative frequency</th></tr></thead><tbody>
+          <tr><td>Geometry</td><td>11</td><td>11 / 34 = 32.4%</td></tr>
+          <tr><td>Algebra</td><td>9</td><td>9 / 34 = 26.5%</td></tr>
+          <tr><td>Word problems</td><td>6</td><td>6 / 34 = 17.6%</td></tr>
+          <tr><td>Statistics</td><td>5</td><td>5 / 34 = 14.7%</td></tr>
+          <tr><td>Number theory</td><td>3</td><td>3 / 34 = 8.8%</td></tr>
+          <tr><td><strong>Total</strong></td><td><strong>34</strong></td><td><strong>100.0%</strong></td></tr>
+        </tbody></table>
+        <p>Relative frequencies of a single categorical variable always sum to 100% (up to small rounding). If yours don&rsquo;t, either a category is missing or an observation is double-counted.</p>
+
+        
+<div class="theory-box"><h3>Chart 1 &mdash; Single-variable bar chart (favorite math topic)</h3>
+<p>Below is a bar chart of one categorical variable &mdash; favorite math topic among 34 SOMATH students. Each bar is one category, bars are separated (not touching), and the height of the bar is the count in that category.</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/01-bar-favorite-topic.png" alt="Bar chart of favorite math topic among 34 SOMATH students; Geometry 11, Algebra 9, Word problems 6, Statistics 5, Number theory 3." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> bars are ordered from highest to lowest count (Pareto order). The bars have gaps between them &mdash; unlike a histogram, where bars touch, because bars in a bar chart represent separate categories, not intervals on a number line.</p>
+</div>
+
+<div class="theory-box"><h3>Chart 2 &mdash; Same data, as a relative-frequency (percent) bar chart</h3>
+<p>Take the same data and divide each count by the total (34). Now the bar heights are percents that add to 100%.</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/02-bar-relative-frequency.png" alt="Relative-frequency bar chart of favorite math topic; Geometry 32.4%, Algebra 26.5%, Word problems 17.6%, Statistics 14.7%, Number theory 8.8%." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> the shape is identical to Chart 1 &mdash; the y-axis just changes from counts to percents. Use relative frequency when you want to compare two groups of different sizes (Chart 4 below) or when the total is very large.</p>
+</div>
+
+<div class="theory-box"><h3>Chart 3 &mdash; Side-by-side (grouped) bar chart of two-way data</h3>
+<p>When there are two categorical variables, one common display is the side-by-side bar chart. Each category on the x-axis gets one bar per group.</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/03-grouped-bar-by-grade.png" alt="Side-by-side bar chart of favorite math topic by grade; Grade 9 has 18 students and Grade 10 has 13 students; grade 9 bars are taller in general because there are more grade 9 students." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> side-by-side bar charts compare <em>counts</em>, not shares. Because Grade 9 has more students, Grade 9 bars tend to be taller everywhere &mdash; even for topics where Grade 10 has a bigger <em>share</em> of its class. To fix this, switch to a segmented bar chart (Chart 4).</p>
+</div>
+
+<div class="theory-box"><h3>Chart 4 &mdash; Segmented (100%-stacked) bar chart of conditional distributions</h3>
+<p>A segmented bar chart shows the conditional distribution of one variable given each value of the other. Every bar is scaled to 100%, so what you compare is <em>shares</em>, not raw counts.</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/04-segmented-bar-conditional.png" alt="Segmented bar chart of favorite math topic by grade, with each bar normalized to 100%; Grade 9: Geometry 39%, Algebra 28%, Word problems 22%, Statistics 11%; Grade 10: Geometry 31%, Algebra 31%, Word problems 15%, Statistics 23%." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> compare the SAME COLOR across the two bars. Statistics (the rightmost color) takes 11% of Grade 9 but 23% of Grade 10 &mdash; so Statistics is a bigger share of Grade 10 preferences, even though the raw count in Grade 10 (3 students) is smaller than in Grade 9 (2 students). If the two bars had identical stripe widths, the two variables would be (roughly) independent. Because the stripes differ, favorite topic and grade level are <em>associated</em>.</p>
+</div>
+
+<div class="theory-box"><h3>Chart 5 &mdash; Same data as a pie chart</h3>
+<p>Pie charts show the same single-variable relative frequencies as Chart 2, but as wedges of a whole. Pie charts get harder to read as the number of categories grows, and comparing two pie charts (say, this year vs. last year) is very hard.</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/05-pie-comparison.png" alt="Pie chart of favorite math topic among 34 SOMATH students; caption notes that bar charts are usually easier to read." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> we can see Geometry is the biggest slice, but ranking Algebra vs. Word problems vs. Statistics visually is much harder here than in Chart 1. AP graders and professional communicators default to bar charts.</p>
+</div>
+
+<div class="theory-box"><h3>Chart 6 &mdash; Misleading vs. honest y-axis</h3>
+<p>The same three bars, plotted two different ways. The left panel is truncated (y-axis starts at 80). The right panel is honest (y-axis starts at 0).</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/06-misleading-vs-honest.png" alt="Two bar charts of the same three method scores 82, 84, 86; the left chart truncates the y-axis to 80-87 and makes the differences look enormous; the right chart uses a 0-100 y-axis and shows the differences are actually small." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> when the y-axis is truncated (left), a 4-point difference on a 100-point scale looks like Method C is 3 times better than Method A. On the honest chart (right), the three methods are visibly almost identical. First move when you look at any bar chart in the wild: check where the y-axis starts.</p>
+</div>
+
+<div class="theory-box"><h3>Chart 7 &mdash; Simpson&rsquo;s paradox: the pooled bar can flip the story</h3>
+<p>SOMATH runs two tracks: Enrichment (an easier track where most students succeed) and Test Prep (a harder track). Each track is offered both in-person and online. Within each track, in-person students succeed at a higher rate. But because most online students are enrolled in the easier track, the pooled overall rate reverses the ranking.</p>
+<img src="/assets/blog/ap-statistics-class-2-displaying-categorical-data/07-simpson-flavored-warning.png" alt="Three segmented bar charts showing Simpson's paradox: Enrichment track in-person 90% vs online 85%; Test Prep in-person 60% vs online 55%; overall in-person 66% vs online 79% (reversed)." style="max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #e6e6e6;border-radius:6px;">
+<p><strong>What to notice:</strong> in-person wins each track (90% vs. 85%, and 60% vs. 55%) but loses overall (66% vs. 79%). The reversal happens because online students are concentrated in the easier track. This is called <strong>Simpson&rsquo;s paradox</strong>. The honest answer to &ldquo;which format is better?&rdquo; here is <em>in-person</em>, using the within-track comparisons &mdash; the pooled bar hides the effect of the enrollment imbalance.</p>
+</div>
+
+
+        <h2 id="pie">Bar charts vs. pie charts</h2>
+        <p>Chart 5 above is the same data as a pie chart. Pie charts are visually familiar but almost always harder to read than a bar chart of the same data, for two reasons:</p>
+        <ul>
+          <li>Human eyes read <em>length</em> very accurately and <em>angle</em> very poorly. Comparing bar heights beats comparing wedge angles at almost every question.</li>
+          <li>Pie charts get worse quickly as the number of categories grows. Beyond 4 or 5 slices they become a color-guessing game, and comparing two pie charts (year over year, say) is genuinely hard.</li>
+        </ul>
+        <p><strong>SOMATH default:</strong> reach for a bar chart. Reserve pie charts for the specific case where the message really is <em>&ldquo;these pieces make up a whole&rdquo;</em> and there are only 2&ndash;3 categories.</p>
+
+        <h2 id="misleading">Reading bar charts critically &mdash; the truncated axis</h2>
+        <p>Chart 6 above shows the same three data points twice. On the left the y-axis is truncated to 80&ndash;87 (making a 4-point difference on a 100-point scale look enormous). On the right the y-axis starts at 0 (making the same difference look small and honest).</p>
+        <div class="callout"><strong>First move when you look at any bar chart in the wild:</strong> check where the y-axis starts. If it doesn&rsquo;t start at zero, the visual size of the difference is exaggerated. AP graders reward you for calling this out on chart-critique FRQs.</div>
+
+        <h2 id="two-way">Two categorical variables at once &mdash; the two-way table</h2>
+        <p>When you record two categorical variables on the same set of observations, you can cross-classify them in a <strong>two-way table</strong> (also called a <em>contingency table</em>). Rows are the categories of one variable, columns are the categories of the other, cells are counts, and the margins hold row totals, column totals, and the grand total.</p>
+        <p>Example: a SOMATH SHSAT class of 30 students is surveyed on (i) whether they attended test-day tutoring and (ii) whether they made the SHSAT admissions cutoff.</p>
+        <span class="two-way">                     Admitted    Not admitted    Row total
+Tutoring: Yes           12            3             15
+Tutoring: No             6            9             15
+Column total            18           12             30</span>
+        <p>Every count you might want is either <em>in a cell</em> (a joint count), <em>in a row/column total</em> (a marginal count), or a ratio built out of these.</p>
+
+        <h2 id="marginal-joint-conditional">Marginal, joint, and conditional distributions</h2>
+        <p>Three ratios come out of the same two-way table. Learning to keep them straight is Class 2&rsquo;s single most important skill.</p>
+        <div class="theory-box"><h3>Joint distribution &mdash; single cell &divide; grand total</h3>
+          <p>The joint relative frequency for &ldquo;Yes AND Admitted&rdquo; is 12 / 30 = 40%. In general, joint = cell count &divide; grand total. It answers: <em>what fraction of the whole group has this specific combination of both categories?</em></p>
+        </div>
+        <div class="theory-box"><h3>Marginal distribution &mdash; row (or column) total &divide; grand total</h3>
+          <p>The marginal distribution of tutoring is: Yes 15/30 = 50%, No 15/30 = 50%. The marginal distribution of admission is: Admitted 18/30 = 60%, Not admitted 12/30 = 40%. Marginals ignore the other variable entirely.</p>
+        </div>
+        <div class="theory-box"><h3>Conditional distribution &mdash; single cell &divide; row (or column) total</h3>
+          <p>The conditional distribution of admission <em>given</em> Yes: P(Admitted | Yes) = 12/15 = 80%; P(Not admitted | Yes) = 3/15 = 20%. The conditional distribution of admission <em>given</em> No: P(Admitted | No) = 6/15 = 40%; P(Not admitted | No) = 9/15 = 60%.</p>
+          <p><strong>Test for association:</strong> compare the two conditional distributions. Here P(Admitted | Yes) = 80% while P(Admitted | No) = 40% &mdash; a 40-point gap. This is strong evidence that tutoring and admission are <em>associated</em> in this sample.</p>
+        </div>
+        <div class="callout"><strong>Vocabulary trap.</strong> &ldquo;Associated&rdquo; on the AP exam is a purely descriptive claim about the sample. It does NOT mean &ldquo;caused.&rdquo; That distinction is the entire subject of Unit 3 (experiments vs. observational studies). Class 2 gives you the vocabulary of association; Unit 3 gives you the tools to argue about cause.</div>
+
+        <h2 id="segmented">Segmented bar charts and association</h2>
+        <p>The <strong>segmented (100%-stacked) bar chart</strong> is the visual form of two conditional distributions. Chart 4 above shows favorite topic given grade. Each bar is scaled to 100%, so you compare <em>shares</em>, not raw counts.</p>
+        <p><strong>The one-glance test for association on a segmented bar chart:</strong></p>
+        <ul>
+          <li>If the two bars have <em>identical stripe widths</em>, the two variables are (roughly) independent.</li>
+          <li>If the two bars have <em>visibly different stripe widths</em>, the two variables are associated.</li>
+        </ul>
+        <p>In Chart 4, Grade 9 gives 39% of its shares to Geometry and 11% to Statistics; Grade 10 gives 31% to Geometry and 23% to Statistics. Different widths &rArr; associated.</p>
+
+        <h2 id="simpson">Simpson&rsquo;s paradox &mdash; when the pooled bar flips the story</h2>
+        <p>Chart 7 above is a preview of a phenomenon that will come back throughout the course: <strong>Simpson&rsquo;s paradox</strong>. A relationship holds cleanly inside every subgroup, but reverses direction when the subgroups are pooled.</p>
+        <p>In the SOMATH example: within the Enrichment track, in-person students succeed 90% of the time and online students 85%. Within the Test Prep track, in-person 60% and online 55%. In-person wins <em>each</em> track. But because most online students are enrolled in the easier track and most in-person students in the harder track, the pooled overall rate is in-person 66% vs. online 79% &mdash; the ranking flips.</p>
+        <div class="theory-box"><h3>Why the flip happens</h3>
+          <p>The formula for the overall rate is a weighted average across tracks. When the weights (enrollment counts) differ dramatically between the two formats, the pooled averages can rank differently than the within-track rates.</p>
+          <p>The honest answer to &ldquo;which format is better for a student?&rdquo; is the <em>within-track</em> answer &mdash; because a real student is in one specific track, not in a weighted average of tracks. This is exactly why later units insist on <em>random assignment</em> in experiments: it prevents the kind of enrollment imbalance that causes Simpson&rsquo;s paradox.</p>
+        </div>
+
+        <h2 id="class2-recap">Class 2 recap &mdash; the workflow in one table</h2>
+        <table class="fact-table">
+          <thead><tr><th>You have...</th><th>Table</th><th>Chart</th><th>Ratio(s) to compute</th></tr></thead>
+          <tbody>
+            <tr><td>One categorical variable</td><td>Frequency table (add relative frequencies)</td><td>Bar chart (or, sparingly, pie)</td><td>Percent per category (sum to 100%)</td></tr>
+            <tr><td>Two categorical variables</td><td>Two-way table (with row totals, column totals, grand total)</td><td>Side-by-side bars (counts) OR segmented bars (100%)</td><td>Joint (cell / grand total), Marginal (row or column total / grand total), Conditional (cell / row or column total)</td></tr>
+            <tr><td>Detect association?</td><td>&mdash;</td><td>Segmented bar chart</td><td>Compare conditional distributions across the two groups</td></tr>
+            <tr><td>Pooled data across subgroups</td><td>&mdash;</td><td>&mdash;</td><td>Watch for Simpson&rsquo;s paradox &mdash; check within-group rates before trusting a pooled comparison</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="answer-key">Answer key for all 20 practice questions</h2>
+        <table class="answer-key-table"><thead><tr><th>Q #</th><th>Answer</th></tr></thead><tbody>
+<tr><td>1</td><td>32.4%</td></tr>
+<tr><td>2</td><td>100% (up to rounding), because the five categories cover every student exactly once.</td></tr>
+<tr><td>3</td><td>(c) 26.5%</td></tr>
+<tr><td>4</td><td>The bar chart. Comparing the heights of two adjacent bars is easier than comparing the angles of two adjacent pie slices.</td></tr>
+<tr><td>5</td><td>The mode is Geometry (the category with the highest count, 11 out of 34 students). The mode of a categorical variable is the category that appears most often.</td></tr>
+<tr><td>6</td><td>The actual gap: Method C scored 86 and Method A scored 82 &mdash; a difference of only 4 points on a 0&ndash;100 scale. The chart makes it look enormous only because the y-axis starts at 80 instead of 0.</td></tr>
+<tr><td>7</td><td>See the worked table below. Row totals: Yes = 15, No = 15. Column totals: Admitted = 18, Not = 12. Grand total = 30.</td></tr>
+<tr><td>8</td><td>12 / 30 = 0.40 = 40%</td></tr>
+<tr><td>9</td><td>Yes: 15/30 = 50%. No: 15/30 = 50%.</td></tr>
+<tr><td>10</td><td>12 / 18 &asymp; 66.7%</td></tr>
+<tr><td>11</td><td>P(Admitted | Yes) = 12/15 = 80%. P(Not admitted | Yes) = 3/15 = 20%.</td></tr>
+<tr><td>12</td><td>P(Admitted | No) = 6/15 = 40%. P(Not admitted | No) = 9/15 = 60%. Tutoring students were admitted 80% of the time; non-tutoring students only 40% of the time. There is a strong <em>positive association</em> between attending test-day tutoring and being admitted in this sample.</td></tr>
+<tr><td>13</td><td>Grade 10. Grade 10 gives 23% of its share to Statistics while Grade 9 gives only 11%.</td></tr>
+<tr><td>14</td><td>The two bars have visibly different color patterns. If the two variables were independent, the two 100% bars would have the same color breakdown (identical stripe widths). Because the stripes have different widths in the two grades, favorite topic and grade level are associated.</td></tr>
+<tr><td>15</td><td>(c) Two segmented (100%-stacked) bar charts of percentages, one for each year.</td></tr>
+<tr><td>16</td><td>(1) The y-axis is truncated (starts at 350, not 0), which makes a 20-member difference look enormous. (2) The y-axis has no label, so a reader cannot tell what the numbers represent (number of members? monthly revenue? something else?). Add: (3) Reporting no total or context (400 out of how many?), and (4) The word &ldquo;massively&rdquo; is not supported by a 5% difference &mdash; 400 vs. 380 is a 5% gap.</td></tr>
+<tr><td>17</td><td>Either works, but a pie chart is defensible here: with only 2 categories and the question being &ldquo;is the whole roughly half-and-half?&rdquo; the eye reads the pie&rsquo;s halves cleanly.</td></tr>
+<tr><td>18</td><td>In each individual track (Enrichment and Test Prep) the in-person format has a higher success rate than the online format, but when the two tracks are combined the online format shows the higher overall success rate.</td></tr>
+<tr><td>19</td><td>Recommend the in-person format, because within each individual track (which is what the parent&rsquo;s child would actually experience) in-person has a higher success rate. Show them the first two panels of Chart 7 (the per-track segmented bars) &mdash; the overall panel is misleading here.</td></tr>
+<tr><td>20</td><td>(a) Row totals: Yes = 110, No = 90; Column totals: Sick = 60, Well = 140; Grand total = 200. (b) P(Sick | Yes) = 20/110 &asymp; 18.2%; P(Sick | No) = 40/90 &asymp; 44.4%. (c) Yes &mdash; a strong negative association: the flu-shot group got sick at less than half the rate of the no-shot group (about 18% vs. 44%, a 26-point gap).</td></tr>
+        </tbody></table>
+
+<div class="part-header" id="part-1"><h2>Questions 1&ndash;6: Reading a bar chart, relative-frequency chart, and pie chart</h2><p>Warm-ups on single-variable categorical displays &mdash; count vs. relative frequency, mode, and honest vs. misleading bar charts.</p></div>
+<div class="qbox">
+<h3>Question 1 &middot; <span style="color:#c89a3a;">Reading a bar chart</span></h3>
+<p class="prompt">In the SOMATH classroom survey (Chart 1 above), what percentage of the 34 students named <strong>Geometry</strong> as their favorite topic? Round to the nearest tenth of a percent.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: 32.4%</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A relative frequency (percent) is always <em>count in that category divided by total count</em>, then times 100.</p>
+<span class="work">Count in Geometry = 11
+Total = 34
+Percent = 11 / 34 = 0.3235...
+&rarr; 32.4%.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Any bar chart on <em>counts</em> can be turned into a bar chart on <em>percents</em> by dividing each count by the total. The shape of the bars stays the same &mdash; only the y-axis label changes.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 2 &middot; <span style="color:#c89a3a;">Reading a relative-frequency bar chart</span></h3>
+<p class="prompt">The relative-frequency bar chart of the same survey (Chart 2 above) shows the five categories as percentages. What should the five percentages add up to, and why?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: 100% (up to rounding), because the five categories cover every student exactly once.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> For a properly built relative-frequency distribution of a single categorical variable, the percentages sum to 100% because every observation falls into exactly one category.</p>
+<span class="work">Add the five percents: 32.4 + 26.5 + 17.6 + 14.7 + 8.8 = 100.0%.
+This is true as long as (a) categories are mutually exclusive and (b) every observation is counted exactly once.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> AP graders check this. If a summary of a single categorical variable does not add to 100% (or the total count), something is missing or double-counted.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 3 &middot; <span style="color:#c89a3a;">Frequency vs. relative frequency</span></h3>
+<p class="prompt">Which of the following is a <em>relative frequency</em> for the SOMATH survey: (a) 11 students, (b) 34 students, (c) 26.5%, (d) &ldquo;Algebra&rdquo;? Explain in one sentence.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (c) 26.5%</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A frequency is a raw count; a relative frequency is that count expressed as a fraction, decimal, or percent of the total.</p>
+<span class="work">(a) 11 students &rarr; a frequency (count).
+(b) 34 students &rarr; the total (grand total).
+(c) 26.5% &rarr; a relative frequency (count / total, as a percent).
+(d) "Algebra" &rarr; a category name, not a frequency at all.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The AP exam uses these terms with precision. Get in the habit of naming each number correctly &mdash; graders deduct points for calling a relative frequency a &ldquo;frequency&rdquo; and vice versa.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 4 &middot; <span style="color:#c89a3a;">Bar chart vs. pie chart</span></h3>
+<p class="prompt">You want to answer the question: <em>Is Algebra the second-most-popular topic in the SOMATH survey?</em> Which display makes this easier to answer, the bar chart (Chart 1) or the pie chart (Chart 5)? Justify in one sentence.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: The bar chart. Comparing the heights of two adjacent bars is easier than comparing the angles of two adjacent pie slices.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Human eyes read length very accurately and angle very poorly. For any ranking or comparison question, a bar chart beats a pie chart of the same data.</p>
+<span class="work">On the bar chart, Geometry (11) and Algebra (9) are clearly the tallest two bars, in that order &mdash; obvious in one glance.
+On the pie chart you have to judge angles: is the Algebra slice bigger than Word problems? Hard to tell without labels.
+&rarr; Bar chart wins.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> AP graders (and human readers in general) prefer bar charts over pie charts. Use a pie chart only when the message is genuinely &ldquo;these pieces make up a whole,&rdquo; and never with more than 4&ndash;5 slices.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 5 &middot; <span style="color:#c89a3a;">Modal category</span></h3>
+<p class="prompt">Using Chart 1, name the <strong>mode</strong> of the &ldquo;favorite topic&rdquo; variable and explain what the mode of a categorical variable is.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: The mode is Geometry (the category with the highest count, 11 out of 34 students). The mode of a categorical variable is the category that appears most often.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Categorical variables have a mode but no mean. The mode is just the most frequent category. If there is a tie you may report a bimodal (or multimodal) distribution.</p>
+<span class="work">Counts: Geometry 11, Algebra 9, Word problems 6, Statistics 5, Number theory 3.
+Highest count = 11 &rarr; Geometry.
+&rarr; Mode = Geometry.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> For categorical data, mean and median are undefined (you cannot average blood types). Center reduces to <em>the mode</em>, plus a description of how concentrated or spread out the counts are.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 6 &middot; <span style="color:#c89a3a;">Reading a bar chart critically</span></h3>
+<p class="prompt">Look at the MISLEADING chart on the left of Chart 6 above. If a school administrator claims &ldquo;Method C is <em>dramatically</em> better than Method A,&rdquo; what one number would you point to in order to push back, and what would you say?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: The actual gap: Method C scored 86 and Method A scored 82 &mdash; a difference of only 4 points on a 0&ndash;100 scale. The chart makes it look enormous only because the y-axis starts at 80 instead of 0.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Truncating the y-axis (starting above 0) makes small differences look huge. Always check where the y-axis starts before believing the size of a difference.</p>
+<span class="work">Method A score: 82.
+Method C score: 86.
+Difference: 86 - 82 = 4 points (out of 100 possible).
+On the honest chart (y-axis starts at 0) that 4-point gap is barely visible &mdash; the bars look almost identical.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> This is one of the most common misuses of a bar chart in journalism and business presentations. On the AP exam and in real life, always ask: <em>does the y-axis start at 0?</em> If it doesn&rsquo;t, the visual difference is exaggerated.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-2"><h2>Questions 7&ndash;10: Building and reading a two-way table</h2><p>The core Class 2 mechanical skill: build a two-way table with all four margins, then read joint, marginal, and conditional counts off it.</p></div>
+<div class="qbox">
+<h3>Question 7 &middot; <span style="color:#c89a3a;">Building a two-way table</span></h3>
+<p class="prompt">A SOMATH SHSAT class of 30 students is surveyed on two categorical variables: attends test-day tutoring (Yes / No) and made the SHSAT admissions cutoff (Admitted / Not admitted). The raw data: 12 students Yes+Admitted, 3 students Yes+Not, 6 students No+Admitted, 9 students No+Not. Build the two-way table with row totals, column totals, and grand total.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: See the worked table below. Row totals: Yes = 15, No = 15. Column totals: Admitted = 18, Not = 12. Grand total = 30.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A two-way table (also called a contingency table) crosses two categorical variables. Rows = categories of one variable, columns = categories of the other. Add row totals, column totals, and grand total in the margins.</p>
+<span class="work">                Admitted   Not admitted   Row total
+Tutoring: Yes      12             3            15
+Tutoring: No        6             9            15
+Column total       18            12            30
+
+Check: row totals sum to 30 &check;   column totals sum to 30 &check;   grand total = 30 &check;</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Every question in the AP Unit 1 section on two categorical variables starts with a table like this. If you build it cleanly with all four margins, the rest of the questions (marginal, joint, conditional) fall out almost mechanically.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 8 &middot; <span style="color:#c89a3a;">Joint relative frequency</span></h3>
+<p class="prompt">Using the table you built in Q7, what is the <strong>joint relative frequency</strong> of &ldquo;attended tutoring AND was admitted&rdquo;?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: 12 / 30 = 0.40 = 40%</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A joint relative frequency is a single-cell count divided by the grand total. It answers: what fraction of the whole group has this specific combination of both categories?</p>
+<span class="work">Cell count (Yes+Admitted) = 12
+Grand total = 30
+Joint relative frequency = 12 / 30 = 0.40 = 40%.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Joint = single cell &divide; grand total. Contrast this with marginal (row or column total &divide; grand total) and conditional (single cell &divide; row OR column total). Getting these three straight is the whole battle of Class 2.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 9 &middot; <span style="color:#c89a3a;">Marginal distribution</span></h3>
+<p class="prompt">Using the same table, write the <strong>marginal distribution of tutoring</strong> as percentages.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Yes: 15/30 = 50%. No: 15/30 = 50%.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> The marginal distribution of a variable ignores the other variable entirely. Divide each row (or column) total by the grand total.</p>
+<span class="work">Row totals for tutoring: Yes = 15, No = 15.
+Grand total = 30.
+P(Yes) = 15/30 = 50%.
+P(No)  = 15/30 = 50%.
+The two percents sum to 100%. &check;</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> &ldquo;Marginal&rdquo; comes from the fact that these totals sit in the margins of the table. Compute the marginal distribution by looking only at the row totals (for the row variable) or only at the column totals (for the column variable).</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 10 &middot; <span style="color:#c89a3a;">Reading the table for a proportion</span></h3>
+<p class="prompt">What proportion of admitted students attended test-day tutoring? Answer as a percentage.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: 12 / 18 &asymp; 66.7%</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> This is a <em>conditional</em> proportion &mdash; the group we&rsquo;re looking at is only the admitted students, not the whole class.</p>
+<span class="work">&ldquo;Of admitted students&rdquo; means: denominator = column total for Admitted = 18.
+&ldquo;Attended tutoring&rdquo; among those 18 = cell (Yes, Admitted) = 12.
+Proportion = 12 / 18 = 0.6666... &rarr; 66.7%.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Whenever the question says &ldquo;of the X group,&rdquo; the denominator is the total of the X group &mdash; NOT the grand total. This is the single most common trap on AP two-way-table questions.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-3"><h2>Questions 11&ndash;14: Marginal vs. conditional distributions</h2><p>Comparing conditional distributions is how we detect association between two categorical variables. Learn to compute them and to read them off a segmented bar chart.</p></div>
+<div class="qbox">
+<h3>Question 11 &middot; <span style="color:#c89a3a;">Conditional distribution</span></h3>
+<p class="prompt">Using the tutoring / admissions table again, write the <strong>conditional distribution of admission status given that the student attended tutoring (Yes)</strong>.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: P(Admitted | Yes) = 12/15 = 80%. P(Not admitted | Yes) = 3/15 = 20%.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> The conditional distribution &ldquo;given Yes&rdquo; looks only at the Yes row. Divide each cell in that row by the row total for Yes.</p>
+<span class="work">Yes row: 12 (Admitted), 3 (Not admitted), row total = 15.
+P(Admitted | Yes) = 12/15 = 0.80 = 80%.
+P(Not admitted | Yes) = 3/15 = 0.20 = 20%.
+The two conditional probabilities sum to 100%. &check;</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The bar-and-slash notation P(A | B) is read &ldquo;the probability of A <em>given</em> B.&rdquo; The vertical bar means &ldquo;restrict the world to the group after the bar first.&rdquo; Every conditional distribution sums to 100% within its group.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 12 &middot; <span style="color:#c89a3a;">Comparing two conditional distributions</span></h3>
+<p class="prompt">Also compute the conditional distribution of admission status <strong>given that the student did NOT attend tutoring</strong>. Then compare the two conditional distributions. What does the comparison suggest about the association between tutoring and admission?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: P(Admitted | No) = 6/15 = 40%. P(Not admitted | No) = 9/15 = 60%. Tutoring students were admitted 80% of the time; non-tutoring students only 40% of the time. There is a strong <em>positive association</em> between attending test-day tutoring and being admitted in this sample.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> You detect association between two categorical variables by comparing conditional distributions. If the conditional distribution changes noticeably when the other variable changes, the variables are associated. If it stays the same, they are (roughly) independent.</p>
+<span class="work">No row: 6 (Admitted), 9 (Not admitted), row total = 15.
+P(Admitted | No) = 6/15 = 40%.
+P(Not admitted | No) = 9/15 = 60%.
+
+Compare:
+ P(Admitted | Yes) = 80% vs. P(Admitted | No) = 40% &mdash; a 40-point gap.
+&rarr; Tutoring and admission appear strongly associated in this sample.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> &ldquo;Association&rdquo; on the AP exam does <em>not</em> mean &ldquo;causation.&rdquo; This 40-point gap tells us there is a strong pattern in this sample; it does not, by itself, prove tutoring <em>caused</em> the higher admission rate. Unit 3 (experiments vs. observational studies) explains why.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 13 &middot; <span style="color:#c89a3a;">Interpreting a segmented bar chart</span></h3>
+<p class="prompt">Chart 4 above (the segmented bar chart) shows the conditional distribution of favorite topic given grade. Which grade has a larger <em>share</em> of students naming Statistics as their favorite, Grade 9 or Grade 10?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Grade 10. Grade 10 gives 23% of its share to Statistics while Grade 9 gives only 11%.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> A segmented bar chart is the visual form of two conditional distributions side by side. Compare the height (or here, width) of the SAME COLOR across the different bars.</p>
+<span class="work">Look at the Statistics segment (rightmost color) in each bar.
+Grade 9 bar: 11%.
+Grade 10 bar: 23%.
+23% > 11% &rarr; Grade 10 has a larger share.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> A raw count comparison would be misleading here (Grade 10 only has 3 Statistics fans, Grade 9 has 2). But conditional proportions (23% vs. 11%) correctly show that within each grade, Statistics is a bigger share of Grade 10 preferences.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 14 &middot; <span style="color:#c89a3a;">Association from a segmented bar chart</span></h3>
+<p class="prompt">Using the same segmented bar chart (Chart 4), how can you tell &mdash; without doing any arithmetic &mdash; that favorite topic is <em>associated with</em> grade level in this sample?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: The two bars have visibly different color patterns. If the two variables were independent, the two 100% bars would have the same color breakdown (identical stripe widths). Because the stripes have different widths in the two grades, favorite topic and grade level are associated.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Independence, on a segmented bar chart, looks like <em>identical bars</em>. Association looks like <em>different-looking bars</em>.</p>
+<span class="work">If independent: Grade 9 and Grade 10 bars would show the same 4 stripe widths.
+Here: Grade 9 gives 39% to Geometry, Grade 10 only 31%. Grade 10 gives 23% to Statistics, Grade 9 only 11%.
+Stripe widths differ &rarr; the variables are associated.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Because the vertical scale is fixed at 100% in a segmented bar chart, the <em>shape</em> of each bar carries the conditional distribution. Same shape &rArr; roughly independent. Different shape &rArr; associated.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-4"><h2>Questions 15&ndash;17: Choosing and critiquing displays</h2><p>AP graders always ask <em>which display is best</em> and <em>what is wrong with this display</em>. Three focused questions on both.</p></div>
+<div class="qbox">
+<h3>Question 15 &middot; <span style="color:#c89a3a;">Choose the display</span></h3>
+<p class="prompt">You want to communicate to a Manhattan PTA how the composition of after-school activities (art, sports, music, coding, tutoring) has shifted between Fall 2024 and Fall 2026. Which display is the best choice: (a) two pie charts, (b) two side-by-side bar charts of counts, (c) two segmented bar charts of percentages, (d) one line chart? Explain in one sentence.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (c) Two segmented (100%-stacked) bar charts of percentages, one for each year.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> When the question is about how <em>shares</em> have shifted between groups, segmented bar charts (or two relative-frequency bar charts) are the strongest display &mdash; they normalize away the difference in total enrollment.</p>
+<span class="work">(a) Pies: hard to compare slice sizes across two pies.
+(b) Counts: penalize the smaller year, hard to see shares.
+(c) Segmented bars normalized to 100%: makes shares directly comparable. &check;
+(d) Line charts are for one QUANTITATIVE variable over time &mdash; wrong here because &ldquo;activity&rdquo; is categorical.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The rule of thumb: for one categorical variable use a bar chart; for two, use a segmented bar chart (or a two-way table). Reserve line charts for quantitative variables over time and reserve pies for the rare case where &ldquo;these pieces make up a whole&rdquo; is genuinely the point.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 16 &middot; <span style="color:#c89a3a;">Critique the display</span></h3>
+<p class="prompt">A gym in Yorkville posts a bar chart with three membership tiers. The y-axis is unlabeled but the axis starts at 350 and ends at 400. The bars are labeled 380, 385, 400. The gym markets the &ldquo;Premium&rdquo; tier (400) as &ldquo;<em>massively</em> more popular&rdquo; than the &ldquo;Standard&rdquo; tier (380). Give two separate criticisms of this chart.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (1) The y-axis is truncated (starts at 350, not 0), which makes a 20-member difference look enormous. (2) The y-axis has no label, so a reader cannot tell what the numbers represent (number of members? monthly revenue? something else?). Add: (3) Reporting no total or context (400 out of how many?), and (4) The word &ldquo;massively&rdquo; is not supported by a 5% difference &mdash; 400 vs. 380 is a 5% gap.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Every honest chart needs (a) a y-axis that starts at 0 when the reader is expected to judge magnitudes, (b) a labeled y-axis, and (c) context on totals so shares can be judged.</p>
+<span class="work">(1) Truncated axis: 350&ndash;400 range makes 20/400 = 5% look like 200% visually.
+(2) Unlabeled axis: is that dollars? members? something else? unknown.
+(3) No context: 400 members out of... 405? 4,000? Very different stories.
+(4) 400 vs. 380 is a 5.3% difference, not &ldquo;massively&rdquo; more.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Chart-critique questions appear on nearly every AP Statistics FRQ that includes a display. Practice naming the specific flaw in one clear sentence: truncated axis, unlabeled axis, missing total, mislabeled category, and so on.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 17 &middot; <span style="color:#c89a3a;">Choose the display</span></h3>
+<p class="prompt">A researcher wants to show that a single classroom of 25 SOMATH students is split about equally into two groups: those who prefer working in pencil and those who prefer working in pen. Which display best communicates this <em>single</em> message &mdash; a bar chart or a pie chart? Justify in one sentence.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Either works, but a pie chart is defensible here: with only 2 categories and the question being &ldquo;is the whole roughly half-and-half?&rdquo; the eye reads the pie&rsquo;s halves cleanly.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Pie charts are least bad with 2&ndash;3 categories and when the single message is &ldquo;these pieces sum to a whole.&rdquo; Bar charts still work here, just not more effectively than a pie for the specific &ldquo;half-and-half&rdquo; message.</p>
+<span class="work">Only 2 categories &rarr; only 2 slices &rarr; halves are easy to see.
+The question is not &ldquo;which is bigger by how much&rdquo; but &ldquo;are they roughly equal?&rdquo;
+A pie chart with two nearly-equal halves communicates that instantly.
+(A bar chart also works; the point is that a pie is not automatically wrong when there are just 2 categories.)</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The AP course does not ban pie charts &mdash; it prefers bar charts for most tasks. Class 2&rsquo;s message is more nuanced: use the simplest display that communicates the specific question you care about.</p>
+</div></details>
+</div>
+<div class="part-header" id="part-5"><h2>Questions 18&ndash;20: Simpson&rsquo;s paradox and mixed applied practice</h2><p>A short intro to Simpson&rsquo;s paradox and a full flu-shot two-way-table walkthrough that combines everything in Class 2.</p></div>
+<div class="qbox">
+<h3>Question 18 &middot; <span style="color:#c89a3a;">Simpson&rsquo;s paradox</span></h3>
+<p class="prompt">Using Chart 7 above, describe in one sentence what makes this an example of <strong>Simpson&rsquo;s paradox</strong>.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: In each individual track (Enrichment and Test Prep) the in-person format has a higher success rate than the online format, but when the two tracks are combined the online format shows the higher overall success rate.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> Simpson&rsquo;s paradox occurs when a relationship holds inside every subgroup but reverses when the subgroups are pooled. It happens because the two subgroups differ in size <em>and</em> in baseline rate.</p>
+<span class="work">Within Enrichment: In-person 90% > Online 85%.
+Within Test Prep:  In-person 60% > Online 55%.
+Overall (weighted): In-person 66% < Online 79%.
+Same direction inside each track (in-person wins), reversed direction overall (online wins). &rarr; Simpson.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The reversal happens because online students are concentrated in the easier track (Enrichment, where nearly everyone succeeds) and in-person students are concentrated in the harder track (Test Prep, where fewer people succeed). Combining the two tracks without accounting for the imbalance flips the story.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 19 &middot; <span style="color:#c89a3a;">Simpson&rsquo;s paradox</span></h3>
+<p class="prompt">In Chart 7&rsquo;s scenario, if a Manhattan parent asked you &ldquo;should I enroll my child in the in-person or online format?&rdquo; which answer better matches the data, and which display would you show them?</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: Recommend the in-person format, because within each individual track (which is what the parent&rsquo;s child would actually experience) in-person has a higher success rate. Show them the first two panels of Chart 7 (the per-track segmented bars) &mdash; the overall panel is misleading here.</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> When Simpson&rsquo;s paradox appears, the honest comparison is the WITHIN-group comparison, not the pooled one, because a real student is enrolled in a specific track, not in a &ldquo;weighted average&rdquo; of tracks.</p>
+<span class="work">Within Enrichment: In-person 90%, Online 85% &rarr; in-person better.
+Within Test Prep:  In-person 60%, Online 55% &rarr; in-person better.
+The overall pooled 79% vs. 66% is an artifact of who signs up for which track, not of the format itself.
+&rarr; Recommend in-person; show the per-track bars.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> Simpson&rsquo;s paradox is not a math trick &mdash; it&rsquo;s the reason experiments in Units 3 and 4 <em>randomly assign</em> subjects to treatments. Random assignment prevents the kind of enrollment imbalance that causes the paradox.</p>
+</div></details>
+</div>
+<div class="qbox">
+<h3>Question 20 &middot; <span style="color:#c89a3a;">Mixed applied</span></h3>
+<p class="prompt">A Yorkville pediatric clinic classifies 200 patients on two variables: whether they had a flu shot this year (Yes / No) and whether they got the flu this season (Sick / Well). Data: 20 Yes+Sick, 90 Yes+Well, 40 No+Sick, 50 No+Well. (a) Build the two-way table with all margins. (b) Compute the conditional distribution of getting the flu given flu-shot status. (c) State whether there appears to be an association between flu-shot status and getting sick, and by how much.</p>
+<details class="reveal"><summary></summary><div class="reveal-body">
+<p class="answer">Answer: (a) Row totals: Yes = 110, No = 90; Column totals: Sick = 60, Well = 140; Grand total = 200. (b) P(Sick | Yes) = 20/110 &asymp; 18.2%; P(Sick | No) = 40/90 &asymp; 44.4%. (c) Yes &mdash; a strong negative association: the flu-shot group got sick at less than half the rate of the no-shot group (about 18% vs. 44%, a 26-point gap).</p>
+<p class="explain"><strong style="color:#0a3a5f;">Key idea.</strong> This is the full Class 2 workflow on a real-world scenario: build the table with margins, compute conditional distributions in the direction you care about, and compare them to detect association.</p>
+<span class="work">(a) Two-way table:
+                Sick   Well   Row total
+Shot: Yes        20     90       110
+Shot: No         40     50        90
+Col total        60    140       200
+
+(b) Conditional distribution of flu status given shot status:
+P(Sick | Yes) = 20/110 &asymp; 0.182 = 18.2%
+P(Well | Yes) = 90/110 &asymp; 0.818 = 81.8%   (sums to 100%) &check;
+P(Sick | No)  = 40/90  &asymp; 0.444 = 44.4%
+P(Well | No)  = 50/90  &asymp; 0.556 = 55.6%   (sums to 100%) &check;
+
+(c) 44.4% - 18.2% = 26.2-point gap in Sick rate &rarr; strong negative association between having the shot and getting sick.</span>
+<p class="explain"><strong style="color:#0a3a5f;">Why this works.</strong> The 26-point gap is a big effect size in public-health terms, and this is exactly the reasoning the CDC does when arguing for flu shots. But the AP-honest interpretation: this is <em>observational</em> data. Association &ne; causation until Unit 3 experiments assign shots at random. Class 2 gives you the vocabulary; Class 3 and Unit 3 give you the causal reasoning.</p>
+</div></details>
+</div>
+
+
+        <h2 id="somath-apstats">How SOMATH prepares NYC students for AP Statistics</h2>
+        <p><a href="/">SOMATH (School of Math)</a> is a math-focused school on the Upper West Side of Manhattan, cofounded by <strong>Marcelo Ambrozio</strong> (Northwestern-trained lead math teacher) and <strong>Vivianne Wright</strong> (Harvard-trained). Our AP Statistics course is a full two-semester arc built for a 5 on the AP exam and for the analytical thinking students will use in every quantitative college class that follows.</p>
+        <p><strong>Our AP Statistics track:</strong></p>
+        <ul>
+          <li><strong>Small-group in-person classes (6&ndash;8 students max)</strong> at 226 W 79th Street on the Upper West Side. Same room, same teacher, same students, week after week.</li>
+          <li><strong>Structured curriculum</strong> covering all 9 units of the AP Statistics Course and Exam Description across 30 two-hour classes, with dedicated review classes and full-length mock exams in the final weeks.</li>
+          <li><strong>Calculator and Desmos fluency.</strong> Every student learns the TI-84 and Desmos statistics workflows: 1-Var Stats, LinReg, normalcdf, invNorm, tcdf, invT, and every inference procedure the exam expects.</li>
+          <li><strong>FRQ drilling with written feedback.</strong> Free-response questions from every released exam, graded on the actual AP rubric, with returned annotated rubrics.</li>
+          <li><strong>Free 30-minute in-person diagnostic evaluation</strong> before enrollment. A $99 one-time enrollment fee applies for new students who continue into a course.</li>
+        </ul>
+        <div class="callout"><strong>Manhattan families:</strong> If your student is preparing for the AP Statistics exam or wants a math-first companion class to a school AP Stats course, book a <a href="/evaluation">free diagnostic evaluation</a> or call <strong>(646) 668-6151</strong>. We are two blocks from the 79th Street 1 train and three blocks from the B/C at the American Museum of Natural History.</div>
+        <div style="background:#1f3d2e;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#c89a3a;margin:0 0 10px;">Ready to build a 5 on AP Statistics?</h2>
+          <p style="margin:0 0 14px;">Start with a free 30-minute in-person diagnostic at our Upper West Side classroom. Includes a written diagnostic report within 48 hours &mdash; yours to keep whether you enroll or not. A one-time $99 enrollment fee applies if you join a course.</p>
+          <p style="margin:0;"><a href="/evaluation" style="background:#c89a3a;color:#1f3d2e;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">Book Free Evaluation &rarr;</a> &nbsp; <span style="color:#f5f0e6;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+        <div class="course-cta-card"><div class="course-cta-card__grade">SOMATH course &middot; Grades 10&ndash;12</div><h2 class="course-cta-card__h">Want your child in an AP Statistics class at SOMATH?</h2><p class="course-cta-card__lede">Small-group AP Statistics prep on the Upper West Side. Full coverage of all 9 units, calculator and Desmos fluency, FRQ drilling with written feedback, and a free 30-minute in-person diagnostic before enrollment.</p><p class="course-cta-card__ctas"><a href="/courses/ap-prep" class="course-cta-card__primary">See the AP course &rarr;</a><a href="/evaluation" class="course-cta-card__secondary">Book free evaluation</a></p></div>
+
+        <h2 id="faq">AP Statistics Class 2 FAQ</h2>
+<h3>What does AP Statistics Class 2 cover?</h3>
+<p>Class 2 covers how to display categorical data. You learn to build and read frequency tables, relative-frequency tables, and bar charts for a single categorical variable, and two-way tables and segmented bar charts for two categorical variables. It also introduces marginal, joint, and conditional distributions and gives a first look at Simpson&rsquo;s paradox.</p>
+<h3>What is the difference between a frequency and a relative frequency?</h3>
+<p>A frequency is a raw count of how many observations fall in a category (for example, 11 students named Geometry). A relative frequency is that count expressed as a fraction, decimal, or percent of the total (11 out of 34 = 32.4%). Relative frequencies of a single categorical variable always sum to 100%.</p>
+<h3>What is a two-way table?</h3>
+<p>A two-way table (also called a contingency table) crosses two categorical variables. Rows show the categories of one variable, columns show the categories of the other, cells show the counts for each combination, and the margins show the row totals, column totals, and grand total. Two-way tables are the starting point for computing joint, marginal, and conditional distributions.</p>
+<h3>What is the difference between marginal and conditional distributions?</h3>
+<p>A marginal distribution describes ONE variable while ignoring the other &mdash; divide each row (or column) total by the grand total. A conditional distribution describes one variable within a specific value of the other &mdash; divide each cell in the chosen row (or column) by that row (or column) total. Marginal answers &ldquo;what fraction of the whole?&rdquo;; conditional answers &ldquo;what fraction of the subgroup?&rdquo;</p>
+<h3>Why are bar charts usually preferred over pie charts?</h3>
+<p>Human eyes read length very accurately and angle very poorly. For nearly any question about a categorical variable &mdash; ranking, comparison, tracking change &mdash; a bar chart lets the reader answer the question in one glance while a pie chart forces them to compare angles. AP graders and professional communicators prefer bar charts unless the entire message is &ldquo;these pieces make up a whole&rdquo; and there are only two or three slices.</p>
+<h3>What is Simpson&rsquo;s paradox?</h3>
+<p>Simpson&rsquo;s paradox is a situation where a relationship holds inside every subgroup but reverses direction when the subgroups are pooled together. It happens because the subgroups differ both in size and in baseline rate. It is the reason experiments in later units randomly assign subjects to treatments: random assignment prevents the enrollment imbalance that causes the reversal.</p>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li>Previous class in the arc: <a href="/posts/ap-statistics-class-1-statistics-as-variation-variable-types">AP Statistics Class 1 &mdash; Statistics as the Study of Variation &amp; Variable Types</a></li>
+          <li>SOMATH AP Statistics course page: <a href="/courses/ap-statistics">See the AP Statistics course &rarr;</a></li>
+          <li>SOMATH SAT Math prep: <a href="/posts/digital-sat-tutoring-nyc-2026-structure-dates-scores">Digital SAT Tutoring NYC 2026 &mdash; Structure, Dates &amp; Scores</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260906-apstats-c2"></script>
+  </body>
+</html>
