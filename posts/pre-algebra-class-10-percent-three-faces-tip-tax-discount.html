@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Perf: preconnect to third-party origins -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <!-- Google tag (gtag.js) - GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pre-Algebra Class 10: Percent &mdash; Three Faces (Part/Whole/Percent), Tip, Tax, Discount (25 Practice Questions with Answers) | SOMATH</title>
+    <meta name="description" content="Class 10 of the SOMATH Young Fermats Pre-Algebra course — percent as the third face of ratios. Learn how the same equation part/whole = percent/100 solves all three percent questions, the fast decimal shortcut, and how to use it for tip, tax, discount, sale price, markup, and percent change. 25 practice questions with hidden step-by-step answer explanations. From School of Math, 226 W 79th St, Upper West Side, NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/pre-algebra-class-10-percent-three-faces-tip-tax-discount" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Pre-Algebra Class 10: Percent &mdash; Three Faces (Part/Whole/Percent), Tip, Tax, Discount (25 Practice Questions) | SOMATH" />
+    <meta property="og:description" content="Class 10 of the SOMATH Young Fermats course — the three faces of percent, the decimal shortcut, and how to use it for tip, tax, discount, sale price, markup, and percent change. 25 practice questions with hidden step-by-step answers." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/pre-algebra-class-10-percent-three-faces-tip-tax-discount" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <meta property="article:published_time" content="2026-09-08" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pre-Algebra Class 10: Percent &mdash; Three Faces (Part/Whole/Percent), Tip, Tax, Discount (25 Practice Questions) | SOMATH" />
+    <meta name="twitter:description" content="Percent cheat sheet + tip/tax/discount setup + 25 practice questions with hidden step-by-step explanations. From SOMATH on the Upper West Side." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/logo.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .eq { font-family: "Courier New", monospace; background: #f5f1e8; padding: 2px 8px; border-radius: 4px; font-size: 0.96rem; }
+
+      /* ===== Rules cheat-sheet ===== */
+      .rules-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 22px 0 8px;
+      }
+      .rule-card {
+        background: #f5f1e8;
+        border: 1.5px solid #d4a548;
+        border-radius: 10px;
+        padding: 18px 20px;
+      }
+      .rule-card__title {
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1.05rem;
+        margin: 0 0 4px;
+      }
+      .rule-card__sub {
+        margin: 0 0 8px;
+        color: #555;
+        font-size: 0.85rem;
+      }
+      .rule-card__result {
+        margin: 0;
+        font-weight: 800;
+        color: #0a3a5f;
+        font-size: 1rem;
+      }
+      .rule-card__result .plus  { color: #0a7a3d; }
+      .rule-card__result .minus { color: #a13544; }
+      @media (max-width: 600px) {
+        .rules-grid { grid-template-columns: 1fr; }
+      }
+
+      /* ===== Percent-conversion cheat table ===== */
+      .conv-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0 22px;
+        font-size: 0.98rem;
+      }
+      .conv-table th, .conv-table td {
+        padding: 10px 12px;
+        text-align: left;
+        border-bottom: 1px solid #e6e6e6;
+        vertical-align: top;
+      }
+      .conv-table th {
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+      }
+      .conv-table tr:nth-child(even) td { background: #fafafa; }
+      .conv-table code { background: #f5f1e8; padding: 1px 6px; border-radius: 3px; font-size: 0.92rem; }
+
+      /* ===== Practice questions ===== */
+      .practice-question {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        border-left: 4px solid #d4a548;
+        padding: 16px 20px;
+        margin: 14px 0;
+        border-radius: 6px;
+      }
+      .practice-question__num {
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 2px 12px;
+        margin-right: 8px;
+        font-size: 0.85rem;
+        letter-spacing: 0.02em;
+      }
+      .practice-question__prompt {
+        margin: 4px 0 10px;
+        font-size: 1.02rem;
+        color: #1a1a1a;
+      }
+      .practice-question details {
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+        margin-top: 6px;
+      }
+      .practice-question summary {
+        cursor: pointer;
+        color: #0a3a5f;
+        font-weight: 600;
+        font-size: 0.9rem;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        user-select: none;
+      }
+      .practice-question summary::-webkit-details-marker { display: none; }
+      .practice-question summary::before {
+        content: "\25B6";
+        display: inline-block;
+        font-size: 0.7rem;
+        transition: transform 140ms;
+        color: #d4a548;
+      }
+      .practice-question details[open] summary::before { transform: rotate(90deg); }
+      .practice-question summary:hover { color: #d4a548; }
+      .practice-question .answer {
+        margin: 10px 0 4px;
+        padding: 12px 16px;
+        background: #e6efe2;
+        border-left: 3px solid #0a3a5f;
+        border-radius: 4px;
+        color: #0a3a5f;
+        font-weight: 700;
+      }
+      .practice-question .why {
+        margin: 0;
+        color: #333;
+        font-size: 0.94rem;
+        line-height: 1.55;
+      }
+      .practice-question .why strong { color: #0a3a5f; }
+
+      .section-band {
+        margin: 26px 0 14px;
+        padding: 12px 18px;
+        background: #0a3a5f;
+        color: #fff;
+        border-radius: 6px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:22px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+
+      @media (max-width: 600px) {
+        .practice-question { padding: 14px 16px; }
+      }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pre-Algebra Class 10: Percent \u2014 Three Faces (Part/Whole/Percent), Tip, Tax, Discount (25 Practice Questions)",
+  "description": "Class 10 of the SOMATH Young Fermats Pre-Algebra course \u2014 percent as a proportion (part/whole = percent/100), the three faces of percent, the decimal shortcut, and how to use it for tip, tax, discount, sale price, markup, and percent change. 25 practice questions with hidden step-by-step answers.",
+  "image": "https://www.schoolofmath.us/assets/logo.png",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "author": {
+    "@type": "Organization",
+    "name": "School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "EducationalOrganization",
+    "name": "School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "about": [
+    { "@type": "Thing", "name": "Percent" },
+    { "@type": "Thing", "name": "Tip" },
+    { "@type": "Thing", "name": "Sales tax" },
+    { "@type": "Thing", "name": "Discount" },
+    { "@type": "Thing", "name": "Percent change" }
+  ],
+  "mainEntityOfPage": "https://www.schoolofmath.us/posts/pre-algebra-class-10-percent-three-faces-tip-tax-discount"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What are the three faces of percent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every percent problem is built from the same equation, part / whole = percent / 100. Depending on which number is missing, the question is one of three faces: (1) find the PART when you know the whole and the percent (\"what is 15% of 80?\"), (2) find the WHOLE when you know the part and the percent (\"15 is 20% of what number?\"), (3) find the PERCENT when you know the part and the whole (\"what percent of 80 is 15?\"). Same equation, same setup, one missing box."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you convert a percent to a decimal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Move the decimal point TWO places to the LEFT and drop the percent sign. Examples: 15% = 0.15, 8.25% = 0.0825, 100% = 1.00, 250% = 2.5, 5% = 0.05, 0.5% = 0.005. To go the other way (decimal to percent) move the decimal point two places to the RIGHT and add a percent sign."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate a tip?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A tip is a percent OF the bill. To find the tip amount, multiply the bill by the tip percent as a decimal: tip = bill \u00d7 (tip% \u00f7 100). To find the total the customer pays, either add the tip to the bill or multiply the bill by (1 + tip%\u00f7100). Example: 20% tip on $60 \u2192 tip = 60 \u00d7 0.20 = $12, total = $60 + $12 = $72, or 60 \u00d7 1.20 = $72."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate sales tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sales tax is a percent OF the pre-tax price. Multiply the price by the tax rate as a decimal: tax = price \u00d7 (tax% \u00f7 100). To find the total the customer pays, either add the tax to the price or multiply the price by (1 + tax%\u00f7100). Example: NYC combined 8.875% sales tax on a $40 item \u2192 tax = 40 \u00d7 0.08875 = $3.55, total = $40 + $3.55 = $43.55, or 40 \u00d7 1.08875 = $43.55."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate a discount and the sale price?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A discount is a percent OFF the original price. Discount amount = original price \u00d7 (discount% \u00f7 100). Sale price = original price \u2212 discount amount, OR just multiply the original price by (1 \u2212 discount%\u00f7100). Example: 25% off a $120 jacket \u2192 discount = 120 \u00d7 0.25 = $30, sale price = 120 \u2212 30 = $90, or 120 \u00d7 0.75 = $90."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is percent change and how do you compute it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Percent change measures how much a number went up or down relative to its ORIGINAL (starting) value. Formula: percent change = (new value \u2212 original value) / original value \u00d7 100. Positive means percent increase, negative means percent decrease. Example: a book\u2019s price went from $20 to $25 \u2192 percent change = (25 \u2212 20)/20 \u00d7 100 = 5/20 \u00d7 100 = 25% increase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade level is Young Fermats Pre-Algebra at SOMATH?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Young Fermats is SOMATH's 48-class rolling Pre-Algebra program for grade 5\u20136 students, ages 10\u201312. It takes students from integers on the number line through systems of equations \u2014 the direct on-ramp to Algebra 1 in 7th or 8th grade."
+      }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Practice Set &middot; Pre-Algebra &middot; Young Fermats &middot; Class 10</p>
+      <h1 class="post__title">Pre-Algebra Class 10: Percent &mdash; Three Faces (Part/Whole/Percent), Tip, Tax, Discount</h1>
+      <p class="post__dek">A one-page percent cheat sheet from Class 10 of the SOMATH <a href="/courses/young-fermats-prealgebra">Young Fermats &mdash; Pre-Algebra</a> course, followed by 25 practice questions with hidden step-by-step answer explanations. Free to use at home, in class, or as a warm-up before enrolling.</p>
+      <p class="post__meta"><time datetime="2026-09-08">September 8, 2026</time> &middot; By the SOMATH team &middot; 226 W 79th St, UWS &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p><strong>Short answer up top.</strong> Every percent problem is really one equation with one missing box: <span class="eq">part / whole = percent / 100</span>. Depending on which number is missing, the same equation answers all three &ldquo;faces&rdquo; of percent &mdash; find the <strong>part</strong> (&ldquo;what is 15% of 80?&rdquo;), find the <strong>whole</strong> (&ldquo;15 is 20% of what number?&rdquo;), or find the <strong>percent</strong> (&ldquo;what percent of 80 is 15?&rdquo;). Once you can set that up cleanly, <strong>tip, sales tax, discount, sale price, markup, and percent change</strong> are all just short recipes on top of it. Class 10 is the direct sequel to <a href="/posts/pre-algebra-class-9-proportional-reasoning-simple-proportions">Class 9 &mdash; Proportional Reasoning</a> and is one of the highest-leverage classes for the <a href="/courses/shsat-prep">SHSAT</a> and the <a href="/courses/sat-math">Digital SAT</a>. Book a free 30-minute evaluation at <a href="/evaluation">/evaluation</a> or call (646) 668-6151, and any 5th- or 6th-grader can join <a href="/courses/young-fermats-prealgebra">Young Fermats &mdash; Pre-Algebra</a> on the next Monday at our 226 W 79th Street classroom on the Upper West Side.</p>
+
+        <h2>What percent actually means</h2>
+        <p>The word <strong>percent</strong> literally means &ldquo;per hundred&rdquo; &mdash; from the Latin <em>per centum</em>. Writing <span class="eq">15%</span> is just a shorter way of writing the fraction <span class="eq">15/100</span> or the decimal <span class="eq">0.15</span>. That is the whole idea. Percent is not a new kind of number &mdash; it is a <em>third way</em> to write a ratio, on top of fractions and decimals.</p>
+
+        <div class="callout">
+          <p><strong>Definition.</strong> A percent is a ratio with a denominator of 100. <span class="eq">15% = 15/100 = 0.15</span>. Percent is the third face of every ratio: as a fraction (<span class="eq">15/100</span>), as a decimal (<span class="eq">0.15</span>), and as a percent (<span class="eq">15%</span>). All three name the same amount.</p>
+        </div>
+
+        <p>Because percent is just a ratio, it plugs directly into the proportion machinery from <a href="/posts/pre-algebra-class-9-proportional-reasoning-simple-proportions">Class 9</a>. Every percent question is really the proportion:</p>
+
+        <p style="text-align:center;font-size:1.15rem;margin:14px 0 22px;"><span class="eq">part / whole = percent / 100</span></p>
+
+        <p>That single equation is the entire class. Everything below is just filling in what you know and solving for what you don&rsquo;t.</p>
+
+        <h2>The percent-fraction-decimal conversion table</h2>
+        <p>Fluent percent thinking means moving between the three forms without stopping to think. Memorize these until they are automatic &mdash; every percent problem starts with a conversion.</p>
+
+        <table class="conv-table">
+          <thead>
+            <tr><th>Percent</th><th>Fraction (simplified)</th><th>Decimal</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1%</td><td>1/100</td><td>0.01</td></tr>
+            <tr><td>5%</td><td>1/20</td><td>0.05</td></tr>
+            <tr><td>10%</td><td>1/10</td><td>0.10</td></tr>
+            <tr><td>20%</td><td>1/5</td><td>0.20</td></tr>
+            <tr><td>25%</td><td>1/4</td><td>0.25</td></tr>
+            <tr><td>50%</td><td>1/2</td><td>0.50</td></tr>
+            <tr><td>75%</td><td>3/4</td><td>0.75</td></tr>
+            <tr><td>100%</td><td>1</td><td>1.00</td></tr>
+            <tr><td>125%</td><td>5/4</td><td>1.25</td></tr>
+            <tr><td>200%</td><td>2</td><td>2.00</td></tr>
+          </tbody>
+        </table>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">PERCENT &rarr; DECIMAL</p>
+            <p class="rule-card__sub">move the decimal point 2 places LEFT, drop the % sign</p>
+            <p class="rule-card__result">15% &rarr; 0.15 &nbsp;&nbsp; 8.25% &rarr; 0.0825 &nbsp;&nbsp; 250% &rarr; 2.5</p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">DECIMAL &rarr; PERCENT</p>
+            <p class="rule-card__sub">move the decimal point 2 places RIGHT, add the % sign</p>
+            <p class="rule-card__result">0.6 &rarr; 60% &nbsp;&nbsp; 0.075 &rarr; 7.5% &nbsp;&nbsp; 1.4 &rarr; 140%</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p><strong>Why the &ldquo;two places&rdquo; rule works.</strong> To turn a percent into a decimal you divide by 100. Dividing by 100 moves the decimal point two places to the left. That is it &mdash; the rule is not a trick, it is just what dividing by 100 does. And multiplying by 100 (going the other way) moves the decimal point two places to the right.</p>
+        </div>
+
+        <h2>The three faces of percent</h2>
+        <p>The single equation <span class="eq">part / whole = percent / 100</span> answers all three shapes of percent question. You will be given two of the three values &mdash; find the missing one. The name of the game is <em>label the three boxes</em>, then solve.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">FACE 1 &mdash; FIND THE PART</p>
+            <p class="rule-card__sub">given the whole and the percent</p>
+            <p class="rule-card__result">15% of 80 = ? &rarr; <span class="plus">12</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">FACE 2 &mdash; FIND THE WHOLE</p>
+            <p class="rule-card__sub">given the part and the percent</p>
+            <p class="rule-card__result">15 is 20% of ? &rarr; <span class="plus">75</span></p>
+          </div>
+        </div>
+
+        <div class="rules-grid" style="margin-top:14px;">
+          <div class="rule-card">
+            <p class="rule-card__title">FACE 3 &mdash; FIND THE PERCENT</p>
+            <p class="rule-card__sub">given the part and the whole</p>
+            <p class="rule-card__result">15 is what % of 80? &rarr; <span class="plus">18.75%</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">SHORTCUT (all three faces)</p>
+            <p class="rule-card__sub">translate: &ldquo;of&rdquo; = &times;, &ldquo;is&rdquo; = =, &ldquo;what&rdquo; = x, &ldquo;percent&rdquo; = &divide;100</p>
+            <p class="rule-card__result">&ldquo;15% of 80&rdquo; = 0.15 &times; 80 = 12</p>
+          </div>
+        </div>
+
+        <h3>Face 1 &mdash; Find the part (&ldquo;what is 15% of 80?&rdquo;)</h3>
+        <p><strong>Setup.</strong> Whole = 80, percent = 15, part = <span class="eq">x</span> (unknown). Proportion: <span class="eq">x/80 = 15/100</span>.</p>
+        <ol>
+          <li>Cross-multiply: <span class="eq">100x = 80 &times; 15 = 1200</span>.</li>
+          <li>Divide both sides by 100: <span class="eq">x = <strong>12</strong></span>.</li>
+        </ol>
+        <p><strong>Decimal shortcut.</strong> <span class="eq">15% &times; 80 = 0.15 &times; 80 = 12</span>. Same answer, one line.</p>
+
+        <h3>Face 2 &mdash; Find the whole (&ldquo;15 is 20% of what number?&rdquo;)</h3>
+        <p><strong>Setup.</strong> Part = 15, percent = 20, whole = <span class="eq">x</span> (unknown). Proportion: <span class="eq">15/x = 20/100</span>.</p>
+        <ol>
+          <li>Simplify the right side: <span class="eq">20/100 = 1/5</span>. So <span class="eq">15/x = 1/5</span>.</li>
+          <li>Cross-multiply: <span class="eq">15 &times; 5 = 1 &times; x</span> &rarr; <span class="eq">x = <strong>75</strong></span>.</li>
+        </ol>
+        <p><strong>Decimal shortcut.</strong> <span class="eq">15 = 0.20 &times; x</span> &rarr; <span class="eq">x = 15 / 0.20 = 75</span>. Same answer.</p>
+
+        <h3>Face 3 &mdash; Find the percent (&ldquo;15 is what percent of 80?&rdquo;)</h3>
+        <p><strong>Setup.</strong> Part = 15, whole = 80, percent = <span class="eq">p</span> (unknown). Proportion: <span class="eq">15/80 = p/100</span>.</p>
+        <ol>
+          <li>Cross-multiply: <span class="eq">15 &times; 100 = 80 &times; p</span> &rarr; <span class="eq">1500 = 80p</span>.</li>
+          <li>Divide both sides by 80: <span class="eq">p = <strong>18.75</strong></span>. Attach the percent sign: <strong>18.75%</strong>.</li>
+        </ol>
+        <p><strong>Decimal shortcut.</strong> <span class="eq">15 &divide; 80 = 0.1875 = 18.75%</span>. Same answer.</p>
+
+        <div class="callout">
+          <p><strong>The one rule for identifying the three faces.</strong> The <strong>whole</strong> is almost always the number that comes right after the word <em>of</em>. The <strong>part</strong> is the smaller piece being compared to it. The <strong>percent</strong> is the value with a <em>%</em> sign attached. Label the three roles before you write anything down, and the setup is unambiguous.</p>
+        </div>
+
+        <h2>Tip &mdash; percent ADDED to a bill</h2>
+        <p>A tip is a percent OF the bill, ADDED to the bill. Two things you may be asked to find: (1) the tip amount, or (2) the total the customer pays.</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">TIP AMOUNT</p>
+            <p class="rule-card__sub">tip = bill &times; (tip% &divide; 100)</p>
+            <p class="rule-card__result">20% tip on $60 &rarr; <span class="plus">$12</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">TOTAL PAID</p>
+            <p class="rule-card__sub">total = bill &times; (1 + tip%&divide;100)</p>
+            <p class="rule-card__result">$60 &times; 1.20 &rarr; <span class="plus">$72</span></p>
+          </div>
+        </div>
+
+        <p><strong>Full example &mdash; 18% tip on a $45 bill.</strong></p>
+        <ol>
+          <li>Tip amount: <span class="eq">45 &times; 0.18 = $8.10</span>.</li>
+          <li>Total paid: <span class="eq">45 + 8.10 = $53.10</span>, or in one step <span class="eq">45 &times; 1.18 = $53.10</span>.</li>
+        </ol>
+
+        <p><strong>Mental-math tip trick.</strong> 10% of any number is just that number with the decimal shifted one place to the left. So 10% of $45 is $4.50. 20% = double = $9.00. 15% = 10% + half of 10% = $4.50 + $2.25 = $6.75. This is the fastest way to tip in your head at a restaurant.</p>
+
+        <h2>Sales tax &mdash; percent ADDED to a price</h2>
+        <p>Sales tax works exactly like a tip &mdash; a percent OF the pre-tax price, ADDED to it &mdash; only the percent is set by the state and city, not by the customer.</p>
+
+        <div class="callout">
+          <p><strong>NYC sales tax (as of 2026).</strong> The combined sales tax on most goods in Manhattan is <strong>8.875%</strong> (4% NY State + 4.5% New York City + 0.375% MCTD). That is the rate we use in our examples and word problems for practical, right-outside-the-classroom relevance.</p>
+        </div>
+
+        <p><strong>Full example &mdash; sales tax on a $40 book in NYC.</strong></p>
+        <ol>
+          <li>Tax amount: <span class="eq">40 &times; 0.08875 = $3.55</span>.</li>
+          <li>Total paid: <span class="eq">40 + 3.55 = $43.55</span>, or in one step <span class="eq">40 &times; 1.08875 = $43.55</span>.</li>
+        </ol>
+
+        <h2>Discount &mdash; percent SUBTRACTED from a price</h2>
+        <p>A discount is a percent OFF the original price. Two things you may be asked to find: (1) the discount amount (the dollars you save), or (2) the sale price (the final price you pay).</p>
+
+        <div class="rules-grid">
+          <div class="rule-card">
+            <p class="rule-card__title">DISCOUNT AMOUNT</p>
+            <p class="rule-card__sub">discount = original &times; (discount% &divide; 100)</p>
+            <p class="rule-card__result">25% off $120 &rarr; save <span class="plus">$30</span></p>
+          </div>
+          <div class="rule-card">
+            <p class="rule-card__title">SALE PRICE</p>
+            <p class="rule-card__sub">sale price = original &times; (1 &minus; discount%&divide;100)</p>
+            <p class="rule-card__result">$120 &times; 0.75 &rarr; pay <span class="minus">$90</span></p>
+          </div>
+        </div>
+
+        <p><strong>Full example &mdash; 30% off a $80 jacket.</strong></p>
+        <ol>
+          <li>Discount amount: <span class="eq">80 &times; 0.30 = $24</span>. You save $24.</li>
+          <li>Sale price: <span class="eq">80 &minus; 24 = $56</span>, or in one step <span class="eq">80 &times; 0.70 = $56</span>.</li>
+        </ol>
+
+        <p><strong>The &ldquo;paying the complement&rdquo; shortcut.</strong> If something is 30% off, you PAY the other 70%. If something is 15% off, you pay 85%. If something is 60% off, you pay 40%. Multiplying the original by that complement percent gives you the sale price in ONE step &mdash; no subtraction needed. This shortcut is the single most useful percent move on the Digital SAT.</p>
+
+        <div class="callout">
+          <p><strong>Tip / tax / discount at a glance.</strong> Tip is a percent ADDED &mdash; multiply by <span class="eq">(1 + p/100)</span>. Tax is a percent ADDED &mdash; multiply by <span class="eq">(1 + p/100)</span>. Discount is a percent SUBTRACTED &mdash; multiply by <span class="eq">(1 &minus; p/100)</span>. Same recipe, one sign difference.</p>
+        </div>
+
+        <h2>Percent change &mdash; how much did it go up or down?</h2>
+        <p>Percent change measures how a quantity moved relative to its ORIGINAL value. Positive = percent increase, negative = percent decrease.</p>
+
+        <p style="text-align:center;font-size:1.1rem;margin:14px 0;"><span class="eq">percent change = (new &minus; original) / original &times; 100</span></p>
+
+        <p><strong>Full example &mdash; a book&rsquo;s price went from $20 to $25.</strong></p>
+        <ol>
+          <li>Change: <span class="eq">25 &minus; 20 = 5</span>. Divided by original: <span class="eq">5 / 20 = 0.25</span>.</li>
+          <li>As a percent: <span class="eq">0.25 &times; 100 = <strong>25% increase</strong></span>.</li>
+        </ol>
+
+        <p><strong>Full example &mdash; a shirt on sale went from $40 to $30.</strong></p>
+        <ol>
+          <li>Change: <span class="eq">30 &minus; 40 = &minus;10</span>. Divided by the original: <span class="eq">&minus;10 / 40 = &minus;0.25</span>.</li>
+          <li>As a percent: <span class="eq">&minus;0.25 &times; 100 = <strong>25% decrease</strong></span>.</li>
+        </ol>
+
+        <div class="callout">
+          <p><strong>The most common percent-change mistake.</strong> Dividing by the wrong number. The denominator is ALWAYS the ORIGINAL value (the &ldquo;starting&rdquo; number, the &ldquo;before&rdquo; number, the &ldquo;old&rdquo; price). Never divide by the new value. If a price went from $40 to $30, that is a 25% decrease (10 divided by 40), not a 33% decrease (10 divided by 30). Getting this right earns SHSAT and SAT points that everyone else loses.</p>
+        </div>
+
+        <h2>25 practice questions with hidden step-by-step answers</h2>
+        <p>Try each one before revealing the answer. Every explanation shows the setup, the arithmetic, and a &ldquo;why this works&rdquo; note so the pattern sticks.</p>
+
+        <div class="section-band">PART 1 &mdash; Percent, fraction, decimal fluency (Q1&ndash;Q5)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q1</span></div>
+          <div class="practice-question__prompt">Write 32% as a fraction (do not simplify) and as a decimal.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Fraction: 32/100. Decimal: 0.32.</div>
+            <div class="why"><strong>Why.</strong> Percent means &ldquo;per 100,&rdquo; so 32% is literally 32/100. To convert 32% to a decimal, move the point two places left: 32.0 &rarr; 0.32. Both forms name the same amount.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q2</span></div>
+          <div class="practice-question__prompt">Write 7.5% as a decimal.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">0.075.</div>
+            <div class="why"><strong>Why.</strong> Move the decimal point two places to the left: 7.5 &rarr; 0.75 &rarr; 0.075. Careful with the zero &mdash; you have to shift TWO places, not one, so a single-digit percent like 7.5% picks up a leading zero.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q3</span></div>
+          <div class="practice-question__prompt">Write 0.6 as a percent.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">60%.</div>
+            <div class="why"><strong>Why.</strong> To convert a decimal to a percent, move the decimal point two places to the RIGHT and add the percent sign: 0.6 &rarr; 6.0 &rarr; 60. So 0.6 = 60%.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q4</span></div>
+          <div class="practice-question__prompt">Write 3/4 as a percent.</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">75%.</div>
+            <div class="why"><strong>Why.</strong> Convert to a decimal first: 3 &divide; 4 = 0.75. Then decimal &rarr; percent: 0.75 = 75%. Or use the proportion 3/4 = p/100. Cross-multiply: 300 = 4p, so p = 75. Either method gives 75%.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q5</span></div>
+          <div class="practice-question__prompt">Write 125% as a decimal and as a fraction (mixed number if needed).</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Decimal: 1.25. Fraction: 125/100 = 5/4 = 1 1/4.</div>
+            <div class="why"><strong>Why.</strong> 125% just means 125 per 100, which is more than one whole. Move the decimal two places left: 125 &rarr; 12.5 &rarr; 1.25. As a fraction, 125/100 simplifies (divide top and bottom by 25) to 5/4, which is the mixed number 1 1/4. Percents can absolutely be greater than 100%, and they name amounts bigger than the whole.</div>
+          </details>
+        </div>
+
+        <div class="section-band">PART 2 &mdash; Face 1: find the PART (Q6&ndash;Q10)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q6</span></div>
+          <div class="practice-question__prompt">What is 25% of 80?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">20.</div>
+            <div class="why"><strong>Why.</strong> Decimal shortcut: 25% = 0.25, so 0.25 &times; 80 = 20. Or use proportion: part/80 = 25/100 &rarr; part &times; 100 = 80 &times; 25 &rarr; 100 &middot; part = 2000 &rarr; part = 20. Mental check: 25% is one quarter, and one quarter of 80 is 20.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q7</span></div>
+          <div class="practice-question__prompt">What is 15% of 60?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">9.</div>
+            <div class="why"><strong>Why.</strong> 15% = 0.15, so 0.15 &times; 60 = 9. Or use the mental-math trick: 10% of 60 is 6, and 5% is half of that (3), so 15% = 6 + 3 = 9. Same answer.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q8</span></div>
+          <div class="practice-question__prompt">What is 8% of 250?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">20.</div>
+            <div class="why"><strong>Why.</strong> 8% = 0.08, so 0.08 &times; 250 = 20. Mental check: 10% of 250 is 25, so 8% should be slightly less &mdash; 20 fits. Proportion form: part/250 = 8/100 &rarr; 100 &middot; part = 2000 &rarr; part = 20.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q9</span></div>
+          <div class="practice-question__prompt">What is 120% of 40?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">48.</div>
+            <div class="why"><strong>Why.</strong> 120% = 1.20, so 1.20 &times; 40 = 48. When the percent is bigger than 100, the answer is bigger than the whole &mdash; 48 &gt; 40. That is the sign check for a percent above 100: the answer must exceed the original number.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q10</span></div>
+          <div class="practice-question__prompt">A class has 24 students. 75% of them ride the subway to school. How many students ride the subway?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">18 students.</div>
+            <div class="why"><strong>Why.</strong> Whole = 24, percent = 75, find the part. 0.75 &times; 24 = 18. Or: 75% is three quarters, and three quarters of 24 is 3 &times; (24/4) = 3 &times; 6 = 18. Same answer.</div>
+          </details>
+        </div>
+
+        <div class="section-band">PART 3 &mdash; Face 2: find the WHOLE (Q11&ndash;Q15)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q11</span></div>
+          <div class="practice-question__prompt">12 is 25% of what number?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">48.</div>
+            <div class="why"><strong>Why.</strong> Part = 12, percent = 25, whole = x. Proportion: 12/x = 25/100. Cross-multiply: 12 &times; 100 = 25x &rarr; 1200 = 25x &rarr; x = 48. Decimal shortcut: 12 = 0.25x &rarr; x = 12 &divide; 0.25 = 48. Sanity check: 25% of 48 is 12. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q12</span></div>
+          <div class="practice-question__prompt">18 is 20% of what number?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">90.</div>
+            <div class="why"><strong>Why.</strong> 18 = 0.20 &times; x &rarr; x = 18 &divide; 0.20 = 90. Or scale-factor thinking: 20% is 1/5 of the whole, so the whole is 5 &times; 18 = 90. Sanity check: 20% of 90 is 18. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q13</span></div>
+          <div class="practice-question__prompt">7 is 35% of what number?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">20.</div>
+            <div class="why"><strong>Why.</strong> 7 = 0.35 &times; x &rarr; x = 7 &divide; 0.35 = 20. Sanity check: 35% of 20 = 0.35 &times; 20 = 7. &#10003; When the percent is a &ldquo;messy&rdquo; number like 35, division does the work.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q14</span></div>
+          <div class="practice-question__prompt">150 is 120% of what number?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">125.</div>
+            <div class="why"><strong>Why.</strong> 150 = 1.20 &times; x &rarr; x = 150 &divide; 1.20 = 125. When a percent above 100% is applied to a number, the answer is bigger than that number &mdash; so the original whole (125) must be smaller than the &ldquo;part&rdquo; (150). Sanity check: 120% of 125 = 1.20 &times; 125 = 150. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q15</span></div>
+          <div class="practice-question__prompt">In a survey, 45 students said they walk to school. That is 30% of the students surveyed. How many students were surveyed in total?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">150 students.</div>
+            <div class="why"><strong>Why.</strong> Part = 45, percent = 30, find the whole. 45 = 0.30 &times; x &rarr; x = 45 &divide; 0.30 = 150. Sanity check: 30% of 150 = 45. &#10003; Common mistake: multiplying 45 &times; 0.30 instead of dividing &mdash; that would give 13.5, which is smaller than the part, which is impossible.</div>
+          </details>
+        </div>
+
+        <div class="section-band">PART 4 &mdash; Face 3: find the PERCENT (Q16&ndash;Q19)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q16</span></div>
+          <div class="practice-question__prompt">What percent of 40 is 10?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">25%.</div>
+            <div class="why"><strong>Why.</strong> Part = 10, whole = 40, find the percent. 10/40 = 0.25 = 25%. Or proportion form: 10/40 = p/100 &rarr; 1000 = 40p &rarr; p = 25.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q17</span></div>
+          <div class="practice-question__prompt">9 is what percent of 12?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">75%.</div>
+            <div class="why"><strong>Why.</strong> Part = 9, whole = 12. 9 &divide; 12 = 0.75 = 75%. Fraction check: 9/12 = 3/4 = 75%. Everything matches.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q18</span></div>
+          <div class="practice-question__prompt">A student answered 34 out of 40 questions correctly on a math quiz. What percent did she get right?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">85%.</div>
+            <div class="why"><strong>Why.</strong> Part = 34, whole = 40. 34 &divide; 40 = 0.85 = 85%. Sanity check: 10% of 40 is 4, so 85% is 40 &minus; (15% &times; 40) = 40 &minus; 6 = 34. &#10003; This is the exact setup for every test-score percent problem.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q19</span></div>
+          <div class="practice-question__prompt">A basketball player made 9 out of 20 free throws in a game. What percent did she make? What percent did she miss?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Made 45%. Missed 55%.</div>
+            <div class="why"><strong>Why.</strong> Made percent: 9 &divide; 20 = 0.45 = 45%. Missed percent: 20 &minus; 9 = 11 misses, and 11 &divide; 20 = 0.55 = 55%. Sanity check: 45% + 55% = 100%. &#10003; The two percents must always sum to 100% because they cover every free throw.</div>
+          </details>
+        </div>
+
+        <div class="section-band">PART 5 &mdash; Tip, tax, discount, percent change (Q20&ndash;Q25)</div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q20</span></div>
+          <div class="practice-question__prompt">A family&rsquo;s restaurant bill is $60. They want to leave a 20% tip. What is the tip amount and what is the total they pay?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Tip = $12. Total = $72.</div>
+            <div class="why"><strong>Why.</strong> Tip amount = 60 &times; 0.20 = $12. Total = bill + tip = 60 + 12 = $72, or in one step 60 &times; 1.20 = $72. Mental-math check: 10% of $60 is $6, so 20% is $12. &#10003;</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q21</span></div>
+          <div class="practice-question__prompt">A meal costs $45 before tip. Leaving an 18% tip, what is the total the customer pays?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">$53.10.</div>
+            <div class="why"><strong>Why.</strong> Tip amount = 45 &times; 0.18 = $8.10. Total = 45 + 8.10 = $53.10, or in one step 45 &times; 1.18 = $53.10. Mental-math shortcut: 10% is $4.50, 20% is $9, so 18% is a hair under $9, meaning the total is a hair under $54 &mdash; $53.10 fits perfectly.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q22</span></div>
+          <div class="practice-question__prompt">A pair of sneakers costs $80 at a store in Manhattan. NYC combined sales tax is 8.875%. How much sales tax is added, and what is the total?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">Tax = $7.10. Total = $87.10.</div>
+            <div class="why"><strong>Why.</strong> Tax = 80 &times; 0.08875 = $7.10 exactly. Total = 80 + 7.10 = $87.10, or in one step 80 &times; 1.08875 = $87.10. Sanity check: 10% of $80 would be $8, so a tax rate just under 10% (8.875%) should give a bit less than $8 &mdash; $7.10 is in the right zone.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q23</span></div>
+          <div class="practice-question__prompt">A $120 jacket is marked 25% off. What is the sale price?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">$90.</div>
+            <div class="why"><strong>Why.</strong> Fast way &mdash; use the &ldquo;paying the complement&rdquo; shortcut: 25% off means paying 75%. Sale price = 120 &times; 0.75 = $90. Long way: discount = 120 &times; 0.25 = $30, and 120 &minus; 30 = $90. Same answer.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q24</span></div>
+          <div class="practice-question__prompt">A book&rsquo;s price went from $20 to $25. What is the percent increase?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">25% increase.</div>
+            <div class="why"><strong>Why.</strong> Change = 25 &minus; 20 = 5. Divide by the ORIGINAL price (20, not 25): 5 &divide; 20 = 0.25 = 25% increase. The most common mistake is dividing by 25 instead of 20; percent change ALWAYS uses the original value as the denominator.</div>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <div><span class="practice-question__num">Q25</span></div>
+          <div class="practice-question__prompt">A restaurant bill totals $54.60 after a 20% tip. What was the original bill (before the tip)?</div>
+          <details><summary>Show answer &amp; explanation</summary>
+            <div class="answer">$45.50.</div>
+            <div class="why"><strong>Why.</strong> The $54.60 total is 120% of the original bill (100% bill + 20% tip). So 54.60 = 1.20 &times; x, which gives x = 54.60 &divide; 1.20 = $45.50. Sanity check: 20% tip on $45.50 = 0.20 &times; 45.50 = $9.10, and 45.50 + 9.10 = $54.60. &#10003; This is the reverse of a tip problem, and it is exactly the &ldquo;find the whole&rdquo; face of percent.</div>
+          </details>
+        </div>
+
+        <h2>About the Young Fermats Pre-Algebra course</h2>
+        <p>Class 10 is one of 48 rolling classes in our <a href="/courses/young-fermats-prealgebra">Young Fermats Pre-Algebra program</a> for grade 5&ndash;6 students (ages 10&ndash;12). The full arc runs from integers on the number line through systems of linear equations and probability &mdash; the direct on-ramp to Algebra 1 in 7th or 8th grade. Classes are small-group (max 6 students), 120 minutes per week, and students can start any Monday because the syllabus is rolling.</p>
+        <p>Every new family starts with a <a href="/evaluation">free 30-minute evaluation</a> in our 226 W 79th Street classroom plus a written diagnostic delivered within 48 hours. The diagnostic maps your child&rsquo;s current level against the readiness signals for Pre-Algebra and Algebra 1 &mdash; and gives you a clear next step whether you enroll or not.</p>
+
+        <div style="background:#0a3a5f;color:#fff;padding:28px 32px;border-radius:10px;margin:36px 0 18px;">
+          <h2 style="color:#d4a548;margin:0 0 10px;">Ready to see the whole 48-class arc?</h2>
+          <p style="margin:0 0 14px;">Class 10 is a taste &mdash; Young Fermats runs 48 rolling classes, students can join any Monday, and the syllabus takes them from integers through systems of equations. Small-group (max 6), 120 minutes a week, at 226 W 79th Street. First class is free. Cancel any time with 15 days&rsquo; notice.</p>
+          <p style="margin:0;"><a href="/courses/young-fermats-prealgebra" style="background:#d4a548;color:#0a3a5f;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;">See the course &rarr;</a> &nbsp; <a href="/evaluation" style="background:transparent;color:#d4a548;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;display:inline-block;border:2px solid #d4a548;">Book a free evaluation</a> &nbsp; <span style="color:#f5f1e8;font-size:0.9rem;">or call (646) 668-6151</span></p>
+        </div>
+
+        <h2>Related posts</h2>
+        <ul>
+          <li><a href="/posts/pre-algebra-class-9-proportional-reasoning-simple-proportions">Pre-Algebra Class 9: Proportional Reasoning &mdash; Solving Simple Proportions (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-7-decimals-four-operations">Pre-Algebra Class 7: Add, Subtract, Multiply &amp; Divide Decimals &mdash; Including Dividing by a Decimal (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-6-four-operations-fractions-mixed-numbers">Pre-Algebra Class 6: Add, Subtract, Multiply &amp; Divide Fractions and Mixed Numbers (25 Practice Questions)</a></li>
+          <li><a href="/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms">Pre-Algebra Class 12: Evaluating Expressions &amp; Combining Like Terms (25 Practice Questions)</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260908-prealg-class10"></script>
+  </body>
+</html>
