@@ -27,6 +27,10 @@ Contact: hello@schoolofmath.us · (646) 668-6151 · [schoolofmath.us](https://ww
 - [SAT Math (Grades 9–11) | School of Math](https://www.schoolofmath.us/courses/sat-math): SAT Math at SOMATH on the Upper West Side — Grades 9–11, High School. Heart of Algebra · Problem Solving & Data · Passport to Advanced Math · Additional Topics. $640/month, $99 one-time registration.
 - [SHSAT Prep (Grades 7–8) | School of Math](https://www.schoolofmath.us/courses/shsat-prep): SHSAT Prep at SOMATH on the Upper West Side — Grades 7–8, Middle School. Specialized HS Admissions math — question families, timing, scratch-paper strategy. $587/month, $99 one-time registration.
 
+## Featured
+
+- [Homeschooling in NYC — How SOMATH Supports Homeschool Families with Math (New York Post, Sept 9 2026)](https://www.schoolofmath.us/posts/homeschooling-nyc-math-support-somath): SOMATH cofounder Vivianne Wright and daughter Violetta featured in the New York Post. In-person homeschool math track for grades 1–12 with IHIP-ready quarterly progress reports, small groups of 4–8, morning/midday slots, from 226 W 79th St on the Upper West Side.
+
 ## Optional
 
 - [Full site index (all 115+ posts and guides)](https://www.schoolofmath.us/llms-full.txt): complete markdown-linked directory of every article and resource on schoolofmath.us, grouped by topic.
