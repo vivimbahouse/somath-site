@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>AP Statistics Class 11: Random Variables &amp; Expected Value &mdash; 12 SOMATH Posters, Full Theory &amp; 60 Practice Questions with Hidden Solutions | SOMATH NYC</title>
+    <meta name="description" content="Free AP Statistics Class 11 from SOMATH: random variables and expected value. Twelve illustrated SOMATH posters walk through what a random variable is, discrete vs. continuous, probability distributions, valid-distribution rules, missing probabilities, expected value, interpreting E(X), decisions and games, variance, standard deviation, transforming a random variable, and combining random variables. Full theory under each poster and 60 practice questions with click-to-reveal solutions. Upper West Side NYC." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/ap-statistics-class-11-random-variables-expected-value" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AP Statistics Class 11: Random Variables &amp; Expected Value" />
+    <meta property="og:description" content="12 illustrated SOMATH posters, full theory notes, and 60 practice questions with click-to-reveal solutions covering the entire AP Statistics random variables unit. Free class-pack PDF and teacher answer key. Upper West Side NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/ap-statistics-class-11-random-variables-expected-value" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/ap-stats-class-11-random-variables/1-What-is-a-Random-Variable.jpg" />
+    <meta property="article:published_time" content="2026-09-11" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AP Statistics Class 11: Random Variables &amp; Expected Value &mdash; SOMATH" />
+    <meta name="twitter:description" content="12 SOMATH posters + theory + 60 practice questions with hidden solutions covering the entire AP Statistics random variables unit." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/ap-stats-class-11-random-variables/1-What-is-a-Random-Variable.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:22px; column-count:2; column-gap:32px; }
+      @media (max-width: 620px) { .toc ol { column-count:1; } }
+      .toc li { margin:3px 0; break-inside:avoid; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:14px 0 8px; color:#0a3a5f; font-size:1.05rem; }
+      .theory-box h3:first-child { margin-top:0; }
+      .theory-box p, .theory-box ul, .theory-box ol { margin:8px 0; }
+      .theory-box ul, .theory-box ol { padding-left:22px; }
+      .theory-box .eq { font-family:"Cambria Math", Cambria, "Times New Roman", serif; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:1.02em; }
+      .fact-table { border-collapse:collapse; margin:12px 0; font-size:0.95rem; }
+      .fact-table th, .fact-table td { padding:8px 14px; text-align:center; border:1px solid #d4a548; }
+      .fact-table th { background:#0a3a5f; color:#fff; font-weight:600; font-size:0.85rem; letter-spacing:0.03em; }
+      .part-header { background:#0a3a5f; color:#fff; padding:16px 22px; margin:44px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.4rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.94rem; }
+      .poster-img { display:block; width:100%; max-width:720px; height:auto; margin:14px auto 20px; border-radius:8px; box-shadow:0 4px 18px rgba(10,58,95,0.14); }
+      .q-list { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:20px 24px; margin:16px 0 40px; border-radius:6px; }
+      .q-list h3 { margin:0 0 12px; color:#0a3a5f; font-size:1.1rem; }
+      .q { padding:11px 0; border-bottom:1px dashed #e6e6e6; }
+      .q:last-child { border-bottom:none; }
+      .q .qn { display:inline-block; min-width:36px; color:#a97a10; font-weight:700; }
+      details.sol { margin-top:8px; margin-left:36px; }
+      details.sol summary { list-style:none; cursor:pointer; display:inline-block; background:#0a3a5f; color:#fff; font-weight:600; font-size:0.88rem; padding:5px 14px; border-radius:5px; user-select:none; }
+      details.sol summary::-webkit-details-marker { display:none; }
+      details.sol summary::before { content:"▶ Show solution"; }
+      details.sol[open] summary::before { content:"▼ Hide solution"; }
+      details.sol .ans { margin-top:8px; padding:10px 14px; background:#f5f1e8; border-left:3px solid #0a3a5f; border-radius:4px; }
+      .cta-box { background:#0a3a5f; color:#fff; padding:24px 28px; margin:28px 0; border-radius:8px; }
+      .cta-box h3 { color:#fff; margin:0 0 8px; }
+      .cta-box p { margin:6px 0; color:#d4e3ef; }
+      .cta-box a { color:#f5cf6e; font-weight:700; }
+      .downloads { display:flex; flex-wrap:wrap; gap:14px; margin:18px 0; }
+      .downloads a { display:inline-block; background:#0a3a5f; color:#fff !important; text-decoration:none; padding:12px 20px; border-radius:6px; font-weight:600; font-size:0.98rem; border:2px solid #d4a548; }
+      .downloads a:hover { background:#d4a548; color:#1a2820 !important; }
+      .course-link-hero { background:#f5f1e8; border:2px solid #d4a548; padding:20px 26px; margin:22px 0; border-radius:8px; }
+      .course-link-hero .kicker { font-size:0.85rem; color:#a97a10; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin:0 0 4px; }
+      .course-link-hero h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.15rem; }
+      .course-link-hero p { margin:6px 0; color:#1a2820; }
+      .course-link-hero a.cta { display:inline-block; background:#0a3a5f; color:#fff !important; text-decoration:none !important; padding:10px 20px; border-radius:6px; font-weight:700; margin-top:8px; border:2px solid #0a3a5f; }
+      .course-link-hero a.cta:hover { background:#d4a548; color:#1a2820 !important; border-color:#d4a548; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AP Statistics Class 11: Random Variables & Expected Value — 12 SOMATH Posters, Theory & 60 Practice Questions",
+  "description": "Free AP Statistics Class 11 from SOMATH covering random variables, probability distributions, expected value, variance, standard deviation, transforming and combining random variables. 12 illustrated posters, full theory, 60 practice questions with click-to-reveal solutions.",
+  "image": "https://www.schoolofmath.us/assets/blog/ap-stats-class-11-random-variables/1-What-is-a-Random-Variable.jpg",
+  "datePublished": "2026-09-11",
+  "dateModified": "2026-09-11",
+  "author": { "@type": "EducationalOrganization", "name": "SOMATH — School of Math", "url": "https://www.schoolofmath.us" },
+  "publisher": { "@type": "EducationalOrganization", "name": "SOMATH — School of Math", "logo": { "@type": "ImageObject", "url": "https://www.schoolofmath.us/assets/somath-logo.png" } },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.schoolofmath.us/posts/ap-statistics-class-11-random-variables-expected-value" },
+  "about": { "@type": "Course", "name": "AP Statistics", "url": "https://www.schoolofmath.us/courses/ap-statistics", "provider": { "@type": "EducationalOrganization", "name": "SOMATH — School of Math" } }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "A spinner shows 1, 2, 3, 4. Let X = the number the spinner lands on. Is X a random variable? What are its possible values?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. X is a numerical value determined by a random process. Possible values: 1, 2, 3, 4." } },
+    { "@type": "Question", "name": "Classify as discrete or continuous: number of cars that pass a light in an hour.", "acceptedAnswer": { "@type": "Answer", "text": "Discrete — you count cars (0, 1, 2, …)." } },
+    { "@type": "Question", "name": "Roll a fair die. Write the probability distribution of X = number rolled.", "acceptedAnswer": { "@type": "Answer", "text": "Every value 1&ndash;6 has probability 1/6. Distribution: P(X = k) = 1/6 for k = 1, 2, 3, 4, 5, 6." } },
+    { "@type": "Question", "name": "Is this a valid distribution? x: 0, 1, 2; P: 0.3, 0.5, 0.2.", "acceptedAnswer": { "@type": "Answer", "text": "0.3 + 0.5 + 0.2 = 1.0 and each is in [0, 1]. Valid." } },
+    { "@type": "Question", "name": "x: 0, 1, 2, 3; P: 0.1, 0.4, ?, 0.2. Find P(X = 2).", "acceptedAnswer": { "@type": "Answer", "text": "0.1 + 0.4 + P + 0.2 = 1 &rArr; P = 1 − 0.7 = 0.3." } },
+    { "@type": "Question", "name": "x: 0, 1, 2; P: 0.2, 0.5, 0.3. Find E(X).", "acceptedAnswer": { "@type": "Answer", "text": "E(X) = 0(0.2) + 1(0.5) + 2(0.3) = 0 + 0.5 + 0.6 = 1.1." } },
+    { "@type": "Question", "name": "A student computes E(X) = 2.7 for the number of heads in 4 flips. Is 2.7 a possible outcome?", "acceptedAnswer": { "@type": "Answer", "text": "No — you can only observe 0, 1, 2, 3, or 4 heads. But over many sets of 4 flips, the average number of heads is 2.7." } },
+    { "@type": "Question", "name": "Game A: win $5 with prob 0.3, lose $2 with prob 0.7. Compute E(X) and decide if it's favorable.", "acceptedAnswer": { "@type": "Answer", "text": "E(X) = 5(0.3) + (−2)(0.7) = 1.5 − 1.4 = $0.10. Positive — slightly favorable in the long run." } },
+    { "@type": "Question", "name": "x: 0, 1, 2; P: 0.2, 0.5, 0.3. Compute E(X), then Var(X).", "acceptedAnswer": { "@type": "Answer", "text": "μ = 1.1. Deviations squared: (0−1.1)² = 1.21, (1−1.1)² = 0.01, (2−1.1)² = 0.81. Var = 1.21(0.2) + 0.01(0.5) + 0.81(0.3) = 0.242 + 0.005 + 0.243 = 0.49." } },
+    { "@type": "Question", "name": "Var(X) = 16. Find σX.", "acceptedAnswer": { "@type": "Answer", "text": "σX = √16 = 4." } },
+    { "@type": "Question", "name": "μX = 10, σX = 3. Let Y = X + 7. Find μY and σY.", "acceptedAnswer": { "@type": "Answer", "text": "μY = 7 + 10 = 17. σY = 3 (unchanged by shift)." } },
+    { "@type": "Question", "name": "μX = 10, μY = 4. Find μX+Y and μX−Y.", "acceptedAnswer": { "@type": "Answer", "text": "μX+Y = 14. μX−Y = 6. Means always add or subtract." } }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div class="announce">New: SOMATH Membership &mdash; start any week, from $246/mo. <a href="/plans">See plans &rarr;</a></div>
+
+    <main>
+      <div class="wrap wrap--reading">
+        <article class="post">
+          <p class="post__eyebrow">AP Statistics &middot; Class 11 &middot; Grades 10&ndash;12</p>
+          <h1 class="post__title">AP Statistics Class 11: Random Variables &amp; Expected Value &mdash; 12 SOMATH Posters, Theory &amp; 60 Practice Questions</h1>
+          <p class="post__dek"><strong>The whole AP Statistics random-variables unit in one class.</strong> Twelve SOMATH posters walk through what a random variable is, discrete vs. continuous, probability distributions, valid-distribution rules, missing probabilities, expected value, interpreting E(X), decisions and games, variance, standard deviation, transforming a random variable, and combining random variables. Under each poster you&rsquo;ll find full theory notes and <strong>5 practice questions with click-to-reveal step-by-step solutions</strong> &mdash; 60 questions total.</p>
+          <p class="post__meta"><time datetime="2026-09-11">2026-09-11</time> &middot; By SOMATH &middot; Class 11 of the AP Statistics rolling syllabus &middot; (646) 668-6151</p>
+
+          <div class="post__body">
+
+            <div class="course-link-hero">
+              <p class="kicker">Class 11 of the SOMATH AP Statistics course</p>
+              <h3>Enroll in AP Statistics &mdash; grades 10&ndash;12</h3>
+              <p>This class pack is part of SOMATH&rsquo;s 24-class AP Statistics rolling syllabus, taught in small in-person groups on the Upper West Side. Join at any class number without losing the thread &mdash; students can start on Class 11 today.</p>
+              <a class="cta" href="/courses/ap-statistics">See the full AP Statistics course &rarr;</a>
+            </div>
+
+            <div class="downloads">
+              <a href="/assets/blog/ap-stats-class-11-random-variables/SOMATH-APStats-Class11-Random-Variables-Class-Pack.pdf" download>&darr; Class Pack PDF (12 posters + theory + 60 questions)</a>
+              <a href="/assets/blog/ap-stats-class-11-random-variables/SOMATH-APStats-Class11-Random-Variables-Answer-Key.pdf" download>&darr; Teacher Answer Key PDF</a>
+            </div>
+
+            <div class="toc">
+              <h2>What&rsquo;s in this class</h2>
+              <ol>
+                <li><a href="#c1">What Is a Random Variable?</a></li>
+                <li><a href="#c2">Discrete vs. Continuous Random Variables</a></li>
+                <li><a href="#c3">Probability Distribution of a Discrete RV</a></li>
+                <li><a href="#c4">Rules for a Valid Probability Distribution</a></li>
+                <li><a href="#c5">Finding Missing Probabilities</a></li>
+                <li><a href="#c6">Expected Value — The Mean of a Random Variable</a></li>
+                <li><a href="#c7">Interpreting Expected Value</a></li>
+                <li><a href="#c8">Expected Value in Games and Decisions</a></li>
+                <li><a href="#c9">Variance of a Random Variable</a></li>
+                <li><a href="#c10">Standard Deviation of a Random Variable</a></li>
+                <li><a href="#c11">Transforming Random Variables</a></li>
+                <li><a href="#c12">Combining Random Variables</a></li>
+              </ol>
+            </div>
+
+            <div class="callout"><strong>How to use this page.</strong> Study each poster first, then read the theory notes below it, then work the 5 practice questions. Click <em>Show solution</em> only after you&rsquo;ve tried a problem. Bring questions to your SOMATH AP Statistics teacher &mdash; or book a free <a href="/evaluation">30-minute evaluation</a> at 226 W 79th St.</div>
+
+            <div class="part-header" id="c1">
+              <h2>1. What Is a Random Variable?</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/1-What-is-a-Random-Variable.jpg" alt="SOMATH Class 11 poster — What Is a Random Variable?" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>Definition</h3>
+<p>A <strong>random variable</strong> is a numerical value determined by the outcome of a random process. We usually write it with a capital letter — <span class="eq">X</span>, <span class="eq">Y</span>, <span class="eq">Z</span> — and its individual values with lowercase letters.</p>
+<h3>Example 1: Roll a fair six-sided die</h3>
+<p>Let <span class="eq">X</span> = the number rolled. The possible values are <span class="eq">1, 2, 3, 4, 5, 6</span>, each equally likely with probability <span class="eq">1/6</span>.</p>
+<h3>Example 2: Flip 3 coins</h3>
+<p>Let <span class="eq">X</span> = the number of heads. The possible values are <span class="eq">0, 1, 2, 3</span>. Even though the outcome of each flip is unknown, <span class="eq">X</span> is a well-defined number every time we do the experiment.</p>
+<h3>Why we call it "random"</h3>
+<p>The value depends on chance. Before the experiment we cannot know what <span class="eq">X</span> will be — only what values it <em>could</em> take and how likely each value is.</p>
+<h3>Why it matters</h3>
+<p>Random variables let us apply arithmetic — sums, averages, comparisons — to random processes. Every AP Statistics topic that follows in this unit (probability distributions, expected value, variance, binomial, geometric, sampling distributions) starts with a random variable.</p>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; What Is a Random Variable?</h3>
+              <div class="q"><span class="qn">Q1.</span> A spinner shows 1, 2, 3, 4. Let <span class='eq'>X</span> = the number the spinner lands on. Is <span class='eq'>X</span> a random variable? What are its possible values?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Yes. <span class='eq'>X</span> is a numerical value determined by a random process. Possible values: <strong>1, 2, 3, 4</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> A bag has 3 red and 2 blue marbles. You draw one and let <span class='eq'>X</span> = 1 if red, 0 if blue. List the possible values of <span class='eq'>X</span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Possible values: 0 and 1.</strong> This is called an indicator random variable.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> You flip a coin 4 times and record the number of tails. Let <span class='eq'>X</span> = number of tails. What values can <span class='eq'>X</span> take?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>0, 1, 2, 3, 4</strong> &mdash; any whole number from 0 up to the number of flips.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> True or false: a random variable must be a whole number.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>False.</strong> A random variable is any numerical value determined by chance. Height, time, and temperature are all random variables that can take non-whole values.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> A student says &ldquo;the color of a marble is a random variable.&rdquo; Is that correct? Why?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Not quite.</strong> A random variable must be <em>numerical</em>. To turn color into a random variable, we&rsquo;d assign numbers (for example 1 = red, 0 = blue).</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c2">
+              <h2>2. Discrete vs. Continuous Random Variables</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/2-Discret-vs-Continuous-2.jpg" alt="SOMATH Class 11 poster — Discrete vs. Continuous Random Variables" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>Two kinds of random variables</h3>
+<p>Every random variable is either <strong>discrete</strong> or <strong>continuous</strong>. Which kind it is decides how we write its probability model and how we compute probabilities.</p>
+<h3>Discrete — you can <em>count</em></h3>
+<p>A discrete random variable takes <strong>countable</strong> values (finite or countably infinite). The possible values can be listed: <span class="eq">0, 1, 2, 3, &hellip;</span>.</p>
+<ul>
+<li>Number on a die: 1, 2, 3, 4, 5, 6</li>
+<li>Number of heads in 3 coin flips: 0, 1, 2, 3</li>
+<li>Number of students absent: 0, 1, 2, &hellip;</li>
+<li>Number of goals in a soccer game: 0, 1, 2, &hellip;</li>
+</ul>
+<h3>Continuous — you <em>measure</em></h3>
+<p>A continuous random variable can take <strong>any value in an interval</strong>. The possible values form a continuum — infinitely many values, and between any two you can always find another.</p>
+<ul>
+<li>Height of a person: 150.5 cm, 150.6 cm, 150.63 cm, &hellip;</li>
+<li>Time to complete a test: 23.4 minutes</li>
+<li>Temperature: 72.3&deg;F</li>
+<li>Weight of a package: 1.27 kg</li>
+</ul>
+<h3>Bar chart vs density curve</h3>
+<p>Discrete distributions are shown with a <strong>bar chart</strong> (or histogram): one bar per possible value, height = probability. Continuous distributions are shown with a <strong>density curve</strong>: probability is <strong>area</strong> under the curve, not the height at a single point.</p>
+<div class="callout"><strong>Rule of thumb.</strong> If the natural question is &ldquo;How many?&rdquo; the variable is discrete. If it&rsquo;s &ldquo;How much?&rdquo; the variable is continuous.</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Discrete vs. Continuous Random Variables</h3>
+              <div class="q"><span class="qn">Q1.</span> Classify as discrete or continuous: number of cars that pass a light in an hour.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Discrete</strong> &mdash; you count cars (0, 1, 2, &hellip;).</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> Classify as discrete or continuous: exact time (in seconds) it takes a runner to finish a race.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Continuous</strong> &mdash; time can take any value in an interval (10.24 s, 10.241 s, &hellip;).</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> Classify as discrete or continuous: number of siblings a student has.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Discrete</strong> &mdash; a countable whole number.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> Classify as discrete or continuous: the weight of a randomly selected apple.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Continuous</strong> &mdash; weight is measured, not counted.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> A random variable takes values 0, 0.5, 1, 1.5, 2 with given probabilities. Is it discrete or continuous?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Discrete.</strong> The possible values can be listed &mdash; they don&rsquo;t form a continuum.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c3">
+              <h2>3. Probability Distribution of a Discrete RV</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/3-Probability-Distribution-3.jpg" alt="SOMATH Class 11 poster — Probability Distribution of a Discrete RV" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>What a probability distribution shows</h3>
+<p>A <strong>probability distribution</strong> of a discrete random variable <span class="eq">X</span> lists every possible value <span class="eq">x</span> together with its probability <span class="eq">P(X = x)</span>. It answers two questions at once: <em>what values can X take?</em> and <em>how likely is each?</em></p>
+<h3>How to build a distribution — four steps</h3>
+<ol>
+<li>Identify the random variable in words. (<em>&ldquo;Let X = &hellip;&rdquo;</em>)</li>
+<li>List all possible values of <span class="eq">X</span>.</li>
+<li>Find the probability of each value.</li>
+<li>Check that all probabilities add up to 1.</li>
+</ol>
+<h3>Example 1: Flip 2 fair coins, X = number of heads</h3>
+<p>Sample space: HH, HT, TH, TT (4 equally likely outcomes). <span class="eq">X</span> can be 0, 1, or 2.</p>
+<table class="fact-table"><tr><th>x</th><th>0</th><th>1</th><th>2</th></tr><tr><th>P(X = x)</th><td>1/4</td><td>1/2</td><td>1/4</td></tr></table>
+<h3>Example 2: Roll a fair die, X = number rolled</h3>
+<table class="fact-table"><tr><th>x</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><th>P(X = x)</th><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td></tr></table>
+<h3>Valid probability distribution rules</h3>
+<ul>
+<li>Each probability must satisfy <span class="eq">0 &le; P(X = x) &le; 1</span>.</li>
+<li>The probabilities must sum to 1: <span class="eq">&Sigma; P(X = x) = 1</span>.</li>
+</ul>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Probability Distribution of a Discrete RV</h3>
+              <div class="q"><span class="qn">Q1.</span> Roll a fair die. Write the probability distribution of <span class='eq'>X</span> = number rolled.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Every value 1&ndash;6 has probability <span class='eq'>1/6</span>. Distribution: <strong>P(X = k) = 1/6 for k = 1, 2, 3, 4, 5, 6</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> Flip 2 fair coins. Let <span class='eq'>X</span> = number of tails. Write the probability distribution.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Outcomes: HH, HT, TH, TT. <strong>P(X = 0) = 1/4, P(X = 1) = 1/2, P(X = 2) = 1/4</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> A random variable <span class='eq'>X</span> has distribution P(X = 1) = 0.2, P(X = 2) = 0.5, P(X = 3) = 0.3. Compute P(X &ge; 2).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>P(X &ge; 2) = P(X = 2) + P(X = 3) = 0.5 + 0.3 = <strong>0.8</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> For the same X, compute P(X &lt; 3).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>P(X &lt; 3) = P(X = 1) + P(X = 2) = 0.2 + 0.5 = <strong>0.7</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> List the four steps to build a probability distribution for a discrete random variable.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>(1)</strong> Identify the random variable; <strong>(2)</strong> list all possible values; <strong>(3)</strong> find the probability of each value; <strong>(4)</strong> check that the probabilities add to 1.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c4">
+              <h2>4. Rules for a Valid Probability Distribution</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/4-Rules-for-Probability-Distribution-4.jpg" alt="SOMATH Class 11 poster — Rules for a Valid Probability Distribution" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>Two rules — both must hold</h3>
+<p>A discrete probability distribution is <strong>valid</strong> only when it passes both checks. Miss either one and the table is not a probability distribution.</p>
+<div class="theory-box" style="border-left-color:#0a3a5f;">
+<h3>Rule 1 &mdash; each probability is between 0 and 1</h3>
+<p><span class="eq">0 &le; P(X = x) &le; 1</span> for every value of <span class="eq">x</span>. A negative probability is impossible; a probability greater than 1 is impossible.</p>
+</div>
+<div class="theory-box" style="border-left-color:#d4a548;">
+<h3>Rule 2 &mdash; the probabilities sum to 1</h3>
+<p><span class="eq">&Sigma; P(X = x) = 1</span> summed over every possible value of <span class="eq">X</span>. If they sum to more or less than 1, some probability is wrong or a value is missing.</p>
+</div>
+<h3>Valid example</h3>
+<table class="fact-table"><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><th>P(X = x)</th><td>0.10</td><td>0.30</td><td>0.40</td><td>0.20</td></tr></table>
+<p>All four values are in [0, 1] and 0.10 + 0.30 + 0.40 + 0.20 = 1.00. <strong>Valid.</strong></p>
+<h3>Invalid example</h3>
+<table class="fact-table"><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><th>P(X = x)</th><td>0.20</td><td>0.50</td><td>0.40</td><td>&minus;0.10</td></tr></table>
+<p><span class="eq">P(X = 3) = &minus;0.10</span> is not between 0 and 1. Even though 0.20 + 0.50 + 0.40 &minus; 0.10 happens to equal 1.00, Rule 1 is already violated. <strong>Not valid.</strong></p>
+<div class="callout"><strong>Check Rule 1 first.</strong> A negative probability makes the table invalid on the spot, even before the sum works out.</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Rules for a Valid Probability Distribution</h3>
+              <div class="q"><span class="qn">Q1.</span> Is this a valid distribution? x: 0, 1, 2; P: 0.3, 0.5, 0.2.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> 0.3 + 0.5 + 0.2 = 1.0 and each is in [0, 1]. <strong>Valid.</strong></div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> Is this a valid distribution? x: 1, 2, 3; P: 0.4, 0.5, 0.2.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Sum = 1.1 &ne; 1. <strong>Not valid</strong> &mdash; violates Rule 2.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> Is this a valid distribution? x: 0, 1, 2, 3; P: 0.25, 0.25, 0.25, 0.25.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Sum = 1.00 and each is in [0, 1]. <strong>Valid</strong> (uniform on 4 values).</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> Is this a valid distribution? x: 1, 2, 3, 4; P: 0.3, 0.3, &minus;0.1, 0.5.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Not valid</strong> &mdash; P(X = 3) = &minus;0.1 violates Rule 1, even though the sum is 1.0.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> What are the two rules for a valid discrete probability distribution?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>(1)</strong> Each probability satisfies <span class='eq'>0 &le; P(X = x) &le; 1</span>. <strong>(2)</strong> The probabilities sum to 1: <span class='eq'>&Sigma; P(X = x) = 1</span>.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c5">
+              <h2>5. Finding Missing Probabilities</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/5-Missing-Probabilities-5.jpg" alt="SOMATH Class 11 poster — Finding Missing Probabilities" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>Idea</h3>
+<p>The probabilities in a distribution must sum to 1. If one probability is missing, use that fact to solve for it: <span class="eq">&Sigma; P(X = x) = 1</span>.</p>
+<h3>Method (three steps)</h3>
+<ol>
+<li>Set up the equation <span class="eq">&Sigma; P(X = x) = 1</span> with the missing probability as an unknown.</li>
+<li>Add the known probabilities.</li>
+<li>Solve for the missing probability.</li>
+</ol>
+<h3>Example 1: Find P(X = 2)</h3>
+<table class="fact-table"><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><th>P(X = x)</th><td>0.20</td><td>0.30</td><td>?</td><td>0.10</td></tr></table>
+<p>0.20 + 0.30 + P(X = 2) + 0.10 = 1 &nbsp;&rArr;&nbsp; 0.60 + P(X = 2) = 1 &nbsp;&rArr;&nbsp; <strong>P(X = 2) = 0.40</strong>.</p>
+<h3>Example 2: Find P(Y = 4)</h3>
+<table class="fact-table"><tr><th>y</th><th>1</th><th>2</th><th>3</th><th>4</th></tr><tr><th>P(Y = y)</th><td>0.15</td><td>0.25</td><td>0.35</td><td>?</td></tr></table>
+<p>0.15 + 0.25 + 0.35 + P(Y = 4) = 1 &nbsp;&rArr;&nbsp; 0.75 + P(Y = 4) = 1 &nbsp;&rArr;&nbsp; <strong>P(Y = 4) = 0.25</strong>.</p>
+<div class="callout"><strong>Sanity check.</strong> After you fill in the missing value, add the whole column. If it isn&rsquo;t exactly 1, the table has more than one error.</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Finding Missing Probabilities</h3>
+              <div class="q"><span class="qn">Q1.</span> x: 0, 1, 2, 3; P: 0.1, 0.4, ?, 0.2. Find P(X = 2).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> 0.1 + 0.4 + P + 0.2 = 1 &rArr; P = 1 &minus; 0.7 = <strong>0.3</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> y: 1, 2, 3; P: 0.15, ?, 0.55. Find P(Y = 2).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> 0.15 + P + 0.55 = 1 &rArr; P = 1 &minus; 0.70 = <strong>0.30</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> x: 0, 1, 2, 3, 4; P: 0.05, 0.15, 0.30, ?, 0.10. Find P(X = 3).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Sum of known = 0.60. P = 1 &minus; 0.60 = <strong>0.40</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> A student solves and gets a missing probability of &minus;0.05. What went wrong?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> The sum of the given probabilities is already greater than 1, so the table is inconsistent. Check the given values &mdash; at least one is wrong.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> z: 1, 2, 3, 4; P: 0.2, 0.2, ?, ?. If P(Z = 3) = 2&middot;P(Z = 4), find both missing values.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Let <span class='eq'>P(Z = 4) = p</span>. Then <span class='eq'>P(Z = 3) = 2p</span>. Sum: 0.2 + 0.2 + 2p + p = 1 &rArr; 3p = 0.6 &rArr; p = 0.2. So <strong>P(Z = 3) = 0.4, P(Z = 4) = 0.2</strong>.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c6">
+              <h2>6. Expected Value — The Mean of a Random Variable</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/6-Expected-Value-6.jpg" alt="SOMATH Class 11 poster — Expected Value — The Mean of a Random Variable" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>What expected value is</h3>
+<p>The <strong>expected value</strong> of a random variable is the <strong>long-run average outcome</strong> if we repeat the random process many times. It is also called the <strong>mean</strong> of the random variable, <span class="eq">&mu;<sub>X</sub></span>.</p>
+<h3>Formula</h3>
+<p><span class="eq">&mu;<sub>X</sub> = E(X) = &Sigma; x &middot; P(X = x)</span></p>
+<p>Multiply each possible value by its probability, then add up the products.</p>
+<h3>Example 1: Fair six-sided die</h3>
+<table class="fact-table"><tr><th>x</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr><tr><th>P(X = x)</th><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td><td>1/6</td></tr></table>
+<p><span class="eq">E(X) = 1(1/6) + 2(1/6) + 3(1/6) + 4(1/6) + 5(1/6) + 6(1/6) = 21/6 = <strong>3.5</strong></span>.</p>
+<p>You cannot roll a 3.5, but if you roll a die a million times, the average of the results is very close to 3.5.</p>
+<h3>Example 2: A $2 game</h3>
+<p>The game costs $2 to play. You win $5 with probability 0.3 and win $0 with probability 0.7. Let <span class="eq">X</span> be your net winnings in dollars.</p>
+<table class="fact-table"><tr><th>x</th><th>&minus;2</th><th>3</th></tr><tr><th>P(X = x)</th><td>0.7</td><td>0.3</td></tr></table>
+<p><span class="eq">E(X) = (&minus;2)(0.7) + 3(0.3) = &minus;1.4 + 0.9 = <strong>&minus;$0.50</strong></span>. In the long run you expect to <em>lose</em> $0.50 per play.</p>
+<h3>Key takeaways</h3>
+<ul>
+<li>Expected value is the <strong>long-run</strong> average outcome.</li>
+<li>Use <span class="eq">E(X) = &Sigma; x &middot; P(X = x)</span>.</li>
+<li>It does not have to be a value <span class="eq">X</span> can actually take (e.g. 3.5 on a die).</li>
+<li>It can represent an average gain, loss, cost, or number of successes.</li>
+</ul>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Expected Value — The Mean of a Random Variable</h3>
+              <div class="q"><span class="qn">Q1.</span> x: 0, 1, 2; P: 0.2, 0.5, 0.3. Find E(X).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(X) = 0(0.2) + 1(0.5) + 2(0.3) = 0 + 0.5 + 0.6 = <strong>1.1</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> A spinner has values 1, 2, 5 with probabilities 0.5, 0.3, 0.2. Find E(X).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(X) = 1(0.5) + 2(0.3) + 5(0.2) = 0.5 + 0.6 + 1.0 = <strong>2.1</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> A game pays $10 with probability 0.1 and $0 with probability 0.9. The ticket costs $2. What is your expected net gain?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Net values: +$8 (win) or &minus;$2 (lose). <span class='eq'>E = 8(0.1) + (&minus;2)(0.9) = 0.8 &minus; 1.8 = <strong>&minus;$1.00</strong></span>. Expect to lose $1 per play.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> A random variable takes values 100, 200, 300 with probabilities 0.5, 0.3, 0.2. Find E(X).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(X) = 100(0.5) + 200(0.3) + 300(0.2) = 50 + 60 + 60 = <strong>170</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> An insurance policy pays $500 with probability 0.02 and $0 with probability 0.98. What is the fair (break-even) premium?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(payout) = 500(0.02) + 0(0.98) = <strong>$10</strong></span>. The break-even premium is $10 (before insurer expenses/profit).</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c7">
+              <h2>7. Interpreting Expected Value</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/7-Interpreting-Expected-Value-7.jpg" alt="SOMATH Class 11 poster — Interpreting Expected Value" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>What expected value really means</h3>
+<p>Expected value is the <strong>weighted average</strong> of all possible outcomes, weighted by their probabilities. It tells us what to expect <em>on average</em> over many repetitions — <strong>not</strong> what to expect on a single trial.</p>
+<h3>Example: 3 fair coin flips, X = number of heads</h3>
+<table class="fact-table"><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><th>P(X = x)</th><td>1/8</td><td>3/8</td><td>3/8</td><td>1/8</td></tr></table>
+<p><span class="eq">E(X) = 0(1/8) + 1(3/8) + 2(3/8) + 3(1/8) = 12/8 = <strong>1.5</strong></span>.</p>
+<h3>What does 1.5 heads mean?</h3>
+<p>You cannot actually get 1.5 heads in one set of 3 flips (you get 0, 1, 2, or 3). But if you repeat the &ldquo;flip 3 coins&rdquo; experiment many times, the <strong>average</strong> number of heads per set will be very close to 1.5.</p>
+<h3>Three important points</h3>
+<ol>
+<li>Expected value is the <strong>long-run average outcome</strong> — not the most likely value.</li>
+<li>It is a <strong>weighted average</strong>: more likely outcomes pull the answer more.</li>
+<li>It <strong>does not have to be a possible outcome</strong>. 1.5 heads, 3.5 on a die, and &minus;$0.50 on a game are all valid expected values you can never actually observe on one trial.</li>
+</ol>
+<div class="callout"><strong>Common mistake.</strong> Students hear &ldquo;expected&rdquo; and think <em>most likely</em>. They&rsquo;re not the same. The most likely number of heads in 3 flips is 1 <em>or</em> 2 (both have probability 3/8), but the expected value is 1.5.</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Interpreting Expected Value</h3>
+              <div class="q"><span class="qn">Q1.</span> A student computes E(X) = 2.7 for the number of heads in 4 flips. Is 2.7 a possible outcome?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>No</strong> &mdash; you can only observe 0, 1, 2, 3, or 4 heads. But over many sets of 4 flips, the average number of heads is 2.7.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> What is the difference between the expected value and the most likely value of a random variable?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Expected value is the <strong>weighted average</strong> of all outcomes (each weighted by probability). Most likely = the value with the highest probability. They can be different (and often are).</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> A shop&rsquo;s daily profit has E(X) = $450. On a random day, will they earn exactly $450?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Not necessarily.</strong> Any single day&rsquo;s profit could be higher or lower. Over many days, the average will be close to $450.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> For X = number of heads in 3 fair coin flips, we found E(X) = 1.5. Explain in one sentence what 1.5 means.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> If you repeat the &ldquo;flip 3 coins&rdquo; experiment many times, the <strong>average</strong> number of heads per set of 3 flips will be about 1.5.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> True or false: E(X) is always one of the possible values of X.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>False.</strong> E(X) can be any real number in the range of X, including non-attainable values like 3.5 on a die or 1.5 heads in 3 flips.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c8">
+              <h2>8. Expected Value in Games and Decisions</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/8-Games-and-Decisions-8.jpg" alt="SOMATH Class 11 poster — Expected Value in Games and Decisions" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>Why expected value matters for decisions</h3>
+<p>Expected value gives us a single number to compare two random options — an insurance policy vs. going uninsured, playing a game vs. sitting out, choosing route A vs. route B. Whichever choice has the better expected value is, on average, the better long-run decision.</p>
+<h3>How to interpret the sign</h3>
+<ul>
+<li><strong>Positive</strong> expected value: favorable — a long-run gain or profit.</li>
+<li><strong>Negative</strong> expected value: unfavorable — a long-run loss or extra cost.</li>
+<li>To choose between two options, compute <span class="eq">E(X)</span> for each and pick the better one.</li>
+</ul>
+<h3>Example 1: Carnival game</h3>
+<p>It costs $2 to play. Win $10 with probability 0.15, or $0 with probability 0.85. Net outcome <span class="eq">X</span>:</p>
+<table class="fact-table"><tr><th>x (net dollars)</th><th>8</th><th>&minus;2</th></tr><tr><th>P(X = x)</th><td>0.15</td><td>0.85</td></tr></table>
+<p><span class="eq">E(X) = 8(0.15) + (&minus;2)(0.85) = 1.20 &minus; 1.70 = <strong>&minus;$0.50</strong></span> per play. The game is not favorable — over many plays you lose $0.50 each time.</p>
+<h3>Example 2: Buying shipping insurance</h3>
+<p>A package has a 5% chance of being lost (which would cost you $80). Insurance costs $3.</p>
+<ul>
+<li><strong>Option A &mdash; No insurance:</strong> <span class="eq">E(cost) = 80(0.05) + 0(0.95) = $4.00</span>.</li>
+<li><strong>Option B &mdash; Buy insurance:</strong> guaranteed cost = <span class="eq">$3.00</span>.</li>
+</ul>
+<p>$3 &lt; $4, so <strong>buying insurance is the better expected-value decision</strong>.</p>
+<div class="callout"><strong>Note.</strong> Expected value is a long-run guide. On any single shipment you might feel silly paying $3 for insurance you didn&rsquo;t need, or you might be very glad you did.</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Expected Value in Games and Decisions</h3>
+              <div class="q"><span class="qn">Q1.</span> Game A: win $5 with prob 0.3, lose $2 with prob 0.7. Compute E(X) and decide if it&rsquo;s favorable.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(X) = 5(0.3) + (&minus;2)(0.7) = 1.5 &minus; 1.4 = <strong>$0.10</strong></span>. Positive &mdash; slightly favorable in the long run.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> Game B: win $10 with prob 0.15, lose $3 with prob 0.85. Compute E(X) and decide.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(X) = 10(0.15) + (&minus;3)(0.85) = 1.5 &minus; 2.55 = <strong>&minus;$1.05</strong></span>. Negative &mdash; unfavorable, don&rsquo;t play.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> A phone has a 3% chance of breaking (costing $400 to repair). Warranty costs $20. Should you buy it (by expected value)?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(no warranty cost) = 400(0.03) = $12</span>. With warranty guaranteed cost is $20. $12 &lt; $20, so by expected value <strong>skip the warranty</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> Now suppose the phone has a 10% chance of breaking. Redo the decision.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(no warranty cost) = 400(0.10) = $40</span>. $40 &gt; $20, so <strong>buy the warranty</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> Two commutes: A always takes 30 min. B takes 20 min with prob 0.6 and 45 min with prob 0.4. Which has the shorter expected time?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>E(B) = 20(0.6) + 45(0.4) = 12 + 18 = <strong>30 min</strong></span>. Same expected time as A, but B has more variability. On expected value alone, they&rsquo;re tied.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c9">
+              <h2>9. Variance of a Random Variable</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/9-Variance-of-a-Random-Variable-9.jpg" alt="SOMATH Class 11 poster — Variance of a Random Variable" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>What variance measures</h3>
+<p><strong>Variance</strong> measures how much the possible values of a random variable typically <strong>vary around its expected value</strong>. It is the expected value of the squared distance from the mean.</p>
+<h3>Formula</h3>
+<p><span class="eq">&sigma;<sub>X</sub><sup>2</sup> = &Sigma; (x &minus; &mu;<sub>X</sub>)<sup>2</sup> &middot; P(X = x)</span></p>
+<h3>Method (three steps)</h3>
+<ol>
+<li>Find the mean <span class="eq">&mu;<sub>X</sub> = E(X)</span>.</li>
+<li>For each value, compute <span class="eq">(x &minus; &mu;<sub>X</sub>)<sup>2</sup> &middot; P(X = x)</span>.</li>
+<li>Add all the terms.</li>
+</ol>
+<h3>Example: Fair six-sided die</h3>
+<p><span class="eq">&mu; = 3.5</span>.</p>
+<table class="fact-table"><tr><th>x</th><th>P(X = x)</th><th>x &minus; &mu;</th><th>(x &minus; &mu;)&sup2;</th><th>(x &minus; &mu;)&sup2; P(X = x)</th></tr>
+<tr><td>1</td><td>1/6</td><td>&minus;2.5</td><td>6.25</td><td>1.0417</td></tr>
+<tr><td>2</td><td>1/6</td><td>&minus;1.5</td><td>2.25</td><td>0.3750</td></tr>
+<tr><td>3</td><td>1/6</td><td>&minus;0.5</td><td>0.25</td><td>0.0417</td></tr>
+<tr><td>4</td><td>1/6</td><td>0.5</td><td>0.25</td><td>0.0417</td></tr>
+<tr><td>5</td><td>1/6</td><td>1.5</td><td>2.25</td><td>0.3750</td></tr>
+<tr><td>6</td><td>1/6</td><td>2.5</td><td>6.25</td><td>1.0417</td></tr></table>
+<p>Sum: <span class="eq">&sigma;<sub>X</sub><sup>2</sup> = 1.0417 + 0.3750 + 0.0417 + 0.0417 + 0.3750 + 1.0417 = <strong>2.9167</strong></span>.</p>
+<h3>Comparing two games with the same mean</h3>
+<p>Game A pays +$10 or &minus;$10 with equal probability. Game B pays +$2 or &minus;$2 with equal probability. Both have <span class="eq">E(X) = 0</span>, but Game A has variance 100 and Game B has variance 4. Same expected value, very different risk.</p>
+<h3>Key facts</h3>
+<ul>
+<li>Variance is always <strong>nonnegative</strong>.</li>
+<li>Larger variance &rarr; more spread out, less predictable.</li>
+<li>Smaller variance &rarr; more concentrated near the mean.</li>
+</ul>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Variance of a Random Variable</h3>
+              <div class="q"><span class="qn">Q1.</span> x: 0, 1, 2; P: 0.2, 0.5, 0.3. Compute E(X), then Var(X).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu; = 1.1</span>. Deviations squared: (0&minus;1.1)&sup2; = 1.21, (1&minus;1.1)&sup2; = 0.01, (2&minus;1.1)&sup2; = 0.81. Var = 1.21(0.2) + 0.01(0.5) + 0.81(0.3) = 0.242 + 0.005 + 0.243 = <strong>0.49</strong>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> A random variable is constant (always equals 5). What is its variance?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>0.</strong> There is no variation from the mean.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> Game A pays &plusmn;$10 with equal probability. Game B pays &plusmn;$2 with equal probability. Which has the larger variance and why?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Both means are 0. Var(A) = 100, Var(B) = 4. <strong>Game A</strong> is more spread out.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> Can variance be negative?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>No.</strong> It is a sum of squared deviations weighted by non-negative probabilities, so it is always &ge; 0.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> x: 1, 3; P: 0.5, 0.5. Compute Var(X).<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu; = 2</span>. Deviations squared: 1 and 1. Var = 1(0.5) + 1(0.5) = <strong>1</strong>.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c10">
+              <h2>10. Standard Deviation of a Random Variable</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/10-Standard-Deviation-of-a-Random-Variable-10.jpg" alt="SOMATH Class 11 poster — Standard Deviation of a Random Variable" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>What standard deviation measures</h3>
+<p>The <strong>standard deviation</strong> is the <strong>square root of the variance</strong>. It measures the typical distance between the values of the random variable and its expected value — in the <em>same units</em> as the variable itself.</p>
+<h3>Formula</h3>
+<p><span class="eq">&sigma;<sub>X</sub> = &radic;(&sigma;<sub>X</sub><sup>2</sup>)</span></p>
+<h3>Why we need it in addition to variance</h3>
+<p>Variance is in squared units (dollars squared, points squared) and is hard to interpret directly. Standard deviation puts the answer back in the original units, so it&rsquo;s the number we actually report.</p>
+<h3>Example 1: Fair six-sided die</h3>
+<p>From the previous section, <span class="eq">&sigma;<sub>X</sub><sup>2</sup> = 2.9167</span>. So <span class="eq">&sigma;<sub>X</sub> = &radic;2.9167 &asymp; <strong>1.71</strong></span>. On average, an individual roll differs from the mean 3.5 by about 1.71.</p>
+<h3>Example 2: Number of heads in 3 fair coin flips</h3>
+<p><span class="eq">&mu;<sub>Y</sub> = 1.5</span>.</p>
+<table class="fact-table"><tr><th>y</th><th>P(Y = y)</th><th>(y &minus; &mu;)&sup2;</th><th>(y &minus; &mu;)&sup2; P(Y = y)</th></tr>
+<tr><td>0</td><td>1/8</td><td>2.25</td><td>0.2813</td></tr>
+<tr><td>1</td><td>3/8</td><td>0.25</td><td>0.0938</td></tr>
+<tr><td>2</td><td>3/8</td><td>0.25</td><td>0.0938</td></tr>
+<tr><td>3</td><td>1/8</td><td>2.25</td><td>0.2813</td></tr></table>
+<p><span class="eq">&sigma;<sub>Y</sub><sup>2</sup> = 0.75</span>, so <span class="eq">&sigma;<sub>Y</sub> = &radic;0.75 &asymp; <strong>0.87</strong></span> heads.</p>
+<h3>Key takeaways</h3>
+<ul>
+<li><span class="eq">&sigma;<sub>X</sub> = &radic;(&sigma;<sub>X</sub><sup>2</sup>)</span> &mdash; same units as the variable.</li>
+<li>Larger <span class="eq">&sigma;</span> means more variability; smaller means less.</li>
+<li>Always nonnegative.</li>
+</ul>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Standard Deviation of a Random Variable</h3>
+              <div class="q"><span class="qn">Q1.</span> Var(X) = 16. Find <span class='eq'>&sigma;<sub>X</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&sigma;<sub>X</sub> = &radic;16 = <strong>4</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> Var(X) = 0.49. Find <span class='eq'>&sigma;<sub>X</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&sigma;<sub>X</sub> = &radic;0.49 = <strong>0.7</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> Standard deviation is 2.5. Find variance.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>Var = 2.5<sup>2</sup> = <strong>6.25</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> For X = number of heads in 3 fair coin flips, Var(X) = 0.75. Find <span class='eq'>&sigma;<sub>X</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&sigma;<sub>X</sub> = &radic;0.75 &asymp; <strong>0.87</strong></span> heads.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> Why do we report standard deviation more often than variance in practice?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Because standard deviation is in the <strong>same units</strong> as the variable itself (dollars, minutes, cm), so it&rsquo;s directly interpretable. Variance is in squared units.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c11">
+              <h2>11. Transforming Random Variables</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/11-Transforming-Random-Variables-11.jpg" alt="SOMATH Class 11 poster — Transforming Random Variables" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>What happens when you shift or scale a random variable?</h3>
+<p>If we add or multiply a random variable by <em>constants</em>, the mean and standard deviation change in a very predictable way. Set <span class="eq">Y = a + bX</span>. Then:</p>
+<div class="theory-box" style="border-left-color:#d4a548;">
+<p style="text-align:center; font-size:1.05rem;"><span class="eq">&mu;<sub>Y</sub> = a + b&middot;&mu;<sub>X</sub></span> &nbsp;&nbsp; and &nbsp;&nbsp; <span class="eq">&sigma;<sub>Y</sub> = |b|&middot;&sigma;<sub>X</sub></span></p>
+<p>The variance scales by <span class="eq">b<sup>2</sup></span>: <span class="eq">&sigma;<sub>Y</sub><sup>2</sup> = b<sup>2</sup> &middot; &sigma;<sub>X</sub><sup>2</sup></span>.</p>
+</div>
+<h3>Adding a constant (a shift)</h3>
+<p>Adding a constant slides every outcome up or down by the same amount. The <strong>mean shifts by <span class="eq">a</span></strong>, and the <strong>standard deviation does not change</strong> — the spread is unchanged.</p>
+<h3>Multiplying by a constant (a scale)</h3>
+<p>Multiplying by <span class="eq">b</span> stretches or shrinks every outcome. The <strong>mean is multiplied by <span class="eq">b</span></strong>, and the <strong>standard deviation is multiplied by <span class="eq">|b|</span></strong> (we use absolute value because standard deviation is always nonnegative).</p>
+<h3>Example 1: Adding a constant</h3>
+<p>Fair die: <span class="eq">&mu;<sub>X</sub> = 3.5</span>, <span class="eq">&sigma;<sub>X</sub> &asymp; 1.71</span>. Let <span class="eq">Y = X + 4</span>. Then <span class="eq">&mu;<sub>Y</sub> = 4 + 3.5 = <strong>7.5</strong></span>, and <span class="eq">&sigma;<sub>Y</sub> = 1 &middot; 1.71 = <strong>1.71</strong></span>.</p>
+<h3>Example 2: Multiplying by a constant</h3>
+<p>Same die. Let <span class="eq">Y = 2X</span>. Then <span class="eq">&mu;<sub>Y</sub> = 2(3.5) = <strong>7.0</strong></span>, and <span class="eq">&sigma;<sub>Y</sub> = 2(1.71) = <strong>3.42</strong></span>.</p>
+<div class="callout"><strong>Big idea.</strong> Adding a constant moves the center. Multiplying by a constant changes both the center and the spread. Neither operation changes the <em>shape</em> of the distribution.</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Transforming Random Variables</h3>
+              <div class="q"><span class="qn">Q1.</span> <span class='eq'>&mu;<sub>X</sub> = 10, &sigma;<sub>X</sub> = 3</span>. Let Y = X + 7. Find <span class='eq'>&mu;<sub>Y</sub></span> and <span class='eq'>&sigma;<sub>Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu;<sub>Y</sub> = 7 + 10 = <strong>17</strong></span>. <span class='eq'>&sigma;<sub>Y</sub> = <strong>3</strong></span> (unchanged by shift).</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> <span class='eq'>&mu;<sub>X</sub> = 10, &sigma;<sub>X</sub> = 3</span>. Let Y = 4X. Find <span class='eq'>&mu;<sub>Y</sub></span> and <span class='eq'>&sigma;<sub>Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu;<sub>Y</sub> = 4(10) = <strong>40</strong></span>. <span class='eq'>&sigma;<sub>Y</sub> = |4|(3) = <strong>12</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> <span class='eq'>&mu;<sub>X</sub> = 20, &sigma;<sub>X</sub> = 5</span>. Let Y = 3 + 2X. Find <span class='eq'>&mu;<sub>Y</sub></span> and <span class='eq'>&sigma;<sub>Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu;<sub>Y</sub> = 3 + 2(20) = <strong>43</strong></span>. <span class='eq'>&sigma;<sub>Y</sub> = |2|(5) = <strong>10</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> <span class='eq'>&mu;<sub>X</sub> = 50, &sigma;<sub>X</sub> = 8</span>. Let Y = &minus;X + 100. Find <span class='eq'>&mu;<sub>Y</sub></span> and <span class='eq'>&sigma;<sub>Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu;<sub>Y</sub> = 100 + (&minus;1)(50) = <strong>50</strong></span>. <span class='eq'>&sigma;<sub>Y</sub> = |&minus;1|(8) = <strong>8</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> A student computes <span class='eq'>&sigma;<sub>Y</sub> = &minus;6</span> after multiplying by &minus;2. Why is that wrong?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Standard deviation is always <strong>nonnegative</strong>. The rule uses <span class='eq'>|b|</span>, not <span class='eq'>b</span>: <span class='eq'>&sigma;<sub>Y</sub> = |&minus;2|&middot;&sigma;<sub>X</sub> = 2&middot;&sigma;<sub>X</sub></span>, which is positive.</div></details>
+              </div>
+            </div>
+
+            <div class="part-header" id="c12">
+              <h2>12. Combining Random Variables</h2>
+            </div>
+
+            <img class="poster-img" src="/assets/blog/ap-stats-class-11-random-variables/12-Combining-Random-Variables-12.jpg" alt="SOMATH Class 11 poster — Combining Random Variables" loading="lazy" />
+
+            <div class="theory-box">
+
+<h3>Sums and differences of random variables</h3>
+<p>We often want to know the mean and standard deviation of a <strong>combination</strong> of random variables — the total of two dice, the difference of two test scores, the total time of two independent tasks. The rules for the mean are simple; the rules for standard deviation depend on whether the variables are <strong>independent</strong>.</p>
+<h3>Mean of a linear combination (always true)</h3>
+<p>For <span class="eq">Z = aX + bY</span> with any constants <span class="eq">a</span> and <span class="eq">b</span>:</p>
+<p style="text-align:center;"><span class="eq">&mu;<sub>Z</sub> = a&middot;&mu;<sub>X</sub> + b&middot;&mu;<sub>Y</sub></span></p>
+<p>Special cases: <span class="eq">&mu;<sub>X+Y</sub> = &mu;<sub>X</sub> + &mu;<sub>Y</sub></span> and <span class="eq">&mu;<sub>X&minus;Y</sub> = &mu;<sub>X</sub> &minus; &mu;<sub>Y</sub></span>.</p>
+<h3>Variance rule (only if independent)</h3>
+<p>If <span class="eq">X</span> and <span class="eq">Y</span> are <strong>independent</strong>, the <strong>variances add</strong>, even for a difference:</p>
+<p style="text-align:center;"><span class="eq">&sigma;<sub>Z</sub><sup>2</sup> = a<sup>2</sup>&sigma;<sub>X</sub><sup>2</sup> + b<sup>2</sup>&sigma;<sub>Y</sub><sup>2</sup></span></p>
+<p>So <span class="eq">&sigma;<sub>Z</sub> = &radic;(a<sup>2</sup>&sigma;<sub>X</sub><sup>2</sup> + b<sup>2</sup>&sigma;<sub>Y</sub><sup>2</sup>)</span>. Note that <strong>standard deviations do NOT add</strong> — you must square first.</p>
+<h3>Example 1: Sum of two independent dice</h3>
+<p>Each die: <span class="eq">&mu; = 3.5</span>, <span class="eq">&sigma; &asymp; 1.71</span>. For <span class="eq">Z = X + Y</span>: <span class="eq">&mu;<sub>Z</sub> = 7</span> and <span class="eq">&sigma;<sub>Z</sub> = &radic;(1.71<sup>2</sup> + 1.71<sup>2</sup>) = &radic;5.8336 &asymp; <strong>2.42</strong></span>.</p>
+<h3>Example 2: Difference of two independent dice</h3>
+<p>Same dice. For <span class="eq">Z = X &minus; Y</span>: <span class="eq">&mu;<sub>Z</sub> = 3.5 &minus; 3.5 = 0</span>, but variances still add: <span class="eq">&sigma;<sub>Z</sub> = &radic;(1.71<sup>2</sup> + 1.71<sup>2</sup>) &asymp; <strong>2.42</strong></span>.</p>
+<h3>What if X and Y are NOT independent?</h3>
+<p>Include the covariance term: <span class="eq">&sigma;<sub>Z</sub><sup>2</sup> = a<sup>2</sup>&sigma;<sub>X</sub><sup>2</sup> + b<sup>2</sup>&sigma;<sub>Y</sub><sup>2</sup> + 2ab &sigma;<sub>XY</sub></span>. Positive covariance <em>increases</em> the variance of a sum; negative covariance <em>decreases</em> it.</p>
+<div class="callout"><strong>Test-day rule.</strong> Means always add or subtract. Variances only add if the variables are independent — and even for differences, variances still <em>add</em> (they never subtract).</div>
+
+            </div>
+
+            <div class="q-list">
+              <h3>5 Practice Questions &mdash; Combining Random Variables</h3>
+              <div class="q"><span class="qn">Q1.</span> <span class='eq'>&mu;<sub>X</sub> = 10, &mu;<sub>Y</sub> = 4</span>. Find <span class='eq'>&mu;<sub>X+Y</sub></span> and <span class='eq'>&mu;<sub>X&minus;Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&mu;<sub>X+Y</sub> = 14</span>. <span class='eq'>&mu;<sub>X&minus;Y</sub> = <strong>6</strong></span>. Means always add or subtract.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q2.</span> <span class='eq'>&sigma;<sub>X</sub> = 3, &sigma;<sub>Y</sub> = 4</span>, X and Y independent. Find <span class='eq'>&sigma;<sub>X+Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class='eq'>&sigma;<sub>X+Y</sub> = &radic;(3<sup>2</sup> + 4<sup>2</sup>) = &radic;25 = <strong>5</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q3.</span> <span class='eq'>&sigma;<sub>X</sub> = 3, &sigma;<sub>Y</sub> = 4</span>, X and Y independent. Find <span class='eq'>&sigma;<sub>X&minus;Y</sub></span>.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Variances still ADD for a difference: <span class='eq'>&sigma;<sub>X&minus;Y</sub> = &radic;(9 + 16) = <strong>5</strong></span> (same as sum).</div></details>
+              </div>
+              <div class="q"><span class="qn">Q4.</span> Two independent fair dice. Find the mean and standard deviation of their sum.<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Each die: <span class='eq'>&mu; = 3.5, &sigma; &asymp; 1.71</span>. Sum: <span class='eq'>&mu; = 7</span>, <span class='eq'>&sigma; = &radic;(1.71<sup>2</sup> + 1.71<sup>2</sup>) &asymp; <strong>2.42</strong></span>.</div></details>
+              </div>
+              <div class="q"><span class="qn">Q5.</span> A student writes <span class='eq'>&sigma;<sub>X+Y</sub> = &sigma;<sub>X</sub> + &sigma;<sub>Y</sub></span> for independent X, Y. Correct?<br/>
+                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>No.</strong> Variances add, standard deviations do NOT. Use <span class='eq'>&sigma;<sub>X+Y</sub> = &radic;(&sigma;<sub>X</sub><sup>2</sup> + &sigma;<sub>Y</sub><sup>2</sup>)</span>.</div></details>
+              </div>
+            </div>
+
+            <div class="cta-box">
+              <h3>Enroll in SOMATH AP Statistics</h3>
+              <p>Small groups of up to 6 students, taught by real teachers on the Upper West Side. Covers the full College Board AP Statistics syllabus, with free-response drills graded on the AP rubric &mdash; including the investigative task.</p>
+              <p><a href="/courses/ap-statistics">See the full AP Statistics course &rarr;</a> &middot; <a href="/evaluation">Book a free 30-minute evaluation</a> &middot; call <strong>(646) 668-6151</strong> &middot; 226 W 79th St, New York, NY 10024.</p>
+            </div>
+
+            <h2>Related SOMATH classes and posts</h2>
+            <ul>
+              <li><a href="/courses/ap-statistics">AP Statistics (Grades 10&ndash;12) &mdash; course overview and enroll</a></li>
+              <li><a href="/courses/ap-calculus">AP Calculus AB/BC (Grades 11&ndash;12)</a></li>
+              <li><a href="/courses/pre-calculus">AP Pre-Calculus (Grades 10&ndash;12)</a></li>
+              <li><a href="/courses/sat-math">SAT Math (Grades 9&ndash;11)</a></li>
+              <li><a href="/schedule">SOMATH class schedule &mdash; weekly small-group classes</a></li>
+              <li><a href="/evaluation">Free 30-minute evaluation</a></li>
+            </ul>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+  </body>
+</html>
