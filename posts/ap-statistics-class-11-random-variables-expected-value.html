@@ -328,8 +328,10 @@
 <p>All four values are in [0, 1] and 0.10 + 0.30 + 0.40 + 0.20 = 1.00. <strong>Valid.</strong></p>
 <h3>Invalid example</h3>
 <table class="fact-table"><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr><tr><th>P(X = x)</th><td>0.20</td><td>0.50</td><td>0.40</td><td>&minus;0.10</td></tr></table>
-<p><span class="eq">P(X = 3) = &minus;0.10</span> is not between 0 and 1. Even though 0.20 + 0.50 + 0.40 &minus; 0.10 happens to equal 1.00, Rule 1 is already violated. <strong>Not valid.</strong></p>
-<div class="callout"><strong>Check Rule 1 first.</strong> A negative probability makes the table invalid on the spot, even before the sum works out.</div>
+<p><span class="eq">P(X = 3) = &minus;0.10</span> is not between 0 and 1, so <strong>Rule 1 is violated</strong> on the spot.</p>
+<p>The poster then adds the four numbers as written &mdash; <span class="eq">0.20 + 0.50 + 0.40 + (&minus;0.10) = 1.00</span> &mdash; only to make one narrow point: even if the four cells happen to add to 1, the negative entry still kills the distribution.</p>
+<p><strong>What really happens if you ignore the negative entry.</strong> Take the three non-negative rows only: <span class="eq">0.20 + 0.50 + 0.40 = 1.10 &gt; 1</span>. So Rule 2 is broken too &mdash; the &ldquo;real&rdquo; probabilities already sum to more than 1 before the negative row is even considered.</p>
+<div class="callout"><strong>Check Rule 1 first.</strong> A negative or above-1 probability makes the table invalid on the spot &mdash; you don&rsquo;t even need to check the sum. And be careful when a &ldquo;fix-up&rdquo; negative number is used to force the total to 1: the non-negative entries alone often already break Rule 2.</div>
 
             </div>
 
