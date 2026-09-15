@@ -21,8 +21,8 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Algebra II Class 11: Factoring Polynomials & the Remainder and Factor Theorems (25 Practice Questions) | SOMATH</title>
-    <meta name="description" content="Free Algebra II Class 11 from the SOMATH Young Fermats course — factoring polynomials (GCF, trinomials, difference of squares, perfect square trinomials, grouping), the Remainder Theorem, the Factor Theorem, and completely factoring cubics with synthetic division. Includes 25 practice questions with click-to-reveal step-by-step answers." />
+    <title>Algebra II Class 11: Factoring Polynomials & the Remainder and Factor Theorems (25 Practice Questions + 10 Hard Word Problems) | SOMATH</title>
+    <meta name="description" content="Free Algebra II Class 11 from the SOMATH Young Fermats course — factoring polynomials (GCF, trinomials, difference of squares, perfect square trinomials, grouping), the Remainder Theorem, the Factor Theorem, and completely factoring cubics with synthetic division. Includes 25 practice questions with click-to-reveal step-by-step answers plus a bonus set of 10 Hard word problems (volume, projectile motion, revenue, boxes, area optimization) with hidden step-by-step solutions." />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
@@ -209,10 +209,10 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Algebra II Class 11: Factoring Polynomials & the Remainder and Factor Theorems (25 Practice Questions)",
-  "description": "Free honors Algebra II class from SOMATH — factoring polynomials (GCF, trinomials, difference of squares, perfect squares, grouping), the Remainder Theorem, the Factor Theorem, and completely factoring cubics with synthetic division. Includes 25 practice questions with step-by-step reveal answers.",
+  "description": "Free honors Algebra II class from SOMATH — factoring polynomials (GCF, trinomials, difference of squares, perfect squares, grouping), the Remainder Theorem, the Factor Theorem, and completely factoring cubics with synthetic division. Includes 25 practice questions with step-by-step reveal answers, plus a bonus set of 10 Hard word problems (volume of a box, projectile motion, revenue and profit, area optimization, physics kinematics) applying factoring, the Remainder Theorem, and the Factor Theorem.",
   "image": "https://www.schoolofmath.us/assets/logo.png",
   "datePublished": "2026-09-09",
-  "dateModified": "2026-09-09",
+  "dateModified": "2026-09-15T23:10:00-04:00",
   "author": { "@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us" },
   "publisher": {
     "@type": "EducationalOrganization",
@@ -318,6 +318,7 @@
             <li><a href="#completely-factor">Completely factoring a cubic (Factor Theorem + synthetic division)</a></li>
             <li><a href="#big-picture">The Algebra II big picture</a></li>
             <li><a href="#practice">Practice &mdash; 25 questions with hidden answers</a></li>
+            <li><a href="#word-problems">Bonus &mdash; 10 Hard word problems (factoring in the wild)</a></li>
             <li><a href="#faq">FAQ for parents</a></li>
             <li><a href="#next">What&rsquo;s next</a></li>
           </ol>
@@ -706,7 +707,102 @@
           </details>
         </div>
 
-        <h2 id="faq">10. FAQ for parents</h2>
+        <h2 id="word-problems">10. Bonus &mdash; 10 Hard word problems (factoring in the wild)</h2>
+        <p>These ten problems are all <strong>Hard</strong>. Each one hides a factoring, Remainder Theorem, or Factor Theorem step inside a real-world scenario: volume of a box, projectile height, revenue and profit, area optimization, and physics kinematics. Set up the polynomial expression, then use factoring to solve. Click <strong>Answer</strong> only after your student has done a full attempt on paper.</p>
+
+        <div class="section-band">Word problems 1&ndash;10 &mdash; all Hard</div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W1</span><span class="practice-question__level">Hard &middot; Box volume</span></p>
+          <p class="practice-question__prompt">An open-top box is made from a square sheet of cardboard 12 in on each side by cutting a square of side \(x\) from each corner and folding up the sides. (a) Write a factored expression for the volume \(V(x)\) of the box in cubic inches. (b) Expand \(V(x)\) into standard polynomial form. (c) For what values of \(x\) does the box have zero volume? What do those values mean physically?</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(V(x) = x(12 - 2x)^2\). (b) \(V(x) = 4x^3 - 48x^2 + 144x\). (c) Zero volume at \(x = 0\) and \(x = 6\).</p>
+            <p class="why">The base of the finished box is a square of side \(12 - 2x\) (you cut \(x\) off each side), and the height is \(x\). So \(V = x(12 - 2x)^2\). Expanding: \((12 - 2x)^2 = 144 - 48x + 4x^2\), then multiply by \(x\) to get \(4x^3 - 48x^2 + 144x\). Factoring the standard form back: \(V(x) = 4x(x^2 - 12x + 36) = 4x(x - 6)^2\), zeros at \(x = 0\) (no cut, no height) and \(x = 6\) (cut removes the whole side, base disappears). Only \(0 &lt; x &lt; 6\) gives a real box.</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W2</span><span class="practice-question__level">Hard &middot; Projectile</span></p>
+          <p class="practice-question__prompt">A ball is thrown upward from a 96 ft cliff with initial velocity 16 ft/s. Its height (ft) after \(t\) seconds is \(h(t) = -16t^2 + 16t + 96\). (a) Factor \(h(t)\) completely. (b) When does the ball hit the ground? (c) When is the ball at 96 ft again on the way down?</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(h(t) = -16(t - 3)(t + 2)\). (b) At \(t = 3\) seconds. (c) At \(t = 1\) second.</p>
+            <p class="why">(a) Factor out \(-16\): \(-16(t^2 - t - 6) = -16(t - 3)(t + 2)\). (b) Ground = height 0: \(-16(t - 3)(t + 2) = 0\) gives \(t = 3\) or \(t = -2\); only \(t = 3\) makes physical sense. (c) Set \(h(t) = 96\): \(-16t^2 + 16t = 0 \Rightarrow -16t(t - 1) = 0\), so \(t = 0\) (throw) or \(t = 1\) (returning to same height).</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W3</span><span class="practice-question__level">Hard &middot; Revenue</span></p>
+          <p class="practice-question__prompt">A local bakery sells cupcakes. When priced at $4 each, they sell 200 per week. Each $1 increase in price loses them 20 sales per week. Let \(x\) be the number of $1 price increases. (a) Write a factored expression for weekly revenue \(R(x)\). (b) Expand to standard form. (c) At what values of \(x\) is revenue zero, and what do they mean?</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(R(x) = (4 + x)(200 - 20x)\) or equivalently \(20(4 + x)(10 - x)\). (b) \(R(x) = -20x^2 + 120x + 800\). (c) \(x = -4\) (price = $0, giveaway) and \(x = 10\) (price = $14, zero customers).</p>
+            <p class="why">Revenue = (price)(quantity) = \((4 + x)(200 - 20x)\). Factor 20 from the second factor: \(20(4 + x)(10 - x)\). Expand: \(20(40 - 4x + 10x - x^2) = 20(-x^2 + 6x + 40) = -20x^2 + 120x + 800\). Zeros of the factored form show the extremes; the vertex of the parabola (\(x = 3\), price $7) is where revenue is maximized \(= R(3) = 20(7)(7) = \$980\).</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W4</span><span class="practice-question__level">Hard &middot; Consecutive integers</span></p>
+          <p class="practice-question__prompt">The product of three consecutive positive integers is 336. (a) Let \(n\) be the middle integer; write a polynomial equation whose solution gives \(n\). (b) Use the Factor Theorem to find \(n\). (c) What are the three integers?</p>
+          <details><summary></summary>
+            <p class="answer">(a) \((n - 1)n(n + 1) = 336\), i.e., \(n^3 - n = 336\). (b) \(n = 7\). (c) The integers are \(6, 7, 8\).</p>
+            <p class="why">(a) The three consecutive integers are \(n - 1\), \(n\), \(n + 1\); their product is \(n(n^2 - 1) = n^3 - n\). Set equal to 336: \(n^3 - n - 336 = 0\). (b) By the Factor Theorem, if \(n = 7\) is a root then \((n - 7)\) is a factor. Test \(f(7) = 343 - 7 - 336 = 0\) ✓. So \((n - 7)\) is a factor. Synthetic division gives \(n^3 - n - 336 = (n - 7)(n^2 + 7n + 48)\); the quadratic factor has negative discriminant (\(49 - 192 &lt; 0\)), so \(n = 7\) is the only real solution. (c) \(6 \cdot 7 \cdot 8 = 336\) ✓.</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W5</span><span class="practice-question__level">Hard &middot; Area optimization</span></p>
+          <p class="practice-question__prompt">A rectangle has a perimeter of 40 cm. Let \(x\) be its width. (a) Write a factored expression for its area \(A(x)\). (b) Expand to standard form. (c) At what widths is the area zero? For what width is the area maximized, and what is that maximum area?</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(A(x) = x(20 - x)\). (b) \(A(x) = -x^2 + 20x\). (c) Zero at \(x = 0\) and \(x = 20\); maximum at \(x = 10\) with area 100 cm\(^2\) (a square).</p>
+            <p class="why">Perimeter 40 means \(2(x + \text{length}) = 40\), so length \(= 20 - x\). Area \(= x(20 - x)\), a factored quadratic that expands to \(-x^2 + 20x\). Zeros come straight from the factored form. The vertex is halfway between the zeros: \(x = 10\), giving \(A(10) = 10 \cdot 10 = 100\) &mdash; the classic &ldquo;a square gives the largest area for a fixed perimeter&rdquo; result, proven here by factoring.</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W6</span><span class="practice-question__level">Hard &middot; Divide the pumpkin patch</span></p>
+          <p class="practice-question__prompt">A farmer designs a rectangular pumpkin patch. The length is 3 ft more than twice the width \(w\). She wants a total area of 90 ft\(^2\). (a) Write a polynomial equation in \(w\). (b) Factor to solve. (c) Give the dimensions in feet.</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(w(2w + 3) = 90\), i.e., \(2w^2 + 3w - 90 = 0\). (b) \((2w + 15)(w - 6) = 0\), so \(w = 6\). (c) Width 6 ft, length 15 ft.</p>
+            <p class="why">Length \(= 2w + 3\); area \(= w(2w + 3) = 2w^2 + 3w\). Set equal to 90: \(2w^2 + 3w - 90 = 0\). Use the AC-method (Class 11 trinomial-with-a technique): \(2 \times -90 = -180\); factors of \(-180\) that add to \(3\) are \(15\) and \(-12\). Split: \(2w^2 + 15w - 12w - 90 = w(2w + 15) - 6(2w + 15) = (2w + 15)(w - 6)\). Zeros at \(w = -\tfrac{15}{2}\) (rejected, negative) and \(w = 6\). Length \(= 2(6) + 3 = 15\).</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W7</span><span class="practice-question__level">Hard &middot; Remainder Theorem in physics</span></p>
+          <p class="practice-question__prompt">A drone&rsquo;s vertical position above a launch pad (in meters) is modeled by \(p(t) = t^3 - 6t^2 + 9t + 4\), where \(t\) is seconds after launch. (a) Use the Remainder Theorem to find its height at \(t = 5\) without expanding. (b) Show that \(t = 4\) <em>is</em> a moment when the drone is at height 8 m. (c) Find every non-negative time at which the drone is at height 8 m.</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(p(5) = 24\) m. (b) \(p(4) = 8\) ✓. (c) At \(t = 1\) s and \(t = 4\) s.</p>
+            <p class="why">(a) Remainder Theorem: dividing \(p(t)\) by \((t - 5)\) gives remainder \(p(5) = 125 - 150 + 45 + 4 = 24\). (b) Compute \(p(4) = 64 - 96 + 36 + 4 = 8\). By the Remainder Theorem, dividing \(p(t)\) by \((t - 4)\) leaves remainder \(8\), so the drone is at height 8 m at \(t = 4\). (c) Set \(p(t) = 8\): \(t^3 - 6t^2 + 9t - 4 = 0\). Since \(t = 4\) is one solution, the Factor Theorem tells us \((t - 4)\) is a factor. Synthetic division by \((t - 4)\) on coefficients \(1, -6, 9, -4\): bring down 1; \(1 \cdot 4 = 4\), \(-6 + 4 = -2\); \(-2 \cdot 4 = -8\), \(9 + (-8) = 1\); \(1 \cdot 4 = 4\), \(-4 + 4 = 0\). Quotient \(t^2 - 2t + 1 = (t - 1)^2\). So \(t^3 - 6t^2 + 9t - 4 = (t - 4)(t - 1)^2\), giving \(t = 1\) (a double root &mdash; the drone momentarily hovers at 8 m on its way up) and \(t = 4\) (returning to 8 m).</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W8</span><span class="practice-question__level">Hard &middot; Profit</span></p>
+          <p class="practice-question__prompt">A startup&rsquo;s monthly profit (in thousands of dollars) is modeled by \(P(x) = x^3 - 4x^2 - 11x + 30\), where \(x\) is the number of thousands of units sold. (a) Verify that \(x = 2\) is a break-even point (profit = 0). (b) Completely factor \(P(x)\). (c) Give all break-even values of \(x\) and interpret them.</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(P(2) = 8 - 16 - 22 + 30 = 0\) ✓. (b) \(P(x) = (x - 2)(x - 5)(x + 3)\). (c) Break-even at \(x = 2\), \(x = 5\), and \(x = -3\) (rejected &mdash; can&rsquo;t sell negative units). Real break-even points: 2000 units and 5000 units. Between them, profit is negative; above 5000 units, profit grows.</p>
+            <p class="why">(a) Direct substitution or Remainder Theorem. (b) Factor Theorem: \((x - 2)\) is a factor. Synthetic division gives quotient \(x^2 - 2x - 15\), which factors as \((x - 5)(x + 3)\). Full factorization: \((x - 2)(x - 5)(x + 3)\). (c) Only positive roots are physically meaningful, so break-even at 2000 and 5000 units.</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W9</span><span class="practice-question__level">Hard &middot; Poster with border</span></p>
+          <p class="practice-question__prompt">A rectangular poster has length 2 in longer than its width \(w\). A 1-inch-wide printed border runs on all four sides; the <em>image area inside</em> the border is 24 in\(^2\). (a) Write a polynomial equation in \(w\). (b) Factor to solve. (c) Give the full poster dimensions.</p>
+          <details><summary></summary>
+            <p class="answer">(a) \((w - 2)w = 24\), i.e., \(w^2 - 2w - 24 = 0\). (b) \((w - 6)(w + 4) = 0\), so \(w = 6\) in. (c) Full poster is 6 in wide by 8 in long.</p>
+            <p class="why">Full poster: width \(w\), length \(w + 2\). The image inside the border is 1 in smaller on each side, so its width is \(w - 2\) and its length is \((w + 2) - 2 = w\). Image area = \((w - 2) \cdot w = 24\), giving \(w^2 - 2w - 24 = 0\). Trinomial factoring: two numbers that multiply to \(-24\) and add to \(-2\) are \(-6\) and \(4\). So \((w - 6)(w + 4) = 0\); \(w = 6\) (reject \(w = -4\), no negative widths). Full poster is 6 in \(\times\) 8 in. Check: image is \(4 \times 6 = 24\) ✓.</p>
+          </details>
+        </div>
+
+        <div class="practice-question">
+          <p><span class="practice-question__num">W10</span><span class="practice-question__level">Hard &middot; Complete cubic factorization</span></p>
+          <p class="practice-question__prompt">A polynomial models the deflection of a beam: \(D(x) = 2x^3 - 3x^2 - 11x + 6\), where \(x\) is position (in ft) along the beam. (a) Verify that \(x = 3\) is a zero using the Remainder Theorem. (b) Completely factor \(D(x)\). (c) List all positions where the beam has zero deflection.</p>
+          <details><summary></summary>
+            <p class="answer">(a) \(D(3) = 54 - 27 - 33 + 6 = 0\) ✓. (b) \(D(x) = (x - 3)(2x - 1)(x + 2)\). (c) Zero deflection at \(x = 3\), \(x = \tfrac{1}{2}\), and \(x = -2\); on a physical beam that starts at \(x = 0\), the relevant zeros are \(x = \tfrac{1}{2}\) ft and \(x = 3\) ft.</p>
+            <p class="why">(a) Remainder Theorem confirms \((x - 3)\) is a factor. (b) Synthetic division by \(x = 3\) on coefficients \(2, -3, -11, 6\): bring down 2; \(2 \cdot 3 = 6\), \(-3 + 6 = 3\); \(3 \cdot 3 = 9\), \(-11 + 9 = -2\); \(-2 \cdot 3 = -6\), \(6 + (-6) = 0\). Quotient \(2x^2 + 3x - 2 = (2x - 1)(x + 2)\). Full factorization: \((x - 3)(2x - 1)(x + 2)\). (c) Zeros at \(x = 3, \tfrac{1}{2}, -2\). Only non-negative positions apply to a physical beam.</p>
+          </details>
+        </div>
+
+        <h2 id="faq">11. FAQ for parents</h2>
         <h3>What should my child already know before this class?</h3>
         <p>Fluency with the distributive property, multiplying binomials, and factoring simple trinomials like \(x^2 + 5x + 6\). If your student is comfortable with our <a href="/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms">Pre-Algebra Class 12 on expressions</a> and the Algebra 1 quadratics unit, they are ready.</p>
         <h3>Where does this show up on tests?</h3>
@@ -714,7 +810,7 @@
         <h3>How do I help without knowing the material?</h3>
         <p>Ask your student to say out loud what test value the factor tells them to plug in. If they can articulate <em>&ldquo;for factor \(x + 3\), I test \(f(-3)\),&rdquo;</em> they have the sign trap under control.</p>
 
-        <h2 id="next">11. What&rsquo;s next</h2>
+        <h2 id="next">12. What&rsquo;s next</h2>
         <p><a href="/courses/young-fermats-algebra-ii">Young Fermats Algebra II</a> is a rolling honors course &mdash; join at any class. Class 12 next week is <strong>Zeros of Polynomials &mdash; the Rational Root Theorem and end behavior</strong>, which extends everything above to fourth- and fifth-degree polynomials. Ask us at your <a href="/evaluation">free 30-minute evaluation</a> whether your student is ready to join Algebra II now or start with Algebra 1 Ignite first.</p>
         <p>Related classes on the site:</p>
         <ul>
