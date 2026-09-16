@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18149423892');
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Algebra 1 Ignite Class 12: Factoring &mdash; GCF and Difference of Squares (8 SOMATH Posters, Theory, 40 Practice Questions + 10 Word Problems with Hidden Answers) | SOMATH NYC</title>
+    <meta name="description" content="Free Algebra 1 practice: factoring with the GCF and the difference of squares. 8 illustrated SOMATH posters, theory under each, 40 practice questions (5 per poster) with click-to-reveal step-by-step answers, plus 10 word problems of increasing difficulty. From SOMATH&rsquo;s Young Fermats Algebra 1 Ignite Class 12 on the Upper West Side of Manhattan &mdash; grades 7&ndash;9 algebra prep." />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="canonical" href="https://www.schoolofmath.us/posts/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Algebra 1 Ignite Class 12: Factoring &mdash; GCF and Difference of Squares (Grades 7&ndash;9)" />
+    <meta property="og:description" content="Algebra 1 factoring with the GCF and the difference of squares. 8 SOMATH posters, theory, 40 practice questions with hidden answers, plus 10 word problems of increasing difficulty. From SOMATH, Upper West Side NYC." />
+    <meta property="og:url" content="https://www.schoolofmath.us/posts/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares" />
+    <meta property="og:site_name" content="SOMATH" />
+    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/01-introduction-to-factoring.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1500" />
+    <meta property="article:published_time" content="2026-09-16" />
+    <meta property="article:author" content="School of Math" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Algebra 1 Ignite Class 12: Factoring &mdash; GCF and Difference of Squares (Grades 7&ndash;9)" />
+    <meta name="twitter:description" content="8 posters + theory + 40 practice + 10 word problems with hidden answers. Grades 7&ndash;9 Algebra 1. From SOMATH, Upper West Side NYC." />
+    <meta name="twitter:image" content="https://www.schoolofmath.us/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/01-introduction-to-factoring.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .post__body .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .toc { background:#f5f1e8; border-left:4px solid #d4a548; padding:18px 24px; margin:18px 0 32px; border-radius:6px; }
+      .toc h2 { margin:0 0 8px; color:#0a3a5f; }
+      .toc ol { margin:0; padding-left:20px; }
+      .toc li { margin:3px 0; }
+      .toc a { color:#0a3a5f; text-decoration:none; }
+      .toc a:hover { text-decoration:underline; }
+      .callout { background:#e6efe2; border-left:4px solid #0a3a5f; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .callout strong { color:#0a3a5f; }
+      .theory-box { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #0a3a5f; padding:18px 22px; margin:20px 0; border-radius:6px; }
+      .theory-box h3 { margin:0 0 10px; color:#0a3a5f; }
+      .theory-box p { margin:8px 0; }
+      .theory-box .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; }
+      .theory-box .display { display:block; text-align:center; font-family:"Courier New", monospace; background:#f5f1e8; padding:10px 14px; border-radius:6px; margin:10px 0; font-size:1.08rem; }
+      .theory-box ul, .theory-box ol { margin:8px 0 12px; padding-left:22px; }
+      .theory-box ul li, .theory-box ol li { margin:4px 0; }
+      .fact-table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.98rem; max-width:680px; }
+      .fact-table th, .fact-table td { padding:8px 12px; text-align:left; border-bottom:1px solid #e6e6e6; vertical-align:top; }
+      .fact-table th { background:#0a3a5f; color:#fff; text-align:left; }
+      .fact-table tr:nth-child(even) { background:#fafafa; }
+      .part-header { background:#0a3a5f; color:#fff; padding:14px 22px; margin:32px 0 18px; border-radius:6px; }
+      .part-header h2 { color:#fff; margin:0; font-size:1.35rem; }
+      .part-header p { margin:4px 0 0; color:#d4e3ef; font-size:0.92rem; }
+      .qbox { background:#fff; border:1px solid #e6e6e6; border-left:4px solid #d4a548; padding:18px 22px; margin:18px 0; border-radius:6px; }
+      .qbox h3 { margin:0 0 6px; color:#0a3a5f; font-size:1.08rem; }
+      .qbox .prompt { margin:6px 0 12px; }
+      .qbox .answer { color:#0a3a5f; font-weight:700; margin:8px 0 4px; }
+      .qbox .explain { margin:0 0 6px; }
+      .qbox .eq { font-family:"Courier New", monospace; background:#f5f1e8; padding:2px 8px; border-radius:4px; font-size:0.96rem; white-space:nowrap; }
+      .qbox .work { font-family:"Courier New", monospace; background:#fafafa; padding:10px 14px; border-radius:4px; white-space:pre; display:block; margin:8px 0; line-height:1.5; overflow-x:auto; font-size:0.96rem; }
+      .qbox details.reveal { margin:6px 0 0; }
+      .qbox details.reveal > summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        background: #0a3a5f;
+        color: #fff;
+        padding: 7px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.88rem;
+        user-select: none;
+        transition: background 0.15s ease;
+      }
+      .qbox details.reveal > summary:hover { background: #082c47; }
+      .qbox details.reveal > summary::-webkit-details-marker { display:none; }
+      .qbox details.reveal > summary::before { content: "Show answer & work"; }
+      .qbox details.reveal[open] > summary::before { content: "Hide answer & work"; }
+      .qbox details.reveal > .reveal-body { margin-top: 12px; }
+      .poster-figure { margin:24px 0 10px; text-align:center; }
+      .poster-figure img { max-width:100%; height:auto; border:1px solid #e6e6e6; border-radius:8px; box-shadow:0 2px 10px rgba(10,58,95,0.08); }
+      .poster-figure figcaption { margin-top:8px; font-size:0.9rem; color:#555; font-style:italic; }
+      .level-tag { display:inline-block; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; padding:2px 10px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+      .level-easy { background:#e6efe2; color:#1a3d1f; }
+      .level-medium { background:#faf6ec; color:#7a5a00; }
+      .level-hard { background:#fbe9d7; color:#8a3a12; }
+      .level-challenge { background:#f6dede; color:#7a1f2b; }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Algebra 1 Ignite Class 12: Factoring — GCF and Difference of Squares (8 SOMATH Posters, Theory, 40 Practice Questions + 10 Word Problems with Hidden Answers)",
+  "description": "Free Algebra 1 practice: factoring with the GCF and the difference of squares. 8 illustrated SOMATH posters, theory under each, 40 practice questions (5 per poster) with click-to-reveal step-by-step answers, plus 10 word problems of increasing difficulty. From SOMATH — School of Math, Young Fermats Algebra 1 Ignite arc, Upper West Side of Manhattan.",
+  "image": "https://www.schoolofmath.us/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/01-introduction-to-factoring.jpg",
+  "datePublished": "2026-09-16",
+  "dateModified": "2026-09-16",
+  "author": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "url": "https://www.schoolofmath.us"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SOMATH — School of Math",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schoolofmath.us/assets/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schoolofmath.us/posts/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares"
+  },
+  "articleSection": "Algebra 1 · Grades 7–9",
+  "keywords": "factoring, greatest common factor, GCF, difference of squares, factoring completely, algebra 1, algebra 1 factoring, algebra tutor Upper West Side, algebra tutor Manhattan, math tutor NYC, SHSAT algebra, Regents Algebra 1, algebra homework help, grade 8 algebra, grade 9 algebra"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.schoolofmath.us/#business",
+  "name": "SOMATH — School of Math",
+  "url": "https://www.schoolofmath.us",
+  "telephone": "+1-646-668-6151",
+  "email": "hello@schoolofmath.us",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "226 W 79th St, 1st Floor",
+    "addressLocality": "New York",
+    "addressRegion": "NY",
+    "postalCode": "10024",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Upper West Side", "Manhattan", "New York City"],
+  "priceRange": "$$"
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is factoring in Algebra 1 and why does my grade 7, 8, or 9 child need it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Factoring means writing an expression as a product of simpler expressions — it is the reverse of multiplication (distributing / FOIL). If multiplication takes 3(x + 4) and expands it to 3x + 12, factoring takes 3x + 12 and rewrites it as 3(x + 4). Factoring is the single most-used tool in Algebra 1, Algebra 2, and beyond: it is how students solve quadratic equations, simplify rational expressions, find x-intercepts of parabolas, work with polynomial identities, and set up problems for the quadratic formula. A student who cannot factor cannot solve most Algebra 1 word problems from Unit 6 onward. Class 12 of the SOMATH Young Fermats — Algebra 1 Ignite arc covers the two most important factoring tools grade 7–9 students meet first: factoring out the greatest common factor (GCF) and factoring a difference of squares." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find the greatest common factor (GCF) of a polynomial?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Three steps. (1) Find the GCF of the numeric coefficients — use prime factorization if the numbers are big (24 = 2³·3, 36 = 2²·3²; take the smallest power of each shared prime: 2²·3 = 12). (2) For each variable that appears in every term, take the smallest exponent (x² and x share x¹, so x is in the GCF; a term that has NO x means x cannot be in the GCF at all). (3) Multiply the numeric GCF and the variable GCF together. Example: the GCF of 8x² and 12x is 4x, because gcd(8, 12) = 4 and the smallest x-exponent shared is x¹. Then divide every term by the GCF and write the expression as GCF × (what is left). This is Poster 2 of Class 12." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference of squares pattern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The difference of squares pattern is a² − b² = (a − b)(a + b). It only works when the expression is (i) a subtraction (a difference, not a sum) and (ii) both terms are perfect squares. A perfect square is a number, variable, or monomial that is something squared — 25 is 5², x² is (x)², 4x² is (2x)², 9a⁴ is (3a²)². Example: x² − 16 = x² − 4² = (x − 4)(x + 4). Example: 9x² − 25 = (3x)² − 5² = (3x − 5)(3x + 5). Warning: a² + b² (a SUM of squares) does NOT factor over the real numbers — the difference of squares pattern is one-directional." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know which factoring method to use?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Always look for the GCF first. Even if the problem looks like a difference of squares, factor the GCF out before you use the pattern — otherwise you will miss part of the answer. Example: 2x² − 50 looks like a difference of squares, but the GCF is 2. Factor it out first: 2(x² − 25), then apply the difference-of-squares pattern to the inside: 2(x − 5)(x + 5). Rule of thumb: (1) GCF first, always; (2) then check the remaining expression — if it is a two-term subtraction and both terms are perfect squares, use the difference of squares; (3) if the remaining expression is a trinomial, use trinomial factoring (Class 13). Class 12 covers steps 1–2. Poster 8 puts them together." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do we sometimes factor out a negative GCF?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Factoring out a negative GCF is a stylistic choice that makes the expression inside the parentheses easier to work with — usually to force the leading coefficient inside to be positive. Example: −6x − 9 can be factored as either 3(−2x − 3) OR −3(2x + 3). Both are correct and equivalent, but −3(2x + 3) is the preferred form because everything inside the parentheses is positive. This matters a lot in Algebra 2 when you set an expression equal to zero and use the zero-product property. Poster 4 of Class 12 walks through negative GCF factoring." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does factoring in Algebra 1 connect to the SHSAT, SAT, and Regents Algebra 1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Factoring is everywhere on all three exams. On the SHSAT and the Regents Algebra 1 (grades 8–9), factoring a difference of squares or pulling out a GCF appears in the multiple-choice and grid-in sections and is required to simplify most quadratic expressions. On the SAT (grades 10–12), factoring is how students solve quadratics in the Advanced Math section and simplify rational expressions in Problem Solving. A student who owns GCF and difference of squares in grade 8 walks into SHSAT prep with a real advantage — and into SAT prep two years later without a gap. This is why SOMATH teaches factoring in Class 12 of Algebra 1 Ignite and revisits it in Algebra II Class 11 (factoring polynomials + Remainder and Factor Theorems)." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common factoring mistakes in Algebra 1?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Five mistakes we see every year at SOMATH. (1) Forgetting to factor out the GCF first, then trying to apply a special pattern to something like 2x² − 50 as if it were already x² − 25. (2) Treating a SUM of squares like a difference of squares — x² + 16 does NOT factor over the reals. (3) Using the wrong smallest exponent when finding a variable GCF (thinking the GCF of x³ and x⁵ is x⁵ instead of x³). (4) Dropping a sign when factoring out a negative GCF (writing −4x² + 8x = −4x(x + 2) instead of −4x(x − 2)). (5) Not checking the factoring by re-multiplying (FOIL / distribute) at the end — every factoring answer should re-expand to the original expression exactly. Class 12 has an error-analysis question on each of these." }
+    },
+    {
+      "@type": "Question",
+      "name": "What Manhattan and Upper West Side algebra prep do you offer for grades 7–9?",
+      "acceptedAnswer": { "@type": "Answer", "text": "SOMATH's Young Fermats — Algebra 1 Ignite is a 48-class grade 7–9 algebra program taught in small in-person groups of 4–8 at 226 W 79th St on the Upper West Side of Manhattan, one block from the 1 train at 79th Street and steps from Booker T. Washington MS 54, MS 245, Anderson (M334), Salk (M255), and Mott Hall II (M223). Class 12 is factoring with the GCF and the difference of squares. The full arc builds toward Algebra II, SHSAT math, and eventually SAT math. Book a free 30-minute evaluation at schoolofmath.us/evaluation and we will send a written diagnostic within 48 hours." }
+    }
+  ]
+}
+    </script>
+  </head>
+  <body>
+    <div id="header-mount"></div>
+
+    <article class="post">
+      <p class="post__eyebrow">Young Fermats &middot; Algebra 1 Ignite &middot; Class 12 &middot; Grades 7&ndash;9</p>
+      <h1 class="post__title">Algebra 1 Ignite Class 12: Factoring &mdash; GCF and Difference of Squares (8 SOMATH Posters, Theory, 40 Practice Questions + 10 Word Problems with Hidden Answers)</h1>
+      <p class="post__dek"><strong>Factoring is the reverse of multiplication.</strong> If distribution takes <span class="eq">3(x + 4)</span> and expands it to <span class="eq">3x + 12</span>, factoring takes <span class="eq">3x + 12</span> and writes it back as <span class="eq">3(x + 4)</span>. Class 12 of the SOMATH Young Fermats &mdash; Algebra 1 Ignite arc covers the two most important factoring tools grade 7&ndash;9 students meet first: factoring out the <strong>greatest common factor (GCF)</strong> and factoring a <strong>difference of squares</strong>. 8 illustrated SOMATH posters, theory under each poster, 5 practice questions per poster (40 total) with click-to-reveal step-by-step answers, plus 10 word problems of increasing difficulty at the end.</p>
+      <p class="post__meta"><time datetime="2026-09-16">2026-09-16</time> &middot; By the SOMATH team &middot; 226 W 79th St, Upper West Side &middot; (646) 668-6151</p>
+
+      <div class="post__body">
+
+        <p>This class is part of the <a href="/courses/young-fermats-algebra-ignite">Young Fermats &mdash; Algebra 1 Ignite</a> arc at <a href="/">SOMATH &mdash; School of Math</a> on the Upper West Side of Manhattan. Class 12 sits between the polynomial-operations classes (Class 11 &mdash; add, subtract, multiply, FOIL) and trinomial factoring (Class 13). It is taught in-person at <strong>226 W 79th St</strong>, one block from the 1 train at 79th Street and steps from Booker T. Washington MS 54, MS 245, Anderson (M334), Salk (M255), and Mott Hall II (M223). Call <strong>(646) 668-6151</strong> or <a href="/evaluation">book a free 30-minute evaluation</a> to place your grade 7, 8, or 9 student in the right Algebra 1 Ignite class.</p>
+
+        <div class="toc">
+          <h2>What&rsquo;s in this class pack</h2>
+          <ol>
+            <li><a href="#poster1">Poster 1 &mdash; Introduction to factoring (5 questions)</a></li>
+            <li><a href="#poster2">Poster 2 &mdash; Finding the greatest common factor (5 questions)</a></li>
+            <li><a href="#poster3">Poster 3 &mdash; Factoring out the GCF (5 questions)</a></li>
+            <li><a href="#poster4">Poster 4 &mdash; Factoring with negative GCFs (5 questions)</a></li>
+            <li><a href="#poster5">Poster 5 &mdash; Recognizing perfect squares (5 questions)</a></li>
+            <li><a href="#poster6">Poster 6 &mdash; The difference of squares (5 questions)</a></li>
+            <li><a href="#poster7">Poster 7 &mdash; Factoring differences of squares (5 questions)</a></li>
+            <li><a href="#poster8">Poster 8 &mdash; Factoring completely: GCF and difference of squares (5 questions)</a></li>
+            <li><a href="#wordproblems">Bonus &mdash; 10 word problems, increasing difficulty</a></li>
+            <li><a href="#faq">Frequently asked questions</a></li>
+          </ol>
+        </div>
+
+        <div class="callout">
+          <strong>How to use this class pack:</strong> read one poster, walk through the theory box, then do the 5 practice questions. Click &ldquo;Show answer &amp; work&rdquo; only after you try. In-person at SOMATH we teach one poster per session; at home, one poster per day is a perfect pace for grade 7&ndash;9 students preparing for SHSAT, Regents Algebra 1, or algebra honors.
+        </div>
+
+        <!-- ============================= POSTER 1 ============================= -->
+        <h2 id="poster1">1. Introduction to factoring</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/01-introduction-to-factoring.jpg" alt="SOMATH poster: Introduction to Factoring — factoring is the reverse of multiplication. Expanding: 3(x+4) = 3x+12. Factoring: 3x+12 = 3(x+4)." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 1 &mdash; Introduction to factoring (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; Factoring is the reverse of multiplication</h3>
+          <p><strong>Factoring</strong> means writing an expression as a <em>product</em> of simpler expressions. It is the opposite of expanding.</p>
+          <ul>
+            <li>When we <strong>multiply / expand</strong>, we combine factors to get an expression: <span class="eq">3(x + 4) = 3x + 12</span>.</li>
+            <li>When we <strong>factor</strong>, we break an expression into its factors: <span class="eq">3x + 12 = 3(x + 4)</span>.</li>
+          </ul>
+          <p>The two operations undo each other. If you factor a polynomial and then re-distribute (or FOIL), you should get the original expression exactly. That is the built-in check for every factoring answer in Algebra 1.</p>
+          <p><strong>Why we factor.</strong> Factoring lets us solve equations (Class 14 uses the zero-product property: if <span class="eq">A &middot; B = 0</span>, then <span class="eq">A = 0</span> or <span class="eq">B = 0</span>), simplify rational expressions, find x-intercepts of parabolas, and see the structure of a problem. It is the single most-used tool from Algebra 1 through Calculus.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Factoring is the reverse of which operation?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: multiplication (also called expanding or distributing).</p>
+            <p class="explain">Multiplication takes factors and combines them into one expression: <span class="eq">3(x + 4) = 3x + 12</span>. Factoring reverses this: <span class="eq">3x + 12 = 3(x + 4)</span>. If you distribute a factored answer, you should get the original expression back &mdash; that is how you check every factoring problem.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Expand <span class="eq">5(x + 2)</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">5x + 10</span>.</p>
+            <p class="explain">Distribute the 5 to each term inside the parentheses: <span class="eq">5 &middot; x + 5 &middot; 2 = 5x + 10</span>. Notice that if we now go the other way and factor <span class="eq">5x + 10</span>, we get <span class="eq">5(x + 2)</span> back &mdash; the two operations are reverses.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Factor <span class="eq">5x + 10</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">5(x + 2)</span>.</p>
+            <p class="explain">The largest number that divides both 5 and 10 is 5. Pull 5 out of each term: <span class="eq">5x &divide; 5 = x</span> and <span class="eq">10 &divide; 5 = 2</span>. So <span class="eq">5x + 10 = 5(x + 2)</span>. <strong>Check:</strong> distribute the 5 back: <span class="eq">5(x + 2) = 5x + 10</span>. Matches the original &mdash; done.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">True or false: If you factor a polynomial correctly and then re-distribute, you should get the original expression back.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: True.</p>
+            <p class="explain">Factoring and distributing are inverse operations, so distributing a correctly factored answer always returns the original expression. This is the built-in check for every factoring problem in Algebra 1: after you factor, FOIL or distribute the answer and confirm you got back what you started with. If you don&rsquo;t, the factoring is wrong.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5</h3>
+          <p class="prompt">Write <span class="eq">4x + 20</span> as a product of two simpler expressions.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">4(x + 5)</span>.</p>
+            <p class="explain">The largest number that divides both 4 and 20 is 4. Divide each term by 4: <span class="eq">4x &divide; 4 = x</span> and <span class="eq">20 &divide; 4 = 5</span>. So <span class="eq">4x + 20 = 4(x + 5)</span>. <strong>Check:</strong> <span class="eq">4(x + 5) = 4x + 20</span>. &check; The two simpler expressions in the product are 4 and (x + 5).</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 2 ============================= -->
+        <h2 id="poster2">2. Finding the greatest common factor (GCF)</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/02-finding-the-gcf.jpg" alt="SOMATH poster: Finding the Greatest Common Factor (GCF) — steps: prime factorization, identify common factors, choose the largest, include numeric and variable factors. Examples: GCF(24, 36) = 12; GCF(8x², 12x) = 4x." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 2 &mdash; Finding the greatest common factor (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; The GCF is the largest factor shared by every term</h3>
+          <p>The <strong>greatest common factor (GCF)</strong> of a set of numbers or algebraic terms is the largest number or expression that divides every one of them evenly.</p>
+          <p><strong>4-step method:</strong></p>
+          <ol>
+            <li>Find the prime factorization of each numeric coefficient (or list the factors).</li>
+            <li>Identify which prime factors appear in <em>every</em> term.</li>
+            <li>Choose the greatest (largest power) of each shared prime.</li>
+            <li>For algebraic terms, include the variable that appears in <em>every</em> term, using its <strong>smallest</strong> exponent.</li>
+          </ol>
+          <p><strong>Example 1 (numbers).</strong> GCF of 24 and 36:</p>
+          <span class="display">24 = 2&sup3; &middot; 3 &nbsp; &nbsp; 36 = 2&sup2; &middot; 3&sup2; &nbsp; &rarr; &nbsp; GCF = 2&sup2; &middot; 3 = 12</span>
+          <p><strong>Example 2 (algebraic terms).</strong> GCF of <span class="eq">8x&sup2;</span> and <span class="eq">12x</span>:</p>
+          <span class="display">8x&sup2; = 2&sup3; &middot; x&sup2; &nbsp; &nbsp; 12x = 2&sup2; &middot; 3 &middot; x &nbsp; &rarr; &nbsp; GCF = 2&sup2; &middot; x = 4x</span>
+          <p><strong>Key rule:</strong> if a variable is <em>missing</em> from any term, it cannot be part of the GCF. And for variables that appear in every term, take the <em>smallest</em> exponent (never the largest).</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Find the GCF of 12 and 18.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: 6.</p>
+            <p class="explain">Prime factor each: <span class="eq">12 = 2&sup2; &middot; 3</span> and <span class="eq">18 = 2 &middot; 3&sup2;</span>. Shared primes are 2 (smallest power = 2&sup1;) and 3 (smallest power = 3&sup1;). So <span class="eq">GCF = 2 &middot; 3 = 6</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Find the GCF of 15 and 25.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: 5.</p>
+            <p class="explain">Prime factor: <span class="eq">15 = 3 &middot; 5</span> and <span class="eq">25 = 5&sup2;</span>. The only shared prime is 5 (smallest power 5&sup1;). <span class="eq">GCF = 5</span>. Notice: 3 is a factor of 15 but not 25, so 3 is not in the GCF.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Find the GCF of <span class="eq">6x&sup3;</span> and <span class="eq">9x&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">3x&sup2;</span>.</p>
+            <p class="explain">Numeric: <span class="eq">6 = 2 &middot; 3</span>, <span class="eq">9 = 3&sup2;</span> &rarr; numeric GCF = 3. Variable: both have x; the smallest exponent is 2. So the variable part is <span class="eq">x&sup2;</span>. Combine: <span class="eq">GCF = 3x&sup2;</span>. Not <span class="eq">3x&sup3;</span> &mdash; you take the SMALLEST shared exponent, not the largest.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Find the GCF of <span class="eq">10a&sup2;b</span> and <span class="eq">15ab&sup3;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">5ab</span>.</p>
+            <p class="explain">Numeric: <span class="eq">10 = 2 &middot; 5</span>, <span class="eq">15 = 3 &middot; 5</span> &rarr; numeric GCF = 5. Variables: both have <em>a</em> (smallest exponent 1) and both have <em>b</em> (smallest exponent 1). So variable part = <span class="eq">ab</span>. Combine: <span class="eq">GCF = 5ab</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5 <span class="level-tag level-medium">Error analysis</span></h3>
+          <p class="prompt">A student claims the GCF of <span class="eq">4x&sup2;y</span> and <span class="eq">6xy&sup2;</span> is <span class="eq">2x&sup2;y&sup2;</span>. What did they get wrong, and what is the correct GCF?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: they used the LARGEST exponent for each variable instead of the smallest. Correct GCF = <span class="eq">2xy</span>.</p>
+            <p class="explain">Numeric GCF of 4 and 6 is 2 &mdash; that part is correct. But for variables, you take the <em>smallest</em> shared exponent, not the largest. Both terms have x (smallest = x&sup1;) and both have y (smallest = y&sup1;). So the variable part is <span class="eq">xy</span>, not <span class="eq">x&sup2;y&sup2;</span>. Correct GCF = <span class="eq">2xy</span>. Sanity check: <span class="eq">2xy</span> divides <span class="eq">4x&sup2;y</span> (gives 2x) and <span class="eq">6xy&sup2;</span> (gives 3y) evenly, but <span class="eq">2x&sup2;y&sup2;</span> does NOT divide <span class="eq">6xy&sup2;</span> evenly. Smallest exponent wins.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 3 ============================= -->
+        <h2 id="poster3">3. Factoring out the GCF</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/03-factoring-out-the-gcf.jpg" alt="SOMATH poster: Factoring Out the GCF — ab + ac = a(b + c). Examples: 6x² + 9x = 3x(2x + 3); 12x³ − 18x = 6x(2x² − 3); 4a²b + 8ab² = 4ab(a + 2b); 15m² − 25m = 5m(3m − 5)." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 3 &mdash; Factoring out the GCF (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; ab + ac = a(b + c)</h3>
+          <p>Once you know the GCF, factoring it out is a 3-step move:</p>
+          <ol>
+            <li>Write the GCF outside a pair of parentheses.</li>
+            <li>Divide every term of the original expression by the GCF.</li>
+            <li>Write the quotients (in the same order, with their signs) inside the parentheses.</li>
+          </ol>
+          <p><strong>General pattern:</strong></p>
+          <span class="display">ab + ac = a(b + c)</span>
+          <p>The <em>a</em> is the GCF; <em>b</em> and <em>c</em> are what is left in each term after dividing by the GCF.</p>
+          <p><strong>Worked example.</strong> Factor <span class="eq">6x&sup2; + 9x</span>.</p>
+          <ol>
+            <li>GCF = 3x (numeric GCF 3, variable GCF x).</li>
+            <li>Divide each term: <span class="eq">6x&sup2; &divide; 3x = 2x</span> and <span class="eq">9x &divide; 3x = 3</span>.</li>
+            <li>Write: <span class="eq">6x&sup2; + 9x = 3x(2x + 3)</span>.</li>
+          </ol>
+          <p><strong>Check</strong> by distributing: <span class="eq">3x(2x + 3) = 6x&sup2; + 9x</span>. &check;</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Factor <span class="eq">6x&sup2; + 9x</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">3x(2x + 3)</span>.</p>
+            <p class="explain">GCF = <span class="eq">3x</span>. Divide each term: <span class="eq">6x&sup2; &divide; 3x = 2x</span> and <span class="eq">9x &divide; 3x = 3</span>. Write GCF outside, quotients inside: <span class="eq">3x(2x + 3)</span>. Check: <span class="eq">3x(2x + 3) = 6x&sup2; + 9x</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Factor <span class="eq">12x&sup3; &minus; 18x</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">6x(2x&sup2; &minus; 3)</span>.</p>
+            <p class="explain">Numeric GCF of 12 and 18 is 6. Variable GCF: smallest x-exponent is 1, so x. Overall GCF = <span class="eq">6x</span>. Divide: <span class="eq">12x&sup3; &divide; 6x = 2x&sup2;</span> and <span class="eq">18x &divide; 6x = 3</span>. Answer: <span class="eq">6x(2x&sup2; &minus; 3)</span> &mdash; keep the minus sign inside. Check: <span class="eq">6x(2x&sup2; &minus; 3) = 12x&sup3; &minus; 18x</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Factor <span class="eq">4a&sup2;b + 8ab&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">4ab(a + 2b)</span>.</p>
+            <p class="explain">Numeric GCF of 4 and 8 is 4. Variables: both have <em>a</em> (smallest exponent 1) and <em>b</em> (smallest exponent 1) &rarr; <span class="eq">ab</span>. Overall GCF = <span class="eq">4ab</span>. Divide: <span class="eq">4a&sup2;b &divide; 4ab = a</span> and <span class="eq">8ab&sup2; &divide; 4ab = 2b</span>. Answer: <span class="eq">4ab(a + 2b)</span>. Check: <span class="eq">4ab(a + 2b) = 4a&sup2;b + 8ab&sup2;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Factor <span class="eq">15m&sup2; &minus; 25m</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">5m(3m &minus; 5)</span>.</p>
+            <p class="explain">Numeric GCF of 15 and 25 is 5. Variable: both terms have m, smallest exponent 1 &rarr; m. Overall GCF = <span class="eq">5m</span>. Divide: <span class="eq">15m&sup2; &divide; 5m = 3m</span> and <span class="eq">25m &divide; 5m = 5</span>. Answer: <span class="eq">5m(3m &minus; 5)</span>. Check: <span class="eq">5m(3m &minus; 5) = 15m&sup2; &minus; 25m</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5 <span class="level-tag level-medium">Three terms</span></h3>
+          <p class="prompt">Factor <span class="eq">6x&sup2; + 9x + 12</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">3(2x&sup2; + 3x + 4)</span>.</p>
+            <p class="explain">Look at the numeric coefficients 6, 9, 12. GCF of {6, 9, 12} = 3. For variables: the constant term 12 has NO x, so x cannot be part of the GCF at all. Overall GCF = 3. Divide each term: <span class="eq">6x&sup2; &divide; 3 = 2x&sup2;</span>, <span class="eq">9x &divide; 3 = 3x</span>, <span class="eq">12 &divide; 3 = 4</span>. Answer: <span class="eq">3(2x&sup2; + 3x + 4)</span>. Check: <span class="eq">3(2x&sup2; + 3x + 4) = 6x&sup2; + 9x + 12</span>. &check; The inside trinomial does not factor further with integers, so this is fully factored.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 4 ============================= -->
+        <h2 id="poster4">4. Factoring with negative GCFs</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/04-factoring-with-negative-gcfs.jpg" alt="SOMATH poster: Factoring with Negative GCFs — sometimes the GCF is negative, and pulling out a negative makes the inside easier. Examples: −6x − 9 = −3(2x + 3); −4x² + 8x = −4x(x − 2); −12a³ − 18a² = −6a²(2a + 3); −5m² − 10m + 15 = −5(m² + 2m − 3)." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 4 &mdash; Factoring with negative GCFs (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; When and why to pull out a negative</h3>
+          <p>A GCF can be negative. Both <em>positive-GCF</em> and <em>negative-GCF</em> factorings are algebraically correct and equivalent, but the negative-GCF form is preferred when it makes the leading coefficient <strong>inside</strong> the parentheses positive.</p>
+          <ul>
+            <li><strong>A negative GCF works exactly like a positive GCF</strong> &mdash; it divides every term of the expression.</li>
+            <li><strong>It flips every sign inside</strong> the parentheses (dividing by a negative changes each sign).</li>
+            <li>Both factored forms are correct, but the form with a <em>positive leading coefficient inside</em> is the convention.</li>
+          </ul>
+          <p><strong>Worked example.</strong> Factor <span class="eq">&minus;4x&sup2; + 8x</span>.</p>
+          <ol>
+            <li>Choose GCF = <span class="eq">&minus;4x</span> so the leading term inside will be positive.</li>
+            <li>Divide: <span class="eq">&minus;4x&sup2; &divide; (&minus;4x) = x</span> and <span class="eq">8x &divide; (&minus;4x) = &minus;2</span>.</li>
+            <li>Write: <span class="eq">&minus;4x&sup2; + 8x = &minus;4x(x &minus; 2)</span>.</li>
+          </ol>
+          <p><strong>Check:</strong> <span class="eq">&minus;4x(x &minus; 2) = &minus;4x&sup2; + 8x</span>. &check;</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Factor <span class="eq">&minus;6x &minus; 9</span> using a negative GCF.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;3(2x + 3)</span>.</p>
+            <p class="explain">Choose GCF = &minus;3 so the leading term inside is positive. Divide: <span class="eq">&minus;6x &divide; (&minus;3) = 2x</span> and <span class="eq">&minus;9 &divide; (&minus;3) = 3</span>. Answer: <span class="eq">&minus;3(2x + 3)</span>. Check: <span class="eq">&minus;3(2x + 3) = &minus;6x &minus; 9</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Factor <span class="eq">&minus;4x&sup2; + 8x</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;4x(x &minus; 2)</span>.</p>
+            <p class="explain">Choose GCF = <span class="eq">&minus;4x</span>. Divide: <span class="eq">&minus;4x&sup2; &divide; (&minus;4x) = x</span> and <span class="eq">8x &divide; (&minus;4x) = &minus;2</span>. Answer: <span class="eq">&minus;4x(x &minus; 2)</span>. Check: <span class="eq">&minus;4x(x &minus; 2) = &minus;4x&sup2; + 8x</span>. &check; Notice how the +8x flipped sign to become &minus;2 inside &mdash; dividing by a negative always flips.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Factor <span class="eq">&minus;12a&sup3; &minus; 18a&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;6a&sup2;(2a + 3)</span>.</p>
+            <p class="explain">Numeric GCF of 12 and 18 is 6; take it negative to flip the leading sign. Variables: smallest a-exponent is 2. So GCF = <span class="eq">&minus;6a&sup2;</span>. Divide: <span class="eq">&minus;12a&sup3; &divide; (&minus;6a&sup2;) = 2a</span> and <span class="eq">&minus;18a&sup2; &divide; (&minus;6a&sup2;) = 3</span>. Answer: <span class="eq">&minus;6a&sup2;(2a + 3)</span>. Check: <span class="eq">&minus;6a&sup2;(2a + 3) = &minus;12a&sup3; &minus; 18a&sup2;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Factor <span class="eq">&minus;5m&sup2; &minus; 10m + 15</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;5(m&sup2; + 2m &minus; 3)</span>.</p>
+            <p class="explain">Numeric GCF of 5, 10, 15 is 5; take it negative to flip the leading sign. The constant term 15 has no m, so no variable in the GCF. GCF = <span class="eq">&minus;5</span>. Divide: <span class="eq">&minus;5m&sup2; &divide; (&minus;5) = m&sup2;</span>, <span class="eq">&minus;10m &divide; (&minus;5) = 2m</span>, <span class="eq">15 &divide; (&minus;5) = &minus;3</span>. Answer: <span class="eq">&minus;5(m&sup2; + 2m &minus; 3)</span>. Check: <span class="eq">&minus;5(m&sup2; + 2m &minus; 3) = &minus;5m&sup2; &minus; 10m + 15</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5 <span class="level-tag level-medium">Error analysis</span></h3>
+          <p class="prompt">A student factored <span class="eq">&minus;4x&sup2; + 8x</span> as <span class="eq">&minus;4x(x + 2)</span>. What did they get wrong?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: they forgot to flip the sign of the +8x when dividing by &minus;4x. The correct factoring is <span class="eq">&minus;4x(x &minus; 2)</span>.</p>
+            <p class="explain">Check by distributing their answer: <span class="eq">&minus;4x(x + 2) = &minus;4x&sup2; &minus; 8x</span> &mdash; that gives <em>minus</em> 8x, not <em>plus</em> 8x. Dividing +8x by &minus;4x gives &minus;2, so the inside should be <span class="eq">(x &minus; 2)</span>. Correct answer: <span class="eq">&minus;4x(x &minus; 2)</span>. This is the #1 sign mistake in Class 12 &mdash; always FOIL / distribute your answer at the end.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 5 ============================= -->
+        <h2 id="poster5">5. Recognizing perfect squares</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/05-recognizing-perfect-squares.jpg" alt="SOMATH poster: Recognizing Perfect Squares — a perfect square is a number, variable, or monomial written as something squared. Perfect square numbers: 1, 4, 9, 16, 25, 36, 49, 64, 100. Perfect square variables: x², y², a⁴, m⁶. Perfect square monomials: 4x² = (2x)², 9a⁴ = (3a²)², 16x²y⁴ = (4xy²)². Not perfect squares: 2x², 6a³, 12x⁴y." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 5 &mdash; Recognizing perfect squares (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; What makes an expression a perfect square?</h3>
+          <p>A <strong>perfect square</strong> is a number, variable, or monomial that can be written as something squared.</p>
+          <ul>
+            <li><strong>Perfect-square numbers</strong> are squares of integers: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225&hellip;. Memorize at least the first 15.</li>
+            <li><strong>Perfect-square variables</strong> are variables raised to an <em>even</em> power: <span class="eq">x&sup2;</span>, <span class="eq">y&sup2;</span>, <span class="eq">a&#8308;</span>, <span class="eq">m&#8310;</span>, <span class="eq">x&#8312;</span>&hellip;</li>
+            <li><strong>Perfect-square monomials</strong> have BOTH a perfect-square coefficient AND all exponents even: <span class="eq">4x&sup2; = (2x)&sup2;</span>, <span class="eq">9a&#8308; = (3a&sup2;)&sup2;</span>, <span class="eq">16x&sup2;y&#8308; = (4xy&sup2;)&sup2;</span>.</li>
+          </ul>
+          <p><strong>Not perfect squares:</strong></p>
+          <ul>
+            <li><span class="eq">2x&sup2;</span> &mdash; coefficient 2 is not a square.</li>
+            <li><span class="eq">6a&sup3;</span> &mdash; exponent 3 is not even.</li>
+            <li><span class="eq">12x&#8308;y</span> &mdash; coefficient 12 is not a square AND the y-exponent 1 is not even.</li>
+          </ul>
+          <p><strong>Why this matters:</strong> the difference of squares pattern (next poster) only works when <em>both terms</em> are perfect squares. Recognizing them at a glance is the whole game.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Is 49 a perfect square? If so, what is its square root?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <span class="eq">49 = 7&sup2;</span>, so the square root is 7.</p>
+            <p class="explain">Perfect-square numbers you should memorize through 15&sup2; = 225: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225. Owning this list makes every difference-of-squares problem 3&times; faster.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Is <span class="eq">x&#8310;</span> a perfect square? If so, write it as (something)&sup2;.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <span class="eq">x&#8310; = (x&sup3;)&sup2;</span>.</p>
+            <p class="explain">A variable raised to an even power is a perfect square, and the exponent inside the square is half the original. Here 6 &divide; 2 = 3, so <span class="eq">x&#8310; = (x&sup3;)&sup2;</span>. Check: <span class="eq">(x&sup3;)&sup2; = x&sup3; &middot; x&sup3; = x&sup6;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Is <span class="eq">9a&#8308;</span> a perfect square? If so, write it as (something)&sup2;.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <span class="eq">9a&#8308; = (3a&sup2;)&sup2;</span>.</p>
+            <p class="explain">Coefficient: <span class="eq">9 = 3&sup2;</span>. Variable: a-exponent 4 is even, half is 2, so <span class="eq">a&#8308; = (a&sup2;)&sup2;</span>. Combine: <span class="eq">9a&#8308; = (3a&sup2;)&sup2;</span>. Check: <span class="eq">(3a&sup2;)&sup2; = 9a&#8308;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Is <span class="eq">6a&sup3;</span> a perfect square? Explain.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: no.</p>
+            <p class="explain">Two reasons, either one enough. (1) 6 is not a perfect-square number: <span class="eq">&radic;6</span> is irrational. (2) The exponent 3 is odd, and a perfect-square variable must have an even exponent. Both problems together mean <span class="eq">6a&sup3;</span> is not a perfect square, so the difference-of-squares pattern will NOT work on any term containing <span class="eq">6a&sup3;</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5</h3>
+          <p class="prompt">Is <span class="eq">16x&sup2;y&#8308;</span> a perfect square? If so, write it as (something)&sup2;.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <span class="eq">16x&sup2;y&#8308; = (4xy&sup2;)&sup2;</span>.</p>
+            <p class="explain">Coefficient: <span class="eq">16 = 4&sup2;</span>. Variables: x-exponent 2 is even (half = 1, so x&sup1; = x); y-exponent 4 is even (half = 2, so y&sup2;). Combine: <span class="eq">(4xy&sup2;)&sup2;</span>. Check: <span class="eq">(4xy&sup2;)&sup2; = 16x&sup2;y&#8308;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 6 ============================= -->
+        <h2 id="poster6">6. The difference of squares</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/06-the-difference-of-squares.jpg" alt="SOMATH poster: The Difference of Squares — a² − b² = (a − b)(a + b). Middle terms cancel: (a − b)(a + b) = a² + ab − ab − b² = a² − b². Examples: x² − 16 = (x − 4)(x + 4); 9x² − 25 = (3x − 5)(3x + 5); 4a² − 49b² = (2a − 7b)(2a + 7b); m² − 81 = (m − 9)(m + 9)." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 6 &mdash; The difference of squares (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; a&sup2; &minus; b&sup2; = (a &minus; b)(a + b)</h3>
+          <p>A binomial that is a <strong>perfect square minus another perfect square</strong> factors using the difference-of-squares pattern:</p>
+          <span class="display">a&sup2; &minus; b&sup2; = (a &minus; b)(a + b)</span>
+          <p><strong>Why it works.</strong> FOIL the right side:</p>
+          <span class="display">(a &minus; b)(a + b) = a&sup2; + ab &minus; ab &minus; b&sup2; = a&sup2; &minus; b&sup2;</span>
+          <p>The two middle terms (+ab and &minus;ab) cancel, leaving <span class="eq">a&sup2; &minus; b&sup2;</span>.</p>
+          <p><strong>Three requirements</strong> before you can use the pattern:</p>
+          <ol>
+            <li>The expression is a <em>binomial</em> (two terms).</li>
+            <li>The two terms are connected by <em>subtraction</em>, not addition. A sum of squares <span class="eq">a&sup2; + b&sup2;</span> does NOT factor over the real numbers.</li>
+            <li>Both terms are <em>perfect squares</em> &mdash; use Poster 5 to check.</li>
+          </ol>
+          <p><strong>Recipe:</strong> take the square root of each term to find <em>a</em> and <em>b</em>, then write <span class="eq">(a &minus; b)(a + b)</span>.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Is <span class="eq">x&sup2; &minus; 25</span> a difference of squares? If yes, name <em>a</em> and <em>b</em>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <em>a</em> = x, <em>b</em> = 5.</p>
+            <p class="explain">Binomial? Yes. Subtraction? Yes. Both perfect squares? <span class="eq">x&sup2; = (x)&sup2;</span> and <span class="eq">25 = 5&sup2;</span>. All three requirements met, so the pattern applies with <em>a</em> = x and <em>b</em> = 5. That means <span class="eq">x&sup2; &minus; 25 = (x &minus; 5)(x + 5)</span> (Q of Poster 7).</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Is <span class="eq">x&sup2; + 16</span> a difference of squares?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: no.</p>
+            <p class="explain">Both terms ARE perfect squares (<span class="eq">x&sup2;</span> and <span class="eq">16 = 4&sup2;</span>), but the expression is a <em>sum</em>, not a difference. The pattern <span class="eq">a&sup2; &minus; b&sup2; = (a &minus; b)(a + b)</span> requires a subtraction. A sum of squares <span class="eq">a&sup2; + b&sup2;</span> does NOT factor over the real numbers &mdash; it stays as it is.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Is <span class="eq">4x&sup2; &minus; 9</span> a difference of squares? If yes, name <em>a</em> and <em>b</em>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <em>a</em> = 2x, <em>b</em> = 3.</p>
+            <p class="explain">Binomial with subtraction &check;. <span class="eq">4x&sup2; = (2x)&sup2;</span> (coefficient 4 = 2&sup2;, exponent 2 is even) &check;. <span class="eq">9 = 3&sup2;</span> &check;. So <em>a</em> = 2x and <em>b</em> = 3. The factored form (Poster 7) will be <span class="eq">(2x &minus; 3)(2x + 3)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Is <span class="eq">x&sup2; &minus; 20</span> a difference of squares?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: no.</p>
+            <p class="explain">Binomial with subtraction &check;. <span class="eq">x&sup2;</span> is a perfect square &check;. But 20 is NOT a perfect square (<span class="eq">&radic;20 &asymp; 4.47</span>, irrational). Both terms must be perfect squares, so the pattern does not apply and this binomial does not factor over the integers.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5 <span class="level-tag level-medium">Two variables</span></h3>
+          <p class="prompt">Is <span class="eq">25a&sup2; &minus; 49b&sup2;</span> a difference of squares? If yes, name <em>a</em> and <em>b</em>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes. <em>a</em> = 5a and <em>b</em> = 7b (careful &mdash; two meanings of &ldquo;a&rdquo; and &ldquo;b&rdquo; here!).</p>
+            <p class="explain">The pattern letters <em>a</em>, <em>b</em> in <span class="eq">a&sup2; &minus; b&sup2;</span> are placeholders, not the same as the variables <em>a</em>, <em>b</em> in the problem. Rewrite: <span class="eq">25a&sup2; = (5a)&sup2;</span> and <span class="eq">49b&sup2; = (7b)&sup2;</span>. So the pattern letters are 5a and 7b. Factored form (Poster 7): <span class="eq">(5a &minus; 7b)(5a + 7b)</span>.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 7 ============================= -->
+        <h2 id="poster7">7. Factoring differences of squares</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/07-factoring-differences-of-squares.jpg" alt="SOMATH poster: Factoring Differences of Squares — use a² − b² = (a − b)(a + b). Examples: x² − 36 = (x − 6)(x + 6); 9x² − 25 = (3x − 5)(3x + 5); 4a² − 49b² = (2a − 7b)(2a + 7b); m² − 81n² = (m − 9n)(m + 9n)." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 7 &mdash; Factoring differences of squares (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; Using the pattern to factor</h3>
+          <p>Once you have identified <em>a</em> and <em>b</em> (Poster 6), applying the pattern is a one-line move:</p>
+          <span class="display">a&sup2; &minus; b&sup2; = (a &minus; b)(a + b)</span>
+          <p><strong>4-step recipe:</strong></p>
+          <ol>
+            <li>Confirm both terms are perfect squares and the expression is a difference.</li>
+            <li>Take the square root of the first term to get <em>a</em>.</li>
+            <li>Take the square root of the second term to get <em>b</em>.</li>
+            <li>Write <span class="eq">(a &minus; b)(a + b)</span>. Check by FOIL.</li>
+          </ol>
+          <p><strong>Order does not matter</strong> in the two factors &mdash; <span class="eq">(a &minus; b)(a + b) = (a + b)(a &minus; b)</span> &mdash; but write the subtraction first as a convention.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Factor <span class="eq">x&sup2; &minus; 36</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">(x &minus; 6)(x + 6)</span>.</p>
+            <p class="explain"><span class="eq">x&sup2; = (x)&sup2;</span> and <span class="eq">36 = 6&sup2;</span>. Apply pattern with <em>a</em> = x, <em>b</em> = 6: <span class="eq">(x &minus; 6)(x + 6)</span>. Check by FOIL: <span class="eq">x&sup2; + 6x &minus; 6x &minus; 36 = x&sup2; &minus; 36</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Factor <span class="eq">9x&sup2; &minus; 25</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">(3x &minus; 5)(3x + 5)</span>.</p>
+            <p class="explain"><span class="eq">9x&sup2; = (3x)&sup2;</span> (coefficient 9 = 3&sup2;, variable exponent 2 is even) and <span class="eq">25 = 5&sup2;</span>. Apply pattern with <em>a</em> = 3x, <em>b</em> = 5: <span class="eq">(3x &minus; 5)(3x + 5)</span>. Check by FOIL: <span class="eq">9x&sup2; + 15x &minus; 15x &minus; 25 = 9x&sup2; &minus; 25</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Factor <span class="eq">4a&sup2; &minus; 49b&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">(2a &minus; 7b)(2a + 7b)</span>.</p>
+            <p class="explain"><span class="eq">4a&sup2; = (2a)&sup2;</span> and <span class="eq">49b&sup2; = (7b)&sup2;</span>. Apply pattern with <em>a</em> = 2a, <em>b</em> = 7b: <span class="eq">(2a &minus; 7b)(2a + 7b)</span>. Check by FOIL: <span class="eq">4a&sup2; + 14ab &minus; 14ab &minus; 49b&sup2; = 4a&sup2; &minus; 49b&sup2;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Factor <span class="eq">m&sup2; &minus; 81n&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">(m &minus; 9n)(m + 9n)</span>.</p>
+            <p class="explain"><span class="eq">m&sup2; = (m)&sup2;</span> and <span class="eq">81n&sup2; = (9n)&sup2;</span>. Apply pattern with <em>a</em> = m, <em>b</em> = 9n: <span class="eq">(m &minus; 9n)(m + 9n)</span>. Check by FOIL: <span class="eq">m&sup2; + 9mn &minus; 9mn &minus; 81n&sup2; = m&sup2; &minus; 81n&sup2;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5 <span class="level-tag level-hard">Higher power</span></h3>
+          <p class="prompt">Factor <span class="eq">x&#8308; &minus; 16</span>. (Hint: apply the pattern twice.)</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">(x &minus; 2)(x + 2)(x&sup2; + 4)</span>.</p>
+            <p class="explain">First pass: <span class="eq">x&#8308; = (x&sup2;)&sup2;</span> and <span class="eq">16 = 4&sup2;</span>. Apply with <em>a</em> = x&sup2;, <em>b</em> = 4: <span class="eq">x&#8308; &minus; 16 = (x&sup2; &minus; 4)(x&sup2; + 4)</span>. Second pass: <span class="eq">x&sup2; &minus; 4</span> is another difference of squares, <em>a</em> = x, <em>b</em> = 2 &rarr; <span class="eq">(x &minus; 2)(x + 2)</span>. The other factor <span class="eq">x&sup2; + 4</span> is a SUM of squares and does not factor further over the reals. Full factoring: <span class="eq">x&#8308; &minus; 16 = (x &minus; 2)(x + 2)(x&sup2; + 4)</span>. Always check whether any factor can be factored again.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= POSTER 8 ============================= -->
+        <h2 id="poster8">8. Factoring completely: GCF and difference of squares together</h2>
+
+        <figure class="poster-figure">
+          <img src="/assets/blog/algebra-1-ignite-class-12-factoring-gcf-difference-of-squares/08-factoring-completely-gcf-and-difference-of-squares.jpg" alt="SOMATH poster: Factoring Completely — GCF first, then Difference of Squares. 5-step method. Examples: 2x² − 50 = 2(x − 5)(x + 5); 12x² − 27 = 3(2x − 3)(2x + 3); 8a² − 72b² = 8(a − 3b)(a + 3b); 18m² − 32n² = 2(3m − 4n)(3m + 4n)." loading="lazy" width="960" height="1200" />
+          <figcaption>Poster 8 &mdash; Factoring completely: GCF and difference of squares (SOMATH Algebra 1 Ignite Class 12)</figcaption>
+        </figure>
+
+        <div class="theory-box">
+          <h3>Theory &mdash; Always factor the GCF first, then look for the pattern</h3>
+          <p>Many Algebra 1 problems combine both tools. <strong>Rule: always pull out the GCF first.</strong> If you skip this step, you can still get a &ldquo;factored&rdquo; answer, but it will not be <em>completely</em> factored.</p>
+          <p><strong>5-step method:</strong></p>
+          <ol>
+            <li>Find the GCF of all terms.</li>
+            <li>Factor out the GCF.</li>
+            <li>Look at what is left inside the parentheses &mdash; is it a difference of two perfect squares?</li>
+            <li>If yes, apply the pattern to what is inside.</li>
+            <li>Write the final answer as a product of the GCF and the fully-factored inside.</li>
+          </ol>
+          <p><strong>Worked example.</strong> Factor completely: <span class="eq">2x&sup2; &minus; 50</span>.</p>
+          <ol>
+            <li>GCF of {2, &minus;50} = 2. No shared variable (the &minus;50 has no x).</li>
+            <li>Pull it out: <span class="eq">2x&sup2; &minus; 50 = 2(x&sup2; &minus; 25)</span>.</li>
+            <li>Inside: <span class="eq">x&sup2; &minus; 25</span> is a difference of squares (<em>a</em> = x, <em>b</em> = 5).</li>
+            <li>Apply the pattern: <span class="eq">x&sup2; &minus; 25 = (x &minus; 5)(x + 5)</span>.</li>
+            <li>Full answer: <span class="eq">2x&sup2; &minus; 50 = 2(x &minus; 5)(x + 5)</span>.</li>
+          </ol>
+          <p><strong>Why the GCF has to come first.</strong> If you tried the pattern directly on <span class="eq">2x&sup2; &minus; 50</span>, you would notice that <span class="eq">2x&sup2;</span> is NOT a perfect square (coefficient 2 is not a square). The pattern fails. Pulling out the 2 first turns the inside into <span class="eq">x&sup2; &minus; 25</span>, which IS a difference of squares.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>Q1</h3>
+          <p class="prompt">Factor completely: <span class="eq">2x&sup2; &minus; 50</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">2(x &minus; 5)(x + 5)</span>.</p>
+            <p class="explain">Step 1: GCF = 2. Step 2: <span class="eq">2(x&sup2; &minus; 25)</span>. Step 3: <span class="eq">x&sup2; &minus; 25</span> is a difference of squares with <em>a</em> = x, <em>b</em> = 5. Step 4: <span class="eq">(x &minus; 5)(x + 5)</span>. Step 5: full answer <span class="eq">2(x &minus; 5)(x + 5)</span>. Check: <span class="eq">2(x &minus; 5)(x + 5) = 2(x&sup2; &minus; 25) = 2x&sup2; &minus; 50</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q2</h3>
+          <p class="prompt">Factor completely: <span class="eq">12x&sup2; &minus; 27</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">3(2x &minus; 3)(2x + 3)</span>.</p>
+            <p class="explain">GCF of 12 and 27 is 3 (no shared variable). <span class="eq">12x&sup2; &minus; 27 = 3(4x&sup2; &minus; 9)</span>. Inside: <span class="eq">4x&sup2; = (2x)&sup2;</span> and <span class="eq">9 = 3&sup2;</span>, difference of squares with <em>a</em> = 2x, <em>b</em> = 3 &rarr; <span class="eq">(2x &minus; 3)(2x + 3)</span>. Full answer: <span class="eq">3(2x &minus; 3)(2x + 3)</span>. Check: <span class="eq">3(2x &minus; 3)(2x + 3) = 3(4x&sup2; &minus; 9) = 12x&sup2; &minus; 27</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q3</h3>
+          <p class="prompt">Factor completely: <span class="eq">8a&sup2; &minus; 72b&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">8(a &minus; 3b)(a + 3b)</span>.</p>
+            <p class="explain">GCF of 8 and 72 is 8 (no shared variable &mdash; one term has a, the other has b). <span class="eq">8a&sup2; &minus; 72b&sup2; = 8(a&sup2; &minus; 9b&sup2;)</span>. Inside: <span class="eq">a&sup2; = (a)&sup2;</span> and <span class="eq">9b&sup2; = (3b)&sup2;</span>, difference of squares with pattern-<em>a</em> = a, pattern-<em>b</em> = 3b &rarr; <span class="eq">(a &minus; 3b)(a + 3b)</span>. Full answer: <span class="eq">8(a &minus; 3b)(a + 3b)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q4</h3>
+          <p class="prompt">Factor completely: <span class="eq">18m&sup2; &minus; 32n&sup2;</span>.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">2(3m &minus; 4n)(3m + 4n)</span>.</p>
+            <p class="explain">GCF of 18 and 32 is 2. <span class="eq">18m&sup2; &minus; 32n&sup2; = 2(9m&sup2; &minus; 16n&sup2;)</span>. Inside: <span class="eq">9m&sup2; = (3m)&sup2;</span> and <span class="eq">16n&sup2; = (4n)&sup2;</span>, difference of squares with pattern-<em>a</em> = 3m, pattern-<em>b</em> = 4n &rarr; <span class="eq">(3m &minus; 4n)(3m + 4n)</span>. Full answer: <span class="eq">2(3m &minus; 4n)(3m + 4n)</span>. Check: <span class="eq">2(3m &minus; 4n)(3m + 4n) = 2(9m&sup2; &minus; 16n&sup2;) = 18m&sup2; &minus; 32n&sup2;</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>Q5 <span class="level-tag level-hard">Error analysis</span></h3>
+          <p class="prompt">A student factored <span class="eq">2x&sup2; &minus; 50</span> as <span class="eq">(2x &minus; 10)(x + 5)</span> by rewriting <span class="eq">2x&sup2; = (2x)(x)</span> and <span class="eq">50 = 10 &middot; 5</span>. What did they get wrong?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: they did not use the difference-of-squares pattern, and they did not factor out the GCF first. Correct: <span class="eq">2(x &minus; 5)(x + 5)</span>.</p>
+            <p class="explain">Check their answer by FOIL: <span class="eq">(2x &minus; 10)(x + 5) = 2x&sup2; + 10x &minus; 10x &minus; 50 = 2x&sup2; &minus; 50</span>. Their factoring IS technically equivalent to the original, but it is not <em>completely</em> factored &mdash; the first factor still has a GCF of 2 (<span class="eq">2x &minus; 10 = 2(x &minus; 5)</span>). Pulling that out gives <span class="eq">2(x &minus; 5)(x + 5)</span>, which is the fully factored form. Rule: always factor the GCF FIRST, then look for the pattern. Never skip step 1.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= WORD PROBLEMS ============================= -->
+        <div class="part-header" id="wordproblems">
+          <h2>Bonus &mdash; 10 word problems, increasing difficulty</h2>
+          <p>Ten original SOMATH word problems on GCF and difference-of-squares factoring, tagged Easy &rarr; Medium &rarr; Hard &rarr; Challenge. Every problem has a click-to-reveal step-by-step answer. Contexts include NYC rectangular gardens, sidewalk framing on the Upper West Side, physics distance formulas, and picture-frame area &mdash; the kind of setups the Regents Algebra 1 and SHSAT actually test.</p>
+        </div>
+
+        <div class="qbox">
+          <h3>W1 <span class="level-tag level-easy">Easy</span></h3>
+          <p class="prompt">A rectangular UWS community garden bed has area <span class="eq">6x + 12</span> square feet. Its width is 6 feet. Write an expression for its length by factoring.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: length = <span class="eq">(x + 2)</span> feet.</p>
+            <p class="explain">Area = length &times; width, so length = area &divide; width. Factor the area: GCF of 6 and 12 is 6, so <span class="eq">6x + 12 = 6(x + 2)</span>. Divide by the width 6: <span class="eq">length = 6(x + 2) &divide; 6 = (x + 2)</span> feet. Factoring turned a two-term expression into a product, which made the &ldquo;undo multiplication&rdquo; step obvious.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W2 <span class="level-tag level-easy">Easy</span></h3>
+          <p class="prompt">A math teacher writes <span class="eq">8x&sup2; + 20x</span> on the board and asks the class to factor it. What is the fully factored form?</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">4x(2x + 5)</span>.</p>
+            <p class="explain">Numeric GCF of 8 and 20 is 4. Variable: both terms have x, smallest exponent 1. Overall GCF = <span class="eq">4x</span>. Divide: <span class="eq">8x&sup2; &divide; 4x = 2x</span>, <span class="eq">20x &divide; 4x = 5</span>. Answer: <span class="eq">4x(2x + 5)</span>. Check: <span class="eq">4x(2x + 5) = 8x&sup2; + 20x</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W3 <span class="level-tag level-easy">Easy</span></h3>
+          <p class="prompt">A square backyard patio has side length <em>x</em> feet. A smaller square garden of side 4 feet is dug out of one corner. Write the remaining area as a difference of squares, then factor it.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: remaining area = <span class="eq">x&sup2; &minus; 16 = (x &minus; 4)(x + 4)</span> square feet.</p>
+            <p class="explain">Big square area = <span class="eq">x&sup2;</span>. Small square area = <span class="eq">4&sup2; = 16</span>. Remaining = <span class="eq">x&sup2; &minus; 16</span>, a difference of squares with <em>a</em> = x and <em>b</em> = 4. Factor: <span class="eq">(x &minus; 4)(x + 4)</span>. This is the classic geometry meaning of the difference-of-squares pattern.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W4 <span class="level-tag level-medium">Medium</span></h3>
+          <p class="prompt">A rectangle has area <span class="eq">9x&sup2; &minus; 25</span> square inches. Both its length and its width can be written as binomials in <em>x</em>. Find them.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: length = <span class="eq">(3x + 5)</span> inches, width = <span class="eq">(3x &minus; 5)</span> inches (or vice versa).</p>
+            <p class="explain">Recognize a difference of squares: <span class="eq">9x&sup2; = (3x)&sup2;</span> and <span class="eq">25 = 5&sup2;</span>. Apply the pattern with <em>a</em> = 3x, <em>b</em> = 5: <span class="eq">9x&sup2; &minus; 25 = (3x &minus; 5)(3x + 5)</span>. Since area = length &times; width, the two dimensions are exactly these two factors. Check: <span class="eq">(3x &minus; 5)(3x + 5) = 9x&sup2; &minus; 25</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W5 <span class="level-tag level-medium">Medium</span></h3>
+          <p class="prompt">A rectangular sidewalk in front of a UWS brownstone has area <span class="eq">2x&sup2; &minus; 8</span> square feet. Factor the area completely to find its two dimensions.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: dimensions <span class="eq">2(x &minus; 2)</span> ft and <span class="eq">(x + 2)</span> ft, or <span class="eq">(x &minus; 2)</span> ft and <span class="eq">2(x + 2)</span> ft.</p>
+            <p class="explain">Always GCF first: GCF of {2, &minus;8} = 2. <span class="eq">2x&sup2; &minus; 8 = 2(x&sup2; &minus; 4)</span>. The inside is a difference of squares (<em>a</em> = x, <em>b</em> = 2): <span class="eq">x&sup2; &minus; 4 = (x &minus; 2)(x + 2)</span>. Full: <span class="eq">2x&sup2; &minus; 8 = 2(x &minus; 2)(x + 2)</span>. Any of the three factors can be paired to be &ldquo;length&rdquo; and the rest &ldquo;width&rdquo;. Two natural groupings are shown in the answer.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W6 <span class="level-tag level-medium">Medium</span></h3>
+          <p class="prompt">A physics distance formula gives distance as <span class="eq">d = 16t&sup2; &minus; 64</span>, where <em>t</em> is time in seconds and <em>d</em> is in feet. Factor the expression on the right and find the value(s) of <em>t</em> that make <em>d</em> = 0.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">d = 16(t &minus; 2)(t + 2)</span>. <em>d</em> = 0 when <span class="eq">t = 2</span> or <span class="eq">t = &minus;2</span>.</p>
+            <p class="explain">GCF of 16 and 64 is 16: <span class="eq">16t&sup2; &minus; 64 = 16(t&sup2; &minus; 4)</span>. Inside is a difference of squares: <span class="eq">t&sup2; &minus; 4 = (t &minus; 2)(t + 2)</span>. Full factoring: <span class="eq">16(t &minus; 2)(t + 2)</span>. Set equal to zero and use the zero-product property (a product is zero iff at least one factor is zero): 16 is not zero, so <span class="eq">t &minus; 2 = 0</span> gives <span class="eq">t = 2</span>, and <span class="eq">t + 2 = 0</span> gives <span class="eq">t = &minus;2</span>. In physics <em>t</em> is a time and cannot be negative, so the only real-world solution is <span class="eq">t = 2</span> seconds &mdash; but algebraically both roots exist.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W7 <span class="level-tag level-hard">Hard</span></h3>
+          <p class="prompt">A picture frame is made by cutting a small square from the center of a larger square piece of cardboard. The large square has side <span class="eq">3x</span> inches; the small (cutout) square has side <em>2</em> inches. Write the area of the frame (the leftover cardboard) as a factored expression.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: frame area = <span class="eq">(3x &minus; 2)(3x + 2)</span> square inches.</p>
+            <p class="explain">Frame area = big square area &minus; small square area = <span class="eq">(3x)&sup2; &minus; 2&sup2; = 9x&sup2; &minus; 4</span>. This is a difference of squares with pattern-<em>a</em> = 3x and pattern-<em>b</em> = 2 &rarr; <span class="eq">(3x &minus; 2)(3x + 2)</span>. Check by FOIL: <span class="eq">(3x &minus; 2)(3x + 2) = 9x&sup2; + 6x &minus; 6x &minus; 4 = 9x&sup2; &minus; 4</span>. &check;</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W8 <span class="level-tag level-hard">Hard</span></h3>
+          <p class="prompt">A quadratic expression is <span class="eq">50 &minus; 2x&sup2;</span>. Factor it completely. (Watch the order &mdash; is this really a difference of squares?)</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">&minus;2(x &minus; 5)(x + 5)</span> (equivalently <span class="eq">2(5 &minus; x)(5 + x)</span>).</p>
+            <p class="explain">This is a difference of squares in disguise. Two clean paths.</p>
+            <p class="explain"><strong>Path A &mdash; factor out a positive GCF first.</strong> GCF of 50 and 2 is 2. <span class="eq">50 &minus; 2x&sup2; = 2(25 &minus; x&sup2;)</span>. The inside <span class="eq">25 &minus; x&sup2;</span> is a difference of squares with pattern-<em>a</em> = 5, pattern-<em>b</em> = x &rarr; <span class="eq">(5 &minus; x)(5 + x)</span>. So <span class="eq">50 &minus; 2x&sup2; = 2(5 &minus; x)(5 + x)</span>.</p>
+            <p class="explain"><strong>Path B &mdash; factor out a negative GCF first.</strong> Take &minus;2: <span class="eq">50 &minus; 2x&sup2; = &minus;2(x&sup2; &minus; 25)</span>. Now <span class="eq">x&sup2; &minus; 25 = (x &minus; 5)(x + 5)</span>. So <span class="eq">50 &minus; 2x&sup2; = &minus;2(x &minus; 5)(x + 5)</span>.</p>
+            <p class="explain">Both forms are correct and equivalent (multiply out both to see). Convention: many teachers prefer path B because the inside binomials both look like the standard difference-of-squares form <span class="eq">(x &minus; a)(x + a)</span>.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W9 <span class="level-tag level-hard">Hard</span></h3>
+          <p class="prompt">A rectangle has length <span class="eq">(2x + 3)</span> and width <span class="eq">(2x &minus; 3)</span>. A second rectangle has area <span class="eq">4x&sup2; &minus; 9</span>. Are the two rectangles the same size? Explain using factoring.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: yes &mdash; they have the same area.</p>
+            <p class="explain">Rectangle 1 area = length &times; width = <span class="eq">(2x + 3)(2x &minus; 3)</span>. This is a product of the form <span class="eq">(a + b)(a &minus; b)</span>, which expands to <span class="eq">a&sup2; &minus; b&sup2;</span> with <em>a</em> = 2x and <em>b</em> = 3: <span class="eq">(2x + 3)(2x &minus; 3) = (2x)&sup2; &minus; 3&sup2; = 4x&sup2; &minus; 9</span>. Rectangle 2 already has area <span class="eq">4x&sup2; &minus; 9</span>. Same expression, same area for every value of <em>x</em>. The difference-of-squares pattern works in BOTH directions &mdash; expand to check, factor to solve.</p>
+          </div></details>
+        </div>
+
+        <div class="qbox">
+          <h3>W10 <span class="level-tag level-challenge">Challenge &middot; Word problem</span></h3>
+          <p class="prompt">A rectangular Central Park lawn has area <span class="eq">50x&sup2; &minus; 200</span> square feet. The park department wants to know its two dimensions in terms of <em>x</em> so they can lay sod. Factor the area completely, then explain what the three factors mean for the shape of the lawn.</p>
+          <details class="reveal"><summary></summary><div class="reveal-body">
+            <p class="answer">Answer: <span class="eq">50x&sup2; &minus; 200 = 50(x &minus; 2)(x + 2)</span>. Possible dimensions include <span class="eq">50</span> ft &times; <span class="eq">(x &minus; 2)(x + 2)</span> ft, or <span class="eq">50(x &minus; 2)</span> ft &times; <span class="eq">(x + 2)</span> ft, or <span class="eq">(x &minus; 2)</span> ft &times; <span class="eq">50(x + 2)</span> ft.</p>
+            <p class="explain">Step 1: always GCF first. GCF of 50 and 200 is 50. <span class="eq">50x&sup2; &minus; 200 = 50(x&sup2; &minus; 4)</span>. Step 2: the inside <span class="eq">x&sup2; &minus; 4</span> is a difference of squares (<em>a</em> = x, <em>b</em> = 2): <span class="eq">(x &minus; 2)(x + 2)</span>. Step 3: full factoring <span class="eq">50(x &minus; 2)(x + 2)</span>. Meaning: the area factors as a numeric scale (50) times a &ldquo;shape factor&rdquo; that depends on x. Any pairing of the three factors gives a valid length &times; width for the lawn. For the sod plan to be physical, <em>x</em> must be at least 3 (so that both <span class="eq">x &minus; 2 &ge; 1</span> and the width is positive). This problem uses BOTH tools from Class 12 in one story: GCF (Poster 3) then difference of squares (Poster 7), which is exactly the &ldquo;factoring completely&rdquo; pattern of Poster 8.</p>
+          </div></details>
+        </div>
+
+        <!-- ============================= FAQ ============================= -->
+        <h2 id="faq">10. Frequently asked questions</h2>
+
+        <h3>What is factoring in Algebra 1 and why does my grade 7, 8, or 9 child need it?</h3>
+        <p>Factoring means writing an expression as a <em>product</em> of simpler expressions &mdash; the reverse of multiplication (distributing / FOIL). If multiplication takes <span class="eq">3(x + 4)</span> and expands it to <span class="eq">3x + 12</span>, factoring takes <span class="eq">3x + 12</span> and rewrites it as <span class="eq">3(x + 4)</span>. Factoring is the single most-used tool in Algebra 1, Algebra 2, and beyond: it is how students solve quadratic equations, simplify rational expressions, find x-intercepts of parabolas, and set up problems for the quadratic formula. A student who cannot factor cannot solve most Algebra 1 word problems from Unit 6 onward.</p>
+
+        <h3>How do I find the greatest common factor (GCF) of a polynomial?</h3>
+        <p>Three steps. (1) Find the GCF of the numeric coefficients &mdash; use prime factorization if the numbers are big. (2) For each variable that appears in every term, take the <em>smallest</em> exponent. A variable missing from any term can&rsquo;t be in the GCF at all. (3) Multiply the numeric GCF and the variable GCF together. Example: GCF of <span class="eq">8x&sup2;</span> and <span class="eq">12x</span> is <span class="eq">4x</span>, because gcd(8, 12) = 4 and the smallest shared x-exponent is 1.</p>
+
+        <h3>What is the difference of squares pattern?</h3>
+        <p>The difference of squares pattern is <span class="eq">a&sup2; &minus; b&sup2; = (a &minus; b)(a + b)</span>. It only works when (i) the expression is a <em>subtraction</em> and (ii) both terms are <em>perfect squares</em>. A perfect square is a number, variable, or monomial that is something squared &mdash; 25 is 5&sup2;, <span class="eq">x&sup2;</span> is <span class="eq">(x)&sup2;</span>, <span class="eq">4x&sup2;</span> is <span class="eq">(2x)&sup2;</span>. Warning: <span class="eq">a&sup2; + b&sup2;</span> (a SUM of squares) does NOT factor over the real numbers.</p>
+
+        <h3>How do I know which factoring method to use?</h3>
+        <p>Always look for the GCF first. Even if the problem looks like a difference of squares, factor the GCF out before you use the pattern &mdash; otherwise you will miss part of the answer. Example: <span class="eq">2x&sup2; &minus; 50</span> looks like a difference of squares, but the GCF is 2. Factor it out: <span class="eq">2(x&sup2; &minus; 25)</span>, then apply the pattern to the inside: <span class="eq">2(x &minus; 5)(x + 5)</span>. Rule of thumb: (1) GCF first, always; (2) then check the remaining expression for a difference of squares; (3) if it is a trinomial, use trinomial factoring (Class 13).</p>
+
+        <h3>Why do we sometimes factor out a negative GCF?</h3>
+        <p>Factoring out a negative GCF is a stylistic choice that makes the expression inside the parentheses easier to work with &mdash; usually to force the leading coefficient inside to be positive. Example: <span class="eq">&minus;6x &minus; 9</span> can be factored as <span class="eq">3(&minus;2x &minus; 3)</span> OR <span class="eq">&minus;3(2x + 3)</span>. Both are correct, but <span class="eq">&minus;3(2x + 3)</span> is preferred because everything inside is positive. This matters a lot in Algebra 2 when you set an expression equal to zero and use the zero-product property.</p>
+
+        <h3>How does factoring in Algebra 1 connect to the SHSAT, SAT, and Regents Algebra 1?</h3>
+        <p>Factoring is everywhere on all three exams. On the SHSAT and the Regents Algebra 1 (grades 8&ndash;9), factoring a difference of squares or pulling out a GCF appears throughout and is required to simplify most quadratic expressions. On the SAT (grades 10&ndash;12), factoring is how students solve quadratics in the Advanced Math section and simplify rational expressions in Problem Solving. A student who owns GCF and difference of squares in grade 8 walks into SHSAT prep with a real advantage &mdash; and into SAT prep two years later without a gap.</p>
+
+        <h3>What are the most common factoring mistakes in Algebra 1?</h3>
+        <p>Five mistakes we see every year at SOMATH. (1) Forgetting to factor out the GCF first. (2) Treating a SUM of squares like a difference of squares &mdash; <span class="eq">x&sup2; + 16</span> does NOT factor over the reals. (3) Using the wrong smallest exponent when finding a variable GCF (thinking the GCF of <span class="eq">x&sup3;</span> and <span class="eq">x&#8309;</span> is <span class="eq">x&#8309;</span> instead of <span class="eq">x&sup3;</span>). (4) Dropping a sign when factoring out a negative GCF (writing <span class="eq">&minus;4x&sup2; + 8x = &minus;4x(x + 2)</span> instead of <span class="eq">&minus;4x(x &minus; 2)</span>). (5) Not checking the factoring by re-multiplying (FOIL / distribute) at the end.</p>
+
+        <h3>What Manhattan and Upper West Side algebra prep do you offer for grades 7&ndash;9?</h3>
+        <p>SOMATH&rsquo;s <a href="/courses/young-fermats-algebra-ignite">Young Fermats &mdash; Algebra 1 Ignite</a> is a 48-class grade 7&ndash;9 algebra program taught in small in-person groups of 4&ndash;8 at 226 W 79th St on the Upper West Side of Manhattan, one block from the 1 train at 79th Street and steps from Booker T. Washington MS 54, MS 245, Anderson (M334), Salk (M255), and Mott Hall II (M223). Class 12 is factoring with the GCF and the difference of squares. The full arc builds toward Algebra II, SHSAT math, and eventually SAT math. Book a free 30-minute evaluation and we will send a written diagnostic within 48 hours.</p>
+
+        <h3>What comes after Class 12 in the Algebra 1 Ignite arc?</h3>
+        <p>Class 13 is trinomial factoring &mdash; <span class="eq">x&sup2; + bx + c</span> and <span class="eq">ax&sup2; + bx + c</span> &mdash; the third major factoring tool after GCF and difference of squares. Class 14 uses factoring plus the zero-product property to solve quadratic equations. Class 15 introduces the quadratic formula for the quadratics that will not factor. Later on, <a href="/posts/algebra-2-class-11-factoring-polynomials-remainder-factor-theorems">Algebra II Class 11</a> revisits factoring at a higher level with the Remainder and Factor Theorems. See our <a href="/courses/young-fermats-algebra-ignite">Algebra 1 Ignite course page</a> for the full grade 7&ndash;9 arc.</p>
+
+        <div class="callout">
+          <strong>Want your grade 7, 8, or 9 student in a small SOMATH algebra class on the Upper West Side?</strong> Book a <a href="/evaluation">free 30-minute evaluation</a>. We&rsquo;ll place them in the right Algebra 1 Ignite class and send a written diagnostic within 48 hours. Small groups of 4&ndash;8, in-person at 226 W 79th St.
+        </div>
+
+        <h2>About SOMATH &mdash; School of Math</h2>
+        <div class="callout">
+          <p><strong>SOMATH &mdash; School of Math</strong> is a math-focused school on the Upper West Side of Manhattan for students in grades 1&ndash;12. Class 12 is part of the <a href="/courses/young-fermats-algebra-ignite">Young Fermats &mdash; Algebra 1 Ignite</a> arc (grades 7&ndash;9), taught in small groups by cofounder <strong>Marcelo Ambrozio</strong> (Northwestern-trained, 15+ years teaching NYC math and 20+ years preparing candidates for top MBA programs) and the SOMATH team, and led by cofounder <strong>Vivianne Wright</strong> (Harvard).</p>
+          <p><strong>Location:</strong> 226 W 79th St, 1st Floor, New York, NY 10024 &middot; Upper West Side &middot; steps from Booker T. Washington MS 54, MS 245, Anderson, Salk, and Mott Hall II<br>
+          <strong>Phone:</strong> (646) 668-6151 &middot; <strong>Email:</strong> hello@schoolofmath.us<br>
+          <strong>Book:</strong> <a href="/evaluation">Free evaluation</a> &middot; <a href="/schedule">Schedule</a> &middot; <a href="/">Home</a></p>
+        </div>
+
+        <h2>Related SOMATH posts</h2>
+        <ul>
+          <li><a href="/posts/algebra-ignite-class-11-polynomials-add-subtract-multiply">Algebra 1 Class 11 &mdash; Polynomials: Adding, Subtracting, Multiplying (10 SOMATH Posters, Theory &amp; 50 Practice Questions)</a></li>
+          <li><a href="/posts/algebra-2-class-11-factoring-polynomials-remainder-factor-theorems">Algebra II Class 11 &mdash; Factoring Polynomials &amp; the Remainder and Factor Theorems (25 Practice Questions)</a></li>
+          <li><a href="/posts/scientific-notation-applications-algebra-1-ignite">Scientific Notation &amp; Applications (Algebra 1 Ignite Class 10) &mdash; 25 Practice Questions</a></li>
+          <li><a href="/posts/pre-algebra-class-11-variables-algebraic-expressions-translating-words">Pre-Algebra Class 11 &mdash; Variables and Algebraic Expressions: Translating Words (8 Posters, 40 Practice Questions)</a></li>
+          <li><a href="/courses/young-fermats-algebra-ignite">Young Fermats &mdash; Algebra 1 Ignite course (grades 7&ndash;9) &mdash; full arc</a></li>
+          <li><a href="/blog">All SOMATH blog posts &raquo;</a></li>
+        </ul>
+
+      </div>
+    </article>
+
+    <div id="footer-mount"></div>
+    <script src="/partials.js?v=v20260726-enrich"></script>
+  </body>
+</html>
