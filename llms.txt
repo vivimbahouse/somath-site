@@ -49,3 +49,5 @@ Contact: hello@schoolofmath.us · (646) 668-6151 · [schoolofmath.us](https://ww
 
 - [Full site index (all 115+ posts and guides)](https://www.schoolofmath.us/llms-full.txt): complete markdown-linked directory of every article and resource on schoolofmath.us, grouped by topic.
 - [XML sitemap](https://www.schoolofmath.us/sitemap.xml): machine-readable list of all indexable URLs.
+
+- [Kid Einsteins Class 12: Subtracting Fractions with Like Denominators](https://www.schoolofmath.us/posts/kid-einsteins-class-12-subtracting-fractions-like-denominators): Grades 3–4, Class 12 of the Kid Einsteins syllabus. 11 supplied posters, 55 practice questions and 10 progressively harder bonus word problems, all 65 with hidden worked solutions. Theory covers same-sized wholes, subtracting numerators, keeping denominators, fraction bars, circles, sets, number lines, simplification, and food/distance applications. Includes a clear correction to the supplied food-poster wording. Free HTML class pack from SOMATH, Upper West Side NYC.
