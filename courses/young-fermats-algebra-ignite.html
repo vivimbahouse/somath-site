@@ -168,6 +168,12 @@
     "@type": "CourseInstance",
     "courseMode": "in-person",
     "courseWorkload": "PT120M",
+    "courseSchedule": [
+      {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Monday","startTime":"17:00","endTime":"19:00","scheduleTimezone":"America/New_York"},
+      {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Wednesday","startTime":"16:15","endTime":"18:15","scheduleTimezone":"America/New_York"},
+      {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Friday","startTime":"15:00","endTime":"17:00","scheduleTimezone":"America/New_York"},
+      {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Sunday","startTime":"13:00","endTime":"15:00","scheduleTimezone":"America/New_York"}
+    ],
     "instructor": {
       "@type": "Person",
       "name": "Marcelo Ambrozio",
@@ -305,6 +311,11 @@
                 <input type="radio" name="dayChoice" value="Wednesday" />
                 <span class="day">Wednesday</span>
                 <span class="time">4:15 – 6:15 PM</span>
+              </label>
+              <label class="enroll-card__day-option">
+                <input type="radio" name="dayChoice" value="Friday" />
+                <span class="day">Friday</span>
+                <span class="time">3:00 – 5:00 PM</span>
               </label>
               <label class="enroll-card__day-option">
                 <input type="radio" name="dayChoice" value="Sunday" />
@@ -583,6 +594,9 @@
           var billing = new Date(start.getTime());
           billing.setDate(billing.getDate() - 1);
           var html = '';
+          var selectedOption = document.querySelector('input[name="dayChoice"]:checked');
+          var selectedTime = selectedOption ? selectedOption.closest('label').querySelector('.time').textContent : '';
+          html += 'Weekly class: <strong>' + day + ', ' + selectedTime + '</strong> (New York time)<br>';
           html += 'First class: <strong>' + fmtLong(start) + '</strong><br>';
           html += 'Monthly tuition begins: <strong>' + fmtLong(billing) + '</strong> (one day before your first class)';
           if (!dayMatch) {

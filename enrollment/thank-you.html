@@ -407,7 +407,7 @@
             document.getElementById('orderGrid').classList.remove('order-receipt__skeleton');
             setCell(0, 'Student',           d.student_name ? '<strong>' + escapeHtml(d.student_name) + '</strong>' : '&mdash;');
             setCell(1, 'Course',            d.course_title ? '<strong>' + escapeHtml(d.course_title) + '</strong>' : '&mdash;');
-            setCell(2, 'Weekly day',        d.weekly_day ? escapeHtml(WEEKDAY_LABEL[d.weekly_day] || d.weekly_day) : '&mdash;');
+            setCell(2, 'Weekly schedule',   d.weekly_day ? escapeHtml(WEEKDAY_LABEL[d.weekly_day] || d.weekly_day) + (d.class_time ? '<br>' + escapeHtml(d.class_time) + ' (New York time)' : '') : '&mdash;');
             setCell(3, 'First class',       d.first_class_date ? escapeHtml(fmtLongDate(d.first_class_date)) : '&mdash;');
             setCell(4, 'First monthly charge', d.first_charge_iso ? escapeHtml(fmtIsoDate(d.first_charge_iso)) : '&mdash;');
             setCell(5, 'Monthly tuition',   d.monthly_usd ? ('$' + d.monthly_usd.toLocaleString() + '/mo (starts on first charge)') : '&mdash;');
