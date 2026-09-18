@@ -18,11 +18,7 @@
 <link rel="stylesheet" href="/styles.css">
 <style>
 :root{--editorial-green:#1f3d2e;--editorial-gold:#bb8a28;--editorial-paper:#f5f0e5}
-body{padding-top:0;background:var(--editorial-paper);color:#272a24}
-.draft-note{padding:10px 24px;background:#e9d7af;text-align:center;font:600 13px/1.5 Arial,sans-serif;letter-spacing:.025em}
-.editorial-nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:25px 30px;border-bottom:1px solid #d7cfbd}
-.editorial-nav img{width:188px;max-height:74px}.editorial-nav nav{display:flex;gap:26px;font-size:14px}
-.editorial-nav a{color:var(--editorial-green);text-decoration:none}.editorial-nav nav a:hover{text-decoration:underline}
+body{background:var(--editorial-paper);color:#272a24}
 .editorial{max-width:850px;margin:auto;padding:64px 30px 88px}
 .eyebrow{font:700 12px/1.5 Arial,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:#7b612d;margin:0 0 20px}
 .editorial h1{font:500 clamp(38px,5vw,62px)/1.06 Georgia,serif;letter-spacing:-.035em;color:var(--editorial-green);margin:0 0 24px}
@@ -30,15 +26,14 @@ body{padding-top:0;background:var(--editorial-paper);color:#272a24}
 .editorial-hero{margin:30px 0 36px}.editorial-hero img{display:block;width:100%;height:auto}
 .editorial p,.editorial li{font:400 17px/1.8 Arial,sans-serif}
 .editorial p{margin:0 0 20px}.editorial li{margin:10px 0}.editorial ul,.editorial ol{padding-left:25px}
-.editorial h2{font:500 clamp(27px,3vw,34px)/1.2 Georgia,serif;color:var(--editorial-green);margin:48px 0 18px;scroll-margin-top:30px}
+.editorial h2{font:500 clamp(27px,3vw,34px)/1.2 Georgia,serif;color:var(--editorial-green);margin:48px 0 18px;scroll-margin-top:180px}
 .editorial h3{font:600 20px/1.4 Arial,sans-serif;color:var(--editorial-green);margin:29px 0 12px}
 .editorial a{color:#245b82;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .editorial blockquote{margin:25px 0;padding:23px 26px;border-left:3px solid var(--editorial-gold);background:#ebe6d8}
 .editorial blockquote p{font:400 23px/1.55 Georgia,serif;margin:0;color:var(--editorial-green)}
 .editorial hr{margin:40px 0 22px;border:0;border-top:1px solid #d7cfbd}.editorial hr+p{font-size:13px;color:#5d635a}
 .contents{border-top:1px solid #d7cfbd;border-bottom:1px solid #d7cfbd;padding:18px 0;margin:35px 0;display:flex;gap:14px 22px;flex-wrap:wrap;font-size:14px}
-footer{background:var(--editorial-green);color:#f5f0e5;text-align:center;padding:28px;font:14px/1.8 Arial,sans-serif}footer a{color:#f5f0e5;text-decoration:underline}
-@media(max-width:600px){.editorial-nav{padding:20px;align-items:flex-start;flex-direction:column;gap:18px}.editorial-nav img{width:158px}.editorial-nav nav{gap:22px}.editorial{padding:38px 22px 60px}.editorial h1+p{font-size:21px}.editorial p,.editorial li{font-size:16px}.editorial blockquote{padding:18px}.editorial blockquote p{font-size:21px}}
+@media(max-width:600px){.editorial{padding:38px 22px 60px}.editorial h1+p{font-size:21px}.editorial p,.editorial li{font-size:16px}.editorial blockquote{padding:18px}.editorial blockquote p{font-size:21px}}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -120,10 +115,10 @@ footer{background:var(--editorial-green);color:#f5f0e5;text-align:center;padding
     }
   ]
 }</script>
-</head><body>
+</head><body data-page="blog">
 
-<header class="editorial-nav"><a href="https://www.schoolofmath.us" aria-label="SOMATH home"><img src="/assets/logo-full.svg" alt="School of Math"></a><nav aria-label="Main navigation"><a href="https://www.schoolofmath.us/blog">Journal</a><a href="https://www.schoolofmath.us/schedule">Class schedule</a><a href="https://www.schoolofmath.us/evaluation">Evaluation</a></nav></header>
-<main class="editorial"><p class="eyebrow">SOMATH Journal / Parenting &amp; Education / Opinion · September 18, 2026</p>
+<div id="header-mount"></div>
+<main class="editorial" id="main-content"><p class="eyebrow">SOMATH Journal / Parenting &amp; Education / Opinion · September 18, 2026</p>
 <h1 id="before-the-label-raising-resilient-children">Before the Label:
 Raising Resilient Children</h1>
 <p>Children need responsibility, not a diagnosis for every struggle.
@@ -412,5 +407,6 @@ cause learning disorders or that a particular child’s diagnosis is
 incorrect.</p>
 
 </main>
-<footer>SOMATH · School of Math · Upper West Side, New York<br><a href="https://www.schoolofmath.us/evaluation">Explore a math evaluation</a> · <a href="https://www.schoolofmath.us/blog">Read the Journal</a></footer>
+<div id="footer-mount"></div>
+<script src="/partials.js?v=v20260726-enrich"></script>
 </body></html>
