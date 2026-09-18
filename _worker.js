@@ -521,7 +521,7 @@ var PRE_ENROLL_COURSES = {
   "kid-einsteins":                { title: "Kid Einsteins",                 grade: "Grades 3\u20134",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grades 5\u20136",       summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ignite": { title: "Young Fermats \u2014 Algebra Ignite",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
-  "regents-algebra-1":            { title: "Regents Algebra 1 Prep",         grade: "Grades 9\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+
   "regents-geometry":             { title: "Regents Geometry & Trigonometry Prep", grade: "Grades 9\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
   "young-fermats-geometry":       { title: "Young Fermats \u2014 Geometry and Trigonometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ii":     { title: "Young Fermats \u2014 Algebra II",       grade: "Grades 9\u201311",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
@@ -554,7 +554,7 @@ var FALL_DAY_CHOICES = {
   "kid-einsteins":                ["Mon", "Thu"],
   "young-fermats-prealgebra":     ["Tue", "Thu"],
   "young-fermats-algebra-ignite": ["Mon", "Wed", "Fri"],
-  "regents-algebra-1":            ["Fri"],
+
   "regents-geometry":             ["Fri"],
   "young-fermats-geometry":       ["Mon"],
   "young-fermats-algebra-ii":     ["Tue"]
@@ -817,7 +817,6 @@ var EVAL_COURSES = {
   "kid-einsteins": "Kid Einsteins",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite",
-  "regents-algebra-1": "Regents Algebra 1 Prep",
   "regents-geometry": "Regents Geometry & Trigonometry Prep",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II",
@@ -849,7 +848,7 @@ var COURSE_DESCRIPTIONS = {
   "kid-einsteins": "Kid Einsteins is our Grades 3\u20134 program (ages 8\u201310). The arc covers multiplication mastery, long division, fractions and decimals, geometric reasoning with area and perimeter, and multi-step word problems \u2014 the core of upper-elementary math, delivered in a 90-minute weekly lesson with real problem-solving depth. It also opens the door to integers, ratios, and early algebraic thinking, so students walk into Grade 5 ready for Pre-Algebra instead of meeting these ideas cold.",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra I. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra I already fluent with the language they'll be using every day.",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite is a real Algebra I course for Grades 7\u20138 (ages 12\u201314). The syllabus covers linear equations and inequalities, systems, exponents, factoring, quadratics and functions in the first half, then goes deeper with function composition, sequences and series, rational functions, statistics, logs, and modeling \u2014 the same depth honors students see, at a small-group pace. It also lays the groundwork for Geometry proof-writing and the quadratic and function work that dominates Algebra II, so students step into high school math with real momentum.",
-  "regents-algebra-1": "Regents Algebra 1 Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Algebra 1 blueprint. The arc covers linear equations and inequalities, systems, exponents, polynomials, factoring, quadratics, exponential functions, sequences, and statistics \u2014 the full Common Core list, with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. Fridays 5\u20137 PM on the Upper West Side, capped at 6 students.",
+  "regents-algebra-1": "Regents Algebra 1 Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Algebra 1 blueprint. The arc covers linear equations and inequalities, systems, exponents, polynomials, factoring, quadratics, exponential functions, sequences, and statistics \u2014 the full Common Core list, with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. New enrollment is closed. The curriculum remains available for reference.",
   "regents-geometry": "Regents Geometry & Trigonometry Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Geometry blueprint. The arc covers tools of geometry and constructions, rigid motions and congruence proofs, similarity and dilations, right-triangle trigonometry (sin, cos, tan and cofunctions), the laws of sines and cosines, circles and their angle-and-segment relationships, coordinate geometry, and area, surface area and volume of three-dimensional solids \u2014 with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. Fridays 5\u20137 PM on the Upper West Side, capped at 6 students.",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry is a two-part arc for Grades 7\u20138 (ages 12\u201314). Part A covers plane geometry end-to-end \u2014 angle relationships, triangle congruence, Pythagorean theorem, similarity, coordinate geometry, area and volume, and two-column proof. Part B is a full Trigonometry track \u2014 the unit circle, graphs of sine, cosine and tangent, identities, laws of sines and cosines, vectors, and polar coordinates. Together the two parts prepare students for the trigonometric and analytic-geometry work that shows up throughout Algebra II and Pre-Calculus, so nothing comes as a surprise later.",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II is our honors-track high school course for Grades 9\u201311 (ages 14\u201317). The syllabus covers quadratics, polynomials, radicals, exponentials, logarithms, sequences, and complex functions \u2014 delivered with the depth needed for the Algebra II Regents and the SAT. It also builds the function-analysis and transformation fluency that Pre-Calculus and Calculus lean on constantly, so students arrive in those courses with the algebra already in place.",
@@ -865,7 +864,7 @@ var COURSE_SCHEDULES = {
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
   "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"3:00 \u2013 5:00 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
-  "regents-algebra-1":             [{d:"Friday",t:"5:00 \u2013 7:00 PM"}],
+
   "regents-geometry":              [{d:"Friday",t:"5:00 \u2013 7:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
@@ -1024,6 +1023,7 @@ async function handleSendEvalEmail(request, env) {
   const testMode = !!body.test_mode;
   if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_parent_email" }, 400);
   if (!studentName) return jsonResponse({ error: "missing_student_name" }, 400);
+  if (courseSlug === "regents-algebra-1") return jsonResponse({ error: "course_not_available" }, 409);
   if (!EVAL_COURSES[courseSlug]) return jsonResponse({ error: "unknown_course" }, 400);
   const courseName = EVAL_COURSES[courseSlug];
   const email = buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName });
@@ -1324,6 +1324,7 @@ async function handleEnrollIntent(request, env) {
   var parentName  = String(body.parentName  || "").slice(0, 120);
   var parentEmail = String(body.parentEmail || "").slice(0, 160);
   var studentName = String(body.studentName || "").slice(0, 120);
+  if (course === "regents-algebra-1") return jsonResponse({ error: "course_not_available", message: "New enrollment for Regents Algebra 1 Prep is closed. Please view the current schedule." }, 409);
   if (!course || !day || !date) return jsonResponse({ error: "missing_fields" }, 400);
   var title = COURSE_TITLES[course] || course;
   var ref = course + "__" + day + "__" + date;
