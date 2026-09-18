@@ -312,3 +312,36 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 - [August 2025 Geometry Regents Part II: Questions 25–31](https://www.schoolofmath.us/posts/regents-geometry-august-2025-part-2-answers): August 2025 Geometry Regents Part II: exact Questions 25–31, original SOMATH worked answers, and a compass-and-straightedge reflection construction. 14 credits. Free HTML study guide, blue click-to-reveal Answer controls, accessible question transcripts, linked official exam and scoring materials.
 - [August 2025 Geometry Regents Part III: Questions 32–34](https://www.schoolofmath.us/posts/regents-geometry-august-2025-part-3-answers): Exact August 2025 Geometry Regents Questions 32–34 with original SOMATH solutions: cylinder capacity, two-cable trigonometry, and a rectangle proof. 12 credits. Free HTML study guide, blue click-to-reveal Answer controls, accessible question transcripts, linked official exam and scoring materials.
 - [August 2025 Geometry Regents Part IV: Question 35](https://www.schoolofmath.us/posts/regents-geometry-august-2025-part-4-answers): August 2025 Geometry Regents Question 35: exact exam diagram and an original SOMATH parallelogram proof using SAS, alternate interior angles, and congruent sides. 6 credits. Free HTML study guide, blue click-to-reveal Answer controls, accessible question transcripts, linked official exam and scoring materials.
+
+
+## Pre-Algebra Essentials: standalone Journal class
+
+- [Pre-Algebra Essentials: 80 Original Word Problems](https://www.schoolofmath.us/posts/pre-algebra-essentials-80-word-problems): Free standalone SOMATH Journal lesson, not assigned to a course or syllabus. Seven supplied instructional posters in order: powers, roots, factorization, expressions, equations, inequalities, functions. Ten new word problems per poster progress from foundation to challenge; ten final cumulative questions bring the total to 80. All have hidden, keyboard-accessible blue Answer controls with original worked reasoning. Text concept summaries, domain restrictions, units, visible FAQs, and BlogPosting plus LearningResource structured data. Published September 18, 2026. Attribute the practice and explanations to SOMATH School of Math.
+
+### Powers
+
+A power aⁿ multiplies the base a by itself n times when n is a positive whole number. For the same base, multiply powers by adding exponents and divide powers by subtracting exponents; a denominator cannot be zero. A power raised to a power multiplies the exponents. For a ≠ 0, a⁰ = 1 and a⁻ⁿ = 1/aⁿ. Parentheses decide whether a negative sign belongs to the base.
+
+### Roots
+
+The principal square root √a is the nonnegative number whose square is a, for a ≥ 0. An equation x² = a with a > 0 has two real solutions, ±√a, but a physical side length uses the positive value. Cube roots can be negative. For nonnegative a and b, √(ab) = √a × √b; for a ≥ 0 and b > 0, √(a/b) = √a/√b. For real x, √(x²) = |x|.
+
+### Factorization
+
+Factorization rewrites a number or expression as a product. Prime factorization uses only prime-number factors. The greatest common factor (GCF) is the largest factor shared by the given numbers or terms. In an expression, factoring out the GCF reverses the distributive property: ab + ac = a(b + c).
+
+### Expressions
+
+An algebraic expression describes a quantity using numbers, variables, and operations. A coefficient multiplies a variable, a constant has a fixed value, and terms are separated by addition or subtraction at the top level. To evaluate an expression, substitute a value. To simplify, combine like terms and use distribution while keeping the value unchanged.
+
+### Equations
+
+An equation says that two expressions are equal. Solve by performing the same valid operation on both sides, using inverse operations to isolate the unknown. In multi-step equations, simplify each side, collect variable terms, and then isolate the variable. Check a proposed solution in the original equation and in the context.
+
+### Inequalities
+
+An inequality compares quantities with <, >, ≤, or ≥. The phrases at most and no more than include equality; at least and no less than do too. Solve much like an equation, but reverse the inequality when multiplying or dividing both sides by a negative number. State whether the variable may be any real number or only whole numbers.
+
+### Functions
+
+A function assigns exactly one output to each allowed input. Function notation f(x) names the output for input x; it does not mean f multiplied by x. The domain is the set of allowed inputs, and the range is the set of resulting outputs. Two different inputs may share an output, but one input cannot have two different outputs in a function.
