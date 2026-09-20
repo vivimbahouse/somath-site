@@ -712,12 +712,18 @@
 
         <div class="section-band">Word problems 1&ndash;10 &mdash; all Hard</div>
 
-        <div class="practice-question">
+        <div class="practice-question" id="w1">
           <p><span class="practice-question__num">W1</span><span class="practice-question__level">Hard &middot; Box volume</span></p>
           <p class="practice-question__prompt">An open-top box is made from a square sheet of cardboard 12 in on each side by cutting a square of side \(x\) from each corner and folding up the sides. (a) Write a factored expression for the volume \(V(x)\) of the box in cubic inches. (b) Expand \(V(x)\) into standard polynomial form. (c) For what values of \(x\) does the box have zero volume? What do those values mean physically?</p>
           <details><summary></summary>
             <p class="answer">(a) \(V(x) = x(12 - 2x)^2\). (b) \(V(x) = 4x^3 - 48x^2 + 144x\). (c) Zero volume at \(x = 0\) and \(x = 6\).</p>
             <p class="why">The base of the finished box is a square of side \(12 - 2x\) (you cut \(x\) off each side), and the height is \(x\). So \(V = x(12 - 2x)^2\). Expanding: \((12 - 2x)^2 = 144 - 48x + 4x^2\), then multiply by \(x\) to get \(4x^3 - 48x^2 + 144x\). Factoring the standard form back: \(V(x) = 4x(x^2 - 12x + 36) = 4x(x - 6)^2\), zeros at \(x = 0\) (no cut, no height) and \(x = 6\) (cut removes the whole side, base disappears). Only \(0 &lt; x &lt; 6\) gives a real box.</p>
+            <figure style="margin:20px 0 8px;">
+              <a href="/assets/algebra-2-w1-flat-sheet-to-box.jpeg" target="_blank" rel="noopener" aria-label="View the W1 box-volume diagram at full size">
+                <img src="/assets/algebra-2-w1-flat-sheet-to-box.jpeg" alt="W1: Cut x-by-x squares from each corner of a 12-inch square sheet, then fold the sides to form a box of height x and base sides 12 minus 2x. Volume V(x) = x(12 - 2x)^2 = 4x^3 - 48x^2 + 144x; a usable box requires 0 less than x less than 6 inches." width="1024" height="1536" loading="lazy" decoding="async" style="display:block;width:100%;max-width:876px;height:auto;margin:0 auto;border-radius:8px;">
+              </a>
+              <figcaption style="margin-top:8px;font-size:0.875rem;">From a flat sheet to a box: cutting, folding, and finding the volume. Select the image to view it at full size.</figcaption>
+            </figure>
           </details>
         </div>
 
