@@ -1,3 +1,4 @@
+import { handleCheckin, runHomework } from "./_checkin.mjs";
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -99,7 +100,7 @@ async function verifyToken(token, secret) {
   }
 }
 __name(verifyToken, "verifyToken");
-async function sendResendEmail(env, { to, subject, html, replyTo }) {
+async function sendResendEmail(env, { to, subject, html, replyTo, idempotencyKey }) {
   if (!env.RESEND_API_KEY) {
     console.error("RESEND_API_KEY not set");
     return { ok: false, error: "email_not_configured" };
@@ -111,7 +112,8 @@ async function sendResendEmail(env, { to, subject, html, replyTo }) {
     method: "POST",
     headers: {
       Authorization: "Bearer " + env.RESEND_API_KEY,
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      ...(idempotencyKey ? { "Idempotency-Key": idempotencyKey } : {})
     },
     body: JSON.stringify(body)
   });
@@ -1962,6 +1964,11 @@ async function handleEnrollmentsApi(request, env) {
 __name(handleEnrollmentsApi, "handleEnrollmentsApi");
 
 var worker_default = {
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(runHomework(env, {
+      schedules: COURSE_SCHEDULES, titles: COURSE_TITLES, sendEmail: sendResendEmail
+    }));
+  },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     // ---------- Canonicalization (SEO) ----------
@@ -2129,6 +2136,18 @@ var worker_default = {
         return new Response(assetResp.body, { status: assetResp.status, statusText: assetResp.statusText, headers });
       }
     }
+    if (url.pathname === "/check-in") {
+      const page = await env.ASSETS.fetch(request);
+      const headers = new Headers(page.headers);
+      headers.set("Cache-Control", "no-store");
+      headers.set("X-Robots-Tag", "noindex, nofollow, noarchive");
+      headers.set("X-Frame-Options", "DENY");
+      return new Response(page.body, {status:page.status,headers});
+    }
+    if (url.pathname === "/api/checkin") return handleCheckin(request, env, {
+      schedules: COURSE_SCHEDULES, titles: COURSE_TITLES, listEnrollments: kvListEnrollments,
+      signToken, verifyToken, sendEmail: sendResendEmail
+    });
     if (url.pathname === "/api/request-pdf") return handleRequestPdf(request, env);
     if (url.pathname === "/api/verify-pdf") return handleVerifyPdf(request, env);
     if (url.pathname === "/api/download-pdf") return handleDownloadPdf(request, env);

@@ -1,4 +1,5 @@
 _worker.js
+_checkin.mjs
 wrangler.toml
 .assetsignore
 .git
