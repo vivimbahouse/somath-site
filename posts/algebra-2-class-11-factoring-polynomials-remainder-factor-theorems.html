@@ -191,6 +191,17 @@
         line-height: 1.6;
       }
       .practice-question .why strong { color: #0a3a5f; }
+      #w3 { scroll-margin-top: 180px; }
+      #w3 .answer p { margin: 0 0 10px; }
+      #w3 .answer p:last-child { margin-bottom: 0; }
+      #w3 .why + .why { margin-top: 12px; }
+      #w3 .math-step {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        padding: 3px 0;
+        margin: 4px 0;
+      }
       .section-band {
         margin: 28px 0 15px;
         padding: 13px 19px;
@@ -742,12 +753,37 @@
           </details>
         </div>
 
-        <div class="practice-question">
+        <div class="practice-question" id="w3">
           <p><span class="practice-question__num">W3</span><span class="practice-question__level">Hard &middot; Revenue</span></p>
           <p class="practice-question__prompt">A local bakery sells cupcakes. When priced at $4 each, they sell 200 per week. Each $1 increase in price loses them 20 sales per week. Let \(x\) be the number of $1 price increases. (a) Write a factored expression for weekly revenue \(R(x)\). (b) Expand to standard form. (c) At what values of \(x\) is revenue zero, and what do they mean?</p>
           <details><summary></summary>
-            <p class="answer">(a) \(R(x) = (4 + x)(200 - 20x)\) or equivalently \(20(4 + x)(10 - x)\). (b) \(R(x) = -20x^2 + 120x + 800\). (c) \(x = -4\) (price = $0, giveaway) and \(x = 10\) (price = $14, zero customers).</p>
-            <p class="why">Revenue = (price)(quantity) = \((4 + x)(200 - 20x)\). Factor 20 from the second factor: \(20(4 + x)(10 - x)\). Expand: \(20(40 - 4x + 10x - x^2) = 20(-x^2 + 6x + 40) = -20x^2 + 120x + 800\). Zeros of the factored form show the extremes; the vertex of the parabola (\(x = 3\), price $7) is where revenue is maximized \(= R(3) = 20(7)(7) = \$980\).</p>
+            <div class="answer">
+              <p>(a) Factored revenue:
+                <span class="math-step">\(R(x) = (4 + x)(200 - 20x)\)</span>
+                Equivalently:
+                <span class="math-step">\(R(x) = 20(4 + x)(10 - x)\)</span>
+              </p>
+              <p>(b) Standard form:
+                <span class="math-step">\(R(x) = -20x^2 + 120x + 800\)</span>
+              </p>
+              <p>(c) \(x = -4\): price = $0 (giveaway).<br>
+                \(x = 10\): price = $14 (zero customers).</p>
+            </div>
+            <p class="why"><strong>Set up revenue.</strong> Revenue = price &times; quantity:
+              <span class="math-step">\(R(x) = (4 + x)(200 - 20x)\)</span>
+              Factor 20 from the second factor:
+              <span class="math-step">\(R(x) = 20(4 + x)(10 - x)\)</span>
+            </p>
+            <p class="why"><strong>Expand one step at a time.</strong>
+              <span class="math-step">\(R(x) = 20(40 - 4x + 10x - x^2)\)</span>
+              Combine like terms:
+              <span class="math-step">\(R(x) = 20(-x^2 + 6x + 40)\)</span>
+              Distribute 20:
+              <span class="math-step">\(R(x) = -20x^2 + 120x + 800\)</span>
+            </p>
+            <p class="why"><strong>Interpret the zeros.</strong> The factored form gives \(x = -4\) (a $0 price) and \(x = 10\) (zero customers). The vertex is at \(x = 3\), corresponding to a $7 price and maximum weekly revenue:
+              <span class="math-step">\(R(3) = 20(7)(7) = \$980\)</span>
+            </p>
           </details>
         </div>
 
