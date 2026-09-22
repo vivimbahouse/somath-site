@@ -115,7 +115,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     const lessonKey=`lesson:${date}:${cls.id}`;
     const lesson=await get(env,lessonKey,{});
     let membership;
-    try { membership=await automaticRoster(env,cls,date,deps,now,b.action==="manage"&&b.refresh===true); }
+    try { membership=await automaticRoster(env,cls,date,deps,now,b.action==="manage"&&b.refresh===true,true); }
     catch(err){
       if(action!=="manage")return json({error:err.message},503);
       membership={students:[],issues:[],sync:{error:err.message}};
@@ -125,7 +125,10 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       if(lesson.closed) return json({error:"This class is closed for today."},409);
       const q=clean(b.query).toLocaleLowerCase();
       if(q.length<2) return json({students:[]});
-      return json({students:students.filter(s=>s.name.toLocaleLowerCase().includes(q)).slice(0,12).map(s=>({id:s.id,name:s.name,canCheckIn:s.active!==false}))});
+      const matches=students.filter(s=>s.name.toLocaleLowerCase().includes(q))
+        .sort((a,b)=>Number(b.active)-Number(a.active)||Number(a.makeup)-Number(b.makeup));
+      const seen=new Set(),unique=matches.filter(s=>{if(seen.has(s.personId))return false;seen.add(s.personId);return true;});
+      return json({students:unique.slice(0,12).map(s=>({id:s.id,name:s.name,canCheckIn:s.active!==false}))});
     }
     if(action==="checkin") {
       if(date!==today.date || lesson.closed) return json({error:"This class is not open for check-in."},409);
@@ -135,7 +138,9 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       const key=`attendance:${date}:${cls.id}:${s.id}`;
       const prior=await get(env,key);
       if(prior?.present) return json({ok:true,already:true,name:s.name,at:prior.at});
-      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,at:now.toISOString(),present:true};
+      const personPrior=(await list(env,`attendance:${date}:${cls.id}:`)).find(a=>a.personId===s.personId&&a.present);
+      if(personPrior)return json({ok:true,already:true,name:s.name,at:personPrior.at});
+      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,enrolledProgram:s.program,enrolledProgramTitle:s.programTitle,makeup:s.makeup,at:now.toISOString(),present:true};
       await put(env,key,record);
       return json({ok:true,already:false,name:s.name,at:record.at});
     }
@@ -156,7 +161,8 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     if(action==="manage") {
       const attendance=await list(env,`attendance:${date}:${cls.id}:`);
       const jobs=await list(env,`delivery:${date}:${cls.id}:`);
-      return json({students,attendance,lesson,jobs,sync:membership.sync,issues:membership.issues});
+      const classStudents=students.filter(s=>s.program===cls.slug||attendance.some(a=>a.studentId===s.id));
+      return json({students:classStudents,attendance,lesson,jobs,sync:membership.sync,issues:membership.issues});
     }
     if(action==="roster") {
       if(!Array.isArray(b.students)||b.students.length>100) return json({error:"Invalid roster."},400);
@@ -183,7 +189,11 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       if(!s)return json({error:"Student not found."},404);
       if(b.present===true && students.some(m=>m.id===s.id&&!m.active) && date===today.date)return json({error:"Please resolve this student's membership or attendance hold before marking present."},409);
       const key=`attendance:${date}:${cls.id}:${s.id}`,prior=await get(env,key);
-      await put(env,key,{date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString()});
+      if(b.present===true){
+        const duplicate=(await list(env,`attendance:${date}:${cls.id}:`)).find(a=>a.personId===s.personId&&a.studentId!==s.id&&a.present);
+        if(duplicate)return json({ok:true,already:true});
+      }
+      await put(env,key,{date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,enrolledProgram:prior?.enrolledProgram||s.program,enrolledProgramTitle:prior?.enrolledProgramTitle||s.programTitle,makeup:prior?.makeup??s.makeup??false,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString()});
       return json({ok:true});
     }
     return json({error:"Unknown action."},400);
@@ -205,7 +215,7 @@ export async function runHomework(env,deps,now=new Date()) {
     if(lesson.date!==today.date || !lesson.approved || lesson.closed || !linkOK(lesson.url))continue;
     const cls=classesFor(lesson.date,deps).find(c=>c.id===lesson.classId);
     if(!cls||today.minutes<cls.end+10)continue;
-    const students=(await automaticRoster(env,cls,lesson.date,deps,now)).students;
+    const students=(await automaticRoster(env,cls,lesson.date,deps,now,false,true)).students;
     for(const a of await list(env,`attendance:${lesson.date}:${cls.id}:`)) {
       if(!a.present)continue;
       const s=students.find(s=>s.id===a.studentId&&s.active!==false);

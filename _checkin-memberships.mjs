@@ -44,7 +44,7 @@ export async function loadStripeMemberships(env,now=new Date(),force=false) {
   }
   throw Error("Subscription list incomplete. Staff review required.");
 }
-export async function automaticRoster(env,cls,date,deps,now=new Date(),force=false) {
+export async function automaticRoster(env,cls,date,deps,now=new Date(),force=false,allPrograms=false) {
   const source=deps.getMemberships?await deps.getMemberships(env,now,force):await loadStripeMemberships(env,now,force);
   const calendar=deps.getCalendar?await deps.getCalendar(env,date):JSON.parse(await env.ENROLLMENTS.get("checkin:calendar-snapshot")||"null");
   const calendarFresh=calendar && Math.abs(now.getTime()-Date.parse(calendar.fetchedAt))<24*3600000;
@@ -68,13 +68,13 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
     const calendarPrograms=[...new Set(linked.map(e=>matchProgram(e.program)).filter(Boolean))];
     const slug=text(m.course_slug)||(calendarPrograms.length===1?calendarPrograms[0]:"");
     if(!name||!slug){issues.push({subscriptionId:s.id,reason:"student_or_program_missing"});continue;}
-    if(slug!==cls.slug)continue;
+    if(!allPrograms&&slug!==cls.slug)continue;
     const id=(await digest((s.customer?.id||s.id)+"|"+slug+"|"+name.toLowerCase())).slice(0,24);
     const override=JSON.parse(await env.ENROLLMENTS.get("checkin:member-override:"+id)||"null");
-    const expected=linked.some(e=>typeof e.start==="string" && new Date(e.start).toLocaleDateString("en-CA",{timeZone:"America/New_York"})===date);
+    const expected=slug===cls.slug&&linked.some(e=>typeof e.start==="string" && new Date(e.start).toLocaleDateString("en-CA",{timeZone:"America/New_York"})===date);
     const personId=(await digest((s.customer?.id||s.id)+"|"+name.toLowerCase())).slice(0,24);
     const member={id,personId,name,email:text(s.customer?.email||m.parent_email).toLowerCase(),active:eligibility==="eligible"&&override?.active!==false,held:override?.active===false,eligible:eligibility==="eligible",reason:eligibility,subscriptionId:s.id,
-      status:s.status,usualDay:text(m.weekly_day),expectedToday:expected,source:"Stripe",program:slug};
+      status:s.status,usualDay:text(m.weekly_day),expectedToday:expected,source:"Stripe",program:slug,programTitle:deps.titles[slug]||slug,makeup:slug!==cls.slug};
     const duplicate=students.findIndex(a=>a.id===id);
     if(duplicate<0)students.push(member);
     else if(member.eligible&&!students[duplicate].eligible)students[duplicate]=member;
