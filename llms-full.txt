@@ -354,3 +354,8 @@ A function assigns exactly one output to each allowed input. Function notation f
 ## Parenting and education opinion
 
 - [Before the Label: Raising Resilient Children](https://www.schoolofmath.us/posts/raising-resilient-children-before-the-label): SOMATH editorial published September 18, 2026. Advocates careful assessment, age-appropriate chores, clear boundaries, and supported learning from manageable setbacks. Distinguishes ordinary difficulties from genuine disabilities and states that chores do not replace condition-specific care. Medication at seven is not automatically negligent; treatment decisions require qualified clinical assessment and follow-up. Includes five parent FAQs and references to CDC, NICHD, and American Academy of Pediatrics parent guidance. Educational opinion, not individual medical advice or a clinically reviewed article.
+
+
+## Algebra II Class 12: polynomial zeros
+
+- [Algebra II Class 12: Zeros of Polynomials, the Rational Root Theorem & End Behavior](https://www.schoolofmath.us/posts/algebra-2-class-12-zeros-polynomials-rational-root-theorem-end-behavior): SOMATH lesson with eight supplied posters in order, explicit correction notes where needed, 25 original exercises and 10 progressively challenging word problems with hidden worked answers. Explains rational-zero candidates versus verified zeros, synthetic-division remainders, multiplicity, sign changes and leading-term end behavior. Published September 22, 2026. No calculus or optimization is required for the final set.
