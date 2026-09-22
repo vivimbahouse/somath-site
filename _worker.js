@@ -243,7 +243,9 @@ async function handleStudentEvaluation(request, env) {
   try { body = await request.json(); } catch (e) { return jsonResponse({ error: "invalid_body" }, 400); }
   const grade = String(body.grade || "").trim().slice(0, 40);
   const studentName = String(body.studentName || "").trim().slice(0, 80);
+  const parentName = String(body.parentName || "").trim().slice(0, 100);
   const parentEmail = String(body.parentEmail || "").trim().toLowerCase();
+  const parentPhone = String(body.parentPhone || "").trim();
   const totalCorrect = Number(body.totalCorrect);
   const totalQuestions = Number(body.totalQuestions);
   const overallPercent = Number(body.overallPercent);
@@ -262,7 +264,12 @@ async function handleStudentEvaluation(request, env) {
   const timingBand = String(timing.band || "").slice(0, 80);
   const timingNote = String(timing.note || "").slice(0, 400);
   if (!studentName) return jsonResponse({ error: "missing_name" }, 400);
+  if (!parentName) return jsonResponse({ error: "missing_parent_name", message: "Please enter the parent or guardian's full name." }, 400);
   if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_email" }, 400);
+  const phoneDigits = parentPhone.replace(/\D/g, "");
+  if (parentPhone.length > 40 || !/^\+?[\d\s().-]+$/.test(parentPhone) || phoneDigits.length < 10 || phoneDigits.length > 15) {
+    return jsonResponse({ error: "invalid_phone", message: "Please enter a valid parent or guardian phone number, including the area code (10–15 digits)." }, 400);
+  }
   if (!Number.isFinite(totalCorrect) || !Number.isFinite(totalQuestions)) return jsonResponse({ error: "invalid_score" }, 400);
 
   // ---- Evaluation gate: one submission per email+grade per 90 days ----
@@ -324,7 +331,9 @@ ${timingNote ? `<p style="margin:0 0 10px;">${escapeHtml(timingNote)}</p>` : ""}
   const gradeLabel = grade || "Math";
   const html = `<div style="font-family:system-ui,-apple-system,sans-serif;color:#1f3d2e;max-width:680px;">
 <h2 style="color:#1f3d2e;border-bottom:2px solid #c89a3a;padding-bottom:8px;">${escapeHtml(gradeLabel)} Math Diagnostic \u2014 ${escapeHtml(studentName)}</h2>
-<p><strong>Parent email:</strong> <a href="mailto:${escapeHtml(parentEmail)}">${escapeHtml(parentEmail)}</a><br/>
+<p><strong>Parent or guardian:</strong> ${escapeHtml(parentName)}<br/>
+<strong>Parent email:</strong> <a href="mailto:${escapeHtml(parentEmail)}">${escapeHtml(parentEmail)}</a><br/>
+<strong>Parent or guardian phone:</strong> <a href="tel:${parentPhone.startsWith("+") ? "+" : ""}${phoneDigits}">${escapeHtml(parentPhone)}</a><br/>
 <strong>Grade:</strong> ${escapeHtml(gradeLabel)}<br/>
 <strong>Submitted:</strong> ${new Date().toISOString()}<br/>
 <strong>Source:</strong> /student-evaluation</p>
@@ -389,6 +398,8 @@ ${missedRows ? `<h3 style="color:#c89a3a;">Questions to revisit</h3><ul style="p
           submittedAt: new Date().toISOString(),
           studentName,
           grade,
+          parentPhone,
+          parentName,
           overallPercent: Number.isFinite(overallPercent) ? overallPercent : null
         }), { expirationTtl: 90 * 24 * 60 * 60 });
       } catch (e) { console.log("eval gate write failed:", String(e)); }
@@ -401,7 +412,7 @@ ${missedRows ? `<h3 style="color:#c89a3a;">Questions to revisit</h3><ul style="p
     try {
       await env.ENROLLMENTS.put(gateKey, JSON.stringify({
         submittedAt: new Date().toISOString(),
-        studentName, grade,
+        studentName, grade, parentPhone, parentName,
         overallPercent: Number.isFinite(overallPercent) ? overallPercent : null
       }), { expirationTtl: 90 * 24 * 60 * 60 });
     } catch (e) { console.log("eval gate write failed:", String(e)); }

@@ -540,7 +540,9 @@
         const state = {
           stage: "intro",
           studentName: "",
+          parentName: "",
           parentEmail: "",
+          parentPhone: "",
           idx: 0,
           answers: new Array(QUESTIONS.length).fill(null),
           startedAt: null,
@@ -610,8 +612,17 @@
                   <input type="text" id="f-name-${GRADE_KEY}" placeholder="e.g. Maya" maxlength="60" autocomplete="given-name" />
                 </label>
                 <label class="full">
+                  Parent or guardian full name (required)
+                  <input type="text" id="f-parent-name-${GRADE_KEY}" placeholder="Parent or guardian's full name" maxlength="100" autocomplete="name" required />
+                </label>
+                <label class="full">
                   Parent email (the report will be emailed here)
                   <input type="email" id="f-email-${GRADE_KEY}" placeholder="parent@example.com" maxlength="120" autocomplete="email" />
+                </label>
+                <label class="full">
+                  Parent or guardian phone number (required)
+                  <input type="tel" id="f-phone-${GRADE_KEY}" placeholder="(212) 555-0123" maxlength="40" autocomplete="tel" inputmode="tel" required aria-describedby="phone-help-${GRADE_KEY}" />
+                  <span id="phone-help-${GRADE_KEY}">Include the area code; for international numbers, include the country code.</span>
                 </label>
               </div>
               <div style="margin-top: 22px; display:flex; justify-content:flex-end;">
@@ -623,11 +634,26 @@
           document.getElementById("start-btn-" + GRADE_KEY).addEventListener("click", async function(){
             const startBtn = document.getElementById("start-btn-" + GRADE_KEY);
             const name = document.getElementById("f-name-" + GRADE_KEY).value.trim();
+            const parentNameInput = document.getElementById("f-parent-name-" + GRADE_KEY);
+            const parentName = parentNameInput.value.trim();
             const email = document.getElementById("f-email-" + GRADE_KEY).value.trim();
+            const phoneInput = document.getElementById("f-phone-" + GRADE_KEY);
+            const phone = phoneInput.value.trim();
             const err = document.getElementById("intro-err-" + GRADE_KEY);
             err.style.display = "none";
             if (!name) { err.style.display="block"; err.textContent = "Please enter the student's first name."; return; }
+            if (!parentName) {
+              err.style.display="block"; err.textContent = "Please enter the parent or guardian's full name.";
+              parentNameInput.setAttribute("aria-invalid","true"); parentNameInput.focus(); return;
+            }
+            parentNameInput.removeAttribute("aria-invalid");
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.style.display="block"; err.textContent = "Please enter a valid parent email."; return; }
+            const phoneDigits = phone.replace(/\D/g, "");
+            if (!/^\+?[\d\s().-]+$/.test(phone) || phoneDigits.length < 10 || phoneDigits.length > 15) {
+              err.style.display="block"; err.textContent = "Please enter a valid parent or guardian phone number, including the area code (10–15 digits).";
+              phoneInput.setAttribute("aria-invalid", "true"); phoneInput.focus(); return;
+            }
+            phoneInput.removeAttribute("aria-invalid");
             // Pre-check: has this email already taken THIS grade in the last 90 days?
             startBtn.disabled = true;
             const origLabel = startBtn.textContent;
@@ -648,7 +674,9 @@
             startBtn.disabled = false;
             startBtn.textContent = origLabel;
             state.studentName = name;
+            state.parentName = parentName;
             state.parentEmail = email;
+            state.parentPhone = phone;
             state.stage = "quiz";
             state.idx = 0;
             state.startedAt = Date.now();
@@ -914,7 +942,9 @@
           const payload = {
             grade: GRADE_LABEL,
             studentName: state.studentName,
+            parentName: state.parentName,
             parentEmail: state.parentEmail,
+            parentPhone: state.parentPhone,
             totalCorrect: r.total,
             totalQuestions: QUESTIONS.length,
             overallPercent: r.pct,
