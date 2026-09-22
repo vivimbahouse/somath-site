@@ -2,6 +2,9 @@ name = "bitter-tooth-81ed"
 main = "_worker.js"
 compatibility_date = "2025-01-01"
 
+[vars]
+CHECKIN_AUTO_SEND = "false"
+
 [assets]
 directory = "."
 binding = "ASSETS"

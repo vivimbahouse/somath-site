@@ -70,7 +70,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       const key="auth:"+await hash(ip+Math.floor(now.getTime()/600000));
       const attempts=await get(env,key,0);
       if(attempts>=10) return json({error:"Too many attempts. Try again in ten minutes."},429);
-      if(b.password!==env.ADMIN_PASSWORD) {
+      if((b.password||request.headers.get("x-admin-password"))!==env.ADMIN_PASSWORD) {
         await env.ENROLLMENTS.put(P+key,JSON.stringify(attempts+1),{expirationTtl:660});
         return json({error:"Incorrect staff password."},401);
       }
