@@ -80,7 +80,12 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       return json({token,scope,expires:exp,date:today.date,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"});
     }
     const bearer=(request.headers.get("Authorization")||"").replace(/^Bearer /,"");
-    const session=await deps.verifyToken(bearer,env.ADMIN_PASSWORD);
+    // Trusted server integrations use the same private admin header as enrollment.
+    // Browser clients still use short-lived, scoped session tokens.
+    const adminHeader=request.headers.get("x-admin-password");
+    const session=adminHeader===env.ADMIN_PASSWORD
+      ? {aud:"somath-checkin",scope:"staff",exp:Math.floor(now.getTime()/1000)+60}
+      : await deps.verifyToken(bearer,env.ADMIN_PASSWORD);
     if(!session || session.aud!=="somath-checkin" || session.exp<=now.getTime()/1000 || !["staff","kiosk"].includes(session.scope) || (session.scope==="kiosk"&&session.date!==today.date)) return json({error:"Please ask staff to unlock this tablet again."},401);
     const staff=session.scope==="staff";
     const date=staff && b.date ? b.date : today.date;
