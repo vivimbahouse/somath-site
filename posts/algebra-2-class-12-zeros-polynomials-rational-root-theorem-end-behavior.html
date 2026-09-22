@@ -101,7 +101,48 @@
 <h3>Try it yourself: five questions, increasing difficulty</h3>
 <div class="practice-question" id="q21"><p class="question-label">Q21 <span>Practice 1 of 5 · Foundation</span></p><p>Given that \(1\) is a zero of \(x^3+2x^2-13x+10\), divide synthetically and find all zeros.</p><details><summary>Answer</summary><div class="answer"><p><strong>Quotient: \(x^2+3x-10\). Zeros: \(1,-5,2\).</strong></p><ol><li>Use \(r=1\) and coefficients \(1,2,-13,10\). The bottom row is \(1,3,-10,0\).</li><li>Factor the quotient: \(x^2+3x-10=(x+5)(x-2)\).</li><li>The complete factorization is \((x-1)(x+5)(x-2)\).</li></ol></div></details></div>
 <div class="practice-question" id="q22"><p class="question-label">Q22 <span>Practice 2 of 5 · Build confidence</span></p><p>Divide \(x^3-4x^2-9x+36\) by \(x+3\), then find all zeros.</p><details><summary>Answer</summary><div class="answer"><p><strong>Quotient: \(x^2-7x+12\). Zeros: \(-3,3,4\).</strong></p><ol><li>Use \(r=-3\), not \(3\). Starting with \(1,-4,-9,36\), the bottom row is \(1,-7,12,0\).</li><li>The quotient factors as \((x-3)(x-4)\). Including \(x+3\) gives all three zeros.</li></ol></div></details></div>
-<div class="practice-question" id="q23"><p class="question-label">Q23 <span>Practice 3 of 5 · Apply</span></p><p>Use synthetic division with \(r=\frac12\) to factor \(2x^3-3x^2-5x+3\) completely.</p><details><summary>Answer</summary><div class="answer"><p><strong>\((2x-1)(x^2-x-3)\); zeros \(\frac12,\frac{1+\sqrt{13}}2,\frac{1-\sqrt{13}}2\).</strong></p><ol><li>With coefficients \(2,-3,-5,3\), the synthetic bottom row is \(2,-2,-6,0\).</li><li>Thus \(P(x)=(x-\tfrac12)(2x^2-2x-6)=(2x-1)(x^2-x-3)\).</li><li>Apply the quadratic formula to \(x^2-x-3=0\).</li></ol></div></details></div>
+<div class="practice-question" id="q23"><p class="question-label">Q23 <span>Practice 3 of 5 · Apply</span></p><p>Use synthetic division with \(r=\frac12\) to factor \(2x^3-3x^2-5x+3\) completely.</p><details><summary>Answer</summary><div class="answer"><p><strong>Factorization with rational coefficients:</strong><br>\((2x-1)(x^2-x-3)\).</p>
+<p><strong>Zeros:</strong> \(\frac12\), \(\frac{1+\sqrt{13}}2\), and \(\frac{1-\sqrt{13}}2\).</p>
+<h4>Set up synthetic division</h4>
+<p>Let \(P(x)=2x^3-3x^2-5x+3\). We are given \(r=\frac12\), so synthetic division uses the divisor <strong>\(x-\frac12\)</strong>. Use \(+\frac12\) in the calculation, not \(-\frac12\).</p>
+<p>Write the coefficients in descending powers: \(2,-3,-5,3\). No powers are missing, so no zero placeholders are needed.</p>
+<h4>Bring down, multiply, and add</h4>
+<ol>
+<li><strong>Bring down</strong> the first coefficient, \(2\).</li>
+<li><strong>Multiply:</strong> \(\frac12(2)=1\).<br><strong>Add:</strong> \(-3+1=-2\).</li>
+<li><strong>Multiply:</strong> \(\frac12(-2)=-1\).<br><strong>Add:</strong> \(-5+(-1)=-6\).</li>
+<li><strong>Multiply:</strong> \(\frac12(-6)=-3\).<br><strong>Add:</strong> \(3+(-3)=0\).</li>
+</ol>
+<div class="table-scroll"><table class="end-table"><caption>Synthetic division using \(r=\frac12\)</caption><thead><tr><th scope="col">Row</th><th scope="col">\(x^3\)</th><th scope="col">\(x^2\)</th><th scope="col">\(x\)</th><th scope="col">Constant</th></tr></thead><tbody>
+<tr><th scope="row">Original coefficients</th><td>2</td><td>−3</td><td>−5</td><td>3</td></tr>
+<tr><th scope="row">Multiply by ½</th><td>—</td><td>1</td><td>−1</td><td>−3</td></tr>
+<tr><th scope="row">Bottom row</th><td><strong>2</strong></td><td><strong>−2</strong></td><td><strong>−6</strong></td><td><strong>0</strong></td></tr>
+</tbody></table></div>
+<p>The <strong>last entry is the remainder</strong>, not another coefficient of the quotient. Since it is zero, \(x-\frac12\) is a factor and \(\frac12\) is a zero.</p>
+<h4>Read the quotient correctly</h4>
+<p>Dividing a cubic by a linear expression produces a quadratic. The first three bottom-row numbers, \(2,-2,-6\), therefore give the quotient:</p>
+<p>\(2x^2-2x-6\).</p>
+<p>So the division tells us:</p>
+<p>\(P(x)=(x-\frac12)(2x^2-2x-6)\).</p>
+<p>Factor \(2\) out of the quadratic:</p>
+<p>\(P(x)=2(x-\frac12)(x^2-x-3)\).</p>
+<p>Because \(2(x-\frac12)=2x-1\), this becomes:</p>
+<p>\(\boxed{P(x)=(2x-1)(x^2-x-3)}\).</p>
+<p><strong>Watch the factor of two:</strong> changing \(x-\frac12\) into \(2x-1\) uses the \(2\) taken out of the quadratic. Do not keep an extra factor of two or lose it entirely.</p>
+<h4>Find the remaining zeros</h4>
+<p>The first factor gives \(2x-1=0\), so \(x=\frac12\). For the other factor, solve \(x^2-x-3=0\).</p>
+<p>No integer pair multiplies to \(-3\) and adds to \(-1\). Use the quadratic formula with \(a=1\), \(b=-1\), and \(c=-3\):</p>
+<p>\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\).</p>
+<p>Calculate its parts separately:</p>
+<ul><li>\(-b=1\).</li><li>\(b^2-4ac=1+12=13\).</li><li>\(2a=2\).</li></ul>
+<p>Therefore, \(x=\frac{1\pm\sqrt{13}}2\). The plus and minus give two different irrational zeros.</p>
+<h4>What does “factor completely” mean here?</h4>
+<p>With <strong>rational coefficients</strong>, \((2x-1)(x^2-x-3)\) is fully factored. The remaining quadratic has irrational roots, so it cannot split into rational linear factors.</p>
+<p>Over the <strong>real numbers</strong>, it splits further. Let \(\alpha=\frac{1+\sqrt{13}}2\) and \(\beta=\frac{1-\sqrt{13}}2\). The complete linear factorization is:</p>
+<p>\(\boxed{P(x)=(2x-1)(x-\alpha)(x-\beta)}\).</p>
+<p>That is, the last two factors are \(x-\frac{1+\sqrt{13}}2\) and \(x-\frac{1-\sqrt{13}}2\).</p>
+<p><strong>Quick check:</strong> Expanding \((2x-1)(x^2-x-3)\) gives \(2x^3-3x^2-5x+3\), the original polynomial.</p>
+</div></details></div>
 <div class="practice-question" id="q24"><p class="question-label">Q24 <span>Practice 4 of 5 · Reason</span></p><p>Given that \(2\) is a zero of \(x^4-2x^3+9x^2-18x\), divide by \(x-2\) and find all real and nonreal zeros.</p><details><summary>Answer</summary><div class="answer"><p><strong>Quotient: \(x^3+9x\). Zeros: \(2,0,3i,-3i\).</strong></p><ol><li>Include the missing constant: coefficients \(1,-2,9,-18,0\). The bottom row is \(1,0,9,0,0\).</li><li>Factor the quotient as \(x(x^2+9)\). This gives zero and the two nonreal zeros \(\pm3i\), in addition to the original zero two.</li></ol></div></details></div>
 <div class="practice-question" id="q25"><p class="question-label">Q25 <span>Practice 5 of 5 · Challenge</span></p><p>Use synthetic division twice to show that \(3\) is a repeated zero of \(x^4-5x^3+x^2+21x-18\). Then find all zeros and their multiplicities.</p><details><summary>Answer</summary><div class="answer"><p><strong>\(P(x)=(x-3)^2(x+2)(x-1)\). Zero \(3\) is double; \(-2\) and \(1\) are simple.</strong></p><ol><li>The first division by \(x-3\) gives bottom row \(1,-2,-5,6,0\), so the quotient is \(x^3-2x^2-5x+6\).</li><li>Divide again by \(x-3\): bottom row \(1,1,-2,0\), giving \(x^2+x-2=(x+2)(x-1)\).</li><li>The two zero remainders establish the repeated factor. The remaining quadratic is nonzero at three, so the multiplicity is exactly two.</li></ol></div></details></div>
 </section>
