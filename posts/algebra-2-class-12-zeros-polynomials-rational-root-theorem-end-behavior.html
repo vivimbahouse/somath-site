@@ -185,7 +185,59 @@
 <p><strong>Graph connection:</strong> Only the real zeros give x-intercepts on the usual real-coordinate graph: \((0,0)\) and \((2,0)\). The nonreal zeros do not give additional x-intercepts.</p>
 <p><strong>Quick check:</strong> Since \(x(x^2+9)=x^3+9x\), multiplying by \(x-2\) gives \(x^4-2x^3+9x^2-18x\), exactly the original polynomial.</p>
 </div></details></div>
-<div class="practice-question" id="q25"><p class="question-label">Q25 <span>Practice 5 of 5 · Challenge</span></p><p>Use synthetic division twice to show that \(3\) is a repeated zero of \(x^4-5x^3+x^2+21x-18\). Then find all zeros and their multiplicities.</p><details><summary>Answer</summary><div class="answer"><p><strong>\(P(x)=(x-3)^2(x+2)(x-1)\). Zero \(3\) is double; \(-2\) and \(1\) are simple.</strong></p><ol><li>The first division by \(x-3\) gives bottom row \(1,-2,-5,6,0\), so the quotient is \(x^3-2x^2-5x+6\).</li><li>Divide again by \(x-3\): bottom row \(1,1,-2,0\), giving \(x^2+x-2=(x+2)(x-1)\).</li><li>The two zero remainders establish the repeated factor. The remaining quadratic is nonzero at three, so the multiplicity is exactly two.</li></ol></div></details></div>
+<div class="practice-question" id="q25"><p class="question-label">Q25 <span>Practice 5 of 5 · Challenge</span></p><p>Use synthetic division twice to show that \(3\) is a repeated zero of \(x^4-5x^3+x^2+21x-18\). Then find all zeros and their multiplicities.</p><details><summary>Answer</summary><div class="answer"><p><strong>Complete factorization:</strong><br>\(\boxed{P(x)=(x-3)^2(x+2)(x-1)}\).</p>
+<p><strong>Zeros and multiplicities:</strong> \(3\) has multiplicity \(2\); \(-2\) and \(1\) each have multiplicity \(1\).</p>
+<h4>What does a repeated zero mean?</h4>
+<p>A zero is repeated when its corresponding factor appears more than once. To show that \(3\) is repeated, we must show that <strong>two factors of \(x-3\)</strong> divide the polynomial with no remainder.</p>
+<p>Let \(P(x)=x^4-5x^3+x^2+21x-18\). We will divide by \(x-3\), then divide the <strong>quotient</strong> by \(x-3\) again. Repeating the division on the original polynomial would not prove repetition.</p>
+<h4>First synthetic division: use \(r=3\)</h4>
+<p>The divisor is \(x-3\), so use \(+3\) in synthetic division. Write the coefficients \(1,-5,1,21,-18\), including the coefficient \(1\) of \(x^2\).</p>
+<ol>
+<li><strong>Bring down</strong> \(1\).</li>
+<li><strong>Multiply:</strong> \(3(1)=3\).<br><strong>Add:</strong> \(-5+3=-2\).</li>
+<li><strong>Multiply:</strong> \(3(-2)=-6\).<br><strong>Add:</strong> \(1+(-6)=-5\).</li>
+<li><strong>Multiply:</strong> \(3(-5)=-15\).<br><strong>Add:</strong> \(21+(-15)=6\).</li>
+<li><strong>Multiply:</strong> \(3(6)=18\).<br><strong>Add:</strong> \(-18+18=0\).</li>
+</ol>
+<div class="table-scroll"><table class="end-table"><caption>First division by \(x-3\)</caption><tbody>
+<tr><th scope="row">Start</th><td>1</td><td>−5</td><td>1</td><td>21</td><td>−18</td></tr>
+<tr><th scope="row">×3</th><td>—</td><td>3</td><td>−6</td><td>−15</td><td>18</td></tr>
+<tr><th scope="row">Result</th><td><strong>1</strong></td><td><strong>−2</strong></td><td><strong>−5</strong></td><td><strong>6</strong></td><td><strong>0</strong></td></tr>
+</tbody></table></div>
+<p>The last entry, \(0\), is the remainder. The first four entries give the cubic quotient \(x^3-2x^2-5x+6\). Therefore:</p>
+<p>\(P(x)=(x-3)(x^3-2x^2-5x+6)\).</p>
+<p>We have found <strong>one</strong> factor of \(x-3\). Now we must check whether another is hidden inside the quotient.</p>
+<h4>Second synthetic division: divide the quotient</h4>
+<p>Use \(r=3\) again, but start with the <strong>new coefficients</strong> \(1,-2,-5,6\). These belong to \(x^3-2x^2-5x+6\), not the original polynomial.</p>
+<ol>
+<li><strong>Bring down</strong> \(1\).</li>
+<li><strong>Multiply:</strong> \(3(1)=3\).<br><strong>Add:</strong> \(-2+3=1\).</li>
+<li><strong>Multiply:</strong> \(3(1)=3\).<br><strong>Add:</strong> \(-5+3=-2\).</li>
+<li><strong>Multiply:</strong> \(3(-2)=-6\).<br><strong>Add:</strong> \(6+(-6)=0\).</li>
+</ol>
+<div class="table-scroll"><table class="end-table"><caption>Second division by \(x-3\), using the first quotient</caption><tbody>
+<tr><th scope="row">Start</th><td>1</td><td>−2</td><td>−5</td><td>6</td></tr>
+<tr><th scope="row">×3</th><td>—</td><td>3</td><td>3</td><td>−6</td></tr>
+<tr><th scope="row">Result</th><td><strong>1</strong></td><td><strong>1</strong></td><td><strong>−2</strong></td><td><strong>0</strong></td></tr>
+</tbody></table></div>
+<p>Again, the remainder is zero. The quotient is now the quadratic \(x^2+x-2\), so:</p>
+<p>\(P(x)=(x-3)(x-3)(x^2+x-2)\).</p>
+<p>Writing the two identical factors as a power gives:</p>
+<p>\(P(x)=(x-3)^2(x^2+x-2)\).</p>
+<h4>Factor the quadratic and find all zeros</h4>
+<p>To factor \(x^2+x-2\), find two integers whose product is \(-2\) and whose sum is \(1\). They are \(2\) and \(-1\), so:</p>
+<p>\(x^2+x-2=(x+2)(x-1)\).</p>
+<p>The complete factorization is therefore:</p>
+<p>\(\boxed{P(x)=(x-3)^2(x+2)(x-1)}\).</p>
+<p>Set each factor equal to zero:</p>
+<ul><li>\(x-3=0\) gives <strong>\(x=3\)</strong>. The factor is squared, so this zero has multiplicity \(2\).</li><li>\(x+2=0\) gives <strong>\(x=-2\)</strong>. Its factor appears once, so its multiplicity is \(1\).</li><li>\(x-1=0\) gives <strong>\(x=1\)</strong>. Its factor appears once, so its multiplicity is \(1\).</li></ul>
+<h4>Why is the multiplicity of \(3\) exactly two?</h4>
+<p>The two successful divisions prove that the multiplicity is <strong>at least two</strong>. To rule out a third factor of \(x-3\), substitute \(3\) into the remaining quadratic:</p>
+<p>\(3^2+3-2=9+3-2=10\).</p>
+<p>Because \(10\ne0\), the remaining quadratic has no factor of \(x-3\). Thus the multiplicity is <strong>exactly two</strong>, not three or four.</p>
+<p><strong>Final check:</strong> The multiplicities add to \(2+1+1=4\), matching the polynomial's degree. There are three distinct zeros, but four zeros when counted with multiplicity.</p>
+<p><strong>Graph connection:</strong> The graph touches the x-axis and turns at \(x=3\), because the multiplicity is even. It crosses at \(x=-2\) and \(x=1\), because those multiplicities are odd.</p>
+</div></details></div>
 </section>
 <section class="topic" id="multiplicity"><h2>6. Read multiplicity at each zero</h2><figure class="poster"><a href="/assets/blog/algebra-2-class-12/poster-6.webp" target="_blank" rel="noopener" aria-label="Open poster 6 at full size"><img src="/assets/blog/algebra-2-class-12/poster-6.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="SOMATH Algebra II Class 12 poster 6: Read multiplicity at each zero."></a><figcaption>Poster 6 of 8. Select the image to enlarge it.</figcaption></figure>
 <aside class="poster-correction"><strong>Sketch-reading note:</strong> For the first displayed example, \((x-2)^2(x+1)\), the degree is three with a positive leading coefficient, so the far-left tail must point down. Treat the poster sketches as illustrations of local crossing/touching, not precise full plots. “Higher multiplicity crosses” applies only when that multiplicity is odd.</aside>
