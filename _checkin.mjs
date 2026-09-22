@@ -1,4 +1,5 @@
 // Private check-in and homework service. This module is excluded from static assets.
+import { automaticRoster } from "./_checkin-memberships.mjs";
 const TZ = "America/New_York";
 const P = "checkin:";
 const json = (body, status = 200) => new Response(JSON.stringify(body), {status, headers:{
@@ -84,13 +85,20 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     const staff=session.scope==="staff";
     const date=staff && b.date ? b.date : today.date;
     if(!validDate(date)) return json({error:"Invalid class date."},400);
+    if(action==="calendar-sync") {
+      if(!staff)return json({error:"Staff access required."},403);
+      if(b.calendarId!=="hello@schoolofmath.us"||!Array.isArray(b.events)||b.events.length>300)return json({error:"Invalid SOMATH calendar snapshot."},400);
+      await put(env,"calendar-snapshot",{fetchedAt:now.toISOString(),calendarId:b.calendarId,events:b.events});
+      return json({ok:true});
+    }
     const classes=classesFor(date,deps);
     if(action==="classes") {
       const decorated=[];
       for(const cls of classes) {
         const assignment=await get(env,`lesson:${date}:${cls.id}`,{});
         if(!staff && assignment.closed) continue;
-        decorated.push({...cls,closed:!!assignment.closed});
+        const arrivals=staff?await list(env,`attendance:${date}:${cls.id}:`):[];
+        decorated.push({...cls,closed:!!assignment.closed,presentCount:arrivals.filter(a=>a.present).length});
       }
       return json({date,classes:decorated,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"});
     }
@@ -98,41 +106,61 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     if(!cls) return json({error:"Class not scheduled for this date."},400);
     const lessonKey=`lesson:${date}:${cls.id}`;
     const lesson=await get(env,lessonKey,{});
-    const students=await roster(env,cls.id);
+    let membership;
+    try { membership=await automaticRoster(env,cls,date,deps,now,b.action==="manage"&&b.refresh===true); }
+    catch(err){
+      if(action!=="manage")return json({error:err.message},503);
+      membership={students:[],issues:[],sync:{error:err.message}};
+    }
+    const students=membership.students;
     if(action==="search") {
       if(lesson.closed) return json({error:"This class is closed for today."},409);
       const q=clean(b.query).toLocaleLowerCase();
       if(q.length<2) return json({students:[]});
-      return json({students:students.filter(s=>s.active!==false&&s.name.toLocaleLowerCase().includes(q)).slice(0,12).map(s=>({id:s.id,name:s.name}))});
+      return json({students:students.filter(s=>s.name.toLocaleLowerCase().includes(q)).slice(0,12).map(s=>({id:s.id,name:s.name,canCheckIn:s.active!==false}))});
     }
     if(action==="checkin") {
       if(date!==today.date || lesson.closed) return json({error:"This class is not open for check-in."},409);
-      const s=students.find(s=>s.id===b.studentId&&s.active!==false);
+      const s=students.find(s=>s.id===b.studentId);
       if(!s) return json({error:"Name not found. Please ask your teacher."},404);
+      if(!s.active) return json({error:"Please see the front desk.",frontDesk:true},409);
       const key=`attendance:${date}:${cls.id}:${s.id}`;
       const prior=await get(env,key);
       if(prior?.present) return json({ok:true,already:true,name:s.name,at:prior.at});
-      const record={date,classId:cls.id,studentId:s.id,name:s.name,at:now.toISOString(),present:true};
+      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,at:now.toISOString(),present:true};
       await put(env,key,record);
       return json({ok:true,already:false,name:s.name,at:record.at});
     }
     if(!staff) return json({error:"Staff access required."},403);
+    if(action==="notes" || action==="add-note") {
+      const old=await get(env,`attendance:${date}:${cls.id}:${b.studentId}`);
+      const student=students.find(s=>s.id===b.studentId)||(old?{id:old.studentId,personId:old.personId,name:old.name}:null);
+      if(!student?.personId)return json({error:"Student identity could not be verified for memos."},404);
+      if(action==="add-note"){
+        const body=clean(b.body,2000),author=clean(b.author,80);
+        if(!body||!author)return json({error:"Enter your name and a memo."},400);
+        const id=crypto.randomUUID();
+        await put(env,`memo:${student.personId}:${id}`,{id,personId:student.personId,name:student.name,body,author,createdAt:now.toISOString(),classId:cls.id,classDate:date});
+      }
+      const notes=(await list(env,`memo:${student.personId}:`)).sort((a,b)=>b.createdAt.localeCompare(a.createdAt));
+      return json({student:{id:student.id,name:student.name},notes});
+    }
     if(action==="manage") {
       const attendance=await list(env,`attendance:${date}:${cls.id}:`);
       const jobs=await list(env,`delivery:${date}:${cls.id}:`);
-      return json({students,attendance,lesson,jobs,candidates:await candidates(env,cls,date,deps)});
+      return json({students,attendance,lesson,jobs,sync:membership.sync,issues:membership.issues});
     }
     if(action==="roster") {
       if(!Array.isArray(b.students)||b.students.length>100) return json({error:"Invalid roster."},400);
       const normalized=[],seen=new Set();
       for(const s of b.students) {
-        const name=clean(s.name),email=clean(s.email,180).toLowerCase();
-        if(!name|| (email&&!emailOK(email)))return json({error:"Each student needs a name and a valid parent email, or leave email blank."},400);
-        const id=/^[a-f0-9]{24}$/.test(s.id||"")?s.id:(await hash(name.toLowerCase()+"|"+email)).slice(0,24);
+        const member=students.find(m=>m.id===s.id);
+        if(!member)return json({error:"Only Stripe-linked members can be changed here."},400);
+        const {id,name,email}=member;
         if(seen.has(id))return json({error:"Duplicate student in roster."},400);seen.add(id);
         normalized.push({id,name,email,active:s.active!==false});
+        await put(env,"member-override:"+id,{active:s.active!==false,updatedAt:now.toISOString()});
       }
-      await put(env,"roster:"+cls.id,normalized);
       return json({ok:true,students:normalized});
     }
     if(action==="lesson") {
@@ -142,10 +170,12 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       await put(env,lessonKey,record);return json({ok:true,lesson:record});
     }
     if(action==="attendance") {
-      const s=students.find(s=>s.id===b.studentId);
+      const existing=await get(env,`attendance:${date}:${cls.id}:${b.studentId}`);
+      const s=students.find(s=>s.id===b.studentId)|| (existing?{id:existing.studentId,personId:existing.personId,name:existing.name,email:existing.parentEmail,subscriptionId:existing.subscriptionId}:null);
       if(!s)return json({error:"Student not found."},404);
+      if(b.present===true && students.some(m=>m.id===s.id&&!m.active) && date===today.date)return json({error:"Please resolve this student's membership or attendance hold before marking present."},409);
       const key=`attendance:${date}:${cls.id}:${s.id}`,prior=await get(env,key);
-      await put(env,key,{date,classId:cls.id,studentId:s.id,name:s.name,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString()});
+      await put(env,key,{date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString()});
       return json({ok:true});
     }
     return json({error:"Unknown action."},400);
@@ -167,7 +197,7 @@ export async function runHomework(env,deps,now=new Date()) {
     if(lesson.date!==today.date || !lesson.approved || lesson.closed || !linkOK(lesson.url))continue;
     const cls=classesFor(lesson.date,deps).find(c=>c.id===lesson.classId);
     if(!cls||today.minutes<cls.end+10)continue;
-    const students=await roster(env,cls.id);
+    const students=(await automaticRoster(env,cls,lesson.date,deps,now)).students;
     for(const a of await list(env,`attendance:${lesson.date}:${cls.id}:`)) {
       if(!a.present)continue;
       const s=students.find(s=>s.id===a.studentId&&s.active!==false);

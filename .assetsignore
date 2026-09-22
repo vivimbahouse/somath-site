@@ -1,5 +1,6 @@
 _worker.js
 _checkin.mjs
+_checkin-memberships.mjs
 wrangler.toml
 .assetsignore
 .git
