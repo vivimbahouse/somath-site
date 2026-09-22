@@ -143,7 +143,48 @@
 <p>That is, the last two factors are \(x-\frac{1+\sqrt{13}}2\) and \(x-\frac{1-\sqrt{13}}2\).</p>
 <p><strong>Quick check:</strong> Expanding \((2x-1)(x^2-x-3)\) gives \(2x^3-3x^2-5x+3\), the original polynomial.</p>
 </div></details></div>
-<div class="practice-question" id="q24"><p class="question-label">Q24 <span>Practice 4 of 5 · Reason</span></p><p>Given that \(2\) is a zero of \(x^4-2x^3+9x^2-18x\), divide by \(x-2\) and find all real and nonreal zeros.</p><details><summary>Answer</summary><div class="answer"><p><strong>Quotient: \(x^3+9x\). Zeros: \(2,0,3i,-3i\).</strong></p><ol><li>Include the missing constant: coefficients \(1,-2,9,-18,0\). The bottom row is \(1,0,9,0,0\).</li><li>Factor the quotient as \(x(x^2+9)\). This gives zero and the two nonreal zeros \(\pm3i\), in addition to the original zero two.</li></ol></div></details></div>
+<div class="practice-question" id="q24"><p class="question-label">Q24 <span>Practice 4 of 5 · Reason</span></p><p>Given that \(2\) is a zero of \(x^4-2x^3+9x^2-18x\), divide by \(x-2\) and find all real and nonreal zeros.</p><details><summary>Answer</summary><div class="answer"><p><strong>Quotient:</strong> \(x^3+9x\).<br><strong>Real zeros:</strong> \(0\) and \(2\).<br><strong>Nonreal zeros:</strong> \(3i\) and \(-3i\).</p>
+<h4>Set up the division, including the missing term</h4>
+<p>Let \(P(x)=x^4-2x^3+9x^2-18x\). We are told that \(2\) is a zero, so the Factor Theorem tells us that \(x-2\) is a factor.</p>
+<p>To divide by \(x-2\), use <strong>\(+2\)</strong> in synthetic division. Write the polynomial with its constant term included:</p>
+<p>\(x^4-2x^3+9x^2-18x+0\).</p>
+<p>The coefficients are therefore \(1,-2,9,-18,0\). <strong>Do not leave out the last zero:</strong> it holds the place of the missing constant term.</p>
+<h4>Bring down, multiply, and add</h4>
+<ol>
+<li><strong>Bring down</strong> the first coefficient, \(1\).</li>
+<li><strong>Multiply:</strong> \(2(1)=2\).<br><strong>Add:</strong> \(-2+2=0\).</li>
+<li><strong>Multiply:</strong> \(2(0)=0\).<br><strong>Add:</strong> \(9+0=9\).</li>
+<li><strong>Multiply:</strong> \(2(9)=18\).<br><strong>Add:</strong> \(-18+18=0\).</li>
+<li><strong>Multiply:</strong> \(2(0)=0\).<br><strong>Add:</strong> \(0+0=0\).</li>
+</ol>
+<div class="table-scroll"><table class="end-table"><caption>Synthetic division using \(r=2\): multiply each new bottom entry by two, then add in the next column.</caption><tbody>
+<tr><th scope="row">Start</th><td>1</td><td>−2</td><td>9</td><td>−18</td><td>0</td></tr>
+<tr><th scope="row">×2</th><td>—</td><td>2</td><td>0</td><td>18</td><td>0</td></tr>
+<tr><th scope="row">Result</th><td><strong>1</strong></td><td><strong>0</strong></td><td><strong>9</strong></td><td><strong>0</strong></td><td><strong>0</strong></td></tr>
+</tbody></table></div>
+<h4>Separate the quotient from the remainder</h4>
+<p>The bottom row is \(1,0,9,0,0\). The <strong>last</strong> zero is the remainder; the first four entries are the quotient's coefficients.</p>
+<p>Dividing a fourth-degree polynomial by a first-degree polynomial gives a third-degree quotient. Read the first four entries as:</p>
+<p>\(1x^3+0x^2+9x+0=x^3+9x\).</p>
+<p>The zero coefficient of \(x^2\) must keep its place. The quotient is <strong>not</strong> \(x^3+9x^2\).</p>
+<p>Because the remainder is zero, we have:</p>
+<p>\(P(x)=(x-2)(x^3+9x)\).</p>
+<h4>Factor the quotient and solve each factor</h4>
+<p>Both terms in \(x^3+9x\) contain \(x\), so factor it out:</p>
+<p>\(x^3+9x=x(x^2+9)\).</p>
+<p>The original polynomial is now:</p>
+<p>\(P(x)=x(x-2)(x^2+9)\).</p>
+<p>Set the product equal to zero. A product is zero only when at least one factor is zero, so solve each factor separately:</p>
+<ul><li>\(x=0\) gives the zero <strong>\(0\)</strong>.</li><li>\(x-2=0\) gives the zero <strong>\(2\)</strong>.</li><li>\(x^2+9=0\) gives \(x^2=-9\), which requires nonreal numbers.</li></ul>
+<h4>Why the remaining zeros are \(3i\) and \(-3i\)</h4>
+<p>No real number has a negative square. The imaginary unit \(i\) is defined by \(i^2=-1\), so:</p>
+<p>\((3i)^2=9i^2=-9\).</p>
+<p>Also, \((-3i)^2=9i^2=-9\). Both values solve \(x^2=-9\), so the two nonreal zeros are <strong>\(3i\) and \(-3i\)</strong>.</p>
+<p><strong>Final answer:</strong> The four zeros are \(\boxed{0,2,3i,-3i}\), each with multiplicity one. Over the complex numbers, the complete linear factorization is:</p>
+<p>\(\boxed{x(x-2)(x-3i)(x+3i)}\).</p>
+<p><strong>Graph connection:</strong> Only the real zeros give x-intercepts on the usual real-coordinate graph: \((0,0)\) and \((2,0)\). The nonreal zeros do not give additional x-intercepts.</p>
+<p><strong>Quick check:</strong> Since \(x(x^2+9)=x^3+9x\), multiplying by \(x-2\) gives \(x^4-2x^3+9x^2-18x\), exactly the original polynomial.</p>
+</div></details></div>
 <div class="practice-question" id="q25"><p class="question-label">Q25 <span>Practice 5 of 5 · Challenge</span></p><p>Use synthetic division twice to show that \(3\) is a repeated zero of \(x^4-5x^3+x^2+21x-18\). Then find all zeros and their multiplicities.</p><details><summary>Answer</summary><div class="answer"><p><strong>\(P(x)=(x-3)^2(x+2)(x-1)\). Zero \(3\) is double; \(-2\) and \(1\) are simple.</strong></p><ol><li>The first division by \(x-3\) gives bottom row \(1,-2,-5,6,0\), so the quotient is \(x^3-2x^2-5x+6\).</li><li>Divide again by \(x-3\): bottom row \(1,1,-2,0\), giving \(x^2+x-2=(x+2)(x-1)\).</li><li>The two zero remainders establish the repeated factor. The remaining quadratic is nonzero at three, so the multiplicity is exactly two.</li></ol></div></details></div>
 </section>
 <section class="topic" id="multiplicity"><h2>6. Read multiplicity at each zero</h2><figure class="poster"><a href="/assets/blog/algebra-2-class-12/poster-6.webp" target="_blank" rel="noopener" aria-label="Open poster 6 at full size"><img src="/assets/blog/algebra-2-class-12/poster-6.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="SOMATH Algebra II Class 12 poster 6: Read multiplicity at each zero."></a><figcaption>Poster 6 of 8. Select the image to enlarge it.</figcaption></figure>
