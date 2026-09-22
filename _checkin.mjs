@@ -93,7 +93,10 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     if(action==="calendar-sync") {
       if(!staff)return json({error:"Staff access required."},403);
       if(b.calendarId!=="hello@schoolofmath.us"||!Array.isArray(b.events)||b.events.length>300)return json({error:"Invalid SOMATH calendar snapshot."},400);
-      await put(env,"calendar-snapshot",{fetchedAt:now.toISOString(),calendarId:b.calendarId,events:b.events});
+      const previous=await get(env,"calendar-snapshot",{});
+      const holds=b.enrollmentHolds??previous.enrollmentHolds??{};
+      if(typeof holds!=="object"||Array.isArray(holds)||Object.entries(holds).some(([id,until])=>!/^cus_[A-Za-z0-9]+$/.test(id)||!validDate(until)))return json({error:"Invalid enrollment holds."},400);
+      await put(env,"calendar-snapshot",{fetchedAt:now.toISOString(),calendarId:b.calendarId,events:b.events,enrollmentHolds:holds});
       return json({ok:true});
     }
     const classes=classesFor(date,deps);

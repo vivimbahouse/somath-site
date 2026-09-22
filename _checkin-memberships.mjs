@@ -52,7 +52,8 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
   const students=[],issues=[];
   for(const s of source.subscriptions){
     const m=s.metadata||{},linked=events.filter(e=>e.subscriptionId===s.id);
-    const eligibility=membershipEligibility(s,date,now);
+    const holdUntil=calendar?.enrollmentHolds?.[s.customer?.id];
+    const eligibility=holdUntil&&holdUntil>date?"enrollment_paused":membershipEligibility(s,date,now);
     if(eligibility!=="eligible")issues.push({subscriptionId:s.id,reason:eligibility});
     // Use metadata first; fall back only to unambiguous subscription-linked calendar identity.
     const names=[...new Set(linked.map(e=>e.name))];
