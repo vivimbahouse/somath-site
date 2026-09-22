@@ -1202,13 +1202,24 @@ function privateEnrollmentHtml(rec, token, state = "open") {
   const expired = state === "expired";
   const title = completed ? "Registration complete" : expired ? "Please contact SOMATH" : "Your private tutoring membership";
   const schedule = escHtml(rec.schedule);
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><title>Private Tutoring Membership | SOMATH</title><link rel="icon" href="/assets/favicon-32.png"><link rel="stylesheet" href="/styles.css"><style>
+  const immediate = Math.floor(Date.now() / 1000) >= rec.firstChargeUnix;
+  const markup = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><title>Private Tutoring Membership | SOMATH</title><link rel="icon" href="/assets/favicon-32.png"><link rel="stylesheet" href="/styles.css"><style>
   :root{--private-paper:#f8f5ee;--private-ink:#1f3d2e;--private-muted:#555c55;--private-card:#fff;--private-border:#1f3d2e22;--private-small:clamp(.875rem,.85rem + .15vw,1rem);--private-body:1rem;--private-title:clamp(1.75rem,1.4rem + 1vw,2.25rem)}
   *{box-sizing:border-box}body{margin:0;background:var(--private-paper);color:var(--private-ink);font-family:var(--font-body,Arial,sans-serif);font-size:var(--private-body);line-height:1.6}header,main,footer{max-width:720px;margin:auto;padding:24px}header{display:flex;align-items:center;justify-content:space-between;gap:16px}header img{width:160px;height:auto}header a,footer a{color:inherit}main{padding-top:12px}article{background:var(--private-card);border:1px solid var(--private-border);padding:clamp(24px,5vw,40px);border-radius:12px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:var(--private-small);margin:0 0 12px}h1{font-size:var(--private-title);line-height:1.15;margin:0 0 16px}p{margin:0 0 20px}.muted,dt,footer{color:var(--private-muted)}.price{font-size:var(--private-title);font-weight:700;margin:24px 0 4px}.price span{font-size:var(--private-body);font-weight:400}dl{margin:24px 0}dl>div{display:grid;grid-template-columns:1fr 1.5fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--private-border)}dt,dd{margin:0}dd{font-weight:600}.notice{background:var(--private-paper);padding:16px;border-radius:6px;font-size:var(--private-small)}button{display:block;width:100%;min-height:48px;padding:14px 20px;border:0;border-radius:6px;background:#1f3d2e;color:white;font:inherit;font-weight:600;cursor:pointer}button:hover{background:#2c5640}a:focus-visible,button:focus-visible{outline:3px solid #aa7e22;outline-offset:4px}.security{margin:12px 0 0;font-size:var(--private-small);text-align:center}footer{font-size:var(--private-small);padding-top:8px}.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:white;padding:12px}nav a{display:inline-block;min-height:44px;padding:10px 0}
   body{padding:0}
   @media(max-width:460px){header,main,footer{padding:16px}dl>div{grid-template-columns:1fr;gap:2px}header img{width:140px}}
   @media(prefers-color-scheme:dark){:root{--private-paper:#17231c;--private-ink:#f2eee4;--private-muted:#c3cbbf;--private-card:#24332a;--private-border:#f2eee433}header img{background:#f8f5ee;border-radius:4px;padding:6px}button{background:#d9ba73;color:#17231c}button:hover{background:#e5cc98}}
   </style></head><body><a class="skip" href="#main">Skip to membership details</a><header><a href="/" aria-label="School of Math home"><img src="/assets/logo-full.svg" alt="SOMATH School of Math"></a><nav aria-label="Enrollment navigation"><a href="/contact">Contact us</a></nav></header><main id="main"><article><p class="eyebrow">School of Math · Private tutoring</p><h1>${title}</h1><p>${completed ? "Thank you. Your payment details have been registered with Stripe. No tuition payment was due at signup." : expired ? "This invitation’s billing date has passed. Please contact us for an updated enrollment link; no new charge has been created by opening this page." : "A dedicated membership for " + escHtml(rec.studentName) + ". Review the details below, then securely register your payment method with Stripe."}</p><div class="price">$500 <span>every four weeks</span></div><p class="muted">One private, 60-minute class each week.</p><dl><div><dt>Student</dt><dd>${escHtml(rec.studentName)}</dd></div><div><dt>Weekly classes</dt><dd>${schedule}<br>New York time</dd></div><div><dt>First class</dt><dd>${escHtml(fmtLongDate(rec.firstClassDate))}</dd></div><div><dt>First tuition charge</dt><dd>${privateDate(rec.firstChargeUnix)}</dd></div><div><dt>Next renewal</dt><dd>${privateDate(rec.firstChargeUnix + 28 * 86400)}</dd></div><div><dt>Enrollment fee</dt><dd>$0</dd></div><div><dt>Due at signup</dt><dd>$0</dd></div></dl><p class="notice">Your first $500 tuition payment is scheduled for the day before your first class. After that, your saved payment method will be charged $500 automatically every 28 days. There is no enrollment fee.</p>${!completed && !expired ? `<form method="post" action="/enrollment/private?token=${encodeURIComponent(token)}"><button type="submit">Continue to secure Stripe checkout</button><p class="security">Payment details stay with Stripe. No tuition charged today.</p></form>` : `<p><a href="/contact">Contact School of Math</a> with any questions about your membership.</p>`}</article></main><footer><p>School of Math New York · SOMATH<br>226 W 79th St, 1st Floor, New York, NY 10024<br><a href="tel:+16466686151">(646) 668-6151</a></p></footer></body></html>`;
+  let rendered = markup.replace("Thank you. Your payment details have been registered with Stripe. No tuition payment was due at signup.", "Thank you. Your membership registration has been completed with Stripe. Please refer to your Stripe receipt for payment details.");
+  if (immediate && !completed && !expired) {
+    rendered = rendered
+      .replace("<dt>Due at signup</dt><dd>$0</dd>", "<dt>Due at signup</dt><dd>$500</dd>")
+      .replace("<dt>First tuition charge</dt><dd>" + privateDate(rec.firstChargeUnix) + "</dd>", "<dt>First tuition charge</dt><dd>At registration</dd>")
+      .replace("<dt>Next renewal</dt><dd>" + privateDate(rec.firstChargeUnix + 28 * 86400) + "</dd>", "<dt>Next renewal</dt><dd>Four weeks after registration</dd>")
+      .replace("Your first $500 tuition payment is scheduled for the day before your first class.", "Your first $500 tuition payment is due when you complete registration.")
+      .replace("No tuition charged today.", "$500 due at checkout. No enrollment fee.");
+  }
+  return rendered;
 }
 async function handlePrivateEnrollmentAdmin(request, env) {
   if (request.method !== "POST") return privateResponse("Method not allowed", 405);
@@ -1254,7 +1265,12 @@ async function handlePrivateEnrollment(request, env) {
     // Verify against Stripe rather than relying on eventually consistent KV.
     if (rec.sessionId) session = await privateStripe(env, "checkout/sessions/" + rec.sessionId);
     if (session?.status === "complete" || rec.status === "registered") return privateResponse(privateEnrollmentHtml(rec, token, "complete"));
-    if (now >= rec.firstChargeUnix - 1900) return privateResponse(privateEnrollmentHtml(rec, token, "expired"), 410);
+    const chargeNow = now >= rec.firstChargeUnix;
+    // This invitation is exclusively for the September 23, 2026 offer in
+    // New York (EDT). Stop checkout 32 minutes before the first class.
+    const firstClassUnix = Date.parse(rec.firstClassDate + "T18:15:00-04:00") / 1000;
+    const registrationDeadline = chargeNow ? firstClassUnix : rec.firstChargeUnix;
+    if (now >= registrationDeadline - 1900) return privateResponse(privateEnrollmentHtml(rec, token, "expired"), 410);
     if (request.method === "GET") return privateResponse(privateEnrollmentHtml(rec, token));
     // Referrer-Policy:no-referrer can serialize a same-origin form's Origin
     // as null. Fetch Metadata still identifies its true site relationship.
@@ -1276,22 +1292,24 @@ async function handlePrivateEnrollment(request, env) {
     sp.set("billing_address_collection", "required");
     sp.set("line_items[0][price]", rec.priceId);
     sp.set("line_items[0][quantity]", "1");
-    sp.set("expires_at", String(Math.min(Math.floor(now / 3600) * 3600 + 23 * 3600, rec.firstChargeUnix - 60)));
+    sp.set("expires_at", String(Math.min(Math.floor(now / 3600) * 3600 + 23 * 3600, registrationDeadline - 60)));
     // Never slide the promised billing date forward. Checkout needs >=48h
     // for trial_end; a late registration uses an unbilled initial period.
-    if (rec.firstChargeUnix >= now + 48 * 3600 + 300) {
+    if (!chargeNow && rec.firstChargeUnix >= now + 48 * 3600 + 300) {
       sp.set("subscription_data[trial_end]", String(rec.firstChargeUnix));
       sp.set("subscription_data[trial_settings][end_behavior][missing_payment_method]", "cancel");
-    } else {
+    } else if (!chargeNow) {
       sp.set("subscription_data[billing_cycle_anchor]", String(rec.firstChargeUnix));
       sp.set("subscription_data[proration_behavior]", "none");
     }
-    sp.set("subscription_data[description]", "Ari private tutoring: $500 every 4 weeks; 60 minutes weekly, Wednesdays 6:15–7:15 p.m. New York time. First class September 23, 2026. First charge September 22, 2026. No enrollment fee.");
-    sp.set("custom_text[submit][message]", "No enrollment fee and $0 due today. First charge: $500 on September 22, 2026, then $500 every 4 weeks. Weekly private tutoring starts September 23, Wednesdays 6:15–7:15 p.m. New York time.");
+    sp.set("subscription_data[description]", "Ari private tutoring: $500 every 4 weeks; 60 minutes weekly, Wednesdays 6:15–7:15 p.m. New York time. First class September 23, 2026. " + (chargeNow ? "First charge at registration. " : "First charge September 22, 2026. ") + "No enrollment fee.");
+    sp.set("custom_text[submit][message]", chargeNow
+      ? "No enrollment fee. $500 due today, then $500 every 4 weeks. Weekly private tutoring starts September 23, Wednesdays 6:15–7:15 p.m. New York time."
+      : "No enrollment fee and $0 due today. First charge: $500 on September 22, 2026, then $500 every 4 weeks. Weekly private tutoring starts September 23, Wednesdays 6:15–7:15 p.m. New York time.");
     const meta = { source: "private_membership_v1", flow: "private_membership_v1", course_slug: "private-tutoring",
       course_title: "Private Tutoring Membership", program: "Private Tutoring", student_name: rec.studentName,
       parent_name: rec.parentName, parent_email: rec.parentEmail, first_class_date: rec.firstClassDate,
-      first_charge_date: "2026-09-22", weekly_day: "Wednesday", weekday: "2", time: "18:15",
+      first_charge_date: chargeNow ? new Date(now * 1000).toLocaleDateString("en-CA", { timeZone: "America/New_York" }) : "2026-09-22", weekly_day: "Wednesday", weekday: "2", time: "18:15",
       duration_min: "60", timezone: "America/New_York", billing_interval: "week", billing_interval_count: "4",
       tuition_usd: "500", enrollment_fee_usd: "0", ref };
     for (const [k,v] of Object.entries(meta)) {
@@ -1300,7 +1318,7 @@ async function handlePrivateEnrollment(request, env) {
     }
     // Same token and predecessor always produce the same session on retries.
     // Persist parameters before Stripe so concurrent retries are identical.
-    const generation = rec.sessionId || "initial";
+    const generation = (rec.sessionId || "initial") + (chargeNow ? ":immediate-v2" : "");
     const pendingKey = "private-checkout-params:" + token + ":" + generation;
     let pending = await env.ENROLLMENTS.get(pendingKey);
     if (!pending) {
