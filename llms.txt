@@ -83,3 +83,6 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 
 
 - [Number Sense to 20: Counting and Comparing | Little Newtons Class 1](https://www.schoolofmath.us/posts/number-sense-to-20-counting-comparing-little-newtons): SOMATH Little Newtons Class 1 for grades 1–2. Eight illustrated posters in order, five original questions after each image increasing in difficulty, and ten final word problems: 50 questions with hidden worked answers. Covers numbers 0–20, forward/backward counting, number lines, one-to-one correspondence, cardinality, more/fewer/equal, and comparison symbols. Online HTML lesson; no PDF downloads. Updated September 22, 2026.
+
+
+- [Pre-Algebra Class 12: Evaluating Expressions and Combining Like Terms](https://www.schoolofmath.us/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms): Ten illustrated posters in order, five original questions per image increasing in difficulty, and ten cumulative word problems: 60 questions with hidden worked answers. Covers expression parts, substitution, order of operations, negative values, like and unlike terms, combining terms, distribution, simplify-then-evaluate, expressions versus equations, and translating stories into algebra. HTML class from SOMATH, 226 W 79th St, NYC. Updated September 22, 2026.
