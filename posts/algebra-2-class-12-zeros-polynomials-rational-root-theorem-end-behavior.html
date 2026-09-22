@@ -51,7 +51,39 @@
 <div class="practice-question" id="q12"><p class="question-label">Q12 <span>Practice 2 of 5 · Build confidence</span></p><p>List all distinct rational-zero candidates for \(4x^3-3x^2-6x+2\).</p><details><summary>Answer</summary><div class="answer"><p><strong>\(\pm1,\pm2,\pm\frac12,\pm\frac14\).</strong></p><ol><li>Use numerators dividing \(2\): \(1,2\), and denominators dividing \(4\): \(1,2,4\).</li><li>Reduce and remove repeats: \(2/2=1\) and \(2/4=1/2\). Include both signs.</li></ol></div></details></div>
 <div class="practice-question" id="q13"><p class="question-label">Q13 <span>Practice 3 of 5 · Apply</span></p><p>List all distinct rational-zero candidates for \(6x^3-5x^2+2x-4\).</p><details><summary>Answer</summary><div class="answer"><p><strong>\(\pm1,\pm2,\pm4,\pm\frac12,\pm\frac13,\pm\frac23,\pm\frac43,\pm\frac16\).</strong></p><ol><li>Possible numerators divide \(4\); denominators divide \(6\).</li><li>Use numerators \(1,2,4\) and denominators \(1,2,3,6\), then reduce, remove repeats, and include both signs.</li></ol></div></details></div>
 <div class="practice-question" id="q14"><p class="question-label">Q14 <span>Practice 4 of 5 · Reason</span></p><p>Explain how to apply the Rational Root Theorem to \(3x^4-7x^3+2x^2\), then find all its zeros.</p><details><summary>Answer</summary><div class="answer"><p><strong>Zero has multiplicity two; the other zeros are \(\frac13\) and \(2\).</strong></p><ol><li>First factor out \(x^2\): \(x^2(3x^2-7x+2)\). Do not try to build a finite candidate list from a zero constant term.</li><li>For the remaining quadratic, candidates are \(\pm1,\pm2,\pm1/3,\pm2/3\).</li><li>Factor \(3x^2-7x+2=(3x-1)(x-2)\).</li></ol></div></details></div>
-<div class="practice-question" id="q15"><p class="question-label">Q15 <span>Practice 5 of 5 · Challenge</span></p><p>List and test the rational candidates for \(x^3-3x^2-2x+6\). Then find the irrational zeros that the theorem does not list.</p><details><summary>Answer</summary><div class="answer"><p><strong>Candidates: \(\pm1,\pm2,\pm3,\pm6\). Zeros: \(3,\sqrt2,-\sqrt2\).</strong></p><ol><li>The leading coefficient is one, so rational candidates are the divisors of six.</li><li>In the order \(-6,-3,-2,-1,1,2,3,6\), the outputs are \(-306,-42,-10,4,2,-2,0,102\). Only \(3\) is a rational zero.</li><li>Group: \(x^2(x-3)-2(x-3)=(x-3)(x^2-2)\). Solve the remaining quadratic to get \(\pm\sqrt2\).</li></ol></div></details></div>
+<div class="practice-question" id="q15"><p class="question-label">Q15 <span>Practice 5 of 5 · Challenge</span></p><p>List and test the rational candidates for \(x^3-3x^2-2x+6\). Then find the irrational zeros that the theorem does not list.</p><details><summary>Answer</summary><div class="answer"><p><strong>Rational candidates: \(\pm1,\pm2,\pm3,\pm6\).</strong><br><strong>All zeros: \(3,\sqrt2,-\sqrt2\).</strong></p>
+<h4>Find the possible rational zeros</h4>
+<p>A <strong>zero</strong> is a value of \(x\) that makes the polynomial equal to zero. Here we use \(f(x)=x^3-3x^2-2x+6\).</p>
+<p>For a polynomial with integer coefficients, the Rational Root Theorem says that any rational zero, written in lowest terms as \(p/q\), must have:</p>
+<ul><li>\(p\) dividing the constant term, which is \(6\).</li><li>\(q\) dividing the leading coefficient, which is \(1\).</li></ul>
+<p>Dividing the positive and negative factors of six by one gives the candidates \(\pm1,\pm2,\pm3,\pm6\). These are <strong>possibilities, not guaranteed zeros</strong>.</p>
+<h4>Test the candidates</h4>
+<p>Substitute each candidate into \(f(x)\). A candidate works only if the result is <strong>exactly zero</strong>.</p>
+<div class="table-scroll"><table class="end-table"><caption>Testing every rational candidate</caption><thead><tr><th scope="col">Candidate \(x\)</th><th scope="col">Result \(f(x)\)</th></tr></thead><tbody>
+<tr><th scope="row">−6</th><td>−306</td></tr>
+<tr><th scope="row">−3</th><td>−42</td></tr>
+<tr><th scope="row">−2</th><td>−10</td></tr>
+<tr><th scope="row">−1</th><td>4</td></tr>
+<tr><th scope="row">1</th><td>2</td></tr>
+<tr><th scope="row">2</th><td>−2</td></tr>
+<tr><th scope="row">3</th><td><strong>0: a zero</strong></td></tr>
+<tr><th scope="row">6</th><td>102</td></tr>
+</tbody></table></div>
+<p>For example, testing \(3\) gives:</p>
+<p>\(f(3)=27-27-6+6=0\).</p>
+<p>So \(3\) is a zero. By the Factor Theorem, <strong>\(x-3\) is a factor</strong>. We have found the only rational zero, but we have not yet found all the zeros.</p>
+<h4>Factor to find the remaining zeros</h4>
+<ol>
+<li>Group the first two terms and the last two terms:<br>\((x^3-3x^2)+(-2x+6)\).</li>
+<li>Factor \(x^2\) from the first group and <strong>\(-2\)</strong> from the second:<br>\(x^2(x-3)-2(x-3)\).<br>Notice that \(-2(x-3)=-2x+6\); multiplying two negatives gives the positive six.</li>
+<li>Both parts contain \(x-3\). Factor out this shared expression:<br>\((x-3)(x^2-2)\).<br>This uses the same rule as \(AB+CB=(A+C)B\), with \(A=x^2\), \(C=-2\), and \(B=x-3\).</li>
+<li>Set the product equal to zero:<br>\((x-3)(x^2-2)=0\).<br>A product equals zero only when at least one factor equals zero.</li>
+<li>Solve the first factor:<br>\(x-3=0\), so \(x=3\).</li>
+<li>Solve the second factor:<br>\(x^2-2=0\), so \(x^2=2\).<br>Both \(\sqrt2\) and \(-\sqrt2\) square to two, so \(x=\pm\sqrt2\).</li>
+</ol>
+<p><strong>Final answer:</strong> The three zeros are \(\boxed{3,\sqrt2,-\sqrt2}\).</p>
+<p><strong>The main lesson:</strong> The Rational Root Theorem lists only possible rational zeros. It does not list irrational zeros such as \(\sqrt2\) and \(-\sqrt2\), so factoring helps us finish the problem.</p>
+</div></details></div>
 </section>
 <section class="topic" id="testing"><h2>4. Test possible zeros</h2><figure class="poster"><a href="/assets/blog/algebra-2-class-12/poster-4.webp" target="_blank" rel="noopener" aria-label="Open poster 4 at full size"><img src="/assets/blog/algebra-2-class-12/poster-4.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="SOMATH Algebra II Class 12 poster 4: Test possible zeros."></a><figcaption>Poster 4 of 8. Select the image to enlarge it.</figcaption></figure>
 <aside class="poster-correction"><strong>Poster correction:</strong> In the second example, the displayed polynomial is \(f(x)=2x^3-3x^2-8x+4\). Its value at \(-1\) is \(-2-3+8+4=7\), not \(0\). The final synthetic-division entry should be \(7\), so \(-1\) is <strong>not</strong> a zero. The test at \(2\), which gives \(-8\), is correctly rejected.</aside>
