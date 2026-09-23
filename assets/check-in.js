@@ -2,7 +2,8 @@
   "use strict";
   const config=window.CHECKIN_CONFIG||{};
   const endpoint=config.api||"/api/checkin";
-  const app=document.querySelector("#app"),lock=document.querySelector("#lock");
+  const app=document.querySelector("#app"),lock=document.querySelector("#lock"),forget=document.querySelector("#forget-tablet");
+  let remembered=false,restoring=false;
   let token="",scope="",date="",classes=[],cls=null,selected=null,manager=null,memoStudent=null,memoAuthor="",screen="unlock",busy=false,queryVersion=0,timer,idle,sessionTimer,mode="kiosk",homeworkEnabled=false;
   const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const dateLabel=d=>new Date(d+"T12:00:00Z").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",timeZone:"UTC"});
@@ -10,17 +11,19 @@
   function notice(text,error=false){const n=document.querySelector("#notice");n.textContent=text;n.className=error?"error":"";n.style.display="block";clearTimeout(n.timer);n.timer=setTimeout(()=>n.style.display="none",6500);}
   function focus(){app.focus({preventScroll:true});window.scrollTo(0,0);}
   async function api(action,body={}) {
-    const response=await fetch(endpoint,{method:"POST",headers:{"Content-Type":"application/json",...(token?{Authorization:"Bearer "+token}:{})},body:JSON.stringify({action,date,...body})});
+    const response=await fetch(endpoint,{method:"POST",credentials:config.demo?"omit":"same-origin",headers:{"Content-Type":"application/json",...(token?{Authorization:"Bearer "+token}:{})},body:JSON.stringify({action,date,...body})});
     let data;try{data=await response.json();}catch{throw Error("Connection interrupted. Please try again.");}
-    if(!response.ok){if(response.status===401&&action!=="unlock")reset();const err=Error(data.error||"Please try again.");err.frontDesk=data.frontDesk;throw err;}
+    if(!response.ok){if(response.status===401&&action!=="unlock"){const renew=remembered&&scope==="kiosk"&&action!=="resume-tablet";reset();if(renew)restoreTablet();}const err=Error(data.error||"Please try again.");err.frontDesk=data.frontDesk;throw err;}
     return data;
   }
   function reset(){clearTimeout(timer);clearTimeout(idle);clearTimeout(sessionTimer);queryVersion++;token="";scope="";cls=null;selected=null;manager=null;memoStudent=null;memoAuthor="";classes=[];screen="unlock";lock.hidden=true;document.querySelector("#notice").style.display="none";render();}
   function intro(title,description,step=""){return `<div class="intro"><div><p class="eyebrow">${date?e(dateLabel(date)):"Welcome to SOMATH"}</p><h1>${e(title)}</h1><p class="lede">${e(description)}</p></div>${step?`<span class="step">${e(step)}</span>`:""}</div>`;}
   function render() {
     lock.hidden=!token;
+    if(forget)forget.hidden=!remembered;
+    if(screen==="restoring"){app.innerHTML='<section class="panel unlock"><h1>Opening student check-in…</h1><p class="muted">Checking this school tablet’s authorization.</p></section>';return;}
     if(screen==="unlock"){
-      app.innerHTML=`<section class="panel unlock"><div class="seal">A good day for math.</div><h1>Welcome to SOMATH</h1><p class="muted">Staff, unlock this tablet to begin student check-in.</p><div class="chips"><button class="secondary ${mode==="kiosk"?"active":""}" data-action="mode" data-mode="kiosk">Student kiosk</button><button class="secondary ${mode==="staff"?"active":""}" data-action="mode" data-mode="staff">Teacher view</button></div><form id="unlock-form"><label for="password">Staff password</label><input id="password" name="password" type="password" autocomplete="off" required placeholder="${config.demo?"Preview password: demo":"SOMATH admin password"}"><button class="primary wide" type="submit">Unlock ${mode==="staff"?"teacher view":"tablet"}</button></form><p class="helper">Names and parent details are never available before staff unlocks this page. Refreshing locks the tablet again.</p></section>`;
+      app.innerHTML=`<section class="panel unlock"><div class="seal">A good day for math.</div><h1>Welcome to SOMATH</h1><p class="muted">Staff, unlock this tablet to begin student check-in.</p><div class="chips"><button class="secondary ${mode==="kiosk"?"active":""}" data-action="mode" data-mode="kiosk">Student kiosk</button><button class="secondary ${mode==="staff"?"active":""}" data-action="mode" data-mode="staff">Teacher view</button></div><form id="unlock-form"><label for="password">Staff password</label><input id="password" name="password" type="password" autocomplete="off" required placeholder="${config.demo?"Preview password: demo":"SOMATH admin password"}">${mode==="kiosk"&&!config.demo?'<label class="check-label"><input type="checkbox" name="remember">Remember this school tablet for 30 days</label><p class="helper">Only select this on the school’s dedicated tablet. Student check-in can reopen after refreshes and app restarts. Teacher View still requires the staff password.</p>':""}<button class="primary wide" type="submit">Unlock ${mode==="staff"?"teacher view":"tablet"}</button></form>${remembered&&mode==="kiosk"?'<button class="secondary wide" data-action="resume-tablet">Reopen remembered student check-in</button>':""}<p class="helper">${remembered?"This tablet is remembered. Use Forget this tablet to require the password again, including after a restart.":mode==="staff"?"Teacher View always requires the staff password. Staff sessions are never remembered.":"Your password is not stored. Without remembering this tablet, refreshing locks check-in again."}</p></section>`;
       return;
     }
     if(screen==="classes"){
@@ -75,14 +78,26 @@
   }
   async function loadClasses(){clearTimeout(timer);queryVersion++;cls=null;selected=null;manager=null;const d=await api("classes");date=d.date;classes=d.classes;homeworkEnabled=d.homeworkEnabled;screen="classes";render();}
   async function loadManager(refresh=false){manager=await api("manage",{classId:cls.id,refresh});screen="manage";render();}
+  function acceptSession(d) {
+    token=d.token;scope=d.scope;date=d.date;
+    if(d.remembered)remembered=true;
+    clearTimeout(sessionTimer);
+    sessionTimer=setTimeout(()=>{if(scope==="kiosk"&&remembered)restoreTablet();else reset();},Math.max(0,d.expires*1000-Date.now()));
+  }
+  async function restoreTablet() {
+    if(restoring||config.demo)return;
+    restoring=true;screen="restoring";render();
+    try{const d=await api("resume-tablet");acceptSession(d);await loadClasses();}
+    catch{remembered=false;reset();}
+    finally{restoring=false;}
+  }
   app.addEventListener("submit",async ev=>{
     ev.preventDefault();if(busy)return;busy=true;const submit=ev.target.querySelector('button[type="submit"]');if(submit)submit.disabled=true;
     try{
       const data=new FormData(ev.target);
       if(ev.target.id==="unlock-form"){
-        const d=await api("unlock",{password:data.get("password"),scope:mode});
-        ev.target.reset();document.querySelector("#notice").style.display="none";token=d.token;scope=d.scope;date=d.date;
-        clearTimeout(sessionTimer);sessionTimer=setTimeout(reset,Math.max(0,d.expires*1000-Date.now()));await loadClasses();
+        const d=await api("unlock",{password:data.get("password"),scope:mode,remember:mode==="kiosk"&&data.has("remember")});
+        ev.target.reset();document.querySelector("#notice").style.display="none";acceptSession(d);await loadClasses();
       }else if(ev.target.id==="memo-form"){
         memoAuthor=String(data.get("author")||"").trim();
         const d=await api("add-note",{classId:cls.id,studentId:memoStudent.id,author:memoAuthor,body:data.get("body")});
@@ -98,6 +113,7 @@
     busy=true;btn.disabled=true;
     try {
       if(action==="mode"){mode=btn.dataset.mode;render();}
+      if(action==="resume-tablet")await restoreTablet();
       if(action==="back")await loadClasses();
       if(action==="class"){cls=classes.find(c=>c.id===btn.dataset.id);if(scope==="staff")await loadManager();else{screen="search";render();}}
       if(action==="search-back"){queryVersion++;selected=null;screen="search";render();}
@@ -134,7 +150,15 @@
     },250);
   });
   lock.addEventListener("click",reset);
+  if(forget)forget.addEventListener("click",async()=>{
+    if(!confirm("Forget this tablet? Student check-in will require the staff password again."))return;
+    try{await api("forget-tablet");remembered=false;reset();notice("Tablet forgotten. The next unlock requires the staff password.");}catch(err){notice(err.message,true);}
+  });
+  // A sleeping kiosk can wake on a new Eastern date without a page refresh.
+  function renewDay(){if(token&&scope==="kiosk"&&remembered&&!busy&&!restoring&&document.visibilityState!=="hidden"){const current=new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());if(current!==date)restoreTablet();}}
+  setInterval(renewDay,60000);
+  document.addEventListener("visibilitychange",renewDay);
   ["pointerdown","keydown"].forEach(type=>document.addEventListener(type,()=>{clearTimeout(idle);if(scope==="kiosk"&&token)idle=setTimeout(()=>loadClasses().catch(()=>reset()),60000);}));
   if(config.demo){const banner=document.querySelector("#preview-banner");banner.hidden=false;banner.textContent="INTERACTIVE PREVIEW · Fictional students only · Password: demo · No emails are sent";}
-  render();
+  if(config.demo)render();else restoreTablet();
 })();

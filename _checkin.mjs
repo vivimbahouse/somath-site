@@ -2,6 +2,12 @@
 import { automaticRoster } from "./_checkin-memberships.mjs";
 const TZ = "America/New_York";
 const P = "checkin:";
+const TABLET_COOKIE="__Host-somath_tablet", TABLET_TTL=30*24*60*60;
+const cookieValue=request=>(request.headers.get("Cookie")||"").split(";").map(s=>s.trim()).find(s=>s.startsWith(TABLET_COOKIE+"="))?.slice(TABLET_COOKIE.length+1)||"";
+function tabletCookie(value,seconds=TABLET_TTL) {
+  return `${TABLET_COOKIE}=${value}; Path=/; Max-Age=${seconds}; HttpOnly; Secure; SameSite=Strict`;
+}
+function withCookie(response,value) {response.headers.set("Set-Cookie",value);return response;}
 const json = (body, status = 200) => new Response(JSON.stringify(body), {status, headers:{
   "Content-Type":"application/json", "Cache-Control":"no-store", "X-Robots-Tag":"noindex, nofollow",
   "X-Content-Type-Options":"nosniff"
@@ -41,6 +47,21 @@ async function list(env,prefix) {
   return rows;
 }
 async function hash(s) {return [...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)))].map(x=>x.toString(16).padStart(2,"0")).join("");}
+async function validTablet(env,deps,id,now) {
+  const saved=await get(env,"tablet:"+id);
+  if(!saved||saved.expires<=Math.floor(now.getTime()/1000))return null;
+  const signed=await deps.verifyToken(saved.proof,env.ADMIN_PASSWORD);
+  return signed?.aud==="somath-tablet"&&signed.id===id&&signed.exp===saved.expires?{id,expires:saved.expires}:null;
+}
+async function requestTablet(request,env,deps,now) {
+  const raw=cookieValue(request);
+  return /^[a-f0-9]{64}$/.test(raw)?validTablet(env,deps,await hash(raw),now):null;
+}
+async function kioskSession(tablet,env,deps,now) {
+  const today=eastern(now),exp=Math.min(Math.floor(now.getTime()/1000)+43200,tablet.expires);
+  const token=await deps.signToken({aud:"somath-checkin",scope:"kiosk",date:today.date,exp,tabletId:tablet.id},env.ADMIN_PASSWORD);
+  return {token,scope:"kiosk",date:today.date,expires:exp,remembered:true,rememberedUntil:tablet.expires,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"};
+}
 const clean=(v,n=120)=>String(v||"").trim().slice(0,n);
 const emailOK=s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 function linkOK(s) {try {const u=new URL(s);return u.protocol==="https:"&&!u.username&&!u.password;}catch{return false;}}
@@ -65,6 +86,17 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     const text=await request.text();if(text.length>65000)return json({error:"Request too large."},413);
     let b;try{b=JSON.parse(text);}catch{return json({error:"Invalid request."},400);}
     const today=eastern(now), action=b.action;
+    if(action==="resume-tablet") {
+      const tablet=await requestTablet(request,env,deps,now);
+      if(!tablet)return withCookie(json({error:"Please unlock this tablet with the staff password."},401),tabletCookie("",0));
+      // Cookie authentication can mint only a kiosk token, never staff access.
+      return json(await kioskSession(tablet,env,deps,now));
+    }
+    if(action==="forget-tablet") {
+      const raw=cookieValue(request);
+      if(/^[a-f0-9]{64}$/.test(raw))await env.ENROLLMENTS.delete(P+"tablet:"+await hash(raw));
+      return withCookie(json({ok:true}),tabletCookie("",0));
+    }
     if(action==="unlock") {
       const ip=request.headers.get("CF-Connecting-IP")||"local";
       const key="auth:"+await hash(ip+Math.floor(now.getTime()/600000));
@@ -75,6 +107,15 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         return json({error:"Incorrect staff password."},401);
       }
       const scope=b.scope==="staff"?"staff":"kiosk";
+      if(scope==="kiosk"&&b.remember===true) {
+        const prior=cookieValue(request);
+        if(/^[a-f0-9]{64}$/.test(prior))await env.ENROLLMENTS.delete(P+"tablet:"+await hash(prior));
+        const raw=[...crypto.getRandomValues(new Uint8Array(32))].map(x=>x.toString(16).padStart(2,"0")).join("");
+        const id=await hash(raw),expires=Math.floor(now.getTime()/1000)+TABLET_TTL;
+        const proof=await deps.signToken({aud:"somath-tablet",id,exp:expires},env.ADMIN_PASSWORD);
+        await env.ENROLLMENTS.put(P+"tablet:"+id,JSON.stringify({proof,expires,createdAt:now.toISOString()}),{expirationTtl:TABLET_TTL});
+        return withCookie(json(await kioskSession({id,expires},env,deps,now)),tabletCookie(raw));
+      }
       const exp=Math.floor(now.getTime()/1000)+(scope==="staff"?1800:43200);
       const token=await deps.signToken({aud:"somath-checkin",scope,date:today.date,exp},env.ADMIN_PASSWORD);
       return json({token,scope,expires:exp,date:today.date,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"});
@@ -88,6 +129,9 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       : await deps.verifyToken(bearer,env.ADMIN_PASSWORD);
     if(!session || session.aud!=="somath-checkin" || session.exp<=now.getTime()/1000 || !["staff","kiosk"].includes(session.scope) || (session.scope==="kiosk"&&session.date!==today.date)) return json({error:"Please ask staff to unlock this tablet again."},401);
     const staff=session.scope==="staff";
+    if(!staff&&session.tabletId&&!await validTablet(env,deps,session.tabletId,now))
+      return withCookie(json({error:"This tablet is no longer remembered. Please unlock it again."},401),tabletCookie("",0));
+    if(!staff&&!["classes","search","checkin"].includes(action))return json({error:"Staff access required."},403);
     const date=staff && b.date ? b.date : today.date;
     if(!validDate(date)) return json({error:"Invalid class date."},400);
     if(action==="calendar-sync") {
