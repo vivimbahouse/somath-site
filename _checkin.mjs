@@ -152,7 +152,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         const arrivals=staff?await list(env,`attendance:${date}:${cls.id}:`):[];
         decorated.push({...cls,closed:!!assignment.closed,presentCount:arrivals.filter(a=>a.present).length});
       }
-      return json({date,classes:decorated,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"});
+      return json({date,classes:decorated,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true",...(staff?{approvalVersion:env.CHECKIN_APPROVAL_VERSION||""}:{})});
     }
     const cls=classes.find(c=>c.id===b.classId);
     if(!cls) return json({error:"Class not scheduled for this date."},400);
@@ -206,7 +206,8 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       const attendance=await list(env,`attendance:${date}:${cls.id}:`);
       const jobs=await list(env,`delivery:${date}:${cls.id}:`);
       const classStudents=students.filter(s=>s.program===cls.slug||attendance.some(a=>a.studentId===s.id));
-      return json({students:classStudents,attendance,lesson,jobs,sync:membership.sync,issues:membership.issues});
+      const needsReapproval=!!lesson.approved&&!!env.CHECKIN_APPROVAL_VERSION&&lesson.approvalVersion!==env.CHECKIN_APPROVAL_VERSION;
+      return json({students:classStudents,attendance,lesson:{...lesson,approved:!!lesson.approved&&!needsReapproval,needsReapproval},jobs,sync:membership.sync,issues:membership.issues});
     }
     if(action==="roster") {
       if(!Array.isArray(b.students)||b.students.length>100) return json({error:"Invalid roster."},400);
@@ -224,7 +225,9 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     if(action==="lesson") {
       const title=clean(b.title),url=clean(b.url,2000),note=clean(b.note,1500),approved=b.approved===true;
       if((url&&!linkOK(url)) || (approved&&(!title||!linkOK(url)))) return json({error:"Enter a lesson title and a complete https:// homework link."},400);
-      const record={date,classId:cls.id,title,url,note,approved,closed:b.closed===true,updatedAt:now.toISOString()};
+      if(approved&&env.CHECKIN_AUTO_SEND==="true"&&(!env.CHECKIN_APPROVAL_VERSION||b.approvalVersion!==env.CHECKIN_APPROVAL_VERSION))
+        return json({error:"Refresh Teacher View, review the homework and recipients, then approve this assignment again."},409);
+      const record={date,classId:cls.id,title,url,note,approved,approvalVersion:approved&&env.CHECKIN_AUTO_SEND==="true"?env.CHECKIN_APPROVAL_VERSION||"":"",closed:b.closed===true,updatedAt:now.toISOString()};
       await put(env,lessonKey,record);return json({ok:true,lesson:record});
     }
     if(action==="attendance") {
@@ -253,10 +256,11 @@ export function homeworkMessage(cls,lesson,student,date) {
 }
 export async function runHomework(env,deps,now=new Date()) {
   if(env.CHECKIN_AUTO_SEND!=="true" || !env.ENROLLMENTS)return {sent:0,disabled:true};
+  if(!env.CHECKIN_APPROVAL_VERSION || !env.RESEND_API_KEY)return {sent:0,disabled:true,reason:"delivery_not_configured"};
   const today=eastern(now),lessons=await list(env,"lesson:"),result={sent:0,failed:0};
   for(const lesson of lessons) {
     // Only today's assignments: no surprise old homework blasts after activation/outage.
-    if(lesson.date!==today.date || !lesson.approved || lesson.closed || !linkOK(lesson.url))continue;
+    if(lesson.date!==today.date || !lesson.approved || lesson.approvalVersion!==env.CHECKIN_APPROVAL_VERSION || lesson.closed || !linkOK(lesson.url))continue;
     const cls=classesFor(lesson.date,deps).find(c=>c.id===lesson.classId);
     if(!cls||today.minutes<cls.end+10)continue;
     const students=(await automaticRoster(env,cls,lesson.date,deps,now,false,true)).students;
@@ -267,11 +271,14 @@ export async function runHomework(env,deps,now=new Date()) {
       const key=`delivery:${lesson.date}:${cls.id}:${s.id}`;
       let job=await get(env,key);
       if(job?.status==="sent"||job?.status==="review")continue;
+      if(job&&job.approvalVersion!==env.CHECKIN_APPROVAL_VERSION){
+        await put(env,key,{...job,status:"review"});continue;
+      }
       if(job && now.getTime()-Date.parse(job.firstAttempt)>23*3600000) {
         await put(env,key,{...job,status:"review"});continue;
       }
       if(!job) {
-        job={date:lesson.date,classId:cls.id,studentId:s.id,firstAttempt:now.toISOString(),status:"pending",payload:homeworkMessage(cls,lesson,s,lesson.date),idempotencyKey:"homework-"+await hash(key)};
+        job={date:lesson.date,classId:cls.id,studentId:s.id,approvalVersion:env.CHECKIN_APPROVAL_VERSION,firstAttempt:now.toISOString(),status:"pending",payload:homeworkMessage(cls,lesson,s,lesson.date),idempotencyKey:"homework-"+await hash(key)};
         await put(env,key,job);
       }
       try {

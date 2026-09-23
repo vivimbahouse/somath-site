@@ -3,7 +3,11 @@ main = "_worker.js"
 compatibility_date = "2025-01-01"
 
 [vars]
-CHECKIN_AUTO_SEND = "false"
+CHECKIN_AUTO_SEND = "true"
+CHECKIN_APPROVAL_VERSION = "homework-launch-20260923"
+
+[triggers]
+crons = ["*/15 * * * *"]
 
 [assets]
 directory = "."
