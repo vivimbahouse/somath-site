@@ -70,10 +70,10 @@
       .q:last-child { border-bottom:none; }
       .q .qn { display:inline-block; min-width:36px; color:#a97a10; font-weight:700; }
       details.sol { margin-top:8px; margin-left:36px; }
-      details.sol summary { list-style:none; cursor:pointer; display:inline-block; background:#1a3a52; color:#fff; font-weight:600; font-size:0.88rem; padding:5px 14px; border-radius:5px; user-select:none; }
+      details.sol summary { list-style:none; cursor:pointer; display:inline-block; background:#17649b; color:#fff; font-weight:600; font-size:0.88rem; padding:5px 14px; border-radius:5px; user-select:none; }
       details.sol summary::-webkit-details-marker { display:none; }
-      details.sol summary::before { content:"▶ Show solution"; }
-      details.sol[open] summary::before { content:"▼ Hide solution"; }
+      details.sol summary::before { content:""; }
+      details.sol[open] summary { background:#0a4672; }
       details.sol .ans { margin-top:8px; padding:10px 14px; background:#f5f1e8; border-left:3px solid #1a3a52; border-radius:4px; }
       .cta-box { background:#1a3a52; color:#fff; padding:24px 28px; margin:28px 0; border-radius:8px; }
       .cta-box h3 { color:#fff; margin:0 0 8px; }
@@ -85,6 +85,7 @@
       .course-link-hero p { margin:6px 0; color:#1a2820; }
       .course-link-hero a.cta { display:inline-block; background:#1a3a52; color:#fff !important; text-decoration:none !important; padding:10px 20px; border-radius:6px; font-weight:700; margin-top:8px; border:2px solid #1a3a52; }
       .course-link-hero a.cta:hover { background:#d4a548; color:#1a2820 !important; border-color:#d4a548; }
+    .q,.ans{overflow-wrap:anywhere;min-width:0}.ans p{margin:0 0 8px}.ans ol{padding-left:22px;margin:8px 0}.ans li{margin:6px 0}.q{scroll-margin-top:160px}details.sol summary:focus-visible{outline:3px solid #c89a3a;outline-offset:3px}
     </style>
     <script type="application/ld+json">
 {
@@ -94,7 +95,7 @@
   "description": "Free Algebra 1 Class 11 from SOMATH covering polynomials: identifying terms/coefficients/constants, classifying, degree, combining like terms, adding, subtracting, multiplying monomials, distributive property, and FOIL. 10 illustrated posters, full theory, 50 practice questions with click-to-reveal solutions.",
   "image": "https://www.schoolofmath.us/assets/blog/algebra-ignite-class-11-polynomials/01-introduction.jpg",
   "datePublished": "2026-09-13",
-  "dateModified": "2026-09-13",
+  "dateModified": "2026-09-23",
   "inLanguage": "en-US",
   "educationalLevel": "Grades 7–8",
   "learningResourceType": "Lesson",
@@ -132,7 +133,7 @@
         <article class="post">
           <p class="post__eyebrow">Young Fermats &mdash; Algebra Ignite &middot; Class 11 &middot; Grades 7&ndash;8</p>
           <h1 class="post__title">Algebra 1 Class 11: Polynomials &mdash; Adding, Subtracting, Multiplying &mdash; 10 SOMATH Posters, Theory &amp; 50 Practice Questions</h1>
-          <p class="post__dek"><strong>The whole Algebra 1 polynomial-operations unit in one class.</strong> Ten SOMATH posters walk through what a polynomial is, how to identify terms, coefficients, and constants, how to classify polynomials, how to find the degree, combining like terms, adding, subtracting, multiplying monomials, distributive multiplication, and FOIL for two binomials. Under each poster you&rsquo;ll find full theory notes and <strong>5 practice questions with click-to-reveal step-by-step solutions</strong> &mdash; 50 questions total.</p>
+          <p class="post__dek"><strong>The whole Algebra 1 polynomial-operations unit in one class.</strong> Ten SOMATH posters walk through what a polynomial is, how to identify terms, coefficients, and constants, how to classify polynomials, how to find the degree, combining like terms, adding, subtracting, multiplying monomials, distributive multiplication, and FOIL for two binomials. Under each poster you&rsquo;ll find full theory notes and <strong>5 progressively harder practice questions with click-to-reveal step-by-step solutions</strong> &mdash; 50 questions total.</p>
           <p class="post__meta"><time datetime="2026-09-13">2026-09-13</time> &middot; By SOMATH &middot; Class 11 of the Algebra Ignite (Algebra 1) rolling syllabus &middot; (646) 668-6151 &middot; 226 W 79th St, New York, NY 10024</p>
 
           <div class="post__body">
@@ -162,7 +163,7 @@
               </ol>
             </div>
 
-            <div class="callout"><strong>How to use this page.</strong> Study each poster first, then read the theory notes below it, then work the 5 practice questions. Click <em>Show solution</em> only after you&rsquo;ve tried a problem. Bring questions to your SOMATH Algebra Ignite teacher &mdash; or book a free <a href="/evaluation">30-minute evaluation</a> at 226 W 79th St.</div>
+            <div class="callout"><strong>How to use this page.</strong> Study each poster first, then read the theory notes below it, then work the 5 practice questions. Each set builds from careful practice to a short challenge. Click <strong>Answer</strong> only after you&rsquo;ve tried a problem. Bring questions to your SOMATH Algebra Ignite teacher &mdash; or book a free <a href="/evaluation">30-minute evaluation</a> at 226 W 79th St.</div>
 
             <!-- ============ 1 ============ -->
             <div class="part-header" id="c1">
@@ -190,20 +191,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Introduction to Polynomials</h3>
-              <div class="q"><span class="qn">Q1.</span> Is <span class="eq">4x<sup>3</sup> &minus; 2x + 7</span> a polynomial? Name the variable, the coefficients, and the constant.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Yes. Variable: <strong>x</strong>. Coefficients: <strong>4</strong> and <strong>&minus;2</strong>. Constant: <strong>7</strong>. All exponents (3, 1) are whole numbers.</div></details>
+              <div class="q" id="practice-1-1"><span class="qn">Q1.</span> Is <span class="eq">−(3/2)x³ + 0.4x² − x + 6</span> a polynomial? Identify its degree, variable-term coefficients, and constant.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>Yes; degree 3; coefficients −3/2, 0.4, and −1; constant 6.</strong></p><ol><li>The variable exponents are 3, 2, and 1, all nonnegative integers. Fractional or decimal coefficients are allowed.</li><li>The unwritten coefficient of −x is −1. The largest exponent is 3.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> Is <span class="eq">5x<sup>&minus;2</sup> + 3</span> a polynomial? Why or why not?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>No.</strong> The exponent <span class="eq">&minus;2</span> is not a whole number.</div></details>
+              <div class="q" id="practice-1-2"><span class="qn">Q2.</span> Which expressions are polynomials in x: <span class="eq">A = 5x² − 3/x + 1</span>, <span class="eq">B = (√5)x² − 2x + 7</span>, and <span class="eq">C = 2√x + x − 4</span>? Explain each choice.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>Only B is a polynomial in x.</strong></p><ol><li>In A, 1/x is x to the power −1, so a variable exponent is negative.</li><li>In B, √5 is a constant coefficient, not a variable exponent. In C, √x has exponent 1/2, so C is not a polynomial.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> Is <span class="eq">&radic;x + 6</span> a polynomial?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>No.</strong> <span class="eq">&radic;x = x<sup>1/2</sup></span> &mdash; a fractional exponent is not allowed in polynomials.</div></details>
+              <div class="q" id="practice-1-3"><span class="qn">Q3.</span> Simplify <span class="eq">4x³ − 2x + 5 − 4x³ + 7x − 9</span>. Is the result a polynomial, and what are its degree and constant?<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">5x − 4</span>; yes, degree 1 and constant −4.</strong></p><ol><li>The cubic terms cancel: 4x³ − 4x³ = 0.</li><li>Combine −2x + 7x = 5x and 5 − 9 = −4. Judge the degree after simplifying.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> Is <span class="eq">7</span> (just the number seven) a polynomial? If so, what is its degree?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Yes</strong> &mdash; a nonzero constant is a polynomial (a monomial). Its degree is <strong>0</strong> because <span class="eq">7 = 7x<sup>0</sup></span>.</div></details>
+              <div class="q" id="practice-1-4"><span class="qn">Q4.</span> A student says <span class="eq">−2a²b + (1/3)ab² − 7</span> is not a polynomial because it has two variables and a fraction. Is the student correct? Give the total degree.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>The student is incorrect. It is a polynomial of total degree 3.</strong></p><ol><li>Polynomials may contain more than one variable, and coefficients may be fractions.</li><li>The term degrees are 2 + 1 = 3, 1 + 2 = 3, and 0. Every variable exponent is a nonnegative integer.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> In <span class="eq">6x<sup>2</sup>y &minus; 3xy + 8</span>, list the variables, coefficients, and the constant.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Variables: <strong>x</strong> and <strong>y</strong>. Coefficients: <strong>6</strong> and <strong>&minus;3</strong>. Constant: <strong>8</strong>.</div></details>
+              <div class="q" id="practice-1-5"><span class="qn">Q5.</span> For n chosen from 0, 1, 2, and 3, which values make <span class="eq">4x<sup>n−1</sup> + 2</span> a polynomial? Give the simplified expression for each allowed value.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>n = 1, 2, or 3; the expressions are 6, 4x + 2, and 4x² + 2.</strong></p><ol><li>A polynomial requires n − 1 to be a nonnegative integer. n = 0 gives exponent −1 and is not allowed.</li><li>For n = 1, x⁰ = 1, so 4x⁰ + 2 = 6. For n = 2 and n = 3, the exponents are 1 and 2.</li></ol></div></details>
               </div>
             </div>
 
@@ -231,20 +232,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Terms, Coefficients, and Constants</h3>
-              <div class="q"><span class="qn">Q1.</span> List the terms of <span class="eq">6x<sup>3</sup> &minus; x<sup>2</sup> + 4x &minus; 12</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>6x³, &minus;x², 4x, &minus;12.</strong></div></details>
+              <div class="q" id="practice-2-1"><span class="qn">Q1.</span> Write <span class="eq">9 − x³ + 5x − 2x²</span> in descending powers of x. List all signed terms and identify the leading coefficient.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">−x³ − 2x² + 5x + 9</span>; terms −x³, −2x², 5x, 9; leading coefficient −1.</strong></p><ol><li>Reorder the terms without changing any signs.</li><li>The leading term is −x³. Its coefficient is −1, even though the numeral 1 is not written.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> What is the coefficient of <span class="eq">x</span> in <span class="eq">2x<sup>2</sup> &minus; 8x + 5</span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>&minus;8.</strong> The sign belongs to the coefficient.</div></details>
+              <div class="q" id="practice-2-2"><span class="qn">Q2.</span> In <span class="eq">−7x⁴ + 3x² − x + 8</span>, give the coefficients of x⁴, x³, x², and x, then the constant.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>−7, 0, 3, −1; constant 8.</strong></p><ol><li>Include a zero coefficient for the missing cubic term: 0x³.</li><li>Keep each sign with its coefficient. The final 8 has no variable.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> What is the coefficient of <span class="eq">x<sup>3</sup></span> in <span class="eq">x<sup>3</sup> + 5x<sup>2</sup> &minus; 2</span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>1.</strong> When no number is written, the coefficient is 1.</div></details>
+              <div class="q" id="practice-2-3"><span class="qn">Q3.</span> For <span class="eq">−3a²b + 5ab² − 4ab + 12</span>, list the signed variable terms and their numerical coefficients. How many terms are there altogether?<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>Variable terms: −3a²b, 5ab², −4ab; coefficients −3, 5, −4. There are 4 terms, including 12.</strong></p><ol><li>Separate terms at the addition and subtraction signs, retaining each term's sign.</li><li>The variable parts a²b, ab², and ab are different. The constant 12 is a fourth term.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> Identify the constant term in <span class="eq">3x<sup>2</sup> &minus; 4x + 11</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>11.</strong></div></details>
+              <div class="q" id="practice-2-4"><span class="qn">Q4.</span> Simplify <span class="eq">6x² − 4x + 3 − 2x² + x − 9</span>, then identify its leading coefficient, coefficient of x, and constant.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">4x² − 3x − 6</span>; leading coefficient 4, x-coefficient −3, constant −6.</strong></p><ol><li>Combine equal powers: (6 − 2)x² = 4x² and (−4 + 1)x = −3x.</li><li>Combine constants: 3 − 9 = −6. Read the requested coefficients from the simplified polynomial.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> In <span class="eq">&minus;5x<sup>4</sup> + 2x</span>, what is the coefficient of <span class="eq">x<sup>4</sup></span>, and is there a constant term?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Coefficient of <span class="eq">x<sup>4</sup></span>: <strong>&minus;5</strong>. There is <strong>no constant term</strong> (constant = 0).</div></details>
+              <div class="q" id="practice-2-5"><span class="qn">Q5.</span> In <span class="eq">P(x) = (3k − 2)x² − (k + 1)x + 7</span>, the coefficient of x² is 10. Find k, then write P(x) with numerical coefficients.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">k = 4; P(x) = 10x² − 5x + 7</span>.</strong></p><ol><li>Set the quadratic coefficient equal to 10: 3k − 2 = 10, so 3k = 12 and k = 4.</li><li>The coefficient of x is −(4 + 1) = −5, not 5.</li></ol></div></details>
               </div>
             </div>
 
@@ -272,20 +273,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Classifying Polynomials</h3>
-              <div class="q"><span class="qn">Q1.</span> Classify <span class="eq">9x<sup>2</sup></span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Monomial</strong> (1 term).</div></details>
+              <div class="q" id="practice-3-1"><span class="qn">Q1.</span> Simplify and classify by number of terms: <span class="eq">7x² − 3x + 2x² + 8x</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">9x² + 5x</span>, a binomial.</strong></p><ol><li>Combine the two quadratic terms and the two linear terms separately.</li><li>Two nonzero terms remain; do not count the four terms in the original expression.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> Classify <span class="eq">2x &minus; 7</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Binomial</strong> (2 terms).</div></details>
+              <div class="q" id="practice-3-2"><span class="qn">Q2.</span> Simplify and classify: <span class="eq">5y³ + 2y² − 4y − 5y³ + 7y</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">2y² + 3y</span>, a binomial.</strong></p><ol><li>The y³ terms cancel. The linear terms combine to −4y + 7y = 3y.</li><li>The remaining two unlike terms cannot be combined.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> Classify <span class="eq">x<sup>3</sup> &minus; 4x<sup>2</sup> + 6x</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>Trinomial</strong> (3 terms).</div></details>
+              <div class="q" id="practice-3-3"><span class="qn">Q3.</span> Simplify and classify: <span class="eq">4a²b − 3ab² + 5 + 2ab² − a²b</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">3a²b − ab² + 5</span>, a trinomial.</strong></p><ol><li>Combine 4a²b − a²b = 3a²b and −3ab² + 2ab² = −ab².</li><li>a²b and ab² are unlike terms because their variable exponents do not match.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> Simplify and classify <span class="eq">3x + 5x + 2</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Combine like terms: <span class="eq">8x + 2</span>. That&rsquo;s a <strong>binomial</strong>.</div></details>
+              <div class="q" id="practice-3-4"><span class="qn">Q4.</span> Find c so that <span class="eq">(c − 4)x² + 6x − 2x + 9 − 9</span> simplifies to a monomial. State that monomial.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">c = 4</span>; the monomial is <span class="eq">4x</span>.</strong></p><ol><li>First simplify to (c − 4)x² + 4x. The linear term cannot disappear.</li><li>For exactly one nonzero term, set c − 4 = 0. This leaves 4x.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> Simplify and classify <span class="eq">2x<sup>2</sup> &minus; x + 4x &minus; x<sup>2</sup></span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(2x<sup>2</sup> &minus; x<sup>2</sup>) + (&minus;x + 4x) = x<sup>2</sup> + 3x</span>. That&rsquo;s a <strong>binomial</strong>.</div></details>
+              <div class="q" id="practice-3-5"><span class="qn">Q5.</span> For which values of a is <span class="eq">(a − 2)x² + 3x + (a + 1)</span> a binomial? State the polynomial for each value.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">a = 2</span> gives <span class="eq">3x + 3</span>; <span class="eq">a = −1</span> gives <span class="eq">−3x² + 3x</span>.</strong></p><ol><li>The term 3x is always nonzero. Exactly one of the other two coefficients must be zero.</li><li>a − 2 = 0 gives a = 2; a + 1 = 0 gives a = −1. These cannot happen together, so each choice leaves exactly two terms.</li></ol></div></details>
               </div>
             </div>
 
@@ -312,20 +313,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Degree of a Polynomial</h3>
-              <div class="q"><span class="qn">Q1.</span> What is the degree of <span class="eq">7x<sup>5</sup></span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>5.</strong></div></details>
+              <div class="q" id="practice-4-1"><span class="qn">Q1.</span> Find the degree and leading coefficient of <span class="eq">8 − 3x⁴ + 5x² − x</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>Degree 4; leading coefficient −3.</strong></p><ol><li>In standard form it is −3x⁴ + 5x² − x + 8.</li><li>The highest exponent is 4. Its coefficient is −3, not the first number shown in the original order.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> What is the degree of the monomial <span class="eq">6x<sup>2</sup>y<sup>3</sup></span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Add exponents: <span class="eq">2 + 3 = <strong>5</strong></span>.</div></details>
+              <div class="q" id="practice-4-2"><span class="qn">Q2.</span> Find the total degree of <span class="eq">−4a³b² + 6a²b⁴ − 7ab + 10</span>. Show each term's degree.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong>The term degrees are 5, 6, 2, and 0; the polynomial has total degree 6.</strong></p><ol><li>Add exponents within each term: 3 + 2 = 5, 2 + 4 = 6, and 1 + 1 = 2.</li><li>Take the largest term degree, not the sum of the degrees of all terms.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> What is the degree of <span class="eq">3x<sup>3</sup> &minus; 5x + 8</span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Largest term degree = <strong>3</strong>.</div></details>
+              <div class="q" id="practice-4-3"><span class="qn">Q3.</span> Simplify <span class="eq">9x⁵ − 4x³ + 2x − 9x⁵ + 7x³ − 6</span> before finding its degree and leading coefficient.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">3x³ + 2x − 6</span>; degree 3 and leading coefficient 3.</strong></p><ol><li>The fifth-degree terms cancel completely.</li><li>Combine −4x³ + 7x³ = 3x³. The greatest surviving power is now x³.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> What is the degree of <span class="eq">2x<sup>4</sup>y &minus; x<sup>2</sup>y<sup>3</sup> + 7</span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Term degrees are <span class="eq">4+1=5</span>, <span class="eq">2+3=5</span>, <span class="eq">0</span>. Largest = <strong>5</strong>.</div></details>
+              <div class="q" id="practice-4-4"><span class="qn">Q4.</span> Choose k so that <span class="eq">(k − 3)x⁴ + (2k + 1)x² − 5x + 7</span> has degree exactly 2. Explain why the quadratic term does not also disappear.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">k = 3</span>; the polynomial becomes <span class="eq">7x² − 5x + 7</span>.</strong></p><ol><li>The x⁴ coefficient must be zero: k − 3 = 0.</li><li>With k = 3, the x² coefficient is 2(3) + 1 = 7, which is nonzero. The degree is therefore exactly 2.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> What is the degree of the constant polynomial <span class="eq">&minus;12</span>?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> A nonzero constant has degree <strong>0</strong>.</div></details>
+              <div class="q" id="practice-4-5"><span class="qn">Q5.</span> The polynomial <span class="eq">3x<sup>n</sup>y² + 5x²y⁴ − 8</span> has total degree exactly 7, where n is a nonnegative integer. Find n.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">n = 5</span>.</strong></p><ol><li>The term degrees are n + 2, 2 + 4 = 6, and 0.</li><li>The maximum must be 7. Since the second term has degree only 6, n + 2 must equal 7, giving n = 5.</li></ol></div></details>
               </div>
             </div>
 
@@ -356,20 +357,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Combining Like Terms</h3>
-              <div class="q"><span class="qn">Q1.</span> Simplify <span class="eq">7x + 3x</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>10x.</strong></div></details>
+              <div class="q" id="practice-5-1"><span class="qn">Q1.</span> Simplify <span class="eq">8x − 3 + 5x − 7 − 4x</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">9x − 10</span>.</strong></p><ol><li>The x-coefficient is 8 + 5 − 4 = 9.</li><li>The constants total −3 − 7 = −10.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> Simplify <span class="eq">6x<sup>2</sup> &minus; 2x<sup>2</sup> + x<sup>2</sup></span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(6 &minus; 2 + 1)x<sup>2</sup> = <strong>5x<sup>2</sup></strong></span>.</div></details>
+              <div class="q" id="practice-5-2"><span class="qn">Q2.</span> Simplify and write in standard form: <span class="eq">7x² − 4x + 6 − 3x² + 9x − 11</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">4x² + 5x − 5</span>.</strong></p><ol><li>Quadratic terms: (7 − 3)x² = 4x². Linear terms: (−4 + 9)x = 5x.</li><li>Constants: 6 − 11 = −5. Keep unlike powers separate.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> Simplify <span class="eq">5x + 3 &minus; 2x + 8</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(5x &minus; 2x) + (3 + 8) = <strong>3x + 11</strong></span>.</div></details>
+              <div class="q" id="practice-5-3"><span class="qn">Q3.</span> Simplify <span class="eq">5a²b − 2ab² − 7a²b + 6ab² − 3ab</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">−2a²b + 4ab² − 3ab</span>.</strong></p><ol><li>Group matching variable parts: (5 − 7)a²b and (−2 + 6)ab².</li><li>The term −3ab has no like term, so it remains unchanged.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> Simplify <span class="eq">4x<sup>2</sup> + 6x &minus; x<sup>2</sup> &minus; 2x + 5</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(4x<sup>2</sup> &minus; x<sup>2</sup>) + (6x &minus; 2x) + 5 = <strong>3x<sup>2</sup> + 4x + 5</strong></span>.</div></details>
+              <div class="q" id="practice-5-4"><span class="qn">Q4.</span> Simplify <span class="eq">(3/2)x² − (1/4)x + 5 − (1/2)x² + (5/4)x − 8</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">x² + x − 3</span>.</strong></p><ol><li>Quadratic coefficient: 3/2 − 1/2 = 1. Linear coefficient: −1/4 + 5/4 = 1.</li><li>Constants: 5 − 8 = −3. Fractional coefficients combine in the same way as integer coefficients.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> Can you combine <span class="eq">3x<sup>2</sup></span> and <span class="eq">3x</span>? Why or why not?<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <strong>No.</strong> Different exponents, so they are not like terms. The expression <span class="eq">3x<sup>2</sup> + 3x</span> is already simplified.</div></details>
+              <div class="q" id="practice-5-5"><span class="qn">Q5.</span> Simplify <span class="eq">4x² − 3x + 8 − 6x² + 7x − 5 + x²</span>, then evaluate your result at <span class="eq">x = −2</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">−x² + 4x + 3</span>; at x = −2, the value is <span class="eq">−9</span>.</strong></p><ol><li>Combine coefficients: (4 − 6 + 1)x² + (−3 + 7)x + (8 − 5) = −x² + 4x + 3.</li><li>Substitute with parentheses: −(−2)² + 4(−2) + 3 = −4 − 8 + 3 = −9.</li></ol></div></details>
               </div>
             </div>
 
@@ -401,20 +402,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Adding Polynomials</h3>
-              <div class="q"><span class="qn">Q1.</span> <span class="eq">(2x + 5) + (3x + 4)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(2x + 3x) + (5 + 4) = <strong>5x + 9</strong></span>.</div></details>
+              <div class="q" id="practice-6-1"><span class="qn">Q1.</span> Add and simplify: <span class="eq">(4x² − 7x + 3) + (−2x² + 5x − 8)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">2x² − 2x − 5</span>.</strong></p><ol><li>Combine like terms: (4 − 2)x² + (−7 + 5)x + (3 − 8).</li><li>This gives 2x² − 2x − 5. Adding a polynomial does not change its existing signs.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> <span class="eq">(x<sup>2</sup> + 3x &minus; 2) + (2x<sup>2</sup> &minus; x + 6)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(1+2)x<sup>2</sup> + (3&minus;1)x + (&minus;2+6) = <strong>3x<sup>2</sup> + 2x + 4</strong></span>.</div></details>
+              <div class="q" id="practice-6-2"><span class="qn">Q2.</span> Add <span class="eq">(3x³ − 5x + 4) + (−x³ + 2x² + 7x − 9)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">2x³ + 2x² + 2x − 5</span>.</strong></p><ol><li>The first polynomial has no quadratic term, so treat its x² coefficient as 0.</li><li>Combine cubic, quadratic, linear, and constant terms: 3 − 1 = 2; 0 + 2 = 2; −5 + 7 = 2; 4 − 9 = −5.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> <span class="eq">(4x<sup>3</sup> &minus; 2x + 1) + (x<sup>3</sup> + 5x &minus; 3)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(4+1)x<sup>3</sup> + (&minus;2+5)x + (1&minus;3) = <strong>5x<sup>3</sup> + 3x &minus; 2</strong></span>.</div></details>
+              <div class="q" id="practice-6-3"><span class="qn">Q3.</span> Add all three polynomials: <span class="eq">(2x² − 3x + 5) + (−5x² + x − 7) + (4x² + 6x + 2)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">x² + 4x</span>.</strong></p><ol><li>The quadratic coefficient is 2 − 5 + 4 = 1; the linear coefficient is −3 + 1 + 6 = 4.</li><li>The constants cancel: 5 − 7 + 2 = 0. Do not keep an extra constant term.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> <span class="eq">(6x<sup>2</sup> + 4) + (&minus;6x<sup>2</sup> + 7x)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(6&minus;6)x<sup>2</sup> + 7x + 4 = <strong>7x + 4</strong></span>.</div></details>
+              <div class="q" id="practice-6-4"><span class="qn">Q4.</span> Find the missing polynomial P(x): <span class="eq">(3x² − 4x + 6) + P(x) = 8x² + x − 2</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">P(x) = 5x² + 5x − 8</span>.</strong></p><ol><li>Match coefficients: 3 + ? = 8, −4 + ? = 1, and 6 + ? = −2.</li><li>The missing coefficients are 5, 5, and −8. Add the result back to check.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> Using the vertical method, add <span class="eq">(5x<sup>2</sup> + 2x &minus; 8)</span> and <span class="eq">(3x<sup>2</sup> &minus; 4x + 1)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(5+3)x<sup>2</sup> + (2&minus;4)x + (&minus;8+1) = <strong>8x<sup>2</sup> &minus; 2x &minus; 7</strong></span>.</div></details>
+              <div class="q" id="practice-6-5"><span class="qn">Q5.</span> A triangle has side lengths <span class="eq">2x + 5</span>, <span class="eq">3x − 1</span>, and <span class="eq">x + 4</span> centimeters, with x &gt; 1. Write and simplify its perimeter, then find the perimeter when x = 3.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">P(x) = 6x + 8</span> cm; at x = 3, the perimeter is <span class="eq">26 cm</span>.</strong></p><ol><li>Add the three sides: (2x + 5) + (3x − 1) + (x + 4) = 6x + 8.</li><li>Evaluate 6(3) + 8 = 26. The side lengths are then 11, 8, and 7 cm.</li></ol></div></details>
               </div>
             </div>
 
@@ -441,20 +442,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Subtracting Polynomials</h3>
-              <div class="q"><span class="qn">Q1.</span> <span class="eq">(6x + 5) &minus; (2x + 3)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">6x + 5 &minus; 2x &minus; 3 = <strong>4x + 2</strong></span>.</div></details>
+              <div class="q" id="practice-7-1"><span class="qn">Q1.</span> Subtract and simplify: <span class="eq">(7x² − 4x + 6) − (3x² + 2x − 5)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">4x² − 6x + 11</span>.</strong></p><ol><li>Distribute the subtraction: 7x² − 4x + 6 − 3x² − 2x + 5.</li><li>Combine like terms. Subtracting −5 contributes +5 to the constant.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> <span class="eq">(3x<sup>2</sup> + 5x &minus; 2) &minus; (x<sup>2</sup> + 2x + 4)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">3x<sup>2</sup> + 5x &minus; 2 &minus; x<sup>2</sup> &minus; 2x &minus; 4 = <strong>2x<sup>2</sup> + 3x &minus; 6</strong></span>.</div></details>
+              <div class="q" id="practice-7-2"><span class="qn">Q2.</span> Simplify <span class="eq">(2x³ − 5x + 1) − (−3x³ + 4x² − x + 8)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">5x³ − 4x² − 4x − 7</span>.</strong></p><ol><li>Reverse every sign in the second polynomial: +3x³ − 4x² + x − 8.</li><li>Combine with the first polynomial: 2 + 3 = 5, −5 + 1 = −4, and 1 − 8 = −7.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> <span class="eq">(4x<sup>2</sup> &minus; 3x + 7) &minus; (2x<sup>2</sup> &minus; 5x + 1)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">4x<sup>2</sup> &minus; 3x + 7 &minus; 2x<sup>2</sup> + 5x &minus; 1 = <strong>2x<sup>2</sup> + 2x + 6</strong></span>.</div></details>
+              <div class="q" id="practice-7-3"><span class="qn">Q3.</span> Simplify <span class="eq">(5x² + 2x − 6) − (3x² − 4x + 1) − (x² + x − 8)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">x² + 5x + 1</span>.</strong></p><ol><li>Remove both subtracted parentheses: 5x² + 2x − 6 − 3x² + 4x − 1 − x² − x + 8.</li><li>Combine coefficients: 5 − 3 − 1 = 1, 2 + 4 − 1 = 5, and −6 − 1 + 8 = 1.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> <span class="eq">(x<sup>3</sup> + 2x &minus; 4) &minus; (x<sup>3</sup> &minus; 2x + 4)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">x<sup>3</sup> + 2x &minus; 4 &minus; x<sup>3</sup> + 2x &minus; 4 = <strong>4x &minus; 8</strong></span>.</div></details>
+              <div class="q" id="practice-7-4"><span class="qn">Q4.</span> Simplify <span class="eq">(6x² − x + 4) − [(2x² + 3x − 5) − (x² − 2x + 1)]</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">5x² − 6x + 10</span>.</strong></p><ol><li>First simplify inside the square brackets: 2x² + 3x − 5 − x² + 2x − 1 = x² + 5x − 6.</li><li>Now subtract the entire bracket: 6x² − x + 4 − x² − 5x + 6 = 5x² − 6x + 10.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> <span class="eq">(&minus;5x<sup>2</sup> + 3) &minus; (&minus;2x<sup>2</sup> &minus; 4x + 1)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">&minus;5x<sup>2</sup> + 3 + 2x<sup>2</sup> + 4x &minus; 1 = <strong>&minus;3x<sup>2</sup> + 4x + 2</strong></span>.</div></details>
+              <div class="q" id="practice-7-5"><span class="qn">Q5.</span> For a school fundraiser, revenue from x batches is modeled by <span class="eq">R(x) = 5x² + 18x</span> dollars and cost by <span class="eq">C(x) = 2x² + 7x + 24</span> dollars. Write the profit polynomial R(x) − C(x), then find profit for 4 batches.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">P(x) = 3x² + 11x − 24</span>; profit for 4 batches is <span class="eq">$68</span>.</strong></p><ol><li>Subtract every cost term: 5x² + 18x − 2x² − 7x − 24.</li><li>Evaluate 3(4²) + 11(4) − 24 = 48 + 44 − 24 = 68.</li></ol></div></details>
               </div>
             </div>
 
@@ -481,20 +482,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Multiplying Monomials</h3>
-              <div class="q"><span class="qn">Q1.</span> <span class="eq">(2x<sup>3</sup>)(5x<sup>4</sup>)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(2 &middot; 5)(x<sup>3+4</sup>) = <strong>10x<sup>7</sup></strong></span>.</div></details>
+              <div class="q" id="practice-8-1"><span class="qn">Q1.</span> Multiply <span class="eq">(−3x²)(5x³)</span>, then state the degree of the product.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">−15x⁵</span>; degree 5.</strong></p><ol><li>Multiply coefficients: (−3)(5) = −15.</li><li>Add exponents of the same base: x² · x³ = x⁵.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> <span class="eq">(&minus;4x)(6x<sup>2</sup>)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(&minus;4 &middot; 6)(x<sup>1+2</sup>) = <strong>&minus;24x<sup>3</sup></strong></span>.</div></details>
+              <div class="q" id="practice-8-2"><span class="qn">Q2.</span> Multiply <span class="eq">(−2a³b²)(−4ab³)</span>. Give the total degree of the product.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">8a⁴b⁵</span>; total degree 9.</strong></p><ol><li>Two negative coefficients make a positive: (−2)(−4) = 8.</li><li>Add exponents by variable: a³ · a = a⁴ and b² · b³ = b⁵. Total degree is 4 + 5 = 9.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> <span class="eq">(3a<sup>2</sup>b)(2ab<sup>3</sup>)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Coefficients: <span class="eq">6</span>. <span class="eq">a</span>: <span class="eq">2+1=3</span>. <span class="eq">b</span>: <span class="eq">1+3=4</span>. Answer: <strong>6a<sup>3</sup>b<sup>4</sup></strong>.</div></details>
+              <div class="q" id="practice-8-3"><span class="qn">Q3.</span> Multiply all three factors: <span class="eq">(−2x²y)(3xy³)(−4x³)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">24x⁶y⁴</span>.</strong></p><ol><li>Coefficients: (−2)(3)(−4) = 24.</li><li>For x, add 2 + 1 + 3 = 6. For y, add 1 + 3 = 4; the third factor contributes no y.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> <span class="eq">(&minus;3x<sup>2</sup>y<sup>3</sup>)(&minus;5x<sup>4</sup>y)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Coefficients: <span class="eq">(&minus;3)(&minus;5) = 15</span>. <span class="eq">x</span>: <span class="eq">2+4=6</span>. <span class="eq">y</span>: <span class="eq">3+1=4</span>. Answer: <strong>15x<sup>6</sup>y<sup>4</sup></strong>.</div></details>
+              <div class="q" id="practice-8-4"><span class="qn">Q4.</span> Simplify <span class="eq">((3/4)a²b³)(−8ab²)(−(1/2)a³)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">3a⁶b⁵</span>.</strong></p><ol><li>Multiply numerical factors first: (3/4)(−8)(−1/2) = (−6)(−1/2) = 3.</li><li>The exponents are a: 2 + 1 + 3 = 6; b: 3 + 2 = 5.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> <span class="eq">(7x<sup>5</sup>)(0)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Anything times zero is <strong>0</strong>.</div></details>
+              <div class="q" id="practice-8-5"><span class="qn">Q5.</span> Find c and the nonnegative integer n so that <span class="eq">(cx<sup>n</sup>y²)(−3x²y³) = 18x⁷y⁵</span> for every x and y.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">c = −6 and n = 5</span>.</strong></p><ol><li>Match coefficients: −3c = 18, so c = −6.</li><li>Match x-exponents: n + 2 = 7, so n = 5. The y-exponents already match because 2 + 3 = 5.</li></ol></div></details>
               </div>
             </div>
 
@@ -530,20 +531,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; Monomial &times; Polynomial</h3>
-              <div class="q"><span class="qn">Q1.</span> <span class="eq">2x(x + 5)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">2x &middot; x + 2x &middot; 5 = <strong>2x<sup>2</sup> + 10x</strong></span>.</div></details>
+              <div class="q" id="practice-9-1"><span class="qn">Q1.</span> Expand and simplify <span class="eq">−3x(2x² − 5x + 4)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">−6x³ + 15x² − 12x</span>.</strong></p><ol><li>Multiply −3x by each of the three terms.</li><li>The middle product is positive: (−3x)(−5x) = 15x².</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> <span class="eq">4x(3x<sup>2</sup> &minus; 2x + 1)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">12x<sup>3</sup> &minus; 8x<sup>2</sup> + 4x</span>.</div></details>
+              <div class="q" id="practice-9-2"><span class="qn">Q2.</span> Expand <span class="eq">(1/2)x²(6x³ − 8x + 10)</span> and write the result in standard form.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">3x⁵ − 4x³ + 5x²</span>.</strong></p><ol><li>Multiply each coefficient by 1/2: 6 becomes 3, −8 becomes −4, and 10 becomes 5.</li><li>Add the outer x-exponent 2 to each inner x-exponent: 3 + 2 = 5, 1 + 2 = 3, and 0 + 2 = 2.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> <span class="eq">&minus;3x(2x &minus; 4)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">&minus;3x &middot; 2x + (&minus;3x)(&minus;4) = <strong>&minus;6x<sup>2</sup> + 12x</strong></span>.</div></details>
+              <div class="q" id="practice-9-3"><span class="qn">Q3.</span> Expand and simplify <span class="eq">−2ab(3a² − 4ab + 5b²)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">−6a³b + 8a²b² − 10ab³</span>.</strong></p><ol><li>Distribute −2ab to all three terms.</li><li>Keep each variable's exponent separate: (ab)(ab) = a²b² and (ab)(b²) = ab³.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> <span class="eq">5x<sup>2</sup>(x<sup>2</sup> &minus; 3x + 2)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq"><strong>5x<sup>4</sup> &minus; 15x<sup>3</sup> + 10x<sup>2</sup></strong></span>.</div></details>
+              <div class="q" id="practice-9-4"><span class="qn">Q4.</span> Simplify <span class="eq">3x(2x² − x + 4) − 2x(x² + 5x − 3)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">4x³ − 13x² + 18x</span>.</strong></p><ol><li>The first product is 6x³ − 3x² + 12x. Distributing the outer −2x gives −2x³ − 10x² + 6x.</li><li>Add the expanded results: (6 − 2)x³ + (−3 − 10)x² + (12 + 6)x.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> <span class="eq">&minus;2a<sup>2</sup>(3a &minus; 4a<sup>2</sup> + 5)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">&minus;6a<sup>3</sup> + 8a<sup>4</sup> &minus; 10a<sup>2</sup></span>. Written in standard form: <strong>8a<sup>4</sup> &minus; 6a<sup>3</sup> &minus; 10a<sup>2</sup></strong>.</div></details>
+              <div class="q" id="practice-9-5"><span class="qn">Q5.</span> A rectangle has width <span class="eq">3x</span> meters and length <span class="eq">2x + 5</span> meters. A smaller rectangle of width <span class="eq">x</span> and length <span class="eq">x + 2</span> is removed. For x &gt; 0, write the remaining area as a polynomial, then find it when x = 2.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">A(x) = 5x² + 13x</span> m²; when x = 2, the remaining area is <span class="eq">46 m²</span>.</strong></p><ol><li>Subtract the two areas: 3x(2x + 5) − x(x + 2) = 6x² + 15x − x² − 2x.</li><li>Combine to get 5x² + 13x. Evaluate 5(2²) + 13(2) = 20 + 26 = 46.</li></ol></div></details>
               </div>
             </div>
 
@@ -583,20 +584,20 @@
 
             <div class="q-list">
               <h3>5 Practice Questions &mdash; FOIL / Multiplying Binomials</h3>
-              <div class="q"><span class="qn">Q1.</span> <span class="eq">(x + 4)(x + 2)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">x<sup>2</sup> + 2x + 4x + 8 = <strong>x<sup>2</sup> + 6x + 8</strong></span>.</div></details>
+              <div class="q" id="practice-10-1"><span class="qn">Q1.</span> Expand and simplify <span class="eq">(2x + 3)(x + 5)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">2x² + 13x + 15</span>.</strong></p><ol><li>The four products are 2x², 10x, 3x, and 15.</li><li>Combine the middle terms: 10x + 3x = 13x.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q2.</span> <span class="eq">(x &minus; 3)(x + 5)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">x<sup>2</sup> + 5x &minus; 3x &minus; 15 = <strong>x<sup>2</sup> + 2x &minus; 15</strong></span>.</div></details>
+              <div class="q" id="practice-10-2"><span class="qn">Q2.</span> Expand and simplify <span class="eq">(3x − 4)(2x + 5)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">6x² + 7x − 20</span>.</strong></p><ol><li>The four products are 6x², 15x, −8x, and −20.</li><li>Combine 15x − 8x = 7x. The constant is negative because (−4)(5) = −20.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q3.</span> <span class="eq">(2x + 1)(x + 4)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">2x<sup>2</sup> + 8x + x + 4 = <strong>2x<sup>2</sup> + 9x + 4</strong></span>.</div></details>
+              <div class="q" id="practice-10-3"><span class="qn">Q3.</span> A student writes <span class="eq">(2x − 3)² = 4x² + 9</span>. Identify the missing term and give the correct expansion.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">(2x − 3)² = 4x² − 12x + 9</span>; the missing term is <span class="eq">−12x</span>.</strong></p><ol><li>Write the square as (2x − 3)(2x − 3), not as a square of each term separately.</li><li>The two cross-products are −6x and −6x. Their sum is −12x.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q4.</span> <span class="eq">(x + 6)(x &minus; 6)</span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> Difference of squares: <span class="eq">x<sup>2</sup> &minus; 36</span>.</div></details>
+              <div class="q" id="practice-10-4"><span class="qn">Q4.</span> Expand both products and simplify <span class="eq">(2x − 5)(2x + 5) − (x − 3)(x + 4)</span>.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">3x² − x − 13</span>.</strong></p><ol><li>The first product is 4x² − 25 because its middle terms cancel. The second is x² + x − 12.</li><li>Subtract the entire second result: 4x² − 25 − x² − x + 12 = 3x² − x − 13.</li></ol></div></details>
               </div>
-              <div class="q"><span class="qn">Q5.</span> <span class="eq">(x + 5)<sup>2</sup></span>.<br/>
-                <details class="sol"><summary></summary><div class="ans"><strong>Solution:</strong> <span class="eq">(x + 5)(x + 5) = x<sup>2</sup> + 5x + 5x + 25 = <strong>x<sup>2</sup> + 10x + 25</strong></span>.</div></details>
+              <div class="q" id="practice-10-5"><span class="qn">Q5.</span> A rectangular garden measures <span class="eq">2x + 5</span> meters by <span class="eq">x + 3</span> meters, where x &gt; 0. A path 1 meter wide surrounds the garden on all four sides. Write the path's area as a simplified polynomial, then find it when x = 3.<br/>
+                <details class="sol"><summary>Answer</summary><div class="ans"><p><strong><span class="eq">A<sub>path</sub>(x) = 6x + 20</span> m²; at x = 3, the path covers <span class="eq">38 m²</span>.</strong></p><ol><li>A 1-meter border adds 2 meters to each full dimension. The outside dimensions are 2x + 7 and x + 5.</li><li>Outside area: (2x + 7)(x + 5) = 2x² + 17x + 35. Garden area: (2x + 5)(x + 3) = 2x² + 11x + 15.</li><li>Subtract the garden from the outside: 6x + 20. At x = 3, this is 18 + 20 = 38 m².</li></ol></div></details>
               </div>
             </div>
 
