@@ -199,6 +199,18 @@
 
   <div class="stat-row" id="statRow"></div>
 
+  <details class="card" id="recoveryPanel" style="margin-bottom:16px">
+    <summary style="cursor:pointer;font-weight:600">Restore from Stripe</summary>
+    <p>Find completed, paid registrations that are missing from this page. Restoring adds the enrollment record only. It does not charge anyone, create a subscription, or send emails.</p>
+    <form id="recoveryForm" class="controls">
+      <label for="recoveryEmail">Parent email</label>
+      <input id="recoveryEmail" type="email" required autocomplete="off" style="padding:12px;max-width:100%;min-width:0" placeholder="Parent's Stripe email">
+      <button id="recoveryFind" type="submit">Find paid registrations</button>
+    </form>
+    <p id="recoveryMessage" role="status" aria-live="polite"></p>
+    <div id="recoveryResults"></div>
+  </details>
+
   <div class="card">
     <div class="controls">
       <input id="filterText" type="text" placeholder="Search name, email, course…" style="min-width:240px">
@@ -235,6 +247,56 @@
   var statRow = document.getElementById("statRow");
 
   var allRows = [];
+  var recoveryCandidates = [];
+  var recoveryResults = document.getElementById("recoveryResults");
+  var recoveryMessage = document.getElementById("recoveryMessage");
+  var recoveryFind = document.getElementById("recoveryFind");
+  async function recoveryRequest(payload) {
+    var response = await fetch("/api/enrollments", {
+      method: "POST", cache: "no-store",
+      headers: { "Content-Type": "application/json", "x-admin-password": getPw() },
+      body: JSON.stringify(payload)
+    });
+    var data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Recovery request failed.");
+    return data;
+  }
+  document.getElementById("recoveryForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+    recoveryFind.disabled = true;
+    recoveryMessage.textContent = "Checking Stripe. No changes are being made.";
+    recoveryResults.innerHTML = "";
+    try {
+      var data = await recoveryRequest({action:"recovery_lookup",email:document.getElementById("recoveryEmail").value.trim()});
+      recoveryCandidates = data.candidates || [];
+      recoveryMessage.textContent = recoveryCandidates.length ? "Review the student and class before restoring a missing entry." : "No completed, paid registrations with student details were found for this email.";
+      recoveryResults.innerHTML = recoveryCandidates.map(function(c,i) {
+        return '<div style="border-top:1px solid #ddd;padding:16px 0"><strong>' + esc(c.student) + '</strong><p>' +
+          esc(c.course) + ' · ' + esc(c.day) + ' ' + esc(c.classTime) + ' · Starts ' + esc(c.startDate) +
+          '<br>Paid at checkout: ' + esc(fmtAmount(c.amountUsd)) + '</p>' +
+          (c.present ? '<span>Already listed' + (c.existingStudent !== c.student ? ': ' + esc(c.existingStudent) : '') + '</span>' :
+          '<button type="button" data-recover-index="' + i + '">Restore enrollment</button>') + '</div>';
+      }).join("");
+    } catch(error) { recoveryMessage.textContent = error.message; }
+    finally { recoveryFind.disabled = false; }
+  });
+  recoveryResults.addEventListener("click", async function(event) {
+    var button = event.target.closest("button[data-recover-index]");
+    if (!button) return;
+    var c = recoveryCandidates[Number(button.dataset.recoverIndex)];
+    if (!c || !window.confirm("Restore " + c.student + " to " + c.course + ", " + c.day + " " + c.classTime +
+      ", starting " + c.startDate + "? This restores the existing paid registration only. No charges, subscriptions, or emails will be created.")) return;
+    button.disabled = true;
+    recoveryMessage.textContent = "Verifying checkout and restoring the enrollment…";
+    try {
+      var data = await recoveryRequest({action:"recovery_restore",sessionId:c.sessionId});
+      button.textContent = data.alreadyPresent ? "Already listed" : "Restored";
+      recoveryMessage.textContent = data.student + (data.alreadyPresent ? " is already listed. No duplicate was added." : " was restored. Billing was not changed.");
+      filterText.value = c.parentEmail;
+      filterStatus.value = ""; filterCourse.value = "";
+      fetchData();
+    } catch(error) { recoveryMessage.textContent = error.message; button.disabled = false; }
+  });
 
   function showLogin(msg){
     appView.style.display = "none";
@@ -407,7 +469,7 @@
     if (e.key === "Enter") loginBtn.click();
   });
   refreshBtn.addEventListener("click", fetchData);
-  logoutBtn.addEventListener("click", function(){ clearPw(); allRows = []; showLogin(); });
+  logoutBtn.addEventListener("click", function(){ clearPw(); allRows = []; recoveryCandidates = []; recoveryResults.innerHTML = ""; recoveryMessage.textContent = ""; document.getElementById("recoveryEmail").value = ""; showLogin(); });
   csvBtn.addEventListener("click", function(){
     var pw = getPw();
     if (!pw) { showLogin(); return; }

@@ -2,6 +2,7 @@ _worker.js
 _checkin.mjs
 _checkin-memberships.mjs
 _student-contacts.mjs
+_enrollment-recovery.mjs
 wrangler.toml
 .assetsignore
 .git

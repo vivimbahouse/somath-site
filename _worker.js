@@ -1,5 +1,6 @@
 import { handleCheckin, runHomework } from "./_checkin.mjs";
 import {readStudentContact,saveStudentContact,normalizeEmail,validStudentEmail} from "./_student-contacts.mjs";
+import { recoverEnrollment } from "./_enrollment-recovery.mjs";
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -1953,6 +1954,9 @@ async function handleEnrollmentsApi(request, env) {
     var body;
     try { body = await request.json(); } catch (e) { return jsonResponse({ error: "bad_json" }, 400); }
     if (!body || typeof body !== "object") return jsonResponse({ error: "bad_body" }, 400);
+    if (body.action === "recovery_lookup" || body.action === "recovery_restore") {
+      return recoverEnrollment(body, env, { list: kvListEnrollments, put: kvPutEnrollment, update: kvUpdate, titles: COURSE_TITLES });
+    }
     var now = new Date().toISOString();
     var status = body.status === "intent" ? "intent" : "paid";
     var rec = {
