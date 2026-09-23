@@ -1,5 +1,6 @@
 // Private check-in and homework service. This module is excluded from static assets.
 import { automaticRoster } from "./_checkin-memberships.mjs";
+import {saveStudentContact,normalizeEmail,validStudentEmail,updateSubscriptionStudentEmail} from "./_student-contacts.mjs";
 const TZ = "America/New_York";
 const P = "checkin:";
 const TABLET_COOKIE="__Host-somath_tablet", TABLET_TTL=30*24*60*60;
@@ -189,6 +190,17 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       return json({ok:true,already:false,name:s.name,at:record.at});
     }
     if(!staff) return json({error:"Staff access required."},403);
+    if(action==="student-contact"){
+      const student=students.find(s=>s.id===b.studentId);
+      if(!student?.customerId||!student.subscriptionId)return json({error:"A verified enrolled student is required."},404);
+      const studentEmail=normalizeEmail(b.studentEmail);
+      if(!validStudentEmail(studentEmail))return json({error:"Enter a valid student email, or leave it blank to remove it."},400);
+      try{
+        await (deps.updateStudentEmail||updateSubscriptionStudentEmail)(env,student.subscriptionId,studentEmail);
+        await saveStudentContact(env,{customerId:student.customerId,name:student.name,studentEmail},now);
+      }catch{return json({error:"The contact update could not finish. Please retry; the parent billing email was not changed."},503);}
+      return json({ok:true,studentEmail});
+    }
     if(action==="notes" || action==="add-note") {
       const old=await get(env,`attendance:${date}:${cls.id}:${b.studentId}`);
       const student=students.find(s=>s.id===b.studentId)||(old?{id:old.studentId,personId:old.personId,name:old.name}:null);
@@ -267,18 +279,26 @@ export async function runHomework(env,deps,now=new Date()) {
     for(const a of await list(env,`attendance:${lesson.date}:${cls.id}:`)) {
       if(!a.present)continue;
       const s=students.find(s=>s.id===a.studentId&&s.active!==false);
-      if(!s||!emailOK(s.email))continue;
-      const key=`delivery:${lesson.date}:${cls.id}:${s.id}`;
+      if(!s)continue;
+      const recipients=[];
+      if(emailOK(s.email))recipients.push({kind:"parent",email:normalizeEmail(s.email)});
+      if(emailOK(s.studentEmail)&&normalizeEmail(s.studentEmail)!==normalizeEmail(s.email))recipients.push({kind:"student",email:normalizeEmail(s.studentEmail)});
+      for(const recipient of recipients){
+      // Preserve original parent keys so activation never resends a parent's email.
+      const key=`delivery:${lesson.date}:${cls.id}:${s.id}`+(recipient.kind==="student"?":student":"");
       let job=await get(env,key);
       if(job?.status==="sent"||job?.status==="review")continue;
       if(job&&job.approvalVersion!==env.CHECKIN_APPROVAL_VERSION){
+        await put(env,key,{...job,status:"review"});continue;
+      }
+      if(job&&normalizeEmail(job.payload?.to)!==recipient.email){
         await put(env,key,{...job,status:"review"});continue;
       }
       if(job && now.getTime()-Date.parse(job.firstAttempt)>23*3600000) {
         await put(env,key,{...job,status:"review"});continue;
       }
       if(!job) {
-        job={date:lesson.date,classId:cls.id,studentId:s.id,approvalVersion:env.CHECKIN_APPROVAL_VERSION,firstAttempt:now.toISOString(),status:"pending",payload:homeworkMessage(cls,lesson,s,lesson.date),idempotencyKey:"homework-"+await hash(key)};
+        job={date:lesson.date,classId:cls.id,studentId:s.id,recipientKind:recipient.kind,approvalVersion:env.CHECKIN_APPROVAL_VERSION,firstAttempt:now.toISOString(),status:"pending",payload:homeworkMessage(cls,lesson,{...s,email:recipient.email},lesson.date),idempotencyKey:"homework-"+await hash(key)};
         await put(env,key,job);
       }
       try {
@@ -289,6 +309,7 @@ export async function runHomework(env,deps,now=new Date()) {
       } catch {
         await put(env,key,{...job,status:"retry",lastAttempt:now.toISOString()});
         result.failed++;
+      }
       }
     }
   }

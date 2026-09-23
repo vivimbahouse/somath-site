@@ -61,22 +61,37 @@
     const homeworkForm=document.querySelector("#lesson-form");
     if(l.needsReapproval)homeworkForm.insertAdjacentHTML("beforebegin",'<p class="status">This assignment was saved before automatic sending launched. Review it, check the approval box, and save again to enable delivery.</p>');
     const recipients=homeworkRecipients();
-    homeworkForm.insertAdjacentHTML("afterend",`<div class="email-preview"><strong>Currently eligible recipients: ${recipients.length}</strong><p class="helper">Only students marked present in this class, including makeup arrivals. Later check-ins are included automatically. Missing email addresses and inactive or held memberships are skipped. Already-sent emails are not sent again.</p>${recipients.map(s=>`<div class="parent-email">${e(s.name)} → ${e(s.email)}</div>`).join("")||'<p class="helper">No eligible checked-in students yet.</p>'}</div>`);
+    homeworkForm.insertAdjacentHTML("afterend",`<div class="email-preview"><strong>Currently eligible email destinations: ${recipients.length}</strong><p class="helper">Only students marked present in this class, including makeup arrivals. Parent and student copies are sent separately. Later check-ins are included automatically. Missing addresses and inactive or held memberships are skipped. Already-sent copies are not sent again.</p>${recipients.map(r=>`<div class="parent-email">${e(r.name)} · ${e(r.kind)} → ${e(r.email)}</div>`).join("")||'<p class="helper">No eligible checked-in email destinations yet.</p>'}</div>`);
     renderRoster();
     document.querySelectorAll(".roster-row").forEach((row,i)=>{
       const s=manager.students[i];
+      row.children[1].insertAdjacentHTML("beforeend",`<label for="student-email-${e(s.id)}">Student email <span class="muted">(optional)</span></label><div class="student-email-row"><input id="student-email-${e(s.id)}" data-field="studentEmail" type="email" value="${e(s.studentEmail)}" maxlength="254" autocomplete="off" placeholder="student@example.com"><button class="secondary" data-action="save-student-email" data-id="${e(s.id)}">Save</button></div><small class="helper">Saved once to the enrollment profile. Parent billing email stays unchanged.</small>`);
       if(s.makeup)row.querySelector("strong").insertAdjacentHTML("afterend",`<small class="class-note">Makeup · Enrolled in ${e(s.programTitle)}</small>`);
     });
     app.insertAdjacentHTML("beforeend",'<section class="panel memos" id="student-memos" hidden></section>');
     document.querySelectorAll(".attendance-row").forEach((row,i)=>{
       const s=attendanceStudents()[i];
+      const deliveries=manager.jobs.filter(j=>j.studentId===s.id);
+      if(deliveries.length)row.querySelector("small").insertAdjacentHTML("beforeend",`<br>${e(deliveries.map(j=>(j.recipientKind||"parent")+": "+j.status).join(" · "))}`);
       const arrival=manager.attendance.find(a=>a.studentId===s.id);
       if(arrival?.makeup)row.querySelector("small").insertAdjacentHTML("beforeend",` · Makeup from ${e(arrival.enrolledProgramTitle||arrival.enrolledProgram)}`);
       row.querySelector("div").insertAdjacentHTML("beforeend",`<button class="quiet" data-action="notes" data-id="${e(s.id)}">Student memos</button>`);
     });
   }
   function homeworkRecipients(){
-    return manager.students.filter(s=>s.active!==false&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email||"")&&manager.attendance.some(a=>a.studentId===s.id&&a.present)&&!manager.jobs.some(j=>j.studentId===s.id&&["sent","review"].includes(j.status)));
+    const out=[];
+    for(const s of manager.students){
+      if(s.active===false||!manager.attendance.some(a=>a.studentId===s.id&&a.present))continue;
+      const add=(kind,email)=>{
+        email=String(email||"").trim().toLowerCase();
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))return;
+        if(kind==="student"&&email===String(s.email||"").trim().toLowerCase())return;
+        if(manager.jobs.some(j=>j.studentId===s.id&&(j.recipientKind||"parent")===kind&&["sent","review"].includes(j.status)))return;
+        out.push({id:s.id,name:s.name,kind,email});
+      };
+      add("parent",s.email);add("student",s.studentEmail);
+    }
+    return out;
   }
   function renderMemos(data){
     memoStudent=data.student;
@@ -112,7 +127,7 @@
         renderMemos(d);notice("Student memo saved.");
       }else if(ev.target.id==="lesson-form"){
         if(homeworkEnabled&&data.has("approved")&&!data.has("closed")){
-          const recipients=homeworkRecipients().map(s=>`${s.name}: ${s.email}`).join("\n")||"No eligible checked-in students yet.";
+          const recipients=homeworkRecipients().map(r=>`${r.name} · ${r.kind}: ${r.email}`).join("\n")||"No eligible checked-in email destinations yet.";
           const wording=`Hello,\n\n[Student] attended ${cls.title} on ${date}.\n\nToday's homework: ${data.get("title")}\n${data.get("url")}\n${data.get("note")||""}\n\nPlease use the assigned link to review the lesson and complete the homework. Reply to this email if you have any questions.\n\nWarmly,\nThe SOMATH Team\nSchool of Math | 226 W 79th St, New York, NY 10024\n(646) 668-6151`;
           if(!confirm(`Approve automatic homework emails for ${cls.title} on ${date}?\n\nCurrent recipients:\n${recipients}\n\nOnly eligible students marked present for this class will receive an individual email. Later check-ins will be included. Delivery starts 10–25 minutes after class, or at the next check if approved later today. No past-date catch-up.\n\nSubject: SOMATH homework: ${cls.title} | ${date}\nReply to: hello@schoolofmath.us\n\n${wording}`))return;
         }
@@ -135,6 +150,12 @@
       if(action==="refresh")await loadManager(true);
       if(action==="notes")renderMemos(await api("notes",{classId:cls.id,studentId:btn.dataset.id}));
       if(action==="attendance"){await api("attendance",{classId:cls.id,studentId:btn.dataset.id,present:btn.dataset.present==="true"});await loadManager();}
+      if(action==="save-student-email"){
+        const input=btn.closest(".roster-row").querySelector('[data-field="studentEmail"]');
+        await api("student-contact",{classId:cls.id,studentId:btn.dataset.id,studentEmail:input.value});
+        notice(input.value.trim()?"Student email saved to the enrollment profile.":"Student email removed from the enrollment profile.");
+        await loadManager(true);
+      }
       if(action==="save-roster"){readRoster();await api("roster",{classId:cls.id,students:manager.students});notice("Attendance holds saved.");await loadManager();}
       if(action==="export"){
         const cell=v=>'"'+String(v??"").replace(/^[=+@\-\t\r]/,"'$&").replace(/"/g,'""')+'"';

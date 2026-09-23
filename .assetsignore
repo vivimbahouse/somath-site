@@ -1,9 +1,11 @@
 _worker.js
 _checkin.mjs
 _checkin-memberships.mjs
+_student-contacts.mjs
 wrangler.toml
 .assetsignore
 .git
+.wrangler
 .github
 node_modules
 *.log

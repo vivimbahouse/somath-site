@@ -1,3 +1,4 @@
+import {readStudentContact,normalizeEmail} from "./_student-contacts.mjs";
 // Stripe is the eligibility authority. Calendar events enrich identity and expected arrivals,
 // but never make an inactive subscription eligible. No price-level course inference:
 // SOMATH reuses one price across several Young Fermats programs.
@@ -73,7 +74,9 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
     const override=JSON.parse(await env.ENROLLMENTS.get("checkin:member-override:"+id)||"null");
     const expected=slug===cls.slug&&linked.some(e=>typeof e.start==="string" && new Date(e.start).toLocaleDateString("en-CA",{timeZone:"America/New_York"})===date);
     const personId=(await digest((s.customer?.id||s.id)+"|"+name.toLowerCase())).slice(0,24);
-    const member={id,personId,name,email:text(s.customer?.email||m.parent_email).toLowerCase(),active:eligibility==="eligible"&&override?.active!==false,held:override?.active===false,eligible:eligibility==="eligible",reason:eligibility,subscriptionId:s.id,
+    const contact=await readStudentContact(env,s.customer?.id,name);
+    const studentEmail=normalizeEmail(contact?contact.studentEmail:m.student_email);
+    const member={id,personId,name,customerId:s.customer?.id||"",studentEmail,email:text(s.customer?.email||m.parent_email).toLowerCase(),active:eligibility==="eligible"&&override?.active!==false,held:override?.active===false,eligible:eligibility==="eligible",reason:eligibility,subscriptionId:s.id,
       status:s.status,usualDay:text(m.weekly_day),expectedToday:expected,source:"Stripe",program:slug,programTitle:deps.titles[slug]||slug,makeup:slug!==cls.slug};
     const duplicate=students.findIndex(a=>a.id===id);
     if(duplicate<0)students.push(member);

@@ -343,6 +343,11 @@
               <label for="studentName">Student name</label>
               <input type="text" id="studentName" name="studentName" placeholder="Student's first &amp; last name" required />
             </div>
+            <div class="enroll-card__who-row">
+              <label for="studentEmail">Student email (optional)</label>
+              <input type="email" id="studentEmail" name="studentEmail" autocomplete="off" maxlength="254" placeholder="student@example.com" aria-describedby="studentEmailHelp" />
+              <small id="studentEmailHelp">For students who use their own email: receive a separate homework copy. The parent remains the billing contact.</small>
+            </div>
           </div>
 
           <a href="#" class="enroll-card__cta" id="checkoutBtn" data-stripe="https://buy.stripe.com/dRm5kEdWO2XA87A2IA7Vm01" data-course="little-newtons">Reserve My Spot &rarr;</a>
@@ -593,6 +598,8 @@
           var parentName  = (document.getElementById('parentName').value  || '').trim();
           var parentEmail = (document.getElementById('parentEmail').value || '').trim();
           var studentName = (document.getElementById('studentName').value || '').trim();
+          var studentEmail = (document.getElementById('studentEmail').value || '').trim().toLowerCase();
+          if (studentEmail && !document.getElementById('studentEmail').checkValidity()) { alert('Please enter a valid student email, or leave it blank.'); document.getElementById('studentEmail').focus(); return; }
           if (!parentName)  { alert('Please enter the parent / guardian name.');  document.getElementById('parentName').focus();  return; }
           if (!parentEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(parentEmail)) { alert('Please enter a valid parent email address.'); document.getElementById('parentEmail').focus(); return; }
           if (!studentName) { alert('Please enter the student’s name.'); document.getElementById('studentName').focus(); return; }
@@ -610,7 +617,7 @@
           //  - $99 enrollment as a one-time line item charged today
           //  - trial_end set to the day before first class so the first monthly charge hits then
           //  - subscription metadata anchors renewal automation
-          var payload = { course: course, day: day, startDate: date, parentName: parentName, parentEmail: parentEmail, studentName: studentName };
+          var payload = { course: course, day: day, startDate: date, parentName: parentName, parentEmail: parentEmail, studentName: studentName, studentEmail: studentEmail };
           var btn = this;
           var originalLabel = btn.textContent;
           btn.textContent = 'Preparing secure checkout\u2026';

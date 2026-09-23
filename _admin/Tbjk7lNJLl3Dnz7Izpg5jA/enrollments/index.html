@@ -324,7 +324,7 @@
       if (c && (r.courseTitle || r.course) !== c) return false;
       if (q) {
         var hay = [
-          r.parentName, r.parentEmail, r.parentPhone, r.studentName,
+          r.parentName, r.parentEmail, r.parentPhone, r.studentName, r.studentEmail,
           r.course, r.courseTitle, r.day, r.startDate, r.stripeCustomerId, r.stripeSessionId, r.ref
         ].join(" ").toLowerCase();
         if (hay.indexOf(q) === -1) return false;
@@ -361,6 +361,7 @@
       '<th>Email</th>' +
       '<th>Phone</th>' +
       '<th>Student</th>' +
+      '<th>Student email</th>' +
       '<th>Amount</th>' +
       '<th>Stripe</th>' +
       '</tr></thead><tbody>';
@@ -385,6 +386,7 @@
         '<td>' + esc(r.parentEmail || "") + '</td>' +
         '<td>' + esc(r.parentPhone || "") + '</td>' +
         '<td>' + esc(r.studentName || "") + '</td>' +
+        '<td>' + esc(r.studentEmail || "") + '</td>' +
         '<td>' + esc(fmtAmount(r.amountUsd)) + '</td>' +
         '<td class="wrap-col">' + stripeCol + '</td>' +
       '</tr>';

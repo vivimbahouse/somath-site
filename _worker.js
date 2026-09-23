@@ -1,4 +1,5 @@
 import { handleCheckin, runHomework } from "./_checkin.mjs";
+import {readStudentContact,saveStudentContact,normalizeEmail,validStudentEmail} from "./_student-contacts.mjs";
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -1356,10 +1357,13 @@ async function handleEnrollIntent(request, env) {
   var parentName  = String(body.parentName  || "").slice(0, 120);
   var parentEmail = String(body.parentEmail || "").slice(0, 160);
   var studentName = String(body.studentName || "").slice(0, 120);
+  var studentEmail = normalizeEmail(body.studentEmail);
+  if(!validStudentEmail(studentEmail))return jsonResponse({error:"invalid_student_email",message:"Please enter a valid optional student email."},400);
   if (course === "regents-algebra-1") return jsonResponse({ error: "course_not_available", message: "New enrollment for Regents Algebra 1 Prep is closed. Please view the current schedule." }, 409);
   if (!course || !day || !date) return jsonResponse({ error: "missing_fields" }, 400);
   var title = COURSE_TITLES[course] || course;
-  var ref = course + "__" + day + "__" + date;
+  // A registration reference is family-specific, not shared by every child in a slot.
+  var ref = course + "__" + day + "__" + date + "__" + randId(16);
   var selectedSchedule = (COURSE_SCHEDULES[course] || []).find(function(slot) { return slot.d === day; });
   if (!selectedSchedule) return jsonResponse({ error: "schedule_not_available", message: "This class is not offered on the selected day. Please refresh the course page and choose a current class option." }, 409);
   var classTime = selectedSchedule.t;
@@ -1421,6 +1425,7 @@ async function handleEnrollIntent(request, env) {
     sp.append("subscription_data[metadata][monthly_usd]", String(monthlyUsd));
     sp.append("subscription_data[metadata][source]", "bundled_checkout_v1");
     if (studentName) sp.append("subscription_data[metadata][student_name]", studentName);
+    if (studentEmail) sp.append("subscription_data[metadata][student_email]", studentEmail);
     if (parentName)  sp.append("subscription_data[metadata][parent_name]", parentName);
     // Top-level Checkout Session metadata (mirrors above for webhook convenience)
     sp.append("metadata[course_slug]", course);
@@ -1432,6 +1437,7 @@ async function handleEnrollIntent(request, env) {
     sp.append("metadata[ref]", ref);
     sp.append("metadata[flow]", "bundled_checkout_v1");
     if (studentName) sp.append("metadata[student_name]", studentName);
+    if (studentEmail) sp.append("metadata[student_email]", studentEmail);
     if (parentName)  sp.append("metadata[parent_name]", parentName);
     // Add the one-time $99 enrollment invoice item on the FIRST invoice (today).
     // Stripe Checkout's `subscription_data` cannot accept add_invoice_items directly,
@@ -1477,6 +1483,7 @@ async function handleEnrollIntent(request, env) {
         parentName: parentName || existing.rec.parentName,
         parentEmail: parentEmail || existing.rec.parentEmail,
         studentName: studentName || existing.rec.studentName,
+        studentEmail: studentEmail,
         stripeSessionId: checkoutSessionId || existing.rec.stripeSessionId || "",
         ip: ip, referer: referer, userAgent: ua
       });
@@ -1485,7 +1492,7 @@ async function handleEnrollIntent(request, env) {
         status: "intent",
         ref: ref,
         course: course, courseTitle: title, day: day, startDate: date,
-        parentName: parentName, parentEmail: parentEmail, studentName: studentName,
+        parentName: parentName, parentEmail: parentEmail, studentName: studentName, studentEmail: studentEmail,
         amountUsd: null, stripeCustomerId: "", stripeSessionId: checkoutSessionId || "", paymentIntent: "",
         ip: ip, referer: referer, userAgent: ua
       });
@@ -1714,9 +1721,12 @@ async function handleStripeWebhook(request, env) {
       amountUsd: amountUsd,
       stripeCustomerId: customerId,
       stripeSessionId: sessionId,
+      subscriptionId: s.subscription || "",
       paymentIntent: pi
     };
     var matched = refStr ? await kvGetByRef(env, refStr) : null;
+    paidPatch.studentName=s.metadata?.student_name||matched?.rec?.studentName||"";
+    paidPatch.studentEmail=normalizeEmail(s.metadata?.student_email||matched?.rec?.studentEmail||"");
     if (matched) {
       await kvUpdate(env, matched.key, paidPatch);
     } else {
@@ -1726,6 +1736,8 @@ async function handleStripeWebhook(request, env) {
       paidPatch.studentName = paidPatch.studentName || "";
       await kvPutEnrollment(env, paidPatch);
     }
+    if(customerId&&paidPatch.studentName&&paidPatch.studentEmail)
+      await saveStudentContact(env,{customerId,name:paidPatch.studentName,studentEmail:paidPatch.studentEmail,source:"enrollment",initializeOnly:true});
   } catch (e) {
     console.error("KV write (paid) failed:", String(e));
   }
@@ -1892,7 +1904,7 @@ function csvEscape(v) {
 function enrollmentsToCsv(rows) {
   var headers = [
     "Created (ET)", "Status", "Course", "Day", "Start Date",
-    "Parent Name", "Parent Email", "Parent Phone", "Student Name",
+    "Parent Name", "Parent Email", "Parent Phone", "Student Name", "Student Email",
     "Amount USD", "Stripe Customer ID", "Stripe Session ID", "Payment Intent", "Paid At (ET)", "Ref"
   ];
   var lines = [headers.map(csvEscape).join(",")];
@@ -1915,6 +1927,7 @@ function enrollmentsToCsv(rows) {
       r.parentEmail || "",
       r.parentPhone || "",
       r.studentName || "",
+      r.studentEmail || "",
       r.amountUsd != null ? r.amountUsd.toFixed(2) : "",
       r.stripeCustomerId || "",
       r.stripeSessionId || "",
@@ -1956,6 +1969,7 @@ async function handleEnrollmentsApi(request, env) {
       parentEmail: body.parentEmail || "",
       parentPhone: body.parentPhone || "",
       studentName: body.studentName || "",
+      studentEmail: normalizeEmail(body.studentEmail),
       amountUsd: body.amountUsd != null ? Number(body.amountUsd) : null,
       stripeCustomerId: body.stripeCustomerId || "",
       stripeSessionId: body.stripeSessionId || "",
@@ -1966,11 +1980,16 @@ async function handleEnrollmentsApi(request, env) {
       userAgent: "admin-manual",
       notes: body.notes || ""
     };
+    if(!validStudentEmail(rec.studentEmail))return jsonResponse({error:"invalid_student_email"},400);
     await kvPutEnrollment(env, rec);
     return jsonResponse({ ok: true, record: rec }, 200);
   }
 
   var rows = await kvListEnrollments(env, 5000);
+  for(const record of rows){
+    const contact=await readStudentContact(env,record.stripeCustomerId,record.studentName);
+    if(contact)record.studentEmail=contact.studentEmail;
+  }
   if (url.searchParams.get("format") === "csv") {
     var csv = enrollmentsToCsv(rows);
     var stamp = new Date().toISOString().slice(0,10);
