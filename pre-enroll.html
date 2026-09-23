@@ -344,9 +344,9 @@
         rolling: {
           "little-newtons":              "Tue 3:15–4:15 PM · Wed 3:15–4:15 PM",
           "kid-einsteins":               "Mon 3:30–5:00 PM · Thu 3:30–5:00 PM",
-          "young-fermats-prealgebra":    "Tue 4:15–6:15 PM · Wed 4:15–6:15 PM",
-          "young-fermats-algebra-ignite":"Mon 5:00–7:00 PM · Wed 4:15–6:15 PM · Fri 3:00–5:00 PM",
-          "regents-geometry":             "Fri 5:00–7:00 PM",
+          "young-fermats-prealgebra":    "Tue 4:15–6:15 PM · Fri 5:00–7:00 PM",
+          "young-fermats-algebra-ignite":"Mon 5:00–7:00 PM · Wed 4:15–6:15 PM · Thu 5:00–7:00 PM",
+          "regents-geometry":             "Fri 3:00–5:00 PM",
           "young-fermats-geometry":      "Mon 7:00–9:00 PM",
           "young-fermats-algebra-ii":    "Tue 6:15–8:15 PM",
           "shsat-prep":                  "Wed 6:15–8:15 PM",
@@ -446,7 +446,9 @@
       function parseDayChoices(timeString) {
         // Returns { days: ["Mon", "Wed"], time: "3:30–5:00 PM" } or null. Supports weekday and weekend choices.
         const m = timeString.match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+or\s+(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(.+)$/);
-        return m ? { days: [m[1], m[2]], time: m[3].trim() } : null;
+        if (m) return { days: [m[1], m[2]], time: m[3].trim() };
+        const slots = timeString.split("·").map(s => s.trim().match(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(.+)$/)).filter(Boolean);
+        return slots.length > 1 ? { days: slots.map(s => s[1]), times: Object.fromEntries(slots.map(s => [s[1], s[2]])) } : null;
       }
 
       function refreshDayPicker() {
@@ -475,7 +477,7 @@
         parsed.days.forEach(d => {
           const opt = document.createElement("option");
           opt.value = d;
-          opt.textContent = `${DAY_LABELS[d]}s · ${parsed.time}`;
+          opt.textContent = `${DAY_LABELS[d]}s · ${parsed.times ? parsed.times[d] : parsed.time}`;
           daySel.appendChild(opt);
         });
         if (parsed.days.includes(prev)) daySel.value = prev;
@@ -497,7 +499,8 @@
         let time = COURSE_TIMES[tid][cid];
         // If a specific day is chosen, replace "X or Y" with the chosen day in the summary.
         if ((tid === "rolling" || tid === "weekends") && daySel.value) {
-          time = time.replace(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+or\s+(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/, daySel.value);
+          const parsed = parseDayChoices(time);
+          time = parsed && parsed.times ? daySel.value + " " + parsed.times[daySel.value] : time.replace(/^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+or\s+(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/, daySel.value);
         }
         const tuition = tuitionFor(cid, tid);
         const balance = tuition - 300;

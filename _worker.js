@@ -565,8 +565,8 @@ var WEEKENDS_DAY_CHOICES = {
 var FALL_DAY_CHOICES = {
   "little-newtons":               ["Tue", "Wed"],
   "kid-einsteins":                ["Mon", "Thu"],
-  "young-fermats-prealgebra":     ["Tue", "Thu"],
-  "young-fermats-algebra-ignite": ["Mon", "Wed", "Fri"],
+  "young-fermats-prealgebra":     ["Tue", "Fri"],
+  "young-fermats-algebra-ignite": ["Mon", "Wed", "Thu"],
 
   "regents-geometry":             ["Fri"],
   "young-fermats-geometry":       ["Mon"],
@@ -607,9 +607,9 @@ async function handlePreEnroll(request, env) {
   }
   // Day-of-week validation: Fall and Weekends courses may offer two day options.
   let dayChoices = null;
-  if (term === "fall") dayChoices = FALL_DAY_CHOICES[course] || null;
+  if (term === "rolling" || term === "fall") dayChoices = FALL_DAY_CHOICES[course] || null;
   else if (term === "weekends") dayChoices = WEEKENDS_DAY_CHOICES[course] || null;
-  if (dayChoices && (!day || !dayChoices.includes(day))) {
+  if (dayChoices && ((dayChoices.length > 1 && !day) || (day && !dayChoices.includes(day)))) {
     return jsonResponse({ ok: false, error: "invalid_day" }, 400);
   }
   if (!student_name || !student_grade) return jsonResponse({ ok: false, error: "missing_student" }, 400);
@@ -636,6 +636,7 @@ async function handlePreEnroll(request, env) {
   // Day label for receipts: if a day was chosen, use it. Otherwise fall back to the course's fixed dayLabel.
   let dayLabel = "";
   if (dayChoices && day) dayLabel = DAY_LABEL[day] + "s";
+  else if (dayChoices && dayChoices.length === 1) dayLabel = DAY_LABEL[dayChoices[0]] + "s";
   else if (term === "weekends") dayLabel = (WEEKENDS_OFFERINGS[course] && WEEKENDS_OFFERINGS[course].dayLabel) || "";
   const productName = "Pre-Enroll Deposit \u2014 " + c.title + " (" + t.label + (dayLabel ? ", " + dayLabel : "") + ")";
   const productDesc = "Spot-reservation deposit. $300 credited toward total tuition ($" + (tuitionCents/100).toLocaleString() + "). Balance due 2 days before course begins.";
@@ -862,7 +863,7 @@ var COURSE_DESCRIPTIONS = {
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra I. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra I already fluent with the language they'll be using every day.",
   "young-fermats-algebra-ignite": "Young Fermats \u2014 Algebra Ignite is a real Algebra I course for Grades 7\u20138 (ages 12\u201314). The syllabus covers linear equations and inequalities, systems, exponents, factoring, quadratics and functions in the first half, then goes deeper with function composition, sequences and series, rational functions, statistics, logs, and modeling \u2014 the same depth honors students see, at a small-group pace. It also lays the groundwork for Geometry proof-writing and the quadratic and function work that dominates Algebra II, so students step into high school math with real momentum.",
   "regents-algebra-1": "Regents Algebra 1 Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Algebra 1 blueprint. The arc covers linear equations and inequalities, systems, exponents, polynomials, factoring, quadratics, exponential functions, sequences, and statistics \u2014 the full Common Core list, with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. New enrollment is closed. The curriculum remains available for reference.",
-  "regents-geometry": "Regents Geometry & Trigonometry Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Geometry blueprint. The arc covers tools of geometry and constructions, rigid motions and congruence proofs, similarity and dilations, right-triangle trigonometry (sin, cos, tan and cofunctions), the laws of sines and cosines, circles and their angle-and-segment relationships, coordinate geometry, and area, surface area and volume of three-dimensional solids \u2014 with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. Fridays 5\u20137 PM on the Upper West Side, capped at 6 students.",
+  "regents-geometry": "Regents Geometry & Trigonometry Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Geometry blueprint. The arc covers tools of geometry and constructions, rigid motions and congruence proofs, similarity and dilations, right-triangle trigonometry (sin, cos, tan and cofunctions), the laws of sines and cosines, circles and their angle-and-segment relationships, coordinate geometry, and area, surface area and volume of three-dimensional solids \u2014 with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. Fridays 3\u20135 PM on the Upper West Side, capped at 6 students.",
   "young-fermats-geometry": "Young Fermats \u2014 Geometry and Trigonometry is a two-part arc for Grades 7\u20138 (ages 12\u201314). Part A covers plane geometry end-to-end \u2014 angle relationships, triangle congruence, Pythagorean theorem, similarity, coordinate geometry, area and volume, and two-column proof. Part B is a full Trigonometry track \u2014 the unit circle, graphs of sine, cosine and tangent, identities, laws of sines and cosines, vectors, and polar coordinates. Together the two parts prepare students for the trigonometric and analytic-geometry work that shows up throughout Algebra II and Pre-Calculus, so nothing comes as a surprise later.",
   "young-fermats-algebra-ii": "Young Fermats \u2014 Algebra II is our honors-track high school course for Grades 9\u201311 (ages 14\u201317). The syllabus covers quadratics, polynomials, radicals, exponentials, logarithms, sequences, and complex functions \u2014 delivered with the depth needed for the Algebra II Regents and the SAT. It also builds the function-analysis and transformation fluency that Pre-Calculus and Calculus lean on constantly, so students arrive in those courses with the algebra already in place.",
   "shsat-prep": "SHSAT Prep is our Specialized High School Admissions math course for Grades 7\u20138. Students master the SHSAT question families, learn timing and scratch-paper strategy, and take full-length section drills every cycle \u2014 the practice pattern that actually moves scores. The algebra, geometry, and word-problem work also sets up the Algebra I and Geometry courses they'll meet in ninth grade, so the prep pays off well past test day.",
@@ -875,10 +876,10 @@ var COURSE_DESCRIPTIONS = {
 var COURSE_SCHEDULES = {
   "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"}],
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
-  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
-  "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"3:00 \u2013 5:00 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
 
-  "regents-geometry":              [{d:"Friday",t:"5:00 \u2013 7:00 PM"}],
+  "regents-geometry":              [{d:"Friday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
@@ -1360,7 +1361,8 @@ async function handleEnrollIntent(request, env) {
   var title = COURSE_TITLES[course] || course;
   var ref = course + "__" + day + "__" + date;
   var selectedSchedule = (COURSE_SCHEDULES[course] || []).find(function(slot) { return slot.d === day; });
-  var classTime = selectedSchedule ? selectedSchedule.t : "";
+  if (!selectedSchedule) return jsonResponse({ error: "schedule_not_available", message: "This class is not offered on the selected day. Please refresh the course page and choose a current class option." }, 409);
+  var classTime = selectedSchedule.t;
 
   // Compute billing start = startDate - 1 day (UTC math, then format)
   var billingFmt = "";
