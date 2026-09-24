@@ -2475,3 +2475,61 @@ html body :is(.faq-a, .pg-faq__a) > p:last-child {
 @media (max-width: 600px) {
   html body :is(div.faq-item, .mem-faq__item) { padding: 20px 0; }
 }
+
+/* Class-page editorial headers, matching Pre-Algebra Class 11.
+   Opt-in hooks keep marketing pages and practice/answer components unchanged. */
+body[data-class-layout="editorial"] .class-layout__title {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.4vw, 52px);
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  color: var(--ink);
+  margin: 0 0 22px;
+  overflow-wrap: break-word;
+}
+body[data-class-layout="editorial"] .class-layout__intro {
+  font-family: var(--font-display);
+  /* Legacy class-specific ledes set !important; standardize only this hook. */
+  font-size: 22px !important;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+}
+body[data-class-layout="editorial"] .class-layout__intro strong {
+  color: inherit;
+  font-weight: 700;
+}
+body[data-class-layout="editorial"] .class-layout__eyebrow {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 20px;
+}
+body[data-class-layout="editorial"] .class-layout__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink-mute);
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 16px 0;
+  margin: 0 0 44px;
+}
