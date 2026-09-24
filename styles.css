@@ -2390,3 +2390,88 @@ body { padding-top: 168px; }
   text-underline-offset: 3px;
 }
 .faq-item > p a:hover { text-decoration-color: #c89a3a; }
+
+/* Shared, unboxed FAQ treatment. Keep lesson practice cards independent. */
+html body :is(.faq-item, .mem-faq__item, .pg-faq__item, .crec-faq details) {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line, #d9d2c1);
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 24px 0;
+  overflow: visible;
+}
+html body :is(.faq-item, .mem-faq__item, .pg-faq__item, .crec-faq details):last-child {
+  border-bottom: 0;
+}
+html body :is(.faq-item, .mem-faq__item) > :is(h3, .mem-faq__q) {
+  color: #1f3d2e;
+  font-size: 1.08rem;
+  line-height: 1.45;
+  margin: 0 0 10px;
+}
+html body :is(.faq-item, .mem-faq__item) > p:not(.mem-faq__q) {
+  color: #3a4640;
+  padding: 0;
+  margin: 0;
+  line-height: 1.7;
+}
+html body :is(details.faq-item, details.pg-faq__item, .crec-faq details) {
+  padding: 0;
+}
+html body :is(.faq-item, .pg-faq__item, .crec-faq details) > summary {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 36px 20px 0;
+  color: #1f3d2e;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  background: transparent;
+}
+html body :is(.faq-item, .pg-faq__item, .crec-faq details) > summary::before {
+  content: none;
+  display: none;
+}
+html body :is(.faq-item, .pg-faq__item, .crec-faq details)[open] > summary::before,
+html body details.pg-faq__item[open] > summary.pg-faq__q::before {
+  content: none;
+  display: none;
+}
+html body :is(.faq-item, .pg-faq__item, .crec-faq details) > summary::after {
+  content: "+";
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  float: none;
+  color: #987321;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+html body :is(.faq-item, .pg-faq__item, .crec-faq details)[open] > summary::after {
+  content: "\2212";
+}
+html body :is(.faq-item, .pg-faq__item, .crec-faq details) > summary:focus-visible {
+  outline: 2px solid #987321;
+  outline-offset: 3px;
+}
+html body :is(details.faq-item, details.pg-faq__item, .crec-faq details) > :is(p, .faq-a, .pg-faq__a) {
+  padding: 0 0 22px;
+  margin: 0;
+  color: #3a4640;
+  line-height: 1.7;
+}
+html body :is(.faq-a, .pg-faq__a) > p {
+  margin: 0 0 12px;
+  padding: 0;
+}
+html body :is(.faq-a, .pg-faq__a) > p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 600px) {
+  html body :is(div.faq-item, .mem-faq__item) { padding: 20px 0; }
+}
