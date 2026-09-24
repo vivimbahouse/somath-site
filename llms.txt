@@ -86,3 +86,7 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 
 
 - [Pre-Algebra Class 12: Evaluating Expressions and Combining Like Terms](https://www.schoolofmath.us/posts/pre-algebra-class-12-evaluating-expressions-combining-like-terms): Ten illustrated posters in order, five original questions per image increasing in difficulty, and ten cumulative word problems: 60 questions with hidden worked answers. Covers expression parts, substitution, order of operations, negative values, like and unlike terms, combining terms, distribution, simplify-then-evaluate, expressions versus equations, and translating stories into algebra. HTML class from SOMATH, 226 W 79th St, NYC. Updated September 22, 2026.
+
+## Little Newtons Class 13: Two-Digit Addition Without Regrouping
+
+- [Two-Digit Addition Without Regrouping | Little Newtons Class 13](https://www.schoolofmath.us/posts/little-newtons-class-13-two-digit-addition-without-regrouping): 11 supplied posters in sequence, 55 original topic questions, and 10 final word problems with hidden worked answers. Place value, expanded form, models, vertical alignment, ones-first addition, no-regrouping checks, and number-line jumps. One poster illustrates regrouping as a labeled comparison; all practice stays without regrouping and below 100. Published September 24, 2026.

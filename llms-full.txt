@@ -359,3 +359,7 @@ A function assigns exactly one output to each allowed input. Function notation f
 ## Algebra II Class 12: polynomial zeros
 
 - [Algebra II Class 12: Zeros of Polynomials, the Rational Root Theorem & End Behavior](https://www.schoolofmath.us/posts/algebra-2-class-12-zeros-polynomials-rational-root-theorem-end-behavior): SOMATH lesson with eight supplied posters in order, explicit correction notes where needed, five progressively harder questions after each image (40 original exercises), and 10 final word problems with hidden worked answers, for 50 questions total. Explains rational-zero candidates versus verified zeros, synthetic-division remainders, multiplicity, sign changes and leading-term end behavior. Published September 22, 2026. No calculus or optimization is required for the final set.
+
+## Little Newtons Class 13: Two-Digit Addition Without Regrouping
+
+- [Two-Digit Addition Without Regrouping | Little Newtons Class 13](https://www.schoolofmath.us/posts/little-newtons-class-13-two-digit-addition-without-regrouping): 11 supplied posters in sequence, 55 original topic questions, and 10 final word problems with hidden worked answers. Place value, expanded form, models, vertical alignment, ones-first addition, no-regrouping checks, and number-line jumps. One poster illustrates regrouping as a labeled comparison; all practice stays without regrouping and below 100. Published September 24, 2026.
