@@ -552,6 +552,8 @@ var PRE_ENROLL_TERMS = {
 };
 // Weekends offers a subset of courses with course-specific minutes and a fixed weekday label.
 var WEEKENDS_OFFERINGS = {
+  "sat-math": { mins: 120, dayLabel: "Sundays", time: "3:00\u20135:00 PM" },
+  "shsat-prep": { mins: 120, dayLabel: "Saturdays", time: "3:00\u20135:00 PM" },
   // dayLabel is the FIXED label for single-day courses; null when course offers a choice (see WEEKENDS_DAY_CHOICES).
   "little-newtons":               { mins: 60,  dayLabel: null,        time: "10:00\u201311:00 AM" },
   "kid-einsteins":                { mins: 90,  dayLabel: null,        time: "11:00 AM\u201312:30 PM" },
@@ -560,11 +562,17 @@ var WEEKENDS_OFFERINGS = {
   "young-fermats-algebra-ii":     { mins: 120, dayLabel: "Tuesdays",  time: "6:15\u20138:15 PM" }
 };
 var WEEKENDS_DAY_CHOICES = {
+  "sat-math": ["Sun"],
+  "shsat-prep": ["Sat"],
   "little-newtons": ["Sat", "Sun"],
   "kid-einsteins": ["Sat", "Sun"]
 };
 // Fall day choices per course (key omitted = no choice / single day).
 var FALL_DAY_CHOICES = {
+  "ap-statistics": ["Thu"],
+  "ap-calculus": ["Wed"],
+  "sat-math": ["Sun"],
+  "shsat-prep": ["Sat"],
   "little-newtons":               ["Tue", "Wed"],
   "kid-einsteins":                ["Mon", "Thu"],
   "young-fermats-prealgebra":     ["Tue", "Fri"],
@@ -884,11 +892,11 @@ var COURSE_SCHEDULES = {
   "regents-geometry":              [{d:"Friday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
-  "shsat-prep":                    [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
-  "sat-math":                      [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}],
+  "shsat-prep":                    [{d:"Saturday",t:"3:00 \u2013 5:00 PM"}],
+  "sat-math":                      [{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
   "pre-calculus":                  [{d:"Friday",t:"7:00 \u2013 9:00 PM"}],
-  "ap-calculus":                   [{d:"Saturday",t:"3:00 \u2013 5:00 PM"}],
-  "ap-statistics":                 [{d:"Sunday",t:"3:00 \u2013 5:00 PM"}]
+  "ap-calculus":                   [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
+  "ap-statistics":                 [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}]
 };
 function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
   const monthlyPrice = COURSE_MONTHLY_USD[courseSlug] || 489;

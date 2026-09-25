@@ -302,7 +302,7 @@
         </button>
         <button class="crec-tab" role="tab" aria-selected="false" data-term="weekends">
           Weekend Membership
-          <span class="crec-tab-sub">Sat &amp; Sun mornings</span>
+          <span class="crec-tab-sub">Sat &amp; Sun mornings and afternoons</span>
         </button>
       </div>
 
@@ -985,6 +985,8 @@
           link: "/fall-schedule",
           faq: FALL_FAQ,
           courses: {
+            "ap-statistics": { days: "Thursday", time: "7:00 – 9:00 PM", perWeek: 1 },
+            "ap-calculus": { days: "Wednesday", time: "6:15 – 8:15 PM", perWeek: 1 },
             "little-newtons":               { days: "Tue or Wed", time: "3:15 – 4:15 PM", perWeek: 1 },
             "kid-einsteins":                { days: "Mon or Thu", time: "3:30 – 5:00 PM", perWeek: 1 },
             "young-fermats-prealgebra":    { days: "Tue or Fri", time: "Tue 4:15 – 6:15 PM · Fri 5:00 – 7:00 PM", perWeek: 1 },
@@ -993,11 +995,7 @@
             "young-fermats-algebra-ii":    { days: "Tuesday",    time: "6:15 – 8:15 PM", perWeek: 1 },
 
             "regents-geometry":             { days: "Friday",     time: "3:00 – 5:00 PM", perWeek: 1 },
-            "shsat-prep":                  { days: "Wednesday",  time: "6:15 – 8:15 PM", perWeek: 1 },
-            "sat-math":                    { days: "Thursday",   time: "7:00 – 9:00 PM", perWeek: 1 },
             "pre-calculus":                { days: "Friday",     time: "7:00 – 9:00 PM", perWeek: 1 },
-            "ap-calculus":                 { days: "Thursday",   time: "5:00 – 7:00 PM", perWeek: 1 },
-            "ap-statistics":               { days: "Thursday",   time: "3:00 – 5:00 PM", perWeek: 1 }
           }
         },
         "weekends": {
@@ -1009,14 +1007,13 @@
           link: "/weekends-schedule",
           faq: FALL_FAQ,
           courses: {
+            "sat-math": { days: "Sunday", time: "3:00 – 5:00 PM", perWeek: 1 },
+            "shsat-prep": { days: "Saturday", time: "3:00 – 5:00 PM", perWeek: 1 },
             "little-newtons":              { days: "Sat or Sun", time: "10:00 – 11:00 AM", perWeek: 1 },
             "kid-einsteins":               { days: "Sat or Sun", time: "11:00 AM – 12:30 PM", perWeek: 1 },
             "young-fermats-prealgebra":    { days: "Saturdays", time: "1:00 – 3:00 PM",   perWeek: 1 },
             "young-fermats-algebra-ignite":{ days: "Sundays",   time: "1:00 – 3:00 PM",   perWeek: 1 },
-            "sat-math":                    { days: "Saturdays", time: "11:00 AM – 1:00 PM", perWeek: 1 },
             "pre-calculus":                { days: "Sundays",   time: "11:00 AM – 1:00 PM", perWeek: 1 },
-            "ap-calculus":                 { days: "Saturdays", time: "3:00 – 5:00 PM",   perWeek: 1 },
-            "ap-statistics":               { days: "Sundays",   time: "3:00 – 5:00 PM",   perWeek: 1 }
           }
         }
       };

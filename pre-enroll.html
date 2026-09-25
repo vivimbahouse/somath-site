@@ -323,6 +323,8 @@
     <script>
       // ---- Course catalog (mirror of course-recommendation.html) ----
       const COURSES = {
+        "ap-calculus": { title: "AP Calculus AB/BC", grade: "Grades 11–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+        "ap-statistics": { title: "AP Statistics", grade: "Grades 10–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
         "little-newtons":               { title: "Little Newtons",                grade: "Grades 1–2",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
         "kid-einsteins":                { title: "Kid Einsteins",                 grade: "Grades 3–4",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grades 5–6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
@@ -349,19 +351,19 @@
           "regents-geometry":             "Fri 3:00–5:00 PM",
           "young-fermats-geometry":      "Mon 7:00–9:00 PM",
           "young-fermats-algebra-ii":    "Tue 6:15–8:15 PM",
-          "shsat-prep":                  "Wed 6:15–8:15 PM",
-          "sat-math":                    "Thu 7:00–9:00 PM",
+          "shsat-prep":                  "Sat 3:00–5:00 PM",
+          "sat-math":                    "Sun 3:00–5:00 PM",
           "pre-calculus":                "Fri 7:00–9:00 PM",
-          "ap-calculus":                 "Sat 3:00–5:00 PM",
-          "ap-statistics":               "Sun 3:00–5:00 PM"
+          "ap-calculus":                 "Wed 6:15–8:15 PM",
+          "ap-statistics":               "Thu 7:00–9:00 PM"
         },
         weekends: {
+          "sat-math": "Sun 3:00–5:00 PM",
+          "shsat-prep": "Sat 3:00–5:00 PM",
           "little-newtons":              "Sat 10:00–11:00 AM · Sun 10:00–11:00 AM",
           "kid-einsteins":               "Sat 11:00 AM–12:30 PM · Sun 11:00 AM–12:30 PM",
           "young-fermats-prealgebra":    "Sat 1:00–3:00 PM",
           "young-fermats-algebra-ignite":"Sun 1:00–3:00 PM",
-          "ap-calculus":                 "Sat 3:00–5:00 PM",
-          "ap-statistics":               "Sun 3:00–5:00 PM"
         }
       };
 
