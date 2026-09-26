@@ -552,17 +552,17 @@ var PRE_ENROLL_TERMS = {
 };
 // Weekends offers a subset of courses with course-specific minutes and a fixed weekday label.
 var WEEKENDS_OFFERINGS = {
-  "sat-math": { mins: 120, dayLabel: "Sundays", time: "3:00\u20135:00 PM" },
+  "sat-math": { mins: 120, dayLabel: "Saturdays", time: "1:00\u20133:00 PM" },
   "shsat-prep": { mins: 120, dayLabel: "Saturdays", time: "3:00\u20135:00 PM" },
   // dayLabel is the FIXED label for single-day courses; null when course offers a choice (see WEEKENDS_DAY_CHOICES).
   "little-newtons":               { mins: 60,  dayLabel: null,        time: "10:00\u201311:00 AM" },
   "kid-einsteins":                { mins: 90,  dayLabel: null,        time: "11:00 AM\u201312:30 PM" },
-  "young-fermats-prealgebra":     { mins: 120, dayLabel: "Saturdays", time: "1:00\u20133:00 PM" },
+  "young-fermats-prealgebra":     { mins: 120, dayLabel: "Sundays", time: "3:00\u20135:00 PM" },
   "young-fermats-algebra-ignite": { mins: 120, dayLabel: "Sundays",   time: "1:00\u20133:00 PM" },
   "young-fermats-algebra-ii":     { mins: 120, dayLabel: "Tuesdays",  time: "6:15\u20138:15 PM" }
 };
 var WEEKENDS_DAY_CHOICES = {
-  "sat-math": ["Sun"],
+  "sat-math": ["Sat"],
   "shsat-prep": ["Sat"],
   "little-newtons": ["Sat", "Sun"],
   "kid-einsteins": ["Sat", "Sun"]
@@ -571,7 +571,7 @@ var WEEKENDS_DAY_CHOICES = {
 var FALL_DAY_CHOICES = {
   "ap-statistics": ["Thu"],
   "ap-calculus": ["Wed"],
-  "sat-math": ["Sun"],
+  "sat-math": ["Sat"],
   "shsat-prep": ["Sat"],
   "little-newtons":               ["Tue", "Wed"],
   "kid-einsteins":                ["Mon", "Thu"],
@@ -886,14 +886,14 @@ var COURSE_DESCRIPTIONS = {
 var COURSE_SCHEDULES = {
   "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"}],
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
-  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
+  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
 
   "regents-geometry":              [{d:"Friday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Saturday",t:"3:00 \u2013 5:00 PM"}],
-  "sat-math":                      [{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
+  "sat-math":                      [{d:"Saturday",t:"1:00 \u2013 3:00 PM"}],
   "pre-calculus":                  [{d:"Friday",t:"7:00 \u2013 9:00 PM"}],
   "ap-calculus":                   [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
   "ap-statistics":                 [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}]
