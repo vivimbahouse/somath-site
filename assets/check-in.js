@@ -3,15 +3,19 @@
   const config=window.CHECKIN_CONFIG||{};
   const endpoint=config.api||"/api/checkin";
   const app=document.querySelector("#app"),lock=document.querySelector("#lock"),forget=document.querySelector("#forget-tablet");
-  let remembered=false,restoring=false;
+  let remembered=false,teacherRemembered=false,restoring=false,renewingTeacher=null,teacherExpires=0;
   let approvalVersion="";
   let token="",scope="",date="",classes=[],cls=null,selected=null,manager=null,memoStudent=null,memoAuthor="",screen="unlock",busy=false,queryVersion=0,timer,idle,sessionTimer,mode="kiosk",homeworkEnabled=false;
+  if(!config.demo&&new URL(location.href).searchParams.get("view")==="teacher")mode="staff";
+  function viewUrl(staff){if(config.demo)return;const u=new URL(location.href);if(staff)u.searchParams.set("view","teacher");else u.searchParams.delete("view");history.replaceState(null,"",u);}
   const e=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const dateLabel=d=>new Date(d+"T12:00:00Z").toLocaleDateString("en-US",{weekday:"long",month:"long",day:"numeric",timeZone:"UTC"});
   const timeLabel=t=>new Date(t).toLocaleTimeString("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"2-digit"});
   function notice(text,error=false){const n=document.querySelector("#notice");n.textContent=text;n.className=error?"error":"";n.style.display="block";clearTimeout(n.timer);n.timer=setTimeout(()=>n.style.display="none",6500);}
   function focus(){app.focus({preventScroll:true});window.scrollTo(0,0);}
   async function api(action,body={}) {
+    // Refresh before a user operation, never replay a potentially mutating request.
+    if(scope==="staff"&&teacherRemembered&&!["unlock","resume-teacher","forget-teacher"].includes(action))await renewTeacher();
     const response=await fetch(endpoint,{method:"POST",credentials:config.demo?"omit":"same-origin",headers:{"Content-Type":"application/json",...(token?{Authorization:"Bearer "+token}:{})},body:JSON.stringify({action,date,...body})});
     let data;try{data=await response.json();}catch{throw Error("Connection interrupted. Please try again.");}
     if(!response.ok){if(response.status===401&&action!=="unlock"){const renew=remembered&&scope==="kiosk"&&action!=="resume-tablet";reset();if(renew)restoreTablet();}const err=Error(data.error||"Please try again.");err.frontDesk=data.frontDesk;throw err;}
@@ -21,10 +25,23 @@
   function intro(title,description,step=""){return `<div class="intro"><div><p class="eyebrow">${date?e(dateLabel(date)):"Welcome to SOMATH"}</p><h1>${e(title)}</h1><p class="lede">${e(description)}</p></div>${step?`<span class="step">${e(step)}</span>`:""}</div>`;}
   function render() {
     lock.hidden=!token;
-    if(forget)forget.hidden=!remembered;
-    if(screen==="restoring"){app.innerHTML='<section class="panel unlock"><h1>Opening student check-in…</h1><p class="muted">Checking this school tablet’s authorization.</p></section>';return;}
+    if(forget)forget.hidden=!remembered||scope==="staff";
+    lock.textContent=scope==="staff"?"Sign out of Teacher View":"Lock tablet";
+    if(screen==="restoring"){app.innerHTML=`<section class="panel unlock"><h1>Opening ${mode==="staff"?"Teacher View":"student check-in"}…</h1><p class="muted">Checking this device’s authorization.</p></section>`;return;}
     if(screen==="unlock"){
-      app.innerHTML=`<section class="panel unlock"><div class="seal">A good day for math.</div><h1>Welcome to SOMATH</h1><p class="muted">Staff, unlock this tablet to begin student check-in.</p><div class="chips"><button class="secondary ${mode==="kiosk"?"active":""}" data-action="mode" data-mode="kiosk">Student kiosk</button><button class="secondary ${mode==="staff"?"active":""}" data-action="mode" data-mode="staff">Teacher view</button></div><form id="unlock-form"><label for="password">Staff password</label><input id="password" name="password" type="password" autocomplete="off" required placeholder="${config.demo?"Preview password: demo":"SOMATH admin password"}">${mode==="kiosk"&&!config.demo?'<label class="check-label"><input type="checkbox" name="remember">Remember this school tablet for 30 days</label><p class="helper">Only select this on the school’s dedicated tablet. Student check-in can reopen after refreshes and app restarts. Teacher View still requires the staff password.</p>':""}<button class="primary wide" type="submit">Unlock ${mode==="staff"?"teacher view":"tablet"}</button></form>${remembered&&mode==="kiosk"?'<button class="secondary wide" data-action="resume-tablet">Reopen remembered student check-in</button>':""}<p class="helper">${remembered?"This tablet is remembered. Use Forget this tablet to require the password again, including after a restart.":mode==="staff"?"Teacher View always requires the staff password. Staff sessions are never remembered.":"Your password is not stored. Without remembering this tablet, refreshing locks check-in again."}</p></section>`;
+      app.innerHTML=`<section class="panel unlock"><div class="seal">A good day for math.</div><h1>Welcome to SOMATH</h1><p class="muted">Staff, unlock this tablet to begin student check-in.</p>
+        <div class="chips"><button class="secondary ${mode==="kiosk"?"active":""}" data-action="mode" data-mode="kiosk">Student kiosk</button><button class="secondary ${mode==="staff"?"active":""}" data-action="mode" data-mode="staff">Teacher view</button></div>
+        <form id="unlock-form"><label for="password">Staff password</label><input id="password" name="password" type="password" autocomplete="off" required placeholder="${config.demo?"Preview password: demo":"SOMATH admin password"}">
+        ${mode==="kiosk"&&!config.demo?'<label class="check-label"><input type="checkbox" name="remember">Remember this school tablet for 30 days</label><p class="helper">Only select this on the school’s dedicated tablet. This option remembers student check-in only, not Teacher View.</p>':""}
+        <button class="primary wide" type="submit">Unlock ${mode==="staff"?"teacher view":"tablet"}</button></form>
+        ${remembered&&mode==="kiosk"?'<button class="secondary wide" data-action="resume-tablet">Reopen remembered student check-in</button>':""}
+        <p class="helper">${remembered?"This tablet is remembered. Use Forget this tablet to require the password again, including after a restart.":"Your password is not stored. Without remembering this device, refreshing locks this view again."}</p></section>`;
+      if(mode==="staff"){
+        const form=document.querySelector("#unlock-form");
+        form.querySelector('button[type="submit"]').insertAdjacentHTML("beforebegin",'<label class="check-label"><input type="checkbox" name="remember">Remember Teacher View on this device for 30 days</label><p class="helper">Only on a staff-controlled device. Anyone using this browser could access student notes, attendance, family emails and homework controls. Do not enable on an unattended student kiosk.</p>');
+        app.querySelector(".unlock > p.helper").textContent="Your password is not saved. Remembered access survives refreshes and app restarts unless browser data is cleared. Sign out of Teacher View removes it.";
+        if(config.demo){form.querySelector('[name="remember"]').disabled=true;app.querySelector(".unlock > p.helper").textContent="Remembered teacher access is available on the live site. This fictional-data preview does not save sign-ins.";}
+      }
       return;
     }
     if(screen==="classes"){
@@ -103,9 +120,28 @@
   async function loadManager(refresh=false){manager=await api("manage",{classId:cls.id,refresh});screen="manage";render();}
   function acceptSession(d) {
     token=d.token;scope=d.scope;date=d.date;
+    teacherRemembered=d.teacherRemembered===true;
+    teacherExpires=scope==="staff"?d.expires*1000:0;
     if(d.remembered)remembered=true;
     clearTimeout(sessionTimer);
-    sessionTimer=setTimeout(()=>{if(scope==="kiosk"&&remembered)restoreTablet();else reset();},Math.max(0,d.expires*1000-Date.now()));
+    sessionTimer=setTimeout(()=>{if(scope==="staff"&&teacherRemembered)renewTeacher().catch(()=>{});else if(scope==="kiosk"&&remembered)restoreTablet();else reset();},Math.max(1000,d.expires*1000-Date.now()-1000));
+  }
+  async function renewTeacher() {
+    if(teacherExpires>Date.now()+60000)return;
+    if(renewingTeacher)return renewingTeacher;
+    renewingTeacher=(async()=>{
+      try{const savedDate=date;const d=await api("resume-teacher");acceptSession(d);date=savedDate;}
+      catch(err){teacherRemembered=false;mode="staff";reset();throw err;}
+      finally{renewingTeacher=null;}
+    })();
+    return renewingTeacher;
+  }
+  async function restoreTeacher() {
+    if(restoring||config.demo)return;
+    restoring=true;mode="staff";screen="restoring";render();
+    try{const d=await api("resume-teacher");acceptSession(d);viewUrl(true);await loadClasses();}
+    catch{teacherRemembered=false;reset();}
+    finally{restoring=false;}
   }
   async function restoreTablet() {
     if(restoring||config.demo)return;
@@ -119,7 +155,8 @@
     try{
       const data=new FormData(ev.target);
       if(ev.target.id==="unlock-form"){
-        const d=await api("unlock",{password:data.get("password"),scope:mode,remember:mode==="kiosk"&&data.has("remember")});
+        const d=await api("unlock",{password:data.get("password"),scope:mode,remember:data.has("remember")});
+        viewUrl(mode==="staff");
         ev.target.reset();document.querySelector("#notice").style.display="none";acceptSession(d);await loadClasses();
       }else if(ev.target.id==="memo-form"){
         memoAuthor=String(data.get("author")||"").trim();
@@ -140,7 +177,7 @@
     const btn=ev.target.closest("[data-action]");if(!btn||busy)return;const action=btn.dataset.action;
     busy=true;btn.disabled=true;
     try {
-      if(action==="mode"){mode=btn.dataset.mode;render();}
+      if(action==="mode"){mode=btn.dataset.mode;viewUrl(mode==="staff");if(mode==="staff"&&!config.demo)await restoreTeacher();else render();}
       if(action==="resume-tablet")await restoreTablet();
       if(action==="back")await loadClasses();
       if(action==="class"){cls=classes.find(c=>c.id===btn.dataset.id);if(scope==="staff")await loadManager();else{screen="search";render();}}
@@ -183,7 +220,13 @@
       }catch(err){if(version===queryVersion)notice(err.message,true);}
     },250);
   });
-  lock.addEventListener("click",reset);
+  lock.addEventListener("click",async()=>{
+    if(scope!=="staff"){reset();return;}
+    lock.disabled=true;
+    try{await api("forget-teacher");teacherRemembered=false;mode="staff";reset();notice("Teacher View signed out. Remembered access removed from this browser.");}
+    catch(err){notice("Could not sign out. Check your connection and try again.",true);}
+    finally{lock.disabled=false;}
+  });
   if(forget)forget.addEventListener("click",async()=>{
     if(!confirm("Forget this tablet? Student check-in will require the staff password again."))return;
     try{await api("forget-tablet");remembered=false;reset();notice("Tablet forgotten. The next unlock requires the staff password.");}catch(err){notice(err.message,true);}
@@ -194,5 +237,5 @@
   document.addEventListener("visibilitychange",renewDay);
   ["pointerdown","keydown"].forEach(type=>document.addEventListener(type,()=>{clearTimeout(idle);if(scope==="kiosk"&&token)idle=setTimeout(()=>loadClasses().catch(()=>reset()),60000);}));
   if(config.demo){const banner=document.querySelector("#preview-banner");banner.hidden=false;banner.textContent="INTERACTIVE PREVIEW · Fictional students only · Password: demo · No emails are sent";}
-  if(config.demo)render();else restoreTablet();
+  if(config.demo)render();else if(mode==="staff")restoreTeacher();else restoreTablet();
 })();

@@ -4,6 +4,11 @@ import {saveStudentContact,normalizeEmail,validStudentEmail,updateSubscriptionSt
 const TZ = "America/New_York";
 const P = "checkin:";
 const TABLET_COOKIE="__Host-somath_tablet", TABLET_TTL=30*24*60*60;
+const TEACHER_COOKIE="__Host-somath_teacher", TEACHER_TTL=30*24*60*60;
+const teacherValue=request=>(request.headers.get("Cookie")||"").split(";").map(s=>s.trim()).find(s=>s.startsWith(TEACHER_COOKIE+"="))?.slice(TEACHER_COOKIE.length+1)||"";
+function teacherCookie(value,seconds=TEACHER_TTL) {
+  return `${TEACHER_COOKIE}=${value}; Path=/; Max-Age=${seconds}; HttpOnly; Secure; SameSite=Strict`;
+}
 const cookieValue=request=>(request.headers.get("Cookie")||"").split(";").map(s=>s.trim()).find(s=>s.startsWith(TABLET_COOKIE+"="))?.slice(TABLET_COOKIE.length+1)||"";
 function tabletCookie(value,seconds=TABLET_TTL) {
   return `${TABLET_COOKIE}=${value}; Path=/; Max-Age=${seconds}; HttpOnly; Secure; SameSite=Strict`;
@@ -63,6 +68,17 @@ async function kioskSession(tablet,env,deps,now) {
   const token=await deps.signToken({aud:"somath-checkin",scope:"kiosk",date:today.date,exp,tabletId:tablet.id},env.ADMIN_PASSWORD);
   return {token,scope:"kiosk",date:today.date,expires:exp,remembered:true,rememberedUntil:tablet.expires,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"};
 }
+async function validTeacher(env,deps,id,now) {
+  const saved=await get(env,"teacher-device:"+id);
+  if(!saved||saved.expires<=Math.floor(now.getTime()/1000))return null;
+  const signed=await deps.verifyToken(saved.proof,env.ADMIN_PASSWORD);
+  return signed?.aud==="somath-teacher-device"&&signed.id===id&&signed.exp===saved.expires?{id,expires:saved.expires}:null;
+}
+async function teacherSession(device,env,deps,now) {
+  const exp=Math.min(Math.floor(now.getTime()/1000)+1800,device.expires);
+  const token=await deps.signToken({aud:"somath-checkin",scope:"staff",date:eastern(now).date,exp,teacherDeviceId:device.id},env.ADMIN_PASSWORD);
+  return {token,scope:"staff",date:eastern(now).date,expires:exp,teacherRemembered:true,rememberedUntil:device.expires,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"};
+}
 const clean=(v,n=120)=>String(v||"").trim().slice(0,n);
 const emailOK=s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
 function linkOK(s) {try {const u=new URL(s);return u.protocol==="https:"&&!u.username&&!u.password;}catch{return false;}}
@@ -87,6 +103,18 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
     const text=await request.text();if(text.length>65000)return json({error:"Request too large."},413);
     let b;try{b=JSON.parse(text);}catch{return json({error:"Invalid request."},400);}
     const today=eastern(now), action=b.action;
+    if(action==="resume-teacher") {
+      // Separate audience, cookie and KV namespace: student cookies never grant staff access.
+      const raw=teacherValue(request);
+      const device=/^[a-f0-9]{64}$/.test(raw)?await validTeacher(env,deps,await hash(raw),now):null;
+      if(!device)return withCookie(json({error:"Please sign in to Teacher View with the staff password."},401),teacherCookie("",0));
+      return json(await teacherSession(device,env,deps,now));
+    }
+    if(action==="forget-teacher") {
+      const raw=teacherValue(request);
+      if(/^[a-f0-9]{64}$/.test(raw))await env.ENROLLMENTS.delete(P+"teacher-device:"+await hash(raw));
+      return withCookie(json({ok:true}),teacherCookie("",0));
+    }
     if(action==="resume-tablet") {
       const tablet=await requestTablet(request,env,deps,now);
       if(!tablet)return withCookie(json({error:"Please unlock this tablet with the staff password."},401),tabletCookie("",0));
@@ -108,6 +136,17 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         return json({error:"Incorrect staff password."},401);
       }
       const scope=b.scope==="staff"?"staff":"kiosk";
+      if(scope==="staff") {
+        const prior=teacherValue(request);
+        if(/^[a-f0-9]{64}$/.test(prior))await env.ENROLLMENTS.delete(P+"teacher-device:"+await hash(prior));
+        if(b.remember===true) {
+          const raw=[...crypto.getRandomValues(new Uint8Array(32))].map(x=>x.toString(16).padStart(2,"0")).join("");
+          const id=await hash(raw),expires=Math.floor(now.getTime()/1000)+TEACHER_TTL;
+          const proof=await deps.signToken({aud:"somath-teacher-device",id,exp:expires},env.ADMIN_PASSWORD);
+          await env.ENROLLMENTS.put(P+"teacher-device:"+id,JSON.stringify({proof,expires,createdAt:now.toISOString()}),{expirationTtl:TEACHER_TTL});
+          return withCookie(json(await teacherSession({id,expires},env,deps,now)),teacherCookie(raw));
+        }
+      }
       if(scope==="kiosk"&&b.remember===true) {
         const prior=cookieValue(request);
         if(/^[a-f0-9]{64}$/.test(prior))await env.ENROLLMENTS.delete(P+"tablet:"+await hash(prior));
@@ -119,7 +158,8 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       }
       const exp=Math.floor(now.getTime()/1000)+(scope==="staff"?1800:43200);
       const token=await deps.signToken({aud:"somath-checkin",scope,date:today.date,exp},env.ADMIN_PASSWORD);
-      return json({token,scope,expires:exp,date:today.date,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"});
+      const response=json({token,scope,expires:exp,date:today.date,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true"});
+      return scope==="staff"?withCookie(response,teacherCookie("",0)):response;
     }
     const bearer=(request.headers.get("Authorization")||"").replace(/^Bearer /,"");
     // Trusted server integrations use the same private admin header as enrollment.
@@ -130,6 +170,8 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       : await deps.verifyToken(bearer,env.ADMIN_PASSWORD);
     if(!session || session.aud!=="somath-checkin" || session.exp<=now.getTime()/1000 || !["staff","kiosk"].includes(session.scope) || (session.scope==="kiosk"&&session.date!==today.date)) return json({error:"Please ask staff to unlock this tablet again."},401);
     const staff=session.scope==="staff";
+    if(staff&&session.teacherDeviceId&&!await validTeacher(env,deps,session.teacherDeviceId,now))
+      return withCookie(json({error:"Remembered Teacher View access has ended. Please sign in again."},401),teacherCookie("",0));
     if(!staff&&session.tabletId&&!await validTablet(env,deps,session.tabletId,now))
       return withCookie(json({error:"This tablet is no longer remembered. Please unlock it again."},401),tabletCookie("",0));
     if(!staff&&!["classes","search","checkin"].includes(action))return json({error:"Staff access required."},403);
