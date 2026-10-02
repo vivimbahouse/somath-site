@@ -2,6 +2,8 @@ import { handleCheckin, runHomework } from "./_checkin.mjs";
 import {readStudentContact,saveStudentContact,normalizeEmail,validStudentEmail} from "./_student-contacts.mjs";
 import { recoverEnrollment } from "./_enrollment-recovery.mjs";
 import { handleEmailTest } from "./_email-test.mjs";
+import { handleMailingList, saveMailingContact } from "./_mailing-list.mjs";
+import { handleParentGuideCampaign } from "./_parent-guide-campaign.mjs";
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -300,6 +302,14 @@ async function handleStudentEvaluation(request, env) {
         priorSubmittedAt: prior.submittedAt || null
       }, 409);
     }
+  }
+
+  // Save completed-evaluation contact independently of report delivery.
+  // This neither sends a newsletter nor treats an evaluation as marketing consent.
+  try {
+    await saveMailingContact(env, {email:parentEmail, name:parentName});
+  } catch {
+    return jsonResponse({error:"contact_save_failed", message:"We could not save your contact information. Please try again."},503);
   }
 
   const strandRows = strands.map(function(s) {
@@ -2220,6 +2230,8 @@ var worker_default = {
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/staff-email-test") return handleEmailTest(request, env);
+    if (url.pathname === "/api/mailing-list") return handleMailingList(request, env);
+    if (url.pathname === "/api/parent-guide-campaign") return handleParentGuideCampaign(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
     if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
     if (url.pathname === "/api/private-enrollment-links") return handlePrivateEnrollmentAdmin(request, env);
