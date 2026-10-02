@@ -1,12 +1,12 @@
 import { html, text } from "./_email-test-template.mjs";
 
 // A fixed-message, single-recipient test. Not a bulk-mailing endpoint.
-const REVISION = "parent-guide-2026-10-01-v3";
+const REVISION = "parent-guide-2026-10-01-v4";
 const RECEIPT_KEY = "staff-email-test:" + REVISION;
 const RECIPIENT_HASH = "ebb4e69e6d16e440112c68abdb23d65cdc120d06865c1158bae6554557f06859";
-const SUBJECT = "[TEST v3] Right answer. But do they understand it?";
+const SUBJECT = "[TEST v4] Right answer. But do they understand it?";
 const IMAGES = [
-  { path: "/assets/email/parent-guide/logo.png", filename: "somath-logo.png", content_type: "image/png", content_id: "somath-logo" },
+  { path: "/assets/email/parent-guide/header-v4.png", filename: "somath-header.png", content_type: "image/png", content_id: "somath-logo" },
   { path: "/assets/email/parent-guide/hero.jpg", filename: "somath-parent-guide.jpg", content_type: "image/jpeg", content_id: "somath-hero" },
 ];
 function reply(data, status = 200) {
