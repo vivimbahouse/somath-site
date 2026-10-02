@@ -1,6 +1,7 @@
 import { handleCheckin, runHomework } from "./_checkin.mjs";
 import {readStudentContact,saveStudentContact,normalizeEmail,validStudentEmail} from "./_student-contacts.mjs";
 import { recoverEnrollment } from "./_enrollment-recovery.mjs";
+import { handleEmailTest } from "./_email-test.mjs";
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -2218,6 +2219,7 @@ var worker_default = {
     if (url.pathname === "/api/evaluation-block") return handleEvaluationBlockAdmin(request, env);
     if (url.pathname === "/api/pre-enroll") return handlePreEnroll(request, env);
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
+    if (url.pathname === "/api/staff-email-test") return handleEmailTest(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
     if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
     if (url.pathname === "/api/private-enrollment-links") return handlePrivateEnrollmentAdmin(request, env);
