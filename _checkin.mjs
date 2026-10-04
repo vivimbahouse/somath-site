@@ -186,6 +186,25 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       await put(env,"calendar-snapshot",{fetchedAt:now.toISOString(),calendarId:b.calendarId,events:b.events,enrollmentHolds:holds});
       return json({ok:true});
     }
+    if(action==="prepaid-membership") {
+      if(!staff)return json({error:"Staff access required."},403);
+      const enrollmentId=clean(b.enrollmentId,160);
+      if(!/^[a-zA-Z0-9_-]+$/.test(enrollmentId)||!validDate(b.validFrom)||!validDate(b.validThrough)||b.validThrough<b.validFrom||
+         typeof b.approved!=="boolean")return json({error:"A valid enrollment and inclusive prepaid date range are required."},400);
+      const rows=await deps.listEnrollments(env,5000);
+      const matches=rows.filter(r=>r.id===enrollmentId);
+      const row=matches.length===1?matches[0]:null;
+      if(!row||row.status!=="paid"||row.stripeCustomerId||row.stripeSessionId||!clean(row.studentName)||
+         !deps.titles[row.course]||!emailOK(row.parentEmail||"")||
+         (row.startDate&&b.validFrom<row.startDate))
+        return json({error:"A unique paid offline enrollment with a student, program, and parent email is required."},400);
+      const record={source:"offline_prepaid",enrollmentId:row.id,name:clean(row.studentName),
+        program:row.course,usualDay:clean(row.day),email:normalizeEmail(row.parentEmail),
+        studentEmail:normalizeEmail(row.studentEmail),validFrom:b.validFrom,validThrough:b.validThrough,
+        approved:b.approved,updatedAt:now.toISOString()};
+      await put(env,"prepaid-membership:"+enrollmentId,record);
+      return json({ok:true,record});
+    }
     const classes=classesFor(date,deps);
     if(action==="classes") {
       const decorated=[];
@@ -212,7 +231,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       if(lesson.closed) return json({error:"This class is closed for today."},409);
       const q=clean(b.query).toLocaleLowerCase();
       if(q.length<2) return json({students:[]});
-      const matches=students.filter(s=>s.name.toLocaleLowerCase().includes(q))
+      const matches=students.filter(s=>q.split(/\s+/).every(part=>s.name.toLocaleLowerCase().includes(part)))
         .sort((a,b)=>Number(b.active)-Number(a.active)||Number(a.makeup)-Number(b.makeup));
       const seen=new Set(),unique=matches.filter(s=>{if(seen.has(s.personId))return false;seen.add(s.personId);return true;});
       return json({students:unique.slice(0,12).map(s=>({id:s.id,name:s.name,canCheckIn:s.active!==false}))});
@@ -268,7 +287,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       const normalized=[],seen=new Set();
       for(const s of b.students) {
         const member=students.find(m=>m.id===s.id);
-        if(!member)return json({error:"Only Stripe-linked members can be changed here."},400);
+        if(!member)return json({error:"Only verified enrolled members can be changed here."},400);
         const {id,name,email}=member;
         if(seen.has(id))return json({error:"Duplicate student in roster."},400);seen.add(id);
         normalized.push({id,name,email,active:s.active!==false});

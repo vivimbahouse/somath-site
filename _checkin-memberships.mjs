@@ -1,9 +1,39 @@
 import {readStudentContact,normalizeEmail} from "./_student-contacts.mjs";
-// Stripe is the eligibility authority. Calendar events enrich identity and expected arrivals,
-// but never make an inactive subscription eligible. No price-level course inference:
+// Stripe governs subscription eligibility. Explicit staff-approved, dated prepaid grants
+// are a separate authority for offline students; generic "paid" enrollment rows are not.
+// Calendar events enrich identity and expected arrivals, never subscription eligibility.
+// No price-level course inference:
 // SOMATH reuses one price across several Young Fermats programs.
 const text=v=>String(v||"").trim();
 const digest=async value=>[...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value)))].map(x=>x.toString(16).padStart(2,"0")).join("");
+const validDate=value=>/^\d{4}-\d{2}-\d{2}$/.test(value||"")&&!isNaN(new Date(value+"T12:00:00Z"))&&new Date(value+"T12:00:00Z").toISOString().slice(0,10)===value;
+export async function prepaidRoster(env,cls,date,deps,allPrograms=false) {
+  const students=[];let cursor;
+  do {
+    const page=await env.ENROLLMENTS.list({prefix:"checkin:prepaid-membership:",limit:1000,...(cursor?{cursor}:{})});
+    for(const key of page.keys){
+      const raw=await env.ENROLLMENTS.get(key.name);if(!raw)continue;
+      const r=JSON.parse(raw);
+      if(r.source!=="offline_prepaid"||!r.enrollmentId||!text(r.name)||!deps.titles[r.program]||
+         !validDate(r.validFrom)||!validDate(r.validThrough)||r.validThrough<r.validFrom)continue;
+      if(!allPrograms&&r.program!==cls.slug)continue;
+      const identity="offline:"+r.enrollmentId;
+      const id=(await digest(identity+"|"+r.program)).slice(0,24);
+      const personId=(await digest(identity)).slice(0,24);
+      const override=JSON.parse(await env.ENROLLMENTS.get("checkin:member-override:"+id)||"null");
+      const reason=r.approved!==true?"prepaid_revoked":date<r.validFrom?"not_started":date>r.validThrough?"prepaid_expired":"eligible";
+      students.push({id,personId,name:r.name,customerId:"",subscriptionId:"",enrollmentId:r.enrollmentId,
+        email:normalizeEmail(r.email),studentEmail:normalizeEmail(r.studentEmail),
+        active:reason==="eligible"&&override?.active!==false,eligible:reason==="eligible",held:override?.active===false,
+        reason,status:reason==="eligible"?"paid through "+r.validThrough:reason,source:"Prepaid",
+        validThrough:r.validThrough,usualDay:r.usualDay,
+        expectedToday:reason==="eligible"&&r.program===cls.slug&&r.usualDay===cls.day,
+        program:r.program,programTitle:deps.titles[r.program],makeup:r.program!==cls.slug});
+    }
+    cursor=page.list_complete?null:page.cursor;
+  }while(cursor);
+  return students;
+}
 function calendarRecord(event) {
   if(event.status==="cancelled")return null;
   const description=text(event.html_description||event.description).replace(/\\_/g,"_").replace(/<[^>]+>/g," ");
@@ -82,6 +112,7 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
     if(duplicate<0)students.push(member);
     else if(member.eligible&&!students[duplicate].eligible)students[duplicate]=member;
   }
+  students.push(...await prepaidRoster(env,cls,date,deps,allPrograms));
   return {students:students.sort((a,b)=>Number(b.expectedToday)-Number(a.expectedToday)||a.name.localeCompare(b.name)),
     sync:{stripeAt:source.fetchedAt,calendarAt:calendarFresh?calendar.fetchedAt:null,calendarConnected:!!calendarFresh,demo:!!deps.demo},
     issues};
