@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Perf: preconnect to third-party origins -->
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+<!-- Google tag (gtag.js) - GA4 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>AP Calculus Related Rates: Three Worked Examples | SOMATH</title>
+<meta content="Draw the situation, relate the variables, differentiate with respect to time, and substitute only when the equation is ready." name="description"/>
+<link href="../assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="../assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../assets/favicon.ico" rel="shortcut icon"/>
+<link href="https://www.schoolofmath.us/posts/ap-calculus-related-rates-worked-examples" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="AP Calculus Related Rates: Three Worked Examples | SOMATH" property="og:title"/>
+<meta content="Draw the situation, relate the variables, differentiate with respect to time, and substitute only when the equation is ready." property="og:description"/>
+<meta content="https://www.schoolofmath.us/posts/ap-calculus-related-rates-worked-examples" property="og:url"/>
+<meta content="SOMATH" property="og:site_name"/>
+<meta content="https://www.schoolofmath.us/assets/og/courses/ap-calculus.jpg" property="og:image"/>
+<meta content="2026-10-06" property="article:published_time"/>
+<meta content="School of Math" property="article:author"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="AP Calculus Related Rates: Three Worked Examples | SOMATH" name="twitter:title"/>
+<meta content="Draw the situation, relate the variables, differentiate with respect to time, and substitute only when the equation is ready." name="twitter:description"/>
+<link href="../styles.css" rel="stylesheet"/>
+
+</link></link></link><meta content="2026-10-06" property="article:modified_time"/><meta content="https://www.schoolofmath.us/assets/og/courses/ap-calculus.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AP Calculus Related Rates: Three Worked Examples", "description": "Draw the situation, relate the variables, differentiate with respect to time, and substitute only when the equation is ready.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "image": "https://www.schoolofmath.us/assets/og/courses/ap-calculus.jpg", "author": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us/about"}, "publisher": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us"}, "mainEntityOfPage": "https://www.schoolofmath.us/posts/ap-calculus-related-rates-worked-examples"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When should I substitute the given values?", "acceptedAnswer": {"@type": "Answer", "text": "Usually after differentiating the relationship between the changing variables."}}, {"@type": "Question", "name": "Why use the chain rule?", "acceptedAnswer": {"@type": "Answer", "text": "Each changing quantity depends on time, even when the original geometric formula does not show t."}}, {"@type": "Question", "name": "Can a rate be negative?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A negative rate indicates a decreasing signed quantity, such as the height of a ladder’s top."}}, {"@type": "Question", "name": "Is a constant inflow the same as a constant rise in water level?", "acceptedAnswer": {"@type": "Answer", "text": "Not generally. The container’s cross-sectional area may change with depth."}}, {"@type": "Question", "name": "Should every answer include units?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The units describe which quantity changes and per what time interval."}}]}</script><link href="/assets/ap-search.css?v=20261006" rel="stylesheet"/></head>
+<body data-ap-course="ap-calculus" data-page="blog">
+<div id="nav-mount"></div>
+<article class="post" data-ap-course="ap-calculus">
+<p class="post__eyebrow">AP Calculus AB &amp; BC</p>
+<h1 class="post__title">AP Calculus Related Rates: Three Worked Examples</h1>
+<p class="post__dek">Draw the situation, relate the variables, differentiate with respect to time, and substitute only when the equation is ready.</p>
+<p class="post__meta">School of Math · Updated October 6, 2026 · 4 min read</p>
+<div class="post__body">
+<p>Related-rates problems connect quantities that change together. Write an equation linking the variables, differentiate with respect to time, and then substitute the values at the requested instant. Substituting a changing quantity too early can erase the derivative you need.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-top" href="/evaluation?ap_course=ap-calculus">Book a Calculus Evaluation</a></p>
+<figure class="post__cover"><img alt="AP Calculus AB &amp; BC at SOMATH" height="630" loading="lazy" src="/assets/og/courses/ap-calculus.jpg" width="1200"/></figure><nav aria-label="In this guide" class="ap-toc"><strong>In this guide</strong><ul><li><a href="#section-1">The method</a></li><li><a href="#section-2">Example 1: an expanding circle</a></li><li><a href="#section-3">Example 2: a sliding ladder</a></li><li><a href="#section-4">Example 3: filling a cone</a></li><li><a href="#section-5">Try the method independently</a></li><li><a href="#section-6">Final check: what does the number mean?</a></li></ul></nav><h2 id="section-1">The method</h2>
+<ol><li>Draw and label the situation. Define each variable and its units.</li><li>List known rates and the rate requested.</li><li>Write a relation valid while the quantities change.</li><li>Differentiate both sides with respect to time, using the chain rule.</li><li>Find any missing instantaneous values, substitute, and interpret the sign and units.</li></ol>
+<p>The chain rule is what turns a geometric formula into a relationship between rates. Start with the <a href="/posts/ap-calculus-prerequisites-5-questions">readiness check</a> if the algebra or trigonometry is getting in the way.</p>
+<h2 id="section-2">Example 1: an expanding circle</h2>
+<p>A circular ripple’s radius increases at 2 cm/s. How quickly is its area increasing when the radius is 3 cm?</p>
+<details><summary>Worked answer</summary><p>Let r(t) be radius and A(t) area. Since A = πr², dA/dt = 2πr(dr/dt). Substitute r = 3 and dr/dt = 2 to obtain dA/dt = 12π cm²/s. The positive sign means increasing area.</p></details>
+<p>Common mistake: using A = 9π first and then differentiating the constant. The area is not constantly 9π; that is its value at one instant. Differentiate the changing relationship before substituting.</p>
+<h2 id="section-3">Example 2: a sliding ladder</h2>
+<p>A 10-foot ladder rests against a vertical wall. Its bottom moves away from the wall at 2 ft/s. How fast is the top moving when the bottom is 6 feet from the wall?</p>
+<details><summary>Worked answer</summary><p>Let x be the bottom’s distance from the wall and y the top’s height. The fixed ladder gives x² + y² = 100. At x = 6, y = √(100 − 36) = 8.</p><p>Differentiating gives 2x(dx/dt) + 2y(dy/dt) = 0. Substitute: 2(6)(2) + 2(8)(dy/dt) = 0. Thus dy/dt = −24/16 = −1.5 ft/s. The top is moving downward at 1.5 ft/s.</p></details>
+<p>Common mistake: reporting a positive dy/dt because speed is positive. The signed rate of height is negative. A sentence such as “downward at 1.5 ft/s” communicates the direction without confusing it with a negative speed.</p>
+<h2 id="section-4">Example 3: filling a cone</h2>
+<p>A conical tank, pointed end down, has height 12 m and top radius 4 m. Water enters at 2 m³/min. How fast is the water level rising when its depth is 6 m?</p>
+<details><summary>Worked answer</summary><p>Let h be the water depth and r the surface radius. Similar triangles give r/h = 4/12, so r = h/3. Start with V = (1/3)πr²h and eliminate r: V = πh³/27.</p><p>Differentiate: dV/dt = (πh²/9)(dh/dt). At h = 6, 2 = 4π(dh/dt), so dh/dt = 1/(2π) m/min. The level rises; its rate is not constant even though the inflow rate is constant.</p></details>
+<p>Common mistake: treating the water’s radius as the tank’s full radius of 4 m. At a depth of 6 m the water surface radius is only 2 m. The similarity relation must use the changing water dimensions.</p>
+<h2 id="section-5">Try the method independently</h2>
+<p><strong>Practice 1:</strong> A square’s side grows at 0.5 cm/s. Find the area’s rate of change when the side is 8 cm.</p><details><summary>Answer</summary><p>A = s², so dA/dt = 2s(ds/dt) = 2(8)(0.5) = 8 cm²/s.</p></details>
+<p><strong>Practice 2:</strong> A sphere’s radius grows at 0.1 m/min. Find dV/dt when r = 3 m.</p><details><summary>Answer</summary><p>V = (4/3)πr³, so dV/dt = 4πr²(dr/dt) = 4π(9)(0.1) = 3.6π m³/min.</p></details>
+<p><strong>Practice 3:</strong> Two cars leave a right-angle intersection at the same time, one east at 30 mph and one north at 40 mph. How fast is their separation increasing after two hours?</p><details><summary>Answer</summary><p>At two hours x = 60, y = 80, and distance z = 100 miles. From z² = x² + y², z(dz/dt) = x(dx/dt) + y(dy/dt). Thus dz/dt = (60·30 + 80·40)/100 = 50 mph. Both cars travel at constant speeds on perpendicular roads.</p></details>
+<h2 id="section-6">Final check: what does the number mean?</h2>
+<p>Read the final units aloud. Area changes in square units per time, volume in cubic units per time, and length in linear units per time. Then check whether the sign agrees with the situation. This final interpretation catches errors that a correct derivative rule alone cannot.</p>
+<p>For guided practice, see <a href="/courses/ap-calculus">AP Calculus tutoring at SOMATH</a>. Related rates is part of the shared Calculus foundation; <a href="/posts/ap-calculus-ab-vs-bc-which-should-my-child-take">AB-versus-BC guidance</a> and <a href="/posts/ap-calculus-bc-series-convergence-tests">BC series examples</a> explain the broader learning path.</p>
+<section class="ap-faq"><h2>Questions and answers</h2><details><summary>When should I substitute the given values?</summary><p>Usually after differentiating the relationship between the changing variables.</p></details><details><summary>Why use the chain rule?</summary><p>Each changing quantity depends on time, even when the original geometric formula does not show t.</p></details><details><summary>Can a rate be negative?</summary><p>Yes. A negative rate indicates a decreasing signed quantity, such as the height of a ladder’s top.</p></details><details><summary>Is a constant inflow the same as a constant rise in water level?</summary><p>Not generally. The container’s cross-sectional area may change with depth.</p></details><details><summary>Should every answer include units?</summary><p>Yes. The units describe which quantity changes and per what time interval.</p></details></section>
+<div class="post__cta"><h2>Bring your questions to SOMATH</h2><p>In-person small-group teaching at 226 W 79th St, Upper West Side, NYC. Start with a free 30-minute evaluation, or call <a href="tel:+16466686151">(646) 668-6151</a>. See the <a href="/schedule">schedule</a> and <a href="/courses/ap-calculus">course details</a>.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-footer" href="/evaluation?ap_course=ap-calculus">Book a Calculus Evaluation</a></p></div>
+</div></article>
+
+<section class="post__related"><h2>Keep learning</h2><ul class="ap-resource-list"><li><a href="/posts/ap-calculus-ab-vs-bc-which-should-my-child-take">AP Calculus AB vs BC: Which Should My Child Take?</a></li><li><a href="/posts/ap-calculus-prerequisites-5-questions">AP Calculus Prerequisites: Five Readiness Questions</a></li><li><a href="/posts/ap-calculus-related-rates-worked-examples">AP Calculus Related Rates: Three Worked Examples</a></li><li><a href="/posts/ap-calculus-bc-series-convergence-tests">AP Calculus BC Series: Choosing a Convergence Test</a></li></ul></section><div id="footer-mount"></div>
+<div id="sticky-mount"></div>
+<script src="/partials.js?v=v20260726-enrich"></script>
+<script defer="" src="/assets/ap-attribution.js?v=20261006"></script></body>
+</html>

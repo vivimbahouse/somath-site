@@ -1,235 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-  
-  <!-- Perf: preconnect to third-party origins -->
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+<head>
+<!-- Perf: preconnect to third-party origins -->
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://www.google-analytics.com" rel="dns-prefetch"/>
 <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
-  <script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-18149423892');
   </script>
-    <!-- Google tag (gtag.js) - GA4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
-    <script>
+<!-- Google tag (gtag.js) - GA4 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+<script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-9BN5F63KZN');
     </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>AP Precalculus Domain and Range: Restrictions and Practice | SOMATH</title>
+<meta content="Follow the input through the function. Preserve original restrictions, solve inequalities, and distinguish domain from range." name="description"/>
+<link href="../assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="../assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../assets/favicon.ico" rel="shortcut icon"/>
+<link href="https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="AP Precalculus Domain and Range: Restrictions and Practice | SOMATH" property="og:title"/>
+<meta content="Follow the input through the function. Preserve original restrictions, solve inequalities, and distinguish domain from range." property="og:description"/>
+<meta content="https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus" property="og:url"/>
+<meta content="SOMATH" property="og:site_name"/>
+<meta content="https://www.schoolofmath.us/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.jpg" property="og:image"/>
+<meta content="2026-05-03" property="article:published_time"/>
+<meta content="School of Math" property="article:author"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="AP Precalculus Domain and Range: Restrictions and Practice | SOMATH" name="twitter:title"/>
+<meta content="Follow the input through the function. Preserve original restrictions, solve inequalities, and distinguish domain from range." name="twitter:description"/>
+<link href="../styles.css" rel="stylesheet"/>
 
+</link></link></link><meta content="2026-10-06" property="article:modified_time"/><meta content="https://www.schoolofmath.us/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AP Precalculus Domain and Range: Restrictions and Practice", "description": "Follow the input through the function. Preserve original restrictions, solve inequalities, and distinguish domain from range.", "datePublished": "2026-05-03", "dateModified": "2026-10-06", "image": "https://www.schoolofmath.us/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.jpg", "author": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us/about"}, "publisher": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us"}, "mainEntityOfPage": "https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between domain and range?", "acceptedAnswer": {"@type": "Answer", "text": "Domain describes allowed inputs; range describes possible outputs."}}, {"@type": "Question", "name": "Does multiplying a function’s output change its domain?", "acceptedAnswer": {"@type": "Answer", "text": "Not by itself. Restrictions come from which inputs the original function can accept."}}, {"@type": "Question", "name": "Can I include a zero inside a square root?", "acceptedAnswer": {"@type": "Answer", "text": "Yes for a standalone real square root, but not when that root is a denominator."}}, {"@type": "Question", "name": "Can a logarithm’s argument equal zero?", "acceptedAnswer": {"@type": "Answer", "text": "No. A real logarithm requires a strictly positive argument."}}, {"@type": "Question", "name": "Does simplifying erase a hole in the original domain?", "acceptedAnswer": {"@type": "Answer", "text": "No. Preserve restrictions from the original expression."}}]}</script><link href="/assets/ap-search.css?v=20261006" rel="stylesheet"/></head>
+<body data-ap-course="pre-calculus" data-page="blog">
+<div id="nav-mount"></div>
+<article class="post" data-ap-course="pre-calculus">
+<p class="post__eyebrow">AP Precalculus</p>
+<h1 class="post__title">AP Precalculus Domain and Range: Restrictions and Practice</h1>
+<p class="post__dek">Follow the input through the function. Preserve original restrictions, solve inequalities, and distinguish domain from range.</p>
+<p class="post__meta">School of Math · Updated October 6, 2026 · 4 min read</p>
+<div class="post__body">
+<p>The domain tells you which inputs a function accepts; the range tells you which outputs it produces. In a composition, the expression sent into the outer function must belong to that function’s domain. Outside scaling and shifting affect outputs, not that input requirement.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-top" href="/evaluation?ap_course=pre-calculus">Book a Precalculus Evaluation</a></p>
+<figure class="post__cover"><picture><source srcset="/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.webp" type="image/webp"/><img alt="Functions and Their Domains in AP Pre-Calculus" height="1080" src="/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.jpg" width="1350"/></picture></figure><nav aria-label="In this guide" class="ap-toc"><strong>In this guide</strong><ul><li><a href="#section-1">Worked multiple-choice example: a transformed input</a></li><li><a href="#section-2">Three restrictions worth checking first</a></li><li><a href="#section-3">Domain is not range</a></li><li><a href="#section-4">Try five original questions</a></li><li><a href="#section-5">What to check before finishing</a></li></ul></nav><h2 id="section-1">Worked multiple-choice example: a transformed input</h2>
+<p>Let f have domain −2 ≤ x ≤ 8. Define g(x) = 3f(2(x + 4)) − 1. What is the domain of g?</p>
+<ol type="A"><li>[−7, 23]</li><li>[−5, 0]</li><li>[−3, 2]</li><li>[0, 20]</li></ol>
+<details><summary>Answer</summary><p>The input to f is 2(x + 4), so require −2 ≤ 2(x + 4) ≤ 8. Expanding gives −2 ≤ 2x + 8 ≤ 8. Subtract 8 and divide by 2: −10 ≤ 2x ≤ 0, hence −5 ≤ x ≤ 0. The answer is B, [−5, 0]. The outside 3 and −1 do not change the domain restriction.</p></details>
+<h2 id="section-2">Three restrictions worth checking first</h2>
+<table><thead><tr><th>Expression</th><th>Real-domain requirement</th><th>Example</th></tr></thead><tbody><tr><td>Fraction</td><td>Denominator ≠ 0</td><td>1/(x − 2): x ≠ 2</td></tr><tr><td>Even root</td><td>Radicand ≥ 0</td><td>√(x + 3): x ≥ −3</td></tr><tr><td>Logarithm</td><td>Argument &gt; 0</td><td>ln(x − 4): x &gt; 4</td></tr></tbody></table>
+<p>When several restrictions apply, use their intersection. A denominator containing a square root must be defined and nonzero, so its radicand must be strictly positive, not merely nonnegative.</p>
+<h2 id="section-3">Domain is not range</h2>
+<p>For h(x) = √(x − 3) + 2, the domain is [3, ∞), because x − 3 ≥ 0. The square-root output is nonnegative, so adding 2 gives range [2, ∞). Solve an input restriction for the domain and analyze possible outputs for the range.</p>
+<h2 id="section-4">Try five original questions</h2>
+<p><strong>1.</strong> Find the domain of √(5 − x).</p><details><summary>Answer</summary><p>Require 5 − x ≥ 0, so x ≤ 5. Domain: (−∞, 5].</p></details>
+<p><strong>2.</strong> Find the domain of 1/√(x + 2).</p><details><summary>Answer</summary><p>The square root is in the denominator, so x + 2 &gt; 0. Domain: (−2, ∞).</p></details>
+<p><strong>3.</strong> Simplify (x² − 4)/(x − 2), and state the original domain.</p><details><summary>Answer</summary><p>The expression simplifies to x + 2 only for x ≠ 2. The original domain is all real numbers except 2.</p></details>
+<p><strong>4.</strong> If f has domain [1, 7], find the domain of f(3 − 2x).</p><details><summary>Answer</summary><p>Require 1 ≤ 3 − 2x ≤ 7. Subtract 3: −2 ≤ −2x ≤ 4. Dividing by −2 reverses the inequalities, giving −2 ≤ x ≤ 1. Domain: [−2, 1].</p></details>
+<p><strong>5.</strong> Find the real domain of ln(x − 1)/√(6 − x).</p><details><summary>Answer</summary><p>The logarithm requires x &gt; 1. The square root is in the denominator, requiring x &lt; 6. Both conditions hold on (1, 6).</p></details>
+<h2 id="section-5">What to check before finishing</h2>
+<p>Keep restrictions from the original expression, not only the simplified one. Reverse inequality signs when dividing by a negative number. Check whether endpoints are permitted, and test one interior value if the interval feels uncertain.</p>
+<p>Continue with <a href="/posts/logarithms-in-ap-pre-calculus-a-comprehensive-guide">logarithms</a>, the <a href="/posts/ap-precalculus-2027-exam-topics-study-guide">AP Precalculus exam guide</a>, and <a href="/posts/ap-calculus-prerequisites-5-questions">Calculus readiness</a>. For in-person feedback, see <a href="/courses/pre-calculus">SOMATH AP Precalculus</a>.</p>
+<section class="ap-faq"><h2>Questions and answers</h2><details><summary>What is the difference between domain and range?</summary><p>Domain describes allowed inputs; range describes possible outputs.</p></details><details><summary>Does multiplying a function’s output change its domain?</summary><p>Not by itself. Restrictions come from which inputs the original function can accept.</p></details><details><summary>Can I include a zero inside a square root?</summary><p>Yes for a standalone real square root, but not when that root is a denominator.</p></details><details><summary>Can a logarithm’s argument equal zero?</summary><p>No. A real logarithm requires a strictly positive argument.</p></details><details><summary>Does simplifying erase a hole in the original domain?</summary><p>No. Preserve restrictions from the original expression.</p></details></section>
+<div class="post__cta"><h2>Bring your questions to SOMATH</h2><p>In-person small-group teaching at 226 W 79th St, Upper West Side, NYC. Start with a free 30-minute evaluation, or call <a href="tel:+16466686151">(646) 668-6151</a>. See the <a href="/schedule">schedule</a> and <a href="/courses/pre-calculus">course details</a>.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-footer" href="/evaluation?ap_course=pre-calculus">Book a Precalculus Evaluation</a></p></div>
+</div></article>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Functions and Their Domains in AP Pre-Calculus | SOMATH</title>
-    <meta name="description" content="Master AP Precalculus with our in-depth guide on AP Precalculus function and domain transformations. Perfect for exams and advanced algebra!" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
-    <link rel="shortcut icon" href="../assets/favicon.ico" />
-    <link rel="canonical" href="https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Functions and Their Domains in AP Pre-Calculus" />
-    <meta property="og:description" content="Master AP Precalculus with our in-depth guide on AP Precalculus function and domain transformations. Perfect for exams and advanced algebra!" />
-    <meta property="og:url" content="https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus" />
-    <meta property="og:site_name" content="SOMATH" />
-    <meta property="og:image" content="https://www.schoolofmath.us/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.jpg" />
-    <meta property="article:published_time" content="2026-05-03" />
-    <meta property="article:author" content="School of Math" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Functions and Their Domains in AP Pre-Calculus" />
-    <meta name="twitter:description" content="Master AP Precalculus with our in-depth guide on AP Precalculus function and domain transformations. Perfect for exams and advanced algebra!" />
-    <link rel="stylesheet" href="../styles.css" />
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Functions and Their Domains in AP Pre-Calculus",
-  "description": "Master AP Precalculus with our in-depth guide on AP Precalculus function and domain transformations. Perfect for exams and advanced algebra!",
-  "datePublished": "2026-05-03",
-  "dateModified": "2026-05-03",
-  "author": {
-    "@type": "Person",
-    "name": "School of Math",
-    "jobTitle": "Lead Math Teacher, Co-Founder",
-    "url": "https://www.schoolofmath.us/about.html"
-  },
-  "publisher": {
-    "@type": "EducationalOrganization",
-    "name": "SOMATH",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.schoolofmath.us/assets/logo-full.svg"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus.html"
-  }
-}
-</script>
-  </head>
-  <body data-page="blog">
-    <div id="nav-mount"></div>
-
-    <article class="post">
-      <p class="post__eyebrow">AP Pre-Calculus</p>
-      <h1 class="post__title">Functions and Their Domains in AP Pre-Calculus</h1>
-      <p class="post__dek">Understanding function transformations is one of the most important skills in AP Precalculus and advanced algebra. In this problem, we analyze how a function’s domain changes when it is transformed.</p>
-      <div class="post__meta">
-        <span><strong>School of Math</strong></span>
-        <span>May 3, 2026</span>
-        <span>1 min read</span>
-      </div>
-
-      <div class="post__body">
-
-<figure class="post__cover"><picture><source srcset="/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.webp" type="image/webp"><img src="/assets/blog/functions-and-their-domains-in-ap-pre-calculus/cover.jpg" alt="Functions and Their Domains in AP Pre-Calculus" width="1350" height="1080" /></picture></figure>
-<figure class="post__youtube">
-  <div class="post__youtube-frame">
-    <iframe src="https://www.youtube.com/embed/VT3YYV8ufKc?rel=0" title="Functions and Their Domains in AP Pre-Calculus"
-      loading="lazy" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
-  </div>
-</figure>
-
-<h2>AP pre calculus function and domain</h2>
-<p>Understanding function transformations is one of the most important skills in <strong>AP Precalculus</strong> and advanced algebra. In this problem, we analyze how a function’s domain changes when it is transformed.</p>
-
-<h2>Problem</h2>
-<p>Let <em>f</em> be a function with the domain −2≤<em>x</em>≤8. The function <em>g</em> is defined by: <em>g</em>(<em>x</em>)=3<em>f</em>(2(<em>x</em>+4))−1.</p>
-<p>Which of the following gives the domain of the function <em>g</em>?</p>
-<p>(A) [−7,23]<br>
-(B) [−5,0]<br>
-(C) [−3,2]<br>
-(D) [0,20]</p>
-
-<h2>Step-by-Step Solution</h2>
-<p>The key idea is simple but powerful: 👉 The input inside function <em>f</em> must stay within its domain.</p>
-<p>We know:</p>
-<ul>
-<li>Domain of <em>f</em>: −2≤<em>x</em>≤8</li>
-</ul>
-<p>But in function <em>g</em>(<em>x</em>), the input to <em>f</em> is: 2(<em>x</em>+4). So we require: −2≤2(<em>x</em>+4)≤8</p>
-
-<h2>Solve the inequality:</h2>
-<p>−2≤2<em>x</em>+8≤8</p>
-<p>Subtract 8 from all parts: −10≤2<em>x</em>≤0</p>
-<p>Divide everything by 2: −5≤<em>x</em>≤0</p>
-
-<h2>Final Answer</h2>
-<p>The domain of <em>g</em>(<em>x</em>) is: [−5,0]</p>
-<p>✅ Correct choice: <strong>(B)</strong></p>
-
-<h2>Why This Matters for AP Precalculus</h2>
-<p>This type of question tests your understanding of:</p>
-<ul>
-<li>Function composition</li>
-<li>Domain restrictions</li>
-<li>Transformations inside functions</li>
-<li>Inequalities and algebra manipulation</li>
-</ul>
-<p>These concepts appear frequently on <strong>AP Precalculus exams</strong>, <strong>SAT Math</strong>, and <strong>NYC specialized high school tests (SHSAT)</strong>.</p>
-
-<h2>Common Mistakes</h2>
-<ul>
-<li>❌ Forgetting that the restriction applies to the <em>inside</em> of the function</li>
-<li>❌ Not solving the inequality correctly</li>
-<li>❌ Ignoring transformations like shifts and stretches</li>
-</ul>
-
-<h2>Learn Precalculus the Right Way</h2>
-<p>At <strong>School of Math NYC</strong>, we help students master topics like:</p>
-<ul>
-<li>Function transformations</li>
-<li>Domain and range</li>
-<li>AP Precalculus exam strategies</li>
-<li>SHSAT and advanced math preparation</li>
-<li>AP pre calculus function and domain</li>
-</ul>
-<p>📍 226 West 79th Street, Upper West Side<br>
-📞 (646) 668-6151<br>
-🌐 <a href="/">/</a></p>
-
-        <div class="post__cta">
-          <p class="post__cta-eyebrow">Free 30-minute evaluation</p>
-          <h3>Want a real read on where your child stands?</h3>
-          <p>
-            Book a free 30-minute one-on-one evaluation. We'll diagnose
-            exactly where your child is, send a written summary within 48
-            hours, and tell you honestly what to work on next — even if
-            you don't enroll.
-          </p>
-          <a href="/evaluation" class="btn btn--gold btn--lg">Book a Free Evaluation</a>
-        </div>
-      </div>
-    
-        <div class="course-cta-card">
-          <div class="course-cta-card__grade">SOMATH course &middot; Grades 10–12</div>
-          <h2 class="course-cta-card__h">Want your child in an AP Pre-Calculus class at SOMATH?</h2>
-          <p class="course-cta-card__lede">Full-year course covering polynomial, rational, exponential, logarithmic, and trigonometric functions plus sequences and series. Delivered with the depth needed to walk into AP Calculus prepared.</p>
-          <p class="course-cta-card__ctas">
-            <a href="/courses/pre-calculus" class="course-cta-card__primary">See the AP Pre-Calculus course &rarr;</a>
-            <a href="/contact" class="course-cta-card__secondary">Book free evaluation</a>
-          </p>
-        </div>
-
-</article>
-
-    <section class="post__related">
-      <h3 class="post__related-title">More from the SOMATH Journal</h3>
-      <div class="post__related-grid">
-        <a class="blog-card" href="/posts/logarithms-in-ap-pre-calculus-a-comprehensive-guide">
-          <span class="blog-card__category">AP Pre-Calculus</span>
-          <h2 class="blog-card__title">Logarithms in AP Pre-Calculus: A Comprehensive Guide</h2>
-          <p class="blog-card__dek">If your student is preparing for AP Precalculus, mastering logarithms is not optional — it’s essential.</p>
-          <div class="blog-card__meta"><strong>School of Math</strong> · 2 min read</div>
-        </a>
-        <a class="blog-card" href="/posts/understanding-the-average-rate-of-change-in-ap-precalculus-test-questions">
-          <span class="blog-card__category">AP Pre-Calculus</span>
-          <h2 class="blog-card__title">Understanding the Average Rate of Change in AP Precalculus Test Questions</h2>
-          <p class="blog-card__dek">If you’re preparing for an AP Precalculus or high school math exam, understanding the average rate of change is essential.</p>
-          <div class="blog-card__meta"><strong>School of Math</strong> · 3 min read</div>
-        </a>
-        <a class="blog-card" href="/posts/ap-pre-calculus-question-1">
-          <span class="blog-card__category">AP Pre-Calculus</span>
-          <h2 class="blog-card__title">AP PRE CALCULUS - QUESTION 1</h2>
-          <p class="blog-card__dek">Work with Desmos.</p>
-          <div class="blog-card__meta"><strong>School of Math</strong> · 1 min read</div>
-        </a>
-        <a class="blog-card" href="/posts/understanding-change-of-rate-graphs-in-ap-pre-calculus">
-          <span class="blog-card__category">AP Pre-Calculus</span>
-          <h2 class="blog-card__title">Understanding Change of Rate Graphs in AP Pre-Calculus</h2>
-          <p class="blog-card__dek">Rate-of-change graphs are one of the most misread topics on the AP Pre-Calculus exam. Here is how to read them correctly.</p>
-          <div class="blog-card__meta"><strong>School of Math</strong> · 3 min read</div>
-        </a>
-        <a class="blog-card" href="/posts/ap-calc-rational-function-positive-intervals-solved">
-          <span class="blog-card__category">AP Pre-Calculus</span>
-          <h2 class="blog-card__title">AP Pre-Calc Rational Function: Where Is h(x) > 0?</h2>
-          <p class="blog-card__dek">A step-by-step solve of an AP Pre-Calc rational function positive-interval question — the exact method to use on the exam.</p>
-          <div class="blog-card__meta"><strong>School of Math</strong> · 3 min read</div>
-        </a>
-        <a class="blog-card" href="/posts/domain-rational-cube-root-square-root-stewart-ch1-q3">
-          <span class="blog-card__category">Stewart Diagnostic</span>
-          <h2 class="blog-card__title">Find the Domain: Rational, Cube & Square Root (Ch.1 Q3)</h2>
-          <p class="blog-card__dek">Full worked solution to Stewart Chapter 1 Question 3 — domain of rational, cube-root, and square-root expressions.</p>
-          <div class="blog-card__meta"><strong>School of Math</strong> · 3 min read</div>
-        </a>
-
-
-
-      </div>
-    </section>
-
-    <div id="footer-mount"></div>
-    <div id="sticky-mount"></div>
-    <script src="/partials.js?v=v20260726-enrich"></script>
-  </body>
+<section class="post__related"><h2>Keep learning</h2><ul class="ap-resource-list"><li><a href="/posts/best-ap-precalculus-tutoring-nyc">AP Precalculus Tutoring in NYC: A Parent’s Guide</a></li><li><a href="/posts/ap-precalculus-2027-exam-topics-study-guide">AP Precalculus Exam 2027: Tested Topics and a Study Guide</a></li><li><a href="/posts/functions-and-their-domains-in-ap-pre-calculus">AP Precalculus Domain and Range: Restrictions and Practice</a></li><li><a href="/posts/logarithms-in-ap-pre-calculus-a-comprehensive-guide">AP Precalculus Logarithms: Rules, Equations, and Worked Examples</a></li></ul></section><div id="footer-mount"></div>
+<div id="sticky-mount"></div>
+<script src="/partials.js?v=v20260726-enrich"></script>
+<script defer="" src="/assets/ap-attribution.js?v=20261006"></script></body>
 </html>

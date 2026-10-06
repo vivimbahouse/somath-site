@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://www.schoolofmath.us/posts/what-is-school-of-math-somath</loc><lastmod>2026-09-29</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.schoolofmath.us/posts/regents-geometry-august-2025-part-1-answers</loc><lastmod>2026-09-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-statistics-class-11-random-variables-expected-value</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -182,19 +182,19 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/courses/pre-calculus</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/courses/ap-calculus</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/courses/ap-statistics</loc>
-    <lastmod>2026-09-25</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -337,7 +337,7 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/best-ap-precalculus-tutoring-nyc</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -713,7 +713,7 @@
 
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-statistics-experimental-design-coffee-grounds-rosebushes</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -926,25 +926,25 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-calculus-ab-vs-bc-which-should-my-child-take</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-pre-calculus-free-response-question-logarithm</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-pre-calculus-question-1</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/apstatisticsprep</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -962,7 +962,7 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/functions-and-their-domains-in-ap-pre-calculus</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -974,7 +974,7 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/logarithms-in-ap-pre-calculus-a-comprehensive-guide</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -998,7 +998,7 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/mastering-limits-in-ap-pre-calculus-limits-key-strategies-for-exam-success</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1046,13 +1046,13 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/top-nyc-ap-statistics-tutoring-unlocking-success-in-upper-west-side</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/understanding-change-of-rate-graphs-in-ap-pre-calculus</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -1371,19 +1371,19 @@
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-calculus-ab-class-1-can-change-occur-at-an-instant</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-statistics-class-2-displaying-categorical-data</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.schoolofmath.us/posts/ap-statistics-class-1-statistics-as-variation-variable-types</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1467,4 +1467,4 @@
 <url><loc>https://www.schoolofmath.us/posts/pre-algebra-class-14-one-step-equations-multiplication-division</loc><lastmod>2026-10-03</lastmod></url>
 <url><loc>https://www.schoolofmath.us/posts/algebra-ignite-class-14-quadratic-equations-solving-by-factoring</loc><lastmod>2026-10-03</lastmod></url>
 <url><loc>https://www.schoolofmath.us/posts/algebra-2-class-14-rational-equations-extraneous-roots</loc><lastmod>2026-10-06</lastmod></url>
-</urlset>
+<url><loc>https://www.schoolofmath.us/posts/ap-statistics-2027-exam-course-changes</loc><lastmod>2026-10-06</lastmod></url><url><loc>https://www.schoolofmath.us/posts/ap-calculus-prerequisites-5-questions</loc><lastmod>2026-10-06</lastmod></url><url><loc>https://www.schoolofmath.us/posts/ap-precalculus-2027-exam-topics-study-guide</loc><lastmod>2026-10-06</lastmod></url><url><loc>https://www.schoolofmath.us/posts/ap-statistics-confidence-intervals-vs-hypothesis-tests</loc><lastmod>2026-10-06</lastmod></url><url><loc>https://www.schoolofmath.us/posts/ap-calculus-related-rates-worked-examples</loc><lastmod>2026-10-06</lastmod></url><url><loc>https://www.schoolofmath.us/posts/ap-calculus-bc-series-convergence-tests</loc><lastmod>2026-10-06</lastmod></url></urlset>

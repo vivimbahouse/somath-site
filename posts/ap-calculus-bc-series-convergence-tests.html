@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Perf: preconnect to third-party origins -->
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+<!-- Google tag (gtag.js) - GA4 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>AP Calculus BC Series: Choosing a Convergence Test | SOMATH</title>
+<meta content="A decision guide with original examples, endpoint checks, and explanations of what each test actually proves." name="description"/>
+<link href="../assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="../assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../assets/favicon.ico" rel="shortcut icon"/>
+<link href="https://www.schoolofmath.us/posts/ap-calculus-bc-series-convergence-tests" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="AP Calculus BC Series: Choosing a Convergence Test | SOMATH" property="og:title"/>
+<meta content="A decision guide with original examples, endpoint checks, and explanations of what each test actually proves." property="og:description"/>
+<meta content="https://www.schoolofmath.us/posts/ap-calculus-bc-series-convergence-tests" property="og:url"/>
+<meta content="SOMATH" property="og:site_name"/>
+<meta content="https://www.schoolofmath.us/assets/og/courses/ap-calculus.jpg" property="og:image"/>
+<meta content="2026-10-06" property="article:published_time"/>
+<meta content="School of Math" property="article:author"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="AP Calculus BC Series: Choosing a Convergence Test | SOMATH" name="twitter:title"/>
+<meta content="A decision guide with original examples, endpoint checks, and explanations of what each test actually proves." name="twitter:description"/>
+<link href="../styles.css" rel="stylesheet"/>
+
+</link></link></link><meta content="2026-10-06" property="article:modified_time"/><meta content="https://www.schoolofmath.us/assets/og/courses/ap-calculus.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AP Calculus BC Series: Choosing a Convergence Test", "description": "A decision guide with original examples, endpoint checks, and explanations of what each test actually proves.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "image": "https://www.schoolofmath.us/assets/og/courses/ap-calculus.jpg", "author": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us/about"}, "publisher": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us"}, "mainEntityOfPage": "https://www.schoolofmath.us/posts/ap-calculus-bc-series-convergence-tests"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do terms approaching zero prove convergence?", "acceptedAnswer": {"@type": "Answer", "text": "No. That condition is necessary but not sufficient; the harmonic series is a counterexample."}}, {"@type": "Question", "name": "What does a ratio-test limit of 1 mean?", "acceptedAnswer": {"@type": "Answer", "text": "The test is inconclusive, so another method is needed."}}, {"@type": "Question", "name": "What is conditional convergence?", "acceptedAnswer": {"@type": "Answer", "text": "The series converges, but the series formed from the absolute values of its terms diverges."}}, {"@type": "Question", "name": "Why check power-series endpoints separately?", "acceptedAnswer": {"@type": "Answer", "text": "The ratio test typically gives a limit of 1 there and cannot decide convergence."}}, {"@type": "Question", "name": "Are infinite series part of BC?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Infinite Sequences and Series is a named unit in the BC framework."}}]}</script><link href="/assets/ap-search.css?v=20261006" rel="stylesheet"/></head>
+<body data-ap-course="ap-calculus" data-page="blog">
+<div id="nav-mount"></div>
+<article class="post" data-ap-course="ap-calculus">
+<p class="post__eyebrow">AP Calculus AB &amp; BC</p>
+<h1 class="post__title">AP Calculus BC Series: Choosing a Convergence Test</h1>
+<p class="post__dek">A decision guide with original examples, endpoint checks, and explanations of what each test actually proves.</p>
+<p class="post__meta">School of Math · Updated October 6, 2026 · 4 min read</p>
+<div class="post__body">
+<p>Choose a convergence test by looking at the structure of the series, not by trying every test at random. First check whether the terms approach zero; then look for geometric, p-series, telescoping, comparison, alternating, factorial, or power-series structure. Terms approaching zero is necessary for convergence, but not sufficient.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-top" href="/evaluation?ap_course=ap-calculus">Book a Calculus Evaluation</a></p>
+<p>Infinite Sequences and Series is a BC unit in the <a href="https://apcentral.collegeboard.org/courses/ap-calculus-bc">College Board framework</a>. This guide develops several entry points; it is not a complete replacement for the unit’s work on Taylor series, approximations, and error bounds.</p>
+<figure class="post__cover"><img alt="AP Calculus AB &amp; BC at SOMATH" height="630" loading="lazy" src="/assets/og/courses/ap-calculus.jpg" width="1200"/></figure><nav aria-label="In this guide" class="ap-toc"><strong>In this guide</strong><ul><li><a href="#section-1">A useful first-pass decision table</a></li><li><a href="#section-2">Example 1: do not mistake small terms for convergence</a></li><li><a href="#section-3">Example 2: recognize a geometric series</a></li><li><a href="#section-4">Example 3: use limit comparison</a></li><li><a href="#section-5">Example 4: distinguish absolute and conditional convergence</a></li><li><a href="#section-6">Example 5: a power series needs endpoint checks</a></li><li><a href="#section-7">Try two independent checks</a></li><li><a href="#section-8">Write a justification, not a test name</a></li></ul></nav><h2 id="section-1">A useful first-pass decision table</h2>
+<table><thead><tr><th>Structure</th><th>Possible approach</th><th>Important caution</th></tr></thead><tbody>
+<tr><td>Terms do not approach zero</td><td>Term test for divergence</td><td>If terms do approach zero, no conclusion yet.</td></tr>
+<tr><td>Constant ratio</td><td>Geometric-series rule</td><td>Converges only when the ratio’s absolute value is less than 1.</td></tr>
+<tr><td>1/n<sup>p</sup></td><td>p-series rule</td><td>Converges for p &gt; 1, diverges for p ≤ 1.</td></tr>
+<tr><td>Positive rational expression in n</td><td>Comparison or limit comparison</td><td>Choose a known positive benchmark.</td></tr>
+<tr><td>Alternating signs</td><td>Alternating-series test; check absolute convergence separately</td><td>Magnitudes must decrease eventually to zero for this test.</td></tr>
+<tr><td>Factorials or powers involving n</td><td>Ratio test may simplify</td><td>A limiting ratio of 1 is inconclusive.</td></tr>
+</tbody></table>
+<h2 id="section-2">Example 1: do not mistake small terms for convergence</h2>
+<p>Consider the series with term aₙ = n/(n + 1), starting at n = 1.</p><details><summary>Answer</summary><p>The terms tend to 1, not 0. Therefore the series diverges by the term test. No more elaborate test is needed.</p></details>
+<p>Now compare the harmonic series with term 1/n. Its terms tend to zero, yet the series diverges. That is why “the terms get small” is not a convergence proof.</p>
+<h2 id="section-3">Example 2: recognize a geometric series</h2>
+<p>Find the sum of the series whose terms are 3(1/4)<sup>n</sup>, starting at n = 0.</p><details><summary>Answer</summary><p>The first term is 3 and the common ratio is 1/4. Because |1/4| &lt; 1, the series converges to 3/(1 − 1/4) = 4.</p></details>
+<h2 id="section-4">Example 3: use limit comparison</h2>
+<p>Determine whether the series with term (2n + 1)/(n³ + 4) converges, starting at n = 1.</p><details><summary>Answer</summary><p>For large n, the expression behaves like 2/n². Compare with bₙ = 1/n². The limit of aₙ/bₙ is the limit of n²(2n + 1)/(n³ + 4), which is 2. Both series have positive terms and the limit is finite and positive. Because the p-series with p = 2 converges, the given series converges.</p></details>
+<h2 id="section-5">Example 4: distinguish absolute and conditional convergence</h2>
+<p>Consider the series with term (−1)<sup>n+1</sup>/n, starting at n = 1.</p><details><summary>Answer</summary><p>The magnitudes 1/n decrease to zero, so the alternating-series test gives convergence. The series of absolute values is harmonic and diverges. Therefore the original series converges conditionally, not absolutely.</p></details>
+<p>A sign pattern alone is not enough: verify the hypotheses of the alternating-series test. For an alternating series meeting those conditions, the magnitude of the error after a partial sum is at most the magnitude of the first omitted term.</p>
+<h2 id="section-6">Example 5: a power series needs endpoint checks</h2>
+<p>Find the interval of convergence of the series with term (x − 2)<sup>n</sup>/(n3<sup>n</sup>), starting at n = 1.</p><details><summary>Answer</summary><p>The ratio test gives a limiting absolute ratio of |x − 2|/3. This is less than 1 for −1 &lt; x &lt; 5, so the radius is 3 and the center is 2.</p><p>At x = 5, the series becomes the harmonic series and diverges. At x = −1, it becomes the alternating harmonic series and converges. The interval is therefore [−1, 5). The ratio test alone cannot decide the endpoints because its limit is 1 there.</p></details>
+<h2 id="section-7">Try two independent checks</h2>
+<p><strong>Practice 1:</strong> Does the series with term 1/n<sup>3/2</sup> converge?</p><details><summary>Answer</summary><p>Yes. It is a p-series with p = 3/2 &gt; 1.</p></details>
+<p><strong>Practice 2:</strong> What can the ratio test conclude when its limit equals 1?</p><details><summary>Answer</summary><p>Nothing by itself. Another test is needed; the ratio test is inconclusive at 1.</p></details>
+<h2 id="section-8">Write a justification, not a test name</h2>
+<p>A complete answer identifies the benchmark or test, checks its hypotheses, evaluates the relevant limit or inequality, and states the conclusion. “Ratio test” written beside a final answer is not the same as showing that the test applies.</p>
+<p>Review the <a href="/posts/ap-calculus-ab-vs-bc-which-should-my-child-take">AB-versus-BC comparison</a> for course scope. For teacher feedback on these explanations, explore <a href="/courses/ap-calculus">SOMATH’s AP Calculus class</a>, and keep the <a href="/posts/ap-calculus-prerequisites-5-questions">algebra and functions readiness check</a> handy when simplification becomes the bottleneck.</p>
+<section class="ap-faq"><h2>Questions and answers</h2><details><summary>Do terms approaching zero prove convergence?</summary><p>No. That condition is necessary but not sufficient; the harmonic series is a counterexample.</p></details><details><summary>What does a ratio-test limit of 1 mean?</summary><p>The test is inconclusive, so another method is needed.</p></details><details><summary>What is conditional convergence?</summary><p>The series converges, but the series formed from the absolute values of its terms diverges.</p></details><details><summary>Why check power-series endpoints separately?</summary><p>The ratio test typically gives a limit of 1 there and cannot decide convergence.</p></details><details><summary>Are infinite series part of BC?</summary><p>Yes. Infinite Sequences and Series is a named unit in the BC framework.</p></details></section>
+<div class="post__cta"><h2>Bring your questions to SOMATH</h2><p>In-person small-group teaching at 226 W 79th St, Upper West Side, NYC. Start with a free 30-minute evaluation, or call <a href="tel:+16466686151">(646) 668-6151</a>. See the <a href="/schedule">schedule</a> and <a href="/courses/ap-calculus">course details</a>.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-footer" href="/evaluation?ap_course=ap-calculus">Book a Calculus Evaluation</a></p></div>
+</div></article>
+
+<section class="post__related"><h2>Keep learning</h2><ul class="ap-resource-list"><li><a href="/posts/ap-calculus-ab-vs-bc-which-should-my-child-take">AP Calculus AB vs BC: Which Should My Child Take?</a></li><li><a href="/posts/ap-calculus-prerequisites-5-questions">AP Calculus Prerequisites: Five Readiness Questions</a></li><li><a href="/posts/ap-calculus-related-rates-worked-examples">AP Calculus Related Rates: Three Worked Examples</a></li><li><a href="/posts/ap-calculus-bc-series-convergence-tests">AP Calculus BC Series: Choosing a Convergence Test</a></li></ul></section><div id="footer-mount"></div>
+<div id="sticky-mount"></div>
+<script src="/partials.js?v=v20260726-enrich"></script>
+<script defer="" src="/assets/ap-attribution.js?v=20261006"></script></body>
+</html>

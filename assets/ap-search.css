@@ -1,0 +1,22 @@
+/* SOMATH AP content extensions: retain the existing cream, green and gold identity. */
+.ap-evaluation { margin: 1.3rem 0; }
+.ap-evaluation .button { display:inline-block; background:#e9c878; color:#193a2b; border:1px solid #d3ac52; border-radius:5px; padding:13px 20px; font-weight:700; text-decoration:none; line-height:1.4; white-space:normal; text-align:center; }
+.ap-evaluation .button:hover { background:#f1d996; }
+.ap-evaluation .button:focus-visible { outline:3px solid #65806a; outline-offset:4px; }
+.ap-toc { padding:1rem 0; margin:1.5rem 0; border-block:1px solid #d8d0b7; }
+.ap-toc ul,.ap-resource-list { padding-left:1.25rem; }
+.ap-toc li,.ap-resource-list li { margin:.5rem 0; }
+body[data-ap-course] .post__body table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:.95rem; table-layout:fixed; }
+body[data-ap-course] .post__body th,body[data-ap-course] .post__body td { padding:12px; border-bottom:1px solid #d8d0b7; text-align:left; vertical-align:top; overflow-wrap:anywhere; }
+body[data-ap-course] .post__body th { background:#1f3d2e; color:#fff; }
+body[data-ap-course] .post__body details { margin:12px 0 24px; border-bottom:1px solid #d8d0b7; padding-bottom:12px; }
+body[data-ap-course] .post__body summary { cursor:pointer; color:#135ca3; font-weight:700; padding:6px 0; }
+body[data-ap-course] .post__body details p { margin:12px 0; }
+body[data-ap-course] .post__cover img { width:100%; height:auto; display:block; }
+body[data-ap-course] .post__related { max-width:780px; margin:2rem auto; padding:0 24px; }
+.ap-search-content { overflow-wrap:break-word; }
+@media(max-width:600px) {
+ body[data-ap-course] .course-hero h1 { font-size:2.2rem; }
+ body[data-ap-course] .post__body th,body[data-ap-course] .post__body td { padding:8px 6px; font-size:.85rem; }
+ body[data-ap-course] .course-hero__inner,body[data-ap-course] .course-section__inner { padding-inline:20px; }
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Perf: preconnect to third-party origins -->
+<link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-18149423892"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18149423892');
+  </script>
+<!-- Google tag (gtag.js) - GA4 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9BN5F63KZN"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9BN5F63KZN');
+    </script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Confidence Intervals vs Hypothesis Tests: AP Statistics Examples | SOMATH</title>
+<meta content="Estimate a population value or assess a claim? Learn the decision, conditions, and interpretation with original worked examples." name="description"/>
+<link href="../assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="../assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png">
+<link href="../assets/favicon-192.png" rel="icon" sizes="192x192" type="image/png">
+<link href="../assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../assets/favicon.ico" rel="shortcut icon"/>
+<link href="https://www.schoolofmath.us/posts/ap-statistics-confidence-intervals-vs-hypothesis-tests" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Confidence Intervals vs Hypothesis Tests: AP Statistics Examples | SOMATH" property="og:title"/>
+<meta content="Estimate a population value or assess a claim? Learn the decision, conditions, and interpretation with original worked examples." property="og:description"/>
+<meta content="https://www.schoolofmath.us/posts/ap-statistics-confidence-intervals-vs-hypothesis-tests" property="og:url"/>
+<meta content="SOMATH" property="og:site_name"/>
+<meta content="https://www.schoolofmath.us/assets/og/courses/ap-statistics.jpg" property="og:image"/>
+<meta content="2026-10-06" property="article:published_time"/>
+<meta content="School of Math" property="article:author"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Confidence Intervals vs Hypothesis Tests: AP Statistics Examples | SOMATH" name="twitter:title"/>
+<meta content="Estimate a population value or assess a claim? Learn the decision, conditions, and interpretation with original worked examples." name="twitter:description"/>
+<link href="../styles.css" rel="stylesheet"/>
+
+</link></link></link><meta content="2026-10-06" property="article:modified_time"/><meta content="https://www.schoolofmath.us/assets/og/courses/ap-statistics.jpg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Confidence Intervals vs Hypothesis Tests: AP Statistics Examples", "description": "Estimate a population value or assess a claim? Learn the decision, conditions, and interpretation with original worked examples.", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "image": "https://www.schoolofmath.us/assets/og/courses/ap-statistics.jpg", "author": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us/about"}, "publisher": {"@type": "Organization", "name": "School of Math", "url": "https://www.schoolofmath.us"}, "mainEntityOfPage": "https://www.schoolofmath.us/posts/ap-statistics-confidence-intervals-vs-hypothesis-tests"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When do I use a confidence interval?", "acceptedAnswer": {"@type": "Answer", "text": "When the goal is to estimate a population parameter with a range of plausible values."}}, {"@type": "Question", "name": "When do I use a hypothesis test?", "acceptedAnswer": {"@type": "Answer", "text": "When the goal is to assess evidence against a specified null claim in favor of an alternative."}}, {"@type": "Question", "name": "Does a p-value give the probability the null is true?", "acceptedAnswer": {"@type": "Answer", "text": "No. It measures how unusual results at least as extreme as those observed would be under the null model."}}, {"@type": "Question", "name": "Does failing to reject prove the null?", "acceptedAnswer": {"@type": "Answer", "text": "No. It means the evidence is insufficient for the alternative at the chosen significance level."}}, {"@type": "Question", "name": "Why check conditions first?", "acceptedAnswer": {"@type": "Answer", "text": "The procedure’s interpretation depends on its assumptions; a calculator output does not validate the study design."}}]}</script><link href="/assets/ap-search.css?v=20261006" rel="stylesheet"/></head>
+<body data-ap-course="ap-statistics" data-page="blog">
+<div id="nav-mount"></div>
+<article class="post" data-ap-course="ap-statistics">
+<p class="post__eyebrow">AP Statistics</p>
+<h1 class="post__title">Confidence Intervals vs Hypothesis Tests: AP Statistics Examples</h1>
+<p class="post__dek">Estimate a population value or assess a claim? Learn the decision, conditions, and interpretation with original worked examples.</p>
+<p class="post__meta">School of Math · Updated October 6, 2026 · 4 min read</p>
+<div class="post__body">
+<p>A confidence interval estimates a population parameter with a range of plausible values. A hypothesis test evaluates evidence against a specified claim about that parameter. Decide whether the question asks “how much?” or “is there evidence?” before reaching for a formula.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-top" href="/evaluation?ap_course=ap-statistics">Book a Statistics Evaluation</a></p>
+<figure class="post__cover"><img alt="AP Statistics at SOMATH" height="630" loading="lazy" src="/assets/og/courses/ap-statistics.jpg" width="1200"/></figure><nav aria-label="In this guide" class="ap-toc"><strong>In this guide</strong><ul><li><a href="#section-1">The same data, two different questions</a></li><li><a href="#section-2">Worked example: a 95% confidence interval</a></li><li><a href="#section-3">Worked example: testing a majority claim</a></li><li><a href="#section-4">Why are the two standard errors different?</a></li><li><a href="#section-5">Do not overstate interval–test equivalence</a></li><li><a href="#section-6">Try three decisions</a></li><li><a href="#section-7">Build a complete response</a></li></ul></nav><h2 id="section-1">The same data, two different questions</h2>
+<p>Suppose a simple random sample of 200 residents from a city with more than 2,000 residents finds that 116 support a proposal. The sample proportion is 116/200 = 0.58. The response is categorical: each resident supports the proposal or does not.</p>
+<table><thead><tr><th>Purpose</th><th>Question</th><th>Method</th></tr></thead><tbody><tr><td>Estimate</td><td>What proportion of all residents supports it?</td><td>One-proportion confidence interval</td></tr><tr><td>Test</td><td>Is there evidence that more than half support it?</td><td>One-proportion significance test</td></tr></tbody></table>
+<h2 id="section-2">Worked example: a 95% confidence interval</h2>
+<p>Check the method’s conditions before calculating: the sample is random, 200 is less than 10% of the population, and the observed success and failure counts are 116 and 84, both at least 10. The approximate standard error is √(0.58 × 0.42 / 200) ≈ 0.0349.</p>
+<p>Using z* = 1.96, the interval is 0.58 ± 1.96(0.0349), approximately (0.512, 0.648). We are 95% confident that between 51.2% and 64.8% of all city residents support the proposal.</p>
+<p>That does not mean 95% of residents fall inside the interval. The parameter is a proportion describing the population, not an individual resident. The confidence level describes the long-run capture rate of this interval method under its assumptions.</p>
+<h2 id="section-3">Worked example: testing a majority claim</h2>
+<p>Let p be the proportion of all city residents who support the proposal. State H₀: p = 0.50 and Hₐ: p &gt; 0.50. For this test, check expected counts under the null: 200(0.50) = 100 and 200(0.50) = 100.</p>
+<p>The null standard error is √(0.50 × 0.50 / 200) ≈ 0.03536. The test statistic is z = (0.58 − 0.50)/0.03536 ≈ 2.26. The upper-tail p-value is approximately 0.0119.</p>
+<p>At α = 0.05, reject H₀. The sample provides convincing evidence that more than half of the city’s residents support the proposal, assuming the design and model conditions hold.</p>
+<h2 id="section-4">Why are the two standard errors different?</h2>
+<p>The interval estimates uncertainty using the observed sample proportion. The test asks how unusual the sample would be if the null claim were true, so its standard error uses the null proportion. Substituting one formula into the other without checking the purpose changes the procedure.</p>
+<h2 id="section-5">Do not overstate interval–test equivalence</h2>
+<p>In this example the 95% interval lies above 0.50 and the one-sided test rejects. That agreement does not establish a universal rule that any 95% two-sided interval matches any one-sided 5% test. Tail direction, confidence level, and the procedure used must be compatible. Calculate and interpret the requested method directly.</p>
+<h2 id="section-6">Try three decisions</h2>
+<p><strong>Practice 1:</strong> A researcher wants a plausible range for the population’s mean commute time. Interval or test?</p><details><summary>Answer</summary><p>An interval, because the goal is estimation. Commute time is quantitative, so the procedure concerns a mean, not a proportion. Check the study design and distributional conditions before selecting the exact method.</p></details>
+<p><strong>Practice 2:</strong> A manufacturer asks whether the mean fill amount is below the labeled amount. Interval or test?</p><details><summary>Answer</summary><p>A test with a lower-tailed alternative about the population mean. Define the parameter, specify the null value, and check conditions.</p></details>
+<p><strong>Practice 3:</strong> A test gives p = 0.18 at α = 0.05. Has the null been proved?</p><details><summary>Answer</summary><p>No. Fail to reject the null. The study has not provided sufficient evidence for the alternative at that significance level; it has not established the null as certainly true.</p></details>
+<h2 id="section-7">Build a complete response</h2>
+<p>Use this order: purpose, parameter, procedure, conditions, calculation, conclusion. Keep the final sentence in the language of the study. Follow our <a href="/posts/apstatisticsprep">AP Statistics study plan</a> and check the <a href="/posts/ap-statistics-2027-exam-course-changes">2027 course changes</a> for current preparation priorities.</p>
+<p>Inference for proportions and means remains central to the revised framework (<a href="https://apcentral.collegeboard.org/courses/ap-statistics">College Board course overview</a>). Our <a href="/courses/ap-statistics">Upper West Side AP Statistics class</a> practices these decisions alongside written interpretation.</p>
+<section class="ap-faq"><h2>Questions and answers</h2><details><summary>When do I use a confidence interval?</summary><p>When the goal is to estimate a population parameter with a range of plausible values.</p></details><details><summary>When do I use a hypothesis test?</summary><p>When the goal is to assess evidence against a specified null claim in favor of an alternative.</p></details><details><summary>Does a p-value give the probability the null is true?</summary><p>No. It measures how unusual results at least as extreme as those observed would be under the null model.</p></details><details><summary>Does failing to reject prove the null?</summary><p>No. It means the evidence is insufficient for the alternative at the chosen significance level.</p></details><details><summary>Why check conditions first?</summary><p>The procedure’s interpretation depends on its assumptions; a calculator output does not validate the study design.</p></details></section>
+<div class="post__cta"><h2>Bring your questions to SOMATH</h2><p>In-person small-group teaching at 226 W 79th St, Upper West Side, NYC. Start with a free 30-minute evaluation, or call <a href="tel:+16466686151">(646) 668-6151</a>. See the <a href="/schedule">schedule</a> and <a href="/courses/ap-statistics">course details</a>.</p><p class="ap-evaluation"><a class="button button--gold" data-ap-cta="article-footer" href="/evaluation?ap_course=ap-statistics">Book a Statistics Evaluation</a></p></div>
+</div></article>
+
+<section class="post__related"><h2>Keep learning</h2><ul class="ap-resource-list"><li><a href="/posts/ap-statistics-2027-exam-course-changes">AP Statistics Changes for 2026–27: A Guide to the 2027 Exam</a></li><li><a href="/posts/top-nyc-ap-statistics-tutoring-unlocking-success-in-upper-west-side">AP Statistics Tutoring on the Upper West Side: What to Look For</a></li><li><a href="/posts/ap-statistics-confidence-intervals-vs-hypothesis-tests">Confidence Intervals vs Hypothesis Tests: AP Statistics Examples</a></li><li><a href="/posts/apstatisticsprep">AP Statistics Study Plan: A Routine for the Revised Course</a></li></ul></section><div id="footer-mount"></div>
+<div id="sticky-mount"></div>
+<script src="/partials.js?v=v20260726-enrich"></script>
+<script defer="" src="/assets/ap-attribution.js?v=20261006"></script></body>
+</html>

@@ -310,6 +310,7 @@
     <!-- Calendly widget script -->
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
+    <script src="/assets/ap-evaluation-context.js?v=20261006"></script>
     <!-- Calendly booking funnel instrumentation (GA4 + Ads) -->
     <!-- Emits: eval_page_view (auto), eval_widget_viewed, eval_widget_interacted,
          eval_calendly_time_selected, eval_calendly_booking_completed -->
@@ -322,9 +323,9 @@
                 page_path: '/evaluation',
                 referrer_channel: (document.referrer || '').indexOf('google.') > -1 ? 'organic_search'
                                 : (document.referrer ? 'referral' : 'direct')
-              }, params || {}));
+              }, window.somathAPContext || {}, params || {}));
             }
-            (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name }, params || {}));
+            (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name }, window.somathAPContext || {}, params || {}));
           } catch (err) { /* swallow */ }
         }
 
@@ -356,7 +357,10 @@
 
         // 2) Calendly postMessage lifecycle: view/select/schedule
         function isCalendlyEvent(e) {
-          return e && e.data && typeof e.data === "object" && e.data.event && e.data.event.indexOf("calendly.") === 0;
+          return e && e.origin === 'https://calendly.com' &&
+            widget && Array.from(widget.querySelectorAll('iframe')).some(function(frame) { return e.source === frame.contentWindow; }) &&
+            e.data && typeof e.data === "object" && typeof e.data.event === "string" &&
+            e.data.event.indexOf("calendly.") === 0;
         }
         var interacted = false;
         var timeSelectedAt = 0;      // ms when parent picked a slot
@@ -389,9 +393,16 @@
               fireAbandonment('timeout_90s');
             }, 90000);
           } else if (ev === 'calendly.event_scheduled') {
+            if (bookingCompleted) return;
             bookingCompleted = true;
             if (abandonTimer) { clearTimeout(abandonTimer); abandonTimer = null; }
             fire('eval_calendly_booking_completed');
+            var apBookingEvent = {
+              'pre-calculus': 'ap_precalculus_evaluation_booked',
+              'ap-calculus': 'ap_calculus_evaluation_booked',
+              'ap-statistics': 'ap_statistics_evaluation_booked'
+            }[(window.somathAPContext || {}).ap_course];
+            if (apBookingEvent) fire(apBookingEvent);
             // Fire Google Ads conversion before redirect
             try {
               if (typeof gtag === "function") {
