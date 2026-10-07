@@ -125,7 +125,7 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 
 - [Introduction to Quadratic Equations: Solving by Factoring | Algebra 1 Class 14 | SOMATH](https://www.schoolofmath.us/posts/algebra-ignite-class-14-quadratic-equations-solving-by-factoring): Eight images, 40 practice questions, 20 homework questions, and a printable workbook. Standard form, zero-product property, GCF, trinomials, special cases, checks, and quadratic word problems.
 
-- [Algebra 2 Class 14: Rational Equations and Extraneous Roots | SOMATH](https://www.schoolofmath.us/posts/algebra-2-class-14-rational-equations-extraneous-roots): Ten images, 50 practice questions, 20 homework questions, 10 medium-difficulty Challenge questions, hidden worked answers, and a 27-page workbook. Domain restrictions, LCDs, extraneous roots, linear and quadratic equations, work rates, proportions, and identities.
+- [Algebra 2 Class 14: Rational Equations and Extraneous Roots | SOMATH](https://www.schoolofmath.us/posts/algebra-2-class-14-rational-equations-extraneous-roots): Ten images, 50 practice questions, 20 homework questions, 10 medium-difficulty Challenge word problems, hidden worked answers, and a 27-page workbook. Domain restrictions, LCDs, extraneous roots, linear and quadratic equations, work rates, proportions, and identities.
 
 
 ## AP math guides and practice · updated October 6, 2026
