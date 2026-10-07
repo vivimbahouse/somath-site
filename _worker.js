@@ -783,7 +783,19 @@ async function handleMembershipReservation(request, env) {
   }
 
   const tierLabels = {
-    "little-newtons": "Little Newtons (K–2) · $246/mo",
+    "kid-einsteins": "Kid Einsteins (Grades 3–4) · $367/month",
+    "young-fermats-prealgebra": "Young Fermats - Pre-Algebra (Grades 5–6) · $489/month",
+    "young-fermats-algebra-ignite": "Algebra 1 (Grades 7–8) · $489/month",
+    "young-fermats-geometry": "Geometry & Trigonometry (Grades 7–8) · $489/month",
+    "young-fermats-algebra-ii": "Algebra 2 (Grades 9–11) · $489/month",
+    "tao-titans": "Tao Titans · Math Competition Prep (Grades 6–12) · $587/month",
+    "shsat-prep": "SHSAT Prep (Grades 7–8) · $587/month",
+    "sat-math": "SAT Prep (Grades 9–11) · $640/month",
+    "pre-calculus": "AP Pre-Calculus (Grades 10–12) · $800/month",
+    "ap-calculus": "AP Calculus AB/BC (Grades 11–12) · $800/month",
+    "ap-statistics": "AP Statistics (Grades 10–12) · $800/month",
+
+    "little-newtons": "Little Newtons (Grades 1–2) · $246/mo",
     "core-1x": "Core 1×/week · $489/mo",
     "core-2x": "Core 2×/week · $929/mo",
     "shsat": "SHSAT Prep · $587/mo",
