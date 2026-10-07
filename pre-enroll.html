@@ -329,7 +329,7 @@
         "kid-einsteins":                { title: "Kid Einsteins",                 grade: "Grades 3–4",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-prealgebra":    { title: "Young Fermats — Pre-Algebra",   grade: "Grades 5–6",      summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "young-fermats-algebra-ignite":{ title: "Algebra 1",grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
-        "regents-geometry":             { title: "Regents Geometry & Trigonometry Prep", grade: "Grades 9–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+        "tao-titans": { title: "Tao Titans · Math Competition Prep", grade: "Grades 6–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
         "young-fermats-geometry":      { title: "Geometry and Trigonometry",      grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
         "shsat-prep":                  { title: "SHSAT Prep",                    grade: "Grades 7–8",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
         "sat-math":                    { title: "SAT Math",                      grade: "Grades 9–11",  summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
@@ -346,14 +346,14 @@
         rolling: {
           "little-newtons":              "Tue 3:15–4:15 PM · Wed 3:15–4:15 PM",
           "kid-einsteins":               "Mon 3:30–5:00 PM · Thu 3:30–5:00 PM",
-          "young-fermats-prealgebra":    "Tue 4:15–6:15 PM · Fri 5:00–7:00 PM",
+          "young-fermats-prealgebra":    "Tue 4:15–6:15 PM",
           "young-fermats-algebra-ignite":"Mon 5:00–7:00 PM · Wed 4:15–6:15 PM · Thu 5:00–7:00 PM",
-          "regents-geometry":             "Fri 3:00–5:00 PM",
+          "tao-titans": "Fri 4:00–6:00 PM",
           "young-fermats-geometry":      "Mon 7:00–9:00 PM",
           "young-fermats-algebra-ii":    "Tue 6:15–8:15 PM",
           "shsat-prep":                  "Sat 3:00–5:00 PM",
 
-          "pre-calculus":                "Fri 7:00–9:00 PM",
+          "pre-calculus":                "Fri 6:00–8:00 PM",
           "ap-calculus":                 "Wed 6:15–8:15 PM",
           "ap-statistics":               "Thu 7:00–9:00 PM"
         },
@@ -515,6 +515,7 @@
       }
 
       courseSel.addEventListener("change", () => {
+        if (courseSel.value === "tao-titans") { window.location.assign("/courses/tao-titans#enroll"); return; }
         const prevTerm = termSel.value;
         populateTermsForCourse(courseSel.value);
         // Preserve the term selection if the parent had already picked one.
@@ -533,6 +534,7 @@
       function applyPrefillSelection() {
         const params = new URLSearchParams(window.location.search);
         const c = params.get("course");
+        if (c === "tao-titans") { window.location.replace("/courses/tao-titans#enroll"); return; }
         const t = params.get("term");
         if (c && COURSES[c] && courseSel.querySelector(`option[value="${c}"]`)) {
           courseSel.value = c;

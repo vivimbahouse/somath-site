@@ -115,7 +115,8 @@
         display: flex; flex-wrap: wrap; gap: 6px 8px;
         font-size: .82rem; color: #6a6a6a;
       }
-      .crec-card .crec-meta span { background: #f5f0e6; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+      .crec-card .crec-meta { min-width: 0; max-width: 100%; }
+      .crec-card .crec-meta span { background: #f5f0e6; padding: 3px 9px; border-radius: 12px; white-space: normal; overflow-wrap: anywhere; }
       .crec-card .crec-quick { display: none; } /* hidden on list view, shown in popover instead */
       .crec-card.is-open { border-color: #1f3d2e; box-shadow: 0 10px 28px rgba(31, 61, 46, 0.12); }
 
@@ -327,7 +328,7 @@
       // Rolling 6-month membership FAQs
       const FALL_FAQ = [
         ["Do I need to apply, or can I just enroll?", "Just enroll. We require a free 30-minute evaluation first so we can confirm the right level. After that, you can start any week."],
-        ["How is tuition structured?", "Every course is billed as a monthly Membership plus a one-time $99 registration fee. Little Newtons (60-min classes, 1×/week) is $246/month, Kid Einsteins (90-min, 1×/week) is $367/month, Young Fermats — Pre-Algebra / Algebra 1 / Geometry / Algebra 2 (120-min, 1×/week) and Regents Geometry (120-min, 1×/week) are $489/month, SHSAT Prep (120-min, 1×/week) is $587/month, SAT Math (120-min, 1×/week) is $640/month, and AP Pre-Calculus, AP Calculus AB/BC, and AP Statistics (120-min, 1×/week) are $800/month. See each course page for the current tuition of record."],
+        ["How is tuition structured?", "Every course is billed as a monthly Membership plus a one-time $99 registration fee. Little Newtons (60-min classes, 1×/week) is $246/month, Kid Einsteins (90-min, 1×/week) is $367/month, Young Fermats — Pre-Algebra / Algebra 1 / Geometry / Algebra 2 (120-min, 1×/week) are $489/month, SHSAT Prep and Tao Titans Math Competition Prep (120-min, 1×/week) are $587/month, SAT Math (120-min, 1×/week) is $640/month, and AP Pre-Calculus, AP Calculus AB/BC, and AP Statistics (120-min, 1×/week) are $800/month. See each course page for the current tuition of record."],
         ["How long is the membership?", "6-month rolling membership. Start any week, monthly billing, cancel anytime with 15 days notice. Up to 4 weeks of free pause per year and one free make-up per month."],
         ["What if my child misses a session?", "We provide a written catch-up note plus worked solutions and, when scheduling allows, a 30-minute office-hour. One free make-up per month is included in every membership."],
         ["How big are the classes?", "Cohorts are kept small — typically 4 to 6 students — so the instructor can correct work in real time and adjust pacing to the group."],
@@ -843,49 +844,212 @@
             ['Class 24', 'Bridge to AP Calculus — instantaneous rate of change.']
           ]
         },
-        "regents-geometry": {
-          title: "Regents Geometry &amp; Trigonometry Prep",
-          grade: "Grades 9–11 · High School",
-          price: "$489/month",
-          duration: "120 min weekly",
-          quick: "Full NYS Geometry arc — proofs, similarity, right-triangle trig, circles, coordinate geometry, transformations — built for the Regents exam.",
-          description: "Regents Geometry Prep covers the full New York State Geometry syllabus for students sitting the June Regents. We build proof-style reasoning, similarity and congruence, right-triangle trigonometry, circle theorems, coordinate geometry, and rigid-motion transformations — all with steady practice on real Regents items. Courses are rolling; students can join any week and continue continuously.",
-          level: "9th–11th graders preparing for the NY Regents Geometry exam",
-          syllabus: [
-            ["Week 1", "Points, lines, angles, and parallel-line theorems."],
-            ["Week 2", "Triangle congruence and similarity — two-column proofs."],
-            ["Week 3", "Right-triangle trigonometry and special right triangles."],
-            ["Week 4", "Quadrilaterals, polygons, and area."],
-            ["Week 5", "Circles, coordinate geometry, and rigid-motion transformations."]
-          ],
-          fallSyllabusOverride: [
-            ['Class 1', 'Placement diagnostic + tools of geometry — points, lines, planes, segments, rays, angles, and notation.'],
-            ['Class 2', 'Segment and angle addition, midpoint, bisectors, and formal compass-and-straightedge constructions.'],
-            ['Class 3', 'Angle-pair relationships — linear pair, vertical, complementary, supplementary, and adjacent angles.'],
-            ['Class 4', 'Parallel lines cut by a transversal — corresponding, alternate interior, alternate exterior, and co-interior angle proofs.'],
-            ['Class 5', 'Rigid motions — translations, reflections, and rotations on the coordinate plane.'],
-            ['Class 6', 'Compositions of transformations, symmetry, and mapping a figure onto itself.'],
-            ['Class 7', 'Triangle congruence — SSS, SAS, ASA, AAS, and HL criteria.'],
-            ['Class 8', 'CPCTC and formal two-column triangle congruence proofs.'],
-            ['Class 9', 'Isosceles and equilateral triangles, the triangle inequality, and centers of a triangle.'],
-            ['Class 10', 'Similarity and dilations — AA, SAS, and SSS similarity; scale factor and proportional reasoning.'],
-            ['Class 11', 'Similar-triangle proofs, proportional segments, and the side-splitter and triangle angle-bisector theorems.'],
-            ['Class 12', 'Right-triangle trigonometry — sine, cosine, and tangent ratios; solving right triangles.'],
-            ['Class 13', 'Special right triangles (30–60–90, 45–45–90) and the Pythagorean theorem & its converse.'],
-            ['Class 14', 'Cofunctions, angles of elevation and depression, and trigonometry word problems.'],
-            ['Class 15', 'Law of sines and law of cosines — solving non-right triangles and the SSA ambiguous case.'],
-            ['Class 16', 'Polygon interior and exterior angle sums; parallelograms and their properties.'],
-            ['Class 17', 'Special parallelograms (rectangle, rhombus, square) and trapezoids — properties and proofs.'],
-            ['Class 18', 'Circles — chords, arcs, central and inscribed angles.'],
-            ['Class 19', 'Tangent lines and secant/tangent angle and segment relationships (power of a point).'],
-            ['Class 20', 'Arc length, sector area, and an introduction to radian measure.'],
-            ['Class 21', 'Coordinate geometry — distance, midpoint, slope, equations of lines and circles, and coordinate proofs.'],
-            ['Class 22', 'Three-dimensional geometry — volume and surface area of prisms, cylinders, cones, pyramids, and spheres; Cavalieri’s principle.'],
-            ['Class 23', 'Full-length Regents Geometry Practice Exam #1 (timed, all four parts) with in-class error analysis.'],
-            ['Class 24', 'Full-length Regents Practice Exam #2 & Exam #3 (timed) · final review of high-yield Part II–IV proofs, constructions, and the Regents Geometry reference sheet.']
-          ],
-          link: "/courses/regents-geometry"
-        },
+        "tao-titans": {
+  "title": "Tao Titans · Math Competition Prep",
+  "grade": "Grades 6–12 · Placement by readiness",
+  "price": "$587/month",
+  "duration": "120 min weekly",
+  "quick": "In-person AMC 8, AMC 10 and AMC 12 preparation for grades 6–12 on the Upper West Side. Build creative problem-solving in number theory, algebra, geometry, counting and probability, with practice matched to readiness.",
+  "description": "In-person AMC 8, AMC 10 and AMC 12 preparation for grades 6–12 on the Upper West Side. Build creative problem-solving in number theory, algebra, geometry, counting and probability, with practice matched to readiness.",
+  "level": "Grades 6–12, placed by readiness",
+  "syllabus": [
+    [
+      "Class 1",
+      "Placement and problem-solving habits: draw, organize, test and explain."
+    ],
+    [
+      "Class 2",
+      "Divisibility, primes and prime factorization."
+    ],
+    [
+      "Class 3",
+      "Greatest common factors and least common multiples."
+    ],
+    [
+      "Class 4",
+      "Remainders, modular arithmetic and repeating cycles."
+    ],
+    [
+      "Class 5",
+      "Fractions, ratios, proportions and percent puzzles."
+    ],
+    [
+      "Class 6",
+      "Digits, place value and number puzzles."
+    ],
+    [
+      "Class 7",
+      "Equations and strategic algebraic modeling."
+    ],
+    [
+      "Class 8",
+      "Factoring and useful algebraic identities, by level."
+    ],
+    [
+      "Class 9",
+      "Patterns, sequences and recursive thinking."
+    ],
+    [
+      "Class 10",
+      "Angles, triangles and geometric reasoning."
+    ],
+    [
+      "Class 11",
+      "Area, dissection and clever auxiliary lines."
+    ],
+    [
+      "Class 12",
+      "Circles, similarity and proportional geometry."
+    ],
+    [
+      "Class 13",
+      "Coordinate geometry and distance."
+    ],
+    [
+      "Class 14",
+      "Systematic counting and casework."
+    ],
+    [
+      "Class 15",
+      "Permutations and combinations, with level-appropriate extensions."
+    ],
+    [
+      "Class 16",
+      "Probability, complementary counting and sample spaces."
+    ],
+    [
+      "Class 17",
+      "Parity, invariants and logical constraints."
+    ],
+    [
+      "Class 18",
+      "Extremal reasoning and inequalities, by level."
+    ],
+    [
+      "Class 19",
+      "AMC 8-style mixed practice and advanced extensions."
+    ],
+    [
+      "Class 20",
+      "AMC 10-focused algebra and geometry for ready students."
+    ],
+    [
+      "Class 21",
+      "AMC 12 extensions: advanced algebra and trigonometry for ready students."
+    ],
+    [
+      "Class 22",
+      "Other competition styles: MATHCOUNTS, Math Kangaroo and math leagues."
+    ],
+    [
+      "Class 23",
+      "Timed practice at the student's appropriate competition level."
+    ],
+    [
+      "Class 24",
+      "Error analysis, written explanations and the next training goals."
+    ]
+  ],
+  "fallSyllabusOverride": [
+    [
+      "Class 1",
+      "Placement and problem-solving habits: draw, organize, test and explain."
+    ],
+    [
+      "Class 2",
+      "Divisibility, primes and prime factorization."
+    ],
+    [
+      "Class 3",
+      "Greatest common factors and least common multiples."
+    ],
+    [
+      "Class 4",
+      "Remainders, modular arithmetic and repeating cycles."
+    ],
+    [
+      "Class 5",
+      "Fractions, ratios, proportions and percent puzzles."
+    ],
+    [
+      "Class 6",
+      "Digits, place value and number puzzles."
+    ],
+    [
+      "Class 7",
+      "Equations and strategic algebraic modeling."
+    ],
+    [
+      "Class 8",
+      "Factoring and useful algebraic identities, by level."
+    ],
+    [
+      "Class 9",
+      "Patterns, sequences and recursive thinking."
+    ],
+    [
+      "Class 10",
+      "Angles, triangles and geometric reasoning."
+    ],
+    [
+      "Class 11",
+      "Area, dissection and clever auxiliary lines."
+    ],
+    [
+      "Class 12",
+      "Circles, similarity and proportional geometry."
+    ],
+    [
+      "Class 13",
+      "Coordinate geometry and distance."
+    ],
+    [
+      "Class 14",
+      "Systematic counting and casework."
+    ],
+    [
+      "Class 15",
+      "Permutations and combinations, with level-appropriate extensions."
+    ],
+    [
+      "Class 16",
+      "Probability, complementary counting and sample spaces."
+    ],
+    [
+      "Class 17",
+      "Parity, invariants and logical constraints."
+    ],
+    [
+      "Class 18",
+      "Extremal reasoning and inequalities, by level."
+    ],
+    [
+      "Class 19",
+      "AMC 8-style mixed practice and advanced extensions."
+    ],
+    [
+      "Class 20",
+      "AMC 10-focused algebra and geometry for ready students."
+    ],
+    [
+      "Class 21",
+      "AMC 12 extensions: advanced algebra and trigonometry for ready students."
+    ],
+    [
+      "Class 22",
+      "Other competition styles: MATHCOUNTS, Math Kangaroo and math leagues."
+    ],
+    [
+      "Class 23",
+      "Timed practice at the student's appropriate competition level."
+    ],
+    [
+      "Class 24",
+      "Error analysis, written explanations and the next training goals."
+    ]
+  ],
+  "link": "/courses/tao-titans"
+},
         "ap-calculus": {
           title: "AP Calculus AB/BC",
           grade: "Grades 11–12 · High School",
@@ -989,13 +1153,13 @@
             "ap-calculus": { days: "Wednesday", time: "6:15 – 8:15 PM", perWeek: 1 },
             "little-newtons":               { days: "Tue or Wed", time: "3:15 – 4:15 PM", perWeek: 1 },
             "kid-einsteins":                { days: "Mon or Thu", time: "3:30 – 5:00 PM", perWeek: 1 },
-            "young-fermats-prealgebra":    { days: "Tue or Fri", time: "Tue 4:15 – 6:15 PM · Fri 5:00 – 7:00 PM", perWeek: 1 },
+            "young-fermats-prealgebra":    { days: "Tuesday", time: "4:15 – 6:15 PM", perWeek: 1 },
             "young-fermats-algebra-ignite":{ days: "Mon, Wed or Thu", time: "Mon 5:00 – 7:00 PM · Wed 4:15 – 6:15 PM · Thu 5:00 – 7:00 PM", perWeek: 1 },
             "young-fermats-geometry":      { days: "Monday",     time: "7:00 – 9:00 PM", perWeek: 1 },
             "young-fermats-algebra-ii":    { days: "Tuesday",    time: "6:15 – 8:15 PM", perWeek: 1 },
 
-            "regents-geometry":             { days: "Friday",     time: "3:00 – 5:00 PM", perWeek: 1 },
-            "pre-calculus":                { days: "Friday",     time: "7:00 – 9:00 PM", perWeek: 1 },
+            "tao-titans": { days: "Friday", time: "4:00 – 6:00 PM", perWeek: 1 },
+            "pre-calculus": { days: "Friday", time: "6:00 – 8:00 PM", perWeek: 1 },
           }
         },
         "weekends": {

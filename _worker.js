@@ -548,7 +548,7 @@ var PRE_ENROLL_COURSES = {
   "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grades 5\u20136",       summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ignite": { title: "Algebra 1",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
 
-  "regents-geometry":             { title: "Regents Geometry & Trigonometry Prep", grade: "Grades 9\u201312", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
+  "tao-titans": {title: "Tao Titans · Math Competition Prep", grade: "Grades 6–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1},
   "young-fermats-geometry":       { title: "Geometry and Trigonometry",         grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ii":     { title: "Algebra 2",       grade: "Grades 9\u201311",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "shsat-prep":                   { title: "SHSAT Prep",                    grade: "Grades 7\u20138",   summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1 },
@@ -587,10 +587,10 @@ var FALL_DAY_CHOICES = {
   "shsat-prep": ["Sat"],
   "little-newtons":               ["Tue", "Wed"],
   "kid-einsteins":                ["Mon", "Thu"],
-  "young-fermats-prealgebra":     ["Tue", "Fri"],
+  "young-fermats-prealgebra":     ["Tue"],
   "young-fermats-algebra-ignite": ["Mon", "Wed", "Thu"],
 
-  "regents-geometry":             ["Fri"],
+  "tao-titans": ["Fri"],
   "young-fermats-geometry":       ["Mon"],
   "young-fermats-algebra-ii":     ["Tue"]
 };
@@ -623,6 +623,7 @@ async function handlePreEnroll(request, env) {
 
   if (!PRE_ENROLL_TERMS[term]) return jsonResponse({ ok: false, error: "invalid_term" }, 400);
   if (!PRE_ENROLL_COURSES[course]) return jsonResponse({ ok: false, error: "invalid_course" }, 400);
+  if (course === "tao-titans") return jsonResponse({ok:false,error:"use_monthly_membership",message:"Please enroll in Tao Titans through its monthly membership page.",url:"/courses/tao-titans#enroll"},409);
   if (course === "sat-math") return jsonResponse({ok:false,error:"schedule_not_available",message:"Please contact SOMATH for SAT Prep availability."},409);
   // Weekends term: validate the course is actually offered on weekends.
   if (term === "weekends" && !WEEKENDS_OFFERINGS[course]) {
@@ -854,7 +855,7 @@ var EVAL_COURSES = {
   "kid-einsteins": "Kid Einsteins",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
   "young-fermats-algebra-ignite": "Algebra 1",
-  "regents-geometry": "Regents Geometry & Trigonometry Prep",
+  "tao-titans": "Tao Titans · Math Competition Prep",
   "young-fermats-geometry": "Geometry and Trigonometry",
   "young-fermats-algebra-ii": "Algebra 2",
   "shsat-prep": "SHSAT Prep",
@@ -865,6 +866,7 @@ var EVAL_COURSES = {
 };
 
 var COURSE_CLASS_COUNT = {
+  "tao-titans": 24,
   "little-newtons": 48,
   "kid-einsteins": 48,
   "young-fermats-prealgebra": 48,
@@ -881,12 +883,13 @@ var COURSE_CLASS_COUNT = {
 };
 
 var COURSE_DESCRIPTIONS = {
+  "tao-titans": "In-person AMC 8, AMC 10 and AMC 12 preparation for grades 6–12 on the Upper West Side. Build creative problem-solving in number theory, algebra, geometry, counting and probability, with practice matched to readiness. Fridays 4:00–6:00 PM. $587/month plus $99 one-time registration.",
   "little-newtons": "Little Newtons is our foundational program for Grades 1\u20132 (ages 6\u20138). Over the year students build number sense, master addition and subtraction fluency, learn fractions on the number line, and get their first structured practice with word problems \u2014 and the course is designed as a springboard into multiplication and division, so students walk into Grade 3 already comfortable with the ideas their classmates are just meeting. All in a warm, small-group setting that keeps them engaged for a full 60 minutes.",
   "kid-einsteins": "Kid Einsteins is our Grades 3\u20134 program (ages 8\u201310). The arc covers multiplication mastery, long division, fractions and decimals, geometric reasoning with area and perimeter, and multi-step word problems \u2014 the core of upper-elementary math, delivered in a 90-minute weekly lesson with real problem-solving depth. It also opens the door to integers, ratios, and early algebraic thinking, so students walk into Grade 5 ready for Pre-Algebra instead of meeting these ideas cold.",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra 1. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra 1 already fluent with the language they'll be using every day.",
   "young-fermats-algebra-ignite": "Algebra 1 is a real Algebra 1 course for Grades 7\u20138 (ages 12\u201314). The syllabus covers linear equations and inequalities, systems, exponents, factoring, quadratics and functions in the first half, then goes deeper with function composition, sequences and series, rational functions, statistics, logs, and modeling \u2014 the same depth honors students see, at a small-group pace. It also lays the groundwork for Geometry proof-writing and the quadratic and function work that dominates Algebra 2, so students step into high school math with real momentum.",
   "regents-algebra-1": "Regents Algebra 1 Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Algebra 1 blueprint. The arc covers linear equations and inequalities, systems, exponents, polynomials, factoring, quadratics, exponential functions, sequences, and statistics \u2014 the full Common Core list, with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. New enrollment is closed. The curriculum remains available for reference.",
-  "regents-geometry": "Regents Geometry & Trigonometry Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Geometry blueprint. The arc covers tools of geometry and constructions, rigid motions and congruence proofs, similarity and dilations, right-triangle trigonometry (sin, cos, tan and cofunctions), the laws of sines and cosines, circles and their angle-and-segment relationships, coordinate geometry, and area, surface area and volume of three-dimensional solids \u2014 with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. Fridays 3\u20135 PM on the Upper West Side, capped at 6 students.",
+  "regents-geometry": "Discontinued course. Historical enrollment records are retained; new enrollment is closed.",
   "young-fermats-geometry": "Geometry and Trigonometry is a two-part arc for Grades 7\u20138 (ages 12\u201314). Part A covers plane geometry end-to-end \u2014 angle relationships, triangle congruence, Pythagorean theorem, similarity, coordinate geometry, area and volume, and two-column proof. Part B is a full Trigonometry track \u2014 the unit circle, graphs of sine, cosine and tangent, identities, laws of sines and cosines, vectors, and polar coordinates. Together the two parts prepare students for the trigonometric and analytic-geometry work that shows up throughout Algebra 2 and Pre-Calculus, so nothing comes as a surprise later.",
   "young-fermats-algebra-ii": "Algebra 2 is our honors-track high school course for Grades 9\u201311 (ages 14\u201317). The syllabus covers quadratics, polynomials, radicals, exponentials, logarithms, sequences, and complex functions \u2014 delivered with the depth needed for the Algebra 2 Regents and the SAT. It also builds the function-analysis and transformation fluency that Pre-Calculus and Calculus lean on constantly, so students arrive in those courses with the algebra already in place.",
   "shsat-prep": "SHSAT Prep is our Specialized High School Admissions math course for Grades 7\u20138. Students master the SHSAT question families, learn timing and scratch-paper strategy, and take full-length section drills every cycle \u2014 the practice pattern that actually moves scores. The algebra, geometry, and word-problem work also sets up the Algebra 1 and Geometry courses they'll meet in ninth grade, so the prep pays off well past test day.",
@@ -897,17 +900,18 @@ var COURSE_DESCRIPTIONS = {
 };
 
 var COURSE_SCHEDULES = {
+  "tao-titans": [{d:"Friday",t:"4:00 – 6:00 PM"}],
   "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"}],
   "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
-  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
+  "young-fermats-prealgebra":      [{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
 
-  "regents-geometry":              [{d:"Friday",t:"3:00 \u2013 5:00 PM"}],
+  "regents-geometry":              [],
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Saturday",t:"3:00 \u2013 5:00 PM"}],
   "sat-math":                      [],
-  "pre-calculus":                  [{d:"Friday",t:"7:00 \u2013 9:00 PM"}],
+  "pre-calculus":                  [{d:"Friday",t:"6:00 \u2013 8:00 PM"}],
   "ap-calculus":                   [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
   "ap-statistics":                 [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}]
 };
@@ -1060,7 +1064,7 @@ async function handleSendEvalEmail(request, env) {
   const testMode = !!body.test_mode;
   if (!isValidEmail(parentEmail)) return jsonResponse({ error: "invalid_parent_email" }, 400);
   if (!studentName) return jsonResponse({ error: "missing_student_name" }, 400);
-  if (courseSlug === "regents-algebra-1") return jsonResponse({ error: "course_not_available" }, 409);
+  if (["regents-algebra-1", "regents-geometry"].includes(courseSlug)) return jsonResponse({ error: "course_not_available" }, 409);
   if (!EVAL_COURSES[courseSlug]) return jsonResponse({ error: "unknown_course" }, 400);
   const courseName = EVAL_COURSES[courseSlug];
   const email = buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName });
@@ -1104,6 +1108,7 @@ __name(handleSendEvalEmail, "handleSendEvalEmail");
 
 // ---- Enrollment intent notification ----
 var COURSE_TITLES = {
+  "tao-titans": "Tao Titans · Math Competition Prep",
   "little-newtons": "Little Newtons",
   "kid-einsteins": "Kid Einsteins",
   "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
@@ -1123,6 +1128,7 @@ var COURSE_TITLES = {
 // Each course slug maps to the monthly recurring Price the parent subscribes to.
 // Bundled Checkout adds $99 enrollment as a one-time invoice item on top.
 var COURSE_PRICES = {
+  "tao-titans": "price_1UO0HsIWmENPPZJBEOTwwF2m",
   "little-newtons":                "price_1TufY0IWmENPPZJBW5f0ad2C", // LN $246/mo (new 2026-07-18; replaces old $369 price_1Tn2YLIWmENPPZJBgIFNu6pX)
   "kid-einsteins":                 "price_1TufY0IWmENPPZJBmWY0G833", // KE $367/mo (new 2026-07-18; replaces old $489 price_1Tn2YLIWmENPPZJBnwNpCKaY)
   "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
@@ -1138,6 +1144,7 @@ var COURSE_PRICES = {
   "ap-statistics":                 "price_1Tn2YMIWmENPPZJBwQKPTMim"  // AP $800/mo
 };
 var COURSE_MONTHLY_USD = {
+  "tao-titans": 587,
   "little-newtons": 246,
   "kid-einsteins": 367,
   "young-fermats-prealgebra": 489, "young-fermats-algebra-ignite": 489, "regents-algebra-1": 489, "regents-geometry": 489, "young-fermats-geometry": 489, "young-fermats-algebra-ii": 489,
@@ -1381,7 +1388,7 @@ async function handleEnrollIntent(request, env) {
   var studentName = String(body.studentName || "").slice(0, 120);
   var studentEmail = normalizeEmail(body.studentEmail);
   if(!validStudentEmail(studentEmail))return jsonResponse({error:"invalid_student_email",message:"Please enter a valid optional student email."},400);
-  if (course === "regents-algebra-1") return jsonResponse({ error: "course_not_available", message: "New enrollment for Regents Algebra 1 Prep is closed. Please view the current schedule." }, 409);
+  if (["regents-algebra-1", "regents-geometry"].includes(course)) return jsonResponse({ error: "course_not_available", message: "New enrollment for this discontinued course is closed. Please view the current schedule." }, 409);
   if (!course || !day || !date) return jsonResponse({ error: "missing_fields" }, 400);
   var title = COURSE_TITLES[course] || course;
   // A registration reference is family-specific, not shared by every child in a slot.
@@ -2090,6 +2097,7 @@ var worker_default = {
     }
     // Consolidated course pages: little-newtons-a/b and kid-einsteins-a/b -> single course page (301).
     const CONSOLIDATED_COURSE_REDIRECTS = {
+      "/courses/regents-geometry": "/courses",
       "/courses/little-newtons-a": "/courses/little-newtons",
       "/courses/little-newtons-b": "/courses/little-newtons",
       "/courses/kid-einsteins-a": "/courses/kid-einsteins",
