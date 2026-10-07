@@ -67,7 +67,7 @@
             <li><a href="/shsat-prep">SHSAT Prep</a></li>
             <li><a href="/programs#little-newtons">Little Newtons (K–2)</a></li>
             <li><a href="/programs#kid-einsteins">Kid Einsteins (3–5)</a></li>
-            <li><a href="/programs#young-fermats">Young Fermats (5–8)</a></li>
+            <li><a href="/programs#young-fermats">Young Fermats Pre-Algebra (5–6)</a></li>
             <li><a href="/programs#shsat-prep">SHSAT Prep (7–8)</a></li>
             <li><a href="/programs#ap-courses">AP Courses (9–12)</a></li>
             <li><a href="/programs#sat-prep">SAT Prep (10–12)</a></li>

@@ -93,7 +93,21 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
     const matchProgram=p=>{
       const direct=Object.keys(deps.titles).find(k=>normalized(k)===normalized(p)||normalized(deps.titles[k])===normalized(p));
       if(direct)return direct;
-      if(normalized(p)==="youngfermatsalgebrai")return "young-fermats-algebra-ignite";
+      // Preserve identity matching for calendar records using earlier display names.
+      const legacy={
+        youngfermatsalgebrai:"young-fermats-algebra-ignite",
+        youngfermatsalgebra1:"young-fermats-algebra-ignite",
+        youngfermatsalgebraignite:"young-fermats-algebra-ignite",
+        algebraignite:"young-fermats-algebra-ignite",
+        algebrai:"young-fermats-algebra-ignite",
+        youngfermatsalgebraii:"young-fermats-algebra-ii",
+        youngfermatsalgebra2:"young-fermats-algebra-ii",
+        algebraii:"young-fermats-algebra-ii",
+        youngfermatsgeometry:"young-fermats-geometry",
+        youngfermatsgeometrytrigonometry:"young-fermats-geometry",
+        youngfermatsgeometryandtrigonometry:"young-fermats-geometry"
+      };
+      if(legacy[normalized(p)])return legacy[normalized(p)];
       return "";
     };
     const calendarPrograms=[...new Set(linked.map(e=>matchProgram(e.program)).filter(Boolean))];

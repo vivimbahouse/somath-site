@@ -276,7 +276,9 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       return json({student:{id:student.id,name:student.name},notes});
     }
     if(action==="manage") {
-      const attendance=await list(env,`attendance:${date}:${cls.id}:`);
+      const attendance=(await list(env,`attendance:${date}:${cls.id}:`)).map(row=>({
+        ...row,enrolledProgramTitle:deps.titles[row.enrolledProgram]||row.enrolledProgramTitle
+      }));
       const jobs=await list(env,`delivery:${date}:${cls.id}:`);
       const classStudents=students.filter(s=>s.program===cls.slug||attendance.some(a=>a.studentId===s.id));
       const needsReapproval=!!lesson.approved&&!!env.CHECKIN_APPROVAL_VERSION&&lesson.approvalVersion!==env.CHECKIN_APPROVAL_VERSION;
