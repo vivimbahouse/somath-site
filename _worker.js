@@ -545,7 +545,7 @@ __name(handleEvaluationBlockAdmin, "handleEvaluationBlockAdmin");
 var PRE_ENROLL_COURSES = {
   "little-newtons":               { title: "Little Newtons",                grade: "Grades 1\u20132",   summerMins: 90,  fallMins: 60,  summerPerWeek: 2, fallPerWeek: 1 },
   "kid-einsteins":                { title: "Kid Einsteins",                 grade: "Grades 3\u20134",   summerMins: 120, fallMins: 90,  summerPerWeek: 2, fallPerWeek: 1 },
-  "young-fermats-prealgebra":     { title: "Young Fermats \u2014 Pre-Algebra",      grade: "Grades 5\u20136",       summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
+  "young-fermats-prealgebra":     { title: "Pre-Algebra",      grade: "Grades 5\u20136",       summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
   "young-fermats-algebra-ignite": { title: "Algebra 1",   grade: "Grades 7\u20138",summerMins: 120, fallMins: 120, summerPerWeek: 2, fallPerWeek: 1 },
 
   "tao-titans": {title: "Tao Titans · Math Competition Prep", grade: "Grades 6–12", summerMins: 120, fallMins: 120, summerPerWeek: 1, fallPerWeek: 1},
@@ -784,7 +784,7 @@ async function handleMembershipReservation(request, env) {
 
   const tierLabels = {
     "kid-einsteins": "Kid Einsteins (Grades 3–4) · $367/month",
-    "young-fermats-prealgebra": "Young Fermats - Pre-Algebra (Grades 5–6) · $489/month",
+    "young-fermats-prealgebra": "Pre-Algebra (Grades 5–6) · $489/month",
     "young-fermats-algebra-ignite": "Algebra 1 (Grades 7–8) · $489/month",
     "young-fermats-geometry": "Geometry & Trigonometry (Grades 7–8) · $489/month",
     "young-fermats-algebra-ii": "Algebra 2 (Grades 9–11) · $489/month",
@@ -865,7 +865,7 @@ __name(handleMembershipReservation, "handleMembershipReservation");
 var EVAL_COURSES = {
   "little-newtons": "Little Newtons",
   "kid-einsteins": "Kid Einsteins",
-  "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
+  "young-fermats-prealgebra": "Pre-Algebra",
   "young-fermats-algebra-ignite": "Algebra 1",
   "tao-titans": "Tao Titans · Math Competition Prep",
   "young-fermats-geometry": "Geometry and Trigonometry",
@@ -898,7 +898,7 @@ var COURSE_DESCRIPTIONS = {
   "tao-titans": "In-person AMC 8, AMC 10 and AMC 12 preparation for grades 6–12 on the Upper West Side. Build creative problem-solving in number theory, algebra, geometry, counting and probability, with practice matched to readiness. Fridays 4:00–6:00 PM. $587/month plus $99 one-time registration.",
   "little-newtons": "Little Newtons is our foundational program for Grades 1\u20132 (ages 6\u20138). Over the year students build number sense, master addition and subtraction fluency, learn fractions on the number line, and get their first structured practice with word problems \u2014 and the course is designed as a springboard into multiplication and division, so students walk into Grade 3 already comfortable with the ideas their classmates are just meeting. All in a warm, small-group setting that keeps them engaged for a full 60 minutes.",
   "kid-einsteins": "Kid Einsteins is our Grades 3\u20134 program (ages 8\u201310). The arc covers multiplication mastery, long division, fractions and decimals, geometric reasoning with area and perimeter, and multi-step word problems \u2014 the core of upper-elementary math, delivered in a 90-minute weekly lesson with real problem-solving depth. It also opens the door to integers, ratios, and early algebraic thinking, so students walk into Grade 5 ready for Pre-Algebra instead of meeting these ideas cold.",
-  "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra 1. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra 1 already fluent with the language they'll be using every day.",
+  "young-fermats-prealgebra": "Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra 1. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra 1 already fluent with the language they'll be using every day.",
   "young-fermats-algebra-ignite": "Algebra 1 is a real Algebra 1 course for Grades 7\u20138 (ages 12\u201314). The syllabus covers linear equations and inequalities, systems, exponents, factoring, quadratics and functions in the first half, then goes deeper with function composition, sequences and series, rational functions, statistics, logs, and modeling \u2014 the same depth honors students see, at a small-group pace. It also lays the groundwork for Geometry proof-writing and the quadratic and function work that dominates Algebra 2, so students step into high school math with real momentum.",
   "regents-algebra-1": "Regents Algebra 1 Prep is a 24-meeting cohort for Grades 9\u201312 mapped directly to the NY State Regents Algebra 1 blueprint. The arc covers linear equations and inequalities, systems, exponents, polynomials, factoring, quadratics, exponential functions, sequences, and statistics \u2014 the full Common Core list, with three timed mock exams built into the final block so students walk into June exam day already knowing the pacing. New enrollment is closed. The curriculum remains available for reference.",
   "regents-geometry": "Discontinued course. Historical enrollment records are retained; new enrollment is closed.",
@@ -1123,7 +1123,7 @@ var COURSE_TITLES = {
   "tao-titans": "Tao Titans · Math Competition Prep",
   "little-newtons": "Little Newtons",
   "kid-einsteins": "Kid Einsteins",
-  "young-fermats-prealgebra": "Young Fermats \u2014 Pre-Algebra",
+  "young-fermats-prealgebra": "Pre-Algebra",
   "young-fermats-algebra-ignite": "Algebra 1",
   "regents-algebra-1": "Regents Algebra 1 Prep",
   "regents-geometry": "Regents Geometry & Trigonometry Prep",
@@ -1143,12 +1143,12 @@ var COURSE_PRICES = {
   "tao-titans": "price_1UO0HsIWmENPPZJBEOTwwF2m",
   "little-newtons":                "price_1TufY0IWmENPPZJBW5f0ad2C", // LN $246/mo (new 2026-07-18; replaces old $369 price_1Tn2YLIWmENPPZJBgIFNu6pX)
   "kid-einsteins":                 "price_1TufY0IWmENPPZJBmWY0G833", // KE $367/mo (new 2026-07-18; replaces old $489 price_1Tn2YLIWmENPPZJBnwNpCKaY)
-  "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
-  "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
-  "regents-algebra-1":             "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (Regents Algebra 1 shares the YF price)
-  "regents-geometry":              "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (Regents Geometry & Trigonometry shares the YF price)
-  "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo
-  "young-fermats-algebra-ii":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // YF $489/mo (reuses same YF price)
+  "young-fermats-prealgebra":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // Pre-Algebra $489/mo
+  "young-fermats-algebra-ignite":  "price_1Tn2YKIWmENPPZJBHAvRXGzp", // Pre-Algebra $489/mo
+  "regents-algebra-1":             "price_1Tn2YKIWmENPPZJBHAvRXGzp", // Pre-Algebra $489/mo (Regents Algebra 1 shares the Pre-Algebra price)
+  "regents-geometry":              "price_1Tn2YKIWmENPPZJBHAvRXGzp", // Pre-Algebra $489/mo (Regents Geometry & Trigonometry shares the Pre-Algebra price)
+  "young-fermats-geometry":        "price_1Tn2YKIWmENPPZJBHAvRXGzp", // Pre-Algebra $489/mo
+  "young-fermats-algebra-ii":      "price_1Tn2YKIWmENPPZJBHAvRXGzp", // Pre-Algebra $489/mo (reuses same Pre-Algebra price)
   "shsat-prep":                    "price_1Tn2YLIWmENPPZJBkwL9CRip", // SHSAT $587/mo
   "sat-math":                      "price_1Tn2YLIWmENPPZJBHl5dbt30", // SAT $640/mo
   "pre-calculus":                  "price_1Tn2YMIWmENPPZJBwQKPTMim", // AP $800/mo

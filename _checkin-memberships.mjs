@@ -3,7 +3,7 @@ import {readStudentContact,normalizeEmail} from "./_student-contacts.mjs";
 // are a separate authority for offline students; generic "paid" enrollment rows are not.
 // Calendar events enrich identity and expected arrivals, never subscription eligibility.
 // No price-level course inference:
-// SOMATH reuses one price across several Young Fermats programs.
+// SOMATH reuses one price across several Pre-Algebra programs.
 const text=v=>String(v||"").trim();
 const digest=async value=>[...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value)))].map(x=>x.toString(16).padStart(2,"0")).join("");
 const validDate=value=>/^\d{4}-\d{2}-\d{2}$/.test(value||"")&&!isNaN(new Date(value+"T12:00:00Z"))&&new Date(value+"T12:00:00Z").toISOString().slice(0,10)===value;
@@ -95,6 +95,7 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
       if(direct)return direct;
       // Preserve identity matching for calendar records using earlier display names.
       const legacy={
+        yfprealgebra:"young-fermats-prealgebra",
         youngfermatsalgebrai:"young-fermats-algebra-ignite",
         youngfermatsalgebra1:"young-fermats-algebra-ignite",
         youngfermatsalgebraignite:"young-fermats-algebra-ignite",
