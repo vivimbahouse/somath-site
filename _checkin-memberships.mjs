@@ -3,7 +3,7 @@ import {readStudentContact,normalizeEmail} from "./_student-contacts.mjs";
 // are a separate authority for offline students; generic "paid" enrollment rows are not.
 // Calendar events enrich identity and expected arrivals, never subscription eligibility.
 // No price-level course inference:
-// SOMATH reuses one price across several Pre-Algebra programs.
+// SOMATH reuses one price across several core math programs.
 const text=v=>String(v||"").trim();
 const digest=async value=>[...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value)))].map(x=>x.toString(16).padStart(2,"0")).join("");
 const validDate=value=>/^\d{4}-\d{2}-\d{2}$/.test(value||"")&&!isNaN(new Date(value+"T12:00:00Z"))&&new Date(value+"T12:00:00Z").toISOString().slice(0,10)===value;
