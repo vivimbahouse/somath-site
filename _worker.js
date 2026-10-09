@@ -581,8 +581,8 @@ var WEEKENDS_DAY_CHOICES = {
 };
 // Fall day choices per course (key omitted = no choice / single day).
 var FALL_DAY_CHOICES = {
-  "ap-statistics": ["Thu"],
-  "ap-calculus": ["Wed"],
+  "ap-statistics": ["Wed"],
+  "ap-calculus": ["Thu"],
 
   "shsat-prep": ["Sat"],
   "little-newtons":               ["Tue", "Wed"],
@@ -924,8 +924,8 @@ var COURSE_SCHEDULES = {
   "shsat-prep":                    [{d:"Saturday",t:"3:00 \u2013 5:00 PM"}],
   "sat-math":                      [],
   "pre-calculus":                  [{d:"Friday",t:"6:00 \u2013 8:00 PM"}],
-  "ap-calculus":                   [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}],
-  "ap-statistics":                 [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}]
+  "ap-calculus":                   [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}],
+  "ap-statistics":                 [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}]
 };
 function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes, senderName }) {
   const monthlyPrice = COURSE_MONTHLY_USD[courseSlug] || 489;
