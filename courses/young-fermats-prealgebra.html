@@ -169,7 +169,9 @@
     "courseMode": "in-person",
     "courseWorkload": "PT120M",
     "courseSchedule": [
+      {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Monday","startTime":"17:00","endTime":"19:00","scheduleTimezone":"America/New_York"},
       {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Tuesday","startTime":"16:15","endTime":"18:15","scheduleTimezone":"America/New_York"},
+      {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Saturday","startTime":"13:00","endTime":"15:00","scheduleTimezone":"America/New_York"},
       {"@type":"Schedule","repeatFrequency":"P1W","byDay":"https://schema.org/Sunday","startTime":"15:00","endTime":"17:00","scheduleTimezone":"America/New_York"}
     ],
     "instructor": {
@@ -300,6 +302,11 @@
           <div class="enroll-card__day">
             <label class="enroll-card__day-label">Pick your day of the week</label>
 
+              <label class="enroll-card__day-option">
+                <input type="radio" name="dayChoice" value="Monday" />
+                <span class="day">Monday</span>
+                <span class="time">5:00 – 7:00 PM</span>
+              </label>
               <label class="enroll-card__day-option">
                 <input type="radio" name="dayChoice" value="Tuesday" checked />
                 <span class="day">Tuesday</span>
