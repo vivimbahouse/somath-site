@@ -228,6 +228,37 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       membership={students:[],issues:[],sync:{error:err.message}};
     }
     const students=membership.students;
+    if(action==="weekly-catchup") {
+      // One-time owner authorization: today's already-recorded arrivals only.
+      // This creates delivery authority, never attendance or membership changes.
+      if(!staff||adminHeader!==env.ADMIN_PASSWORD)return json({error:"Owner access required."},403);
+      if(!weeklyEnabled(env)||date!=="2026-10-11"||date!==today.date||teachingWeek(date).number!==15)
+        return json({error:"This one-time catch-up is limited to October 11, Week 15."},409);
+      if(b.preview!==true&&b.confirmation!=="send-week-15-2026-10-11")
+        return json({error:"Catch-up confirmation required."},400);
+      const assignment=await weeklyLesson(env,cls.slug,date);
+      const arrivals=(await list(env,`attendance:${date}:${cls.id}:`)).filter(a=>a.present);
+      const results=[];
+      for(const a of arrivals){
+        const member=students.find(s=>s.id===a.studentId);
+        const authority={date,classId:cls.id,studentId:a.studentId,personId:a.personId,
+          parentEmail:a.parentEmail||member?.email||"",studentEmail:member?.studentEmail||a.studentEmail||"",
+          approvedAt:now.toISOString(),homeworkVersion:WEEKLY_VERSION};
+        if(b.preview===true){
+          results.push({name:a.name,studentId:a.studentId,parentEmail:authority.parentEmail,
+            studentEmail:authority.studentEmail,lessonStatus:assignment.status});continue;
+        }
+        const authKey=`weekly-catchup:${date}:${cls.id}:${a.studentId}`;
+        const priorAuthority=await get(env,authKey);
+        if(!priorAuthority)await put(env,authKey,authority);
+        const approved={...a,...(priorAuthority||authority),present:true};
+        try {
+          const homework=await sendWeeklyArrival(env,{...deps,homeworkMessage},cls,approved,now,assignment);
+          results.push({name:a.name,studentId:a.studentId,...homework});
+        } catch {results.push({name:a.name,studentId:a.studentId,status:"retry"});}
+      }
+      return json({ok:true,date,week:15,preview:b.preview===true,results});
+    }
     if(action==="search") {
       if(lesson.closed) return json({error:"This class is closed for today."},409);
       const q=clean(b.query).toLocaleLowerCase();

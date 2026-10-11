@@ -109,15 +109,23 @@ export async function runWeeklyHomework(env,deps,now=new Date()) {
   if(!weeklyEnabled(env)||!env.ENROLLMENTS)return {disabled:true};
   const date=easternDate(now),week=teachingWeek(date),summary={processed:0,failed:0};
   // Attendance markers are created only by new, eligible check-ins after activation.
-  // Existing attendance is never marked or replayed on deployment.
+  // Existing attendance is never marked or replayed on deployment. A separately
+  // recorded owner-authorized catch-up can opt individual existing arrivals in.
   for(let t=Date.parse(week.start);t<=Date.parse(date);t+=DAY) {
     const d=new Date(t).toISOString().slice(0,10);
     for(const a of await list(env,`checkin:attendance:${d}:`)) {
-      if(!a.present||a.homeworkVersion!==WEEKLY_VERSION)continue;
+      if(!a.present)continue;
+      let arrival=a;
+      if(a.homeworkVersion!==WEEKLY_VERSION){
+        const authority=JSON.parse(await env.ENROLLMENTS.get(`checkin:weekly-catchup:${d}:${a.classId}:${a.studentId}`)||"null");
+        if(!authority||authority.homeworkVersion!==WEEKLY_VERSION||authority.date!==a.date||
+          authority.classId!==a.classId||authority.studentId!==a.studentId||authority.personId!==a.personId)continue;
+        arrival={...a,...authority,present:true};
+      }
       const slug=a.classId.split("__")[0];
       if(!deps.titles[slug])continue;
       try {
-        await sendWeeklyArrival(env,deps,{id:a.classId,slug,title:deps.titles[slug]},a,now);
+        await sendWeeklyArrival(env,deps,{id:a.classId,slug,title:deps.titles[slug]},arrival,now);
         summary.processed++;
       } catch {summary.failed++;}
     }
