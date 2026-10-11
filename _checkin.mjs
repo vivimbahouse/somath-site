@@ -1,6 +1,7 @@
 // Private check-in and homework service. This module is excluded from static assets.
 import { automaticRoster } from "./_checkin-memberships.mjs";
 import {saveStudentContact,normalizeEmail,validStudentEmail,updateSubscriptionStudentEmail} from "./_student-contacts.mjs";
+import {WEEKLY_VERSION,weeklyEnabled,teachingWeek,weeklyLesson,weeklyJobs,sendWeeklyArrival,runWeeklyHomework} from "./_weekly-homework.mjs";
 const TZ = "America/New_York";
 const P = "checkin:";
 const TABLET_COOKIE="__Host-somath_tablet", TABLET_TTL=30*24*60*60;
@@ -214,7 +215,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         const arrivals=staff?await list(env,`attendance:${date}:${cls.id}:`):[];
         decorated.push({...cls,closed:!!assignment.closed,presentCount:arrivals.filter(a=>a.present).length});
       }
-      return json({date,classes:decorated,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true",...(staff?{approvalVersion:env.CHECKIN_APPROVAL_VERSION||""}:{})});
+      return json({date,classes:decorated,homeworkEnabled:env.CHECKIN_AUTO_SEND==="true",weeklyHomework:weeklyEnabled(env),week:teachingWeek(date),...(staff?{approvalVersion:env.CHECKIN_APPROVAL_VERSION||""}:{})});
     }
     const cls=classes.find(c=>c.id===b.classId);
     if(!cls) return json({error:"Class not scheduled for this date."},400);
@@ -246,9 +247,12 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       if(prior?.present) return json({ok:true,already:true,name:s.name,at:prior.at});
       const personPrior=(await list(env,`attendance:${date}:${cls.id}:`)).find(a=>a.personId===s.personId&&a.present);
       if(personPrior)return json({ok:true,already:true,name:s.name,at:personPrior.at});
-      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,enrolledProgram:s.program,enrolledProgramTitle:s.programTitle,makeup:s.makeup,at:now.toISOString(),present:true};
+      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,studentEmail:s.studentEmail||"",subscriptionId:s.subscriptionId,enrolledProgram:s.program,enrolledProgramTitle:s.programTitle,makeup:s.makeup,at:now.toISOString(),present:true,...(weeklyEnabled(env)?{homeworkVersion:WEEKLY_VERSION}:{})};
       await put(env,key,record);
-      return json({ok:true,already:false,name:s.name,at:record.at});
+      let homework;
+      try {homework=await sendWeeklyArrival(env,{...deps,homeworkMessage},cls,record,now);}
+      catch {homework={status:"retry"};}
+      return json({ok:true,already:false,name:s.name,at:record.at,homework});
     }
     if(!staff) return json({error:"Staff access required."},403);
     if(action==="student-contact"){
@@ -280,9 +284,11 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         ...row,enrolledProgramTitle:deps.titles[row.enrolledProgram]||row.enrolledProgramTitle
       }));
       const jobs=await list(env,`delivery:${date}:${cls.id}:`);
+      if(weeklyEnabled(env))jobs.push(...await weeklyJobs(env,cls.slug,date,attendance));
       const classStudents=students.filter(s=>s.program===cls.slug||attendance.some(a=>a.studentId===s.id));
       const needsReapproval=!!lesson.approved&&!!env.CHECKIN_APPROVAL_VERSION&&lesson.approvalVersion!==env.CHECKIN_APPROVAL_VERSION;
-      return json({students:classStudents,attendance,lesson:{...lesson,approved:!!lesson.approved&&!needsReapproval,needsReapproval},jobs,sync:membership.sync,issues:membership.issues});
+      const weekly=weeklyEnabled(env)?await weeklyLesson(env,cls.slug,date):null;
+      return json({students:classStudents,attendance,lesson:{...lesson,approved:!!lesson.approved&&!needsReapproval,needsReapproval},weekly,jobs,sync:membership.sync,issues:membership.issues});
     }
     if(action==="roster") {
       if(!Array.isArray(b.students)||b.students.length>100) return json({error:"Invalid roster."},400);
@@ -298,6 +304,10 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       return json({ok:true,students:normalized});
     }
     if(action==="lesson") {
+      if(weeklyEnabled(env)){
+        await put(env,lessonKey,{...lesson,date,classId:cls.id,closed:b.closed===true,updatedAt:now.toISOString()});
+        return json({ok:true,weeklyHomework:true});
+      }
       const title=clean(b.title),url=clean(b.url,2000),note=clean(b.note,1500),approved=b.approved===true;
       if((url&&!linkOK(url)) || (approved&&(!title||!linkOK(url)))) return json({error:"Enter a lesson title and a complete https:// homework link."},400);
       if(approved&&env.CHECKIN_AUTO_SEND==="true"&&(!env.CHECKIN_APPROVAL_VERSION||b.approvalVersion!==env.CHECKIN_APPROVAL_VERSION))
@@ -306,6 +316,8 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       await put(env,lessonKey,record);return json({ok:true,lesson:record});
     }
     if(action==="attendance") {
+      if(weeklyEnabled(env)&&date===today.date&&b.present===true&&lesson.closed)
+        return json({error:"Reopen this class before recording a new arrival."},409);
       const existing=await get(env,`attendance:${date}:${cls.id}:${b.studentId}`);
       const s=students.find(s=>s.id===b.studentId)|| (existing?{id:existing.studentId,personId:existing.personId,name:existing.name,email:existing.parentEmail,subscriptionId:existing.subscriptionId}:null);
       if(!s)return json({error:"Student not found."},404);
@@ -315,7 +327,10 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         const duplicate=(await list(env,`attendance:${date}:${cls.id}:`)).find(a=>a.personId===s.personId&&a.studentId!==s.id&&a.present);
         if(duplicate)return json({ok:true,already:true});
       }
-      await put(env,key,{date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,subscriptionId:s.subscriptionId,enrolledProgram:prior?.enrolledProgram||s.program,enrolledProgramTitle:prior?.enrolledProgramTitle||s.programTitle,makeup:prior?.makeup??s.makeup??false,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString()});
+      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,studentEmail:s.studentEmail||"",subscriptionId:s.subscriptionId,enrolledProgram:prior?.enrolledProgram||s.program,enrolledProgramTitle:prior?.enrolledProgramTitle||s.programTitle,makeup:prior?.makeup??s.makeup??false,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString(),
+        ...(prior?.homeworkVersion?{homeworkVersion:prior.homeworkVersion}:weeklyEnabled(env)&&date===today.date&&!prior?.present&&s.active?{homeworkVersion:WEEKLY_VERSION}:{})};
+      await put(env,key,record);
+      if(record.present&&date===today.date)try{await sendWeeklyArrival(env,{...deps,homeworkMessage},cls,record,now);}catch{}
       return json({ok:true});
     }
     return json({error:"Unknown action."},400);
@@ -330,6 +345,7 @@ export function homeworkMessage(cls,lesson,student,date) {
     html:`<p>Hello,</p><p>${esc(student.name)} attended ${esc(cls.title)} on ${esc(date)}.</p><p>Today's homework: <a href="${esc(lesson.url)}">${esc(lesson.title)}</a></p>${lesson.note?`<p>${esc(lesson.note).replace(/\n/g,"<br>")}</p>`:""}<p>Please use the assigned link to review the lesson and complete the homework. Reply to this email if you have any questions.</p><p>Warmly,<br>The SOMATH Team<br>School of Math | 226 W 79th St, New York, NY 10024<br>(646) 668-6151</p>`};
 }
 export async function runHomework(env,deps,now=new Date()) {
+  if(weeklyEnabled(env))return runWeeklyHomework(env,{...deps,homeworkMessage},now);
   if(env.CHECKIN_AUTO_SEND!=="true" || !env.ENROLLMENTS)return {sent:0,disabled:true};
   if(!env.CHECKIN_APPROVAL_VERSION || !env.RESEND_API_KEY)return {sent:0,disabled:true,reason:"delivery_not_configured"};
   const today=eastern(now),lessons=await list(env,"lesson:"),result={sent:0,failed:0};

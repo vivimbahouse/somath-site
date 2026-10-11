@@ -4,6 +4,7 @@ compatibility_date = "2025-01-01"
 
 [vars]
 CHECKIN_AUTO_SEND = "true"
+CHECKIN_WEEKLY_HOMEWORK = "true"
 CHECKIN_APPROVAL_VERSION = "homework-launch-20260923"
 
 [triggers]
