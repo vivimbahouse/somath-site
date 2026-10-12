@@ -152,3 +152,8 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 - [Algebra 1 Class 15: Functions: Domain, Range, and Function Notation](https://www.schoolofmath.us/posts/algebra-1-class-15-functions-domain-range-notation): Eight images, 40 practice questions, eight homework review questions, and twelve word problems. Hidden solutions and a 22-page workbook cover functions, vertical line tests, domain, range, notation, evaluation, and real-life models. Grades 7–8. Published October 10, 2026.
 
 - [Kid Einsteins Class 1: Multiplication Facts: ×2, ×5, and ×10](https://www.schoolofmath.us/posts/kid-einsteins-class-1-multiplication-facts-2-5-10): Eight teaching images, 40 practice questions, eight homework review questions, and twelve word problems. Explains equal groups, doubles, ×5 and ×10 facts, number-line jumps, patterns, and connected facts. Hidden solutions and a 22-page student workbook. Grades 3–4. Published October 10, 2026.
+
+
+## Refreshed Kid Einsteins lesson
+
+- [Switching Factors: Why 3 × 4 = 4 × 3: Kid Einsteins Class 2](https://www.schoolofmath.us/posts/multiplication-facts-3-4-6-young-fermats): Arrays, commutative multiplication, ×3/×4/×6 strategies, 40 classroom questions, and 20 homework questions with worked answers.
