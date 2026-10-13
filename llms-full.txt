@@ -179,6 +179,8 @@ In this po…
 
 ## AMC / competition math
 
+- [2025 AMC 10A Problems and Solutions: Theory for All 25 Questions](https://www.schoolofmath.us/posts/2025-amc-10a-problems-solutions-theory): Full question walkthrough with original diagrams, 25 hidden step-by-step solutions, theory notes and a 26-page questions-only PDF. Independent SOMATH AMC preparation on the Upper West Side; includes Tao Titans and evaluation links.
+
 - [AMC 8 Prep NYC: 2026 Parent's Guide (Timeline & Content)](https://www.schoolofmath.us/posts/amc-8-prep-nyc-guide): AMC 8 prep for NYC middle schoolers — what the test actually is, the content areas that matter, honest timing (start 12 months out), score targets, and a week-by-week study plan. From School of Math (SOMATH), 226 W 79th St, Upper West Side.
 
 ## Regents Geometry
