@@ -34,6 +34,8 @@ Contact: hello@schoolofmath.us · (646) 668-6151 · [schoolofmath.us](https://ww
 
 ## Featured
 
+- [AMC 10 Guide: Scoring, Statistics and NYC Preparation](https://www.schoolofmath.us/amc-10-prep-nyc): Approximately 5,000-word sourced guide with eligibility, 2026 exam dates, 2027 AIME rules, historical 2025 results, cutoff charts, score calculator, preparation flowcharts, balanced college-application guidance and SOMATH evaluation links. Historical results are not current qualifying rules.
+
 - [2025 AMC 10B Problems and Solutions: Theory for All 25 Questions](https://www.schoolofmath.us/posts/2025-amc-10b-problems-solutions-theory): Full question walkthrough with original diagrams, 25 hidden step-by-step solutions, theory notes and a 26-page questions-only PDF. Independent SOMATH AMC preparation on the Upper West Side; includes Tao Titans and evaluation links.
 
 - [2025 AMC 10A Problems and Solutions: Theory for All 25 Questions](https://www.schoolofmath.us/posts/2025-amc-10a-problems-solutions-theory): Full question walkthrough with original diagrams, 25 hidden step-by-step solutions, theory notes and a 26-page questions-only PDF. Independent SOMATH AMC preparation on the Upper West Side; includes Tao Titans and evaluation links.
