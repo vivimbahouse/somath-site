@@ -163,3 +163,5 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 ## Refreshed Kid Einsteins lesson
 
 - [Switching Factors: Why 3 × 4 = 4 × 3: Kid Einsteins Class 2](https://www.schoolofmath.us/posts/multiplication-facts-3-4-6-young-fermats): Arrays, commutative multiplication, ×3/×4/×6 strategies, 40 classroom questions, and 20 homework questions with worked answers.
+
+- [Kid Einsteins Class 16: Factors, Multiples, and Divisibility Rules for 2, 3, 5, 6, 9, 10](https://www.schoolofmath.us/posts/kid-einsteins-class-16-factors-multiples-divisibility-rules): Eight illustrated sections on factors, factor pairs, multiples, and divisibility. 40 original class questions, eight homework review questions, and twelve homework word problems with hidden worked answers. Grades 3–4. Published October 17, 2026. Includes a 22-page student workbook with a PDF-only cover and unruled answer space.
