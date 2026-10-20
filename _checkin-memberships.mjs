@@ -112,7 +112,14 @@ export async function automaticRoster(env,cls,date,deps,now=new Date(),force=fal
       return "";
     };
     const calendarPrograms=[...new Set(linked.map(e=>matchProgram(e.program)).filter(Boolean))];
-    const slug=text(m.course_slug)||(calendarPrograms.length===1?calendarPrograms[0]:"");
+    // Older subscriptions store a display-name program instead of course_slug.
+    // Use that explicit subscription metadata when no calendar classification
+    // exists; calendar freshness must not erase an otherwise identified member.
+    // Strip only a recognized weekday suffix, never infer a course from price,
+    // the parent name, or a partial/fuzzy course-name match.
+    const metadataProgram=text(m.program).replace(/\s+[—–-]\s+(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)(?:\s+(?:AM|PM))?\s*$/i,"");
+    const metadataSlug=matchProgram(metadataProgram);
+    const slug=text(m.course_slug)||(calendarPrograms.length===1?calendarPrograms[0]:calendarPrograms.length===0?metadataSlug:"");
     if(!name||!slug){issues.push({subscriptionId:s.id,reason:"student_or_program_missing"});continue;}
     if(!allPrograms&&slug!==cls.slug)continue;
     const id=(await digest((s.customer?.id||s.id)+"|"+slug+"|"+name.toLowerCase())).slice(0,24);
