@@ -839,7 +839,7 @@ async function handleMembershipReservation(request, env) {
       </ul>
       <div style="background:#f5f0e6;border-left:4px solid #c89a3a;padding:16px 20px;border-radius:4px;margin:18px 0">
         <p style="margin:0 0 6px;color:#666;font-size:13px;text-transform:uppercase;letter-spacing:1.5px">A quick reminder</p>
-        <p style="margin:0;line-height:1.55">SOMATH Membership: start any week, pause up to 4 weeks/year, cancel with 15 days' notice. $30 off per sibling.</p>
+        <p style="margin:0;line-height:1.55">SOMATH Membership: start any week, cancel with 15 days' notice. $30 off per sibling.</p>
       </div>
       <p style="line-height:1.6;font-size:16px;margin:18px 0 14px">Want to talk sooner? Call us at <a href="tel:+16466686151" style="color:#1f3d2e">(646) 668-6151</a> or just hit reply.</p>
       <p style="line-height:1.6;font-size:16px;margin:18px 0 0">Talk soon,<br/><strong>Vivianne &amp; the SOMATH team</strong><br/><span style="color:#666;font-size:14px">226 W 79th St · Upper West Side, NYC</span></p>
@@ -980,7 +980,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     "\u2022 Small cohorts (4\u20136 students), same instructor every week, same room.",
     "\u2022 In person at 226 W 79th St, 1st Floor, Upper West Side.",
     "\u2022 " + classCount + "-class rolling syllabus \u2014 " + studentName + " can join at any class and continue without losing the thread.",
-    "\u2022 Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.",
+    "\u2022 One free make-up per month, sibling discount of $30/month off per additional child.",
     "\u2022 Cancel anytime with 15 days' notice. No long-term contract.",
     "",
     "What to do next:",
@@ -1040,7 +1040,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
     `<li>Small cohorts (4\u20136 students), same instructor every week, same room.</li>`,
     `<li>In person at 226 W 79th St, 1st Floor, Upper West Side.</li>`,
     `<li>${classCount}-class rolling syllabus \u2014 ${e(studentName)} can join at any class and continue without losing the thread.</li>`,
-    `<li>Up to 4 weeks of free pause per year, one free make-up per month, sibling discount of $30/month off per additional child.</li>`,
+    `<li>One free make-up per month, sibling discount of $30/month off per additional child.</li>`,
     `<li>Cancel anytime with 15 days' notice. No long-term contract.</li>`,
     `</ul>`,
     `<p><strong>What to do next:</strong></p>`,
