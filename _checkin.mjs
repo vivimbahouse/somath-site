@@ -1,7 +1,7 @@
 // Private check-in and homework service. This module is excluded from static assets.
 import { automaticRoster } from "./_checkin-memberships.mjs";
 import {saveStudentContact,normalizeEmail,validStudentEmail,updateSubscriptionStudentEmail} from "./_student-contacts.mjs";
-import {WEEKLY_VERSION,weeklyEnabled,teachingWeek,weeklyLesson,weeklyJobs,sendWeeklyArrival,runWeeklyHomework} from "./_weekly-homework.mjs";
+import {WEEKLY_VERSION,weeklyEnabled,teachingWeek,weeklyLesson,weeklyJobs,sendWeeklyArrival,runWeeklyHomework,backdatedQueueKey} from "./_weekly-homework.mjs";
 const TZ = "America/New_York";
 const P = "checkin:";
 const TABLET_COOKIE="__Host-somath_tablet", TABLET_TTL=30*24*60*60;
@@ -347,6 +347,7 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
       await put(env,lessonKey,record);return json({ok:true,lesson:record});
     }
     if(action==="attendance") {
+      if(b.present===true&&date>today.date)return json({error:"Future attendance cannot send homework. Choose the actual class date."},409);
       if(weeklyEnabled(env)&&date===today.date&&b.present===true&&lesson.closed)
         return json({error:"Reopen this class before recording a new arrival."},409);
       const existing=await get(env,`attendance:${date}:${cls.id}:${b.studentId}`);
@@ -358,11 +359,17 @@ export async function handleCheckin(request,env,deps,now=new Date()) {
         const duplicate=(await list(env,`attendance:${date}:${cls.id}:`)).find(a=>a.personId===s.personId&&a.studentId!==s.id&&a.present);
         if(duplicate)return json({ok:true,already:true});
       }
-      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,studentEmail:s.studentEmail||"",subscriptionId:s.subscriptionId,enrolledProgram:prior?.enrolledProgram||s.program,enrolledProgramTitle:prior?.enrolledProgramTitle||s.programTitle,makeup:prior?.makeup??s.makeup??false,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString(),
-        ...(prior?.homeworkVersion?{homeworkVersion:prior.homeworkVersion}:weeklyEnabled(env)&&date===today.date&&!prior?.present&&s.active?{homeworkVersion:WEEKLY_VERSION}:{})};
+      const backdated=weeklyEnabled(env)&&b.present===true&&date<today.date;
+      const record={date,classId:cls.id,studentId:s.id,personId:s.personId,name:s.name,parentEmail:s.email,studentEmail:s.studentEmail||prior?.studentEmail||"",subscriptionId:s.subscriptionId,enrolledProgram:prior?.enrolledProgram||s.program,enrolledProgramTitle:prior?.enrolledProgramTitle||s.programTitle,makeup:prior?.makeup??s.makeup??false,at:prior?.at||now.toISOString(),present:b.present===true,correctedAt:now.toISOString(),
+        ...(prior?.homeworkVersion?{homeworkVersion:prior.homeworkVersion}:weeklyEnabled(env)&&b.present===true&&(date<today.date||s.active)?{homeworkVersion:WEEKLY_VERSION}:{}),
+        ...(backdated?{homeworkBackdatedAt:prior?.homeworkBackdatedAt||now.toISOString()}:prior?.homeworkBackdatedAt?{homeworkBackdatedAt:prior.homeworkBackdatedAt}:{})};
       await put(env,key,record);
-      if(record.present&&date===today.date)try{await sendWeeklyArrival(env,{...deps,homeworkMessage},cls,record,now);}catch{}
-      return json({ok:true});
+      if(backdated)await env.ENROLLMENTS.put(backdatedQueueKey(record),JSON.stringify({date,classId:cls.id,studentId:s.id,authorizedAt:record.homeworkBackdatedAt}));
+      if(!record.present)await env.ENROLLMENTS.delete(backdatedQueueKey(record));
+      let homework;
+      if(record.present)try{homework=await sendWeeklyArrival(env,{...deps,homeworkMessage},cls,record,now);}catch{homework={status:"retry"};}
+      if(backdated&&["sent","review"].includes(homework?.status))await env.ENROLLMENTS.delete(backdatedQueueKey(record));
+      return json({ok:true,homework});
     }
     return json({error:"Unknown action."},400);
   } catch(e) {

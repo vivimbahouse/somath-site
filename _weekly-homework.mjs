@@ -1,7 +1,10 @@
-// Weekly homework authorized by SOMATH on 2026-10-11. No historical backfill.
+// Weekly homework, with individually staff-authorized backdated check-ins.
 export const WEEKLY_VERSION = "weekly-checkin-20261011";
 const ROOT="https://www.schoolofmath.us", DAY=86400000;
 const prefix="checkin:weekly-delivery:";
+const backdatedPrefix="checkin:weekly-backdated:";
+export const backdatedQueueKey=a=>`${backdatedPrefix}${a.date}:${a.classId}:${a.studentId}`;
+const authorizedBackdate=a=>typeof a.homeworkBackdatedAt==="string"&&Number.isFinite(Date.parse(a.homeworkBackdatedAt));
 const emailOK=s=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s||"");
 const normalize=s=>String(s||"").trim().toLowerCase();
 const hash=async s=>[...new Uint8Array(await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)))].map(v=>v.toString(16).padStart(2,"0")).join("");
@@ -59,13 +62,14 @@ export async function weeklyJobs(env,slug,date,attendance) {
   const week=teachingWeek(date),people=new Set(attendance.map(a=>a.personId));
   return (await list(env,`${prefix}${week.start}:${slug}:`))
     .filter(j=>people.has(j.personId)).map(j=>({...j,
-      ...(week.start<teachingWeek(easternDate()).start&&!["sent","review"].includes(j.status)?{status:"review",reason:"week_ended"}:{}),
+      ...(week.start<teachingWeek(easternDate()).start&&!j.homeworkBackdatedAt&&!["sent","review"].includes(j.status)?{status:"review",reason:"week_ended"}:{}),
       studentId:attendance.find(a=>a.personId===j.personId)?.studentId||j.studentId}));
 }
 export async function sendWeeklyArrival(env,deps,cls,arrival,now=new Date(),resolved=null) {
   if(!weeklyEnabled(env)||!env.ENROLLMENTS||!arrival.present||arrival.homeworkVersion!==WEEKLY_VERSION)return {skipped:true};
   const week=teachingWeek(arrival.date);
-  if(week.start!==teachingWeek(easternDate(now)).start)return {skipped:true};
+  if(arrival.date>easternDate(now)||week.number<1||week.number>48)return {skipped:true};
+  if(week.start!==teachingWeek(easternDate(now)).start&&!authorizedBackdate(arrival))return {skipped:true};
   let lesson=resolved;
   const recipients=[{kind:"parent",email:normalize(arrival.parentEmail)}];
   if(emailOK(arrival.studentEmail)&&normalize(arrival.studentEmail)!==normalize(arrival.parentEmail))
@@ -77,6 +81,7 @@ export async function sendWeeklyArrival(env,deps,cls,arrival,now=new Date(),reso
     if(job?.status==="sent"||job?.status==="review"){results.push(job.status);continue;}
     if(!job)job={date:arrival.date,classId:cls.id,course:cls.slug,week:week.number,weekStart:week.start,personId:arrival.personId,
       studentId:arrival.studentId,recipientKind:r.kind,to:r.email,status:"waiting_lesson",createdAt:now.toISOString()};
+    if(authorizedBackdate(arrival))job={...job,homeworkBackdatedAt:arrival.homeworkBackdatedAt};
     if(job.to!==r.email||!emailOK(r.email)){
       job={...job,status:"review",reason:!emailOK(r.email)?"missing_email":"recipient_changed"};
       await save(env,key,job);results.push(job.status);continue;
@@ -108,7 +113,7 @@ export async function sendWeeklyArrival(env,deps,cls,arrival,now=new Date(),reso
 export async function runWeeklyHomework(env,deps,now=new Date()) {
   if(!weeklyEnabled(env)||!env.ENROLLMENTS)return {disabled:true};
   const date=easternDate(now),week=teachingWeek(date),summary={processed:0,failed:0};
-  // Attendance markers are created only by new, eligible check-ins after activation.
+  // Attendance markers are created by current check-ins or explicit staff backdates.
   // Existing attendance is never marked or replayed on deployment. A separately
   // recorded owner-authorized catch-up can opt individual existing arrivals in.
   for(let t=Date.parse(week.start);t<=Date.parse(date);t+=DAY) {
@@ -125,10 +130,28 @@ export async function runWeeklyHomework(env,deps,now=new Date()) {
       const slug=a.classId.split("__")[0];
       if(!deps.titles[slug])continue;
       try {
-        await sendWeeklyArrival(env,deps,{id:a.classId,slug,title:deps.titles[slug]},arrival,now);
+        const result=await sendWeeklyArrival(env,deps,{id:a.classId,slug,title:deps.titles[slug]},arrival,now);
+        if(authorizedBackdate(arrival)&&["sent","review"].includes(result.status))await env.ENROLLMENTS.delete(backdatedQueueKey(arrival));
         summary.processed++;
       } catch {summary.failed++;}
     }
+  }
+  // This small retry index contains only explicit staff actions after the
+  // backdate feature was enabled. Never scan/replay all historical attendance.
+  for(const queued of await list(env,backdatedPrefix)){
+    const a=JSON.parse(await env.ENROLLMENTS.get(`checkin:attendance:${queued.date}:${queued.classId}:${queued.studentId}`)||"null");
+    if(!a?.present||!authorizedBackdate(a)||a.homeworkVersion!==WEEKLY_VERSION){
+      await env.ENROLLMENTS.delete(queued.key);continue;
+    }
+    // Current-week arrivals were already handled above.
+    if(teachingWeek(a.date).start===week.start)continue;
+    const slug=a.classId.split("__")[0];
+    if(!deps.titles[slug])continue;
+    try {
+      const result=await sendWeeklyArrival(env,{...deps},{id:a.classId,slug,title:deps.titles[slug]},a,now);
+      summary.processed++;
+      if(["sent","review"].includes(result.status)||result.skipped)await env.ENROLLMENTS.delete(queued.key);
+    } catch {summary.failed++;}
   }
   return summary;
 }
