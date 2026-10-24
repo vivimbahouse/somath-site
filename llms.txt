@@ -181,3 +181,5 @@ Questions and diagrams: NYSED. Independent explanations: SOMATH — School of Ma
 
 
 - [Kid Einsteins Class 17: Long Division with Single-Digit Divisors and Remainders](https://www.schoolofmath.us/posts/kid-einsteins-class-17-long-division-remainders): Eight illustrated topics; 40 original practice questions, eight Homework review questions, and twelve Homework word problems. Hidden step-by-step solutions, multiplication checks, valid remainders, and context-sensitive answers. Includes a clarification and complete model correcting the incomplete small drawing in supplied image 5. Independent rolling lesson for grades 3–4. Published October 24, 2026.
+
+  Kid Einsteins Class 17 student workbook: https://www.schoolofmath.us/assets/blog/kid-einsteins-class-17-long-division-remainders/SOMATH-Kid-Einsteins-Class-17-Student-Workbook.pdf (23 pages; supplied PDF-only cover, eight teaching images, 60 student questions with unruled working space and no exercise solutions, plus image 5 full-model clarification).
