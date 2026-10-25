@@ -462,3 +462,8 @@ A function assigns exactly one output to each allowed input. Function notation f
 - [Pre-Algebra Class 17: Solving Multi-Step Equations with Variables on Both Sides](https://www.schoolofmath.us/posts/pre-algebra-class-17-multi-step-equations-variables-both-sides): Eight supplied teaching images, 40 original practice questions, eight Homework review questions, and twelve Homework word problems. Hidden detailed steps and exact checks, including one solution, no solution, and infinitely many solutions. Independent rolling topic. Published October 25, 2026.
 
   Student workbook: https://www.schoolofmath.us/assets/blog/pre-algebra-class-17-multi-step-equations-variables-both-sides/SOMATH-Pre-Algebra-Class-17-Student-Workbook.pdf (22 pages; supplied PDF-only cover, eight original posters, 60 questions, unruled working space and no exercise solutions).
+
+
+- [Algebra 1 Class 17: Factoring Trinomials: Leading Coefficient 1 and Not 1](https://www.schoolofmath.us/posts/algebra-1-class-17-factoring-trinomials): Eight original teaching images, 40 original practice questions, eight Homework review questions, and twelve Homework word problems. Hidden steps cover GCFs, signed pairs, the ac method, grouping, perfect squares, integer irreducibility, expansion checks, and the zero-product property. Independent rolling topic. Published October 25, 2026.
+
+  Student workbook: https://www.schoolofmath.us/assets/blog/algebra-1-class-17-factoring-trinomials/SOMATH-Algebra-1-Class-17-Student-Workbook.pdf (22 pages; supplied PDF-only cover, eight original posters, 60 questions, unruled working space and no exercise solutions).
