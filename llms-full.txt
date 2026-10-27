@@ -467,3 +467,8 @@ A function assigns exactly one output to each allowed input. Function notation f
 - [Algebra 1 Class 17: Factoring Trinomials: Leading Coefficient 1 and Not 1](https://www.schoolofmath.us/posts/algebra-1-class-17-factoring-trinomials): Eight original teaching images, 40 original practice questions, eight Homework review questions, and twelve Homework word problems. Hidden steps cover GCFs, signed pairs, the ac method, grouping, perfect squares, integer irreducibility, expansion checks, and the zero-product property. Independent rolling topic. Published October 25, 2026.
 
   Student workbook: https://www.schoolofmath.us/assets/blog/algebra-1-class-17-factoring-trinomials/SOMATH-Algebra-1-Class-17-Student-Workbook.pdf (22 pages; supplied PDF-only cover, eight original posters, 60 questions, unruled working space and no exercise solutions).
+
+
+- [Algebra 2 Class 17: Exponential Functions: Growth, Decay, and Graphs](https://www.schoolofmath.us/posts/algebra-2-class-17-exponential-functions-growth-decay-graphs): Ten supplied teaching images, 50 original practice questions, eight Homework review questions, and twelve Homework word problems. Detailed hidden solutions, computed graphs, rates, domains, asymptotes, transformations, and compound interest. Independent rolling topic. Published October 27, 2026.
+
+  Student workbook: https://www.schoolofmath.us/assets/blog/algebra-2-class-17-exponential-functions-growth-decay-graphs/SOMATH-Algebra-2-Class-17-Student-Workbook.pdf (26 pages; supplied PDF-only cover, ten original posters, 70 questions, unruled working space, no exercise solutions).
