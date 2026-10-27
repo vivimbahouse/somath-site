@@ -31,11 +31,15 @@ export function classesFor(date, deps) {
   const rows=[];
   for (const [slug,slots] of Object.entries(deps.schedules)) for (const slot of slots) {
     if (slot.d!==day) continue;
-    const halves=slot.t.split(/\s*[–—-]\s*/);
+    // Keep backdated check-ins on the schedule that applied before a slot changed.
+    const beforeChange=slot.effectiveFrom && date<slot.effectiveFrom;
+    if (beforeChange && !slot.previousTime) continue;
+    const time=beforeChange ? slot.previousTime : slot.t;
+    const halves=time.split(/\s*[–—-]\s*/);
     const parse=(str,ampm)=>{const m=str.match(/(\d{1,2}):(\d{2})/);return (Number(m[1])%12+(ampm==="PM"?12:0))*60+Number(m[2]);};
     const endAM=(halves[1].match(/AM|PM/)||["PM"])[0];
     const startAM=(halves[0].match(/AM|PM/)||[endAM])[0];
-    rows.push({id:slug+"__"+day,slug,day,title:deps.titles[slug]||slug,time:slot.t,start:parse(halves[0],startAM),end:parse(halves[1],endAM)});
+    rows.push({id:slug+"__"+day,slug,day,title:deps.titles[slug]||slug,time,start:parse(halves[0],startAM),end:parse(halves[1],endAM)});
   }
   return rows.sort((a,b)=>a.start-b.start);
 }
