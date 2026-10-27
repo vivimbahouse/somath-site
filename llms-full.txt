@@ -472,3 +472,8 @@ A function assigns exactly one output to each allowed input. Function notation f
 - [Algebra 2 Class 17: Exponential Functions: Growth, Decay, and Graphs](https://www.schoolofmath.us/posts/algebra-2-class-17-exponential-functions-growth-decay-graphs): Ten supplied teaching images, 50 original practice questions, eight Homework review questions, and twelve Homework word problems. Detailed hidden solutions, computed graphs, rates, domains, asymptotes, transformations, and compound interest. Independent rolling topic. Published October 27, 2026.
 
   Student workbook: https://www.schoolofmath.us/assets/blog/algebra-2-class-17-exponential-functions-growth-decay-graphs/SOMATH-Algebra-2-Class-17-Student-Workbook.pdf (26 pages; supplied PDF-only cover, ten original posters, 70 questions, unruled working space, no exercise solutions).
+
+
+- [Algebra 2 Class 16: Radical Equations and Extraneous Solutions](https://www.schoolofmath.us/posts/algebra-2-class-16-radical-equations-extraneous-solutions): Ten supplied teaching images, 50 original practice questions, eight Homework review questions, and twelve Homework word problems. Hidden detailed solutions include domain restrictions, isolated radicals, squaring, candidate roots, original-equation checks, two radicals, real cube roots, and contextual models. Independent rolling topic. Published October 27, 2026.
+
+  Student workbook: https://www.schoolofmath.us/assets/blog/algebra-2-class-16-radical-equations-extraneous-solutions/SOMATH-Algebra-2-Class-16-Student-Workbook.pdf (26 pages; supplied PDF-only cover, ten original posters, 70 questions, unruled working space, no exercise solutions).
