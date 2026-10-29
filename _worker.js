@@ -587,12 +587,11 @@ var FALL_DAY_CHOICES = {
   "ap-calculus": ["Thu"],
   "sat-math": ["Sun"],
   "shsat-prep": ["Sat"],
-  "little-newtons":               ["Tue", "Wed"],
-  "kid-einsteins":                ["Mon", "Thu"],
+  "little-newtons":               ["Tue", "Wed", "Fri"],
+  "kid-einsteins":                ["Mon", "Thu", "Fri"],
   "young-fermats-prealgebra":     ["Mon", "Tue"],
   "young-fermats-algebra-ignite": ["Wed", "Thu"],
 
-  "tao-titans": ["Fri"],
   "young-fermats-geometry":       ["Mon"],
   "young-fermats-algebra-ii":     ["Tue"]
 };
@@ -896,7 +895,7 @@ var COURSE_CLASS_COUNT = {
 };
 
 var COURSE_DESCRIPTIONS = {
-  "tao-titans": "In-person AMC 8, AMC 10 and AMC 12 preparation for grades 6–12 on the Upper West Side. Build creative problem-solving in number theory, algebra, geometry, counting and probability, with practice matched to readiness. Fridays 4:00–6:00 PM. $587/month plus $99 one-time registration.",
+  "tao-titans": "In-person AMC 8, AMC 10 and AMC 12 preparation for grades 6–12 on the Upper West Side. Build creative problem-solving in number theory, algebra, geometry, counting and probability, with practice matched to readiness. New class times are being scheduled; contact SOMATH for availability. $587/month plus $99 one-time registration.",
   "little-newtons": "Little Newtons is our foundational program for Grades 1\u20132 (ages 6\u20138). Over the year students build number sense, master addition and subtraction fluency, learn fractions on the number line, and get their first structured practice with word problems \u2014 and the course is designed as a springboard into multiplication and division, so students walk into Grade 3 already comfortable with the ideas their classmates are just meeting. All in a warm, small-group setting that keeps them engaged for a full 60 minutes.",
   "kid-einsteins": "Kid Einsteins is our Grades 3\u20134 program (ages 8\u201310). The arc covers multiplication mastery, long division, fractions and decimals, geometric reasoning with area and perimeter, and multi-step word problems \u2014 the core of upper-elementary math, delivered in a 90-minute weekly lesson with real problem-solving depth. It also opens the door to integers, ratios, and early algebraic thinking, so students walk into Grade 5 ready for Pre-Algebra instead of meeting these ideas cold.",
   "young-fermats-prealgebra": "Pre-Algebra is our Grades 5\u20136 track (ages 10\u201312) and the on-ramp to Algebra 1. Students work through integers on the number line, fraction and decimal fluency, ratios and proportion, percent and interest, coordinate geometry, statistics, and probability \u2014 covering the full grade-5 and grade-6 curriculum with real algebraic thinking woven in. The final stretch introduces variables, expressions, and linear equations, so students step into Algebra 1 already fluent with the language they'll be using every day.",
@@ -913,9 +912,9 @@ var COURSE_DESCRIPTIONS = {
 };
 
 var COURSE_SCHEDULES = {
-  "tao-titans": [{d:"Friday",t:"4:00 – 6:00 PM"}],
-  "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"}],
-  "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"}],
+  "tao-titans": [{d:"Friday",t:"4:00 – 6:00 PM",effectiveUntil:"2026-10-30"}],
+  "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"},{d:"Friday",t:"3:15 \u2013 4:15 PM",effectiveFrom:"2026-10-30"}],
+  "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"},{d:"Friday",t:"4:15 \u2013 5:45 PM",effectiveFrom:"2026-10-30"}],
   "young-fermats-prealgebra":      [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"3:00 \u2013 5:00 PM",effectiveFrom:"2026-10-27"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
 
@@ -924,7 +923,7 @@ var COURSE_SCHEDULES = {
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Saturday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-10-27",previousTime:"3:00 \u2013 5:00 PM"}],
   "sat-math":                      [{d:"Sunday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-11-01"}],
-  "pre-calculus":                  [{d:"Friday",t:"6:00 \u2013 8:00 PM"}],
+  "pre-calculus":                  [{d:"Friday",t:"5:45 \u2013 7:45 PM",effectiveFrom:"2026-10-30",previousTime:"6:00 \u2013 8:00 PM"}],
   "ap-calculus":                   [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}],
   "ap-statistics":                 [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}]
 };
@@ -936,7 +935,7 @@ function buildEvalEmail({ parentName, studentName, courseSlug, courseName, notes
   const courseUrl = `https://www.schoolofmath.us/courses/${courseSlug}`;
   const subject = `${studentName} \u2014 your SOMATH evaluation results and recommended course`;
   const notesParagraph = notes ? notes : "";
-  const schedule = COURSE_SCHEDULES[courseSlug] || [];
+  const schedule = (COURSE_SCHEDULES[courseSlug] || []).filter(function(slot) { return !slot.effectiveUntil; });
   const classCount = COURSE_CLASS_COUNT[courseSlug] || 24;
   const description = COURSE_DESCRIPTIONS[courseSlug] || "";
 
@@ -1406,7 +1405,7 @@ async function handleEnrollIntent(request, env) {
   var title = COURSE_TITLES[course] || course;
   // A registration reference is family-specific, not shared by every child in a slot.
   var ref = course + "__" + day + "__" + date + "__" + randId(16);
-  var selectedSchedule = (COURSE_SCHEDULES[course] || []).find(function(slot) { return slot.d === day; });
+  var selectedSchedule = (COURSE_SCHEDULES[course] || []).find(function(slot) { return slot.d === day && !slot.effectiveUntil; });
   if (!selectedSchedule) return jsonResponse({ error: "schedule_not_available", message: "This class is not offered on the selected day. Please refresh the course page and choose a current class option." }, 409);
   var classTime = selectedSchedule.t;
 

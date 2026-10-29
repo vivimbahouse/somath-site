@@ -31,6 +31,8 @@ export function classesFor(date, deps) {
   const rows=[];
   for (const [slug,slots] of Object.entries(deps.schedules)) for (const slot of slots) {
     if (slot.d!==day) continue;
+    // Retired slots stay visible for earlier dates only.
+    if (slot.effectiveUntil && date>=slot.effectiveUntil) continue;
     // Keep backdated check-ins on the schedule that applied before a slot changed.
     const beforeChange=slot.effectiveFrom && date<slot.effectiveFrom;
     if (beforeChange && !slot.previousTime) continue;
