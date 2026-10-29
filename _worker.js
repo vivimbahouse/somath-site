@@ -564,7 +564,7 @@ var PRE_ENROLL_TERMS = {
 };
 // Weekends offers a subset of courses with course-specific minutes and a fixed weekday label.
 var WEEKENDS_OFFERINGS = {
-
+  "sat-math":   { mins: 120, dayLabel: "Sundays", time: "5:00\u20137:00 PM" },
   "shsat-prep": { mins: 120, dayLabel: "Saturdays", time: "5:00\u20137:00 PM" },
   // dayLabel is the FIXED label for single-day courses; null when course offers a choice (see WEEKENDS_DAY_CHOICES).
   "little-newtons":               { mins: 60, dayLabel: null, time: "Sat 11:30 AM\u201312:30 PM; Sun 10:00\u201311:00 AM" },
@@ -576,7 +576,7 @@ var WEEKENDS_OFFERINGS = {
 var WEEKENDS_DAY_CHOICES = {
   "young-fermats-algebra-ignite": ["Sat", "Sun"],
   "young-fermats-prealgebra": ["Sat", "Sun"],
-
+  "sat-math": ["Sun"],
   "shsat-prep": ["Sat"],
   "little-newtons": ["Sat", "Sun"],
   "kid-einsteins": ["Sat", "Sun"]
@@ -585,7 +585,7 @@ var WEEKENDS_DAY_CHOICES = {
 var FALL_DAY_CHOICES = {
   "ap-statistics": ["Wed"],
   "ap-calculus": ["Thu"],
-
+  "sat-math": ["Sun"],
   "shsat-prep": ["Sat"],
   "little-newtons":               ["Tue", "Wed"],
   "kid-einsteins":                ["Mon", "Thu"],
@@ -626,7 +626,6 @@ async function handlePreEnroll(request, env) {
   if (!PRE_ENROLL_TERMS[term]) return jsonResponse({ ok: false, error: "invalid_term" }, 400);
   if (!PRE_ENROLL_COURSES[course]) return jsonResponse({ ok: false, error: "invalid_course" }, 400);
   if (course === "tao-titans") return jsonResponse({ok:false,error:"use_monthly_membership",message:"Please enroll in Tao Titans through its monthly membership page.",url:"/courses/tao-titans#enroll"},409);
-  if (course === "sat-math") return jsonResponse({ok:false,error:"schedule_not_available",message:"Please contact SOMATH for SAT Prep availability."},409);
   // Weekends term: validate the course is actually offered on weekends.
   if (term === "weekends" && !WEEKENDS_OFFERINGS[course]) {
     return jsonResponse({ ok: false, error: "course_not_offered_on_weekends" }, 400);
@@ -924,7 +923,7 @@ var COURSE_SCHEDULES = {
   "young-fermats-geometry":        [{d:"Monday",t:"7:00 \u2013 9:00 PM"}],
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Saturday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-10-27",previousTime:"3:00 \u2013 5:00 PM"}],
-  "sat-math":                      [],
+  "sat-math":                      [{d:"Sunday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-11-01"}],
   "pre-calculus":                  [{d:"Friday",t:"6:00 \u2013 8:00 PM"}],
   "ap-calculus":                   [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}],
   "ap-statistics":                 [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}]
