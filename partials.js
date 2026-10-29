@@ -71,6 +71,7 @@
             <li><a href="/courses/tao-titans">Tao Titans · Competition Prep (6–12)</a></li>
             <li><a href="/programs#shsat-prep">SHSAT Prep (7–8)</a></li>
             <li><a href="/programs#ap-courses">AP Courses (9–12)</a></li>
+            <li><a href="/chemistry">Chemistry · AP Chemistry guides (10–12)</a></li>
             <li><a href="/programs#sat-prep">SAT Prep (10–12)</a></li>
           </ul>
         </div>

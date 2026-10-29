@@ -1,7 +1,7 @@
 /* Exposes a short-lived, non-personal AP context to existing evaluation events. */
 (function () {
   "use strict";
-  var allowed = ["pre-calculus", "ap-calculus", "ap-statistics"];
+  var allowed = ["pre-calculus", "ap-calculus", "ap-statistics", "ap-chemistry"];
   var selected = new URLSearchParams(location.search).get("ap_course");
   var stored = null;
   try { stored = JSON.parse(sessionStorage.getItem("somath_ap_evaluation") || "null"); } catch (_) {}
@@ -15,7 +15,7 @@
   window.somathAPContext = selected ? {
     ap_course: selected,
     ap_source_path: fresh && stored.ap_course === selected &&
-      typeof stored.ap_source_path === "string" && /^\/(?:courses|posts)\/[a-z0-9-]+$/.test(stored.ap_source_path)
+      typeof stored.ap_source_path === "string" && /^\/(?:(?:courses|posts|chemistry)\/[a-z0-9-]+|chemistry)$/.test(stored.ap_source_path)
       ? stored.ap_source_path : "direct_subject_link"
   } : {};
 }());

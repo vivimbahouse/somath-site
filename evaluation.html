@@ -310,7 +310,7 @@
     <!-- Calendly widget script -->
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-    <script src="/assets/ap-evaluation-context.js?v=20261006"></script>
+    <script src="/assets/ap-evaluation-context.js?v=20261029"></script>
     <!-- Calendly booking funnel instrumentation (GA4 + Ads) -->
     <!-- Emits: eval_page_view (auto), eval_widget_viewed, eval_widget_interacted,
          eval_calendly_time_selected, eval_calendly_booking_completed -->
@@ -400,7 +400,8 @@
             var apBookingEvent = {
               'pre-calculus': 'ap_precalculus_evaluation_booked',
               'ap-calculus': 'ap_calculus_evaluation_booked',
-              'ap-statistics': 'ap_statistics_evaluation_booked'
+              'ap-statistics': 'ap_statistics_evaluation_booked',
+              'ap-chemistry': 'ap_chemistry_evaluation_booked'
             }[(window.somathAPContext || {}).ap_course];
             if (apBookingEvent) fire(apBookingEvent);
             // Fire Google Ads conversion before redirect

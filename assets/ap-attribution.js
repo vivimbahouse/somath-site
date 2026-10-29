@@ -1,7 +1,7 @@
 /* AP funnel context only. No names, email addresses, or query strings are stored. */
 (function () {
   "use strict";
-  var allowed = ["pre-calculus", "ap-calculus", "ap-statistics"];
+  var allowed = ["pre-calculus", "ap-calculus", "ap-statistics", "ap-chemistry"];
   var course = document.body.dataset.apCourse;
   if (allowed.indexOf(course) < 0) return;
   document.addEventListener("click", function (event) {
