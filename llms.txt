@@ -39,6 +39,8 @@ Contact: hello@schoolofmath.us · (646) 668-6151 · [schoolofmath.us](https://ww
 
 ## Featured
 
+- [Why American Math Teaching Is Failing Our Kids — Marcelo Ramos](https://www.schoolofmath.us/posts/why-american-math-teaching-fails-rigor-abstraction-standardized-tests): First-person opinion essay by SOMATH co-founder and lead math teacher Marcelo Ramos (B.S. Applied Mathematics, Northwestern; MBA, Kellogg; 20 years teaching GMAT/GRE quant). Argues for abstraction, rigorous proof, memorization, and early connection to Algebra 1 over visual-first instruction; argues the retreat from Regents, SAT/ACT, and AP standards hurts future professionals; explains why homework-only help fails. Includes four tables, three flowcharts, a fraction-division proof, sourced NAEP, PISA, NYC Solves, Regents, Columbia, and AP data, and five FAQs. Upper West Side, 226 W 79th St. Published November 4, 2026.
+
 - [AMC 10 Guide: Scoring, Statistics and NYC Preparation](https://www.schoolofmath.us/amc-10-prep-nyc): Approximately 5,000-word sourced guide with eligibility, 2026 exam dates, 2027 AIME rules, historical 2025 results, cutoff charts, score calculator, preparation flowcharts, balanced college-application guidance and SOMATH evaluation links. Historical results are not current qualifying rules.
 
 - [2025 AMC 10B Problems and Solutions: Theory for All 25 Questions](https://www.schoolofmath.us/posts/2025-amc-10b-problems-solutions-theory): Full question walkthrough with original diagrams, 25 hidden step-by-step solutions, theory notes and a 26-page questions-only PDF. Independent SOMATH AMC preparation on the Upper West Side; includes Tao Titans and evaluation links.
