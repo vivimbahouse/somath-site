@@ -6,6 +6,7 @@ import { handleHomeworkTest } from "./_homework-test.mjs";
 import { handleMailingList, saveMailingContact } from "./_mailing-list.mjs";
 import { handleParentGuideCampaign } from "./_parent-guide-campaign.mjs";
 import { handleJournalCampaign20261104 } from "./_journal-campaign-2026-11-04.mjs";
+import { handleJournalCampaign20261111 } from "./_journal-campaign-2026-11-11.mjs";
 var __defProp = Object.defineProperty;
 var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
@@ -2257,6 +2258,7 @@ var worker_default = {
     if (url.pathname === "/api/mailing-list") return handleMailingList(request, env);
     if (url.pathname === "/api/parent-guide-campaign") return handleParentGuideCampaign(request, env);
     if (url.pathname === "/api/journal-campaign-2026-11-04") return handleJournalCampaign20261104(request, env);
+    if (url.pathname === "/api/journal-campaign-2026-11-11") return handleJournalCampaign20261111(request, env);
     if (url.pathname === "/api/send-eval-email") return handleSendEvalEmail(request, env);
     if (url.pathname === "/api/enroll-intent") return handleEnrollIntent(request, env);
     if (url.pathname === "/api/private-enrollment-links") return handlePrivateEnrollmentAdmin(request, env);
