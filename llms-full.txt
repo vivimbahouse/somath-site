@@ -67,7 +67,7 @@ For the curated overview, see [llms.txt](https://www.schoolofmath.us/llms.txt).
 
 ## AP Statistics class packs
 
-- [AP Statistics Class 11: Random Variables & Expected Value — 12 SOMATH Posters, Theory & 60 Practice Questions](https://www.schoolofmath.us/posts/ap-statistics-class-11-random-variables-expected-value): Illustrated random variables and expected value lesson with 60 practice questions. The retained combining-random-variables material is enrichment, not assessed in the revised 2026–27 AP course.
+- [AP Statistics Class 11: Random Variables and Expected Value](https://www.schoolofmath.us/posts/ap-statistics-class-11-random-variables-expected-value): Twelve illustrated topics on random variables, discrete and continuous models, probability distributions and validity rules, missing probabilities, expected value, games and decisions, variance, standard deviation, and transforming random variables, with combining random variables labeled enrichment for the revised 2026–27 course. 60 practice questions and 24 homework questions with hidden worked answers, plus a 31-page student workbook.
 
 ## Pre-Algebra class packs
 
