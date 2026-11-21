@@ -569,8 +569,8 @@ var WEEKENDS_OFFERINGS = {
   "sat-math":   { mins: 120, dayLabel: "Sundays", time: "5:00\u20137:00 PM" },
   "shsat-prep": { mins: 120, dayLabel: "Saturdays", time: "5:00\u20137:00 PM" },
   // dayLabel is the FIXED label for single-day courses; null when course offers a choice (see WEEKENDS_DAY_CHOICES).
-  "little-newtons":               { mins: 60, dayLabel: null, time: "Sat 11:30 AM\u201312:30 PM; Sun 10:00\u201311:00 AM" },
-  "kid-einsteins":                { mins: 90, dayLabel: null, time: "Sat 10:00\u201311:30 AM; Sun 11:00 AM\u201312:30 PM" },
+  "little-newtons":               { mins: 60, dayLabel: null, time: "Sat/Sun 10:00\u201311:00 AM" },
+  "kid-einsteins":                { mins: 90, dayLabel: null, time: "Sat/Sun 11:00 AM\u201312:30 PM" },
   "young-fermats-prealgebra":     { mins: 120, dayLabel: null, time: "Sat 1:00\u20133:00 PM; Sun 3:00\u20135:00 PM" },
   "young-fermats-algebra-ignite": { mins: 120, dayLabel: null, time: "Sat 3:00\u20135:00 PM; Sun 1:00\u20133:00 PM" },
   "young-fermats-algebra-ii":     { mins: 120, dayLabel: "Tuesdays",  time: "6:15\u20138:15 PM" }
@@ -915,8 +915,8 @@ var COURSE_DESCRIPTIONS = {
 
 var COURSE_SCHEDULES = {
   "tao-titans": [{d:"Friday",t:"4:00 – 6:00 PM",effectiveUntil:"2026-10-30"}],
-  "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"},{d:"Friday",t:"3:15 \u2013 4:15 PM",effectiveFrom:"2026-10-30"}],
-  "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"},{d:"Friday",t:"4:15 \u2013 5:45 PM",effectiveFrom:"2026-10-30"}],
+  "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM",effectiveFrom:"2026-11-28",previousTime:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"},{d:"Friday",t:"3:15 \u2013 4:15 PM",effectiveFrom:"2026-10-30"}],
+  "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM",effectiveFrom:"2026-11-28",previousTime:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"},{d:"Friday",t:"4:15 \u2013 5:45 PM",effectiveFrom:"2026-10-30"}],
   "young-fermats-prealgebra":      [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"3:00 \u2013 5:00 PM",effectiveFrom:"2026-10-27"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
 
