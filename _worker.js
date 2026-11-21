@@ -589,9 +589,10 @@ var FALL_DAY_CHOICES = {
   "ap-calculus": ["Thu"],
   "sat-math": ["Sun"],
   "shsat-prep": ["Sat"],
-  "little-newtons":               ["Tue", "Wed", "Fri"],
+  "pre-calculus":                 ["Fri"],
+  "little-newtons":               ["Tue", "Wed"],
   "kid-einsteins":                ["Mon", "Thu", "Fri"],
-  "young-fermats-prealgebra":     ["Mon", "Tue"],
+  "young-fermats-prealgebra":     ["Mon", "Tue", "Fri"],
   "young-fermats-algebra-ignite": ["Wed", "Thu"],
 
   "young-fermats-geometry":       ["Mon"],
@@ -915,9 +916,9 @@ var COURSE_DESCRIPTIONS = {
 
 var COURSE_SCHEDULES = {
   "tao-titans": [{d:"Friday",t:"4:00 – 6:00 PM",effectiveUntil:"2026-10-30"}],
-  "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM",effectiveFrom:"2026-11-28",previousTime:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"},{d:"Friday",t:"3:15 \u2013 4:15 PM",effectiveFrom:"2026-10-30"}],
-  "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM",effectiveFrom:"2026-11-28",previousTime:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"},{d:"Friday",t:"4:15 \u2013 5:45 PM",effectiveFrom:"2026-10-30"}],
-  "young-fermats-prealgebra":      [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
+  "little-newtons":                [{d:"Tuesday",t:"3:15 \u2013 4:15 PM"},{d:"Wednesday",t:"3:15 \u2013 4:15 PM"},{d:"Saturday",t:"10:00 \u2013 11:00 AM",effectiveFrom:"2026-11-28",previousTime:"11:30 AM \u2013 12:30 PM"},{d:"Sunday",t:"10:00 \u2013 11:00 AM"},{d:"Friday",t:"3:15 \u2013 4:15 PM",effectiveFrom:"2026-10-30",effectiveUntil:"2026-11-27"}],
+  "kid-einsteins":                 [{d:"Monday",t:"3:30 \u2013 5:00 PM"},{d:"Thursday",t:"3:30 \u2013 5:00 PM"},{d:"Saturday",t:"11:00 AM \u2013 12:30 PM",effectiveFrom:"2026-11-28",previousTime:"10:00 \u2013 11:30 AM"},{d:"Sunday",t:"11:00 AM \u2013 12:30 PM"},{d:"Friday",t:"4:15 \u2013 5:45 PM",effectiveFrom:"2026-10-30",effectiveUntil:"2026-11-27"},{d:"Friday",t:"3:30 \u2013 5:00 PM",effectiveFrom:"2026-11-27"}],
+  "young-fermats-prealgebra":      [{d:"Monday",t:"5:00 \u2013 7:00 PM"},{d:"Tuesday",t:"4:15 \u2013 6:15 PM"},{d:"Friday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-11-27"},{d:"Saturday",t:"1:00 \u2013 3:00 PM"},{d:"Sunday",t:"3:00 \u2013 5:00 PM"}],
   "young-fermats-algebra-ignite":  [{d:"Wednesday",t:"4:15 \u2013 6:15 PM"},{d:"Thursday",t:"5:00 \u2013 7:00 PM"},{d:"Saturday",t:"3:00 \u2013 5:00 PM",effectiveFrom:"2026-10-27"},{d:"Sunday",t:"1:00 \u2013 3:00 PM"}],
 
   "regents-geometry":              [],
@@ -925,7 +926,7 @@ var COURSE_SCHEDULES = {
   "young-fermats-algebra-ii":      [{d:"Tuesday",t:"6:15 \u2013 8:15 PM"}],
   "shsat-prep":                    [{d:"Saturday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-10-27",previousTime:"3:00 \u2013 5:00 PM"}],
   "sat-math":                      [{d:"Sunday",t:"5:00 \u2013 7:00 PM",effectiveFrom:"2026-11-01"}],
-  "pre-calculus":                  [{d:"Friday",t:"5:45 \u2013 7:45 PM",effectiveFrom:"2026-10-30",previousTime:"6:00 \u2013 8:00 PM"}],
+  "pre-calculus":                  [{d:"Friday",t:"5:45 \u2013 7:45 PM",effectiveFrom:"2026-10-30",previousTime:"6:00 \u2013 8:00 PM",effectiveUntil:"2026-11-27"},{d:"Friday",t:"7:00 \u2013 9:00 PM",effectiveFrom:"2026-11-27"}],
   "ap-calculus":                   [{d:"Thursday",t:"7:00 \u2013 9:00 PM"}],
   "ap-statistics":                 [{d:"Wednesday",t:"6:15 \u2013 8:15 PM"}]
 };
