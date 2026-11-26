@@ -3,6 +3,7 @@ import {readStudentContact,saveStudentContact,normalizeEmail,validStudentEmail} 
 import { recoverEnrollment } from "./_enrollment-recovery.mjs";
 import { handleEmailTest } from "./_email-test.mjs";
 import { thanksgivingTest } from "./_thanksgiving-test.mjs";
+import {thanksgivingMailing} from "./_thanksgiving-mailing.mjs";
 import { handleHomeworkTest } from "./_homework-test.mjs";
 import { handleMailingList, saveMailingContact } from "./_mailing-list.mjs";
 import { handleParentGuideCampaign } from "./_parent-guide-campaign.mjs";
@@ -2257,6 +2258,7 @@ var worker_default = {
     if (url.pathname === "/api/membership-reservation") return handleMembershipReservation(request, env);
     if (url.pathname === "/api/staff-email-test") return handleEmailTest(request, env);
     if (url.pathname === "/api/staff-thanksgiving-test") return thanksgivingTest(request, env);
+    if (url.pathname === "/api/staff-thanksgiving-mailing") return thanksgivingMailing(request,env);
     if (url.pathname === "/api/staff-homework-test") return handleHomeworkTest(request, env, {sendEmail:sendResendEmail});
     if (url.pathname === "/api/mailing-list") return handleMailingList(request, env);
     if (url.pathname === "/api/parent-guide-campaign") return handleParentGuideCampaign(request, env);
